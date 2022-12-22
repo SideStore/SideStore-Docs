@@ -1,6 +1,12 @@
 # Table of contents
 
-* [Welcome to AltStore-Docs](README.md)
-* [FAQ](https://faq.altstore.io)
-* [AltStore Sources](sources.md)
-* [AltStore URL Schemes](url-schemes.md)
+* [SideStore-Docs Home](README.md)
+
+## Installation and Usage
+
+* [Installation Guide](install.md)
+
+## Developer Tools
+
+* [AltSources](sources.md)
+* [URL Schemes](url-schemes.md)
