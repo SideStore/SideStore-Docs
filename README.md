@@ -1,12 +1,17 @@
-# Welcome to AltStore-Docs
+# Welcome to SideStore-Docs
 
-This repository serves to provide a single location for the documentation related to the AltStore.
+Here you can learn about features of SideStore available to both developers and users alike.
 
-Please note that the official website for AltStore is [altstore.io](https://altstore.io) and the open source repository for AltStore can be found [here.](https://github.com/rileytestut/AltStore)
+Or return to our main site: [sidestore.io](https://sidestore.io)
 
-## [Frequently Asked Questions](https://faq.altstore.io)
+## 💻 [Installation Guide](install.md)
 
-## [AltStore Sources](sources.md)
+Our guide to installing SideStore. (Computer required)
 
-## [AltStore URL Schemes](url-schemes.md)
+## 📶 [AltSources](sources.md)
 
+How to create your own developer AltSource to release apps to both AltStore and SideStore.
+
+## ➰ [SideStore URL Schemes](url-schemes.md)
+
+URL Schemes allow you to interact with SideStore simply by calling the sidestore://[contents] URI. 
