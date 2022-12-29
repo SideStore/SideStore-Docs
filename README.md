@@ -4,7 +4,7 @@ Here you can learn about features of SideStore available to both developers and 
 
 Or return to our main site: [sidestore.io](https://sidestore.io)
 
-## 💻 [Installation Guide](/install)
+## 💻 [Installation Guide](/install/)
 
 Our guide to installing SideStore. (Computer required)
 
