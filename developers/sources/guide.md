@@ -1,6 +1,6 @@
-# AltStore Sources
+# AltSources
 
-This document provides all the details that describe how to make your own AltStore Source. There are five important sections to read:
+This document provides all the details that describe how to make your own AltSource. There are five important sections to read:
 
 * Creating the JSON
 * Releasing apps
@@ -229,7 +229,7 @@ If there is not a `versions` list in the AltSource app, these properties will be
 
 ## Sending out news
 
-Please note that the "news" array is not required to be a valid AltStore Source.
+Please note that the "news" array is not required to be a valid AltSource.
 
 ```json
 "news": [
@@ -295,7 +295,7 @@ Note that the notification will not be instantaneous: it will occur whenever Alt
 
 ## New features on the horizon
 
-Not entirely sure what these will look like and they are not set in stone yet. But these should give you any idea of what future features AltStore Sources might have.
+Not entirely sure what these will look like and they are not set in stone yet. But these should give you any idea of what future features AltSources might have.
 
 ### Patreon support
 
@@ -367,7 +367,9 @@ These can be useful for safe-guarding certain apps from users under the suggeste
 
 ## That's all there is!
 
-If you want to see the full JSON example file that was used throughout this tutorial, [here it is.](https://github.com/noah978/AltStore-Docs/blob/master/apps.json)
+If you want to see the full JSON example file that was used throughout this tutorial, [here it is.](apps.json)
 
-Here are some good existing AltStore Sources: The [primary AltStore Source](https://apps.altstore.io), any of the Sources at [Quark Sources](https://quarksources.github.io), or the [DolphiniOS Source](https://altstore.oatmealdome.me/). I would highly recommend using this [AltStore Source Browser](https://altsource.by.lao.sb/browse/) to get a visual display of your Source outside of AltStore.
+Here are some good existing AltSources: The [primary AltStore Source](https://apps.altstore.io), the [SideStore community source](https://github.com/SideStore/Community-Source), any of the Sources at [Quark Sources](https://quarksources.github.io), or the [DolphiniOS Source](https://altstore.oatmealdome.me/). 
+
+I would highly recommend using this [AltSource Browser](https://altsource.by.lao.sb/browse/) to get a visual display of your Source outside of AltStore.
 
