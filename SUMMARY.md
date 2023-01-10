@@ -1,12 +1,16 @@
 # Table of contents
 
-* [SideStore-Docs Home](README.md)
+* [Wiki Home](/)
 
-## Installation and Usage
+## 💿 Installation and Usage 💿
 
-* [Installation Guide](install.md)
+* 💻 [Overview](install/)
 
-## Developer Tools
+## 🔧 Developer Tools 🔧
 
-* [AltSources](sources.md)
-* [URL Schemes](url-schemes.md)
+* 📶 [AltSources](developers/sources/guide)
+* 🔰 [URL Schemes](developers/url-schemes)
+
+### Anisette Data
+
+* 🏭 [Server Creation Guide](anisette/server-creation)
