@@ -1,4 +1,7 @@
-# AltSources
+---
+layout: page
+title: App Sources
+---
 
 This document provides all the details that describe how to make your own AltSource. There are five important sections to read:
 
@@ -79,7 +82,7 @@ If your user adds your Source using a URL shortener or you have the link to file
 ],
 ```
 
-![Delta App Listing](https://github.com/noah978/AltStore-Docs/raw/master/assets/delta-app-listing.png)
+![Delta App Listing](/assets/delta-app-listing.png)
 
 **name**
 
@@ -247,7 +250,7 @@ Please note that the "news" array is not required to be a valid AltSource.
 ]
 ```
 
-![Delta News Item](https://github.com/noah978/AltStore-Docs/raw/master/assets/delta-news.png)
+![Delta News Item](/assets/delta-news.png)
 
 **title**
 
@@ -367,7 +370,7 @@ These can be useful for safe-guarding certain apps from users under the suggeste
 
 ## That's all there is!
 
-If you want to see the full JSON example file that was used throughout this tutorial, [here it is.](apps.json)
+If you want to see the full JSON example file that was used throughout this tutorial, [here it is](/references/source-template.json).
 
 Here are some good existing AltSources: The [primary AltStore Source](https://apps.altstore.io), the [SideStore community source](https://github.com/SideStore/Community-Source), any of the Sources at [Quark Sources](https://quarksources.github.io), or the [DolphiniOS Source](https://altstore.oatmealdome.me/). 
 

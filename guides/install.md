@@ -1,4 +1,7 @@
-# Installing SideStore
+---
+layout: page
+title: Installation
+---
 
 The process of installing SideStore onto your device requires the **one time use** of a computer. Following the initial installation, SideStore can be indefinitely refreshed without the use of a local computer.
 
@@ -10,7 +13,7 @@ The process of installing SideStore onto your device requires the **one time use
     * iOS/iPadOS 14+
 * Apple ID account
 
-"Burner" Apple IDs are **highly** recommended when using anisette servers created by others. See more about [creating your own anisette server.](../anisette/server-creation)
+"Burner" Apple IDs are **highly** recommended when using anisette servers created by others. See more about [creating your own anisette server.](/guides/custom-anisette)
 
 You must enable "Developer Mode" in your iOS security settings. Additionally, you must *Trust* your personal developer certificate after installing with your Apple ID.
 

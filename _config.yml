@@ -1,0 +1,23 @@
+title: SideStore
+author:
+  name: SideTeam
+  email: mail@sidestore.io
+description: SideStore is the home of untethered sideloading. We are committed to bringing a safe and simple sideloading experience to our users. All contributions are welcome!
+url: "https://wiki.sidestore.io"
+github_url: "https://github.com/SideStore/SideStore-docs"
+
+side-theme:
+  date_format: "%b %-d, %Y"
+
+  # generate social links in footer
+  social_links:
+    - { platform: patreon, user_url: "https://www.patreon.com/sidestore" }
+    - { platform: discord, user_url: "https://discord.gg/altstore-delta-625714187078860810" }
+    - { platform: github, user_url: "https://github.com/sidestore" }
+    - { platform: twitter, user_url: "https://twitter.com/sidestore_io" }
+
+header_pages:
+  - home.md
+  - about.md
+
+remote_theme: sidestore/side-theme
