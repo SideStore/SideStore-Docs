@@ -33,3 +33,6 @@ header_pages:
   - about.md
 
 remote_theme: sidestore/side-theme
+
+whitelist:
+  - jekyll-remote-theme
