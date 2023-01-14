@@ -16,6 +16,18 @@ side-theme:
     - { platform: github, user_url: "https://github.com/sidestore" }
     - { platform: twitter, user_url: "https://twitter.com/sidestore_io" }
 
+sidenav_items:
+  - { title: Main, url: index }
+  - { title: About, url: about }
+  - { title: Guides }
+  - { title: Installation, url: guides/install }
+  - { title: Usage, url: guides/usage }
+  - { title: Power User Guides }
+  - { title: Anisette, url: guides/custom-anisette }
+  - { title: References }
+  - { title: App Sources, url: references/sources }
+  - { title: URL Schemes, url: references/url-schemes }
+
 header_pages:
   - home.md
   - about.md
