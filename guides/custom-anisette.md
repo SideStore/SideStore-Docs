@@ -3,26 +3,51 @@ layout: wiki
 title: Custom Anisette Server
 ---
 
-You may have found using one of the built-in anisette servers, that your account becomes locked and you may see the error message "Field to Log in. Unable to sign you in to your Apple ID. Try again later. (-36607)." 
+Anisette data is information used in the app signing process that needs to be generated each time you install or refresh apps. SideStore gets this information from a server that spoofs a Mac and sends you back the anisette data.
 
-To circumvent this issue in the future (and maintain more privacy and security over your data), you can host your own anisette server for free.
+When many people use the same anisette server, it trips Apple's security and locks the accounts that were using that machine. This is why we recommend using a burner Apple ID instead of your main one. 
 
-## Serving it on [Render](https://render.com/)
+Our team is working on better approaches to anisette data that will avoid locked accounts and switching servers. In the meantime, hosting your own anisette server is a way to avoid locked accounts. This is made incredibly easy thanks to our current server being open source and made for docker environments. This means we can deploy a server with nothing more than the GitHub link.
 
-1. Go to https://dashboard.render.com/register and register for an account.
-2. Click on the "New Web Service" button.
-3. In the "Public Git Repository" field at the bottom, enter the URL:
-> ```
-> https://github.com/Dadoum/Provision.git
-> ```
-4. Click "Continue." and follow on-screen instructions.
-5. Enter a name for your service and choose a region.
-6. Scroll to the bottom and click "Create Web Service."
-7. Wait for the build to complete.
-8. Click "Manual Deploy" button on the top right and select "Deploy latest commit".
-9. Once the build is finished, check if your service works.
+## Deploy on Render
 
-## Other services
+[Render](https://render.com/) is a service for easily creating servers. It supports loading server sources from GitHub. The free tier is quite limited in terms of resources, but the server can run comfortably on it. All perfect for our needs.
 
-It is also entirely possible to build and create an anisette server on other web services
-due to the nature of the Provision server.
+1. [Register](https://dashboard.render.com/register/) for an account
+2. Create a [New Web Service](https://dashboard.render.com/select-repo?type=web)
+3. Scroll down to **Public Git repository** and enter this URL:
+```
+https://github.com/Dadoum/Provision.git
+```
+4. Hit **Continue** and fill in the form:
+   - **Name** - Anything you want
+   - **Region** - Closest to you
+   - **Branch** - main (deafult)
+   - **Root Directory** - Leave blank (deafult)
+   - **Environment** - Docker (default)
+   - **Instance Type** - Free
+5. Wait for the server to build. You will see the following when it's done:
+```
+Machine requires provisioning... done !
+Your service is live 🎉
+```
+*\*If the build fails for any reason, hit **Manual Deploy > Deploy latest commit***
+
+6. Find the link for your new server at the top of the page:
+```
+https://[your-server-name].onrender.com
+```
+
+## Use your Server with SideStore
+
+SideStore can be configured to use a custom anisette server. We will use the one we just created.
+
+1. Go to the **Settings** app
+2. Scroll down and tap on **SideStore**
+3. Within the **Danger Zone**
+   - **Use preferred servers** - Toggle off
+   - **Anisette URL** - Enter your server URL
+
+## Done
+
+SideStore will now use your new custom anisette server, and your account should not get locked.
