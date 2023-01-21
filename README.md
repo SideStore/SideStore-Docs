@@ -1,15 +1,25 @@
-# Welcome to SideStore Docs
+# Welcome to SideStore-Docs
 
-Here you can find guides that aid in the installation and usage of [SideStore](https://sidestore.io), as well as references for developers working with it.
+Here you can learn about features of SideStore available to both developers and users alike.
 
-## User Guides
+Or return to our main site: [sidestore.io](https://sidestore.io)
 
-### [Installation](/guides/install) | [Usage](/guides/usage)
+## 💿 Installation Guides 💿
 
-## Power User Guides
+### 💻 [Overview](install/)
 
-### [Custom Anisette Server](/guides/custom-anisette)
+Our guide to installing SideStore. (Computer required)
 
-## References
+## 🔧 Developer Tools 🔧
 
-### [App Sources](/references/sources) | [URL Schemes](/references/url-schemes)
+### 📶 [AltSources](developers/sources/guide)
+
+How to create your own developer AltSource to release apps to both AltStore and SideStore.
+
+### 🔰 [SideStore URL Schemes](developers/url-schemes)
+
+URL Schemes allow you to interact with SideStore simply by calling the sidestore://[contents] URI.
+
+### 🏭 [Anisette Server Creation Guide](anisette/server-creation)
+
+For the power users who want to control and customize their own anisette server.

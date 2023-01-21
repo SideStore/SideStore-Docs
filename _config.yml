@@ -29,8 +29,8 @@ sidenav_items:
   - { title: URL Schemes, url: references/url-schemes }
 
 header_pages:
-  - home.markdown
-  - about.markdown
+  - home.md
+  - about.md
 
 remote_theme: sidestore/side-theme
 
