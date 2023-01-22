@@ -1,7 +1,10 @@
 ---
-layout: wiki
+layout: home
 title: Installation
+nav_order: 2
 ---
+
+# Installation
 
 The process of installing SideStore onto your device requires the **one time use** of a computer. Following the initial installation, SideStore can be indefinitely refreshed without the use of a local computer.
 

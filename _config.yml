@@ -1,38 +1,21 @@
-title: SideStore
-author:
-  name: SideTeam
-  email: mail@sidestore.io
+title: SideStore Docs
 description: SideStore is the home of untethered sideloading. We are committed to bringing a safe and simple sideloading experience to our users. All contributions are welcome!
-url: "https://wiki.sidestore.io"
-github_url: "https://github.com/SideStore/SideStore-docs"
+theme: just-the-docs
 
-side-theme:
-  date_format: "%b %-d, %Y"
+url: https://wiki.sidestore.io
 
-  # generate social links in footer
-  social_links:
-    - { platform: patreon, user_url: "https://www.patreon.com/sidestore" }
-    - { platform: discord, user_url: "https://discord.gg/altstore-delta-625714187078860810" }
-    - { platform: github, user_url: "https://github.com/sidestore" }
-    - { platform: twitter, user_url: "https://twitter.com/sidestore_io" }
+aux_links:
+  Home: https://sidestore.io
+  GitHub: https://github.com/sidestore
+  Patreon: https://www.patreon.com/sidestore
+  Discord: https://discord.gg/altstore-delta-625714187078860810
+  Twitter: https://twitter.com/sidestore_io
 
-sidenav_items:
-  - { title: Main, url: index }
-  - { title: About, url: about }
-  - { title: Guides }
-  - { title: Installation, url: guides/install }
-  - { title: Usage, url: guides/usage }
-  - { title: Power User Guides }
-  - { title: Anisette, url: guides/custom-anisette }
-  - { title: References }
-  - { title: App Sources, url: references/sources }
-  - { title: URL Schemes, url: references/url-schemes }
+favicon_ico: "/assets/icons/favicon.ico"
 
-header_pages:
-  - home.md
-  - about.md
+aux_links_new_tab: true
 
-remote_theme: sidestore/side-theme
-
-whitelist:
-  - jekyll-remote-theme
+callouts:
+  warning:
+    title: Warning
+    color: red

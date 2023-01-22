@@ -1,7 +1,10 @@
 ---
-layout: wiki
+layout: home
 title: Custom Anisette Server
+nav_order: 3
 ---
+
+# Custom Anisette Server
 
 Anisette data is information used in the app signing process that needs to be generated each time you install or refresh apps. SideStore gets this information from a server that spoofs a Mac and sends you back the anisette data.
 

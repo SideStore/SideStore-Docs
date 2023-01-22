@@ -1,7 +1,10 @@
 ---
-layout: wiki
+layout: home
 title: URL Schemes
+nav_order: 5
 ---
+
+# URL Schemes
 
 The following is the list of different URL Schemes that can be used to interact with SideStore. These are incredibly useful because they allow developers to simply put a one-click link on their social media or website and iOS will open the link directly in SideStore and then perform the action(s) specified.
 

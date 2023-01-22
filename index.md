@@ -1,17 +1,16 @@
 ---
-layout: wiki
-title: Wiki
+layout: home
+title: Home
+nav_order: 1
 ---
+
+# Welcome
 
 Here you can find guides that aid in the installation and usage of [SideStore](https://sidestore.io), as well as references for developers working with it.
 
-## User Guides
+## Guides
 
-### [Installation](/guides/install) | [Usage](/guides/usage)
-
-## Power User Guides
-
-### [Custom Anisette Server](/guides/custom-anisette)
+### [Installation](/guides/install) | [Custom Anisette Server](/guides/custom-anisette)
 
 ## References
 

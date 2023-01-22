@@ -1,7 +1,10 @@
 ---
-layout: wiki
+layout: home
 title: App Sources
+nav_order: 4
 ---
+
+# App Sources
 
 This document provides all the details that describe how to make your own AltSource. There are five important sections to read:
 
