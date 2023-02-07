@@ -42,6 +42,6 @@ Jitterbugpair Downloads:
 
 Generic Pair Instructions:
 
-Unzip the Jitterbugpair program zip file. Plug your idevice into the computer and execute the program. Your idevice might get asked to trust this computer just trust it as it can be part of pairing process.
+Unzip the Jitterbugpair program zip file. Plug your idevice into the computer and the idevice needs to be on the home screen and execute the program. Your idevice might get asked to trust this computer just trust it as it can be part of pairing process.
 
 Windows users might have to execute the program in the command prompt or powershell window as it can sometimes not open. All you have to do is in file explorer go into the folder where the jitterbugpair folder is and in the top bar where the file location is you click empty spot and type powershell and it should open a blue colored window called powershell. In there you just type ```./jitterbugpair.exe``` and the pairing process should begin.   
