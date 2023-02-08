@@ -45,7 +45,7 @@ There is many reasons this can happen but the most common thing is that we are u
 
 ### Is Sidestore going to have a Storefront?
 
-We currently have Community store! https://community-apps.sidestore.io/sidecommunity.json
+We currently have Community store! SourceURL: https://community-apps.sidestore.io/sidecommunity.json
 
 ### Why does my app have an update called pacer test?
 
