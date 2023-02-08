@@ -35,7 +35,7 @@ No, because there is no remote server used and we wouldn't do that.
 
 Make sure you don't have a alternate DNS setup in your WiFi and wireguard config. If you know the DNS ip works then try removing it from your WiFi and adding it into the Wireguaed config under dns. 
 
-### -Updating sidestore hangs towards end.
+### Updating sidestore hangs towards end.
 
 Go to the homescreen for it to finish. We don't know why this happens but might have to do with using a vpn to direct installd to refresh sidestore (itself).
 
