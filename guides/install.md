@@ -47,7 +47,7 @@ Generic Pair Instructions:
 3. After pairing you get a file that ends with `.mobiledevicepairing`.
 4. You can then transfer to your idevice via iTunes or other forms of transportation. Trasfrring vis cloud storage might have inconsisitencys with file name so be wary of that. It is also possible to change the extension to `.plist` for support with older sidestore versions like (0.1.1).
 
-Windows users might have to execute the program in the command prompt or powershell window as it can sometimes not open by doublr clicking the `.exe` program.. 
+Windows users might have to execute the program in the command prompt or powershell window as it can sometimes not open by double clicking the `.exe` program.
 
 1. All you have to do is in file explorer go into the folder where the jitterbugpair folder is 
 2. In the top bar where the file location is you click empty spot and type `powershell` and it should open a blue colored window called PowerShell. 
