@@ -30,7 +30,7 @@ Finally, open the SideStore app on your homescreen, re-enter the Apple ID creden
 
 # Pairing Process
 
-Using Jitterbugpair (not jitterbug app) allows us to create a pairing file for programs, like sidestore to talk to your device and is required to use sidestore or it will not function. (Windows and MacOS requires iTunes)
+Using Jitterbugpair (not jitterbug app) allows us to create a pairing file for programs, like sidestore to talk to your device and is required to use sidestore or it will not function (Windows requires iTunes). If you have SideServer for MacOS,Windows,Linux,etc. This doesnt apply to you as SideServer automatically pairs during the installation process.
 
 Jitterbugpair Downloads:
 
@@ -42,6 +42,13 @@ Jitterbugpair Downloads:
 
 Generic Pair Instructions:
 
-Unzip the Jitterbugpair program zip file. Plug your idevice into the computer and the idevice needs to be on the home screen and execute the program. Your idevice might get asked to trust this computer just trust it as it can be part of pairing process. After pairing you get a file that ends with ```.mobiledevicepairing``` which you can then transfer to your idevice via iTunes or other forms of transportation. It's also possible to change the extension to ```.plist``` for support with older sidestore versions.
+1. Unzip the Jitterbugpair program zip file. 
+2. Plug your idevice into the computer and the idevice needs to be on the home screen and execute the program. (Your idevice might get asked to trust this computer, just trust it as it can be part of pairing process.)
+3. After pairing you get a file that ends with `.mobiledevicepairing`.
+4. You can then transfer to your idevice via iTunes or other forms of transportation. Trasfrring vis cloud storage might have inconsisitencys with file name so be wary of that. It is also possible to change the extension to `.plist` for support with older sidestore versions like (0.1.1).
 
-Windows users might have to execute the program in the command prompt or powershell window as it can sometimes not open. All you have to do is in file explorer go into the folder where the jitterbugpair folder is and in the top bar where the file location is you click empty spot and type powershell and it should open a blue colored window called powershell. In there you just type ```./jitterbugpair.exe``` and the pairing process should begin.   
+Windows users might have to execute the program in the command prompt or powershell window as it can sometimes not open by doublr clicking the `.exe` program.. 
+
+1. All you have to do is in file explorer go into the folder where the jitterbugpair folder is 
+2. In the top bar where the file location is you click empty spot and type `powershell` and it should open a blue colored window called PowerShell. 
+3. In there you just type `./jitterbugpair.exe` and click enter while your idevice is plugged in and the pairing process should begin!   
