@@ -9,7 +9,7 @@ SideStore is an iOS application that allows you to sideload apps onto your iOS d
 
 ### Can I activate jit?
 
-Yes currently via the app at the moment by holding on the app and click enable jit
+Yes currently via the app at the moment by holding on the app in `My Apps` tab and click enable jit
 
 ### when will SideStore release?
 
