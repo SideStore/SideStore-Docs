@@ -29,11 +29,15 @@ It does not as it's only connecting to your device. No remote server just itself
 
 ### Will the vpn track me
 
-No, because there is no remote server used.
+No, because there is no remote server used and we wouldn't do that.
 
 ### When vpn is on I cannot connect to the internet!
 
 Make sure you don't have a alternate DNS setup in your WiFi and wireguard config. If you know the DNS ip works then try removing it from your WiFi and adding it into the Wireguaed config under dns. 
+
+### -Updating sidestore hangs towards end.
+
+Go to the homescreen for it to finish. We don't know why this happens but might have to do with using a vpn to direct installd to refresh sidestore (itself).
 
 ### Can I sign more than 3 apps to be active?
 
