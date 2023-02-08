@@ -11,7 +11,7 @@ SideStore is an iOS application that allows you to sideload apps onto your iOS d
 
 Yes currently via the app at the moment by holding on the app in `My Apps` tab and click enable jit
 
-### when will SideStore release?
+### When will SideStore release?
 
 ETA soon including apps called Deltroid and Clippy in the SideStore Community store.
 
