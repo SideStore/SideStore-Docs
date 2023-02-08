@@ -23,6 +23,18 @@ Yes you can just like AltStore!
 
 We have AltStore beta features but isn't always latest but we try to keep up to date or do our own way or spin or if it's necessary.
 
+### Does having the vpn on drain battery?
+
+It does not as it's only connecting to your device. No remote server just itself and all that goes through it is sidestore lan traffic.
+
+### Will the vpn track me
+
+No, because there is no remote server used.
+
+### When vpn is on I cannot connect to the internet!
+
+Make sure you don't have a alternate DNS setup in your WiFi and wireguard config. If you know the DNS ip works then try removing it from your WiFi and adding it into the Wireguaed config under dns. 
+
 ### Can I sign more than 3 apps to be active?
 
 No as that’s a iOS and developer account limitation.
@@ -86,3 +98,11 @@ Yep just click update button!
 ### I want to test a SideStore version and I want my data to stay when going to a test version. Do I remove my app or sideload the test version via SideStore?
 
 You can sideload via SideStore and data should be same. We don’t have an enrollment toggle to make this easy on the app to go to other versions. We cannot guarantee it transfers as they are testing a unofficial or nightly build.
+
+### My apps disappeared and I don't know what to do!
+
+Don't panic just resideload the apps without removing them from your device and the data should be fine. But unfortunately it's possible the deactivated ones are gone but to confirm that just refresh sidestore to see if they come back.
+
+### Unable to Select my pairing file.
+
+Apples file app system isn't exactly perfect and sometimes it will just not allow you to select files from apps. You can try moving the pairing file and having it named `ALTPairingFile.mobiledevicepairing`.
