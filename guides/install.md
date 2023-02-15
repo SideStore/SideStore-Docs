@@ -30,7 +30,8 @@ Finally, open the SideStore app on your homescreen, re-enter the Apple ID creden
 
 ## Installing SideServer for macOS
 
-1. [Download](https://github.com/SideStore/SideServer-macOS/releases/latest/download/SideServer.dmg) and install SideServer for MacOS
+1. Download and install SideServer:
+   [Download for macOS](https://github.com/SideStore/SideServer-macOS/releases/latest/download/SideServer.dmg)
 
 2. Plug your iDevice into your computer or connect it via Wi-Fi if you enabled Sync over Wi-Fi in Finder, Launch SideServer, Click the Menu Bar icon and select "Install SideStore". then, follow the instructions until SideServer confirms that SideStore was installed
 
