@@ -18,7 +18,7 @@ The process of installing SideStore onto your device requires the **one time use
 
 "Burner" Apple IDs are **highly** recommended when using anisette servers created by others. See more about [creating your own anisette server.](/guides/custom-anisette)
 
-You must enable "Developer Mode" in your iOS security settings. Additionally, you must *Trust* your personal developer certificate after installing with your Apple ID.
+You must enable "Developer Mode" in your iOS security settings on iOS 16+. Additionally, you must *Trust* your personal developer certificate after installing with your Apple ID.
 
 **You will need the wireguard vpn app and use the wireguard config provided and share it to the wireguard app.**
 
