@@ -20,12 +20,19 @@ The process of installing SideStore onto your device requires the **one time use
 
 You must enable "Developer Mode" in your iOS security settings. Additionally, you must *Trust* your personal developer certificate after installing with your Apple ID.
 
+**You will need the wireguard vpn app and use the wireguard config provided and share it to the wireguard app.**
+
+[Wireguard](https://apps.apple.com/us/app/wireguard/id1441195209)
+
+[Wireguard Config](https://github.com/SideStore/SideStore/releases/download/0.1.1/SideStore.conf)
+
 <!--
 With SideStore downloader installed (and it's requirements met), simply connect your iOS device physically to your internet enabled PC. Then using the SideStore downloader, enter your Apple ID credentials (read more about creating a "burner" Apple ID to prevent lockouts) and wait until SideStore is installed on your iOS device homescreen.
 
 You must then enable "Developer Mode" in your iOS security settings. Additionally, you must *Trust* your personal developer certificate.
 
 Finally, open the SideStore app on your homescreen, re-enter the Apple ID credentials used previously, and refresh to ensure that everything is working correctly.
+
 -->
 
 ## Installing SideServer for MacOS and Windows 10/11 (soon).
