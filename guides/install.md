@@ -32,7 +32,7 @@ Finally, open the SideStore app on your homescreen, re-enter the Apple ID creden
 
 1. [Download](https://github.com/SideStore/SideServer-macOS/releases/latest/download/SideServer.dmg) and install SideServer for MacOS
 
-2. Plug your iDevice into your computer or connect it via Wi-Fi if you've set it up in Finder, Launch SideServer, Click the Menu Bar icon and select "Install SideStore". then, follow the instructions until SideServer confirms that SideStore was installed
+2. Plug your iDevice into your computer or connect it via Wi-Fi if you enabled Sync over Wi-Fi in Finder, Launch SideServer, Click the Menu Bar icon and select "Install SideStore". then, follow the instructions until SideServer confirms that SideStore was installed
 
 3. Go to Settings on your iDevice, go to "VPN and Device Management" under "General" and approve the Profile with your Apple ID email
 
