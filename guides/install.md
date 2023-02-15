@@ -27,3 +27,28 @@ You must then enable "Developer Mode" in your iOS security settings. Additionall
 
 Finally, open the SideStore app on your homescreen, re-enter the Apple ID credentials used previously, and refresh to ensure that everything is working correctly.
 -->
+
+# Pairing Process
+
+Using Jitterbugpair (not jitterbug app) allows us to create a pairing file for programs, like sidestore to talk to your device and is required to use sidestore or it will not function (Windows requires iTunes). If you have SideServer for MacOS,Windows,Linux,etc. This doesnt apply to you as SideServer automatically pairs during the installation process.
+
+Jitterbugpair Downloads:
+
+[Windows (x64)](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip)
+
+[MacOS](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-macos.zip)
+
+[Linux](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip)
+
+Generic Pair Instructions:
+
+1. Unzip the Jitterbugpair program zip file. 
+2. Plug your idevice into the computer and the idevice needs to be on the home screen and execute the program. (Your idevice might get asked to trust this computer, just trust it as it can be part of pairing process.)
+3. After pairing you get a file that ends with `.mobiledevicepairing`.
+4. You can then transfer to your idevice via iTunes or other forms of transportation. Trasfrring vis cloud storage might have inconsisitencys with file name so be wary of that. It is also possible to change the extension to `.plist` for support with older sidestore versions like (0.1.1).
+
+Windows users might have to execute the program in the command prompt or powershell window as it can sometimes not open by double clicking the `.exe` program.
+
+1. All you have to do is in file explorer go into the folder where the jitterbugpair folder is 
+2. In the top bar where the file location is you click empty spot and type `powershell` and it should open a blue colored window called PowerShell. 
+3. In there you just type `./jitterbugpair.exe` and click enter while your idevice is plugged in and the pairing process should begin!   
