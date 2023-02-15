@@ -28,7 +28,7 @@ You must then enable "Developer Mode" in your iOS security settings. Additionall
 Finally, open the SideStore app on your homescreen, re-enter the Apple ID credentials used previously, and refresh to ensure that everything is working correctly.
 -->
 
-## Installing SideServer
+## Installing SideServer for macOS
 
 1. [Download](https://github.com/SideStore/SideServer-macOS/releases/latest/download/SideServer.dmg) and install SideServer for MacOS
 
