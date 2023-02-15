@@ -27,3 +27,13 @@ You must then enable "Developer Mode" in your iOS security settings. Additionall
 
 Finally, open the SideStore app on your homescreen, re-enter the Apple ID credentials used previously, and refresh to ensure that everything is working correctly.
 -->
+
+## Installing SideServer
+
+1. [Download](https://github.com/SideStore/SideServer-macOS/releases/latest/download/SideServer.dmg) and install SideServer for MacOS
+
+2. Plug your iDevice into your computer or connect it via Wi-Fi if you've set it up in Finder, Launch SideServer, Click the Menu Bar icon and select "Install SideStore". then, follow the instructions until SideServer confirms that SideStore was installed
+
+3. Go to Settings on your iDevice, go to "VPN and Device Management" under "General" and approve the Profile with your Apple ID email
+
+4. Open SideStore and Sign in with your Apple ID in-app, Enjoy!
