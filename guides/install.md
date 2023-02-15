@@ -20,7 +20,7 @@ The process of installing SideStore onto your device requires the **one time use
 
 You must enable "Developer Mode" in your iOS security settings on iOS 16+. Additionally, you must *Trust* your personal developer certificate after installing with your Apple ID.
 
-**You will need the wireguard vpn app and use the wireguard config provided and share it to the wireguard app.**
+**You will need the Wireguard VPN app and use the Wireguard config provided and share it to the wireguard app.**
 
 [Wireguard](https://apps.apple.com/us/app/wireguard/id1441195209)
 
