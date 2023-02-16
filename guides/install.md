@@ -28,7 +28,7 @@ You must then enable "Developer Mode" in your iOS security settings. Additionall
 Finally, open the SideStore app on your homescreen, re-enter the Apple ID credentials used previously, and refresh to ensure that everything is working correctly.
 -->
 
-# Pairing Process
+## Pairing Process
 
 Using Jitterbugpair (not jitterbug app) allows us to create a pairing file for programs, like sidestore to talk to your device and is required to use sidestore or it will not function (Windows requires iTunes). If you have SideServer for MacOS,Windows,Linux,etc. This doesnt apply to you as SideServer automatically pairs during the installation process.
 
@@ -53,7 +53,7 @@ Windows users might have to execute the program in the command prompt or powersh
 2. In the top bar where the file location is you click empty spot and type `powershell` and it should open a blue colored window called PowerShell.
 3. In there you just type `./jitterbugpair.exe` and click enter while your idevice is plugged in and the pairing process should begin!
 
-# Install via AltServer (Windows/Mac)
+## Install via AltServer (Windows/Mac)
 
 Currently SideStore isn't available for Windows, so you have to use AltServer to install SideStore on your device, if you have a Windows computer. You can also use these steps if SideServer isn't working on Mac. Preceeding these steps, make sure you have everything in the generic install requirements, and make sure you've generated a pairing file following the above steps. If you are on a Windows PC, make sure to have iCloud and iTunes from Apple's site (NOT from the Microsoft Store).
 
