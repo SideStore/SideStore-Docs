@@ -52,3 +52,17 @@ Windows users might have to execute the program in the command prompt or powersh
 1. All you have to do is in file explorer go into the folder where the jitterbugpair folder is 
 2. In the top bar where the file location is you click empty spot and type `powershell` and it should open a blue colored window called PowerShell. 
 3. In there you just type `./jitterbugpair.exe` and click enter while your idevice is plugged in and the pairing process should begin!   
+
+
+# Install via Altserver (recommend using SideServer)
+
+Follow Pairing instructions and make sure you have don't what's in Generic install Instructions above before proceeding with these instructions. Make sure to have iCloud and iTunes from apples site not via the Microsoft store if on windows. If your on macOS get the mail plug-in for altserver.
+
+1. Launch Altserver
+2. Download SideStore ipa from https://sidestore.io
+2. Sideloading ipa
+
+(MacOS): Options/alt + click on altserver icon on menu bar on top and click "Sideload .ipa" and select SideStore ipa.
+(Windows): Go to system tray and Shift + click altserver  and click "Sideload .ipa" and select SideStore ipa.
+
+3. Login into sidestore on idevice and refresh sidestore before installing apps.
