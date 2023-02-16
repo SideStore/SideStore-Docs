@@ -45,7 +45,7 @@ Generic Pair Instructions:
 1. Unzip the Jitterbugpair program zip file. 
 2. Plug your idevice into the computer and the idevice needs to be on the home screen and execute the program. (Your idevice might get asked to trust this computer, just trust it as it can be part of pairing process.)
 3. After pairing you get a file that ends with `.mobiledevicepairing`.
-4. You can then transfer to your idevice via iTunes or other forms of transportation. Trasfrring vis cloud storage might have inconsisitencys with file name so be wary of that. It is also possible to change the extension to `.plist` for support with older sidestore versions like (0.1.1).
+4. You can then transfer to your idevice via iTunes or other forms of transportation. Transferring via cloud storage might have inconsistencys with file name (most common is turning into .txt) so be wary of that. It is also possible to change the extension to `.plist` for support with older sidestore versions like (0.1.1).
 
 Windows users might have to execute the program in the command prompt or powershell window as it can sometimes not open by double clicking the `.exe` program.
 
