@@ -22,9 +22,7 @@ You must enable "Developer Mode" in your iOS security settings on iOS 16+. Addit
 
 **You will need the Wireguard VPN app and use the Wireguard config provided and share it to the wireguard app.**
 
-[Wireguard](https://apps.apple.com/us/app/wireguard/id1441195209)
-
-[Wireguard Config](https://github.com/SideStore/SideStore/releases/download/0.1.1/SideStore.conf)
+Downloads are at https://sidestore.io
 
 <!--
 With SideStore downloader installed (and it's requirements met), simply connect your iOS device physically to your internet enabled PC. Then using the SideStore downloader, enter your Apple ID credentials (read more about creating a "burner" Apple ID to prevent lockouts) and wait until SideStore is installed on your iOS device homescreen.
