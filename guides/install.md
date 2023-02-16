@@ -56,7 +56,7 @@ Windows users might have to execute the program in the command prompt or powersh
 
 # Install via Altserver (recommend using SideServer)
 
-Follow Pairing instructions and make sure you have what's in Generic install Instructions above before proceeding with these instructions. Make sure to have iCloud and iTunes from apples site not via the Microsoft store if on windows. If your on macOS get the mail plug-in for altserver.
+Follow Pairing instructions and make sure you have what's in Generic install Instructions above before proceeding with these instructions. Make sure to have iCloud and iTunes from apples site not via the Microsoft store if on windows. If your on macOS get the mail plug-in for altserver. This is an alternative method, if SideServer isn't working or not available.
 
 1. Launch Altserver
 2. Download SideStore ipa from https://sidestore.io
