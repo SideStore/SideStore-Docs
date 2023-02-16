@@ -1,3 +1,9 @@
+---
+layout: home
+title: FAQ
+nav_order: 6
+---
+
 # FAQ
 This is an FAQ for SideStore. Has a list of common questions we get with our development of sidestore and some questions that might want to be answered for different types of people or people having problems.
 
