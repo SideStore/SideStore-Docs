@@ -30,7 +30,7 @@ Finally, open the SideStore app on your homescreen, re-enter the Apple ID creden
 
 ## Pairing Process
 
-Using Jitterbugpair (not jitterbug app) allows us to create a pairing file for programs, like sidestore to talk to your device and is required to use sidestore or it will not function (Windows requires iTunes). If you have SideServer for MacOS,Windows,Linux,etc. This doesnt apply to you as SideServer automatically pairs during the installation process.
+Using Jitterbugpair (not the Jitterbug app) allows us to create a pairing file for programs, like sidestore to talk to your device and is required to use sidestore or it will not function (Windows requires iTunes). If you have SideServer for MacOS,Windows,Linux,etc. This doesnt apply to you as SideServer automatically pairs during the installation process.
 
 Jitterbugpair Downloads:
 
