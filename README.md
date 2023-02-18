@@ -6,7 +6,7 @@ Or return to our main site: [sidestore.io](https://sidestore.io)
 
 ## 💿 Installation Guides 💿
 
-### 💻 [Overview](install/)
+### 💻 [Overview](guides/install.md)
 
 Our guide to installing SideStore. (Computer required)
 
@@ -20,6 +20,6 @@ How to create your own developer AltSource to release apps to both AltStore and 
 
 URL Schemes allow you to interact with SideStore simply by calling the sidestore://[contents] URI.
 
-### 🏭 [Anisette Server Creation Guide](anisette/server-creation)
+### 🏭 [Anisette Server Creation Guide](guides/custom-anisette.md)
 
 For the power users who want to control and customize their own anisette server.
