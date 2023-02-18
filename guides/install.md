@@ -52,3 +52,36 @@ Windows users might have to execute the program in the command prompt or powersh
 1. All you have to do is in file explorer go into the folder where the jitterbugpair folder is 
 2. In the top bar where the file location is you click empty spot and type `powershell` and it should open a blue colored window called PowerShell. 
 3. In there you just type `./jitterbugpair.exe` and click enter while your idevice is plugged in and the pairing process should begin!   
+
+## Install via AltServer (Linux)
+
+To install SideStore (or any other IPA) on Linux, make sure you have the following installed:
+
+* Docker
+* Docker-Compose
+
+1. Download the Docker-Compose file locally.
+
+```bash
+wget https://raw.githubusercontent.com/Macleykun/Altcon/main/docker-compose.yml
+```
+
+2. Run the docker-compose file.
+
+```bash
+docker-compose run --rm altcon
+```
+
+Anisette will be setup for you, use the IP of the host with port 6969 as your custom Anisette server for SideStore.
+
+Altcon will start to pair with your device, plug it in if you haven't. Press trust and enter your pin.
+
+3. Install SideStore using the Apple account of your choice.
+
+```bash
+./AltServer -u thiswillbeyourUUID -a myemail@mail.com -p myapplepass SideStore.ipa
+```
+
+Once you've installed SideStore on your idevce, do CRTL + D or type exit.
+
+Anisette will continue to run in the background, Altcon not.
