@@ -28,6 +28,9 @@ You must then enable "Developer Mode" in your iOS security settings. Additionall
 Finally, open the SideStore app on your homescreen, re-enter the Apple ID credentials used previously, and refresh to ensure that everything is working correctly.
 -->
 
+## Install Sidestore with Windows
+SideServer is not yet available for download for Windows or Linux. You can use [AltServer](https://altstore.io) to install Sidestore on Windows. You need to download SideStore IPA file [here](https://github.com/SideStore/SideStore/releases/download/nightly/SideStore.ipa) first. Then, shift + click the Altstore icon. Click "Install .ipa" and choose the file you downloaded. Login your Apple ID account and SideStore will be installed soon.
+
 # Pairing Process
 
 Using Jitterbugpair (not jitterbug app) allows us to create a pairing file for programs, like sidestore to talk to your device and is required to use sidestore or it will not function (Windows requires iTunes). If you have SideServer for MacOS,Windows,Linux,etc. This doesnt apply to you as SideServer automatically pairs during the installation process.
