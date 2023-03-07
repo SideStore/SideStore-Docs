@@ -33,7 +33,7 @@ Finally, open the SideStore app on your homescreen, re-enter the Apple ID creden
 
 -->
 
-## Installing SideServer for MacOS and Windows 10/11 (soon).
+# Installing SideServer for MacOS and Windows 10/11 (soon).
 
 1. Download and install SideServer:
    
@@ -44,6 +44,19 @@ Finally, open the SideStore app on your homescreen, re-enter the Apple ID creden
 3. Go to Settings on your iDevice, go to "VPN and Device Management" under "General" and approve the Profile with your Apple ID email.
 
 4. Open SideStore and Sign in with your Apple ID in-app, Enjoy!
+
+# Install via AltServer (Windows/Mac)
+
+Currently SideStore isn't available for Windows, so you have to use AltServer to install SideStore on your device, if you have a Windows computer. You can also use these steps if SideServer isn't working on Mac. Preceeding these steps, make sure you have everything in the generic install requirements, and make sure you've generated a pairing file following the above steps. If you are on a Windows PC, make sure to have iCloud and iTunes from Apple's site (NOT from the Microsoft Store).
+
+1. Download AltServer via <https://AltStore.io>
+2. Launch AltServer
+   * If on MacOS, you will need to setup the Mail Plugin for AltServer to work. Follow the instructions in AltServer's window.
+3. Download the SideStore IPA from <https://sidestore.io>
+4. Sideload the SideStore IPA
+   * (MacOS): Options/alt + click on altserver icon on menu bar on top and click "Sideload .ipa" and select the SideStore IPA file.
+   * (Windows): Go to system tray and hold Shift then click on the AltServer tray icon, then in the menu click "Sideload .ipa" and select the SideStore IPA file.
+5. Login into SideStore on your iDevice, setup WireGuard and refresh SideStore before installing apps.
 
 # Pairing Process
 
@@ -57,7 +70,7 @@ Jitterbugpair Downloads:
 
 [Linux](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip)
 
-Generic Pair Instructions:
+## Generic Pair Instructions:
 
 1. Unzip the Jitterbugpair program zip file.
 2. Plug your idevice into the computer and the idevice needs to be on the home screen and execute the program. (Your idevice might get asked to trust this computer, just trust it as it can be part of pairing process.)
@@ -69,16 +82,3 @@ Windows users might have to execute the program in the command prompt or powersh
 1. All you have to do is in file explorer go into the folder where the jitterbugpair folder is
 2. In the top bar where the file location is you click empty spot and type `powershell` and it should open a blue colored window called PowerShell.
 3. In there you just type `./jitterbugpair.exe` and click enter while your idevice is plugged in and the pairing process should begin!
-
-## Install via AltServer (Windows/Mac)
-
-Currently SideStore isn't available for Windows, so you have to use AltServer to install SideStore on your device, if you have a Windows computer. You can also use these steps if SideServer isn't working on Mac. Preceeding these steps, make sure you have everything in the generic install requirements, and make sure you've generated a pairing file following the above steps. If you are on a Windows PC, make sure to have iCloud and iTunes from Apple's site (NOT from the Microsoft Store).
-
-1. Download AltServer via <https://AltStore.io>
-2. Launch AltServer
-   * If on MacOS, you will need to setup the Mail Plugin for AltServer to work. Follow the instructions in AltServer's window.
-3. Download the SideStore IPA from <https://sidestore.io>
-4. Sideload the SideStore IPA
-   * (MacOS): Options/alt + click on altserver icon on menu bar on top and click "Sideload .ipa" and select the SideStore IPA file.
-   * (Windows): Go to system tray and hold Shift then click on the AltServer tray icon, then in the menu click "Sideload .ipa" and select the SideStore IPA file.
-5. Login into SideStore on your iDevice, setup WireGuard and refresh SideStore before installing apps.
