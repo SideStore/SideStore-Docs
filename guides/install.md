@@ -33,7 +33,7 @@ Finally, open the SideStore app on your homescreen, re-enter the Apple ID creden
 
 -->
 
-## Installing SideServer for MacOS and Windows 10/11 (soon).
+# Installing SideServer for MacOS and Windows 10/11 (soon).
 
 1. Download and install SideServer:
    
@@ -45,32 +45,20 @@ Finally, open the SideStore app on your homescreen, re-enter the Apple ID creden
 
 4. Open SideStore and Sign in with your Apple ID in-app, Enjoy!
 
-# Pairing Process
+# Install via AltServer (Windows/Mac)
 
-Using Jitterbugpair (not the Jitterbug app) allows us to create a pairing file for programs, like sidestore to talk to your device and is required to use sidestore or it will not function (Windows requires iTunes). If you have SideServer for MacOS,Windows,Linux,etc. This doesnt apply to you as SideServer automatically pairs during the installation process.
+Currently SideStore isn't available for Windows, so you have to use AltServer to install SideStore on your device, if you have a Windows computer. You can also use these steps if SideServer isn't working on Mac. Preceeding these steps, make sure you have everything in the generic install requirements, and make sure you've generated a pairing file following the above steps. If you are on a Windows PC, make sure to have iCloud and iTunes from Apple's site (NOT from the Microsoft Store).
 
-Jitterbugpair Downloads:
+1. Download AltServer via <https://AltStore.io>
+2. Launch AltServer
+   * If on MacOS, you will need to setup the Mail Plugin for AltServer to work. Follow the instructions in AltServer's window.
+3. Download the SideStore IPA from <https://sidestore.io>
+4. Sideload the SideStore IPA
+   * (MacOS): Options/alt + click on altserver icon on menu bar on top and click "Sideload .ipa" and select the SideStore IPA file.
+   * (Windows): Go to system tray and hold Shift then click on the AltServer tray icon, then in the menu click "Sideload .ipa" and select the SideStore IPA file.
+5. Login into SideStore on your iDevice, setup WireGuard and refresh SideStore before installing apps.
 
-[Windows (x64)](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip)
-
-[MacOS](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-macos.zip)
-
-[Linux](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip)
-
-Generic Pair Instructions:
-
-1. Unzip the Jitterbugpair program zip file.
-2. Plug your idevice into the computer and the idevice needs to be on the home screen and execute the program. (Your idevice might get asked to trust this computer, just trust it as it can be part of pairing process.)
-3. After pairing you get a file that ends with `.mobiledevicepairing`.
-4. You can then transfer to your idevice via iTunes or other forms of transportation. Transferring via cloud storage might have inconsistencys with file name (most common is turning into .txt) so be wary of that. It is also possible to change the extension to `.plist` for support with older sidestore versions like (0.1.1).
-
-Windows users might have to execute the program in the command prompt or powershell window as it can sometimes not open by double clicking the `.exe` program.
-
-1. All you have to do is in file explorer go into the folder where the jitterbugpair folder is
-2. In the top bar where the file location is you click empty spot and type `powershell` and it should open a blue colored window called PowerShell.
-3. In there you just type `./jitterbugpair.exe` and click enter while your idevice is plugged in and the pairing process should begin!
-
-## Install via AltServer (Windows/Mac)
+# Install via AltServer (Windows/Mac)
 
 Currently SideStore isn't available for Windows, so you have to use AltServer to install SideStore on your device, if you have a Windows computer. You can also use these steps if SideServer isn't working on Mac. Preceeding these steps, make sure you have everything in the generic install requirements, and make sure you've generated a pairing file following the above steps. If you are on a Windows PC, make sure to have iCloud and iTunes from Apple's site (NOT from the Microsoft Store).
 
@@ -87,7 +75,7 @@ Currently SideStore isn't available for Windows, so you have to use AltServer to
 2. In the top bar where the file location is you click empty spot and type `powershell` and it should open a blue colored window called PowerShell. 
 3. In there you just type `./jitterbugpair.exe` and click enter while your idevice is plugged in and the pairing process should begin!   
 
-## Install via AltServer (Linux)
+# Install via AltServer (Linux)
 
 To install SideStore (or any other IPA) on Linux, make sure you have the following installed:
 
@@ -119,3 +107,28 @@ Altcon will start to pair with your device, plug it in if you haven't. Press tru
 Once you've installed SideStore on your idevce, do CRTL + D or type exit.
 
 Anisette will continue to run in the background, Altcon not.
+
+# Pairing Process
+
+Using Jitterbugpair (not the Jitterbug app) allows us to create a pairing file for programs, like sidestore to talk to your device and is required to use sidestore or it will not function (Windows requires iTunes). If you have SideServer for MacOS,Windows,Linux,etc. This doesnt apply to you as SideServer automatically pairs during the installation process.
+
+Jitterbugpair Downloads:
+
+[Windows (x64)](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip)
+
+[MacOS](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-macos.zip)
+
+[Linux](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip)
+
+## Generic Pair Instructions:
+
+1. Unzip the Jitterbugpair program zip file.
+2. Plug your idevice into the computer and the idevice needs to be on the home screen and execute the program. (Your idevice might get asked to trust this computer, just trust it as it can be part of pairing process.)
+3. After pairing you get a file that ends with `.mobiledevicepairing`.
+4. You can then transfer to your idevice via iTunes or other forms of transportation. Transferring via cloud storage might have inconsistencys with file name (most common is turning into .txt) so be wary of that. It is also possible to change the extension to `.plist` for support with older sidestore versions like (0.1.1).
+
+Windows users might have to execute the program in the command prompt or powershell window as it can sometimes not open by double clicking the `.exe` program.
+
+1. All you have to do is in file explorer go into the folder where the jitterbugpair folder is
+2. In the top bar where the file location is you click empty spot and type `powershell` and it should open a blue colored window called PowerShell.
+3. In there you just type `./jitterbugpair.exe` and click enter while your idevice is plugged in and the pairing process should begin!
