@@ -58,6 +58,39 @@ Currently SideStore isn't available for Windows, so you have to use AltServer to
    * (Windows): Go to system tray and hold Shift then click on the AltServer tray icon, then in the menu click "Sideload .ipa" and select the SideStore IPA file.
 5. Login into SideStore on your iDevice, setup WireGuard and refresh SideStore before installing apps.
 
+# Install via AltServer (Linux)
+
+To install SideStore (or any other IPA) on Linux, make sure you have the following installed:
+
+* Docker
+* Docker-Compose
+
+1. Download the Docker-Compose file locally.
+
+```bash
+wget https://raw.githubusercontent.com/Macleykun/Altcon/main/docker-compose.yml
+```
+
+2. Run the docker-compose file.
+
+```bash
+docker-compose run --rm altcon
+```
+
+Anisette will be setup for you, use the IP of the host with port 6969 as your custom Anisette server for SideStore.
+
+Altcon will start to pair with your device, plug it in if you haven't. Press trust and enter your pin.
+
+3. Install SideStore using the Apple account of your choice.
+
+```bash
+./AltServer -u thiswillbeyourUUID -a myemail@mail.com -p myapplepass SideStore.ipa
+```
+
+Once you've installed SideStore on your idevce, do CRTL + D or type exit.
+
+Anisette will continue to run in the background, Altcon not.
+
 # Pairing Process
 
 Using Jitterbugpair (not the Jitterbug app) allows us to create a pairing file for programs, like sidestore to talk to your device and is required to use sidestore or it will not function (Windows requires iTunes). If you have SideServer for MacOS,Windows,Linux,etc. This doesnt apply to you as SideServer automatically pairs during the installation process.
