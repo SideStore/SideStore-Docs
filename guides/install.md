@@ -47,7 +47,7 @@ Finally, open the SideStore app on your homescreen, re-enter the Apple ID creden
 
 # Install via AltServer (Windows/Mac)
 
-Currently SideStore isn't available for Windows, so you have to use AltServer to install SideStore on your device, if you have a Windows computer. You can also use these steps if SideServer isn't working on Mac. Preceeding these steps, make sure you have everything in the generic install requirements, and make sure you've generated a pairing file following the above steps. If you are on a Windows PC, make sure to have iCloud and iTunes from Apple's site (NOT from the Microsoft Store).
+Currently SideServer isn't available for Windows, so you have to use AltServer to install SideStore on your device, if you have a Windows computer. You can also use these steps if SideServer isn't working on Mac. Preceeding these steps, make sure you have everything in the generic install requirements, and make sure you've generated a pairing file following the above steps. If you are on a Windows PC, make sure to have iCloud and iTunes from Apple's site (NOT from the Microsoft Store).
 
 1. Download AltServer via <https://AltStore.io>
 2. Launch AltServer
