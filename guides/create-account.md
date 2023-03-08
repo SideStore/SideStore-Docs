@@ -1,3 +1,9 @@
+---
+layout: home
+title: Create an extra Apple Account
+nav_order: 4
+---
+
 # Create a secondary Apple account
 
 ## Requires
