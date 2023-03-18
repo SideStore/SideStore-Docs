@@ -17,29 +17,17 @@ Our team is working on better approaches to anisette data that will avoid locked
 [Render](https://render.com/) is a service for easily creating servers. It supports loading server sources from GitHub. The free tier is quite limited in terms of resources, but the server can run comfortably on it. All perfect for our needs.
 
 1. [Register](https://dashboard.render.com/register/) for an account
-2. Create a [New Web Service](https://dashboard.render.com/select-repo?type=web)
-3. Scroll down to **Public Git repository** and enter this URL:
-```
-https://github.com/Dadoum/Provision.git
-```
-4. Hit **Continue** and fill in the form:
-   - **Name** - Anything you want
-   - **Region** - Closest to you
-   - **Branch** - main (deafult)
-   - **Root Directory** - Leave blank (deafult)
-   - **Environment** - Docker (default)
-   - **Instance Type** - Free
-5. Wait for the server to build. You will see the following when it's done:
-```
-Machine requires provisioning... done !
-Your service is live 🎉
-```
-*\*If the build fails for any reason, hit **Manual Deploy > Deploy latest commit***
-
-6. Find the link for your new server at the top of the page:
+2. Create a GitHub account and [fork this repo](https://github.com/Dadoum/Provision).
+3. Go back to Render and create a [New Web Service](https://dashboard.render.com/select-repo?type=web)
+4. Paste the **FORKED** repo link at ‘Public Git Respository’ and click ‘Continue’
+5. Give it a name and choose the region closest to you. *Leave everything else as it is.*
+6. At the newly created web service, click on ‘Manual Deploy’ and choose ‘Deploy Latest Commit’. Wait until it's done.
+7. If the web service is done and live, you can find the link to your new server at the top of the page:
 ```
 https://[your-server-name].onrender.com
 ```
+
+You are done and can proceed with setting up SideStore on the newly created server.
 
 ## Use your Server with SideStore
 
