@@ -31,7 +31,7 @@ nav_order: 6
 24. [Can I do OTA updates?](#paragraph24)
 25. [I want to test a SideStore version and I want my data to stay when going to a test version. Do I remove my app or sideload the test version via SideStore?](#paragraph25)
 26. [My apps disappeared and I don't know what to do!](#paragraph26)
-27. [Unable to Select my pairing file.](#paragraph27)
+27. [Unable to Select my pairing file with any file type.](#paragraph27)
 
 # FAQ
 This is an FAQ for SideStore. Has a list of common questions we get with our development of sidestore and some questions that might want to be answered for different types of people or people having problems.
@@ -142,6 +142,6 @@ You can sideload via SideStore and data should be same. We don’t have an enrol
 
 Don't panic just resideload the apps without removing them from your device and the data should be fine. But unfortunately it's possible the deactivated ones are gone but to confirm that just refresh sidestore to see if they come back.
 
-### Unable to Select my pairing file. <a name="paragraph27"></a>
+### Unable to Select my pairing file with any file type. <a name="paragraph27"></a>
 
-Apples file app system isn't exactly perfect and sometimes it will just not allow you to select files from apps. You can try moving the pairing file and having it named `ALTPairingFile.mobiledevicepairing`.
+Apple's file app system isn't exactly perfect and sometimes it will just not allow you to select files from within apps. You can try moving the pairing file to the root directory of SideStore folder in files app in "On Idevice" and having it named `ALTPairingFile.mobiledevicepairing` it is case sensitive.
