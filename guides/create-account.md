@@ -1,30 +1,31 @@
 ---
 layout: home
-title: Create an extra Apple Account
+title: Create a burner Apple ID Account
 nav_order: 4
 ---
 
-# Create a secondary Apple account
+# Using a burner Apple ID Account with SideStore
+The recommended way to use SideStore is with a burner Apple ID Account (to avoid temporarily losing an important account to log-in's falsely flagged as malicious).
 
-## Requires
+## Requirements
 
-- Emailadres (you can use: https://temp-mail.org/)
-- Phone number (use one you can actually keep recieving SMS codes for)
-- An iDevice (To avoid: This action cannot be completed at this time (-22411))
+- Email address
+- A phone number with access to SMS messages OR a secondary device (to recieve 2FA codes)
 
-## Create the account
+NOTE: There are reports of 2FA codes not appearing via SMS when hosting SideServer on Linux, 
 
-1. Go to: this [page](https://appleid.apple.com/account).
-2. Fill everything in and make sure to supply a phone number where you can keep recieving SMS codes for. You can use your personal number for this.
+## Create an Apple ID account
 
-## Login into your iDevice
+Go to the [Apple ID website](https://appleid.apple.com/account) to create a new account.
 
-3. Logout on your current iDevice and login with you newly created account.
+## Configure for use with SideStore
 
-### Why?
+Log out of your existing Apple ID on your Apple device and log in using the newly created Apple ID Account.
 
-When you try to sideload SideStore/an IPA, Apple will try to send a 2FA code but can't (not sure why SMS doesn't work for this).
+## Signing in to SideServer/AltServer
 
-4. Your iDevice will display the 2FA code once when you'll sideload your IPA. This should only be needed once from the host you sideload from.
+If SideStore was not installed yet, follow the instructions that SideServer provides (You'll be asked to reauthenticate using a 2FA code. You'll be recieving it on the device you recieve SMS messages on or the device logged in to your burner Apple ID).
 
-5. You can logout on your iDevice once you've entered the 2FA code.
+## Signing in to SideStore
+
+It's as easy as just whipping out your Apple device with SideStore installed on it, and logging in! (You'll be asked to reauthenticate using a 2FA code. You'll be recieving it on the device you recieve SMS messages on or the device logged in to your burner Apple ID). When you're done logging in to SideStore, you can log your secondary device out of your burner Apple ID Account.
