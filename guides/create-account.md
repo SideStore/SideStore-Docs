@@ -24,6 +24,7 @@ NOTE: This methode allows to setup a **2FA-less Apple account**. There are repor
 2. Fill in the email and password you wish to use (NOTE: use a @gmail.com or other common email! Others don't work!)
 
 ![image](https://user-images.githubusercontent.com/26381427/233845386-4daa2804-63dd-4b87-aa58-10abfb52cff9.png)
+
 Continue until you have to fill in payment details.
 
 3. Choose None as a payment option and fill in some random location details.
