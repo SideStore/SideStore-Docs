@@ -49,7 +49,7 @@ You can continue to use this account to sideload SideStore anyway you like, you 
 
 1. Go into settings on your iDevice and go either into Calendar or Mail (if you don't see either one, install the associated system app from the Appstore). Tap on Accounts.
 
-![20230429_120119000_iOS](https://user-images.githubusercontent.com/26381427/235302406-b68d47e6-4060-4ca7-9760-c6b1b52fa3c6.png)
+![235302406-b68d47e6-4060-4ca7-9760-c6b1b52fa3c6](https://user-images.githubusercontent.com/26381427/235302819-cb1ed077-a953-4267-a1ce-711a7e15a31a.png)
 
 2. Tap on New account.
 
