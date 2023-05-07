@@ -7,14 +7,14 @@ nav_order: 4
 # Using a burner Apple ID Account with SideStore
 The recommended way to use SideStore is with a burner Apple ID Account (to avoid temporarily losing an important account to log-in's falsely flagged as malicious).
 
-## Create an Apple ID account (iTunes methode) | No MFA
+## Create an Apple ID account (iTunes Method) | No MFA
 
 ### Requirements
 
 - Email address (must be a common one, like @gmail.com, not one from temp-mail.org).
 - A computer to download and run [iTunes](https://www.apple.com/itunes/download/win64).
 
-NOTE: This methode allows to setup a **2FA-less Apple account**. There are reports of 2FA codes not appearing via SMS when hosting SideServer on Linux, which can be resolved by logging into an iDevice with the given account.
+NOTE: This method allows to setup a **2FA-less Apple account**. There are reports of 2FA codes not appearing via SMS when hosting SideServer on Linux, which can be resolved by logging into an iDevice with the given account.
 
 #### Steps to create an Apple ID account
 1. First, go into Account > Sign in:
@@ -36,9 +36,9 @@ Continue until you have to fill in payment details.
 ![important conformation](https://user-images.githubusercontent.com/26381427/233845507-2174ec64-34f1-44bd-a6af-6e55f5ee6944.png)
 
 ### Installation
-You can continue to use this account to sideload SideStore anyway you like, you don't need to follow the rest of this document.
+You can continue to use this account to sideload SideStore anyway you like, you do not need to follow the rest of this page.
 
-## Create an Apple ID account (iDevice methode) | No E-Mail
+## Create an Apple ID account (iDevice Method) | No E-Mail
 
 ### Requirements
 
@@ -63,7 +63,7 @@ You can continue to use this account to sideload SideStore anyway you like, you 
 
 ![20230429_120218000_iOS](https://user-images.githubusercontent.com/26381427/235302503-bfee3f63-4537-4d5c-b199-78cef1b616e6.png)
 
-5. Choose the option to create a new icloud email, you don't need to create a gmail account for this methode.
+5. Choose the option to create a new icloud email, you don't need to create a gmail account for this method.
 
 ![20230429_120328000_iOS](https://user-images.githubusercontent.com/26381427/235302540-b95168b4-a513-4fdc-b530-b701e594e3ea.png)
 
@@ -79,11 +79,11 @@ You can continue to use this account to sideload SideStore anyway you like, you 
 
 ![20230429_120418000_iOS](https://user-images.githubusercontent.com/26381427/235302587-15704a70-ef13-43dd-becb-4e32b3015ea2.png)
 
-9. Fill in a phone number.
+9. Fill in a phone number if it asks.
 
 ![20230429_120608000_iOS](https://user-images.githubusercontent.com/26381427/235302632-738d71e2-7a8b-4962-bd40-b54d8040b597.png)
 
-## Create an Apple ID account (Online methode) | Worst
+## Create an Apple ID account (Online Method) | Worst
 
 ### Requirements
 
