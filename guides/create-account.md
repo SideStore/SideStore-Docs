@@ -4,8 +4,8 @@ title: Create a burner Apple ID Account
 nav_order: 4
 ---
 
-# Using a burner Apple ID Account with SideStore
-The recommended way to use SideStore is with a burner Apple ID Account. This avoids temporarily losing an important account due to logins falsely flagged as malicious.
+# Using a burner Apple ID account with SideStore
+The recommended way to use SideStore is with a burner Apple ID account. This avoids temporarily losing an important account due to logins falsely flagged as malicious.
 
 ## Create an Apple ID account using iTunes | No MFA
 
