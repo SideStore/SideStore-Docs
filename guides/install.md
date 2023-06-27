@@ -8,21 +8,19 @@ nav_order: 2
 
 The process of installing SideStore onto your device requires the **one time use** of a computer. Following the initial installation, SideStore can be indefinitely refreshed without the use of a local computer.
 
-## Generic Install Requirements
+## Install Requirements
 
-* Personal Computer (Windows, Mac, Linux)
-  * _See individual install guides for specific distributions and OS versions_
-* iOS device
-  * iOS/iPadOS 14+
-* Apple ID account
+* Personal Computer running Windows, macOS, or Linux
+* Apple device running iOS or iPadOS 14+
+* Apple ID
+* [WireGuard](https://apps.apple.com/us/app/wireguard/id1441195209) installed on your Apple device.
 
-"Burner" Apple IDs are **highly** recommended when using anisette servers created by others. See more about [creating your own anisette server.](/guides/custom-anisette)
+A separate "burner" Apple ID is **highly** recommended when using Anisette servers created by others. See more about [creating your own Anisette server.](/guides/custom-anisette)
 
-You must enable "Developer Mode" in your iOS security settings on iOS 16+. Additionally, you must *Trust* your personal developer certificate after installing with your Apple ID.
-
-**You will need the Wireguard VPN app and use the Wireguard config provided and share it to the wireguard app.**
-
-Downloads are at https://sidestore.io
+If you are running iOS or iPadOS 16 or higher, you must enable Developer Mode.
+1. Open Settings
+2. Tap "Privacy & Security"
+3. Scroll to the bottom, and toggle Developer Mode on.
 
 <!--
 With SideStore downloader installed (and it's requirements met), simply connect your iOS device physically to your internet enabled PC. Then using the SideStore downloader, enter your Apple ID credentials (read more about creating a "burner" Apple ID to prevent lockouts) and wait until SideStore is installed on your iOS device homescreen.
@@ -33,85 +31,96 @@ Finally, open the SideStore app on your homescreen, re-enter the Apple ID creden
 
 -->
 
-# Installing SideServer for MacOS and Windows 10/11 (soon).
+## Setting up WireGuard
 
-1. Download and install SideServer:
-   
-[Download for MacOS](https://github.com/SideStore/SideServer-macOS/releases/latest/download/SideServer.dmg)
+Regardless of which installation method you use, you will have to set up WireGuard, as SideStore relies on it for operation.
 
-2. Plug your iDevice into your computer or connect it via Wi-Fi if you enabled Sync over Wi-Fi in Finder or itunes, Launch SideServer, Click the SideServer icon from the menu bar or System Tray (Windows) and select "Install SideStore". then, follow the instructions until SideServer confirms that SideStore was installed.
+1. If you have not already, download [WireGuard](https://apps.apple.com/us/app/wireguard/id1441195209) to your device.
+2. Download the WireGuard [config file](https://github.com/SideStore/SideStore/releases/download/0.3.1/SideStore.conf) to your device.
+3. Open the WireGuard app, and tap on "Add a tunnel", or the `+` in the top right.
+4. Tap "Create from file or archive", then select the `SideStore.conf` file you downloaded.
+5. If iOS asks you to allow WireGuard to add VPN configurations, tap Allow.
+6. Toggle the switch for the newly added SideStore to on.
 
-3. Go to Settings on your iDevice, go to "VPN and Device Management" under "General" and approve the Profile with your Apple ID email.
+If your iOS device restarts, you will have to toggle SideStore's VPN on again.
 
-4. Open SideStore and Sign in with your Apple ID in-app, Enjoy!
+# Install via SideServer (Mac)
+
+Currently, this method is only available for macOS. To install via Windows, or if this method is not working, see the next section.
+
+1. Download and install SideServer for [macOS](https://github.com/SideStore/SideServer-macOS/releases/latest/download/SideServer.dmg).
+* The Windows version is still in development.
+
+2. Plug your device into your computer, or connect it via Wi-Fi. 
+* If you enabled Sync over Wi-Fi in Finder or iTunes, it should already be connected.
+
+3.  Launch SideServer, and select "Install SideStore" from the SideServer icon in the menu bar or System Tray.
+
+4. Follow the instructions until SideServer confirms that SideStore was installed.
+
+5. Approve the "Developer App" with your Apple ID's email.
+* You can find this in Settings, under "General", and then "VPN & Device Management".
+
+6. Open SideStore and sign in with your Apple ID. Enjoy!
 
 # Install via AltServer (Windows/Mac)
 
-Currently SideServer isn't available for Windows, so you have to use AltServer to install SideStore on your device, if you have a Windows computer. You can also use these steps if SideServer isn't working on Mac. Preceeding these steps, make sure you have everything in the generic install requirements, and make sure you've generated a pairing file following the above steps. If you are on a Windows PC, make sure to have iCloud and iTunes from Apple's site (NOT from the Microsoft Store).
+Please note that if you use this method, you will have to generate a [pairing file](#pairing-file) yourself. As well, make sure that the non-Microsoft Store versions of [iCloud](https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe) and [iTunes](https://support.apple.com/en-us/HT210384) are installed, if you are running Windows.
 
-1. Download AltServer via <https://AltStore.io>
-2. Launch AltServer
-   * If on MacOS, you will need to setup the Mail Plugin for AltServer to work. Follow the instructions in AltServer's window.
-3. Download the SideStore IPA from <https://sidestore.io>
-4. Sideload the SideStore IPA
-   * (MacOS): Options/alt + click on altserver icon on menu bar on top and click "Sideload .ipa" and select the SideStore IPA file.
-   * (Windows): Go to system tray and hold Shift then click on the AltServer tray icon, then in the menu click "Sideload .ipa" and select the SideStore IPA file.
-5. Login into SideStore on your iDevice, setup WireGuard and refresh SideStore before installing apps.
+The non-Microsoft Store version of iCloud was removed from Apple's website sometime in mid-September, 2022. The above link directs to an older version of iCloud that is still compatible, and still available directly from Apple's servers.
+
+1. Download and run AltServer from [AltStore's website](https://AltStore.io).
+   * If you are on macOS, you will need to setup the Mail Plugin for AltServer to work. Follow the instructions that AltServer provides.
+3. Download the SideStore IPA from [our website](https://sidestore.io).
+4. Sideload the SideStore IPA.
+   * On macOS, hold option/alt and click on the AltServer menu bar icon. Click "Sideload .ipa", and select the SideStore IPA file.
+   * On Windows, hold shift and click on the AltServer tray icon. Click "Sideload .ipa", and select the SideStore IPA file.
+5. Approve the "Developer App" with your Apple ID's email.
+* You can find this in Settings, under "General", and then "VPN & Device Management".
+6. Open SideStore, select your pairing file, and sign in with your Apple ID.
 
 # Install via AltServer (Linux)
 
-To install SideStore (or any other IPA) on Linux, make sure you have the following installed:
+To install SideStore (or any other IPA) on Linux, make sure you have docker and docker-compose installed.
 
-* Docker
-* Docker-Compose
-
-1. Download the Docker-Compose file locally.
-
+1. Download the docker-compose file.
 ```bash
 wget https://raw.githubusercontent.com/Macleykun/Altcon/main/docker-compose.yml
 ```
 
 2. Run the docker-compose file.
-
 ```bash
 docker-compose run --rm altcon
 ```
+* Anisette will be set up for you. Use the IP of the host with port 6969 as your custom Anisette server for SideStore.
+* Altcon will start to pair with your device, plug it in if you haven't. Press "trust" and enter your passcode.
 
-Anisette will be setup for you, use the IP of the host with port 6969 as your custom Anisette server for SideStore.
-
-Altcon will start to pair with your device, plug it in if you haven't. Press trust and enter your pin.
-
-3. Install SideStore using the Apple account of your choice.
-
+3. Install SideStore using the Apple ID of your choice.
 ```bash
 ./AltServer -u thiswillbeyourUUID -a myemail@mail.com -p myapplepass SideStore.ipa
 ```
 
-Once you've installed SideStore on your idevce, do CRTL + D or type exit.
+Once you have installed SideStore on your device, press CTRL+D, or type `exit`.
 
-Anisette will continue to run in the background, Altcon not.
+The Anisette server will continue to run in the background, Altcon will not.
 
-# Pairing Process
+# Pairing File
 
-Using Jitterbugpair (not the Jitterbug app) allows us to create a pairing file for programs, like sidestore to talk to your device and is required to use sidestore or it will not function (Windows requires iTunes). If you have SideServer for MacOS,Windows,Linux,etc. This doesnt apply to you as SideServer automatically pairs during the installation process.
+Using Jitterbugpair (*not* the Jitterbug app) allows us to create a pairing file for programs like SideStore to talk to your device. This is required to use SideStore, or it will not function. If you have used SideServer, these instructions do not apply to you, as SideServer automatically creates a pairing file for you during the installation process.
 
-Jitterbugpair Downloads:
+Download Jitterbugpair for [Windows (64-bit)](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip), [macOS](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-macos.zip), or [Linux](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip).
 
-[Windows (x64)](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip)
+## Pairing Instructions:
 
-[MacOS](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-macos.zip)
+1. Extract the Jitterbugpair zip file.
+2. Plug your device into your computer, and open your device to its home screen. Once done, execute the program.
+* Your device may ask you to trust your computer. Make sure to accept this prompt, as it is required for the pairing process.
+3. Once it is done, you will get a file that ends with `.mobiledevicepairing`.
+4. Transfer this file to your device using iTunes, or any other method.
+* Transferring using cloud storage may change the file's extension (most likely turning into a .txt file), so be careful. It is also possible to change the extension to `.plist` for use with older SideStore versions, like `0.1.1`.
 
-[Linux](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip)
+On Windows, you might have to execute the program using Command Prompt or Powershell, as it can sometimes not open by double clicking the `.exe` file.
 
-## Generic Pair Instructions:
-
-1. Unzip the Jitterbugpair program zip file.
-2. Plug your idevice into the computer and the idevice needs to be on the home screen and execute the program. (Your idevice might get asked to trust this computer, just trust it as it can be part of pairing process.)
-3. After pairing you get a file that ends with `.mobiledevicepairing`.
-4. You can then transfer to your idevice via iTunes or other forms of transportation. Transferring via cloud storage might have inconsistencys with file name (most common is turning into .txt) so be wary of that. It is also possible to change the extension to `.plist` for support with older sidestore versions like (0.1.1).
-
-Windows users might have to execute the program in the command prompt or powershell window as it can sometimes not open by double clicking the `.exe` program.
-
-1. All you have to do is in file explorer go into the folder where the jitterbugpair folder is
-2. In the top bar where the file location is you click empty spot and type `powershell` and it should open a blue colored window called PowerShell.
-3. In there you just type `./jitterbugpair.exe` and click enter while your idevice is plugged in and the pairing process should begin!
+1. In File Explorer, navigate to the folder where jitterbugpair is located.
+2. In the navigation bar where the folder location is, click an empty spot and type `powershell`. It should open a blue colored window called PowerShell.
+3. From there, type `./jitterbugpair.exe` and press enter while your device is plugged in.
