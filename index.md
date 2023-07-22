@@ -10,7 +10,7 @@ Here you can find guides that aid in the installation and usage of [SideStore](h
 
 ## Guides
 
-### [Installation](/guides/install) | [Custom Anisette Server](/guides/custom-anisette) | [After Install Tips](/guides/after-install.md)
+### [Installation](/guides/install) | [Custom Anisette Server](/guides/custom-anisette)
 
 ## References
 
