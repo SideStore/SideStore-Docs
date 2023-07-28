@@ -71,7 +71,7 @@ Currently, this method is only available for macOS. To install via Windows, or i
 
 Please note that if you use this method, you will have to generate a [pairing file](#pairing-file) yourself. As well, make sure that the non-Microsoft Store versions of [iCloud](https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe) and [iTunes](https://support.apple.com/en-us/HT210384) are installed, if you are running Windows.
 
-The non-Microsoft Store version of iCloud was removed from Apple's website sometime in mid-September, 2022. The above link directs to an older version of iCloud that is still compatible, and still available directly from Apple's servers.
+The non-Microsoft Store version of iCloud was removed from Apple's website sometime in mid-September, 2022. The above link directs to an older version of iCloud that is still compatible, and available directly from Apple's servers.
 
 1. Download and run AltServer from [AltStore's website](https://AltStore.io).
    * If you are on macOS, you will need to setup the Mail Plugin for AltServer to work. Follow the instructions that AltServer provides.
