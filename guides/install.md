@@ -15,7 +15,7 @@ The process of installing SideStore onto your device requires the **one time use
 * Apple ID
 * [WireGuard](https://apps.apple.com/us/app/wireguard/id1441195209) installed on your Apple device.
 
-A separate "burner" Apple ID is **highly** recommended when using Anisette servers created by others. See more about [creating your own Anisette server.](/guides/custom-anisette)
+A separate "burner" Apple ID is recommended when using Anisette servers created by others. An issue that only happens on servers that use older methods of hosting an anisette server have a locking account issue, locking accounts is just a forced password reset and **its not forever**. To see more about [creating your own Anisette server.](/guides/custom-anisette)
 
 If you are running iOS or iPadOS 16 or higher, you must enable Developer Mode.
 
@@ -47,7 +47,7 @@ If your iOS device restarts, you will have to toggle SideStore's VPN on again.
 
 # Install via SideServer (Mac)
 
-Currently, this method is only available for macOS. To install via Windows, or if this method is not working, see the next section.
+Currently, this method is only available for macOS. To install via Windows, or if this method is not working, see the next section. Before you start, make sure to [setup WireGuard](#Setting-up-WireGuard) and is within the [install requirements](#Install-Requirements)!
 
 1. Download and install SideServer for [macOS](https://github.com/SideStore/SideServer-macOS/releases/latest/download/SideServer.dmg).
 
@@ -65,11 +65,11 @@ Currently, this method is only available for macOS. To install via Windows, or i
 
 * You can find this in Settings, under "General", and then "VPN & Device Management".
 
-6. Open SideStore and sign in with your Apple ID. Enjoy!
+6. Open SideStore and sign in with your Apple ID. When you finish, then follow the [finishing instructions](#Finishing-up). Enjoy!
 
 # Install via AltServer (Windows/Mac)
 
-Please note that if you use this method, you will have to generate a [pairing file](#pairing-file) yourself. As well, make sure that the non-Microsoft Store versions of [iCloud](https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe) and [iTunes](https://support.apple.com/en-us/HT210384) are installed, if you are running Windows.
+Please note that if you use this method, you will have to generate a [pairing file](#pairing-file) yourself. As well, make sure that the non-Microsoft Store versions of [iCloud](https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe) and [iTunes](https://support.apple.com/en-us/HT210384) are installed, if you are running Windows. Before you start, make sure to [setup WireGuard](#Setting-up-WireGuard) and is within the [install requirements](#Install-Requirements)!
 
 The non-Microsoft Store version of iCloud was removed from Apple's website sometime in mid-September, 2022. The above link directs to an older version of iCloud that is still compatible, and still available directly from Apple's servers.
 
@@ -83,11 +83,11 @@ The non-Microsoft Store version of iCloud was removed from Apple's website somet
 
 * You can find this in Settings, under "General", and then "VPN & Device Management".
 
-6. Open SideStore, select your pairing file, and sign in with your Apple ID.
+6. Open SideStore, select your pairing file, and sign in with your Apple ID. When you finish, then follow the [finishing instructions](#Finishing-up).
 
 # Install via AltServer (Linux)
 
-To install SideStore (or any other IPA) on Linux, make sure you have docker and docker-compose installed.
+To install SideStore (or any other IPA) on Linux, make sure you have docker and docker-compose installed. Before you start, make sure to [setup WireGuard](#Setting-up-WireGuard) and is within the [install requirements](#Install-Requirements)!
 
 1. Download the docker-compose file.
 
