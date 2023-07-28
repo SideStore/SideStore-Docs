@@ -14,4 +14,4 @@ Here you can find guides that aid in the installation and usage of [SideStore](h
 
 ## References
 
-### [FAQ](references/faq) | [App Sources](/references/sources) | [URL Schemes](/references/url-schemes) | [Source Template](references/source-template)
+### [FAQ](references/faq) | [App Sources](/references/sources) | [URL Schemes](/references/url-schemes)
