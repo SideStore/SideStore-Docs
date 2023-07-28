@@ -140,8 +140,8 @@ You can sideload via SideStore and your data should be the same. We don’t have
 
 ### My apps disappeared and I don't know what to do! <a name="paragraph26"></a>
 
-Don't panic! Resideload the apps without removing them from your device, and your data should be fine. Unfortunately it's possible that your deactivated apps are gone, but to confirm that just refresh SideStore to see if they come back.
+Don't panic! Re-sideload the apps without removing them from your device, and your data should be fine. Unfortunately it's possible that your deactivated apps are gone, but to confirm that just refresh SideStore to see if they come back.
 
 ### I'm unable to select my pairing file with any file type. <a name="paragraph27"></a>
 
-Apple's file system isn't exactly perfect, and sometimes it will just not allow you to select files from within apps. You can try moving the pairing file to the root directory of the SideStore folder in the Files app in "On My iDevice", and naming it `ALTPairingFile.mobiledevicepairing`. Note that it is case sensitive.
+Apple's file system isn't exactly perfect, and sometimes it will just not allow you to select files from within apps. You can try moving the pairing file to the root directory of the SideStore folder in the Files app in "On My iPhone/iPad", and naming it `ALTPairingFile.mobiledevicepairing`. Note that it is case sensitive.
