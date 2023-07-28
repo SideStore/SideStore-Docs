@@ -10,7 +10,7 @@ Here you can find guides that aid in the installation and usage of [SideStore](h
 
 ## Guides
 
-### [Installation](/guides/install) | [Custom Anisette Server](/guides/custom-anisette) | [Creating an alternate AppleID](guides/create-account)
+### [Installation](/guides/install) | [Custom Anisette Server](/guides/custom-anisette) | [Create a Burner Apple ID Account](guides/create-account)
 
 ## References
 
