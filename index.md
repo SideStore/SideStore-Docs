@@ -10,8 +10,8 @@ Here you can find guides that aid in the installation and usage of [SideStore](h
 
 ## Guides
 
-### [Installation](/guides/install) | [Custom Anisette Server](/guides/custom-anisette)
+### [Installation](/guides/install) | [Custom Anisette Server](/guides/custom-anisette) | [Creating an alternate AppleID](guides/create-account)
 
 ## References
 
-### [App Sources](/references/sources) | [URL Schemes](/references/url-schemes)
+### [FAQ](references/faq) | [App Sources](/references/sources) | [URL Schemes](/references/url-schemes) | [Source Template](references/source-template)
