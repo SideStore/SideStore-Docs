@@ -32,6 +32,7 @@ nav_order: 6
 25. [I want to test a SideStore version, and I want my data to stay when switching to a test version. Do I remove my app or sideload the test version via SideStore?](#paragraph25)
 26. [My apps disappeared and I don't know what to do!](#paragraph26)
 27. [I’m unable to select my pairing file with any file type.](#paragraph27)
+28. [Cannot start DebugServer.](#paragraph28)
 
 # FAQ
 This is a list of frequenty asked questions for SideStore. This has a list of common questions we get with our development of SideStore, and some questions that might want to be answered for different types of people, or for people having problems.
@@ -145,3 +146,27 @@ Don't panic! Re-sideload the apps without removing them from your device, and yo
 ### I'm unable to select my pairing file with any file type. <a name="paragraph27"></a>
 
 Apple's file system isn't exactly perfect, and sometimes it will just not allow you to select files from within apps. You can try moving the pairing file to the root directory of the SideStore folder in the Files app in "On My iPhone/iPad", and naming it `ALTPairingFile.mobiledevicepairing`. Note that it is case sensitive.
+
+### Cannot start DebugServer <a name="paragraph28"></a>
+
+There is times where the Debugserver doesnt work. However there are different fixes that can be done.
+
+**Fix one: Manually install Developer disk image.**
+
+Sometimes when out there in the world. you have slow Wi-Fi and that can interfere with the fast speed of sidestore and you might have to manually install a developer disk image. To do this you need to do.
+
+1. Find your ios version or closest one and then Download and extract the zip file. https://github.com/jawshoeadan/Xcode_Developer_Disk_Images/releases
+
+If you cannot find your dmg try checking ouf the list of dmg version for each ios. 
+
+https://github.com/jkcoxson/JitStreamer/blob/master/versions.json
+
+3. Rename the files inside to the current ios version you have. for example 16.6.dmg and 16.6.dmg.signature for ios 16.6.
+
+4. Go to files and go to sidestore open or make folder called DMG.
+
+5. Place the files in the DMG file.
+
+**Fix Two: Make a new pairing file**
+
+To start the process of using a new pairing file you go to settings tab and click Reset Pairing file and you accept the prompt. Then you just follow the [Pairing File instructions](https://wiki.sidestore.io/guides/install#pairing-file).
