@@ -155,11 +155,13 @@ There is times where the Debugserver doesnt work. However there are different fi
 
 Sometimes when out there in the world. you have slow Wi-Fi and that can interfere with the fast speed of sidestore and you might have to manually install a developer disk image. To do this you need to do.
 
-1. Find your ios version or closest one and then Download and extract the zip file. https://github.com/jawshoeadan/Xcode_Developer_Disk_Images/releases
+1. Find your ios version or closest one and then Download and extract the zip file.
+
+[Link to github](https://github.com/jawshoeadan/Xcode_Developer_Disk_Images/releases)
 
 If you cannot find your dmg try checking ouf the list of dmg version for each ios. 
 
-https://github.com/jkcoxson/JitStreamer/blob/master/versions.json
+[List of DMG versions SideStore and JitStreamer uses.](https://github.com/jkcoxson/JitStreamer/blob/master/versions.json)
 
 3. Rename the files inside to the current ios version you have. for example 16.6.dmg and 16.6.dmg.signature for ios 16.6.
 
