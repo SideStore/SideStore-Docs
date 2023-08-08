@@ -149,6 +149,6 @@ To do this, you need to:
 * If you haven't already, select the pairing file.
 * Go to "My Apps".
 * Select the "x DAYS" button, where x is the number of days until expire.
-  * If successful, this will open a blank Safari tab.
+  * If successful, this will open a blank Safari tab or go to your home screen. You will get a notification also telling you to do this.
 
 If SideStore is not refreshed, a bug causing early expiry will require you to reinstall SideStore. There is a plan to have this done automatically, but for now it needs to be done manually.
