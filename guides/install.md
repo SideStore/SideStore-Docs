@@ -87,24 +87,17 @@ The non-Microsoft Store version of iCloud was removed from Apple's website somet
 
 # Install via AltServer (Linux)
 
-To install SideStore (or any other IPA) on Linux, make sure you have docker and docker-compose installed. Before you start, make sure to [setup WireGuard](#Setting-up-WireGuard) and is within the [install requirements](#Install-Requirements)!
+To install SideStore (or any other IPA) on Linux, make sure you have docker installed. Before you start, make sure to [setup WireGuard](#Setting-up-WireGuard) and is within the [install requirements](#Install-Requirements)!
 
-1. Download the docker-compose file.
-
-```bash
-wget https://raw.githubusercontent.com/Macleykun/Altcon/main/docker-compose.yml
-```
-
-2. Run the docker-compose file.
+1. Run altcon
 
 ```bash
-docker-compose run --rm altcon
+docker run --rm -it -e ALTSERVER_ANISETTE_SERVER="https://ani.sidestore.io/" -v ${PWD}/:/mnt/ -v /var/run:/var/run ghcr.io/sidestore/altcon
 ```
 
-* Anisette will be set up for you. Use the IP of the host with port 6969 as your custom Anisette server for SideStore.
 * Altcon will start to pair with your device, plug it in if you haven't. Press "trust" and enter your passcode.
 
-3. Install SideStore using the Apple ID of your choice.
+2. Install SideStore using the Apple ID of your choice.
 
 ```bash
 ./AltServer -u thiswillbeyourUUID -a myemail@mail.com -p myapplepass SideStore.ipa
@@ -112,7 +105,7 @@ docker-compose run --rm altcon
 
 Once you have installed SideStore on your device, press CTRL+D, or type `exit`.
 
-The Anisette server will continue to run in the background, Altcon will not.
+* In your current directory, you'll find a *.mobiledevicepairing file. You can use that to complete the installation of the SideStore app on your device.
 
 # Pairing File
 
