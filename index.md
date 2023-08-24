@@ -8,10 +8,21 @@ nav_order: 1
 
 Here you can find guides that aid in the installation and usage of [SideStore](https://sidestore.io), as well as references for developers working with it.
 
-## Guides
+## Getting Started Guides
 
-### [Installation](/guides/install) | [Custom Anisette Server](/guides/custom-anisette) | [Create a Burner Apple ID Account](guides/create-account)
+To start with SideStore, it's advised to create a dedicated burner account.
+If you have a burner account, you can continue with the Getting Started.
+Advanced users can check out the various Adv. guides.
+If you have any questions/problems, check the FAQ before asking your question on the Discord server.
 
-## References
+- [Create a Burner Apple ID Account](guides/create-account)
+- [Getting Started](/guides/install)
+- [FAQ](references/faq)
 
-### [FAQ](references/faq) | [App Sources](/references/sources) | [URL Schemes](/references/url-schemes)
+## Advanced Guides
+
+You don't need to go through these if you only want to sideload. These guides are for more advanced/specific usecases.
+
+- [Custom Anisette Server](/guides/custom-anisette)
+- [App Sources](/references/sources)
+- [URL Schemes](/references/url-schemes)

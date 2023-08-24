@@ -1,7 +1,7 @@
 ---
 layout: home
-title: Create a burner Apple ID Account
-nav_order: 4
+title: Create a Burner Apple ID Account
+nav_order: 2
 ---
 
 # Using a burner Apple ID account with SideStore
