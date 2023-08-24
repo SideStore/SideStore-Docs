@@ -1,7 +1,7 @@
 ---
 layout: home
-title: Custom Anisette Server
-nav_order: 3
+title: Adv. Custom Anisette Server
+nav_order: 4
 ---
 
 # Custom Anisette Server

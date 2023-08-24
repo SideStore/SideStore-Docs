@@ -1,6 +1,6 @@
 ---
 layout: home
-title: URL Schemes
+title: Adv. URL Schemes
 nav_order: 5
 ---
 
