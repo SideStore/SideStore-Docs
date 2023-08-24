@@ -10,10 +10,10 @@ Here you can find guides that aid in the installation and usage of [SideStore](h
 
 ## Getting Started Guides
 
-To start with SideStore, it's adviced to create a dedicated burner account.
+To start with SideStore, it's advised to create a dedicated burner account.
 If you have a burner account, you can continue with the Getting Started.
-Advanced users can checkout the various Adv. guides.
-If you have any questions/problems, check the FAQ before asking your question in the Discord server.
+Advanced users can check out the various Adv. guides.
+If you have any questions/problems, check the FAQ before asking your question on the Discord server.
 
 - [Create a Burner Apple ID Account](guides/create-account)
 - [Getting Started](/guides/install)
@@ -21,7 +21,7 @@ If you have any questions/problems, check the FAQ before asking your question in
 
 ## Advanced Guides
 
-Again, you don't need to go through these if you only want to sideload. These guides are meant for more advanced/specific usecases.
+You don't need to go through these if you only want to sideload. These guides are for more advanced/specific usecases.
 
 - [Custom Anisette Server](/guides/custom-anisette)
 - [App Sources](/references/sources)
