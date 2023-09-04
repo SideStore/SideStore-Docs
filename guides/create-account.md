@@ -5,7 +5,8 @@ nav_order: 2
 ---
 
 # Using a burner Apple ID account with SideStore
-The recommended way to use SideStore is with a burner Apple ID account. This avoids temporarily losing an important account due to logins falsely flagged as malicious.
+The recommended way to use SideStore is with a burner Apple ID account. This avoids temporarily losing an important account due to logins falsely flagged as malicious if using an old anisette server method thats not anisette v3 or above. 
+Trying to use a old method of anisette will notify in app if it is not a safe version of anisette (Able to lock accounts which just forces password reset which is able to be prevented on v3 and above anisette versions).
 
 ## Create an Apple ID account using iTunes | No MFA
 
