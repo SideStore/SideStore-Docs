@@ -33,6 +33,7 @@ nav_order: 7
 26. [My apps disappeared and I don't know what to do!](#paragraph26)
 27. [I’m unable to select my pairing file with any file type.](#paragraph27)
 28. [Cannot start DebugServer.](#paragraph28)
+29. [Currently Known issues.](#paragraph29)
 
 # FAQ
 This is a list of frequenty asked questions for SideStore. This has a list of common questions we get with our development of SideStore, and some questions that might want to be answered for different types of people, or for people having problems.
@@ -172,3 +173,9 @@ If you cannot find your dmg try checking ouf the list of dmg version for each io
 **Fix Two: Make a new pairing file**
 
 To start the process of using a new pairing file you go to settings tab and click Reset Pairing file and you accept the prompt. Then you just follow the [Pairing File instructions](https://wiki.sidestore.io/guides/install#pairing-file).
+
+### Currently Known issues. <a name="paragraph29"></a>
+
+If your currently having issues and want to know if we already know about them. Then check out our github issue that has list of known issues and ways to mitigate some of the issues you might be having. Some of the issues in this list might be known that are not there, but are in the github issues section. https://github.com/SideStore/SideStore/issues/490
+
+If you have any issues that arent in this list. Just make a github issue or [join our discord.](https://discord.gg/RgpFBX3Q3k)
