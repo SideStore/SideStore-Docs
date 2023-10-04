@@ -89,13 +89,13 @@ Rather self-explanatory, this is the name of your app as it should appear in the
 
 AltStore uses this to separate apps as individual listings.
 
-This **must** be the same as your application's `"CFBundleIdentifier"` \(located in `info.plist`\) in order for AltStore to be able to open the app after installation. Technically, it can be any unique string, but for all AltStore functionality to work, it should be the same as the application.
+This **must** be the same as your application's `"CFBundleIdentifier"` (located in `info.plist`) in order for AltStore to be able to open the app after installation. Technically, it can be any unique string, but for all AltStore functionality to work, it should be the same as the application.
 
 **developerName**
 
 Also self-explanatory, this is just the name of the developer/developers that will appear in the AltStore app listing.
 
-**subtitle** _\(optional\)_
+**subtitle** *(optional)*
 
 This should be a very short description of your app that will appear in the browse tab of AltStore. It should give a quick one sentence explanation of your app and why a user wants it. The most effective subtitles tend to around 6-10 words long.
 
@@ -107,12 +107,12 @@ This is where you can include every feature and detail about your app. The user 
 
 This should point directly to wherever you host the icon for your app. Note that this doesn't have to be the same as the icon used for the actual application, but it is recommended to maintain consistency.
 
-**tintColor** _\(optional\)_
+**tintColor** *(optional)*
 
 This might take some experimentation, but the best tint color is usually choosing one of the darker colors represented in your app icon. The tint color will be used in two places:
 
 * For the install button
-* As a background color for the larger app listing bubble \(but this will be a lighter shade\)
+* As a background color for the larger app listing bubble (but this will be a lighter shade)
 
 The tint color must be in the 6 character Hex format, with the '#' before the 6 characters as optional.
 
@@ -120,7 +120,7 @@ The tint color must be in the 6 character Hex format, with the '#' before the 6 
 
 This is an integer value that should be set equivalent to the size of your IPA in bytes. This gives the user an idea of how large the application is before they install.
 
-**permissions** _\(optional\)_
+**permissions** *(optional)*
 
 This is to show the user what various permissions your app requires. Create an entry for each separate permission your app requires. The accepted permission `types` are the following:
 
@@ -145,11 +145,11 @@ Your `usageDescription` should explain what the permission is and why your app n
 
 It is _highly_ recommended to include these permissions if your app uses them as this disclosure provides additional trust with the user.
 
-**screenshotURLs** _\(optional\)_
+**screenshotURLs** *(optional)*
 
 These should point directly to any number of screenshots/images that display your app's functionality. The first two will be displayed under the app listing in the browse tab, and the rest will be visible on the app's page.
 
-**beta** _\(optional\)_
+**beta** *(optional)*
 
 Here you can specify whether apps should be classified as a beta application and receive a special beta tag on its app listing.
 
@@ -175,7 +175,7 @@ Important note: AltStore will display the first version (with compatible min/max
 
 **version**
 
-This **must** match your application's `"CFBundleShortVersionString"` \(located in `info.plist`\) in order for AltStore updates to work properly. More on this later in the **Updating apps** section.
+This **must** match your application's `"CFBundleShortVersionString"` (located in `info.plist`) in order for AltStore updates to work properly. More on this later in the **Updating apps** section.
 
 **versionDate**
 
@@ -209,7 +209,7 @@ The AltStore team recommends that you simply create another object in the `versi
 
 * version
 * date
-* localizedDescription _\(optional\)_
+* localizedDescription *(optional)*
 * downloadURL
 * size
 
@@ -265,7 +265,7 @@ Similar to the caption for your app listing, this should be about a sentence. Wh
 
 This date should follow the same format as the `versionDate` for app listings: `YYYY-MM-DD`.
 
-Please note that the date does not currently display on any news items and neither does the time \(if provided\). Instead, it is required for AltStore to organize the news into chronological order.
+Please note that the date does not currently display on any news items and neither does the time (if provided). Instead, it is required for AltStore to organize the news into chronological order.
 
 **tintColor** *(optional)*
 
@@ -277,7 +277,7 @@ This should be a direct link to any image you want to feature on your news item.
 
 **url** *(optional)*
 
-This should be used to link users to a website when they click the news item. The link will open in AltStore's built-in web browser \(based off safari\).
+This should be used to link users to a website when they click the news item. The link will open in AltStore's built-in web browser (based off safari).
 
 **appID** *(optional)*
 
@@ -291,7 +291,7 @@ It also makes it so that when a user click on the news item, it will take them t
 
 When set to true, AltStore will send all users of the Source a notification with the `title` of the news item.
 
-Note that the notification will not be instantaneous: it will occur whenever AltStore attempts a background refresh \(the same time that update notifications occur\) and it does require users to leave AltStore running in the background.
+Note that the notification will not be instantaneous: it will occur whenever AltStore attempts a background refresh (the same time that update notifications occur) and it does require users to leave AltStore running in the background.
 
 ## New features on the horizon
 
