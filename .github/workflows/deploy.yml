@@ -19,4 +19,4 @@ jobs:
           path: .cache
       - run: pip install mkdocs-material
       - run: pip install mkdocs-glightbox
-      - run: mkdocs gh-deploy
+      - run: mkdocs gh-deploy -f config/en/mkdocs.yml
