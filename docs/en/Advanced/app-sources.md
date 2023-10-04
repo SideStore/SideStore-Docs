@@ -29,7 +29,7 @@ This can be any valid string and can always be changed later if necessary.
 
 **identifier**
 
-This is a bundle identifier AltStore uses to keep your Source separate from every other source. For this reason, it is recommended to follow Apple's standard for an identifier \(it is demonstrated above\).
+This is a bundle identifier AltStore uses to keep your Source separate from every other source. For this reason, it is recommended to follow Apple's standard for an identifier (it is demonstrated above).
 
 It's important to note here that changing this identifier down the road will have **consequences.** Users with the Source already installed will suddenly have conflicting identifiers with the online Source and will cause an error in AltStore that will require them to **completely remove** the Source before they can add it back.
 
