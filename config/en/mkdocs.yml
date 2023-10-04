@@ -3,7 +3,7 @@ site_url: https://wiki.sidestore.io
 docs_dir: ../../docs/en
 
 theme:
-  logo: ../../img/icons/favicon-32x32.png
+  logo: ../../img/icons/sidestore-icon.png
   name: material
   palette:
     - scheme: default
