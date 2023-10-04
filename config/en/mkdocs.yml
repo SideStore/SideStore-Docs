@@ -4,6 +4,7 @@ docs_dir: ../../docs/en
 
 theme:
   logo: ../../img/icons/sidestore-icon.png
+  favicon: ../../img/icons/sidestore-favicon.png
   name: material
   palette:
     - scheme: default
