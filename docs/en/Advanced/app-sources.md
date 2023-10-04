@@ -369,7 +369,7 @@ These can be useful for safe-guarding certain apps from users under the suggeste
 
 ## That's all there is!
 
-If you want to see the full JSON example file that was used throughout this tutorial, [here it is](/references/source-template.json).
+If you want to see the full JSON example file that was used throughout this tutorial, [here it is](../references/source-template.json).
 
 Here are some good existing AltSources: The [primary AltStore Source](https://apps.altstore.io), the [SideStore community source](https://github.com/SideStore/Community-Source), any of the Sources at [Quark Sources](https://quarksources.github.io), or the [DolphiniOS Source](https://altstore.oatmealdome.me/).
 

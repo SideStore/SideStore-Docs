@@ -1,0 +1,59 @@
+{
+  "name": "My Source",
+  "identifier": "com.myname.mysource",
+  "sourceURL": "https://github.com/noah978/AltStore-Docs/raw/master/apps.json",
+  "apps": [
+    {
+      "name": "My App",
+      "bundleIdentifier": "com.myname.myapp",
+      "developerName": "My Name",
+      "subtitle": "The newest and greatest app around.",
+      "versions": [
+        {
+          "version": "1.1",
+          "date": "2020-04-21",
+          "localizedDescription": "Bug fixes.",
+          "downloadURL": "https://myapp.com/myapp-1.1.ipa",
+          "size": 87129,
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "1.0",
+          "date": "2020-03-30",
+          "localizedDescription": "First AltStore release!",
+          "downloadURL": "https://myapp.com/myapp-1.0.ipa",
+          "size": 79821,
+          "minOSVersion": "12.0",
+          "maxOSVersion": "14.3"
+        }
+      ],
+      "downloadURL": "https://myapp.com/app.ipa",
+      "localizedDescription": "Features include:\n\n• Cool graphics\n• Top notch performance\n• Satisfying interactions",
+      "iconURL": "https://myapp.com/assets/icon.png",
+      "tintColor": "8A28F7",
+      "permissions": [
+        {
+          "type": "photos",
+          "usageDescription": "Allows you to use your photo library to set your profile image."
+        }
+      ],
+      "screenshotURLs": [
+        "https://myapp.com/assets/screen0.png"
+      ],
+      "beta": false
+    }
+  ],
+  "news": [
+    {
+      "title": "My App Now Available!",
+      "identifier": "my-app-available-download",
+      "caption": "The app to beat all apps.",
+      "date": "2020-04-21",
+      "tintColor": "8A28F7",
+      "imageURL": "https://myapp.com/assets/news.png",
+      "url": "https://myapp.com",
+      "appID": "com.myname.myapp",
+      "notify": false
+    }
+  ]
+}
