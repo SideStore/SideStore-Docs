@@ -55,7 +55,10 @@ nav:
   - FAQ: faq.md
   - Guides:
     - Getting Started: Guides/getting-started.md
+    - Enable the Mail Plug-in: Guides/mail-plugin.md
     - Create a Burner Apple ID: Guides/burner-apple-id.md
+    - Troubleshooting: Guides/troubleshooting.md
+    - Error Codes: Guides/error-codes.md
   - Advanced:
     - Custom Anisette Server: Advanced/anisette-server.md
     - App Sources: Advanced/app-sources.md

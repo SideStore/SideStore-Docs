@@ -39,7 +39,8 @@ Once this is done, the Render server can be made.
     * **Root Directory** - blank (default)
     * **Environment** - Docker (default)
     * **Instance Type** - Free
-5. Wait for the server to build. You will see the following when it's done:
+
+5\. Wait for the server to build. You will see the following when it's done:
 
 ```text
 Machine requires provisioning... done !
@@ -48,7 +49,7 @@ Your service is live 🎉
 
 *If the build fails for any reason, click **Manual Deploy**, then **Deploy latest commit**.*
 
-1. Find the link for your new server at the top of the page:
+6\. Find the link for your new server at the top of the page:
 
 ```text
 https://[your-server-name].onrender.com

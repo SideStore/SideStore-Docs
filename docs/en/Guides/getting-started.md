@@ -72,7 +72,7 @@ docker run --rm -it -e ALTSERVER_ANISETTE_SERVER="https://ani.sidestore.io/" -v 
 
 Altcon will start to pair with your device, plug it in if you haven't. Press "trust" and enter your passcode.
 
-1. Install SideStore using the Apple ID of your choice.
+2\. Install SideStore using the Apple ID of your choice.
 
 ```bash
 ./AltServer -u thiswillbeyourUUID -a myemail@mail.com -p myapplepass SideStore.ipa
