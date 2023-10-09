@@ -220,7 +220,7 @@ This means that the Apple ID information AltStore used to try to sign in was inv
 
 `AltServer.ServerError`
 
-This means that AltServer could not find the Mail plug-in either because it is not enable or you are not running the Mail app on your Mac. Make sure the Mail app is running on your Mac and that the plug-in is enabled. For more help, check the [Mail Plug-In](how-to-install-altstore-macos/enable-mail-plug-in.md) page in the installation guide.
+This means that AltServer could not find the Mail plug-in either because it is not enable or you are not running the Mail app on your Mac. Make sure the Mail app is running on your Mac and that the plug-in is enabled. For more help, check the [Mail Plug-In](../Guides/mail-plugin.md) page in the installation guide.
 
 #### (2015) Could not find provisioning profile.
 
