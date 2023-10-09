@@ -5,6 +5,10 @@ docs_dir: ../../docs/en
 theme:
   logo: ../../img/icons/sidestore-icon.png
   favicon: ../../img/icons/sidestore-favicon.png
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.top
   name: material
   palette:
     - scheme: default
