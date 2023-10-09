@@ -11,13 +11,13 @@ theme:
       primary: indigo
       accent: deep purple
       toggle:
-        icon: material/brightness-7
+        icon: material/toggle-switch-off-outline
         name: Switch to dark mode
     - scheme: slate
       primary: black
       accent: deep purple
       toggle:
-        icon: material/brightness-4
+        icon: material/toggle-switch
         name: Switch to light mode
 
 extra:
@@ -25,6 +25,8 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/sidestore
+    - icon: fontawesome/brands/patreon
+      link: https://patreon.com/sidestore
     - icon: fontawesome/brands/discord
       link: https://discord.gg/sidestore-949183273383395328
     - icon: fontawesome/brands/twitter
