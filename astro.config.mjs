@@ -3,6 +3,7 @@ import starlight from '@astrojs/starlight';
 
 export default defineConfig({
 	site: 'https://Imzxhir.github.io',
+	base: '/SideStore-Docs',
 	integrations: [
 		starlight({
 			title: 'SideStore Docs',
