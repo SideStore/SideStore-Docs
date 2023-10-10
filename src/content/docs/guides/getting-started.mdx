@@ -1,4 +1,7 @@
-# Installation
+---
+title: Getting Started
+description: A guide on how to get started with SideStore.
+---
 
 The process of installing SideStore onto your device requires the **one time use** of a computer. Following the initial installation, SideStore can be indefinitely refreshed without the use of a local computer.
 
@@ -9,7 +12,7 @@ The process of installing SideStore onto your device requires the **one time use
 * Apple ID
 * [WireGuard](https://apps.apple.com/us/app/wireguard/id1441195209) installed on your Apple device.
 
-A separate "burner" Apple ID is recommended when using Anisette servers created by others. An issue that only happens on servers that use older methods of hosting an anisette server have a locking account issue, locking accounts is just a forced password reset and **its not forever**. To see more about [creating your own Anisette server.](../Advanced/anisette-server.md)
+A separate "burner" Apple ID is recommended when using Anisette servers created by others. An issue that only happens on servers that use older methods of hosting an anisette server have a locking account issue, locking accounts is just a forced password reset and **its not forever**. To see more about [creating your own Anisette server.](../../advanced/anisette-server)
 
 If you are running iOS or iPadOS 16 or higher, you must enable Developer Mode.
 
@@ -72,7 +75,7 @@ docker run --rm -it -e ALTSERVER_ANISETTE_SERVER="https://ani.sidestore.io/" -v 
 
 Altcon will start to pair with your device, plug it in if you haven't. Press "trust" and enter your passcode.
 
-1. Install SideStore using the Apple ID of your choice.
+2\. Install SideStore using the Apple ID of your choice.
 
 ```bash
 ./AltServer -u thiswillbeyourUUID -a myemail@mail.com -p myapplepass SideStore.ipa
