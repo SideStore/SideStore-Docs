@@ -3,6 +3,10 @@
 /.vscode
 /.vs
 
+# Dependency directories
+/.astro
+/.node_modules
+
 #OSX Stuff
 .DS_Store
 .DS_Store?

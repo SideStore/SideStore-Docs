@@ -9,6 +9,7 @@ export default defineConfig({
 			logo: {
 				alt: 'SideStore Logo',
 				src: '/src/assets/icons/sidestore-icon.png',
+				replacesTitle: false,
 			},
 			social: {
 				github: 'https://github.com/sidestore',
