@@ -11,6 +11,7 @@ export default defineConfig({
 				src: '/src/assets/icons/sidestore-icon.png',
 				replacesTitle: false,
 			},
+			favicon: '/favicon.svg',
 			social: {
 				github: 'https://github.com/sidestore',
 				discord: 'https://discord.gg/sidestore-949183273383395328',
