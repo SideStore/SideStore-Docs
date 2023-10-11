@@ -3,22 +3,9 @@
 /.vscode
 /.vs
 
-# Build Files
-/dist
-
 # Dependency directories
 /.astro
 /node_modules
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-# Environment Variables
-.env
-.env.production
 
 #OSX Stuff
 .DS_Store
