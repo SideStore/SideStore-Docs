@@ -7,7 +7,7 @@
 /dist
 
 # Dependency directories
-/astro
+/.astro
 /node_modules
 
 # Logs
