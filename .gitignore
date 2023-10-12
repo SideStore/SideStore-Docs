@@ -3,6 +3,7 @@
 /.vscode
 /.vs
 /.codesandbox
+/.devcontainer
 
 # Build Files
 /dist
