@@ -14,6 +14,7 @@ export default defineConfig({
 			favicon: '/favicon.svg',
 			social: {
 				github: 'https://github.com/sidestore',
+        patreon: 'https://www.patreon.com/sidestore',
 				discord: 'https://discord.gg/sidestore-949183273383395328',
 				twitter: 'https://twitter.com/sidestore_io'
 			},
