@@ -1,12 +1,19 @@
-# Custom Anisette Server
+---
+title: Custom Anisette Server
+description: A guide on anisette servers.
+---
 
-!!! info
+import { Card, CardGrid } from '@astrojs/starlight/components';
 
+<Card>
+    <Card title="Info" icon="pencil">
     Public anisette servers are now safe on SideStore 0.4.0
 
     SideStore 0.4.0 introduced _anisette-v3_ servers, which are creating custom anisette data for each device, and thus are not subject to locking as the older servers were.
 
     Thus, you can safely use SideStore without worrying about setting up a custom anisette server.
+    </Card>
+</Card>
 
 Anisette data is information used in the app signing process that needs to be generated each time you install or refresh apps. SideStore gets this information from a server that spoofs a Mac and sends you back the anisette data. No account info is sent to the server ever in this process.
 
@@ -39,18 +46,19 @@ Once this is done, the Render server can be made.
     * **Root Directory** - blank (default)
     * **Environment** - Docker (default)
     * **Instance Type** - Free
-5. Wait for the server to build. You will see the following when it's done:
 
-```text
+5\. Wait for the server to build. You will see the following when it's done:
+
+```
 Machine requires provisioning... done !
 Your service is live 🎉
 ```
 
 *If the build fails for any reason, click **Manual Deploy**, then **Deploy latest commit**.*
 
-1. Find the link for your new server at the top of the page:
+6\. Find the link for your new server at the top of the page:
 
-```text
+```
 https://[your-server-name].onrender.com
 ```
 
