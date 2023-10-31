@@ -51,7 +51,7 @@ export default defineConfig({
           ],
         },
         {
-          label: 'Contribtuing',
+          label: 'Contributing',
           items: [
             { label: 'Translating the wiki', link: '/contributing/translations/' },
           ]
