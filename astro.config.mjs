@@ -45,11 +45,16 @@ export default defineConfig({
         {
           label: 'Advanced',
           items: [
-            { label: 'Custom Anisette Server', link: '/advanced/anisette-server/' },
-            { label: 'App Sources', link: '/advanced/app-sources/' },
-            { label: 'URL Schemes', link: '/advanced/url-schemes/' },
+            {label: 'Custom Anisette Server', link: '/advanced/anisette-server/'},
+            {label: 'App Sources', link: '/advanced/app-sources/'},
+            {label: 'URL Schemes', link: '/advanced/url-schemes/'},
+          ],
+        },
+        {
+          label: 'Contribtuing',
+          items: [
+            { label: 'Translating the wiki', link: '/contributing/translations/' },
           ]
-
         },
       ],
     }),
