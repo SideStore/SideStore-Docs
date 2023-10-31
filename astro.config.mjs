@@ -20,7 +20,7 @@ export default defineConfig({
       },
       defaultLocale: 'en',
       locales: {
-        en: {
+        root: {
           label: 'English',
           lang: 'en',
         }
