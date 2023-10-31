@@ -23,10 +23,6 @@ export default defineConfig({
         root: {
           label: 'English',
           lang: 'en',
-        },
-        'fr': {
-          label: 'French',
-          lang: 'fr',
         }
       },
       customCss: [
