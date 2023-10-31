@@ -20,6 +20,8 @@ To build and run the docs locally, run this command in the terminal:
 
 - `npm run dev`
 
+Running both these commands in the terminal, will install the dependencies required for the docs and run a local environment on your machine.
+
 ## Status
 
 ![Alt](https://repobeats.axiom.co/api/embed/7fd3c052892e88d60945586ce1a82feeb709bd8a.svg "Repobeats analytics image")
