@@ -18,12 +18,12 @@ export default defineConfig({
         discord: 'https://discord.gg/sidestore-949183273383395328',
         twitter: 'https://twitter.com/sidestore_io'
       },
-      defaultLocale: 'en',
+      defaultLocale: 'root',
       locales: {
         root: {
           label: 'English',
           lang: 'en',
-        }
+        },
       },
       customCss: [
         './src/styles/custom.css',
