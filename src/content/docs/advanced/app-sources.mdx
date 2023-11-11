@@ -3,8 +3,6 @@ title: App Sources
 description: A guide on custom app sources.
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
-
 # App Sources
 
 This document provides all the details that describe how to make your own AltSource. There are five important sections to read:
@@ -42,7 +40,7 @@ It's important to note here that changing this identifier down the road will hav
 
 **sourceURL** *(optional)*
 
-If your user adds your Source using a URL shortener or you have the link to file stored on CDN, it is recommended that you include this property. This allows AltStore to save the exact link to the file which speeds up retrieval time.
+If your user adds your Source using a URL shortener, or you have the link to file stored on CDN, it is recommended that you include this property. This allows AltStore to save the exact link to the file which speeds up retrieval time.
 
 ## Releasing apps
 
@@ -190,7 +188,7 @@ This should be the date that you are releasing your application, and should be w
 
 If you are planning on releasing your application in the future, after everyone has installed your Source, there is an additional format available: `YYYY-MM-DDTHH:MM:SS`
 
-Using this format will create an automatic timer countdown to the release time specified. Please note that the time is automatically assumed to be UTC and uses a 24 hour clock.
+Using this format will create an automatic timer countdown to the release time specified. Please note that the time is automatically assumed to be UTC and uses a 24-hour clock.
 
 If you would rather use the time in your timezone, add `-08:00` to the end of the `versionDate`, where that -08 corresponds to the number of hours difference between UTC and your timezone. It is also important to note that UTC does not change with daylight saving time, so be careful if you are releasing around that time of year as it can be easy to miscalculate.
 
@@ -202,7 +200,7 @@ Use this to tell the user what new features you introduced or what bugs you squa
 
 This should point directly to wherever your IPA is hosted.
 
-If you are planning on releasing your app in the future, this property is still required but it doesn't have to actually point to a valid file.
+If you are planning on releasing your app in the future, this property is still required, but it doesn't have to actually point to a valid file.
 
 **minOSVersion** and **maxOSVersion** *(optional)*
 
@@ -323,7 +321,7 @@ Included within any app that is to be Patreon locked:
 }
 ```
 
-This will allow you to set certain apps to only be available to your Patrons. Other similar capabilities to this will available to specify in the `userInfo` section in future.
+This will allow you to set certain apps to only be available to your Patrons. Other similar capabilities to this will available to specify in the `userInfo` section in the future.
 
 !!! warning
 
@@ -376,7 +374,7 @@ These can be useful for safe-guarding certain apps from users under the suggeste
 
 ## That's all there is!
 
-If you want to see the full JSON example file that was used throughout this tutorial, [here it is](../../../public/source-template.json).
+If you want to see the full JSON example file that was used throughout this tutorial, [here it is](/public/source-template.json).
 
 Here are some good existing AltSources: The [primary AltStore Source](https://apps.altstore.io), the [SideStore community source](https://github.com/SideStore/Community-Source), any of the Sources at [Quark Sources](https://quarksources.github.io), or the [DolphiniOS Source](https://altstore.oatmealdome.me/).
 

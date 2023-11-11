@@ -3,17 +3,13 @@ title: Custom Anisette Server
 description: A guide on anisette servers.
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+:::note
+Public anisette servers are now safe on SideStore 0.4.0
 
-<Card>
-    <Card title="Info" icon="pencil">
-    Public anisette servers are now safe on SideStore 0.4.0
+SideStore 0.4.0 introduced _anisette-v3_ servers, which are creating custom anisette data for each device, and thus are not subject to locking as the older servers were.
 
-    SideStore 0.4.0 introduced _anisette-v3_ servers, which are creating custom anisette data for each device, and thus are not subject to locking as the older servers were.
-
-    Thus, you can safely use SideStore without worrying about setting up a custom anisette server.
-    </Card>
-</Card>
+Thus, you can safely use SideStore without worrying about setting up a custom anisette server.
+:::
 
 Anisette data is information used in the app signing process that needs to be generated each time you install or refresh apps. SideStore gets this information from a server that spoofs a Mac and sends you back the anisette data. No account info is sent to the server ever in this process.
 
