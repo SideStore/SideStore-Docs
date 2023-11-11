@@ -10,8 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.11.2",
-    "astro": "^3.4.0",
+    "@astrojs/starlight": "^0.12.0",
+    "astro": "^3.5.2",
     "astro-lazy-youtube-embed": "^0.2.0",
     "sharp": "^0.32.5"
   }
