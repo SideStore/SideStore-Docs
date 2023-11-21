@@ -2,7 +2,6 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
 export default defineConfig({
-  trailingSlash: 'always',
   site: 'https://wiki.sidestore.io',
   integrations: [
     starlight({
