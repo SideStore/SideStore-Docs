@@ -3,6 +3,7 @@ import starlight from '@astrojs/starlight';
 
 export default defineConfig({
   site: 'https://wiki.sidestore.io',
+  base: '/SideStore-Docs',
   integrations: [
     starlight({
       title: 'SideStore Docs',
