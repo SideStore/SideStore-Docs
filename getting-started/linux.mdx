@@ -2,3 +2,15 @@
 title: Linux Instructions
 description: Instructions for installing SideStore using Linux
 ---
+
+To install SideStore (or any other IPA) on Linux, make sure you have docker installed. Before you start, make sure to [setup WireGuard](#setting-up-wireguard) and is within the [install requirements](#install-requirements)!
+
+1. Run altcon
+
+```bash
+docker run --rm -it -e ALTSERVER_ANISETTE_SERVER="https://ani.sidestore.io/" -v ${PWD}/:/mnt/ -v /var/run:/var/run ghcr.io/sidestore/altcon
+```
+
+Altcon will start to pair with your device, plug it in if you haven't. Press "trust" and enter your passcode.
+
+When you finish, then follow the [post-install instructions](post-install).

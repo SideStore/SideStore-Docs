@@ -21,6 +21,12 @@
       "url": "https://discord.gg/sidestore-949183273383395328"
     }
   ],
+  "tabs": [
+    {
+      "name": "Getting Started",
+      "url": "getting-started"
+    }
+  ],
   "anchors": [
     {
       "name": "Website",
@@ -28,13 +34,25 @@
       "url": "https://mintlify.com/community"
     }
   ],
+  "primaryTab": {
+    "name": "Introduction"
+  },
   "navigation": [
     {
       "group": "Getting Started",
       "pages": [
         "getting-started/Prerequisites",
         "getting-started/pairing-file",
-        "getting-started/windows"
+        "getting-started/windows",
+        "getting-started/mac",
+        "getting-started/linux",
+        "getting-started/post-install"
+      ]
+    },
+    {
+      "group": "Introduction",
+      "pages": [
+        "introduction"
       ]
     }
   ],
