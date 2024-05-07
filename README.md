@@ -2,13 +2,44 @@
 
 This is the official GitHub repository for SideStore's documentation hosted at <https://wiki.sidestore.io>.
 
-### Development
+This project is licensed under the [GNU Affero General Public License](LICENSE).
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the documentation changes locally. To install, use the following command
+## Installation
 
+```shell
+yarn
 ```
-npx mintlify dev
+
+### Local Development
+
+```shell
+yarn start
 ```
+
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+
+### Build
+
+```shell
+yarn build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+Using SSH:
+
+```shell
+USE_SSH=true yarn deploy
+```
+
+Not using SSH:
+
+```shell
+GIT_USER=<Your GitHub username> yarn deploy
+```
+
 ## Status
 
 ![Alt](https://repobeats.axiom.co/api/embed/7fd3c052892e88d60945586ce1a82feeb709bd8a.svg "Repobeats analytics image")
