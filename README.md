@@ -1,6 +1,6 @@
 # SideStore Documentation
 
-This is the official GitHub repository for SideStore's documentation hosted at <wiki.sidestore.io>.
+This is the official GitHub repository for SideStore's documentation hosted at <https://wiki.sidestore.io>.
 
 ### Development
 
