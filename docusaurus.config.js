@@ -53,13 +53,12 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
       navbar: {
         title: 'SideStore',
         logo: {
           alt: 'SideStore Logo',
           src: 'img/logo.png',
+          style: {borderRadius: '10px'},
         },
         items: [
           {
