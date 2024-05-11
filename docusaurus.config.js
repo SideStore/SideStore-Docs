@@ -5,6 +5,7 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import {themes as prismThemes} from 'prism-react-renderer';
+import { lazy } from 'react';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -72,6 +73,16 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
+          {
+            href: 'https://www.patreon.com/sidestore',
+            label: 'Patreon',
+            position: 'right',
+          },
+          {
+            href: 'https://discord.gg/sidestore-949183273383395328',
+            label: 'Discord',
+            position: 'right',
+          },
         ],
       },
       footer: {
@@ -96,6 +107,10 @@ const config = {
               {
                 label: 'X, formerly Twitter',
                 href: 'https://twitter.com/sidestore_io',
+              },
+              {
+                label: 'Patreon',
+                href: 'https://www.patreon.com/sidestore',
               },
             ],
           },
