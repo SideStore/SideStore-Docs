@@ -58,8 +58,8 @@ const config = {
       navbar: {
         title: 'SideStore',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'SideStore Logo',
+          src: 'img/logo.png',
         },
         items: [
           {
