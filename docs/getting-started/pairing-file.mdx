@@ -1,0 +1,23 @@
+---
+title: Pairing File
+description: Pairing files are essential to SideStore's functionality.
+sidebar_position: 2
+---
+
+Using Jitterbugpair (*not* the Jitterbug app) allows us to create a pairing file for programs like SideStore to talk to your device. This is required to use SideStore, or it will not function.
+
+Download Jitterbugpair for [Windows (64-bit)](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip), [macOS](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-macos.zip), or [Linux](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip).
+
+## Pairing Instructions
+
+1. Extract the Jitterbugpair zip file.
+2. Plug your device into your computer, and open your device to its home screen. Once done, execute the program.
+    * Your device may ask you to trust your computer. Make sure to accept this prompt, as it is required for the pairing process.
+3. Once it is done, you will get a file that ends with `.mobiledevicepairing`.
+4. Transfer this file to your device using iTunes, or any other method.
+    * Transferring using cloud storage may change the file's extension (most likely turning into a .txt file), so be careful. It is also possible to change the extension to `.plist` for use with older SideStore versions, like `0.1.1`.
+On Windows, you might have to execute the program using Command Prompt or Powershell, as it can sometimes not open by double clicking the `.exe` file.
+
+5. In File Explorer, navigate to the folder where jitterbugpair is located.
+6. In the navigation bar where the folder location is, click an empty spot and type `powershell`. It should open a (possibly blue colored) window called PowerShell.
+7. From there, type `./jitterbugpair.exe` and press enter while your device is plugged in.

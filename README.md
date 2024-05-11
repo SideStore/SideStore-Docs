@@ -1,26 +1,44 @@
-# SideStore-Docs
+# SideStore Documentation
 
-## Welcome to the SideStore wiki's source repo!
+This is the official GitHub repository for SideStore's documentation hosted at <https://wiki.sidestore.io>.
 
-The wiki itself can be found at <https://wiki.sidestore.io/>.
+This project is licensed under the [GNU Affero General Public License](LICENSE).
 
-## Installing
+## Installation
 
-### Prerequisites
+```shell
+yarn
+```
 
-- **Node.js** - `v18.14.1` or higher.
-- **Text editor** - We recommend either [VS Code](https://code.visualstudio.com/) with the [Official Astro extension](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode) or [IntelliJ IDEA](https://www.jetbrains.com/idea/) with the [Unofficial Astro Plugin](https://plugins.jetbrains.com/plugin/20959-astro)
-- **Terminal** - The documentation is built and run through its command-line interface (CLI).
+### Local Development
 
-To get all the dependencies installed, run this command in the terminal:
+```shell
+yarn start
+```
 
-- `npm install`
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-To build and run the docs locally, run this command in the terminal:
+### Build
 
-- `npm run dev`
+```shell
+yarn build
+```
 
-Running both these commands in the terminal, will install the dependencies required for the docs and run a local environment on your machine.
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+Using SSH:
+
+```shell
+USE_SSH=true yarn deploy
+```
+
+Not using SSH:
+
+```shell
+GIT_USER=<Your GitHub username> yarn deploy
+```
 
 ## Status
 
