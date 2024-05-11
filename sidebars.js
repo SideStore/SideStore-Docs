@@ -26,6 +26,16 @@ const sidebars = {
       label: 'Getting Started',
       items: ['getting-started/prerequisites', 'getting-started/windows', 'getting-started/mac', 'getting-started/linux', 'getting-started/pairing-file', 'getting-started/post-install'],
     },
+    {
+      type: 'category',
+      label: 'Troubleshooting',
+      items: ['troubleshooting/error-codes', 'troubleshooting/troubleshooting'],
+    },
+    {
+      type: 'category',
+      label: 'Advanced',
+      items: ['advanced/anisette', 'advanced/app-sources', 'advanced/url-schema'],
+    },
   ],
 };
 
