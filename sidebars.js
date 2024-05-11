@@ -20,6 +20,7 @@ const sidebars = {
   
   tutorialSidebar: [
     'intro',
+    'faq',
     {
       type: 'category',
       label: 'Getting Started',
