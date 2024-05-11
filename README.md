@@ -28,6 +28,8 @@ This command generates static content into the `build` directory and can be serv
 
 ### Deployment
 
+The documentation uses GitHub Pages as hosting. To deploy to GitHub Pages, run one of the following commands based on how you cloned this repo.
+
 Using SSH:
 
 ```shell
