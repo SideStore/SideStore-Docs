@@ -24,7 +24,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Getting Started',
-      items: ['getting-started/prerequisites', 'getting-started/windows', 'getting-started/mac', 'getting-started/linux', 'getting-started/pairing-file', 'getting-started/post-install'],
+      items: ['getting-started/prerequisites', 'getting-started/pairing-file', 'getting-started/windows', 'getting-started/mac', 'getting-started/linux', 'getting-started/post-install'],
     },
     {
       type: 'category',
