@@ -7,12 +7,11 @@ sidebar_position: 5
 To install SideStore (or any other IPA) on Linux, make sure you have Docker installed. Before you start, make sure to setup WireGuard and [prerequisites](prerequisites) are satisfied!
 
 1. Run altcon with Docker
-
 ```bash
 docker run --rm -it -e ALTSERVER_ANISETTE_SERVER="https://ani.sidestore.io/" -v ${PWD}/:/mnt/ -v /var/run:/var/run ghcr.io/sidestore/altcon
 ```
 
-You can also run altcon with Podman, which is available by default on [Universal Blue images](https://universal-blue.org/#images), such as Bazzite
+You can also run altcon with Podman
 ```bash
 podman run --privileged --rm -it -e ALTSERVER_ANISETTE_SERVER="https://ani.sidestore.io/" -v ${PWD}/:/mnt/ -v /var/run:/var/run ghcr.io/sidestore/altcon
 ```
