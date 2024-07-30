@@ -1,6 +1,6 @@
 # SideStore Documentation
 
-This is the official GitHub repository for SideStore's documentation hosted at <https://wiki.sidestore.io>.
+This is the official GitHub repository for SideStore's documentation hosted at <https://docs.sidestore.io/>.
 
 This project is licensed under the [GNU Affero General Public License](LICENSE).
 
