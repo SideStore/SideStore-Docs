@@ -4,8 +4,8 @@
 
 [ ] Add details in faq about 3 app limit
 
-[ ] macOS Pairing File Instructions
+[X] macOS Pairing File Instructions
 
-[ ] Linux Pairing File Instructions
+[X] Linux Pairing File Instructions
 
 [ ] SideJITServer Docs (start)
