@@ -73,7 +73,7 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://www.patreon.com/sidestore',
+            href: 'https://www.patreon.com/SideStoreIO',
             label: 'Patreon',
             position: 'right',
           },
