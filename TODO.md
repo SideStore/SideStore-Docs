@@ -2,7 +2,7 @@
 
 [ ] Fix error codes and troubleshooting
 
-[ ] Add details in faq about 3 app limit
+[X] Add details in faq about 3 app limit
 
 [X] macOS Pairing File Instructions
 
