@@ -28,19 +28,7 @@ This command generates static content into the `build` directory and can be serv
 
 ### Deployment
 
-The documentation uses GitHub Pages as hosting. To deploy to GitHub Pages, run one of the following commands based on how you cloned this repo.
-
-Using SSH:
-
-```shell
-USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```shell
-GIT_USER=<Your GitHub username> yarn deploy
-```
+The documentation uses GitHub Pages as hosting. To deploy to GitHub Pages, simply commit to the `main` branch. GitHub Actions will automatically build and deploy to Pages!
 
 ## Status
 
