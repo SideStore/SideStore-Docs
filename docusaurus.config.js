@@ -105,7 +105,7 @@ const config = {
               },
               {
                 label: 'X, formerly Twitter',
-                href: 'https://twitter.com/sidestore_io',
+                href: 'https://twitter.com/sidestoreio',
               },
               {
                 label: 'Patreon',
