@@ -1,0 +1,23 @@
+---
+title: 3-App Limit Bypass
+description: A tutorial on how to install more than 3 apps via SideStore using the SparseRestore exploit.
+---
+
+:::note
+
+The SparseRestore exploit **only fully works on iOS/iPadOS versions between 17.0 and 18.1 beta 4 (not including 17.7.1)**. Partial support is available on versions 17.7.1 and above 18.1 beta 5. If you are not on these versions and it doesn't work, **please do not ask for support on this**. 
+
+:::
+
+## Prerequisites
+* An iDevice running versions supported by the SparseRestore exploit (see note above)
+* At least 1 free app slot
+
+## Steps
+1. Install SparseBox. This can be done with a variety of methods, but for the purposes of this, install it with SideStore. The latest version can be found [here](https://nightly.link/khanhduytran0/SparseBox/workflows/build/main/artifact.zip) (unzip artifact.zip for the .ipa file)
+2. Make sure SideStore is **closed** (not in background) and your WireGuard VPN is on, then open SparseBox.
+3. Scroll down to the bottom and tap 'Bypass 3-app limit'. This should bring up a log output. Wait for it to say `idevicebackup2 exited with code -102`, then close the app. No need to hit apply.
+4. Re-open SideStore, and test that the exploit has worked (you may need to install more than one app to test, depending on how many free slots you have). If it throws an error about the limit, reopen SideStore or retry the exploit. If it installs the app, congratulations! You can now have more than 3 apps installed at one time.
+
+## Alternatives
+If either the exploit doesn't work for you, or your iDevice is on an unsupported version, there is an alternative to be able to use more than 3 apps at once. LiveContainer, developed by Duy Tran Khanh ([khanhduytran0](https://github.com/khanhduytran0)) (the person who also made SparseBox), allows for iOS apps to be run in containers in-app rather than installing them separately. This may also be easier to use over SparseRestore in some cases. The GitHub page can be found [here](https://github.com/khanhduytran0/LiveContainer).
