@@ -114,7 +114,7 @@ const config = {
               {
                 label: 'Bluesky',
                 href: 'https://bsky.app/profile/sidestore.io',
-            ],
+              },
           },
           {
             title: 'More',
