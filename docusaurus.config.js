@@ -111,8 +111,6 @@ const config = {
                 label: 'Patreon',
                 href: 'https://www.patreon.com/sidestore',
               },
-            ],
-          },
           {
             title: 'More',
             items: [
