@@ -78,7 +78,7 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://discord.gg/sidestore-949183273383395328',
+            href: 'https://discord.gg/sidestore',
             label: 'Discord',
             position: 'right',
           },
