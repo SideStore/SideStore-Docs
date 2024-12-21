@@ -97,27 +97,30 @@ const config = {
             ],
           },
           {
-            title: 'Community',
-            items: [
-              {
-                label: 'Discord',
-                href: 'https://discord.gg/sidestore-949183273383395328',
-              },
-              {
-                label: 'X, formerly Twitter',
-                href: 'https://twitter.com/sidestoreio',
-              },
-              {
-                label: 'Patreon',
-                href: 'https://www.patreon.com/sidestore',
-              },
-              {
-                label: 'Bluesky',
-                href: 'https://bsky.app/profile/sidestore.io',
-              },
-            ],
-          },
-          {
+  title: 'Community',
+  items: [
+    {
+      label: 'Discord',
+      href: 'https://discord.gg/sidestore-949183273383395328',
+    },
+    {
+      label: 'X, formerly Twitter',
+      href: 'https://twitter.com/sidestoreio',
+    },
+    {
+      label: 'Patreon',
+      href: 'https://www.patreon.com/sidestore',
+    },
+    {
+      label: 'Bluesky',
+      href: 'https://bsky.app/profile/sidestore.io',
+    },
+    { 
+      label: 'TikTok',
+      href: 'https://www.tiktok.com/@sidestoreio?_t=ZT-8sO3b2K7lrK&_r=1',
+    },
+  ],
+},
             title: 'More',
             items: [
               {
