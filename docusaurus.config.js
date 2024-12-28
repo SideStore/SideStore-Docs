@@ -109,7 +109,7 @@ const config = {
               },
               {
                 label: 'Patreon',
-                href: 'https://www.patreon.com/sidestore',
+                href: 'https://www.patreon.com/sidestoreIO',
               },
               {
                 label: 'Bluesky',
