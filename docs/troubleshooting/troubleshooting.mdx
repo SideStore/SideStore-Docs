@@ -25,18 +25,47 @@ description: A guide to troubleshooting SideStore.
      - [Download iTunes](https://www.apple.com/itunes/download/win64/)
 
 
-## Sign-In
+## Sign-In Issues
 
-#### AltStore freezes/takes forever to sign-in.
+#### Sidestore Freezing or Displaying an Error Code During Sign-In
 
-This could happen for a number of reasons. If you’re experiencing this issue, please check the following:
+If you encounter freezing or error codes while attempting to sign in to Sidestore, there could be several potential causes. Follow these steps to resolve the issue:
 
-- Are you on public/work/school Wi-Fi? If so, your Wi-Fi might be preventing devices from discovering each other. Try connecting your computer to your phone’s hotspot and trying again. (If you're using an iPad, make sure it's connected to your hotspot as well.)
-- Have you said “Trust” on both your Mac and iOS device after connecting your device to your Mac? You can check by Finder (macOS 10.15 Catalina or later) or iTunes (macOS 10.14 Mojave and earlier) and seeing if a dialog box pops up asking if you want to trust your phone.
-- (Windows) Firewall might be blocking incoming network connections to AltServer. You must enable network access for AltServer in your firewall settings for it to receive refreshed apps from AltStore.
-- (Windows) Did you install iTunes or iCloud from the Microsoft Store? If so, you’ll need to uninstall them and download the latest versions directly from Apple.
-- You may need to make sure iTunes and iCloud are running on your computer as well.
-- Finally, try plugging your iPhone or iPad into your computer. This should fix all connectivity problems, but does mean AltStore may not be able to automatically refresh apps for you in the background over Wi-Fi.
+1. **Change the Anisette Server:**
+   The most common solution is to switch to a different Anisette server. Anisette servers may occasionally experience downtime. Switching to an alternative server typically resolves the issue. Do this:
+   - Open Sidestore settings.
+   - Scroll down to the "Anisette Server" option.
+   - Select a different server from the list.
+   - You might need to try a few servers from the list and find which works best for you.
+
+2. **Host Your Own Anisette Server:**
+   If you prefer, you can set up your own Anisette server. Detailed instructions for hosting an Anisette server are available in the official documentation and can he found [here](https://docs.sidestore.io/docs/advanced/anisette).
+
+#### Verification Code Not Received When Signing In with Apple ID
+
+Another common issue during sign-in is not receiving a verification code when using your Apple ID with Sidestore. This can be resolved by following these steps:
+
+**For iOS versions below 18.1:**
+1. Open the "Settings" app.
+2. Tap on your name at the top of the screen.
+3. Navigate to "Sign-In and Security."
+4. Select "Two-Factor Authentication."
+5. Choose "Get Verification Code."
+
+**For iOS versions 18.1 and above:**
+1. Visit [iCloud](https://www.icloud.com) on a web browser.
+2. Click "Sign In."
+3. When prompted, you will see two options: "Sign In" and "Use Different Apple Account."
+   - Select the bottom option, "Use Different Apple Account."
+4. Enter your Apple ID and password.
+5. Apple will send you a verification code.
+   - Use this code in Sidestore to complete the sign-in process.
+
+
+
+
+
+
 
 ## AltServer
 
