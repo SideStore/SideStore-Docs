@@ -69,12 +69,14 @@ Another common issue during sign-in is not receiving a verification code when us
 #### Resolving No Wi-Fi or VPN Error
 
 1. Disable your cellular data / connect to a stable Wi-Fi network.
-2. Make sure Wi-Fi is not restricted (such as school Wi-Fi).
+2. Ensure that Apple domains, and the domain for your anisette server, are not restricted. Check the following:
+   - Turn off any DNS blocking domains such as `oscp.apple.com`
+   - Disconnect from school/work Wi-Fi, try connecting to a restriction-free network.
 3. Verify VPN is connected in the WireGuard app.
-4. Turn off, turn on WireGuard, and wait a few seconds in SideStore before trying to refresh.
+4. Turn off, then turn back on WireGuard, and wait a few seconds in SideStore before trying to refresh.
 5. Create a brand new pairing file.
    - If none of the above worked it is very likely that the pairing file is corrupted. You can reference the documentation on how to create a new pairing file [here](https://docs.sidestore.io/docs/getting-started/pairing-file/). 
-   - After creating a new pairing file, go to sidestore settings and press "Reset pairing file", then choose the new pairing file you just created.
+   - After creating a new pairing file, go to Sidestore settings and press "Reset pairing file", then choose the new pairing file you just created.
 
 
 
