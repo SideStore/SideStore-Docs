@@ -3,17 +3,23 @@ title: Error Codes
 description: Error codes found in SideStore.
 ---
 
+:::warning
+
+This page is currently not fully accurate to how SideStore works, as this is based on AltStore's Error Codes page. Some info is still correct, but please don't rely on this word for word. Make sure to ask in our [Discord server](https://discord.com/invite/sidestore) for help if you need it.
+
+:::
+
 ## SideStore Errors
 
 #### (1000) An unknown error occurred.
 
 `AltStore.OperationError`
 
-This means that AltStore ran into an unexpected error. Please check our [Troubleshooting Guide](./), and you can reach out to us directly if the issue persists.
+This means that SideStore ran into an unexpected error. Please check our [Troubleshooting Guide](./), and you can reach out to us directly if the issue persists.
 
 #### (1001) The operation returned an unknown result.
 
-This means that AltStore ran into an unexpected error. Please check our [Troubleshooting Guide](./), and you can reach out to us directly if the issue persists.
+This means that SideStore ran into an unexpected error. Please check our [Troubleshooting Guide](./), and you can reach out to us directly if the issue persists.
 
 #### (1002) The operation was cancelled.
 
@@ -25,7 +31,7 @@ This means that the performed action was stopped. Please try again.
 
 `AltStore.OperationError`
 
-This means that AltStore ran into problems trying to complete the requested action. Please try again and check our [Troubleshooting Guide](./) for additional help. You can reach out to us directly if the issue persists.
+This means that SideStore ran into problems trying to complete the requested action. Please try again and check our [Troubleshooting Guide](./) for additional help. You can reach out to us directly if the issue persists.
 
 #### (1004) You are not signed in.
 
@@ -43,7 +49,7 @@ This means that AltStore could not locate the file to download or install, most 
 
 `AltStore.OperationError`
 
-This means that AltStore couldn't read the device UDID embedded by AltServer when installing AltStore. Make sure you're installing AltStore with the latest AltServer version and not via another method.
+This means that SideStore couldn't read the device UDID embedded by AltServer when installing SideStore. Make sure you're installing SideStore with the latest AltServer version and not via another method.
 
 #### (1007) This app is in an invalid format.
 
@@ -55,7 +61,7 @@ This means the app you're trying to install is not a standard .ipa. Try download
 
 `AltStore.OperationError`
 
-This means an internal error occured and AltStore couldn't provide the necessary information to perform the requested task. Please try again and check our [Troubleshooting Guide](./) for additional help. You can reach out to us directly if the issue persists.
+This means an internal error occured and SideStore couldn't provide the necessary information to perform the requested task. Please try again and check our [Troubleshooting Guide](./) for additional help. You can reach out to us directly if the issue persists.
 
 #### (1009) You cannot register more than 10 App IDs within a 7-day period.
 
@@ -67,37 +73,37 @@ This means that you have reached the maximum amount of App IDs available. Please
 
 `AltStore.OperationError`
 
-This means an internal error occured and AltStore is unable to fetch changes for any Sources you've added. Please try again and check our [Troubleshooting Guide](./) for additional help. You can reach out to us directly if the issue persists.
+This means an internal error occured and SideStore is unable to fetch changes for any Sources you've added. Please try again and check our [Troubleshooting Guide](./) for additional help. You can reach out to us directly if the issue persists.
 
 #### (1011) AltStore was denied permission to launch the app.
 
 `AltStore.OperationError`
 
-This means AltStore couldn't launch a sideloaded app because you tapped "Cancel" on the "AltStore wants to open \[app]" alert, or because you still need to trust your Apple ID in Settings.
+This means SideStore couldn't launch a sideloaded app because you tapped "Cancel" on the "AltStore wants to open \[app]" alert, or because you still need to trust your Apple ID in Settings.
 
 #### (1012) AltStore's shared app group could not be accessed.
 
 `AltStore.OperationError`
 
-This means AltStore was not able to access the directory where app backups are stored. Make sure you're installing AltStore with the latest AltServer version and not via another method.
+This means SideStore was not able to access the directory where app backups are stored. Make sure you're installing SideStore with the latest AltServer version and not via another method.
 
 #### (1200) AltServer could not be found.
 
 `AltStore.OperationError`
 
-This means that AltStore is having trouble discovering AltServer on your local network. Make sure you're connected to the same Wi-Fi network as your PC/Mac running AltServer, or try connecting your device to your computer via USB.
+This means that SideStore is having trouble discovering AltServer on your local network. Make sure you're connected to the same Wi-Fi network as your PC/Mac running AltServer, or try connecting your device to your computer via USB.
 
 #### (1201) A connection to AltServer could not be established.
 
 `AltStore.OperationError`
 
-This means that AltStore is having trouble connecting to AltServer on your PC/Mac. Make sure you have Wi-Fi sync enabled, and otherwise you may try plugging in your device directly via USB.
+This means that SideStore is having trouble connecting to AltServer on your PC/Mac. Make sure you have Wi-Fi sync enabled, and otherwise you may try plugging in your device directly via USB.
 
 #### (1202) The connection to AltServer was dropped.
 
 `AltStore.OperationError`
 
-This means that AltStore's connection to AltServer on your PC/Mac was interrupted. Make sure you have Wi-Fi sync enabled, and otherwise you may try plugging in your device directly via USB.
+This means that SideStore's connection to AltServer on your PC/Mac was interrupted. Make sure you have Wi-Fi sync enabled, and otherwise you may try plugging in your device directly via USB.
 
 ## AltServer / SideServer Errors
 
@@ -109,7 +115,7 @@ This error can appear for many reasons, and below are a few that you might see (
 
 "vector too long"
 
-This means that Windows Defender is blocking your request. You may need to first disable Real-Time Protection on Windows in order for AltStore to work as expected.
+This means that Windows Defender is blocking your request. You may need to first disable Real-Time Protection on Windows in order for SideStore to work as expected.
 
 #### (1999) Underlying Error
 
@@ -165,7 +171,7 @@ This means that AltServer received a request it did not understand. This may be 
 
 `AltServer.ServerError`
 
-This means that AltStore received a response from AltServer it did not understand. This may be because you are running an outdated AltStore version, so please make sure to update to the latest version.
+This means that SideStore received a response from AltServer it did not understand. This may be because you are running an outdated SideStore version, so please make sure to update to the latest version.
 
 #### (2007) The app is invalid.
 
@@ -259,7 +265,7 @@ Updated information coming soon
 
 This means that the Apple ID credentials you used were invalid. Make sure the username and password are correct.
 
-If you still have issues, you can also try creating a new Apple ID to use with AltStore.
+If you still have issues, you can also try creating a new Apple ID to use with SideStore.
 
 #### (3003) An app-specific password is required. You can create one at appleid.apple.com.
 
@@ -301,7 +307,7 @@ Updated information coming soon.
 
 `AltStore.AppleDeveloperError`
 
-AltStore couldn’t register an App ID with Apple because the app name contains non-ASCII characters. You can try downloading from another source.
+SideStore couldn’t register an App ID with Apple because the app name contains non-ASCII characters. You can try downloading from another source.
 
 #### (3010) The bundle identifier for this app is invalid.
 
@@ -448,7 +454,7 @@ Updated information coming soon
 1. Make sure iTunes is closed.
 2. Go to Program Data -> Apple Computer -> iTunes -> ADI -> delete the files
 3. Start iTunes
-4. Retry installing AltStore
+4. Retry installing SideStore
 
 ## Other Errors
 
