@@ -46,6 +46,7 @@ If you encounter freezing or error codes while attempting to sign in to Sidestor
 Another common issue during sign-in is not receiving a verification code when using your Apple ID with Sidestore. This can be resolved by following these steps:
 
 **For iOS versions below 18.1:**
+
 1. Open the "Settings" app.
 2. Tap on your name at the top of the screen.
 3. Navigate to "Sign-In and Security."
@@ -53,6 +54,7 @@ Another common issue during sign-in is not receiving a verification code when us
 5. Choose "Get Verification Code."
 
 **For iOS versions 18.1 and above:**
+
 1. Visit [iCloud](https://www.icloud.com) on a web browser.
 2. Click "Sign In."
 3. When prompted, you will see two options: "Sign In" and "Use Different Apple Account."
@@ -62,6 +64,19 @@ Another common issue during sign-in is not receiving a verification code when us
    - Use this code in Sidestore to complete the sign-in process.
 
 
+## Can't Refresh or Install Apps
+
+#### Resolving No Wi-Fi or VPN Error
+
+1. Disable your cellular data / connect to a stable Wi-Fi network.
+2. Ensure that Apple domains, and the domain for your anisette server, are not restricted. Check the following:
+   - Turn off any DNS blocking domains such as `oscp.apple.com`
+   - Disconnect from school/work Wi-Fi, try connecting to a restriction-free network.
+3. Verify VPN is connected in the WireGuard app.
+4. Turn off, then turn back on WireGuard, and wait a few seconds in SideStore before trying to refresh.
+5. Create a brand new pairing file.
+   - If none of the above worked it is very likely that the pairing file is corrupted. You can reference the documentation on how to create a new pairing file [here](https://docs.sidestore.io/docs/getting-started/pairing-file/). 
+   - After creating a new pairing file, go to Sidestore settings and press "Reset pairing file", then choose the new pairing file you just created.
 
 
 
