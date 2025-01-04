@@ -79,7 +79,13 @@ Another common issue during sign-in is not receiving a verification code when us
    - After creating a new pairing file, go to Sidestore settings and press "Reset pairing file", then choose the new pairing file you just created.
 
 
+## Cannot Choose Pairing File
 
+#### If you are unable to select a pairing file in Sidestore, follow these steps to resolve the issue:
+
+1. **Check File Extension**: Make sure your pairing file's extension ends with `.mobiledevicepairing` or `.plist`. If it doesn't, double-check to see if you had zipped your pairing file before sending it to your phone. Failing to do so may lead to the file being corrupted during transport.
+2. **Move Pairing File**: If you are unable to select the pairing file from within the app, rename the file to `ALTPairingFile.mobiledevicepairing` and try moving the pairing file to the root directory of the SideStore folder in the Files app in "On My iPhone/iPad". 
+2. **Certificate Signing**: When signing Sidestore with a certificate, you won't be able to select the pairing file from within the app. You can try the fix mentioned above. If you do not see the Sidestore folder in the Files app, connect your phone to your computer, and you can drag and drop the pairing file to the files of the Sidestore app. Ensure to change it to the name mentioned above.
 
 
 ## AltServer
