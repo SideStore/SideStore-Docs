@@ -34,7 +34,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Advanced',
-      items: ['advanced/anisette', 'advanced/app-sources', 'advanced/url-schema', 'advanced/sparserestore'],
+      items: ['advanced/anisette', 'advanced/app-sources', 'advanced/url-schema', 'advanced/sparserestore', 'advanced/jit'],
     },
   ],
 };
