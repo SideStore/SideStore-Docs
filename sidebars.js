@@ -20,6 +20,7 @@ const sidebars = {
   
   tutorialSidebar: [
     'intro',
+    'release-notes',
     'faq',
     {
       type: 'category',
