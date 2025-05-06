@@ -3,18 +3,18 @@ title: App Sources
 description: A guide on custom app sources.
 ---
 
-# Making a Source
+# Make a Source
 
-[The official AltStore webpage](https://faq.altstore.io/developers/make-a-source) provides all the details you need to make your own AltSource. AltSources allow your audience to view, install, and update all your avaliable apps easily.
+[The official AltStore webpage](https://faq.altstore.io/developers/make-a-source) provides all the details you need about and to make your own AltSource. AltSources allow your audience to view, install, and update all your avaliable apps easily across both AltStore and SideStore.
 
 SideStore-specific limitations include:
 
-Instead of using the "altstore-classic" protocol, SideStore uses the "sidestore" protocol. This means you can create a link to automatically add your own source by using this template: ```sidestore://source?url=https://yoursourcehere.com/apps.json```. It is often helpful to create your link as such, then put it into a link shortener such as [tinyurl.com].
+Instead of using the "altstore-classic" protocol, SideStore uses the "sidestore" protocol. This means you can create a link to automatically add your own source by using this template: ```sidestore://source?url=https://yoursourcehere.com/apps.json```. It is often helpful to create your link as such, then put it into a link shortener such as <tinyurl.com>.
 
-To maintain compatibility with Feather, you can add the bundleIdentifier key to your Source (as well as inside "apps").
+To maintain compatibility with Feather, you can add the bundleIdentifier key to your AltSource (as well as inside "apps").
 
 ## That's all there is!
 
-Here are some good existing AltSources: The [primary AltStore Source](https://apps.altstore.io), the [SideStore community source](https://github.com/SideStore/Community-Source), any of the Sources at [Quark Sources](https://quarksources.github.io), or the [DolphiniOS Source](https://altstore.oatmealdome.me/).
+Here are some good existing AltSources: The [official AltStore Source](https://apps.altstore.io), the [SideStore community source](https://github.com/SideStore/Community-Source), or the [DolphiniOS Source](https://altstore.oatmealdome.me/) (all recommended sources and already native in SideStore).
 
-Using this [AltSource Browser](https://altsource.by.lao.sb/browse/) to get a visual display of your Source outside of AltStore before publishing it is highly recommended.
+It is highly recommended to use the [AltSource Browser](https://altsource.by.lao.sb/browse/) to get a visual display of your source outside of AltStore before publishing.
