@@ -104,8 +104,8 @@ const config = {
                 href: 'https://discord.gg/sidestore-949183273383395328',
               },
               {
-                label: 'X, formerly Twitter',
-                href: 'https://twitter.com/sidestoreio',
+                label: 'X (formerly Twitter)',
+                href: 'https://x.com/sidestoreio',
               },
               {
                 label: 'Patreon',

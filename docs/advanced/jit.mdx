@@ -5,21 +5,47 @@ description: A tutorial on how to enable Just-in-Time (JIT) Compilation for apps
 
 :::note
 
-There are many methods to enabling JIT, such as AltServer, SideJITServer, and more. This tutorial will cover the use of StikJIT, as it is the method we currently recommend.
-
+There are many methods to enabling JIT, such as AltJIT, SideJITServer, and more. This tutorial will cover the use of StikJIT/StikDebug, as it is the method we currently recommend. As an alternative, SideStore 0.6.2-nightly.2025.04.15 also includes updates to minimuxer, allowing built-in JIT functionality similar to StikDebug. To use this, simply ensure you are connected to StosVPN and Wi-Fi or with mobile data and Wi-Fi disabled.
 :::
 
 ## Prerequisites
-* An iDevice on iOS/iPadOS 17.4 or above, excluding 18.4b1
-* At least 1 free app slot
+* An iDevice on iOS/iPadOS 17.4 or above, excluding 18.4b1. If you are on 17.0-17.3, you must use an alternative such as [SideJITServer](https://github.com/nythepegasus/SideJITServer)
+* At least 1 free app slot for StikJIT
 
-## Steps
-1. If you haven't already, make sure you're using StosVPN rather than Wireguard. StosVPN can be downloaded from the App Store [here](https://apps.apple.com/app/id6744003051). If for whatever reason you cannot install this, the Wireguard VPN can still work for this.
-2. Grab the latest .ipa for StikJIT [here](https://nightly.link/0-Blu/StikJIT/workflows/build_ipa/main) and install it as normal.
-3. Once installed, open the app and wait for the Developer Disk Image to download and mount. **This requires WiFi.**
-4. Press the "Select Pairing File" button and select your pairing file in the file picker. You can use the 'ALTPairingFile.mobiledevicepairing' file in SideStore's folder for this.
-5. Once done, the button on the home page will change to say 'Enable JIT'. Press this.
-6. Select the app you want to enable JIT for from the selector pop-up. If your desired app is launched, check that JIT has been enabled. If so, congrats!
+## StikJIT installation with SideStore
+   
+1. **Obtain StikJIT:**  
+   Add the StikJIT AltSource to SideStore [here](sidestore://source?url=https://raw.githubusercontent.com/StephenDev0/StikJIT/refs/heads/main/repo.json) (You must have SideStore installed or this link will not function).
 
-## Offline JIT Enabling
-To enable JIT offline, make sure WiFi and Mobile Data are OFF when you launch StikJIT. You can then enable JIT as normal.
+2. **Install:**
+   Use SideStore to install StikJIT.
+
+3. **Installation procedures:**
+   Follow the standard installation procedures in the usage guide below.
+
+## StikDebug installation with App Store (Doesn't require an app slot)
+
+1. **Install StikDebug**
+   Install StikDebug from the App Store [here](https://apps.apple.com/us/app/stikdebug/id6744045754). Something nice- the VPN present in StikDebug is similar to the one used in SideStore, meaning you use it to install and refresh apps as well.
+
+2. **Installation procedures:**
+   Follow the standard installation procedures in the usage guide below.
+
+### Standard installation procedures:
+
+1. **Enable VPN:**  
+   Start by activating StosVPN for StikJIT or the built-in VPN in StikDebug.
+
+2. **Upload the Pairing File:**  
+   When prompted, import the same **unzipped pairing file** obtained via JitterbugPair you use for SideStore. For more information on obtaining this pairing file, see [here](installation/pairing-file).
+
+## To enable JIT:
+
+1. **Enable VPN:**  
+   Start by activating StosVPN for StikJIT or the built-in VPN in StikDebug.
+   
+2. **Activate JIT:**  
+   Click the “Enable JIT” button and select an app from the list to activate the JIT functionality.
+
+### Offline JIT Enabling
+To enable JIT offline, enable the StosVPN VPN or StikDebug. Then, turn both Wi-Fi and Mobile Data OFF when you launch StikJIT (use Airplane Mode). You can then enable JIT as normal.
