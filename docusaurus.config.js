@@ -32,7 +32,7 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'es', 'fr', 'de', 'nl', 'zh', 'ja', 'ru', 'ko'],
   },
 
   presets: [
@@ -67,6 +67,10 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
+	  {
+	    type: 'localeDropdown',
+	    position: 'right'
+	  },
           {
             href: 'https://github.com/SideStore/',
             label: 'GitHub',
