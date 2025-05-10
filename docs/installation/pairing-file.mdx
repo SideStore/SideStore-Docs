@@ -10,6 +10,11 @@ Download JitterbugPair for [Windows (64-bit)](https://github.com/osy/Jitterbug/r
 
 ## Pairing Instructions
 
+:::tip
+
+When using cloud storage, the file extension might change (usually to .txt). It is always recommended to zip your pairing file before transferring it. SideStore only accepts .mobiledevicepairing files.
+:::
+
 ### Windows
 
 1. Extract the JitterbugPair zip file.
@@ -26,17 +31,25 @@ On Windows, you might have to execute the program using Command Prompt or Powers
 7. From there, type `./jitterbugpair.exe` and press enter while your device is plugged in.
 
 
-<!-- Credit: Stossy11 -->
 ### macOS
 
-1. Download JitterbugPair then Double Click it to extract the zip file.
-2. Find the Extracted jitterbugpair file. (it should have a black and green icon)
-3. Open Terminal. (In launchpad its in the "Utilities" folder)
-4. Drag the jitterbugpair file into Terminal and press "Return" or Enter. (Make sure your device is plugged in)
-    * If you get "macOS cannot verify that this app is free from malware" put into terminal `xattr -c ` (with a space after) then drag jitterbugpair then press enter. after that try doing step number 4 again.
-5. If you are unable to find the pairing file after running jitterbugpair, try copying the name of the pairing file generated, and pasting it into Finder. If you created multiple pairing files all of them should show up since pairing files all have the name for the device they are tied to.
-6. Transfer this file to your device in a way of your choosing. Zipping the file before sending it off is the best way to ensure the pairing file won't break during transport.
-    * Transferring using cloud storage may change the file's extension (most likely turning into a .txt file), so be careful. It is also possible to change the extension to `.plist` for use with older SideStore versions, like `0.1.1`.
+1. **Extract** `Jitterbugpair-macos.zip`.
+2. **Set a passcode** for your device if you haven't already. Unlock your device, connect it to your computer via cable. If a prompt appears: tap "Trust."
+3. Open your device to the homescreen.
+4. Find the extracted `jitterbugpair` file (it should have a black and green icon).
+5. Open Terminal (in Launchpad, it's in the "Utilities" folder).
+6. Drag the `jitterbugpair` file into Terminal and press "Return" or Enter.
+7. If you get "macOS cannot verify that this app is free from malware":
+   - Go to System Settings > Privacy & Security
+   - Scroll down to the message about the app
+   - Click "Open Anyway"
+   - Try running the program again
+8. JitterBugPair will generate a **pairing file** with the extension `.mobiledevicepairing`.
+9. If you can't find the pairing file:
+   - Copy the name of the pairing file generated
+   - Paste it into Finder
+   - If you ran the program more than once all pairing files for your device should appear since they share the same name
+10. **Transfer the pairing file** to your iOS device using AirDrop, iCloud/One/Google Drive, email, or any other method. For best results, compress the file into a .zip folder first.
 
 ### Linux
 
