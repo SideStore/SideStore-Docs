@@ -1,33 +1,33 @@
 ---
-title: Release Notes
-description: A collection of SideStore release notes.
+титул: Версия релиза
+описание: Изменения данной версии
 sidebar_position: 2
 ---
 
-# Stable Notes
+# Стабильные релизы
 
 ## 0.6.1
 
-### Changelog
-It's spring already? Here's a new update that should fix migration issues from 0.5.9/0.5.10 and an expiration bug. Happy sideloading!
+### Изменения
+Ого, уже весна? Вот новое обновление которое должно исправить ошибки с миграцией с версий 0.5.9/0.5.10 и один экспериментальный баг. Счастливых загрузок!
 
-### What's Changed:
-- fix: typo in hasUpdate comparison by @l2dy in [#900](https://github.com/SideStore/SideStore/pull/900)
-- Update SettingsViewController.swift by @neoarz in [#915](https://github.com/SideStore/SideStore/pull/915)
-- Fixes for migration issues when migrating from 0.5.9 to 0.6.0 by @mahee96 in [#920](https://github.com/SideStore/SideStore/pull/920)
-- Fix typo "levaraging" -> "leveraging" by @lafrenierejm in [#926](https://github.com/SideStore/SideStore/pull/926)
-- Added StosVPN to the EM Proxy part. by @Br0des in [#940](https://github.com/SideStore/SideStore/pull/940)
+### Что изменилось:
+- исправили: опечатку в hasUpdate comparison благодаря @l2dy в [#900](https://github.com/SideStore/SideStore/pull/900)
+- Обновили SettingsViewController.swift благодаря @neoarz в [#915](https://github.com/SideStore/SideStore/pull/915)
+- Исправили проблемы с миграцией когда переходили с версии 0.5.9 на версию 0.6.0 благодаря @mahee96 в [#920](https://github.com/SideStore/SideStore/pull/920)
+- Исправили опечатку "levaraging" -> "leveraging" благодаря @lafrenierejm в [#926](https://github.com/SideStore/SideStore/pull/926)
+- Добавили StosVPN в часть с прокси. Благодаря @Br0des в [#940](https://github.com/SideStore/SideStore/pull/940)
 
 
 ## 0.6.0
 
-### Changelog
-It's March and we have some big changes. We've finally included AltStore 2.0 changes into SideStore. So you will get all the benefits of that and also some fixes in SideStore. Enjoy!
+### Изменения
+Уже Март и у нас есть несколько больших изменений. Мы наконец то внесли изменения AltStore 2.0 в SideStore. Поэтому теперь вы получите все его преимущества, и также исправили несколько ошибок в SideStore. Не благодарите!
 
-### What's Changed:
-- AltStore 2.0 changes in [#794](https://github.com/SideStore/SideStore/pull/794)
-- [Refresh]: Remove install stuffs from refresh since in refresh should only renew provisioning profiles by @mahee96 in [#846](https://github.com/SideStore/SideStore/pull/846)
-- [Settings]: Fix: DisableAppLimit switch reverting back to off state even if on iOS where sparseRestore is not patched yet by @mahee96 in [#850](https://github.com/SideStore/SideStore/pull/850)
-- [Backup]: Fix: update logic during install missed since override keyword was missing by @mahee96 in [#857](https://github.com/SideStore/SideStore/pull/857)
-- Feature: Bulk sources-add in sources screen with capability to stage them before persisting into database by @mahee96 in [#888](https://github.com/SideStore/SideStore/pull/888)
-- Feature: Render in-app update description as (full) markdown by @mahee96 in [#897](https://github.com/SideStore/SideStore/pull/897)
+### Что изменилось:
+- Изменения AltStore 2.0 в [#794](https://github.com/SideStore/SideStore/pull/794)
+- [Обновление]: Убрали скаченные вещи из освежения приложения так как "в обновлении" должно только обновлять профили подготовки  благодаря @mahee96 в [#846](https://github.com/SideStore/SideStore/pull/846)
+- [Настройки]: Исправлено: Переключатель DisableAppLimit возвращался обратно в выключенное состояние даже если на iOS, где находится sparseRestore, еще не исправлен благодаря @mahee96 в [#850](https://github.com/SideStore/SideStore/pull/850)
+- [Резервные копии]: Исправлено: логика обновления в течении загрузки пропадала так как определенное ключевое слово отсутствовалло благодаря @mahee96 в [#857](https://github.com/SideStore/SideStore/pull/857)
+- Функция: Большую часть добавленных источников на экране источников с возможностью переставить их до сохранения в базу данных screen with capability to stage them before persisting into database by @mahee96 in [#888] ((https://github.com/SideStore/SideStore/pull/888) (я вообще хз как перевести 32 линию люди помогите((()
+- Функция: обновленное описание рендера, встроенного в приложении как (полную) уценку (ДА КАК ЭТО ПЕРЕВЕСТИ 😭) благодаря @mahee96 в [#897](https://github.com/SideStore/SideStore/pull/897)
