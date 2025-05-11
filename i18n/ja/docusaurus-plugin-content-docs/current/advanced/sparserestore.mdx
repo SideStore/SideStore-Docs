@@ -1,43 +1,43 @@
 ---
-title: 3-App Limit Bypass
-description: A tutorial on how to install more than 3 apps via SideStore using the SparseRestore exploit.
+title: 3アプリ制限の回避
+description: SparseRestoreエクスプロイトを使用してSideStoreで3つ以上のアプリをインストールする方法のチュートリアル。
 ---
 
 :::note
 
-The SparseRestore "Bypass 3 app limit" exploit **only works on iOS/iPadOS versions between 17.0 and 18.1 beta 4 (not including 17.7.1)**. If you are not on these versions and it doesn't work, **please do not ask for support on this**. 
+SparseRestore の「Bypass 3 App Limit」エクスプロイトは、**iOS/iPadOS 15.2 - 17.7, 18.0 - 18.1B4**のバージョンでのみ機能します。これ以外のバージョンで動作しない場合、**サポートを求めないでください**。
 
 :::
 
-## Prerequisites
-* An iDevice running versions supported by the SparseRestore exploit (see note above).
-* At least 1 free app slot.
-* SideStore version 0.5.9 or later. You can find the latest versions [here](https://github.com/SideStore/SideStore/releases).
-* To perform this exploit, you MUST have **Find My** turned off on your iDevice during the process. It will not work otherwise. Here is how you can turn it off:
-  - Open the Settings app.
-  - Tap on your name at the top.
-  - Tap on Find My.
-  - Tap on Find My iPhone/iPad.
-  - Turn off Find My iPhone/iPad.
-  - You may be required to enter your Apple ID password to confirm.
-  
-  > **Note:** You may still not be able to turn off Find My since having Stolen Device Protection on might prevent you from turning it off. Turn off Stolen Device Protection before trying to turn off Find My.
+## 必要条件
+* 上記のSparseRestoreエクスプロイト対応バージョンを搭載したiDevice
+* 少なくとも1つの空きアプリスロット
+* SideStore バージョン0.5.9以降（最新版は[こちら](https://github.com/SideStore/SideStore/releases)）
+* このエクスプロイトを実行するには、**「探す（Find My）」をオフにする必要があります**。オフでないと機能しません。手順は以下の通りです：
+  - 設定アプリを開く
+  - 上部の自分の名前をタップ
+  - 「探す」をタップ
+  - 「iPhone/iPadを探す」をタップ
+  - 「iPhone/iPadを探す」をオフにする
+  - Apple IDパスワードの入力が求められる場合があります
 
-## Steps
-1. Install SparseBox. This can be done with a variety of methods, but for the purposes of this, install it with SideStore. The latest version can be found [here](https://nightly.link/khanhduytran0/SparseBox/workflows/build/main/artifact.zip) (unzip artifact.zip for the .ipa file).
+  > **注意：** 「盗難デバイス保護（Stolen Device Protection）」が有効になっていると、「探す」をオフにできないことがあります。その場合は、先に「盗難デバイス保護」を無効にしてください。
 
-2. Tick on "Disable App Limit" in SideStore, and make sure SideStore is **closed** (not in background), then open SparseBox.
+## 手順
+1. SparseBox をインストールします。方法はいくつかありますが、ここでは SideStore を使ってインストールします。最新バージョンは[こちら](https://nightly.link/khanhduytran0/SparseBox/workflows/build/main/artifact.zip)から取得できます（artifact.zip を解凍して .ipa ファイルを取り出してください）。
 
-3. Enable StosVPN, select your pairing file and tap 'Bypass 3-app limit'. This should bring up a log output. Wait for it to say `idevicebackup2 exited with code -18` or `idevicebackup2 exited with code 2`, then close the app. No need to hit apply.
+2. SideStoreで「Bypass 3 App Limit」にチェックを入れ、**SideStoreを完全に終了**させた上でSparseBoxを開きます。
 
-4. Re-open SideStore, and scroll down in SideStore settings. Press "clear cache", this will allow the exploit to be seen by SideStore.
+3. StosVPNを有効化し、ペアリングファイルを選択後、「Bypass 3 app limit」をタップします。ログ出力が表示され、`idevicebackup2 exited with code -18` または `code 2` と出たら、アプリを閉じてください。Applyを押す必要はありません。
 
-5. Test that the exploit has worked (you may need to install more than one app to test, depending on how many free slots you have). If it throws an error about the limit, reopen SideStore or retry the exploit. If it installs the app, congratulations! You can now have more than 3 apps installed at one time.
+4. SideStoreを再起動し、設定画面で「Clear Cache」を実行してください。これでSideStoreがエクスプロイトを検知できるようになります。
 
-## Notes
-Due to certain limitations, this exploit must be done for every 3 additional apps you sideload.
+5. エクスプロイトが成功しているかを確認します（空きスロット数によっては複数のアプリをインストールして確認が必要）。制限エラーが出たら、SideStoreを再起動するかエクスプロイトを再実行してください。問題なくインストールできたら、成功です！これで同時に3つ以上のアプリをインストール可能になります。
 
-If you want/need Find My for other purposes, you can now turn it back on. However, if you want to install or refresh more apps, you will need to turn it off again.
+## 補足
+このエクスプロイトは、**追加で3つのアプリをサイドロードするごとに毎回実行する必要があります**。
 
-## Alternatives
-If either the exploit doesn't work for you, or your iDevice is on an unsupported version, there is an alternative to be able to use more than 3 apps at once. LiveContainer, developed by Duy Tran Khanh ([khanhduytran0](https://github.com/khanhduytran0)) (the person who also made SparseBox), allows for iOS apps to be run in containers in-app rather than installing them separately. This may also be easier to use over SparseRestore in some cases. The GitHub page can be found [here](https://github.com/khanhduytran0/LiveContainer).
+別の目的で「探す」を使用する場合は、再びオンにしても問題ありません。ただし、アプリのインストールや更新を行う際は、再度オフにする必要があります。
+
+## 代替手段
+もしこのエクスプロイトが機能しない場合や、iDeviceが非対応バージョンである場合は、**LiveContainer**という別の方法があります。これは、SparseBoxの開発者である Duy Tran Khanh（[khanhduytran0](https://github.com/khanhduytran0)）が開発したもので、アプリを個別にインストールするのではなく、アプリをアプリ内のコンテナで実行します。状況によってはSparseRestoreよりも使いやすい場合もあります。[GitHubページはこちら](https://github.com/khanhduytran0/LiveContainer)。
