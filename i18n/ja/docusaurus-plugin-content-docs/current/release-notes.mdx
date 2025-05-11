@@ -1,33 +1,32 @@
 ---
-title: Release Notes
-description: A collection of SideStore release notes.
+title: リリースノート
+description: SideStoreのリリースノートの集まり。
 sidebar_position: 2
 ---
 
-# Stable Notes
+# 安定版ノート
 
 ## 0.6.1
 
-### Changelog
-It's spring already? Here's a new update that should fix migration issues from 0.5.9/0.5.10 and an expiration bug. Happy sideloading!
+### チェンジログ
+もう春ですか？今回は、0.5.9/0.5.10からの移行問題や、期限切れのバグを修正する新しいアップデートです。サイドローディングを楽しんでください！
 
-### What's Changed:
-- fix: typo in hasUpdate comparison by @l2dy in [#900](https://github.com/SideStore/SideStore/pull/900)
-- Update SettingsViewController.swift by @neoarz in [#915](https://github.com/SideStore/SideStore/pull/915)
-- Fixes for migration issues when migrating from 0.5.9 to 0.6.0 by @mahee96 in [#920](https://github.com/SideStore/SideStore/pull/920)
-- Fix typo "levaraging" -> "leveraging" by @lafrenierejm in [#926](https://github.com/SideStore/SideStore/pull/926)
-- Added StosVPN to the EM Proxy part. by @Br0des in [#940](https://github.com/SideStore/SideStore/pull/940)
-
+### 変更点:
+- 修正: hasUpdateの比較でのタイプミスを修正 (@l2dyによる [#900](https://github.com/SideStore/SideStore/pull/900))
+- `SettingsViewController.swift` の更新 (@neoarzによる [#915](https://github.com/SideStore/SideStore/pull/915))
+- 0.5.9から0.6.0への移行時の問題を修正 (@mahee96による [#920](https://github.com/SideStore/SideStore/pull/920))
+- "levaraging" のタイプミスを "leveraging" に修正 (@lafrenierejmによる [#926](https://github.com/SideStore/SideStore/pull/926))
+- EMプロキシ部分にStosVPNを追加 (@Br0desによる [#940](https://github.com/SideStore/SideStore/pull/940))
 
 ## 0.6.0
 
-### Changelog
-It's March and we have some big changes. We've finally included AltStore 2.0 changes into SideStore. So you will get all the benefits of that and also some fixes in SideStore. Enjoy!
+### チェンジログ
+3月になり、いくつかの大きな変更があります。ついにAltStore 2.0の変更をSideStoreに組み込みました。これでその利点をすべて享受でき、SideStoreにもいくつかの修正が加わりました。お楽しみください！
 
-### What's Changed:
-- AltStore 2.0 changes in [#794](https://github.com/SideStore/SideStore/pull/794)
-- [Refresh]: Remove install stuffs from refresh since in refresh should only renew provisioning profiles by @mahee96 in [#846](https://github.com/SideStore/SideStore/pull/846)
-- [Settings]: Fix: DisableAppLimit switch reverting back to off state even if on iOS where sparseRestore is not patched yet by @mahee96 in [#850](https://github.com/SideStore/SideStore/pull/850)
-- [Backup]: Fix: update logic during install missed since override keyword was missing by @mahee96 in [#857](https://github.com/SideStore/SideStore/pull/857)
-- Feature: Bulk sources-add in sources screen with capability to stage them before persisting into database by @mahee96 in [#888](https://github.com/SideStore/SideStore/pull/888)
-- Feature: Render in-app update description as (full) markdown by @mahee96 in [#897](https://github.com/SideStore/SideStore/pull/897)
+### 変更点:
+- AltStore 2.0の変更 (@mahee96による [#794](https://github.com/SideStore/SideStore/pull/794))
+- [リフレッシュ]: リフレッシュ時にはプロビジョニングプロファイルのみを更新するため、インストール関連の内容を削除 (@mahee96による [#846](https://github.com/SideStore/SideStore/pull/846))
+- [設定]: 修正: `sparseRestore`がまだパッチ適用されていないiOSで、`DisableAppLimit`スイッチがオフ状態に戻ってしまう問題を修正 (@mahee96による [#850](https://github.com/SideStore/SideStore/pull/850))
+- [バックアップ]: 修正: インストール中にロジックが更新されていなかった問題を修正、`override`キーワードが不足していた (@mahee96による [#857](https://github.com/SideStore/SideStore/pull/857))
+- 機能: データベースに保存する前に、`sources`画面で複数のソースを追加できる機能 (@mahee96による [#888](https://github.com/SideStore/SideStore/pull/888))
+- 機能: アプリ内の更新説明を（完全な）Markdownとしてレンダリングする機能 (@mahee96による [#897](https://github.com/SideStore/SideStore/pull/897))
