@@ -1,0 +1,59 @@
+---
+title: Common Issues
+description: Common issues found in SideStore.
+---
+
+:::warning
+
+This page is currently a work in progress. The information provided should be accurate, but please refer to our [Discord server](https://discord.com/invite/sidestore) for assistance if needed.
+
+:::
+
+## Common Issues with SideStore
+
+### AFC Connection Failure
+#### Cause
+Connection issues or an invalid pairing file.
+#### Resolution
+1. Attempt to reconnect
+2. Generate a new pairing file using JitterbugPair and import it via the settings menu. See our [Pairing File instructions](/docs/installation/pairing-file) for details.
+
+### No WiFi or VPN Connection
+#### Cause
+Connection issues with the minimuxer service.
+#### Resolution
+1. If using WireGuard, switch to StosVPN
+2. Try again (spamming the button usually helps)
+3. Restart SideStore
+4. Restart StosVPN
+5. Generate a new pairing file using JitterbugPair and import it via the settings menu. See our [Pairing File instructions](/docs/installation/pairing-file) for details.
+
+### Sidestore Hangs Halfway Through Installation
+#### Cause
+Cache issues.
+#### Resolution
+1. Restart SideStore
+2. Clear Cache
+3. Change Anisette Server
+4. Reset adi.pb
+5. Sign out from SideStore and sign back in
+6. Use WireGuard
+7. Restart device
+8. Regenerate pairing file
+9. Reinstall SideStore
+
+### Unable to Launch SideStore
+#### Cause
+Multiple possible causes.
+#### Resolution
+1. Make sure you installed SideStore through Altserver.
+2. Reinstall SideStore
+
+If the above doesnt work, do the following:
+
+1. Delete SideStore and all apps that you have installed from SideStore.
+2. Reinstall SideStore.
+3. Select pairing file and login. (It will give you a promt to refresh SideStore, select no)
+4. Install the Sidestore.ipa file to your device.
+5. Import the Sidestore.ipa file into Sidestore like how you would install any other app.
+6. This will allow Sidestore to do a clean refresh, and hopefully fix the issue.
