@@ -15,6 +15,7 @@ The translations are organized in the `i18n` directory with separate folders for
 - `ko/` - Korean
 - `nl/` - Dutch
 - `ru/` - Russian
+- `sv/` - Swedish
 - `zh/` - Chinese
 
 Each language folder follows the same structure:
