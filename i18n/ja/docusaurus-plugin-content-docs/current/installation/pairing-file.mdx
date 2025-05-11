@@ -1,67 +1,68 @@
 ---
-title: Pairing File
-description: Pairing files are essential to SideStore's functionality.
+title: ペアリングファイル
+description: ペアリングファイルはSideStoreの動作に不可欠です。
 sidebar_position: 2
 ---
 
-Using JitterbugPair (*not* the Jitterbug app) allows us to create a pairing file for programs like SideStore to talk to your device. This is required to use SideStore, or it will not function.
+JitterbugPair（※Jitterbugアプリではありません）を使用することで、SideStoreのようなプログラムがデバイスと通信できるペアリングファイルを作成できます。これはSideStoreを使用するために必須であり、これがないと動作しません。
 
-Download JitterbugPair for [Windows (64-bit)](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip), [macOS](https://github.com/SideStore/SideStore-Docs/releases/download/need-a-place-to-put-jittterbug/jitterbugpair), or [Linux](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip).
+[JitterbugPairをダウンロード](https://github.com/osy/Jitterbug/releases)：
+- [Windows (64-bit)](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip)
+- [macOS](https://github.com/SideStore/SideStore-Docs/releases/download/need-a-place-to-put-jittterbug/jitterbugpair)
+- [Linux](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip)
 
-## Pairing Instructions
+## ペアリング手順
 
 :::tip
 
-When using cloud storage, the file extension might change (usually to .txt). It is always recommended to zip your pairing file before transferring it. SideStore only accepts .mobiledevicepairing files.
+クラウドストレージを使用するとファイル拡張子が（.txtなどに）変更されることがあります。転送前にペアリングファイルをZIP圧縮することを推奨します。SideStoreは `.mobiledevicepairing` ファイルのみを受け付けます。
+
 :::
 
 ### Windows
 
-1. Extract the JitterbugPair zip file.
-2. Plug your device into your computer, and open your device to its home screen. Once done, execute the program.
-    * Your device may ask you to trust your computer. Make sure to accept this prompt, as it is required for the pairing process.
-3. Once it is done, you will get a file that ends with `.mobiledevicepairing`.
-4. Transfer this file to your device using iTunes, or any other method. Zipping the file before sending it off is the best way to ensure the pairing file won't break during transport.
-    * Transferring using cloud storage may change the file's extension (most likely turning into a .txt file), so be careful. It is also possible to change the extension to `.plist` for use with older SideStore versions, like `0.1.1`.
+1. JitterbugPairのZIPファイルを解凍します。
+2. デバイスをPCに接続し、ホーム画面を開いた状態にします。次にプログラムを実行してください。
+    * 「このコンピュータを信頼しますか？」と表示された場合は「信頼」を選択してください。
+3. `.mobiledevicepairing` で終わるファイルが生成されます。
+4. iTunesなどを使ってこのファイルをデバイスに転送します。送信前にZIP圧縮するのが安全です。
+    * クラウドストレージを使用するとファイルが `.txt` に変わることがあるので注意。古いSideStore（例: 0.1.1）では `.plist` に変更して使うことも可能です。
 
-On Windows, you might have to execute the program using Command Prompt or Powershell, as it can sometimes not open by double clicking the `.exe` file.
+.exeファイルをダブルクリックしても開かない場合、コマンドプロンプトまたはPowerShellを使用してください。
 
-5. In File Explorer, navigate to the folder where jitterbugpair is located.
-6. In the navigation bar where the folder location is, click an empty spot and type `powershell`. It should open a (possibly blue colored) window called PowerShell.
-7. From there, type `./jitterbugpair.exe` and press enter while your device is plugged in.
-
+5. エクスプローラーでjitterbugpairがあるフォルダを開きます。
+6. パスバーの空白部分をクリックし `powershell` と入力してEnter。
+7. PowerShellで `./jitterbugpair.exe` を入力してEnterキーを押します（デバイスは接続された状態にしておく）。
 
 ### macOS
 
-1. **Extract** `Jitterbugpair-macos.zip`.
-2. **Set a passcode** for your device if you haven't already. Unlock your device, connect it to your computer via cable. If a prompt appears: tap "Trust."
-3. Open your device to the homescreen.
-4. Find the extracted `jitterbugpair` file (it should have a black and green icon).
-5. Open Terminal (in Launchpad, it's in the "Utilities" folder).
-6. Drag the `jitterbugpair` file into Terminal and press "Return" or Enter.
-7. If you get "macOS cannot verify that this app is free from malware":
-   - Go to System Settings > Privacy & Security
-   - Scroll down to the message about the app
-   - Click "Open Anyway"
-   - Try running the program again
-8. JitterBugPair will generate a **pairing file** with the extension `.mobiledevicepairing`.
-9. If you can't find the pairing file:
-   - Copy the name of the pairing file generated
-   - Paste it into Finder
-   - If you ran the program more than once all pairing files for your device should appear since they share the same name
-10. **Transfer the pairing file** to your iOS device using AirDrop, iCloud/One/Google Drive, email, or any other method. For best results, compress the file into a .zip folder first.
+1. `Jitterbugpair-macos.zip` を解凍します。
+2. パスコードを設定し、デバイスをケーブルで接続してロックを解除。「信頼しますか？」が出たら「信頼」。
+3. ホーム画面を開いておきます。
+4. 解凍した `jitterbugpair` ファイル（黒と緑のアイコン）を探します。
+5. Launchpadの「ユーティリティ」からターミナルを開きます。
+6. `jitterbugpair` ファイルをターミナルにドラッグして、Enterキー。
+7. 「このアプリはマルウェアがないことを確認できません」と表示された場合：
+   - システム設定 > プライバシーとセキュリティ に移動
+   - 警告文をスクロールして「このアプリを開く」を選択
+   - 再度プログラムを実行
+8. `.mobiledevicepairing` 拡張子のファイルが生成されます。
+9. 見つからない場合：
+   - ファイル名をコピーしFinderで検索
+   - 複数作成した場合も同名で一覧表示されるはずです
+10. ファイルをAirDrop、iCloud、Google Drive、メールなどでデバイスへ転送します。ZIP圧縮がおすすめです。
 
 ### Linux
 
-These instructions expect that you are familiar with the linux commandline.
+Linuxのコマンドラインに慣れている方向けの手順です。
 
-1. Extract the Jitterbug zip file, and open a terminal (if you haven't already) to the extracted directory. 
-2. In that terminal, run `chmod +x ./jitterbugpair`
-3. Plug your device into your computer, and open your device to its home screen. Once done, execute the program in your terminal with `./jitterbugpair`
-    * If you get a prompt saying you need to trust the computer from your iDevice, make sure to do so. You may need to rerun jitterbugpair.
-4. Once it is done, you will get a file that ends with `.mobiledevicepairing` in the directory you ran jitterbugpair from.
-5. Transfer this file to your device in a way of your choosing. Zipping the file before sending it off is the best way to ensure the pairing file won't break during transport
-    * Transferring using cloud storage may change the file's extension (most likely turning into a .txt file), so be careful. It is also possible to change the extension to `.plist` for use with older SideStore versions, like `0.1.1`.
+1. ZIPファイルを解凍し、ターミナルでそのディレクトリを開きます。
+2. `chmod +x ./jitterbugpair` を実行して実行権限を付与。
+3. デバイスを接続してホーム画面を開いた状態にし、 `./jitterbugpair` を実行。
+    * 「このコンピュータを信頼しますか？」が出たら「信頼」し、必要であれば再実行。
+4. `.mobiledevicepairing` で終わるファイルが生成されます。
+5. ZIPで圧縮してからクラウドや他の方法で転送してください。
+    * 拡張子が `.txt` に変わることがあるので注意。古いバージョンでは `.plist` に変更して使うこともできます。
 
-You might have success by just adding execute permissions and running jitterbugpair from a file manager, but it is recommended to just do it from the terminal.
+ファイルマネージャーから直接実行できる場合もありますが、ターミナルでの実行を推奨します。
 
