@@ -1,61 +1,61 @@
 ---
-title: Common Issues
-description: Common issues found in SideStore.
+title: よくある問題
+description: SideStoreで見つかるよくある問題について。
 ---
 
 :::warning
 
-This page is currently a work in progress. The information provided should be accurate, but please refer to our [Discord server](https://discord.com/invite/sidestore) for assistance if needed.
+このページは現在進行中です。提供された情報は正確であるべきですが、必要に応じて[Discordサーバー](https://discord.com/invite/sidestore)をご参照ください。
 
 :::
 
-## Common Issues with SideStore
+## SideStoreに関するよくある問題
 
-### AFC Connection Failure
-#### Cause
-Connection issues or an invalid pairing file.
-#### Resolution
-1. Attempt to reconnect
-2. Generate a new pairing file using JitterbugPair and import it via the settings menu. See our [Pairing File instructions](/docs/installation/pairing-file) for details.
+### AFC接続の失敗
+#### 原因
+接続の問題、または無効なペアリングファイル。
+#### 解決策
+1. 再接続を試みる
+2. JitterbugPairを使用して新しいペアリングファイルを生成し、設定メニューからインポートする。[ペアリングファイルの手順](/docs/installation/pairing-file)を参照
 
-### No WiFi or VPN Connection
-#### Cause
-Connection issues with the minimuxer service.
-#### Resolution
-1. If using WireGuard, switch to StosVPN
-2. Try again (spamming the button usually helps)
-3. Restart SideStore
-4. Restart StosVPN
-5. Generate a new pairing file using JitterbugPair and import it via the settings menu. See our [Pairing File instructions](/docs/installation/pairing-file) for details.
+### WiFiまたはVPN接続の不具合
+#### 原因
+minimuxerサービスとの接続の問題。
+#### 解決策
+1. WireGuardを使用している場合、StosVPNに切り替える
+2. 再度試してみる（ボタンを何度も押すと効果的な場合があります）
+3. SideStoreを再起動する
+4. StosVPNを再起動する
+5. JitterbugPairを使用して新しいペアリングファイルを生成し、設定メニューからインポートする。[ペアリングファイルの手順](/docs/installation/pairing-file)を参照
 
-### Sidestore Hangs Halfway Through Installation
-#### Cause
-Cache issues.
-#### Resolution
-1. Restart SideStore
-2. Clear Cache
-3. Change Anisette Server
-4. Reset adi.pb
-5. Sign out from SideStore and sign back in
-6. Use WireGuard
-7. Restart device
-8. Regenerate pairing file
-9. Reinstall SideStore
+### SideStoreがインストール途中でフリーズする
+#### 原因
+キャッシュの問題。
+#### 解決策
+1. SideStoreを再起動する
+2. キャッシュをクリアする
+3. Anisetteサーバーを変更する
+4. adi.pbをリセットする
+5. SideStoreからサインアウトし、再度サインインする
+6. WireGuardを使用する
+7. デバイスを再起動する
+8. ペアリングファイルを再生成する
+9. SideStoreを再インストールする
 
-### Unable to Launch SideStore
-#### Cause
-Multiple possible causes.
-#### Resolution
-1. Make sure you installed SideStore through Altserver.
-2. Reinstall SideStore
+### SideStoreを起動できない
+#### 原因
+複数の原因が考えられる。
+#### 解決策
+1. SideStoreをAltserverを通じてインストールしたことを確認する。
+2. SideStoreを再インストールする
 
-If the above doesnt work, do the following:
+上記がうまくいかない場合、以下の手順を試してみてください：
 
-1. Delete SideStore and all apps that you have installed from SideStore.
-2. Reinstall SideStore.
-3. Select pairing file and login. (It will give you a promt to refresh SideStore, select no)
-4. Install the Sidestore.ipa file to your device.
-5. Import the Sidestore.ipa file into Sidestore like how you would install any other app.
-6. This will allow Sidestore to do a clean refresh, and hopefully fix the issue.
+1. SideStoreと、SideStoreからインストールしたすべてのアプリを削除する。
+2. SideStoreを再インストールする。
+3. ペアリングファイルを選択し、ログインする。（SideStoreの更新を促すポップアップが表示されますが、「いいえ」を選択）
+4. Sidestore.ipaファイルをデバイスにインストールする。
+5. Sidestore.ipaファイルを通常のアプリインストールと同様にSideStoreにインポートする。
+6. これにより、SideStoreがクリーンな状態で更新され、問題が解決する可能性があります。
 
 
