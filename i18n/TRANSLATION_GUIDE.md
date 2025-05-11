@@ -61,6 +61,14 @@ i18n/[language-code]/
 4. **Test your changes**
    - Run the site locally with your language to check how translations look
    - Make sure formatting and links work correctly
+   - You can test your translations locally by running:
+     ```bash
+     yarn start -- --locale [language-code]
+     ```
+   - For example, to test Spanish translations:
+     ```bash
+     yarn start -- --locale es
+     ```
 
 ## Translation Guidelines
 
@@ -77,20 +85,6 @@ i18n/[language-code]/
 - Don't change image paths or URLs
 - Don't modify the sidebar position or document metadata
 - Don't add or remove content beyond what's in the original documents
-
-## Testing Your Translations
-
-You can test your translations locally by running:
-
-```bash
-yarn start -- --locale [language-code]
-```
-
-For example, to test Spanish translations:
-
-```bash
-yarn start -- --locale es
-```
 
 ## Submitting Your Translations
 
