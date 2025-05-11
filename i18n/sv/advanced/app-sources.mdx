@@ -1,22 +1,25 @@
 ---
-title: App Sources
-description: A guide on custom app sources.
+title: Appkällor
+description: En guide om anpassade appkällor.
 ---
 
-# Make a Source
+# Skapa en källa
 
-SideStore is fully compatible with AltSources. The official AltStore [source documentation](https://faq.altstore.io/developers/make-a-source) provides all the details you need to make your own AltSource. AltSources allow your audience to view, install, and update all your available apps easily across both AltStore and SideStore.
+SideStore är helt kompatibelt med AltSources. Den officiella AltStore [källdokumentationen](https://faq.altstore.io/developers/make-a-source) ger alla detaljer du behöver för att skapa din egen AltSource. AltSources låter din publik bläddra bland, installera och uppdatera alla dina tillgängliga appar enkelt både i AltStore och SideStore.
 
-When editing your source, it is highly recommended to create and view a draft of your changes using the [AltSource Browser](https://altsource.by.lao.sb/browse) to see a visual display of your source and correct any errors before finalizing and publishing changes to your source.
+När du redigerar din källa rekommenderas det starkt att skapa och granska ett utkast av dina ändringar med hjälp av [AltSource Browser](https://altsource.by.lao.sb/browse) för att se en visuell förhandsvisning av din källa och rätta eventuella fel innan du slutför och publicerar ändringarna.
 
-# Distributing your Source
+# Distribuera din källa
 
-You can create a link to automatically add your AltSource by using this template: 
+Du kan skapa en länk som automatiskt lägger till din AltSource genom att använda denna mall:
 ```
-sidestore://source?url=[source url]
+
+sidestore://source?url=\[source url]
+
 ```
-For more info, see [URL Schema](/docs/advanced/url-schema). It is often helpful to create the link to your AltSource in this format, then put it into a link shortener such as ```tinyurl.com```. However, if a user tries to use a sidestore:// link without SideStore already installed, it will crash, so some documentation may be helpful.
+För mer information, se [URL-schema](/docs/advanced/url-schema). Det är ofta hjälpsamt att skapa länken till din AltSource i detta format och sedan använda en tjänst som `tinyurl.com` för förkortning. Observera dock att om en användare försöker öppna en sidestore://-länk utan att ha SideStore installerat så kommer appen att krascha, så lite dokumentation kan vara hjälpsamt.
 
-## That's it!
+## Klart!
 
-Here are some good existing AltSources: The [official AltStore](https://apps.altstore.io) source, the [SideStore community](https://github.com/SideStore/Community-Source) source, the [StikJIT](https://raw.githubusercontent.com/StephenDev0/StikJIT/refs/heads/main/repo.json) source, and the [DolphiniOS](https://altstore.oatmealdome.me) source.
+Här är några bra befintliga AltSources: [officiella AltStore](https://apps.altstore.io), [SideStore Community](https://github.com/SideStore/Community-Source), [StikJIT](https://raw.githubusercontent.com/StephenDev0/StikJIT/refs/heads/main/repo.json) och [DolphiniOS](https://altstore.oatmealdome.me).
+```
