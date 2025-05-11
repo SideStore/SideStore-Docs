@@ -1,405 +1,405 @@
 ---
-title: Error Codes
-description: Error codes found in SideStore.
+title: エラーコード
+description: SideStoreで見つかったエラーコード
 ---
 
 :::warning
 
-This page is currently not fully accurate to how SideStore works, as this is based on AltStore's Error Codes page. Some info is still correct, but please don't rely on this word for word. Make sure to ask in our [Discord server](https://discord.com/invite/sidestore) for help if you need it.
+このページは現在、SideStoreの動作に完全には一致していません。これはAltStoreのエラーコードページに基づいています。情報の一部は正しいですが、言葉通りに頼らないようにしてください。問題が解決しない場合は、[Discordサーバー](https://discord.com/invite/sidestore)でサポートを求めてください。
 
 :::
 
-## SideStore Errors
+## SideStore エラー
 
 #### (1000) An unknown error occurred.
 
 `AltStore.OperationError`
 
-This means that SideStore ran into an unexpected error. Please check our [Troubleshooting Guide](./), and you can reach out to us directly if the issue persists.
+予期しないエラーが発生したことを意味します。[トラブルシューティングガイド](./)を確認し、問題が解決しない場合は直接お問い合わせください。
 
 #### (1001) The operation returned an unknown result.
 
-This means that SideStore ran into an unexpected error. Please check our [Troubleshooting Guide](./), and you can reach out to us directly if the issue persists.
+予期しないエラーが発生したことを意味します。[トラブルシューティングガイド](./)を確認し、問題が解決しない場合は直接お問い合わせください。
 
 #### (1002) The operation was cancelled.
 
 `AltStore.OperationError`
 
-This means that the performed action was stopped. Please try again.
+実行した操作がキャンセルされたことを意味します。再試行してください。
 
 #### (1003) The operation timed out.
 
 `AltStore.OperationError`
 
-This means that SideStore ran into problems trying to complete the requested action. Please try again and check our [Troubleshooting Guide](./) for additional help. You can reach out to us directly if the issue persists.
+要求された操作を完了するのに問題が発生したことを意味します。再試行し、追加のサポートが必要な場合は[トラブルシューティングガイド](./)を確認してください。問題が解決しない場合は直接お問い合わせください。
 
 #### (1004) You are not signed in.
 
 `AltStore.OperationError`
 
-This means that you must enter your Apple ID information in the settings tab to do the requested action.
+Apple ID情報を設定タブに入力する必要があることを意味します。
 
 #### (1005) The app could not be found.
 
 `AltStore.OperationError`
 
-This means that AltStore could not locate the file to download or install, most likely because the file does not exist at the provided URL.
+指定されたURLでファイルが見つからなかったことを意味します。
 
 #### (1006) AltStore could not determine this device's UDID.
 
 `AltStore.OperationError`
 
-This means that SideStore couldn't read the device UDID embedded by AltServer when installing SideStore. Make sure you're installing SideStore with the latest AltServer version and not via another method.
+SideStoreがAltServerによってインストールされたデバイスのUDIDを読み取れなかったことを意味します。最新のAltServerバージョンを使用してSideStoreをインストールしてください。
 
 #### (1007) This app is in an invalid format.
 
 `AltStore.OperationError`
 
-This means the app you're trying to install is not a standard .ipa. Try downloading the app from another location.
+インストールしようとしているアプリが標準の.ipaファイルではないことを意味します。別の場所からアプリをダウンロードしてみてください。
 
 #### (1008) Invalid parameters.
 
 `AltStore.OperationError`
 
-This means an internal error occured and SideStore couldn't provide the necessary information to perform the requested task. Please try again and check our [Troubleshooting Guide](./) for additional help. You can reach out to us directly if the issue persists.
+内部エラーが発生し、SideStoreが必要な情報を提供できなかったことを意味します。再試行し、[トラブルシューティングガイド](./)を確認してください。問題が解決しない場合は直接お問い合わせください。
 
 #### (1009) You cannot register more than 10 App IDs within a 7-day period.
 
 `AltStore.OperationError`
 
-This means that you have reached the maximum amount of App IDs available. Please check the App IDs in the My Apps tab to see when they will expire.
+7日間に10個以上のApp IDを登録できないことを意味します。My AppsタブでApp IDの有効期限を確認してください。
 
 #### (1010) There are no AltStore sources.
 
 `AltStore.OperationError`
 
-This means an internal error occured and SideStore is unable to fetch changes for any Sources you've added. Please try again and check our [Troubleshooting Guide](./) for additional help. You can reach out to us directly if the issue persists.
+SideStoreが追加したソースの変更を取得できない内部エラーが発生したことを意味します。再試行し、[トラブルシューティングガイド](./)を確認してください。問題が解決しない場合は直接お問い合わせください。
 
 #### (1011) AltStore was denied permission to launch the app.
 
 `AltStore.OperationError`
 
-This means SideStore couldn't launch a sideloaded app because you tapped "Cancel" on the "AltStore wants to open \[app]" alert, or because you still need to trust your Apple ID in Settings.
+「AltStoreが\[アプリ名\]を開こうとしています」というアラートで「キャンセル」をタップしたか、Apple IDを設定で信頼する必要があることを意味します。
 
 #### (1012) AltStore's shared app group could not be accessed.
 
 `AltStore.OperationError`
 
-This means SideStore was not able to access the directory where app backups are stored. Make sure you're installing SideStore with the latest AltServer version and not via another method.
+アプリのバックアップが保存されているディレクトリにアクセスできなかったことを意味します。最新のAltServerバージョンを使用してSideStoreをインストールしてください。
 
 #### (1200) AltServer could not be found.
 
 `AltStore.OperationError`
 
-This means that SideStore is having trouble discovering AltServer on your local network. Make sure you're connected to the same Wi-Fi network as your PC/Mac running AltServer, or try connecting your device to your computer via USB.
+SideStoreがローカルネットワーク上でAltServerを発見できないことを意味します。PC/MacでAltServerが実行されているのと同じWi-Fiネットワークに接続していることを確認してください。または、USB経由でデバイスをPCに接続してみてください。
 
 #### (1201) A connection to AltServer could not be established.
 
 `AltStore.OperationError`
 
-This means that SideStore is having trouble connecting to AltServer on your PC/Mac. Make sure you have Wi-Fi sync enabled, and otherwise you may try plugging in your device directly via USB.
+PC/MacのAltServerに接続できなかったことを意味します。Wi-Fi同期が有効であることを確認するか、デバイスをUSBで直接接続してみてください。
 
 #### (1202) The connection to AltServer was dropped.
 
 `AltStore.OperationError`
 
-This means that SideStore's connection to AltServer on your PC/Mac was interrupted. Make sure you have Wi-Fi sync enabled, and otherwise you may try plugging in your device directly via USB.
+PC/MacのAltServerとの接続が切断されたことを意味します。Wi-Fi同期が有効であることを確認するか、デバイスをUSBで直接接続してみてください。
 
-## AltServer / SideServer Errors
+## AltServer / SideServer エラー
 
 #### (0) Exception Error
 
 `AltServer.ExceptionError`
 
-This error can appear for many reasons, and below are a few that you might see (this is not an exhaustive list).
+多くの理由でこのエラーが発生する可能性があります。以下にいくつかの例を示します（これは完全なリストではありません）。
 
 "vector too long"
 
-This means that Windows Defender is blocking your request. You may need to first disable Real-Time Protection on Windows in order for SideStore to work as expected.
+Windows Defenderがリクエストをブロックしていることを意味します。SideStoreを正常に動作させるために、まずWindowsのリアルタイム保護を無効にする必要があるかもしれません。
 
 #### (1999) Underlying Error
 
 `AltServer.ServerError`
 
-This means that AltServer ran into an unknown error. We recommend reaching out to our support channels if the issue persists.
+AltServerで不明なエラーが発生したことを意味します。問題が解決しない場合は、サポートチャネルに連絡することをお勧めします。
 
 #### (2000) Unknown Error
 
 `AltServer.ServerError`
 
-This means that AltServer ran into an unknown error. We recommend reaching out to our support channels if the issue persists.
+AltServerで不明なエラーが発生したことを意味します。問題が解決しない場合は、サポートチャネルに連絡することをお勧めします。
 
-#### (2001) Could not connect to AltServer. / There was an error connecting to the device.&#x20;
+#### (2001) Could not connect to AltServer. / There was an error connecting to the device.
 
 `AltServer.ServerError`
 
-This means that AltServer is having trouble connecting to your iOS device. Try plugging your device directly into your computer if it is not already.
+AltServerがiOSデバイスへの接続に問題があることを意味します。まだ接続していない場合は、デバイスをPCに直接接続してみてください。
 
-If you still have issues, please refer to the [Troubleshooting Guide](./).
+問題が解決しない場合は、[トラブルシューティングガイド](./)を参照してください。
 
 #### (2002) Lost Connection to AltServer.
 
 `AltServer.ServerError`
 
-This means that the connection was dropped between AltServer and your iOS device. Make sure your device and computer are connected to the same Wi-Fi network and try again.
+AltServerとiOSデバイスとの接続が切断されたことを意味します。デバイスとPCが同じWi-Fiネットワークに接続されていることを確認し、再試行してください。
 
-If you still have issues, please refer to the [Troubleshooting Guide](./).
+問題が解決しない場合は、[トラブルシューティングガイド](./)を参照してください。
 
 #### (2003) AltServer could not find this device.
 
 `AltServer.ServerError`
 
-This means that AltServer had trouble locating your iOS device either over USB or via Wi-Fi. Make sure your device and computer are connected to the same Wi-Fi network and that your device is trusted and try again.
+AltServerがUSBまたはWi-Fi経由でiOSデバイスを見つけられなかったことを意味します。デバイスとPCが同じWi-Fiネットワークに接続されていることを確認し、デバイスが信頼されていることを確認して、再試行してください。
 
-If you still have issues, please refer to the [Troubleshooting Guide](./).
+問題が解決しない場合は、[トラブルシューティングガイド](./)を参照してください。
 
 #### (2004) Failed to write app data to device.
 
 `AltServer.ServerError`
 
-This means that AltServer tried to write a file to your device and could not or was interrupted. Make sure your device and computer are connected to the same Wi-Fi network and that your device is trusted and try again.
+AltServerがデバイスにファイルを書き込めなかった、または中断されたことを意味します。デバイスとPCが同じWi-Fiネットワークに接続されていることを確認し、デバイスが信頼されていることを確認して、再試行してください。
 
-If you still have issues, please refer to the [Troubleshooting Guide](./).
+問題が解決しない場合は、[トラブルシューティングガイド](./)を参照してください。
 
 #### (2005) AltServer received an invalid request.
 
 `AltServer.ServerError`
 
-This means that AltServer received a request it did not understand. This may be because you are running an outdated AltServer version, so please make sure to update to the latest version.
+AltServerが理解できないリクエストを受け取ったことを意味します。古いAltServerバージョンを使用している可能性があるため、最新バージョンにアップデートしてください。
 
 #### (2006) AltServer sent an invalid response.
 
 `AltServer.ServerError`
 
-This means that SideStore received a response from AltServer it did not understand. This may be because you are running an outdated SideStore version, so please make sure to update to the latest version.
+AltServerからSideStoreが理解できないレスポンスを受け取ったことを意味します。古いSideStoreバージョンを使用している可能性があるため、最新バージョンにアップデートしてください。
 
 #### (2007) The app is invalid.
 
 `AltServer.ServerError`
 
-This means that the app your were attempting to install was found to be in an invalid format. If you continue to have issues, try downloading from alternate source.
+インストールしようとしたアプリが無効な形式であることを意味します。別のソースからダウンロードしてみてください。
 
 #### (2008) An error occurred while installing the app.
 
 `AltServer.ServerError`
 
-This means that iOS rejected the app you were attempting to install. Make sure to use a version compatible your iOS version.
+iOSがインストールしようとしたアプリを拒否したことを意味します。iOSバージョンに互換性のあるバージョンを使用してください。
 
 #### (2009) Cannot activate more than 3 apps with a non-developer Apple ID.
 
 `AltServer.ServerError`
 
-This means that you have reached the maximum amount of sideloaded apps you can have with a Free Developer Account. Apple limits the amount of sideloaded apps you can have with a free account, and to remove the limit you need to sign up for a Paid Developer account at [developer.apple.com](https://developer.apple.com).
+無料の開発者アカウントでサイドロードできるアプリの最大数に達したことを意味します。この制限を解除するには、[developer.apple.com](https://developer.apple.com)で有料開発者アカウントに登録する必要があります。
 
 #### (2010) Your device must be running iOS 12.2 or later to install AltStore.
 
 `AltServer.ServerError`
 
-This means that you will need to update your phone to the minimum iOS version required before you can continue to use AltStore.
+AltStoreを使用するためには、最低でもiOS 12.2以降にアップデートする必要があることを意味します。
 
 #### (2011) AltServer does not support this request.
 
 `AltServer.ServerError`
 
-This means that AltServer received a request it did not recognize. You may be running an outdated AltServer version, so be sure to update.
+AltServerが認識できないリクエストを受け取ったことを意味します。古いAltServerバージョンを使用している可能性があるため、最新バージョンにアップデートしてください。
 
 #### (2012) Received an unknown response from AltServer.
 
 `AltServer.ServerError`
 
-This means that AltStore received a response from AltServer it did not recognize. You may be running an outdated AltStore version, so be sure to update.
+AltServerからAltStoreが認識できないレスポンスを受け取ったことを意味します。古いSideStoreバージョンを使用している可能性があるため、最新バージョンにアップデートしてください。
 
 #### (2013) The provided anisette data is invalid.
 
 `AltServer.ServerError`
 
-This means that the Apple ID information AltStore used to try to sign in was invalid because of an unknown issue. Make sure you are using the latest version of iCloud if you are on Windows and that your date/time are accurate.
+AltStoreが使用したApple ID情報が無効であるか、期限切れであることを意味します。Windowsで最新バージョンのiCloudを使用しており、日付と時刻が正しいことを確認してください。
 
 #### (2014) AltServer could not connect to Mail plug-in. (macOS)
 
 `AltServer.ServerError`
 
-This means that AltServer could not find the Mail plug-in either because it is not enable or you are not running the Mail app on your Mac. Make sure the Mail app is running on your Mac and that the plug-in is enabled.
+AltServerがMailプラグインを見つけられなかったか、MailアプリがMacで実行されていないことを意味します。Mailアプリが実行されていることを確認し、プラグインが有効になっていることを確認してください。
 
 #### (2015) Could not find provisioning profile.
 
 `AltServer.ServerError`
 
-This means that the provisioning profile needed to install this app could not be located. This is most likely a problem with AltStore itself, so please message support or to our Patreon inbox.
+このアプリをインストールするために必要なプロビジョニングプロファイルが見つからなかったことを意味します。AltStore自体に問題がある可能性があるため、サポートまたはPatreonの問い合わせ先に連絡してください。
 
 #### (2016) An error occurred while removing the app.
 
 `AltServer.ServerError`
 
-This means that there was an issue while removing an app. There are a number of different issues so make sure to check your error log for a more specific message on your issue.
+アプリを削除する際に問題が発生したことを意味します。エラーログを確認して、問題の詳細を確認してください。
 
 #### (2100) The Requested app is not currently running on the device.
 
 `AltServer.ServerError`
 
-This means that you tried to enable JIT without the requested app running in the foreground. Make sure to launch the app and have it running before you enable JIT.
+要求されたアプリがデバイスで実行されていない状態でJITを有効にしようとしたことを意味します。アプリを起動して実行してからJITを有効にしてください。
 
-#### (2101) The disk is incompatible with \[iOS version].
+#### (2101) The disk is incompatible with [iOS version].
 
 `AltServer.ServerError`
 
-This means that the developer disk required to enable JIT is not compatible with your device's OS version. Make sure you're running the latest version of AltStore and AltServer, and try again later.
+JITを有効にするために必要な開発者ディスクがデバイスのOSバージョンと互換性がないことを意味します。最新のAltStoreとAltServerを実行しており、後で再試行してください。
 
-## Apple Developer Errors
+## Apple Developer エラー
 
 #### (3000) An unknown error occurred.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon
+更新情報は近日公開予定です
 
 #### (3001) The provided parameters are invalid.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon
+更新情報は近日公開予定です
 
 #### (3002) Incorrect Apple ID or password.
 
 `AltStore.AppleDeveloperError`
 
-This means that the Apple ID credentials you used were invalid. Make sure the username and password are correct.
+提供されたApple ID認証情報が無効であることを意味します。ユーザー名とパスワードが正しいことを確認してください。
 
-If you still have issues, you can also try creating a new Apple ID to use with SideStore.
+それでも問題が解決しない場合は、新しいApple IDを作成してSideStoreに使用することも検討してください。
 
 #### (3003) An app-specific password is required. You can create one at appleid.apple.com.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+更新情報は近日公開予定です。
 
 #### (3004) You are not a member of any development teams.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+更新情報は近日公開予定です。
 
 #### (3005) This device's UDID is invalid.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+更新情報は近日公開予定です。
 
 #### (3006) This device is already registered with another ID.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+更新情報は近日公開予定です。
 
 #### (3007) The certificate request is invalid.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+更新情報は近日公開予定です。
 
 #### (3008) There is no certificate with the requested serial number for this team.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+更新情報は近日公開予定です。
 
 #### (3009) The name for this app is invalid.
 
 `AltStore.AppleDeveloperError`
 
-SideStore couldn’t register an App ID with Apple because the app name contains non-ASCII characters. You can try downloading from another source.
+SideStoreがAppleにApp IDを登録できなかったのは、アプリ名に非ASCII文字が含まれているためです。別のソースからダウンロードしてみてください。
 
 #### (3010) The bundle identifier for this app is invalid.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+更新情報は近日公開予定です。
 
 #### (3011) The bundle identifier for this app has already been registered.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+更新情報は近日公開予定です。
 
 #### (3012) There is no App ID with the requested identifier on this team.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+更新情報は近日公開予定です。
 
 #### (3013) You may only register 10 App IDs every 7 days.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+更新情報は近日公開予定です。
 
 #### (3014) The provided app group is invalid.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+更新情報は近日公開予定です。
 
 #### (3015) App group does not exist.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+更新情報は近日公開予定です。
 
 #### (3016) The identifier for the requested provisioning profile is invalid.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+更新情報は近日公開予定です。
 
 #### (3017) There is no provisioning profile with the requested identifier on this team.
 
 `AltStore.AppleDeveloperError`
 
-If you are seeing this error, it's likely due to a recent server-side change made by Apple. Please see the following announcement with more info: [https://twitter.com/altstoreio/status/1638599316762664974?s=20](https://twitter.com/altstoreio/status/1638599316762664974?s=20)
+このエラーが表示された場合、Appleのサーバー側で最近行われた変更が原因である可能性があります。詳細については、以下の発表を参照してください：[https://twitter.com/altstoreio/status/1638599316762664974?s=20](https://twitter.com/altstoreio/status/1638599316762664974?s=20)
 
 #### (3018) This account requires signing in with two-factor authentication.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+更新情報は近日公開予定です。
 
 #### (3019) Incorrect verification code.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+更新情報は近日公開予定です。
 
 #### (3020) Failed to perform authentication handshake with server.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+更新情報は近日公開予定です。
 
 #### (3021) The provided anisette data is invalid.
 
 `AltStore.AppleDeveloperError`
 
-This error means that the information used to authenticate your AppleID information either expired or invalid. Make sure your computer date and time are accurate and that you’ve installed iTunes and iCloud from Apple.
+AppleID情報の認証に使用されたデータが無効であることを意味します。コンピュータの日付と時刻が正確であることを確認し、iTunesとiCloudをインストールしていることを確認してください。
 
-#### Apple API Error
+## Apple API エラー
 
 #### (1100) Your session has expired.
 
 `Apple.APIError`
 
-This error means that the information used to authenticate your Apple ID is either expired or invalid. Make sure your computer's date and time are accurate and try again.
+Apple IDの認証情報が期限切れまたは無効であることを意味します。コンピュータの日付と時刻が正確であることを確認し、再試行してください。
 
 #### (1102) Apple ID cannot be used for development.
 
 `Apple.APIError`
 
-You may need to agree to Apple’s Terms of Service on [developer.apple.com](https://developer.apple.com). If that doesn’t work, you can create a new “throwaway” Apple ID dedicated to sideloading.
+Appleの利用規約に同意する必要があるかもしれません。[developer.apple.com](https://developer.apple.com)で確認してください。それでも解決しない場合は、サイドローディング専用の新しいApple IDを作成してください。
 
 #### (-20101) Your account information was entered incorrectly.
 
 `Apple.APIError`
 
-This error means that the username or password used to authenticate your Apple ID is either expired or invalid. Make sure you've entered them both in correctly and that your computer's date and time are accurate.
+このエラーは、Apple IDの認証に使用されたユーザー名またはパスワードが期限切れか無効であることを意味します。両方の入力が正しいか、コンピュータの日付と時刻が正確であるか確認してください。
 
 #### Connection Errors
 
@@ -407,65 +407,65 @@ This error means that the username or password used to authenticate your Apple I
 
 `AltServer.ConnectionError`
 
-This means that AltServer ran into an unknown error. We recommend reaching out to our support channels if the issue persists.
+このエラーはAltServerが予期しないエラーに遭遇したことを意味します。問題が続く場合は、サポートチャンネルに問い合わせてください。
 
 #### (1) Device Locked.
 
 `AltServer.ConnectionError`
 
-This means that you will need to unlock your device before AltServer can connect.
+このエラーは、AltServerが接続する前にデバイスを解除する必要があることを意味します。
 
 #### (2) Invalid Request.
 
 `AltServer.ConnectionError`
 
-Updated information coming soon
+更新情報は近日公開予定です。
 
 #### (3) Invalid Response.
 
 `AltServer.ConnectionError`
 
-Updated information coming soon
+更新情報は近日公開予定です。
 
 #### (4) Usbmuxd.
 
 `AltServer.ConnectionError`
 
-Updated information coming soon
+更新情報は近日公開予定です。
 
 #### (5) SSL Error.
 
 `AltServer.ConnectionError`
 
-Updated information coming soon
+更新情報は近日公開予定です。
 
 #### (6) Timed Out.
 
 `AltServer.ConnectionError`
 
-Updated information coming soon
+更新情報は近日公開予定です。
 
-## Windows Errors
+## Windows エラー
 
 #### (1100) Your session has expired. Please log in.
 
 `NSURLErrorDomain`
 
-1. Make sure iTunes is closed.
-2. Go to Program Data -> Apple Computer -> iTunes -> ADI -> delete the files
-3. Start iTunes
-4. Retry installing SideStore
+1. iTunesが閉じていることを確認してください。
+2. Program Data -> Apple Computer -> iTunes -> ADI に移動し、ファイルを削除します。
+3. iTunesを起動します。
+4. SideStoreのインストールを再試行してください。
 
-## Other Errors
+## その他のエラー
 
 #### (512) Failed to write to disk
 
 `NSCocoaErrorDomain`
 
-This means that an error occurred while writing files to disk. Make sure your phone and PC both have plenty of available disk space and try again.
+このエラーは、ディスクへの書き込み中にエラーが発生したことを意味します。スマートフォンとPCの両方に十分なディスクスペースがあることを確認し、再試行してください。
 
 #### (1) AltJIT failed with error code 1 (iOS 17)
 
 `AltServer.ProcessError`
 
-If you are trying to enable JIT on an iOS 17 device, you may see this error. Make sure to install all dependencies and keep your device connected with the app open until JIT has successfully been enabled.
+iOS 17デバイスでJITを有効にしようとしている場合、このエラーが表示されることがあります。すべての依存関係をインストールし、アプリを開いたままでデバイスを接続したままJITの有効化が完了するまで待ってください。
