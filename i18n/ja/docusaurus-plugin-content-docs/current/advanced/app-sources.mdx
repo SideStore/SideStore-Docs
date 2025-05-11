@@ -1,22 +1,22 @@
 ---
-title: App Sources
-description: A guide on custom app sources.
+title: アプリソース
+description: カスタムアプリソースに関するガイド。
 ---
 
-# Make a Source
+# ソースを作成する
 
-SideStore is fully compatible with AltSources. The official AltStore [source documentation](https://faq.altstore.io/developers/make-a-source) provides all the details you need to make your own AltSource. AltSources allow your audience to view, install, and update all your available apps easily across both AltStore and SideStore.
+SideStoreはAltSourcesと完全に互換性があります。公式のAltStore [ソースドキュメント](https://faq.altstore.io/developers/make-a-source)では、独自のAltSourceを作成するために必要な詳細が提供されています。AltSourcesを使用すると、ユーザーはAltStoreおよびSideStoreを通じて利用可能なすべてのアプリを簡単に表示、インストール、更新することができます。
 
-When editing your source, it is highly recommended to create and view a draft of your changes using the [AltSource Browser](https://altsource.by.lao.sb/browse) to see a visual display of your source and correct any errors before finalizing and publishing changes to your source.
+ソースを編集する際には、[AltSource Browser](https://altsource.by.lao.sb/browse)を使用して変更のドラフトを作成・表示し、ソースのビジュアル表示を確認して、エラーを修正した後に最終的な変更を公開することを強くお勧めします。
 
-# Distributing your Source
+# ソースの配布
 
-You can create a link to automatically add your AltSource by using this template: 
+AltSourceを自動的に追加するリンクを作成するには、以下のテンプレートを使用します：
 ```
 sidestore://source?url=[source url]
 ```
-For more info, see [URL Schema](/docs/advanced/url-schema). It is often helpful to create the link to your AltSource in this format, then put it into a link shortener such as ```tinyurl.com```. However, if a user tries to use a sidestore:// link without SideStore already installed, it will crash, so some documentation may be helpful.
+詳細については、[URLスキーマ](/docs/advanced/url-schema)を参照してください。この形式でAltSourceへのリンクを作成し、```tinyurl.com```のようなリンク短縮サービスに入れることがよく役立ちます。しかし、ユーザーがSideStoreがインストールされていない状態でsidestore://リンクを使用しようとするとクラッシュするため、いくつかのドキュメントを提供することをお勧めします。
 
-## That's it!
+## これで完了！
 
-Here are some good existing AltSources: The [official AltStore](https://apps.altstore.io) source, the [SideStore community](https://github.com/SideStore/Community-Source) source, the [StikJIT](https://raw.githubusercontent.com/StephenDev0/StikJIT/refs/heads/main/repo.json) source, and the [DolphiniOS](https://altstore.oatmealdome.me) source.
+こちらは既存の良いAltSourcesです：[公式AltStore](https://apps.altstore.io)ソース、[SideStoreコミュニティ](https://github.com/SideStore/Community-Source)ソース、[StikJIT](https://raw.githubusercontent.com/StephenDev0/StikJIT/refs/heads/main/repo.json)ソース、[DolphiniOS](https://altstore.oatmealdome.me)ソース。
