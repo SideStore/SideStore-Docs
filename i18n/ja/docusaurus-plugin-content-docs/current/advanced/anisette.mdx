@@ -1,115 +1,115 @@
 ---
-title: Custom Anisette Server
-description: A guide on anisette servers.
+title: カスタムAnisetteサーバー
+description: Anisetteサーバーに関するガイド。
 ---
 
 :::note
-Using any SideStore version after 0.4.0 is unlikely to lock your account as this is when support for v3 anisette servers was added.
+SideStoreバージョン0.4.0以降を使用する場合、v3 anisetteサーバーのサポートが追加されたため、アカウントがロックされる可能性は低くなります。
 
-With this, it is **highly recommended** to use a v3 server for normal use of SideStore, if your version supports it.
+そのため、v3サーバーを使用することを**強く推奨**します。もし、あなたのバージョンが対応していれば、通常使用時はv3サーバーを使用してください。
 :::
 
-Anisette data is information used in the app signing process that needs to be generated each time you install or refresh apps. SideStore gets this information from a server that spoofs a Mac and sends you back the anisette data. No account info is sent to the server ever in this process.
+Anisetteデータは、アプリの署名プロセスで使用される情報で、アプリをインストールまたは更新するたびに生成する必要があります。SideStoreは、この情報を偽のMacを使って提供するサーバーから取得し、そのanisetteデータを返送します。このプロセスでは、アカウント情報は一切サーバーに送信されません。
 
-When many people use the same Anisette server (specifically a v1 server), it trips Apple's security, and locks the accounts that were using that machine. This is why we recommend using a separate burner Apple ID instead of your main one.
+多くの人が同じAnisetteサーバー（特にv1サーバー）を使用すると、Appleのセキュリティが反応し、そのマシンを使用していたアカウントがロックされます。これが理由で、メインのApple IDではなく、別のバーナーApple IDを使用することをお勧めします。
 
-Our team has worked on better approaches to avoid locked accounts (in the form of _anisette-v3_). However, if you are using an older version of SideStore, hosting your own anisette server is a great way to avoid locked accounts. This is made incredibly easy thanks to our current server being open source and made for docker environments. This means we can deploy a server with nothing more than the GitHub link.
+私たちのチームは、ロックされるアカウントを避けるための改善策（_anisette-v3_という形で）に取り組んでいます。ただし、古いバージョンのSideStoreを使用している場合、独自のanisetteサーバーをホスティングすることが、アカウントロックを回避するための良い方法です。現在のサーバーはオープンソースで、Docker環境向けに作られているため、GitHubリンクを使って簡単にサーバーを展開できます。
 
-## Deploy on Render
+## Renderにデプロイする
 
-[Render](https://render.com/) is a service for easily creating servers. It supports loading server sources from GitHub. The free tier is quite limited in terms of resources, but the server can run comfortably on it without issue.
+[Render](https://render.com/)は、サーバーを簡単に作成できるサービスです。GitHubからサーバーのソースコードを読み込むことができます。無料プランはリソースに制限がありますが、このサーバーは問題なく動作します。
 
-Due to too many people using the same GitHub URL, you will have to fork the Git repository yourself.
+多くの人が同じGitHub URLを使っているため、リポジトリを自分でフォークする必要があります。
 
-1. [Register](https://github.com/signup) for a GitHub account, if you do not already have one.
-2. [Open](https://github.com/Dadoum/anisette-v3-server) the Git repository.
-3. Click "Fork" in the top right, and fork the repository to your account.
-4. Once the forked repository is created, click the green "Code" dropdown in the top right, and copy the .git URL.
+1. [GitHubアカウントを登録](https://github.com/signup)します。
+2. [Gitリポジトリを開く](https://github.com/Dadoum/anisette-v3-server)。
+3. 右上の「Fork」をクリックし、リポジトリを自分のアカウントにフォークします。
+4. フォークされたリポジトリが作成されたら、右上の緑色の「Code」ドロップダウンをクリックし、.git URLをコピーします。
 
-* Save this for later.
+* 後で使用するために保存しておきます。
 
-Once this is done, the Render server can be made.
+これで、Renderサーバーを作成する準備が整いました。
 
-1. [Register](https://dashboard.render.com/register/) for an account.
-2. Create a [New Web Service](https://dashboard.render.com/select-repo?type=web).
-3. Scroll down to **Public Git repository** and enter the URL you copied earlier.
-4. Click "Continue" and fill in the form:
-    * **Name** - Does not matter
-    * **Region** - Closest to you
-    * **Branch** - main (default)
-    * **Root Directory** - blank (default)
-    * **Environment** - Docker (default)
+1. [Renderにサインアップ](https://dashboard.render.com/register/)します。
+2. [新しいWebサービスを作成](https://dashboard.render.com/select-repo?type=web)します。
+3. **Public Git repository**の下に、先ほどコピーしたURLを入力します。
+4. 「続行」をクリックし、以下のフォームを記入します：
+    * **Name** - 任意
+    * **Region** - 最寄りの地域
+    * **Branch** - main（デフォルト）
+    * **Root Directory** - 空白（デフォルト）
+    * **Environment** - Docker（デフォルト）
     * **Instance Type** - Free
 
-5. Wait for the server to build. You will see the following when it's done:
+5. サーバーのビルドが完了するのを待ちます。完了すると、次のメッセージが表示されます：
 
 ```
 Machine requires provisioning... done !
 Your service is live 🎉
 ```
 
-*If the build fails for any reason, click **Manual Deploy**, then **Deploy latest commit**.*
+*もしビルドが失敗した場合は、**Manual Deploy**をクリックし、**Deploy latest commit**を選択します。*
 
-6. Find the link for your new server at the top of the page:
+6. 新しいサーバーのリンクをページの上部で確認できます：
 
 ```
 https://[your-server-name].onrender.com
 ```
 
-## Creating a custom anisette server list
+## カスタムanisetteサーバーリストの作成
 
-Since the release of version 0.5.8, SideStore uses an anisette server list system so officially endorsed anisette servers can be added more easily. This means that there is a little bit of extra work to be done in order to use your own server without requesting to have yours added to the official list.
+バージョン0.5.8のリリース以降、SideStoreはanisetteサーバーリストシステムを使用しており、公式に認められたanisetteサーバーをより簡単に追加できるようになっています。つまり、公式リストに自分のサーバーを追加することなく、独自のサーバーを使用するためには少し追加作業が必要です。
 
-If you want to keep the option of using included servers, follow the steps below:
-1. Go [here](https://servers.sidestore.io/servers.json) to obtain the current server list.
-2. Head to a file hosting service of your choice to host the file on the internet. We recommend using GitHub Pages to do so as it's easier to edit in future, and will be the service used as example for this guide. If you have your own way of hosting, adapt the following to your setup.
-3. If you have a Github Pages site set up already, skip to the sixth sub-step. Otherwise, do the following:
-* Create a new GitHub repository via either the plus (+) button on the top right on desktop, profile icon > Create new on mobile, or [this page](https://github.com/new).
-* Set the name to be [your GitHub username].github.io, check 'Initialize this repository with a README', and set the remaining settings to how you wish.
-* Once created, go to the Settings tab and navigate to the Pages section under Code and automation.
-* Set Build and deployment under Source to 'Deploy from branch'
-* If not auto-selected, set Branch to 'main'
-* Return to the code tab and hit 'Add files', then 'Upload files', then select the 'servers.json' file you downloaded earlier.
-* Once uploaded, click on the file and hit the Edit button.
-* Scroll down to the last server on the list and add a comma after the last server's closing curly bracket ('}'), then add your own server afterwards in the following format:
-```
-{
-    "name": "[something identifiable like a username]",   //doesn't really matter unless you're sharing this server list with someone else
-    "address": "[your server's url]"
-}
-```
-* Commit the changes, then head to https://[your GitHub username].github.io/[where you placed the file]/servers.json. If the file loads, you are ready to move on to the next section. Otherwise, you may need to wait up to 10 mins for your site to be properly set up for use before you try again.
+もし、組み込みのサーバーを使用するオプションを維持したい場合、以下の手順に従ってください：
 
-If you want to only use your own server, follow the steps above, but instead of getting the official server.json, create your own using this formatting;
+1. [こちら](https://servers.sidestore.io/servers.json)にアクセスし、現在のサーバーリストを取得します。
+2. 好きなファイルホスティングサービスにファイルをホストします。将来の編集が簡単で、今回のガイドではGitHub Pagesを使用するのを推奨します。独自の方法でホスティングする場合は、セットアップに合わせて調整してください。
+3. すでにGitHub Pagesサイトを設定している場合は、次の6つのサブステップに進んでください。まだの場合、以下の手順を行ってください：
+    * GitHubの新しいリポジトリを作成します（右上のプラス（+）ボタン、モバイルではプロファイルアイコン > 新規作成、または[このページ](https://github.com/new)）。
+    * 名前を「[GitHubユーザー名].github.io」に設定し、「READMEでこのリポジトリを初期化」をチェックし、残りの設定はお好みに設定します。
+    * 作成後、「設定」タブに移動し、「コードと自動化」の下の「Pages」セクションに進みます。
+    * 「Source」で「Deploy from branch」を設定します。
+    * 「Branch」が「main」に設定されていない場合は、「main」に設定します。
+    * 「コード」タブに戻り、「Add files」をクリックして「Upload files」を選択し、先ほどダウンロードした「servers.json」ファイルを選択します。
+    * アップロードが完了したら、ファイルをクリックして「編集」ボタンを押します。
+    * リストの最後のサーバーの後にカンマを追加し、次に自分のサーバーを以下のフォーマットで追加します：
+    ```
+    {
+        "name": "[識別可能な名前、例えばユーザー名]",   //他の人とサーバーリストを共有しない限り、名前は重要ではありません
+        "address": "[自分のサーバーのURL]"
+    }
+    ```
+    * 変更をコミットし、[https://[GitHubユーザー名].github.io/[ファイルを置いた場所]/servers.json](https://[GitHubユーザー名].github.io/[ファイルを置いた場所]/servers.json)にアクセスします。ファイルが読み込まれれば、次のステップに進む準備が整いました。読み込まれない場合は、最大10分間待ってから再試行してください。
+
+自分のサーバーだけを使用したい場合、上記の手順に従い、公式のserver.jsonを取得する代わりに、以下の形式で自分で作成してください；
 ```
 {
     "servers": [
         {
-            "name": "[as above]",
-            "address": "[also as above]"
+            "name": "[上記のように]",
+            "address": "[同様に]"
         }
     ]
 }
 ```
-and continue as normal.
+その後、通常通り進めます。
 
-## Use your server with SideStore
+## SideStoreでサーバーを使用する
 
-To use your newly created server list in the SideStore app, do the following:
+新しく作成したサーバーリストをSideStoreアプリで使用するには、以下の手順を実行します：
 
-1. Open the Settings tab in SideStore.
-2. Scroll down to the bottom and tap on 'Anisette Servers'.
-3. Tap on the list URL and replace it with the URL of your server list.
-4. Hit 'Refresh Servers', and select your own server from the updated list.
+1. SideStoreの設定タブを開きます。
+2. 下にスクロールして「Anisette Servers」をタップします。
+3. リストURLをタップし、サーバーリストのURLに置き換えます。
+4. 「サーバーを更新」をクリックし、更新されたリストから自分のサーバーを選択します。
 
-## Done!
+## 完了！
 
-SideStore will now use your new custom anisette server.
+これでSideStoreは新しいカスタムanisetteサーバーを使用します。
 
+## リンク：
+[<img src="https://uptime.sidestore.io/api/badge/4/uptime/48" />](https://uptime.sidestore.io/status/all)  
+[公式Anisetteサーバーのアップタイム](https://uptime.sidestore.io/status/all)
 
-## Links:
-[<img src="https://uptime.sidestore.io/api/badge/4/uptime/48" />](https://uptime.sidestore.io/status/all)
-[All Official Anisette Servers Uptime](https://uptime.sidestore.io/status/all)
-
-[<img src="https://uptime.sidestore.io/api/badge/1/uptime/48" />](https://uptime.sidestore.io/status/ss)
-[Our Official Anisette Server's Uptime](https://uptime.sidestore.io/status/ss)
+[<img src="https://uptime.sidestore.io/api/badge/1/uptime/48" />](https://uptime.sidestore.io/status/ss)  
+[公式Anisetteサーバーのアップタイム](https://uptime.sidestore.io/status/ss)
