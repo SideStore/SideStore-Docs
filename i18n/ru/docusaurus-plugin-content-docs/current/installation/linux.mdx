@@ -1,21 +1,21 @@
 ---
-title: Linux Instructions
-description: Instructions for installing SideStore using Linux
+title: Установка через Linux
+description: Инструкция по установке SideStore через Linux
 sidebar_position: 5
 ---
 
-To install SideStore (or any other IPA) on Linux, make sure you have Docker installed. Before you start, make sure to install StosVPN and any other and [prerequisites](prerequisites) that are satisfied!
+Для установки SideStore (или любого другого IPA файла) на Linux, нужно установить Docker. Перед тем как начать, установите StosVPN и остальное из [подготовки](prerequisites)!
 
-1. Run altcon with Docker
+1. Запустите altcon через Docker
 ```bash
 docker run --rm -it -e ALTSERVER_ANISETTE_SERVER="https://ani.sidestore.io/" -v ${PWD}/:/mnt/ -v /var/run:/var/run ghcr.io/sidestore/altcon
 ```
 
-You can also run altcon with Podman
+Также возможен запуск altcon через Podman
 ```bash
 podman run --privileged --rm -it -e ALTSERVER_ANISETTE_SERVER="https://ani.sidestore.io/" -v ${PWD}/:/mnt/ -v /var/run:/var/run ghcr.io/sidestore/altcon
 ```
 
-Altcon will start to pair with your device, plug it in if you haven't. Press "trust" and enter your passcode.
+Altcon начнёт сопряжение с Вашим устройством, подключите устройство, если ещё этого не сделали. Подтвердите запрос на доверие Вашему ПК.
 
-When you finish, then follow the [post-install instructions](post-install).
+Когда завершите, выполните действия из [инструкции после установки](post-install).
