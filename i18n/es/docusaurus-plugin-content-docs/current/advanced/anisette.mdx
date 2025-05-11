@@ -1,115 +1,115 @@
 ---
-title: Custom Anisette Server
-description: A guide on anisette servers.
+titulo: Anisette Server Personalizado
+descripción: Una Guia sobre anisette servers.
 ---
 
-:::note
-Using any SideStore version after 0.4.0 is unlikely to lock your account as this is when support for v3 anisette servers was added.
+:::nota
+Al usar cualquier version de SideStore despues de la versión 0.4.0 es improbable que se bloquee tu cuenta ya que en esa version se añadio soporte a los servers anisette v3.
 
-With this, it is **highly recommended** to use a v3 server for normal use of SideStore, if your version supports it.
+Con esto en cuenta es **altamente recomendado** usar un server v3 para usar SideStore sin inconveniencias, si tu versión lo soporta.
 :::
 
-Anisette data is information used in the app signing process that needs to be generated each time you install or refresh apps. SideStore gets this information from a server that spoofs a Mac and sends you back the anisette data. No account info is sent to the server ever in this process.
+Los datos anisette es la información utilizada en el proceso de firma de apps que necesita ser generarada cada vez que instalas o refrescas apps. SideStore consigue esta información de unos servers que actuan como un Mac y envian de vuelta los datos anisette. No se envia ninguna información sobre tu cuenta a estos servers en el proceso.
 
-When many people use the same Anisette server (specifically a v1 server), it trips Apple's security, and locks the accounts that were using that machine. This is why we recommend using a separate burner Apple ID instead of your main one.
+Cuando muchas personas usan el mismo server Anisette (especificamente un server v1), alerta a la seguridad de Apple, y bloquea las cuentas que estaban utilizando esa máquina. Es por esto por lo cual recomendamos utilizar una cuenta de repuesto sin importancia en vez de tu cuenta principal.
 
-Our team has worked on better approaches to avoid locked accounts (in the form of _anisette-v3_). However, if you are using an older version of SideStore, hosting your own anisette server is a great way to avoid locked accounts. This is made incredibly easy thanks to our current server being open source and made for docker environments. This means we can deploy a server with nothing more than the GitHub link.
+Nuestro equipo ha estado trabajando en mejores formas de prevenir el bloqueo de cuentas (en la forma de _anisette-v3_). Sin embargo, si estas usando una versión antigua de SideStore, hostear tu propio server anisette es una muy buena forma de prevenir el bloqueo de cuentas. Esto se ha vuelto increiblemente fácil gracias a que nuestro actual server es open source y hecho para entornos docker. Lo cual significa que podemos crear un server con tan solo el link de la pagina de Github.
 
-## Deploy on Render
+## Implementar en Render
 
-[Render](https://render.com/) is a service for easily creating servers. It supports loading server sources from GitHub. The free tier is quite limited in terms of resources, but the server can run comfortably on it without issue.
+[Render](https://render.com/) es un servicio para crear servers facilmente. Soporta cargar servers de fuentes de Github. El nivel gratis esta bastante limitado en temas de recursos, pero el servidor puede correr comodamente en el sin problema.
 
-Due to too many people using the same GitHub URL, you will have to fork the Git repository yourself.
+Debido a muchas personas usando la misma URL de Github, tendras que crear un fork del repositorio de Github.
 
-1. [Register](https://github.com/signup) for a GitHub account, if you do not already have one.
-2. [Open](https://github.com/Dadoum/anisette-v3-server) the Git repository.
-3. Click "Fork" in the top right, and fork the repository to your account.
-4. Once the forked repository is created, click the green "Code" dropdown in the top right, and copy the .git URL.
+1. [Registrate](https://github.com/signup) para un cuenta de Github, si no tienes ya una.
+2. Abre el [repositorio de github](https://github.com/Dadoum/anisette-v3-server).
+3. Haz click en "Fork" arriba a la derecha, y crea el fork del repositorio para tu cuenta.
+4. Una vez el repositorio haya sido creado, haz click en el boton verde "Code" arriba a la derecha, y copia la URL con .git
 
-* Save this for later.
+* Guardate esto para mas tarde.
 
-Once this is done, the Render server can be made.
+Una vez esto este hecho, el servidor de Render se puede crear.
 
-1. [Register](https://dashboard.render.com/register/) for an account.
-2. Create a [New Web Service](https://dashboard.render.com/select-repo?type=web).
-3. Scroll down to **Public Git repository** and enter the URL you copied earlier.
-4. Click "Continue" and fill in the form:
-    * **Name** - Does not matter
-    * **Region** - Closest to you
-    * **Branch** - main (default)
-    * **Root Directory** - blank (default)
-    * **Environment** - Docker (default)
-    * **Instance Type** - Free
+1. [Registrate](https://dashboard.render.com/register/) para una cuenta.
+2. Crea un [nuevo servicio web](https://dashboard.render.com/select-repo?type=web).
+3. desplazate hacia abajo a **Public Git repository** e introduce la URL que copiaste anteriormente.
+4. Haz click en "Continuar" y rellena el formulario:
+    * **Nombre** - No importa
+    * **Región** - La más cercana a ti
+    * **Rama** - main (por defecto)
+    * **Directorio Root** - blank (por defecto)
+    * **Entorno** - Docker (por defecto)
+    * **Typo de instancia** - Gratis
 
-5. Wait for the server to build. You will see the following when it's done:
+5. Espera a que se cree el servidor. Verás lo siguiente cuando termine:
 
 ```
 Machine requires provisioning... done !
 Your service is live 🎉
 ```
 
-*If the build fails for any reason, click **Manual Deploy**, then **Deploy latest commit**.*
+*Si por cualquier razón falla, haz click en **Manual Deploy**, después en **Deploy latest commit**.*
 
-6. Find the link for your new server at the top of the page:
+6. Encuentra el link para tu nuevo server arriba del todo de la página:
 
 ```
-https://[your-server-name].onrender.com
+https://[el-nombre-de-tu-server].onrender.com
 ```
 
-## Creating a custom anisette server list
+## Crear una lista de servers anisette personalizados
 
-Since the release of version 0.5.8, SideStore uses an anisette server list system so officially endorsed anisette servers can be added more easily. This means that there is a little bit of extra work to be done in order to use your own server without requesting to have yours added to the official list.
+Desde el lanzamiento de la versión 0.5.8, SideStore utiliza un sistema de listas de servers anisette, así los severs aprobados officialmente pueden ser añadidos maas facilmente. Lo cual significa que hay que hacer un poquito mas de trabajo para así usar tu propio server sin tener que añadir el tuyo a la lista oficial.
 
-If you want to keep the option of using included servers, follow the steps below:
-1. Go [here](https://servers.sidestore.io/servers.json) to obtain the current server list.
-2. Head to a file hosting service of your choice to host the file on the internet. We recommend using GitHub Pages to do so as it's easier to edit in future, and will be the service used as example for this guide. If you have your own way of hosting, adapt the following to your setup.
-3. If you have a Github Pages site set up already, skip to the sixth sub-step. Otherwise, do the following:
-* Create a new GitHub repository via either the plus (+) button on the top right on desktop, profile icon > Create new on mobile, or [this page](https://github.com/new).
-* Set the name to be [your GitHub username].github.io, check 'Initialize this repository with a README', and set the remaining settings to how you wish.
-* Once created, go to the Settings tab and navigate to the Pages section under Code and automation.
-* Set Build and deployment under Source to 'Deploy from branch'
-* If not auto-selected, set Branch to 'main'
-* Return to the code tab and hit 'Add files', then 'Upload files', then select the 'servers.json' file you downloaded earlier.
-* Once uploaded, click on the file and hit the Edit button.
-* Scroll down to the last server on the list and add a comma after the last server's closing curly bracket ('}'), then add your own server afterwards in the following format:
+Si quieres mantener la opción de usar los servers incluidos, sigue los siguientes pasos:
+1. Ve [aquí](https://servers.sidestore.io/servers.json) para obtener tu lista de servers actual.
+2. Dirígete a un servicio hosting de archivos de tu preferencia para hostear el archivo en el internet. Recomendamos usar las páginas de Github ya que sería más fácil editarlo en el futuro, y sera el servicio utilizado en esta guía. Si tienes tu propia forma de hostear, adapta los suigientes pasos a tu setup.
+3. Si ya tienes la página de Github pages hecha, saltate los siguientes 5 pasos y ve al sexto sub-paso. en otro caso, haz lo siguiente:
+* Crea un nuevo repositorio de Github atraves del botón más (+) arriba a la derecha del escritorio, icono del perfil > Crear nuevo en móvil, o [esta página](https://github.com/new).
+* Cambia el nombre para que sea [tu nombre de Github].github.io, comprueba 'Inicializar este repositorio con un LÉEME', y configura los ajustes restantes como desees.
+* Una vez creado, ve a la pestaña de Ahustes y navega a sección de la página debajo de Code y automatización.
+* Cambia Build y deployment debajo de Source a 'Deploy from branch'.
+* Si no ha sido cambiado automaticcamente, cambia la Rama a 'main'.
+* Vuelve a la pestaña de code y haz click en 'Añadir archivos', después en 'Subir archivos', y selecciona el archivo 'servers.json' que descargaste anteriormente.  
+* Una vez subido, haz click en el archivo y dale al botón de editar. 
+* Desplazate hacia abajo hasta el último server de la lista y añade una coma despues de la llave de cierre ( } ), despues añade tu propio server en el siguiente formato:
 ```
 {
-    "name": "[something identifiable like a username]",   //doesn't really matter unless you're sharing this server list with someone else
-    "address": "[your server's url]"
+    "name": "[algo identificable como un nombre de usuario]",   //realmente no importa a no ser que estes compartiendo esta lista de servers con alguien más
+    "address": "[La URL de tu server]"
 }
 ```
-* Commit the changes, then head to https://[your GitHub username].github.io/[where you placed the file]/servers.json. If the file loads, you are ready to move on to the next section. Otherwise, you may need to wait up to 10 mins for your site to be properly set up for use before you try again.
+* Comete los cambios, y dirigete a https://[tu nombre de usuario de Github].github.io/[donde dejaste el archivo]/servers.json . Si el archivo carga, ya estas listo para avanzar a la siguiente sección. Sino, puede que necesites esperar hasta 10 minutos para que tu página se configure correctamente antes de que lo puedas intentar otra vez.
 
-If you want to only use your own server, follow the steps above, but instead of getting the official server.json, create your own using this formatting;
+Si solo quieres usar tu propio server, sigue los pasos de arriba, pero en vez de usar el server.json oficial, crea tu propio usando este formato;
 ```
 {
     "servers": [
         {
-            "name": "[as above]",
-            "address": "[also as above]"
+            "name": "[algo identificable como un nombre de usuario]",
+            "address": "[La URL de tu server]"
         }
     ]
 }
 ```
-and continue as normal.
+y continua normalmente.
 
-## Use your server with SideStore
+## Usar tu propio server con SideStore
 
-To use your newly created server list in the SideStore app, do the following:
+Para usar tu nueva lista de servers recién creada en la app de SideStore, haz lo siguiente:
 
-1. Open the Settings tab in SideStore.
-2. Scroll down to the bottom and tap on 'Anisette Servers'.
-3. Tap on the list URL and replace it with the URL of your server list.
-4. Hit 'Refresh Servers', and select your own server from the updated list.
+1. Abre la pestaña de Ajustes en SideStore.
+2. Desplazate hacia abajo del todo y haz click en 'Anisette Servers'
+3. Haz click en la lista URL y remplazala con la URl de la lista de tu server.
+4. Haz click en 'Refrescar Servers', y selecciona tu propio server en la lista actualizada.
 
-## Done!
+## Listo!
 
-SideStore will now use your new custom anisette server.
+SideStore ahora usara tu nuevo server anisette personalizado.
 
 
 ## Links:
 [<img src="https://uptime.sidestore.io/api/badge/4/uptime/48" />](https://uptime.sidestore.io/status/all)
-[All Official Anisette Servers Uptime](https://uptime.sidestore.io/status/all)
+[Tiempo de actividad de todos los servers Anisette oficiales](https://uptime.sidestore.io/status/all)
 
 [<img src="https://uptime.sidestore.io/api/badge/1/uptime/48" />](https://uptime.sidestore.io/status/ss)
-[Our Official Anisette Server's Uptime](https://uptime.sidestore.io/status/ss)
+[[Tiempo de actividad del server Anisette oficial de SideStore](https://uptime.sidestore.io/status/ss)
