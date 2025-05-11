@@ -1,43 +1,43 @@
 ---
-title: 3-App Limit Bypass
-description: A tutorial on how to install more than 3 apps via SideStore using the SparseRestore exploit.
+title: Bỏ qua giới hạn 3 ứng dụng
+description: Hướng dẫn cách cài đặt nhiều hơn 3 ứng dụng thông qua SideStore bằng cách sử dụng lỗ hổng SparseRestore.
 ---
 
-:::note
+:::ghi nhớ
 
-The SparseRestore "Bypass 3 app limit" exploit **only works on iOS/iPadOS versions between 17.0 and 18.1 beta 4 (not including 17.7.1)**. If you are not on these versions and it doesn't work, **please do not ask for support on this**. 
+Lỗ hổng "Bỏ qua giới hạn 3 ứng dụng" của SparseRestore **chỉ hoạt động trên các phiên bản iOS/iPadOS từ 17.0 đến 18.1 beta 4 (không bao gồm 17.7.1)**. Nếu bạn không sử dụng các phiên bản này và nó không hoạt động, **vui lòng không yêu cầu hỗ trợ về vấn đề này**.
 
 :::
 
-## Prerequisites
-* An iDevice running versions supported by the SparseRestore exploit (see note above).
-* At least 1 free app slot.
-* SideStore version 0.5.9 or later. You can find the latest versions [here](https://github.com/SideStore/SideStore/releases).
-* To perform this exploit, you MUST have **Find My** turned off on your iDevice during the process. It will not work otherwise. Here is how you can turn it off:
-  - Open the Settings app.
-  - Tap on your name at the top.
-  - Tap on Find My.
-  - Tap on Find My iPhone/iPad.
-  - Turn off Find My iPhone/iPad.
-  - You may be required to enter your Apple ID password to confirm.
+## Điều kiện
+* Một iDevice đang chạy các phiên bản được hỗ trợ bởi khai thác SparseRestore (xem lưu ý ở trên).
+* Ít nhất 1 khe cắm ứng dụng miễn phí.
+* SideStore phiên bản 0.5.9 trở lên. Bạn có thể tìm thấy các phiên bản mới nhất [tại đây](https://github.com/SideStore/SideStore/releases).
+* Để thực hiện khai thác này, bạn PHẢI tắt **Find My** trên iDevice của mình trong quá trình này. Nếu không, nó sẽ không hoạt động. Sau đây là cách bạn có thể tắt nó:
+  - Mở ứng dụng cài đặt
+  - Chạm vào tên của bạn ở trên cùng.
+  - Chạm vào Tìm của tôi.
+  - Chạm vào Tìm iPhone/iPad của tôi.
+  - Tắt Tìm iPhone/iPad của tôi.
+  - Bạn có thể được yêu cầu nhập mật khẩu Apple ID của mình để xác nhận.
   
-  > **Note:** You may still not be able to turn off Find My since having Stolen Device Protection on might prevent you from turning it off. Turn off Stolen Device Protection before trying to turn off Find My.
+  > **Ghi Nhớ:** Bạn vẫn có thể không tắt được Find My vì bật Stolen Device Protection có thể khiến bạn không tắt được. Hãy tắt Stolen Device Protection trước khi thử tắt Tìm iPhone/iPad của tôi.
 
-## Steps
-1. Install SparseBox. This can be done with a variety of methods, but for the purposes of this, install it with SideStore. The latest version can be found [here](https://nightly.link/khanhduytran0/SparseBox/workflows/build/main/artifact.zip) (unzip artifact.zip for the .ipa file).
+## Các bước
+1. Cài đặt SparseBox. Bạn có thể thực hiện bằng nhiều phương pháp khác nhau, nhưng để thực hiện được điều này, hãy cài đặt bằng SideStore. Bạn có thể tìm thấy phiên bản mới nhất [tại đây](https://nightly.link/khanhduytran0/SparseBox/workflows/build/main/artifact.zip) (giải nén artifact.zip để lấy tệp .ipa).
 
-2. Tick on "Disable App Limit" in SideStore, and make sure SideStore is **closed** (not in background), then open SparseBox.
+2. Đánh dấu vào "Disable App Limit" trong SideStore và đảm bảo SideStore đã **đóng** (không chạy nền), sau đó mở SparseBox.
 
-3. Enable StosVPN, select your pairing file and tap 'Bypass 3-app limit'. This should bring up a log output. Wait for it to say `idevicebackup2 exited with code -18` or `idevicebackup2 exited with code 2`, then close the app. No need to hit apply.
+3. Bật StosVPN, chọn tệp ghép nối của bạn và nhấn vào 'Bỏ qua giới hạn 3 ứng dụng'. Thao tác này sẽ hiển thị đầu ra nhật ký. Đợi cho đến khi thông báo `idevicebackup2 exited with code -18` hoặc `idevicebackup2 exited with code 2`, sau đó đóng ứng dụng. Không cần phải nhấn áp dụng.
 
-4. Re-open SideStore, and scroll down in SideStore settings. Press "clear cache", this will allow the exploit to be seen by SideStore.
+4. Mở lại SideStore và cuộn xuống trong cài đặt SideStore. Nhấn "xóa bộ nhớ đệm", thao tác này sẽ cho phép SideStore nhìn thấy khai thác.
 
-5. Test that the exploit has worked (you may need to install more than one app to test, depending on how many free slots you have). If it throws an error about the limit, reopen SideStore or retry the exploit. If it installs the app, congratulations! You can now have more than 3 apps installed at one time.
+5. Kiểm tra xem khai thác đã hoạt động chưa (bạn có thể cần cài đặt nhiều hơn một ứng dụng để kiểm tra, tùy thuộc vào số lượng khe cắm trống bạn có). Nếu nó báo lỗi về giới hạn, hãy mở lại SideStore hoặc thử lại khai thác. Nếu nó cài đặt ứng dụng, xin chúc mừng! Bây giờ bạn có thể cài đặt nhiều hơn 3 ứng dụng cùng một lúc.
 
-## Notes
-Due to certain limitations, this exploit must be done for every 3 additional apps you sideload.
+## Ghi Nhớ
+Do một số hạn chế nhất định, bạn phải thực hiện khai thác này cho mỗi 3 ứng dụng bổ sung mà bạn tải xuống.
 
-If you want/need Find My for other purposes, you can now turn it back on. However, if you want to install or refresh more apps, you will need to turn it off again.
+Nếu bạn muốn/cần Find My cho các mục đích khác, giờ đây bạn có thể bật lại. Tuy nhiên, nếu bạn muốn cài đặt hoặc làm mới nhiều ứng dụng hơn, bạn sẽ cần phải tắt lại.
 
-## Alternatives
-If either the exploit doesn't work for you, or your iDevice is on an unsupported version, there is an alternative to be able to use more than 3 apps at once. LiveContainer, developed by Duy Tran Khanh ([khanhduytran0](https://github.com/khanhduytran0)) (the person who also made SparseBox), allows for iOS apps to be run in containers in-app rather than installing them separately. This may also be easier to use over SparseRestore in some cases. The GitHub page can be found [here](https://github.com/khanhduytran0/LiveContainer).
+## Các giải pháp thay thế
+Nếu khai thác không hiệu quả với bạn hoặc iDevice của bạn đang sử dụng phiên bản không được hỗ trợ, thì có một giải pháp thay thế để có thể sử dụng nhiều hơn 3 ứng dụng cùng một lúc. LiveContainer, do Duy Tran Khanh ([khanhduytran0](https://github.com/khanhduytran0)) (người cũng tạo ra SparseBox) phát triển, cho phép chạy các ứng dụng iOS trong các vùng chứa trong ứng dụng thay vì cài đặt chúng riêng lẻ. Trong một số trường hợp, giải pháp này cũng có thể dễ sử dụng hơn SparseRestore. Bạn có thể tìm thấy trang GitHub [tại đây](https://github.com/khanhduytran0/LiveContainer).
