@@ -1,22 +1,21 @@
 ---
-title: App Sources
-description: A guide on custom app sources.
+title: Nguồn ứng dụng
+description: Hướng dẫn về nguồn ứng dụng tùy chỉnh.
 ---
 
-# Make a Source
+# Tạo nguồn ứng dụng
 
-SideStore is fully compatible with AltSources. The official AltStore [source documentation](https://faq.altstore.io/developers/make-a-source) provides all the details you need to make your own AltSource. AltSources allow your audience to view, install, and update all your available apps easily across both AltStore and SideStore.
+SideStore hoàn toàn tương thích với AltSources. Tài liệu nguồn AltStore chính thức (https://faq.altstore.io/developers/make-a-source) cung cấp mọi thông tin chi tiết bạn cần để tạo AltSource của riêng mình. AltSources cho phép đối tượng của bạn xem, cài đặt và cập nhật tất cả các ứng dụng khả dụng của bạn một cách dễ dàng trên cả AltStore và SideStore.
 
-When editing your source, it is highly recommended to create and view a draft of your changes using the [AltSource Browser](https://altsource.by.lao.sb/browse) to see a visual display of your source and correct any errors before finalizing and publishing changes to your source.
+Khi chỉnh sửa nguồn của bạn, bạn nên tạo và xem bản nháp các thay đổi của mình bằng [Trình duyệt AltSource] (https://altsource.by.lao.sb/browse) để xem hình ảnh trực quan về nguồn của bạn và sửa mọi lỗi trước khi hoàn tất và xuất bản các thay đổi cho nguồn của bạn.
 
-# Distributing your Source
+# Phân phối Nguồn của bạn
 
-You can create a link to automatically add your AltSource by using this template: 
+Bạn có thể tạo liên kết để tự động thêm AltSource của mình bằng cách sử dụng mẫu này: ```
+sidestore://source?url=[url nguồn]
 ```
-sidestore://source?url=[source url]
-```
-For more info, see [URL Schema](/docs/advanced/url-schema). It is often helpful to create the link to your AltSource in this format, then put it into a link shortener such as ```tinyurl.com```. However, if a user tries to use a sidestore:// link without SideStore already installed, it will crash, so some documentation may be helpful.
+Để biết thêm thông tin, hãy xem [Sơ đồ URL](/docs/advanced/url-schema). Thường hữu ích khi tạo liên kết đến AltSource của bạn theo định dạng này, sau đó đưa vào trình rút gọn liên kết như ```tinyurl.com```. Tuy nhiên, nếu người dùng cố gắng sử dụng liên kết sidestore:// mà không cài đặt SideStore, liên kết sẽ bị sập, do đó, một số tài liệu có thể hữu ích.
 
-## That's it!
+## Vậy là xong!
 
-Here are some good existing AltSources: The [official AltStore](https://apps.altstore.io) source, the [SideStore community](https://github.com/SideStore/Community-Source) source, the [StikJIT](https://raw.githubusercontent.com/StephenDev0/StikJIT/refs/heads/main/repo.json) source, and the [DolphiniOS](https://altstore.oatmealdome.me) source.
+Sau đây là một số AltSource hiện có hữu ích: Nguồn [AltStore chính thức](https://apps.altstore.io), nguồn [SideStore community](https://github.com/SideStore/Community-Source), nguồn [StikJIT](https://raw.githubusercontent.com/StephenDev0/StikJIT/refs/heads/main/repo.json) và nguồn [DolphiniOS](https://altstore.oatmealdome.me).
