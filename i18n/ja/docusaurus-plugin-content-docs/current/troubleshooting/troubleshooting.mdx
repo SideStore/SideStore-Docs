@@ -5,19 +5,19 @@ description: SideStoreのトラブルシューティングガイド。
 
 ## インストール
 
-#### 指示に従ったが、まだSideStoreをインストールできません。
+#### 指示に従いましたが、まだSideStoreをインストールできません。
 
 ### Macの手順
 1. **デバイスを信頼する**: iOSデバイスをMacに接続した後、MacとiOSデバイスの両方で「信頼」を選択したことを確認してください。確認する方法は以下の通りです：
    - Finder（macOS 10.15 Catalina以降）またはiTunes（macOS 10.14 Mojave以前）を開きます。
    - デバイスを一度外して再接続し、「デバイスを信頼しますか？」というダイアログボックスが表示されるか確認してください。
-2. **別のApple IDを使用する**: 別のApple IDを試してみてください。必要であれば、Sidestore専用の新しいApple IDを[こちら](https://appleid.apple.com/account#!\&page=create)から無料で作成できます。
+2. **別のApple IDを使用する**: 別のApple IDを試してみてください。必要であれば、SideStore専用の新しいApple IDを[こちら](https://appleid.apple.com/account#!\&page=create)から無料で作成できます。
 
 ### Windowsの手順
 1. **デバイスを信頼する**: iOSデバイスをWindowsコンピュータに接続した後、コンピュータとiOSデバイスの両方で「信頼」を選択したことを確認してください。確認する方法は以下の通りです：
    - iTunesを開き、「デバイスを信頼しますか？」というダイアログボックスが表示されるか確認してください。
 2. **AltServerを管理者として実行する**: AltServerを右クリックして「管理者として実行」を選択し、適切な権限を確認します。
-3. **別のApple IDを使用する**: 別のApple IDを試してみてください。必要であれば、Sidestore専用の新しいApple IDを[こちら](https://appleid.apple.com/account#!\&page=create)から無料で作成できます。
+3. **別のApple IDを使用する**: 別のApple IDを試してみてください。必要であれば、SideStore専用の新しいApple IDを[こちら](https://appleid.apple.com/account#!\&page=create)から無料で作成できます。
 4. **Microsoft Store版のiTunesとiCloudを使用しない**:
    - Microsoft StoreからインストールしたiTunesやiCloudはアンインストールする必要があります。
    - 以下のリンクからApple公式サイトのiTunesとiCloudの非Microsoft Store版をダウンロードしてインストールしてください：
@@ -27,14 +27,14 @@ description: SideStoreのトラブルシューティングガイド。
 
 ## サインインの問題
 
-#### Sidestoreがフリーズしたり、エラーコードが表示される場合
+#### SideStoreがフリーズしたり、エラーコードが表示される場合
 
-Sidestoreにサインインする際にフリーズしたりエラーコードが表示される場合、いくつかの原因が考えられます。以下の手順で問題を解決できます：
+SideStoreにサインインする際にフリーズしたりエラーコードが表示される場合、いくつかの原因が考えられます。以下の手順で問題を解決できます：
 
 1. **Anisetteサーバーを変更する**:
    最も一般的な解決策は、別のAnisetteサーバーに切り替えることです。Anisetteサーバーがダウンしている場合もあるため、別のサーバーに切り替えることで問題が解決することがあります。手順は以下の通りです：
-   - Sidestoreの設定を開きます。
-   - 「Anisetteサーバー」のオプションまでスクロールします。
+   - SideStoreの設定を開きます。
+   - 「Anisette Servers」の設定までスクロールします。
    - リストから別のサーバーを選択します。
    - いくつかのサーバーを試して、どれが最適かを確認してください。
 
@@ -43,7 +43,7 @@ Sidestoreにサインインする際にフリーズしたりエラーコード�
 
 #### Apple IDでサインイン時に確認コードが届かない場合
 
-Apple IDでSidestoreにサインインする際、確認コードが届かない場合の解決方法は以下の通りです：
+Apple IDでSideStoreにサインインする際、確認コードが届かない場合の解決方法は以下の通りです：
 
 **iOS 18.1未満の場合**：
 1. 「設定」アプリを開きます。
@@ -54,9 +54,9 @@ Apple IDでSidestoreにサインインする際、確認コードが届かない
 **iOS 18.1以降の場合**：
 1. [iCloud](https://www.icloud.com)にブラウザでアクセスします。
 2. 「サインイン」をクリックします。
-3. 表示される二つのオプション（「サインイン」または「異なるAppleアカウントを使用」）のうち、下の「異なるAppleアカウントを使用」を選択します。
+3. 表示される二つのオプション（「サインイン」または「別のApple Accountを使用」）のうち、下の「別のApple Accountを使用」を選択します。
 4. Apple IDとパスワードを入力します。
-5. Appleから確認コードが送信されますので、それをSidestoreで使用してサインインを完了させます。
+5. Appleから確認コードが送信されますので、それをSideStoreで使用してサインインを完了させます。
 
 
 ## アプリのリフレッシュまたはインストールができない場合
@@ -71,14 +71,14 @@ Apple IDでSidestoreにサインインする際、確認コードが届かない
 4. StosVPNを一度オフにし、再度オンにしてからSidestoreでリフレッシュを試みます。
 5. 新しいペアリングファイルを作成します：
    - 上記の手順で解決しない場合、ペアリングファイルが壊れている可能性があります。新しいペアリングファイルを作成する方法については、[こちら](#)のドキュメントを参照してください。
-   - 新しいペアリングファイルを作成した後、Sidestoreの設定で「ペアリングファイルをリセット」を押し、新しいペアリングファイルを選択します。
+   - 新しいペアリングファイルを作成した後、SideStoreの設定で「ペアリングファイルをリセット」を押し、新しいペアリングファイルを選択します。
 
 ## ペアリングファイルを選択できない場合
 
-#### Sidestoreでペアリングファイルを選択できない場合、以下の手順で解決できます：
+#### SideStoreでペアリングファイルを選択できない場合、以下の手順で解決できます：
 
 1. **ファイルの拡張子を確認する**: ペアリングファイルの拡張子が`.mobiledevicepairing`または`.plist`であることを確認してください。もしそうでない場合、ペアリングファイルを圧縮せずに送信している可能性があります。その場合、ファイルが破損していることがあります。
-2. **ペアリングファイルを移動する**: アプリ内でペアリングファイルを選択できない場合は、ファイル名を`ALTPairingFile.mobiledevicepairing`に変更し、Sidestoreフォルダのルートディレクトリに移動してみてください。
+2. **ペアリングファイルを移動する**: アプリ内でペアリングファイルを選択できない場合は、ファイル名を`ALTPairingFile.mobiledevicepairing`に変更し、SideStoreフォルダのルートディレクトリに移動してみてください。
 
 ## AltServer
 
@@ -102,6 +102,6 @@ AltStoreは、Apple IDを認証するためにiCloudをAppleから直接イン�
 1. 公式のAppleウェブサイトから[iTunes](https://www.apple.com/itunes/)をダウンロードしてインストールします。**必ずスクロールダウン**して、「Looking for other versions?」の横にある「Windows」をクリックしてください。
 2. 公式のAppleウェブサイトから[iCloud](https://support.apple.com/en-us/HT204283)をダウンロードしてインストールします。**必ずスクロールダウン**し、次のテキストのリンクをクリックしてください：「* Windows 7およびWindows 8では、_iCloud for WindowsをAppleのウェブサイトからダウンロード_できます」。
 3. 「C:\Program Files (x86)\Common Files\Apple」フォルダを探し、「Apple Application Support」と「Internet Services」フォルダをコピーします。その後、新しいフォルダを作成し、好きな名前を付けてその中に貼り付けます。
-4. コンピュータからiCloudを削除します。**絶対に**iTunesは削除しないでください！（また、iTunesやiCloudと一緒にインストールされた「Apple Mobile Device Support」や「Apple Application Support」を決して削除しないでください。）
+4. コンピュータからiCloudを削除します。**絶対に**iTunesは削除しないでください！（また、iTunesやiCloudと一緒にインストールされた「Apple Mobile Device Support」や「Apple Application Support」を削除しないでください。）
 5. Windows Storeから[iCloud](https://www.microsoft.com/store/productId/9PKTQ5699M62)をインストールします。
 6. [AltServer](https://altstore.io/)をダウンロードしてインストールします。初めて開いたとき、「Choose Folder...」をクリックし、3番目の手順で作成したフォルダを選択してください。
