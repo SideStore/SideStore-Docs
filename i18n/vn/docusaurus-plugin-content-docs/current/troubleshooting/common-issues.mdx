@@ -1,59 +1,60 @@
 ---
-title: Common Issues
-description: Common issues found in SideStore.
+Tựa đề: Các vấn đề hay xảy ra
+Mô Tả: Các vấn đề hay xảy ra  SideStore.
 ---
 
-:::warning
+:::cảnh báo
 
-This page is currently a work in progress. The information provided should be accurate, but please refer to our [Discord server](https://discord.com/invite/sidestore) for assistance if needed.
+Trang này hiện đang trong quá trình hoàn thiện. Thông tin được cung cấp phải chính xác, nhưng vui lòng tham khảo [Discord server của chúng tôi](https://discord.com/invite/sidestore) để được hỗ trợ nếu cần.
 
 :::
 
-## Common Issues with SideStore
+## Các vấn đề hay xảy ra  SideStore
 
 ### AFC Connection Failure
-#### Cause
-Connection issues or an invalid pairing file.
-#### Resolution
-1. Attempt to reconnect
-2. Generate a new pairing file using JitterbugPair and import it via the settings menu. See our [Pairing File instructions](/docs/installation/pairing-file) for details.
+#### Nguyên nhân
+Sự cố kết nối hoặc tệp ghép nối không hợp lệ.
+#### Cách giải quyết
+1. Hãy thử kết nối lại
+2. Tạo một tệp ghép nối mới bằng JitterbugPair và nhập tệp đó thông qua phần settings trong SideStore. Xem phần [Hướng dẫn ghép nối tập tin](/docs/installation/pairing-file) để tham khảo.
 
-### No WiFi or VPN Connection
-#### Cause
-Connection issues with the minimuxer service.
-#### Resolution
-1. If using WireGuard, switch to StosVPN
-2. Try again (spamming the button usually helps)
-3. Restart SideStore
-4. Restart StosVPN
-5. Generate a new pairing file using JitterbugPair and import it via the settings menu. See our [Pairing File instructions](/docs/installation/pairing-file) for details.
+### Không có kết nối WiFi hoặc VPN
+#### Nguyên nhân
+Sự cố kết nối với dịch vụ.
+#### Cách giải quyết
+1. Nếu đang sử dụng WireGuard, hãy xóa và tải [StosVPN trên appstore](https://apps.apple.com/us/app/stosvpn/id6744003051)
+2. Thử lại (nhấn nút thường xuyên hay có tác dụng)
+3. Khởi động lại SideStore
+4. Khởi động lại StosVPN
+5. Tạo một tệp ghép nối mới bằng JitterbugPair và nhập tệp đó thông qua phần settings trong SideStore. Xem phần [Hướng dẫn ghép nối tập tin](/docs/installation/pairing-file) để tham khảo.
 
-### Sidestore Hangs Halfway Through Installation
-#### Cause
-Cache issues.
-#### Resolution
-1. Restart SideStore
-2. Clear Cache
-3. Change Anisette Server
-4. Reset adi.pb
-5. Sign out from SideStore and sign back in
-6. Use WireGuard
-7. Restart device
-8. Regenerate pairing file
-9. Reinstall SideStore
+### Sidestore treo giữa chừng khi cài đặt
+#### Nguyên nhân
+Sự cố về bộ đệm.
+#### Cách giải quyết
+1. Khởi động lại SideStore
+2. Xóa bộ đệm
+3. Thay đổi Anisette Server
+4. Khởi đông lại như ban đầu (reset) adi.pb
+5. Đăng xuất ra SideStore và đăng nhập lại
+6. Thử cài lại Wireguard Sidestore và thử sử dụng
+7. Khởi động lại thiết bị
+8. Tạo một tệp ghép nối mới bằng JitterbugPair và nhập tệp đó thông qua phần settings trong SideStore. Xem phần [Hướng dẫn ghép nối tập tin](/docs/installation/pairing-file) để tham khảo.
+9. Tải lại SideStore
 
-### Unable to Launch SideStore
-#### Cause
-Multiple possible causes.
-#### Resolution
-1. Make sure you installed SideStore through Altserver.
-2. Reinstall SideStore
+### Không thể mở được SideStore
+#### Nguyên nhân
+Rất nhiều nghuyên nhân.
+#### Cách giải quyết
+1. Cài đặt lại SideStore từ Altserver theo hướng dẫn cài đặt cho hệ điều hành [Linux](/docs/installation/linux) ,[Mac](/docs/installation/mac), hoặc [Window](/docs/installation/windows)
+2. Tải lại SideStore
 
-If the above doesnt work, do the following:
+Nếu cách trên không hiệu quả, hãy làm như sau:
 
-1. Delete SideStore and all apps that you have installed from SideStore.
-2. Reinstall SideStore.
-3. Select pairing file and login. (It will give you a promt to refresh SideStore, select no)
-4. Install the Sidestore.ipa file to your device.
-5. Import the Sidestore.ipa file into Sidestore like how you would install any other app.
-6. This will allow Sidestore to do a clean refresh, and hopefully fix the issue.
+1. Xóa SideStore và tất cả các ứng dụng bạn đã tải về từ SideStore.
+2. Tải lại SideStore.
+3. Tạo một tệp ghép nối mới bằng JitterbugPair và nhập tệp đó thông qua phần settings trong SideStore. Xem phần [Hướng dẫn ghép nối tập tin](/docs/installation/pairing-file) để tham khảo.
+4. Cài đặt tệp Sidestore.ipa vào thiết bị của bạn. 
+5. Chọn tệp ghép nối và đăng nhập. (Nó sẽ nhắc bạn làm mới SideStore, chọn NO)
+6. Cài đặt tệp Sidestore.ipa vào thiết bị của bạn trực tiếp vào SideStore giống như tải về những ứng dụng khác
+7. Điều này sẽ cho phép Sidestore làm mới hoàn toàn và hy vọng có thể khắc phục được sự cố.
