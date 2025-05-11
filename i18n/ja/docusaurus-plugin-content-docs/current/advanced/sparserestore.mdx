@@ -26,13 +26,13 @@ SparseRestore の「Bypass 3 App Limit」エクスプロイトは、**iOS/iPadOS
 ## 手順
 1. SparseBox をインストールします。方法はいくつかありますが、ここでは SideStore を使ってインストールします。最新バージョンは[こちら](https://nightly.link/khanhduytran0/SparseBox/workflows/build/main/artifact.zip)から取得できます（artifact.zip を解凍して .ipa ファイルを取り出してください）。
 
-2. SideStore で「アプリ制限を無効化」にチェックを入れ、**SideStoreを完全に終了**させた上で SparseBox を開きます。
+2. SideStoreで「Bypass 3 App Limit」にチェックを入れ、**SideStoreを完全に終了**させた上でSparseBoxを開きます。
 
-3. StosVPN を有効化し、ペアリングファイルを選択後、「Bypass 3-app limit」をタップします。ログ出力が表示され、`idevicebackup2 exited with code -18` または `code 2` と出たら、アプリを閉じてください。Applyを押す必要はありません。
+3. StosVPNを有効化し、ペアリングファイルを選択後、「Bypass 3 app limit」をタップします。ログ出力が表示され、`idevicebackup2 exited with code -18` または `code 2` と出たら、アプリを閉じてください。Applyを押す必要はありません。
 
-4. SideStore を再起動し、設定画面で「キャッシュをクリア」を実行してください。これでSideStoreがエクスプロイトを検知できるようになります。
+4. SideStoreを再起動し、設定画面で「Clear Cache」を実行してください。これでSideStoreがエクスプロイトを検知できるようになります。
 
-5. エクスプロイトが成功しているかを確認します（空きスロット数によっては複数のアプリをインストールして確認が必要）。制限エラーが出たら、SideStore を再起動するかエクスプロイトを再実行してください。問題なくインストールできたら、成功です！これで同時に3つ以上のアプリをインストール可能になります。
+5. エクスプロイトが成功しているかを確認します（空きスロット数によっては複数のアプリをインストールして確認が必要）。制限エラーが出たら、SideStoreを再起動するかエクスプロイトを再実行してください。問題なくインストールできたら、成功です！これで同時に3つ以上のアプリをインストール可能になります。
 
 ## 補足
 このエクスプロイトは、**追加で3つのアプリをサイドロードするごとに毎回実行する必要があります**。
@@ -40,4 +40,4 @@ SparseRestore の「Bypass 3 App Limit」エクスプロイトは、**iOS/iPadOS
 別の目的で「探す」を使用する場合は、再びオンにしても問題ありません。ただし、アプリのインストールや更新を行う際は、再度オフにする必要があります。
 
 ## 代替手段
-もしこのエクスプロイトが機能しない場合や、iDeviceが非対応バージョンである場合は、**LiveContainer**という別の方法があります。これは、SparseBoxの開発者である Duy Tran Khanh（[khanhduytran0](https://github.com/khanhduytran0)）が開発したもので、アプリを個別にインストールするのではなく、アプリをアプリ内のコンテナで実行します。状況によっては SparseRestore よりも使いやすい場合もあります。[GitHubページはこちら](https://github.com/khanhduytran0/LiveContainer)。
+もしこのエクスプロイトが機能しない場合や、iDeviceが非対応バージョンである場合は、**LiveContainer**という別の方法があります。これは、SparseBoxの開発者である Duy Tran Khanh（[khanhduytran0](https://github.com/khanhduytran0)）が開発したもので、アプリを個別にインストールするのではなく、アプリをアプリ内のコンテナで実行します。状況によってはSparseRestoreよりも使いやすい場合もあります。[GitHubページはこちら](https://github.com/khanhduytran0/LiveContainer)。
