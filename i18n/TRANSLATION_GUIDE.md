@@ -83,13 +83,13 @@ i18n/[language-code]/
 You can test your translations locally by running:
 
 ```bash
-npm run start -- --locale [language-code]
+yarn start -- --locale [language-code]
 ```
 
 For example, to test Spanish translations:
 
 ```bash
-npm run start -- --locale es
+yarn start -- --locale es
 ```
 
 ## Submitting Your Translations
