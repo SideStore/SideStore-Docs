@@ -1,143 +1,144 @@
 ---
-title: Frequently Asked Questions
-description: A section on the most frequently asked questions for SideStore.
+title: よくある質問（FAQ）
+description: SideStoreに関する最もよくある質問のセクションです。
 sidebar_position: 3
 ---
 
-# FAQ
+# よくある質問（FAQ）
 
-This is a list of frequently asked questions for SideStore. This has a list of common questions we get with our development of SideStore, and some questions that might want to be answered for different types of people, or for people having problems.
+これはSideStoreに関するよくある質問の一覧です。SideStoreの開発に寄せられる一般的な質問や、さまざまな利用者、あるいは問題を抱える方のための回答が含まれています。
 
-## What is SideStore?
+## SideStoreとは何ですか？
 
-SideStore is an iOS application that allows you to sideload apps onto your iOS device using only your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically "refresh" your apps in the background, to keep their normal 7-day development period from expiring. SideStore's goal is to provide an untethered sideloading experience. It's a community driven fork of AltStore, and has already implemented some of the community's most-requested features. You only need a computer once during installation.
+SideStoreは、Apple IDを使用してiOSデバイスにアプリをサイドロードできるiOSアプリです。SideStoreはアプリをあなたの開発者証明書で再署名し、特別に設計されたVPNを使ってiOSをだましてアプリをインストールさせます。SideStoreは定期的にバックグラウンドでアプリの「リフレッシュ」を行い、通常の7日間の署名期限切れを防ぎます。SideStoreの目的は、ケーブル不要のサイドローディング体験を提供することです。これはAltStoreのコミュニティ主導のフォークであり、すでに多くの要望された機能が実装されています。インストール時に一度だけパソコンが必要です。
 
-(Contributions are welcome! 🙂)
+（貢献も大歓迎です！）
 
-### Can I activate JIT?
+### JIT（Just-in-Time）を有効にできますか？
 
-For users using iOS/iPadOS 16 or lower, you can activate JIT directly from the SideStore 'My Apps' page by holding down on your app and selecting 'Enable JIT'.
+iOS/iPadOS 16以下のユーザーは、「マイアプリ」ページでアプリを長押しし、「JITを有効化」を選択することで有効にできます。
 
-Users on iOS or iPadOS 17.4 or higher will need to use a solution such as StikJIT/StikDebug or SideStore nightly. Please refer to the tutorial in the [Advanced](advanced/jit) section.
+iOS/iPadOS 17.4以降のユーザーは、StikJIT/StikDebug または SideStoreのナイトリービルドを使用する必要があります。詳しくは [上級者向け](advanced/jit) セクションのチュートリアルをご覧ください。
 
-### When will SideStore release?
+### SideStoreの正式リリースはいつですか？
 
-SideStore currently does not have a release date, but is in a public beta state.
+現在SideStoreには正式なリリース日はありませんが、パブリックベータとして公開されています。
 
-### Can you sideload apps at the moment?
+### 現在アプリをサイドロードできますか？
 
-Yes you can, just like AltStore!
+はい、AltStoreと同じようにサイドロードできます！
 
-### Does this have AltStore beta features?
+### AltStoreのベータ機能は含まれていますか？
 
-We do have AltStore beta features, but it isn't always latest. We try to keep up to date, or implement them in our own way if it's necessary.
+AltStoreのベータ機能は一部取り入れていますが、常に最新というわけではありません。必要に応じて独自に実装しています。
 
-### Will having the VPN on drain my battery?
+### VPNをオンにするとバッテリーが早く減りますか？
 
-It does not, as it's only connecting to your own device. No remote servers are used, meaning no external connections, meaning no extra battery drain.
+いいえ、自分のデバイスにのみ接続されるため、バッテリーへの影響はありません。外部サーバーには接続されません。
 
-### Will the VPN track me?
+### VPNで追跡されますか？
 
-It does not, as there is no remote server used.
+されません。リモートサーバーは使用されていません。
 
-### I cannot connect to the internet when the VPN is on
+### VPNをオンにするとインターネットに接続できません
 
-Make sure you don't have an alternate DNS set up in your Wi-Fi and WireGuard configuration. If you know the DNS IP address works, then try removing it from your Wi-Fi configuration and adding it into the WireGuard config under DNS.
+Wi-FiやWireGuard設定で代替DNSが設定されていないか確認してください。DNSのIPアドレスが正しいことが分かっている場合は、Wi-Fi設定から削除して、WireGuardの構成ファイル内に追加してみてください。
 
-### Updating SideStore hangs towards the end
+### SideStoreのアップデートが最後で止まります
 
-Go to the homescreen for it to finish. We don't know why this happens, but it might have to do with using a VPN to direct `installd` to refresh SideStore (itself).
+ホーム画面に戻ると完了する場合があります。この現象の理由はまだ不明ですが、VPNが`installd`にSideStore（自分自身）を更新させる仕組みと関係している可能性があります。
 
-### Can I sign more than 3 apps to be active?
+### 3つ以上のアプリに署名できますか？
 
-Normally, no, as that’s an iOS and developer account limitation. Apple only allows 3 apps to be installed using a free Apple Developer account.
+通常はできません。これはiOSとAppleの無料開発者アカウントの制限で、最大3つまでです。
 
-To remove this restriction (and also get a 365 day expiry), you can pay for a $99/year Apple Developer account.
+制限を解除し、365日間の有効期限を得るには、年間99ドルのApple Developerアカウントが必要です。
 
-Alternatively, there is currently a nightly build available [here](https://github.com/SideStore/SideStore/releases/tag/nightly) (version 0.5.9-nightly.2024.10.23.1+1e969a0 as of writing) that utilizes the SparseRestore exploit to bypass the 3-app limit. Currently, this only works on iOS versions below 18 dev beta 5 plus 18.0.1 for definite.
+あるいは、現在 [こちらのナイトリービルド](https://github.com/SideStore/SideStore/releases/tag/nightly)（例：0.5.9-nightly.2024.10.23.1+1e969a0）でSparseRestoreエクスプロイトを使用してこの制限を回避可能です。これはiOS 18 dev beta 5未満、もしくは18.0.1において有効です。
 
-A tutorial for using this can be found [here](advanced/sparserestore).
+使用方法については、[こちらのチュートリアル](advanced/sparserestore)をご覧ください。
 
-### I have a problem or bug or request for a feature or quality of life improvement
+### バグ報告・機能要望・改善提案があります
 
-Please make a GitHub issue on our GitHub page to make a bug report or feature request (with appropriate labels)!
+GitHubのIssuesページで報告してください。適切なラベルをつけてご投稿ください。
 
-### I am a developer, how does this affect me?
+### 開発者ですが、SideStoreは自分に影響しますか？
 
-It doesn’t affect you directly, other than maybe an update to AltKit when/if we get our additions.
+直接的な影響はありません。ただし、AltKitに関する更新がある可能性はあります。
 
-### Do I need to update my app to support this?
+### アプリ側で対応が必要ですか？
 
-Nope, as currently it acts like AltStore while signing.
+いいえ。現状、AltStoreと同じように署名されるため、変更の必要はありません。
 
-### As a user, I’m having trouble logging into SideStore. I get an error
+### ログイン時にエラーが出て困っています
 
-There are many reasons this can happen, but the most common issue is a temporary Anisette server downtime. You can currently change the Anisette server on your device’s Settings app in SideStore under “Anisette URL”.
+多くの場合、Anisetteサーバーが一時的にダウンしているのが原因です。SideStoreの設定から「Anisette URL」を変更してみてください。
 
-### Is SideStore going to have a Storefront?
+### SideStoreにストア機能はありますか？
 
-We currently have a Community Source! Source URL: https://community-apps.sidestore.io/sidecommunity.json
+現在「Community Source」を提供しています：  
+https://community-apps.sidestore.io/sidecommunity.json
 
-We also have a service called [SideStore Connect](https://connect.sidestore.io) which allows devs to publish their own apps.
+さらに、[SideStore Connect](https://connect.sidestore.io) という開発者向け公開サービスも提供しています。
 
-### Why does my app have an update called "pacer test"?
+### アプリに「pacer test」というアップデートが表示されます
 
-This was a test update to see if there were problems between major versions, and shouldn’t be seen during normal use. If you see this issue, and it’s after release, then reinstall SideStore or report it as a bug.
+これはバージョン間の問題確認のためのテストアップデートです。通常の使用中に表示されるべきものではありません。表示された場合は、SideStoreを再インストールするか、バグとして報告してください。
 
-### Why do my JIT based apps not automatically activate JIT?
+### JIT対応アプリが自動でJITを有効にしません
 
-We currently don’t have an automatic JIT activation method, and if we do you would need the SideStore VPN on.
+現在のところ、自動JIT有効化の仕組みはありません。利用するにはSideStore VPNが必要です。
 
-### Does SideStore have an iPadOS UI?
+### iPadOS向けのUIはありますか？
 
-We sure do!
+もちろんあります！
 
-### I saw an iMac or MacBook Pro get added to my account. Is it safe, and is it a real Mac?
+### Apple IDに「iMac」や「MacBook Pro」が追加されました。安全ですか？
 
-These Macs are not real, and they are automatically generated by the Anisette server to assist with login. No private data is sent to the Anisette server either, as the data the server gives is used on SideStore only.
+それらは本物のMacではなく、Anisetteサーバーによってログイン補助のために自動生成された仮想デバイスです。個人情報は送信されず、SideStore内でのみ使用されます。
 
-### Why is my account getting locked when I use SideStore?
+### SideStore使用中にApple IDがロックされました
 
-Older Anisette servers that are used by many users are known to cause locking of Apple ID's. Please use one of the official Anisette servers, or host your own [anisette-v3-server](advanced/anisette).
+多数のユーザーが共有して使う古いAnisetteサーバーが原因でApple IDがロックされることがあります。公式Anisetteサーバーを使うか、自分で [anisette-v3-server](advanced/anisette) をホストしてください。
 
-### Why do I get error -36607?
+### エラー -36607 が表示されます
 
-This is a login issue with the Anisette server. There isn’t really much of any info about it other than changing Anisette servers sometimes helps, or you can keep trying to login until it does.
+これはAnisetteサーバーのログインエラーです。サーバーを変更するか、複数回ログインを試してみてください。
 
-### Can I transfer my AltStore/Sideloady apps?
+### AltStoreやSideloadyのアプリをSideStoreに引き継げますか？
 
-Yes, just don’t remove the original app on your device. Go into SideStore and sideload the same or updated IPA, and it should be added to your list of apps within SideStore with your data still intact.
+はい。元のアプリを削除せずに、SideStoreから同じIPAをサイドロードすれば、データを保持したまま引き継がれます。
 
-### Why do I need to refresh SideStore first thing after login?
+### ログイン後すぐにSideStoreをリフレッシュする必要がありますか？
 
-This is because AltServer or other programs sideload SideStore with their own app groupID, while we use our own. Refreshing SideStore changes it to ours, which makes apps disappear as their groupIDs are not updated. It’s best to not sideload anything before refreshing SideStore on a clean install.
+はい。AltServerなどがサイドロードする際は別のgroupIDを使いますが、SideStoreでは独自のIDを使用します。最初にリフレッシュすることで、それらを切り替え、アプリが非表示にならないようにします。
 
-### Can I do OTA updates?
+### OTAアップデートは可能ですか？
 
-Yep! Just click the update button!
+はい。「アップデート」ボタンを押すだけで可能です！
 
-### I want to test a SideStore version, and I want my data to stay when switching to a test version. Do I remove my app or sideload the test version via SideStore?
+### テスト版に切り替える際、データを保持したいです。どうすれば？
 
-You can sideload via SideStore and your data should be the same. We don’t have an enrollment toggle to go to other versions. We also cannot guarantee your data transfers when testing an unofficial or nightly build.
+SideStoreで直接テスト版をサイドロードすれば、基本的にデータは保持されます。バージョン切り替え用の設定などはまだありませんが、非公式・ナイトリービルドでのデータ引き継ぎは保証されません。
 
-### My apps disappeared and I don't know what to do
+### アプリが消えてしまいました
 
-Don't panic! Re-sideload the apps without removing them from your device, and your data should be fine. Unfortunately it's possible that your deactivated apps are gone, but to confirm that just refresh SideStore to see if they come back.
+落ち着いてください！アプリを削除せずに再度サイドロードすれば、データは保持されているはずです。すでに無効化されたアプリについては、SideStoreをリフレッシュすることで復活する可能性があります。
 
-### I'm unable to select my pairing file with any file type
+### ペアリングファイルの選択ができません
 
-Make sure your pairing file's extension ends with `.mobiledevicepairing` or `.plist`. If it doesn't, double check to see if you had zipped your pairing file before sending it to your phone. Failing to do so may lead to the file being corrupted during transport. Also, when signing Sidestore with a certificate, you won't be able to select the pairing file from within app. You can try moving the pairing file to the root directory of the SideStore folder in the Files app in "On My iPhone/iPad", and naming it `ALTPairingFile.mobiledevicepairing`. If you do not see the Sidestore folder in the files app, connect your phone to your computer, and you can drag and drop the pairing file to the files of the Sidestore app. Ensure to change it to name mentioned above. Note that it is case sensitive.
+拡張子が `.mobiledevicepairing` または `.plist` になっているか確認してください。ファイルをZipで送信していなかった場合、破損することがあります。また、アプリから直接ペアリングファイルを選べないこともあるため、「iPhone内」→「SideStore」フォルダ直下に `ALTPairingFile.mobiledevicepairing` という名前で配置してください。名前は大文字・小文字を区別します。
 
-### Cannot start DebugServer
+### DebugServerを起動できません
 
-There is times when the Debugserver doesn't work. However, there is a fix you can try.
+DebugServerが動作しないことがあります。対処法として、新しいペアリングファイルを作成してみてください。
 
-**Make a new pairing file**
+**新しいペアリングファイルの作成方法：**  
+設定タブで「ペアリングファイルをリセット」を選び、指示に従って [ペアリングファイルの手順](installation/pairing-file) に進んでください。
 
-To start the process of using a new pairing file you go to settings tab and click Reset Pairing file, and you accept the prompt. Then you just follow the [Pairing File instructions](installation/pairing-file).
+### 現在確認されている問題について
 
-### Currently Known issues
+現在問題を抱えていて、既知のものか知りたい場合は、以下のGitHub Issuesを確認してください：  
+https://github.com/SideStore/SideStore/issues/490
 
-If you're currently having issues and want to know if we already know about them. Then check out our GitHub issue page which  has a list of known issues and ways to mitigate some of the issues you might be having. Some of the issues in this list might be known that are not there, but are in the GitHub issues section. https://github.com/SideStore/SideStore/issues/490
-
-If you have any issues that aren't in this list. Just make a GitHub issue or [join our discord.](https://discord.gg/sidestore-949183273383395328)
+ここに載っていない問題がある場合は、GitHubでIssueを立てるか、[Discordに参加](https://discord.gg/sidestore-949183273383395328)してください。
