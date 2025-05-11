@@ -1,67 +1,67 @@
 ---
-title: Pairing File
-description: Pairing files are essential to SideStore's functionality.
+title: Paarungs Datei
+description: Paarungs-Dateien sind für das funktionieren von SideStore essentiell.
 sidebar_position: 2
 ---
 
-Using JitterbugPair (*not* the Jitterbug app) allows us to create a pairing file for programs like SideStore to talk to your device. This is required to use SideStore, or it will not function.
+Mit JitterbugPair (*nicht* die Jitterbug-App) können wir eine Pairing-Datei für Programme wie SideStore erstellen, um mit deinem Gerät zu kommunizieren. Das ist erforderlich, um SideStore zu verwenden, sonst funktioniert es nicht.
 
-Download JitterbugPair for [Windows (64-bit)](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip), [macOS](https://github.com/SideStore/SideStore-Docs/releases/download/need-a-place-to-put-jittterbug/jitterbugpair), or [Linux](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip).
+Lade JitterbugPair für [Windows (64-bit)](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip), [macOS](https://github.com/SideStore/SideStore-Docs/releases/download/need-a-place-to-put-jittterbug/jitterbugpair), oder [Linux](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip) herunter.
 
-## Pairing Instructions
+## Paarungs Anweisungen
 
 :::tip
 
-When using cloud storage, the file extension might change (usually to .txt). It is always recommended to zip your pairing file before transferring it. SideStore only accepts .mobiledevicepairing files.
+Bei der Verwendung von Cloud-Speichern kann sich die Dateierweiterung ändern (normalerweise in .txt). Es wird immer empfohlen, deine Pairing-Datei vor der Übertragung zu zippen. SideStore akzeptiert nur .mobiledevicepairing-Dateien.
 :::
 
 ### Windows
 
-1. Extract the JitterbugPair zip file.
-2. Plug your device into your computer, and open your device to its home screen. Once done, execute the program.
-    * Your device may ask you to trust your computer. Make sure to accept this prompt, as it is required for the pairing process.
-3. Once it is done, you will get a file that ends with `.mobiledevicepairing`.
-4. Transfer this file to your device using iTunes, or any other method. Zipping the file before sending it off is the best way to ensure the pairing file won't break during transport.
-    * Transferring using cloud storage may change the file's extension (most likely turning into a .txt file), so be careful. It is also possible to change the extension to `.plist` for use with older SideStore versions, like `0.1.1`.
+1. Extrahiere die JitterbugPair zip Datei.
+2. Schließe dein Gerät an den Computer an und öffne den Startbildschirm des Geräts. Führe anschließend das Programm aus.
+    * Dein Gerät wird dich möglicherweise auffordern deinem Computer zu vertrauen. Stelle sicher, dass du diese Aufforderung akzeptierst, da dies für den Paarungs Prozess erforderlich ist!
+3. Sobald das Programm fertig ist, erhältst du eine Datei die auf `.mobiledevicepairing` endet.
+4. Übertrage diese Datei auf dein Gerät mit iTunes oder einer anderen Methode. Das Zippen der Datei ist die beste Methode um sicherzustellen, dass die Datei beim Transport nicht beschädigt wird.
+    * Bei der Übertragung über einen Cloud-Speicher kann sich die Dateierweiterung ändern (höchstwahrscheinlich wird sie zu einer .txt-Datei), sei also vorsichtig. Es ist auch möglich, die Erweiterung in `.plist` zu ändern, um sie mit älteren SideStore-Versionen wie `0.1.1` zu verwenden.
 
-On Windows, you might have to execute the program using Command Prompt or Powershell, as it can sometimes not open by double clicking the `.exe` file.
+Unter Windows musst du das Programm möglicherweise über die Eingabeaufforderung oder Powershell ausführen, da es sich manchmal nicht durch einen Doppelklick auf die Datei `.exe` öffnen lässt.
 
-5. In File Explorer, navigate to the folder where jitterbugpair is located.
-6. In the navigation bar where the folder location is, click an empty spot and type `powershell`. It should open a (possibly blue colored) window called PowerShell.
-7. From there, type `./jitterbugpair.exe` and press enter while your device is plugged in.
+5. Navigiere im Datei-Explorer zu dem Ordner, in dem sich jitterbugpair befindet
+6. Klicke in der Navigationsleiste, in der sich der Ordner befindet, auf eine leere Stelle und gebe „Powershell“ ein. Es sollte sich ein (möglicherweise blau gefärbtes) Fenster namens PowerShell öffnen.
+7. Gebe dort „/jitterbugpair.exe“ ein und drücke die Eingabetaste, während dein Gerät eingesteckt ist.
 
 
 ### macOS
 
-1. **Extract** `Jitterbugpair-macos.zip`.
-2. **Set a passcode** for your device if you haven't already. Unlock your device, connect it to your computer via cable. If a prompt appears: tap "Trust."
-3. Open your device to the homescreen.
-4. Find the extracted `jitterbugpair` file (it should have a black and green icon).
-5. Open Terminal (in Launchpad, it's in the "Utilities" folder).
-6. Drag the `jitterbugpair` file into Terminal and press "Return" or Enter.
-7. If you get "macOS cannot verify that this app is free from malware":
-   - Go to System Settings > Privacy & Security
-   - Scroll down to the message about the app
-   - Click "Open Anyway"
-   - Try running the program again
-8. JitterBugPair will generate a **pairing file** with the extension `.mobiledevicepairing`.
-9. If you can't find the pairing file:
-   - Copy the name of the pairing file generated
-   - Paste it into Finder
-   - If you ran the program more than once all pairing files for your device should appear since they share the same name
-10. **Transfer the pairing file** to your iOS device using AirDrop, iCloud/One/Google Drive, email, or any other method. For best results, compress the file into a .zip folder first.
+1. **Extrahiere** `Jitterbugpair-macos.zip`.
+2. **Setze einen Code** für dein Gerät, falls noch nicht getan. Entsperre dein Gerät und verbinde es per Kabel mit deinem Computer. Sollte ein Hinweis erscheinen: Wähle "Vertrauen."
+3. Öffne den Startbildschirm deines Geräts.
+4. Finde die extrahierte `jitterbugpair` Datei (es sollte ein schwarz-grünes Symbol haben).
+5. Öffne das Terminal (im Launchpad, ist es im "Werkzeuge" Ordner).
+6. Ziehe die `jitterbugpair` Datei in das Terminal und drücke "Return" oder Enter.
+7. Solltest du "macOS kann nicht verifizieren, dass diese App frei von Malware ist" sehen:
+   - Gehe in die System Einstellungen -> Privatsphäre & Sicherheit
+   - Scrolle runter zum Hinweis über die App
+   - Drücke auf "Trotzdem öffnen"
+   - Versuch das Programm erneut auszuführen
+8. JitterBugPair wird eine **Paarungs-Datei** mit der `.mobiledevicepairing` Endung generieren.
+9. Solltest du diese Datei nicht finden können:
+   - Kopiere den Namen der generierten Paarungs-Datei aus dem Terminal
+   - Setze ihn in den Finder ein
+   - Wenn du das Programm mehr als einmal ausgeführt hast, sollten alle Paarungsdateien für dein Gerät erscheinen, da sie denselben Namen haben
+10. **Übertrage die Paarungs-Datei** an dein iOS Gerät mit AirDrop, iCloud/One/Google Drive, Email oder eine andere Methode. Für die besten Resultate, komprimiere die Datei vorher in ein .zip Verzeichnis.
 
 ### Linux
 
-These instructions expect that you are familiar with the linux commandline.
+Diese Anweisungen gehen davon aus, dass du mit der Kommandozeile von Linux vertraut bist.
 
-1. Extract the Jitterbug zip file, and open a terminal (if you haven't already) to the extracted directory. 
-2. In that terminal, run `chmod +x ./jitterbugpair`
-3. Plug your device into your computer, and open your device to its home screen. Once done, execute the program in your terminal with `./jitterbugpair`
-    * If you get a prompt saying you need to trust the computer from your iDevice, make sure to do so. You may need to rerun jitterbugpair.
-4. Once it is done, you will get a file that ends with `.mobiledevicepairing` in the directory you ran jitterbugpair from.
-5. Transfer this file to your device in a way of your choosing. Zipping the file before sending it off is the best way to ensure the pairing file won't break during transport
-    * Transferring using cloud storage may change the file's extension (most likely turning into a .txt file), so be careful. It is also possible to change the extension to `.plist` for use with older SideStore versions, like `0.1.1`.
+1. Extrahiere die Jitterbug zip Datei und öffne ein Terminal (falls noch nicht getan) im extrahierten Ordner. 
+2. In diesem Terminal, führe `chmod +x ./jitterbugpair` aus
+3. Schließe dein Gerät an den Computer an und öffne den Start Bildschirm deines Geräts. Führe danach das Programm mit `./jitterbugpair` aus.
+    * Falls du von deinem Gerät aufgefordert wirst dem Computer zu vertrauen, stelle sicher. dass du "Vertrauen" drückst. Du musst danach eventuell erneut jitterbugpair ausführen.
+4. Sobald dies abgeschlossen ist, wirst du eine Datei mit der `.mobiledevicepairing`, im Ordner wo sich auch jitterbugpair befindet, erhalten.
+5. Übertrage diese Datei auf dein Gerät mit einer Methode deiner Wahl. Zippe die Datei vorher, um sicherzustellen, dass die Datei beim Transport nicht beschädigt wird.
+    * Bei der Übertragung über einen Cloud-Speicher kann sich die Dateierweiterung ändern (höchstwahrscheinlich wird sie zu einer .txt-Datei), sei also vorsichtig. Es ist auch möglich, die Erweiterung in `.plist` zu ändern, um sie mit älteren SideStore-Versionen wie `0.1.1` zu verwenden.
 
-You might have success by just adding execute permissions and running jitterbugpair from a file manager, but it is recommended to just do it from the terminal.
+Du könntest Erfolg haben, indem du einfach Ausführungsrechte hinzufügst und jitterbugpair von einem Dateimanager aus startest, aber es wird empfohlen, dies vom Terminal aus zu tun.
 
