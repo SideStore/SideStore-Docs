@@ -1,0 +1,52 @@
+---
+title: Aktivera JIT
+description: En handledning om hur man aktiverar Just-in-Time (JIT) kompilering för appar som kräver det.
+---
+
+:::note
+
+Det finns många metoder för att aktivera JIT, såsom AltJIT, SideJITServer med flera. Den här handledningen täcker användningen av StikJIT/StikDebug, eftersom det är den metod vi för närvarande rekommenderar. Som ett alternativ inkluderar SideStore 0.6.2-nightly.2025.04.15 även uppdateringar till minimuxer, vilket ger inbyggd JIT-funktionalitet liknande StikDebug. För att använda detta, se bara till att du är ansluten till StosVPN och Wi-Fi, eller med mobildata och Wi-Fi avstängt.
+:::
+
+## Förutsättningar
+* En iDevice med iOS/iPadOS 17.4 eller senare, exklusive 18.4b1. Om du är på 17.0–17.3 måste du använda ett alternativ som [SideJITServer](https://github.com/nythepegasus/SideJITServer)
+* Minst en ledig app-slot för StikJIT
+
+## Installera StikJIT med SideStore
+
+1. **Hämta StikJIT:**  
+   Lägg till StikJIT AltSource i SideStore [här](sidestore://source?url=https://raw.githubusercontent.com/StephenDev0/StikJIT/refs/heads/main/repo.json) (du måste ha SideStore installerat, annars fungerar inte länken).
+
+2. **Installera:**  
+   Använd SideStore för att installera StikJIT.
+
+3. **Installationsprocedurer:**  
+   Följ standardprocedurerna i användarguiden nedan.
+
+## Installera StikDebug via App Store (kräver ingen app-slot)
+
+1. **Installera StikDebug**  
+   Installera StikDebug från App Store [här](https://apps.apple.com/us/app/stikdebug/id6744045754). En fördel är att VPN:en i StikDebug liknar den som används i SideStore, vilket innebär att du även kan använda den för att installera och uppdatera appar.
+
+2. **Installationsprocedurer:**  
+   Följ standardprocedurerna i användarguiden nedan.
+
+### Standardinstallationsprocedurer:
+
+1. **Aktivera VPN:**  
+   Börja med att aktivera StosVPN för StikJIT eller den inbyggda VPN:en i StikDebug.
+
+2. **Ladda upp parningsfilen:**  
+   När du uppmanas, importera samma **uppackade parningsfil** som du hämtade via JitterbugPair och använder för SideStore. För mer information om hur du hämtar denna parningsfil, se [här](/docs/installation/pairing-file).
+
+## För att aktivera JIT:
+
+1. **Aktivera VPN:**  
+   Börja med att aktivera StosVPN för StikJIT eller den inbyggda VPN:en i StikDebug.
+
+2. **Aktivera JIT:**  
+   Klicka på knappen “Enable JIT” och välj en app från listan för att aktivera JIT-funktionen.
+
+### Offlineaktivering av JIT
+För att aktivera JIT offline, aktivera StosVPN eller StikDebug. Stäng sedan både Wi-Fi och mobildata när du startar StikJIT (använd flygplansläge). Du kan sedan aktivera JIT som vanligt.
+```

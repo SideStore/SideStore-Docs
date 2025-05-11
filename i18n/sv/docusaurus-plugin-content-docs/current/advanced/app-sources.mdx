@@ -1,0 +1,25 @@
+---
+title: Appkällor
+description: En guide om anpassade appkällor.
+---
+
+# Skapa en källa
+
+SideStore är helt kompatibelt med AltSources. Den officiella AltStore [källdokumentationen](https://faq.altstore.io/developers/make-a-source) ger alla detaljer du behöver för att skapa din egen AltSource. AltSources låter din publik bläddra bland, installera och uppdatera alla dina tillgängliga appar enkelt både i AltStore och SideStore.
+
+När du redigerar din källa rekommenderas det starkt att skapa och granska ett utkast av dina ändringar med hjälp av [AltSource Browser](https://altsource.by.lao.sb/browse) för att se en visuell förhandsvisning av din källa och rätta eventuella fel innan du slutför och publicerar ändringarna.
+
+# Distribuera din källa
+
+Du kan skapa en länk som automatiskt lägger till din AltSource genom att använda denna mall:
+```
+
+sidestore://source?url=\[source url]
+
+```
+För mer information, se [URL-schema](/docs/advanced/url-schema). Det är ofta hjälpsamt att skapa länken till din AltSource i detta format och sedan använda en tjänst som `tinyurl.com` för förkortning. Observera dock att om en användare försöker öppna en sidestore://-länk utan att ha SideStore installerat så kommer appen att krascha, så lite dokumentation kan vara hjälpsamt.
+
+## Klart!
+
+Här är några bra befintliga AltSources: [officiella AltStore](https://apps.altstore.io), [SideStore Community](https://github.com/SideStore/Community-Source), [StikJIT](https://raw.githubusercontent.com/StephenDev0/StikJIT/refs/heads/main/repo.json) och [DolphiniOS](https://altstore.oatmealdome.me).
+```
