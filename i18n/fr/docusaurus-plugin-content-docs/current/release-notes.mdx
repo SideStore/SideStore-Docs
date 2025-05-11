@@ -1,33 +1,33 @@
 ---
-title: Release Notes
-description: A collection of SideStore release notes.
+title: Notes de version
+description: Une collection de notes de version de SideStore.
 sidebar_position: 2
 ---
 
-# Stable Notes
+# Notes de version stables
 
 ## 0.6.1
 
-### Changelog
-It's spring already? Here's a new update that should fix migration issues from 0.5.9/0.5.10 and an expiration bug. Happy sideloading!
+### Journal des modifications
+C'est déjà le printemps? Voici une nouvelle mise à jour qui devrait corriger les problèmes de migration depuis les versions 0.5.9/0.5.10 ainsi qu'un bug lié à l'expiration. Bon sideloading!
 
-### What's Changed:
-- fix: typo in hasUpdate comparison by @l2dy in [#900](https://github.com/SideStore/SideStore/pull/900)
-- Update SettingsViewController.swift by @neoarz in [#915](https://github.com/SideStore/SideStore/pull/915)
-- Fixes for migration issues when migrating from 0.5.9 to 0.6.0 by @mahee96 in [#920](https://github.com/SideStore/SideStore/pull/920)
-- Fix typo "levaraging" -> "leveraging" by @lafrenierejm in [#926](https://github.com/SideStore/SideStore/pull/926)
-- Added StosVPN to the EM Proxy part. by @Br0des in [#940](https://github.com/SideStore/SideStore/pull/940)
+### Modifications apportées:
+- correctif: faute de frappe dans la comparaison hasUpdate par @l2dy dans [#900](https://github.com/SideStore/SideStore/pull/900)
+- Mise à jour de SettingsViewController.swift par @neoarz dans [#915](https://github.com/SideStore/SideStore/pull/915)
+- Correctifs pour les problèmes de migration lors du passage de la version 0.5.9 à 0.6.0 par @mahee96 dans [#920](https://github.com/SideStore/SideStore/pull/920)
+- Correction de la faute de frappe "levaraging" -> "leveraging" par @lafrenierejm dans [#926](https://github.com/SideStore/SideStore/pull/926)
+- Ajout de StosVPN à la section proxy EM. par @Br0des dans [#940](https://github.com/SideStore/SideStore/pull/940)
 
 
 ## 0.6.0
 
-### Changelog
-It's March and we have some big changes. We've finally included AltStore 2.0 changes into SideStore. So you will get all the benefits of that and also some fixes in SideStore. Enjoy!
+### Journal des modifications
+Nous sommes en mars et de grands changements arrivent. Nous avons enfin intégré les modifications d'AltStore 2.0 dans SideStore. Vous bénéficierez donc de toutes les améliorations d'AltStore, ainsi que de quelques correctifs propres à SideStore. Profitez-en bien!
 
-### What's Changed:
-- AltStore 2.0 changes in [#794](https://github.com/SideStore/SideStore/pull/794)
-- [Refresh]: Remove install stuffs from refresh since in refresh should only renew provisioning profiles by @mahee96 in [#846](https://github.com/SideStore/SideStore/pull/846)
-- [Settings]: Fix: DisableAppLimit switch reverting back to off state even if on iOS where sparseRestore is not patched yet by @mahee96 in [#850](https://github.com/SideStore/SideStore/pull/850)
-- [Backup]: Fix: update logic during install missed since override keyword was missing by @mahee96 in [#857](https://github.com/SideStore/SideStore/pull/857)
-- Feature: Bulk sources-add in sources screen with capability to stage them before persisting into database by @mahee96 in [#888](https://github.com/SideStore/SideStore/pull/888)
-- Feature: Render in-app update description as (full) markdown by @mahee96 in [#897](https://github.com/SideStore/SideStore/pull/897)
+### Modifications apportées:
+- Modifications d'AltStore 2.0 intégrés dans [#794](https://github.com/SideStore/SideStore/pull/794)
+- [Actualisation]: Suppression des éléments liés à l'installation dans l'actualisation, puisque celle-ci ne devrait servir qu'à renouveler les profils de provisionnement. par @mahee96 dans [#846](https://github.com/SideStore/SideStore/pull/846)
+- [Paramètres]: Correctif: le bouton DisableAppLimit repassait en position désactivée, même sur les versions d'iOS où sparseRestore n'est pas encore patché. par @mahee96 dans [#850](https://github.com/SideStore/SideStore/pull/850)
+- [Sauvegarde]: Correctif: la logique de mise à jour lors de l'installation était ignorée car le mot-clé override manquait. par @mahee96 dans [#857](https://github.com/SideStore/SideStore/pull/857)
+- Fonctionnalité: Ajout en masse de sources dans l'écran des sources, avec la possibilité de les préparer avant de les enregistrer dans la base de données. par @mahee96 dans [#888](https://github.com/SideStore/SideStore/pull/888)
+- Fonctionnalité: Affichage de la description des mises à jour intégrées à l'app au format Markdown (complet) par @mahee96 dans [#897](https://github.com/SideStore/SideStore/pull/897)
