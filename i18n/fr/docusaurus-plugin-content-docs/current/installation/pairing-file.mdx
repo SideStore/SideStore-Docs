@@ -1,10 +1,10 @@
 ---
-title: Fichiers d'appairement
-description: Les fichiers d'appairement sont essentiels au fonctionnement de SideStore
+title: Fichier d'appairage
+description: Les fichiers d'appairage sont essentiels au bon fonctionnement de SideStore.
 sidebar_position: 2
 ---
 
-En utilisant JitterbugPair (*et pas* l'application Jitterbug) nous crééons un fichier d'appairage pour les applications, comme SideStore, permetant de communiquer avec votre appareil. C'est un prérequis pour utiliser SideStore, sinon ça ne fonctionnera pas.
+L'utilisation de JitterbugPair (*et non* de l'application Jitterbug) permet de créer un fichier d'appairage pour que des programmes comme SideStore puissent communiquer avec votre appareil. Ce fichier est indispensable pour utiliser SideStore, sans quoi il ne fonctionnera pas.
 
 Téléchargez JitterbugPair pour [Windows (64-bit)](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip), [macOS](https://github.com/SideStore/SideStore-Docs/releases/download/need-a-place-to-put-jittterbug/jitterbugpair), ou [Linux](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip).
 
@@ -12,56 +12,54 @@ Téléchargez JitterbugPair pour [Windows (64-bit)](https://github.com/osy/Jitte
 
 :::tip
 
-Lorsque vous utilisez le stockage dans le cloud les extensions de fichier peuvent changer (habituellement en .txt). Il est dans ce cas recommandé de compresser en .zip avant le transfert en ligne. SideStore accepte uniquement les fichiers .mobiledevicepairing.
+Lorsque vous utilisez un service de stockage en ligne, l'extension du fichier peut être modifiée (généralement en .txt). Il est donc toujours recommandé de compresser votre fichier d'appairage au format .zip avant de le transférer. SideStore n'accepte que les fichiers avec l'extension .mobiledevicepairing.
 :::
 
 ### Windows
 
-1. Extraire le fichier JitterbugPair.
-2. Connectez votre appareil à votre ordinateur et déverrouillez votre appareil. Une fois bon, executez le programme.
-    * Votre appareil peut vous demandez de faire confiance à votre PC. Veuillez à bien accepter car nécessaire pour le processus de pairage.
-3. Une fois fini vous aurez un fichier `.mobiledevicepairing`.
-4. Transfèrez ce fichier vers votre appareil à l'aide d'iTunes, ou tout autre méthode. Compresser le fichier avant de l'envoyer est la façon la plus sûre de ne pas le corrompre durant le transfert.
-    * Lorsque vous utilisez le stockage dans le cloud les extensions de fichier peuvent changer (habituellement en .txt). Il est dans ce cas recommandé de compresser en .zip avant le transfert en ligne. SideStore accepte uniquement les fichiers .mobiledevicepairing. Il est également possible de de changer l'extension pour un `.plist`, compatible avec les anciennes versions de SideStore (0.1.1 et antérieur).
+1. Extrayez l'archive ZIP de JitterbugPair.
+2. Branchez votre appareil à l'ordinateur et déverrouillez-le pour accéder à l'écran d'accueil. Une fois cela fait, exécutez le programme.
+    * Votre appareil peut vous demander de faire confiance à cet ordinateur. Assurez-vous d'accepter cette demande, car elle est nécessaire au processus d'appairage.
+3. Une fois l'opération terminée, vous obtiendrez un fichier dont le nom se termine par `.mobiledevicepairing`.
+4. Transférez ce fichier vers votre appareil à l'aide d'iTunes ou de toute autre méthode. Le compresser au format ZIP avant l'envoi est le meilleur moyen de garantir que le fichier d'appairage ne sera pas corrompu pendant le transfert.
+    * Le transfert via un service de stockage en ligne peut modifier l'extension du fichier (le transformant le plus souvent en .txt), soyez donc vigilant. Il est également possible de changer l'extension en `.plist` pour une utilisation avec d'anciennes versions de SideStore, comme la version `0.1.1`.
 
-Sur Windows vous pouvez être ammené à excecuter le programme en utilisant l'invite de commande ou la Powershell dans le cas où le .exe ne fonctionne pas.
+Sous Windows, vous devrez peut-être exécuter le programme via l'invite de commandes ou PowerShell, car il arrive que le fichier `.exe` ne s'ouvre pas en double-cliquant.
 
-5. Dans l'explorateur de fichier trouver le dossier jitterbugpair et l'ouvrir.
-6. Dans la barre de navigation où le fichier est localisé, clicquez dans un coin vide et tapez `powershell`. Cette action devrait ouvir (possiblement de couleur bleu) une fenêtre nommée Powershell.
-7. À partir d'ici, tapez `./jitterbugpair.exe` et ensuite appuyez sur entrée tout en gardant votre appareil connecté et déverrouillé
-
+5. Dans l'Explorateur de fichiers, accédez au dossier où se trouve JitterbugPair.
+6. Dans la barre de navigation où s'affiche l'emplacement du dossier, cliquez dans un espace vide puis tapez `powershell`. Une fenêtre (probablement bleue) appelée PowerShell devrait s'ouvrir.
+7. À partir de là, tapez `./jitterbugpair.exe` puis appuyez sur Entrée pendant que votre appareil est connecté.
 
 ### macOS
 
-1. **Extraire** `Jitterbugpair-macos.zip`.
-2. **Crééez un mot de passe** pour votre appareil si vous ne l'avez pas déjà fait. déverrouillez votre appareil et connectez le à votre appareil via un câble. Si une requête apparaît, acceptez là.
-3. Déverrouillez votre appareil.
-4. Trouvez le fichier extrait `jitterbugpair` (il devrait avoir une icône verte et noire).
-5. Ouvrez le Terminal (depuis Launchpad il est dans le fichier "Outils").
-6. Déposez le fichier `jitterbugpair` dans le Terminal et appuyez sur "Return" ou Entrée.
-7. If you get "macOS cannot verify that this app is free from malware":
-   - Allez dans Réglages > Confidentialité et sécurité
-   - Scrollez jusqu'à message à propos de l'app
-   - Clicquez "Ouvrir"
-   - Essayez de nouveau à excecuter le programme.
-8. JitterBugPair va créé un **fichier d'appairage** avec l'extension `.mobiledevicepairing`.
+1. **Extrayez** `Jitterbugpair-macos.zip`.
+2. **Définissez un code d'accès** sur votre appareil si ce n'est pas déjà fait. Déverrouillez-le, puis connectez-le à votre ordinateur via un câble. Si une invite apparaît, touchez "Faire confiance".
+3. Déverrouillez votre appareil et accédez à l'écran d'accueil.
+4. Repérez le fichier `jitterbugpair` extrait (il devrait avoir une icône noire et verte).
+5. Ouvrez le Terminal (dans Launchpad, il se trouve dans le dossier "Utilitaires").
+6. Faites glisser le fichier `jitterbugpair` dans le Terminal, puis appuyez sur la touche "Retour" ou Entrée.
+7. Si vous voyez le message "macOS ne peut pas vérifier que cette app ne contient aucun logiciel malveillant":
+   - Allez dans Réglages Système > Confidentialité et sécurité
+   - Faites défiler vers le bas jusqu'au message concernant l'app
+   - Cliquez sur "Ouvrir quand même"
+   - Essayez de lancer à nouveau le programme
+8. JitterbugPair générera un **fichier d'appairage** avec l'extension `.mobiledevicepairing`.
 9. Si vous ne trouvez pas le fichier d'appairage:
-   - Copiez le nom du fichier créé
-   - Collez le dans Finder
-   - Si vous avez excecuté le programme plus d'une fois les fichiers devraient tous apparaître sous le même nom.
-10. **Transférez le fichier d'apairage** vers votre appareil iOS en utilisant AirDrop, iCloud/One/Google Drive, un email, ou tout autre méthode. Pour un meilleur résultat, compressez le fichier en un .zip.
+   - Copiez le nom du fichier d'appairage généré
+   - Collez-le dans le Finder
+   - Si vous avez exécuté le programme plusieurs fois, tous les fichiers d'appairage correspondant à votre appareil devraient apparaître, car ils partagent le même nom.
+10. **Transférez le fichier d'appairage** vers votre appareil iOS à l'aide d'AirDrop, iCloud/OneDrive/Google Drive, e-mail ou toute autre méthode. Pour de meilleurs résultats, compressez d'abord le fichier dans une archive .zip.
 
 ### Linux
 
-These instructions expect that you are familiar with the linux commandline.
+Ces instructions supposent que vous êtes familiarisé avec la ligne de commande sous Linux.
 
-1. Extraire le fichier JitterbugPair, et ouvrir un Terminal (si vous ne l'avez pas déjà fait) au chemin du fichier extrait. 
-2. Dans ce terminale entrer: run `chmod +x ./jitterbugpair`
-3. Branchez votre appareil sur votre PC et dévereouillez sur le menu d'acceuil. Une fois fini, excecutez le programme dans votre Terminal avec `./jitterbugpair`
-    *  Si vous avez une requête disant que que vous devez faire confiance à votre ordinateur, acceptez. Le cas échéant, rouvrez le programme.
-4. Une fois fini vous aurez un fichier `.mobiledevicepairing` dans le fichier où vous avez ouvert jitterbugpair.
-5. Transfèrez ce fichier vers votre appareil à l'aide d'iTunes, ou tout autre méthode. Compresser le fichier avant de l'envoyer est la façon la plus sûre de ne pas le corrompre durant le transfert.
-    * Lorsque vous utilisez le stockage dans le cloud les extensions de fichier peuvent changer (habituellement en .txt). Il est dans ce cas recommandé de compresser en .zip avant le transfert en ligne. SideStore accepte uniquement les fichiers .mobiledevicepairing. Il est également possible de de changer l'extension pour un `.plist`, compatible avec les anciennes versions de SideStore (0.1.1 et antérieur).
+1. Extrayez l'archive ZIP de Jitterbug, puis ouvrez un terminal (si ce n'est pas déjà fait) dans le dossier extrait.
+2. Dans ce terminal, exécutez la commande `chmod +x ./jitterbugpair`
+3. Branchez votre appareil à l'ordinateur et déverrouillez-le pour accéder à l'écran d'accueil. Une fois cela fait, exécutez le programme dans le terminal avec la commande `./jitterbugpair`
+    * Si votre appareil iOS vous demande de faire confiance à l'ordinateur, assurez-vous d'accepter. Vous devrez peut-être relancer jitterbugpair.
+4. Une fois l'opération terminée, un fichier se terminant par `.mobiledevicepairing` sera créé dans le dossier depuis lequel vous avez exécuté jitterbugpair.
+5. Transférez ce fichier vers votre appareil par la méthode de votre choix. Le compresser au format ZIP avant l'envoi est le meilleur moyen de s'assurer qu'il ne sera pas corrompu pendant le transfert.
+    * Le transfert via un service de stockage en ligne peut modifier l'extension du fichier (le transformant le plus souvent en .txt), soyez donc vigilant. Il est également possible de changer l'extension en `.plist` pour utiliser le fichier avec d'anciennes versions de SideStore, comme la version `0.1.1`.
 
-
-Vous pourrez mieux réussir en excecutant simplement avec des permissions ou en ouvrant jitterbugpair depuis un manager de fichier, il est tout de même principalement recommandé de le faire depuis un Terminal.
+Il est possible que l'ajout des permissions d'exécution et le lancement de jitterbugpair depuis un gestionnaire de fichiers suffisent, mais il est recommandé de l'exécuter directement depuis le terminal.
