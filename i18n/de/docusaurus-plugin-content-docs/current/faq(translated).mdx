@@ -1,0 +1,147 @@
+---
+
+Titel: Frequently Asked Questions (oft gestellte Fragen)
+
+Beschreibung: Ein Abteil mit den am meisten gestellten Fragen über SideStore.
+
+sidebar_position: 3
+
+---
+
+# FAQ
+
+Das ist eine Liste mit den am meisten gestellten Fragen über SideStore. Diese Liste beinhaltet gewöhnliche Fragen, die wir mit der Entwicklung von SideStore erhalten, und ein paar Fragen, die vielleicht beantwortet werden wollen für verschiedene Leute oder Leute, die Probleme haben.
+
+## Was ist SideStore?
+
+SideStore ist eine iOS App, die es dir erlaubt, Apps auf dein iOS Gerät zu sideloaden mithilfe deiner Apple-ID. SideStore signiert deine Apps neu mit deinem persönlichen Entwicklerzertifikat und benutzt dann ein speziell designtes VPN, um iOS dazu zu bringen, sie zu installieren. SideStore wird deine Apps regelmäßig im Hintergrund „erneuern“, damit die 7-Tage-Entwicklungsphase sie nicht ablaufen lässt. Das Ziel von SideStore ist es, für eine unabhängige Sideloading-Erfahrung zu sorgen. Es ist eine communitygeleitete App, die auf AltStore basiert, und hat bereits viele der am meisten gewünschten Features der Community eingebaut. Du wirst einen Computer nur einmal während der Installation brauchen.
+
+(Beiträge sind willkommen! 🙂)
+
+### Kann ich JIT aktivieren?
+
+Nutzer auf iOS/iPadOS 16 oder niedriger können JIT direkt über SideStore aktivieren. Gehe dazu zum „My Apps“-Abteil, halte auf eine App gedrückt und wähle „Enable JIT“ aus.
+
+Nutzer auf iOS oder iPadOS 17.4 oder höher müssen eine andere Lösung finden, wie StikJIT/StikDebug oder SideStore nightly. Beachte das Tutorial im Abschnitt [Advanced](advanced/jit).
+
+### Wann wird SideStore rauskommen?
+
+SideStore hat momentan kein Release Datum, aber es ist in einer öffentlichen Beta-Phase.
+
+### Kann man Apps momentan sideloaden?
+
+Ja, du kannst, genau wie bei AltStore!
+
+### Hat es auch AltStore Beta Features?
+
+Wir haben AltStore Beta Features, aber es sind oft nicht die aktuellsten. Wir versuchen, auf dem neuesten Stand zu bleiben, oder sie auf unsere Weise einzubauen, falls nötig.
+
+### Wird das Einschalten des VPNs den Akku verbrauchen?
+
+Nein, tut es nicht, da es sich nur mit dem Gerät selbst verbindet. Es werden keine Remote-Server benutzt, das heißt, keine externen Verbindungen, das heißt, der Akku wird nicht verbraucht.
+
+### Wird das VPN mich tracken?
+
+Nein, wird es nicht, da keine Remote-Server benutzt werden.
+
+### Ich kann mich nicht mit dem Internet verbinden, wenn das VPN an ist.
+
+Stelle sicher, dass du keine alternativen DNS in deinem WLAN und WireGuard eingestellt hast. Wenn du weißt, dass die DNS IP-Adresse funktioniert, dann versuche, sie von den WLAN Einstellungen zu entfernen, und füge sie in die WireGuard Einstellungen ein unter DNS.
+
+### Update von SideStore hängt am Schluss
+
+Gehe zum Homebildschirm, damit der Vorgang abgeschlossen werden kann. Wir wissen nicht, warum es passiert, aber es könnte damit zusammenhängen, dass durch ein VPN `installd` dazu gebracht wird, SideStore selbst zu aktualisieren.
+
+### Kann ich mehr als 3 aktive Apps sideloaden?
+
+Normalerweise nicht, da es ein iOS und Entwickler Account Limit ist. Apple erlaubt es mit einem kostenlosen Apple Developer Account nur 3 Apps zu installieren.
+
+Um diese Einschränkung zu entfernen (und einen Ablauf von 356 Tagen zu erhalten), kannst du 99 € im Jahr für einen Apple Developer Account bezahlen.
+
+Alternativ gibt es [hier](https://github.com/SideStore/SideStore/releases/tag/nightly) (version 0.5.9-nightly.2024.10.23.1+1e969a0 zur Zeit des Schreibens) eine nightly Build zur Verfügung, die den SpareRestore Exploit nutzt, um das 3-App-Limit zu umgehen. Aktuell funktioniert das nur auf iOS-Versionen unter iOS 18 dev Beta 5 und definitiv auf iOS 18.0.1.
+
+Ein Tutorial zur Nutzung kann [hier](advanced/sparserestore) gefunden werden.
+
+### Ich habe ein Problem oder einen Bug oder einen Vorschlag für ein Feature oder eine Quality of Life Verbsserung
+
+Bitte erstelle ein GitHub Issue auf unserer GitHub Seite um einen Fehler zu melden oder ein Feature vorzuschlagen (mit den passenden Labels)!
+
+### Ich bin ein Entwickler, wie wirkt das auf mich aus?
+
+Das betrifft dich nicht direkt, außer vielleicht durch ein Update für AltKit, falls bzw. wenn unsere Ergänzungen übernommen werden.
+
+### Muss ich meine App aktualisieren, um es zu unterstützen?
+
+Nein, da es sich momentan wie AltStore verhält während dem signieren.
+
+### Als ein Nutzer habe ich Probleme, mich in SideStore anzumelden. Ich bekomme einen Error
+
+Es gibt mehrere Gründe, warum das passiert, aber das häufigste Problem ist ein temporärer Anisette Serverausfall. Du kannst aktuell den Anisette Server in den SideStore Einstellungen unter „Anisette Servers“ ändern.
+
+### Wird SideStore einen eigenen Store haben?
+
+Wir haben im Moment eine Community Source! Source URL: https://community-apps.sidestore.io/sidecommunity.json
+
+Wir haben auch einen Service namens [SideStore Connect](https://connect.sidestore.io), der Entwicklern erlaubt, ihre eigenen Apps zu veröffentlichen.
+
+### Warum hat meine App ein Update namens „pacer test“?
+
+Dies war ein Test Update um zu sehen, ob es Probleme zwischen den Hauptversionen gab, und sollte während des normalen Gebrauchs nicht sichtbar sein. Wenn du dieses Problem hast und es nach einem Release ist, dann installiere SideStore neu oder melde es als einen Fehler.
+
+### Warum wird bei meinen JIT-basierenden Apps nicht automatisch JIT aktiviert?
+
+Wir haben momentan keine Methode, um automatisch JIT zu aktivieren, und wenn wir eine haben, dann müsstest du das SideStore-VPN eingeschaltet lassen.
+
+### Hat SideStore ein iPadOS UI?
+
+Natürlich hat es eins!
+
+### Ich habe gesehen, dass ein iMac oder ein MacBook Pro zu meinem Account hinzugefügt wurde. Ist es sicher und ist es ein echter Mac?
+
+Diese Macs sind nicht echt und werden automatisch vom Anisette Server generiert, um bei der Anmeldung zu helfen. Es werden auch keine persönlichen Daten zum Anisette Server gesendet, da alle Daten, die vom Server kommen, nur für SideStore genutzt werden.
+
+### Warum wird mein Account gesperrt, wenn ich SideStore nutze?
+
+Ältere Anisette Server die von vielen Leuten genutzt werden, sind dafür bekannt, dass sie Apple-ID Sperrung verursachen. Bitte nutze einen der offiziellen Anisette Servern oder hoste deinen eigenen [Anisette-V3-Server](advanced/anisette).
+
+### Warum bekomme ich Error -36607?
+
+Dies ist ein Login Problem mit dem Anisette Server. Es gibt nicht viele Informationen darüber, außer dass das Ändern vom Anisette Server helfen kann, oder du kannst auch weiterhin versuchen, dich anzumelden, bis es funktioniert.
+
+### Kann ich meine AltStore/Sideloadly Apps übertragen?
+
+Ja, entferne nur nicht die ursprüngliche App von deinem Gerät. Gehe in SideStore und installiere dieselbe oder aktualisierte IPA, und sie sollte zu deiner Liste von Apps in SideStore hinzugefügt werden, wobei die Daten bestehen bleiben sollten.
+
+### Warum muss ich SideStore direkt nach dem Login erneuern?
+
+Weil AltServer oder andere Programme SideStore mit ihrer eigenen GroupID sideloaden, während wir unsere eigene nutzen. Das Erneuern von SideStore ändert es zu unserer, was gesideloadete Apps verschwinden lässt, da ihre GroupID nicht geändert wird. Es ist am besten, nichts zu sideloaden, bevor man SideStore das erste Mal erneuert hat.
+
+### Kann ich OTA Updates durchführen?
+
+Ja! Drücke einfach nur auf den Update Button!
+
+### Ich möchte eine SideStore Version ausprobieren und ich möchte, dass meine Daten dabei erhalten bleiben, wenn ich auf eine Testversion wechsle. Lösche ich die App oder sideloade ich die Testversion via SideStore?
+
+Du kannst sie via SideStore sideloaden und deine Daten sollten bleiben. Es gibt keine Option, um zwischen verschiedenen Versionen zu wechseln. Wir können außerdem nicht garantieren, dass deine Daten richtig übertragen werden, wenn du eine inoffizielle oder Nightly Version ausprobierst.
+
+### Meine Apps sind verschwunden und ich weiß nicht, was ich tun soll
+
+Gerate nicht in Panik! Installiere deine Apps neu, ohne sie von deinem Gerät zu entfernen und deine Daten sollten erhalten bleiben. Leider ist es möglich, dass deine deaktivierten Apps weg sind, aber um sicherzugehen, solltest du SideStore erneuern und schauen, ob sie wieder erscheinen.
+
+### Ich kann meine Pairing Datei mit keinem Dateityp auswählen
+
+Stelle sicher, dass deine Pairing Datei mit `.mobiledevicepairing` oder `.plist` endet. Falls nicht, überprüfe nochmal, ob du deine Pairing Datei komprimiert hast, bevor du sie an dein Handy gesendet hast. Wenn du dies nicht tust, kann es dazu führen, dass die Datei während des Transports beschädigt wird. Außerdem: Wenn du SideStore mit einem Zertifikat signierst, kannst du die Pairing Datei nicht in der App auswählen. Du kannst versuchen, die Pairing Datei ins Stammverzeichnis vom SideStore Ordner (in der Dateien App bei „Auf meinem iPhone/iPad“) zu verschieben und sie in `ALTPairingFile.mobiledevicepairing` umzubenennen. Falls du keinen SideStore Ordner in der Dateien App findest, versuche dein Handy mit deinem Computer zu verbinden und verschiebe die Pairing Datei zu den Dateien der SideStore App. Stelle sicher, dass du die Pairing Datei zum oben genannten Namen änderst. Beachte die Groß- und Kleinschreibung.
+
+### Ich kann den Debug Server nicht starten
+
+Es gibt Zeiten, in denen der Debug Server nicht funktioniert. Jedoch gibt es eine Lösung, die du probieren kannst.
+
+**Erstelle eine neue Pairing Datei**
+
+Um den Vorgang zur Nutzung einer neuen Pairing Datei zu starten, gehe in die SideStore Einstellungen und drücke auf „Reset Pairing File“. Folge der Anweisung und anschließend der [Pairing Datei Anleitung](installation/pairing-file).
+
+### Aktuell bekannte Probleme
+
+Wenn du momentan Probleme hast und wissen willst, ob wir bereits über sie Bescheid wissen, dann checke unsere GitHub Issue Seite ab, die bereits eine Liste an bekannten Problemen, die du vielleicht hast und Wege, um sie zu beheben. Einige bekannte Probleme, die nicht in dieser Liste stehen, findest du im GitHub-Issue-Bereich https://github.com/SideStore/SideStore/issues/490
+
+Falls du irgendwelche Probleme hast die nicht in dieser Liste sind kannst du ein GitHub Issue erstellen oder [unserem Discord beitreten.](https://discord.gg/sidestore-949183273383395328)
