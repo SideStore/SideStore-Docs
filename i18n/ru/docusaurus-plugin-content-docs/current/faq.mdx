@@ -1,143 +1,147 @@
----
-title: Frequently Asked Questions
-description: A section on the most frequently asked questions for SideStore.
+----
+титул: Часто задаваемые вопросы
+описание: секция с самыми часто задаваемыми вопросами насчет SideStore
 sidebar_position: 3
 ---
 
 # FAQ
 
-This is a list of frequently asked questions for SideStore. This has a list of common questions we get with our development of SideStore, and some questions that might want to be answered for different types of people, or for people having problems.
+Это список самых задаваемых вопросов насчет SideStore. В этом списке имеются частые вопросы, которые мы получаем при разработке SideStore, а также некоторые вопросы, на которые, возможно, хотят получить ответ некоторый тип людей, или люди у которых возникли какие то проблемы с SideStore.
 
-## What is SideStore?
+## Что такое SideStore?
 
-SideStore is an iOS application that allows you to sideload apps onto your iOS device using only your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically "refresh" your apps in the background, to keep their normal 7-day development period from expiring. SideStore's goal is to provide an untethered sideloading experience. It's a community driven fork of AltStore, and has already implemented some of the community's most-requested features. You only need a computer once during installation.
+SideStore - это приложение для iOS, позволяющее загружать приложения на ваше iOS устройство, используя только ваш Apple ID. SideStore загружает приложения с помощью вашего личного сертификата разработчика, и потом использует специально-разработанный VPN чтобы "обмануть" ваше iOS устройство для их скачивания. SideStore будет периодически обновлять ваши приложения на заднем фоне, чтобы предотвратить 7-дневный период от истечения. Главная цель SideStore это предоставить непривязанный опыт sideloading-а. Это комьюнити основано на AltStore, и ужн сделали несколько одних из самых желаемых функций. Компьютер понадобится только один раз в процессе установки.
 
 (Contributions are welcome! 🙂)
 
-### Can I activate JIT?
+### Могу ли я активировать JIT?
 
-For users using iOS/iPadOS 16 or lower, you can activate JIT directly from the SideStore 'My Apps' page by holding down on your app and selecting 'Enable JIT'.
+Для пользователей, использующих iOS/iPadOS 16 или меньше, вы можете активировать JIT напрямую на странице 'My Apps' в SideStore, зажав на приложении и выбрав 'Enable JIT'.
 
-Users on iOS or iPadOS 17.4 or higher will need to use a solution such as StikJIT/StikDebug or SideStore nightly. Please refer to the tutorial in the [Advanced](advanced/jit) section.
+Пользователи на iOS или iPadOS 17.4 и выше придется использовать другие способы для JIT-а, такие как StikJIT/StikDebug или SideStore nightly. Пожалуйста оброщайтесь к более подробному обучению в вкладке [Advanced](advanced/jit).
 
-### When will SideStore release?
+### Когда SideStore полностью выйдет?
 
-SideStore currently does not have a release date, but is in a public beta state.
+у SideStore в текущее время нет точной даты выхода, но он находится на стадии публичной беты.
 
-### Can you sideload apps at the moment?
+### Можно ли скачивать через SideStore в данный момент (sidelo-дить)?
 
-Yes you can, just like AltStore!
+Да, так можно! Прямо как AltStore!
 
-### Does this have AltStore beta features?
+### Имеется ли у SideStore бета функции AltAtore?
 
-We do have AltStore beta features, but it isn't always latest. We try to keep up to date, or implement them in our own way if it's necessary.
+У нас есть бета функции AlrStore, но они не всегда новейшие. Мы пытаемся обновлять или улучшать их если это нужно.
 
-### Will having the VPN on drain my battery?
+### Тратит ли включенный VPN мою батарею?
 
-It does not, as it's only connecting to your own device. No remote servers are used, meaning no external connections, meaning no extra battery drain.
+Нет, VPN не тратит ваш процент батареи, так как оно все что оно делает это подключается к вашему устройству. Никаких удаленных серверов не используется, значит меньше дополнительных подключений, а значит, не тратит вашу батарею.
 
-### Will the VPN track me?
+### Отслеживает ли меня ваш VPN?
 
-It does not, as there is no remote server used.
+Нет, не отслеживает, так как не используется никаких удаленных серверов.
 
-### I cannot connect to the internet when the VPN is on
+### Я не могу подключиться к интернету пока VPN включен
 
-Make sure you don't have an alternate DNS set up in your Wi-Fi and WireGuard configuration. If you know the DNS IP address works, then try removing it from your Wi-Fi configuration and adding it into the WireGuard config under DNS.
+Убедитесь, что у вас нет какого-то другого DNS сервера подключенному к вашему WiFi или конфигурации WireGuard. Если вы уверены, что IP адресс DNS-а работает, попробуйте убрать его из вашей WiFi конфигурации и добавить его в конфигурацию WirrGuard под DNS-ом.
 
-### Updating SideStore hangs towards the end
+### Обновляющийся SideStore сбрасывается около конца обновления.
 
 Go to the homescreen for it to finish. We don't know why this happens, but it might have to do with using a VPN to direct `installd` to refresh SideStore (itself).
 
-### Can I sign more than 3 apps to be active?
+### Может ли у меня быть более чем 3 активных приложения?
 
-Normally, no, as that’s an iOS and developer account limitation. Apple only allows 3 apps to be installed using a free Apple Developer account.
+Обычно, нет, так как это ограничение iOS и аккаунта разработчика. Apple позволяет скачивать только 3 сторонних приложения с бесплатным аккаунтом разработчика.
 
-To remove this restriction (and also get a 365 day expiry), you can pay for a $99/year Apple Developer account.
+Чтобы избавиться от этого ограничения (на 365 дней), вы можете купить продвинутый аккаунт разработчика от Apple за 99$ в год.
 
-Alternatively, there is currently a nightly build available [here](https://github.com/SideStore/SideStore/releases/tag/nightly) (version 0.5.9-nightly.2024.10.23.1+1e969a0 as of writing) that utilizes the SparseRestore exploit to bypass the 3-app limit. Currently, this only works on iOS versions below 18 dev beta 5 plus 18.0.1 for definite.
+Альтернативный способ тоже имеется, на данный момент существует nightly билд SideStore [здесь](https://github.com/SideStore/SideStore/releases/tag/nightly) (версия 0.5.9-nightly.2024.10.23.1+1e969a0 на момент написания статьи), которое использует SparseRestore чтобы обойти ограничение с тремя приложениями. В данный момент это работает только на iOS версиях ниже разработчиской беты 5 iOS 18 или 18.0.1 для понятности.
 
-A tutorial for using this can be found [here](advanced/sparserestore).
+Обьяснение и обучение как это использовать можно найти [здесь](advanced/sparserestore).
 
-### I have a problem or bug or request for a feature or quality of life improvement
+### у меня возникла проблема/баг/запрос для какой то функции или рекомендация для улучшение чего-либо
 
-Please make a GitHub issue on our GitHub page to make a bug report or feature request (with appropriate labels)!
+Пожалуйста сделайте GitHub "Issue" (проблему) на нашей странице GitHub чтобы сделать запрос на баг или функцию (с правильными тегами)!
 
-### I am a developer, how does this affect me?
+### Но я разработчик, как это повлияет на меня?
 
-It doesn’t affect you directly, other than maybe an update to AltKit when/if we get our additions.
+Оно никак не повлияет на вас напрямую, кроме того что, возможно, какую то обновленную  версию AltKit когда/если мы найдем какие то дополнения.
 
-### Do I need to update my app to support this?
+### Нужно ли мне обновлять свое приложение чтобы оно поддерживало это?
 
-Nope, as currently it acts like AltStore while signing.
+Нет, на данный момент оно работает как AltStore при заходе.
 
-### As a user, I’m having trouble logging into SideStore. I get an error
+### Как пользователь, у меня имеются проблемы при входе в SideStore. Я получаю какую то ошибку.
 
-There are many reasons this can happen, but the most common issue is a temporary Anisette server downtime. You can currently change the Anisette server on your device’s Settings app in SideStore under “Anisette URL”.
+Есть много причин почему это может произойти, но самая популярная это временная неработа Anisette сервера. Вы можете поменять Anisette сервер в SideStore настройках.
 
-### Is SideStore going to have a Storefront?
+### будет ли у SideStore Storefront?
 
-We currently have a Community Source! Source URL: https://community-apps.sidestore.io/sidecommunity.json
+На данный момент у нас есть комьюнити-источник! URL: https://community-apps.sidestore.io/sidecommunity.json
 
-We also have a service called [SideStore Connect](https://connect.sidestore.io) which allows devs to publish their own apps.
+У нас также есть сервис под названием [SideStore Connect](https://connect.sidestore.io) который позволяет разработчикам публиковать ихние собственные приложения!
 
-### Why does my app have an update called "pacer test"?
+### Почему в моем приложении появилось обновление под названием "pacer test"?
 
-This was a test update to see if there were problems between major versions, and shouldn’t be seen during normal use. If you see this issue, and it’s after release, then reinstall SideStore or report it as a bug.
+Это было тестовым обновлением, чтобы проверить, есть ли проблемы между основными версиями, и они не должны проявляться при обычном использовании. Если у вас появиласб эта проблема после релиза, переустановите SideStore или сообщите об этом как об ошибке.
 
-### Why do my JIT based apps not automatically activate JIT?
+### Почему мои приложения, основанные на JIT не включают его автоматически?
 
-We currently don’t have an automatic JIT activation method, and if we do you would need the SideStore VPN on.
+Увы, пока у нас нет способа автоматического включения JIT-а, и даже если бы он был вам нужно включать VPN.
 
-### Does SideStore have an iPadOS UI?
+### Есть ли у SideStore интерфейс iPadOS (UI)?
 
-We sure do!
+Само собой!
 
-### I saw an iMac or MacBook Pro get added to my account. Is it safe, and is it a real Mac?
+### Я увидел как какой-то iMac или MacBook Pro входил в мой аккаунт. Безопасно ли это, и Mac - настоящий?
 
-These Macs are not real, and they are automatically generated by the Anisette server to assist with login. No private data is sent to the Anisette server either, as the data the server gives is used on SideStore only.
+Такие MacBook-и не настоящие, они генерируются автоматически Anisette сервером чтобы разобраться с входом в ваш аккаунт (вместо реальных людей). Никакой приватной информации не передается в сервер, информация которую нам дает сервер используется только в SideStore.
 
-### Why is my account getting locked when I use SideStore?
+### Почему мой аккаунт закрывается когда я использую SideStore?
 
-Older Anisette servers that are used by many users are known to cause locking of Apple ID's. Please use one of the official Anisette servers, or host your own [anisette-v3-server](advanced/anisette).
+Более старые Anisette сервера, которые используются многим количеством людей, может вызвать закрытие Apple ID для безопасности. Убедитесь что вы используете один из официальных Anisette серверов, или создайте ваш собственный [anisette-v3-server](advanced/anisette).
 
-### Why do I get error -36607?
+### Почему я получаю ошибку -36607?
 
-This is a login issue with the Anisette server. There isn’t really much of any info about it other than changing Anisette servers sometimes helps, or you can keep trying to login until it does.
+Это проблема с входом из-за Anisette сервера. Насчет этой ошибки не так много информации, но меняя Anisette сервер иногда помогает, или вы можете пытаться входить пока оно сам не поменяет сервер.
 
-### Can I transfer my AltStore/Sideloady apps?
+### Могу ли я перенести свои AltStore/Sideloady приложения?
 
-Yes, just don’t remove the original app on your device. Go into SideStore and sideload the same or updated IPA, and it should be added to your list of apps within SideStore with your data still intact.
+Да, только не удаляйте оригинальное приложение на вашем устройстве. Перейдите в SideStore и установите то же самое или обновленное IPA файл, и таким образом оно должно добавиться в ваш список приложений, где ваши данные останутся в безопасности.
 
-### Why do I need to refresh SideStore first thing after login?
+### Почему мне стоит обновить SideStore первым делом после входа?
 
-This is because AltServer or other programs sideload SideStore with their own app groupID, while we use our own. Refreshing SideStore changes it to ours, which makes apps disappear as their groupIDs are not updated. It’s best to not sideload anything before refreshing SideStore on a clean install.
+Потому что AltServer или другие программы загружают SideStore с их собственными "groupID", и у нас оно тоже отличается. Обновляя SideStore вы меняете его на наш groupID, заставляя предыдушие приложения пропадать так как ихние groupID не обновляются. Лучше всего не скачивать что-то до того, пока вы не обновили SideStore после чистой установки.
 
-### Can I do OTA updates?
+### Могу ли я делать OTA обновления?
 
-Yep! Just click the update button!
+Да! Просто нажмите на кнопку "обновить"!
 
-### I want to test a SideStore version, and I want my data to stay when switching to a test version. Do I remove my app or sideload the test version via SideStore?
+### Я хочу протестировать какую то версию SideStore, но я хочу чтобы мои данные перенеслись при переходн на другую версию. Стоит ли мне удалить свое приложение или загрузить его через SideStore?
 
-You can sideload via SideStore and your data should be the same. We don’t have an enrollment toggle to go to other versions. We also cannot guarantee your data transfers when testing an unofficial or nightly build.
+Вы можете попробывать загрузить через SideStore и ваши данные должны сохраниться. У нас нет каких то переключений через версиями в одном приложении. Мы также не можем гарантировать что ваши данные перенесется тестируя какой то неофициальный или nightly билд.
 
-### My apps disappeared and I don't know what to do
+### Мои приложения пропали и я не знаю что делать 
 
-Don't panic! Re-sideload the apps without removing them from your device, and your data should be fine. Unfortunately it's possible that your deactivated apps are gone, but to confirm that just refresh SideStore to see if they come back.
+Не паникуйте! Переустановите приложения не удаляя их с вашего устройства, ваши данные должны сохраниться. К сожалению есть шанс что ваши деактивированные приложения не востановятся, но чтобы подтвердить это просто обновите SideStore чтобы убедиться - вернутся ли они или нет.
 
-### I'm unable to select my pairing file with any file type
+### Я не могу выбрать свой файл сопряжения (pairing file) с любым типом файла
 
-Make sure your pairing file's extension ends with `.mobiledevicepairing` or `.plist`. If it doesn't, double check to see if you had zipped your pairing file before sending it to your phone. Failing to do so may lead to the file being corrupted during transport. Also, when signing Sidestore with a certificate, you won't be able to select the pairing file from within app. You can try moving the pairing file to the root directory of the SideStore folder in the Files app in "On My iPhone/iPad", and naming it `ALTPairingFile.mobiledevicepairing`. If you do not see the Sidestore folder in the files app, connect your phone to your computer, and you can drag and drop the pairing file to the files of the Sidestore app. Ensure to change it to name mentioned above. Note that it is case sensitive.
+Убедитесь, что расширение вашего файла сопряжения заканчивается на ".mobiledevicepairing` или `.plist`. Если нет, дважды проверьте, сохраняли ли вы файл сопряжения в архив перед отправкой на устройство. Невыполнение этого требования может привести к повреждению файла при транспортировке. Еще кое что, при подписании Sidestore сертификатом вы не сможете выбрать файл сопряжения из приложения. Вы можете попробовать переместить файл сопряжения в корневую папку SideStore в приложении "Файлы" в разделе "На моем iPhone/iPad" и дать ему имя "ALTPairingFile.mobiledevicepairing". Если вы не видите папку Sidestore в приложении files, подключите свой телефон к компьютеру и перетащите файл сопряжения в файлы приложения Sidestore. Обязательно измените его на имя на указанное выше. Если вы этого не сделаете, файл сопряжения не сработает.
 
-### Cannot start DebugServer
+### Не могу запустить DebugServer
 
-There is times when the Debugserver doesn't work. However, there is a fix you can try.
+Иногда Debugserver не работает. НО, вы все еще можете кое-что попробывать:
 
-**Make a new pairing file**
+**Как сделать новый файл сопряжения (pairing file)**
 
-To start the process of using a new pairing file you go to settings tab and click Reset Pairing file, and you accept the prompt. Then you just follow the [Pairing File instructions](installation/pairing-file).
+Чтобы начать процесс использования нового файла сопряжения, перейдите на вкладку "Настройки" и нажмите "Сбросить файл сопряжения", после чего подтвердите ваше действие. Затем просто следуйте [инструкциям по созданию файла сопряжения] (installation/pairing-file).
 
-### Currently Known issues
+### Известные на данный момент ошибки
 
-If you're currently having issues and want to know if we already know about them. Then check out our GitHub issue page which  has a list of known issues and ways to mitigate some of the issues you might be having. Some of the issues in this list might be known that are not there, but are in the GitHub issues section. https://github.com/SideStore/SideStore/issues/490
+Чтобы начать процесс использования нового файла сопряжения, перейдите на вкладку "Настройки" и нажмите "Сбросить файл сопряжения", после чего примите приглашение. Затем просто следуйте [инструкциям по созданию файла сопряжения] (установка/файл сопряжения).
 
-If you have any issues that aren't in this list. Just make a GitHub issue or [join our discord.](https://discord.gg/sidestore-949183273383395328)
+### Известные на данный момент проблемы
+
+Если у вас возникли проблемы и вы хотите знать, известно ли нам о них, тогда ознакомьтесь с нашей страницей ошибок на GitHub, где есть список известных проблем и способы устранения некоторых из них, которые могут у вас возникнуть. Возможно, ошибка на которую вы ищете решение именно там!https://github.com/SideStore/SideStore/issues/490
+
+Если у вас есть какие-либо проблемы, которых нет в этом списке, просто создайте "issue" на GitHub или заходите на наш [ дискорд сервер] (https://discord.gg/sidestore-949183273383395328) для большей информации.
