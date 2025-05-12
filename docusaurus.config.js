@@ -50,14 +50,14 @@ const config = {
     ],
   ],
 
-  // Use the Lunr search plugin with proper configuration
+
   plugins: [
     [
       'docusaurus-lunr-search', 
       {
-        // Configure languages to match your i18n configuration (excluding Chinese)
+        // Chinese isnt supported yet
         languages: ['en', 'es', 'fr', 'de', 'nl', 'ja', 'ru', 'ko'],
-        // Increase max hits to show more results
+        // Keep max results to 10
         maxHits: 10
       }
     ]
