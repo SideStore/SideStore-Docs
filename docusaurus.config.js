@@ -50,6 +50,19 @@ const config = {
     ],
   ],
 
+  // Use the Lunr search plugin with proper configuration
+  plugins: [
+    [
+      'docusaurus-lunr-search', 
+      {
+        // Configure languages to match your i18n configuration (excluding Chinese)
+        languages: ['en', 'es', 'fr', 'de', 'nl', 'ja', 'ru', 'ko'],
+        // Increase max hits to show more results
+        maxHits: 10
+      }
+    ]
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -67,10 +80,10 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
-	  {
-	    type: 'localeDropdown',
-	    position: 'right'
-	  },
+          {
+            type: 'localeDropdown',
+            position: 'right'
+          },
           {
             href: 'https://github.com/SideStore/',
             label: 'GitHub',
