@@ -1,0 +1,113 @@
+---
+title: Anisette Server tùy chỉnh
+description: Hướng dẫn về anisette servers.
+---
+
+:::ghi nhớ
+Sử dụng bất kỳ phiên bản SideStore nào sau 0.4.0 không có khả năng khóa tài khoản của bạn vì đây là thời điểm hỗ trợ cho máy chủ anisette v3 được thêm vào.
+
+Với điều này, **khuyến khích** sử dụng máy chủ v3 để sử dụng SideStore bình thường, nếu phiên bản của bạn hỗ trợ.
+:::
+
+Dữ liệu Anisette là thông tin được sử dụng trong quy trình ký ứng dụng cần được tạo mỗi khi bạn cài đặt hoặc làm mới ứng dụng. SideStore lấy thông tin này từ máy chủ giả mạo máy Mac và gửi lại cho bạn dữ liệu anisette. Không có thông tin tài khoản nào được gửi đến máy chủ trong quy trình này.
+
+Khi nhiều người sử dụng cùng một máy chủ Anisette (cụ thể là máy chủ v1), máy chủ sẽ kích hoạt bảo mật của Apple và khóa các tài khoản đang sử dụng máy đó. Đây là lý do tại sao chúng tôi khuyên bạn nên sử dụng ID Apple burner riêng thay vì ID chính của bạn.
+
+Nhóm của chúng tôi đã nghiên cứu các phương pháp tiếp cận tốt hơn để tránh các tài khoản bị khóa (dưới dạng _anisette-v3_). Tuy nhiên, nếu bạn đang sử dụng phiên bản SideStore cũ hơn, việc lưu trữ máy chủ anisette của riêng bạn là một cách tuyệt vời để tránh các tài khoản bị khóa. Điều này trở nên vô cùng dễ dàng nhờ máy chủ hiện tại của chúng tôi là mã nguồn mở và được tạo cho môi trường docker. Điều này có nghĩa là chúng tôi có thể triển khai máy chủ chỉ bằng liên kết GitHub.
+
+## Chạy trên Render
+
+[Render](https://render.com/) là một dịch vụ giúp tạo máy chủ dễ dàng. Nó hỗ trợ tải nguồn máy chủ từ GitHub. Gói miễn phí khá hạn chế về mặt tài nguyên, nhưng máy chủ có thể chạy thoải mái trên đó mà không có vấn đề gì.
+
+Do có quá nhiều người sử dụng cùng một URL GitHub, bạn sẽ phải tự fork kho lưu trữ Git.
+
+1. [Đăng ký](https://github.com/signup) để có tài khoản GitHub, nếu bạn chưa có.
+2. [Mở](https://github.com/Dadoum/anisette-v3-server) kho lưu trữ Git.
+3. Nhấp vào "Fork" ở góc trên bên phải và fork kho lưu trữ vào tài khoản của bạn.
+4. Sau khi kho lưu trữ fork được tạo, hãy nhấp vào menu thả xuống "Mã" màu xanh lá cây ở góc trên bên phải và sao chép URL .git.
+
+* Lưu lại để sau.
+
+Sau khi hoàn tất, máy chủ Render có thể được tạo.
+
+1. [Đăng ký](https://dashboard.render.com/register/) cho một tài khoản.
+2. Tạo [Dịch vụ web mới](https://dashboard.render.com/select-repo?type=web).
+3. Cuộn xuống **Kho lưu trữ Git công khai** và nhập URL bạn đã sao chép trước đó.
+4. Nhấp vào "Tiếp tục" và điền vào biểu mẫu:
+    * **Name** - không quan trọng
+    * **Region** - Gần bạn nhất
+    * **Branch** - main (mặc định)
+    * **Root Directory** - trống (mặc định)
+    * **Environment** - Docker (mặc định)
+    * **Instance Type** - Free
+
+5. Đợi máy chủ xây dựng xong. Bạn sẽ thấy thông tin sau khi hoàn tất:
+
+```
+Machine requires provisioning... done !
+Your service is live 🎉
+```
+
+*Nếu bản dựng không thành công vì bất kỳ lý do nào, hãy nhấp vào **Manual Deploy**, sau đó **Deploy latest commit**.*
+
+6. Tìm liên kết đến máy chủ mới của bạn ở đầu trang:
+
+```
+https://[tên-server].onrender.com
+```
+
+## Tạo danh sách máy chủ anisette tùy chỉnh
+
+Kể từ khi phát hành phiên bản 0.5.8, SideStore sử dụng hệ thống danh sách máy chủ anisette để có thể dễ dàng thêm máy chủ anisette được chứng thực chính thức. Điều này có nghĩa là bạn phải thực hiện thêm một chút công việc để sử dụng máy chủ của riêng mình mà không yêu cầu thêm máy chủ của mình vào danh sách chính thức.
+
+Nếu bạn muốn giữ tùy chọn sử dụng máy chủ được bao gồm, hãy làm theo các bước dưới đây:
+1. Truy cập [ở đây](https://servers.sidestore.io/servers.json) để lấy danh sách máy chủ hiện tại.
+2. Truy cập dịch vụ lưu trữ tệp mà bạn chọn để lưu trữ tệp trên internet. Chúng tôi khuyên bạn nên sử dụng GitHub Pages để thực hiện việc này vì dễ chỉnh sửa hơn trong tương lai và sẽ là dịch vụ được sử dụng làm ví dụ cho hướng dẫn này. Nếu bạn có cách lưu trữ riêng, hãy điều chỉnh các bước sau cho phù hợp với thiết lập của mình.
+3. Nếu bạn đã thiết lập trang web Github Pages, hãy chuyển sang bước phụ thứ sáu. Nếu không, hãy thực hiện như sau:
+* Tạo kho lưu trữ GitHub mới thông qua nút dấu cộng (+) ở trên cùng bên phải trên máy tính để bàn, biểu tượng hồ sơ > Tạo mới trên thiết bị di động hoặc [trang này](https://github.com/new).
+* Đặt tên là [tên người dùng GitHub của bạn].github.io, chọn 'Khởi tạo kho lưu trữ này bằng README' và đặt các cài đặt còn lại theo ý muốn của bạn.
+* Sau khi tạo, hãy chuyển đến tab Cài đặt và điều hướng đến phần Trang trong Mã và tự động hóa.
+* Đặt Xây dựng và triển khai trong Nguồn thành 'Triển khai từ nhánh'
+* Nếu không được chọn tự động, hãy đặt Nhánh thành 'chính'
+* Quay lại tab mã và nhấn 'Thêm tệp', sau đó nhấn 'Tải tệp lên', sau đó chọn tệp 'servers.json' mà bạn đã tải xuống trước đó.
+* Sau khi tải lên, hãy nhấp vào tệp và nhấn nút Chỉnh sửa.
+* Kéo xuống máy chủ cuối cùng trong danh sách và thêm dấu phẩy sau dấu ngoặc nhọn đóng của máy chủ cuối cùng ('}'), sau đó thêm máy chủ của riêng bạn theo định dạng sau:
+```
+{
+    "name": "[một cái gì đó có thể nhận dạng được như tên người dùng]",   //không thực sự quan trọng trừ khi bạn chia sẻ danh sách máy chủ này với người khác
+    "address": "[url máy chủ của bạn]"
+}
+```
+* Cam kết thay đổi, sau đó đi đến https://[tên người dùng GitHub của bạn].github.io/[nơi bạn đặt tệp]/servers.json. Nếu tệp tải xong, bạn đã sẵn sàng chuyển sang phần tiếp theo. Nếu không, bạn có thể phải đợi tới 10 phút để trang web của mình được thiết lập đúng cách để sử dụng trước khi thử lại.
+Nếu bạn chỉ muốn sử dụng máy chủ của riêng mình, hãy làm theo các bước trên, nhưng thay vì lấy server.json chính thức, hãy tạo máy chủ của riêng bạn bằng định dạng này;
+```
+{
+    "servers": [
+        {
+            "name": "[như trên]",
+            "address": "[như trên]"
+        }
+    ]
+}
+```
+và tiếp tục như bình thường.
+
+## Sử dụng máy chủ của bạn với SideStore
+
+Để sử dụng danh sách máy chủ mới tạo của bạn trong ứng dụng SideStore, hãy thực hiện như sau:
+
+1. Mở phần Settings trong SideStore.
+2. Kéo xuống cuối và chạm vào 'Anisette Servers'.
+3. Chạm vào URL danh sách và thay thế bằng URL của danh sách máy chủ của bạn.
+4. Nhấn 'Refresh Servers' và chọn máy chủ của riêng bạn từ danh sách đã cập nhật.
+
+## Xong!
+
+Bây giờ SideStore sẽ sử dụng máy chủ anisette tùy chỉnh mới của bạn.
+
+## Liên kết:
+[<img src="https://uptime.sidestore.io/api/badge/4/uptime/48" />](https://uptime.sidestore.io/status/all)
+[Thời gian hoạt động của tất cả máy chủ Anisette chính thức](https://uptime.sidestore.io/status/all)
+
+[<img src="https://uptime.sidestore.io/api/badge/1/uptime/48" />](https://uptime.sidestore.io/status/ss)
+[Thời gian hoạt động của máy chủ Anisette chính thức của chúng tôi](https://uptime.sidestore.io/status/ss)
