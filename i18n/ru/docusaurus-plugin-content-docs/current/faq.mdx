@@ -1,6 +1,6 @@
----
-title: Frequently Asked Questions
-description: A section on the most frequently asked questions for SideStore.
+----
+титул: Frequently Asked Questions
+описание: A section on the most frequently asked questions for SideStore.
 sidebar_position: 3
 ---
 
@@ -10,39 +10,39 @@ This is a list of frequently asked questions for SideStore. This has a list of c
 
 ## What is SideStore?
 
-SideStore is an iOS application that allows you to sideload apps onto your iOS device using only your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically "refresh" your apps in the background, to keep their normal 7-day development period from expiring. SideStore's goal is to provide an untethered sideloading experience. It's a community driven fork of AltStore, and has already implemented some of the community's most-requested features. You only need a computer once during installation.
+SideStore - это приложение для iOS, позволяющее загружать приложения на ваше iOS устройство, используя только ваш Apple ID. SideStore загружает приложения с помощью вашего личного сертификата разработчика, и потом использует специально-разработанный VPN чтобы "обмануть" ваше iOS устройство для их скачивания. SideStore будет периодически обновлять ваши приложения на заднем фоне, чтобы предотвратить 7-дневный период от истечения. Главная цель SideStore это предоставить непривязанный опыт sideloading-а. Это комьюнити driven fork of , and has already implemented some of the community's most-requested features. Компьютер понадобится только один раз в процессе установки.
 
 (Contributions are welcome! 🙂)
 
-### Can I activate JIT?
+### Могу ли я активировать JIT?
 
-For users using iOS/iPadOS 16 or lower, you can activate JIT directly from the SideStore 'My Apps' page by holding down on your app and selecting 'Enable JIT'.
+Для пользователей, использующих iOS/iPadOS 16 или меньше, вы можете активировать JIT напрямую на странице 'My Apps' в SideStore, зажав на приложении и выбрав 'Enable JIT'.
 
-Users on iOS or iPadOS 17.4 or higher will need to use a solution such as StikJIT/StikDebug or SideStore nightly. Please refer to the tutorial in the [Advanced](advanced/jit) section.
+Пользователи на iOS или iPadOS 17.4 и выше придется использовать другие способы для JIT-а, такие как StikJIT/StikDebug или SideStore nightly. Пожалуйста оброщайтесь к более подробному обучению в вкладке [Advanced](advanced/jit).
 
-### When will SideStore release?
+### Когда SideStore полностью выйдет?
 
-SideStore currently does not have a release date, but is in a public beta state.
+у SideStore в текущее время нет точной даты выхода, но он находится на стадии публичной беты.
 
-### Can you sideload apps at the moment?
+### Можно ли скачивать через SideStore в данный момент (sidelo-дить)?
 
-Yes you can, just like AltStore!
+Да, так можно! Прямо как AltStore!
 
-### Does this have AltStore beta features?
+### Имеется ли у SideStore бета функции AltAtore?
 
-We do have AltStore beta features, but it isn't always latest. We try to keep up to date, or implement them in our own way if it's necessary.
+У нас есть бета функции AlrStore, но они не всегда новейшие. Мы пытаемся обновлять или улучшать их если это нужно.
 
-### Will having the VPN on drain my battery?
+### Тратит ли включенный VPN мою батарею?
 
-It does not, as it's only connecting to your own device. No remote servers are used, meaning no external connections, meaning no extra battery drain.
+Нет, VPN не тратит ваш процент батареи, так как оно все что оно делает это подключается к вашему устройству. Никаких удаленных серверов не используется, значит меньше дополнительных подключений, а значит, не тратит вашу батарею.
 
-### Will the VPN track me?
+### Отслеживает ли меня ваш VPN?
 
-It does not, as there is no remote server used.
+Нет, не отслеживает, так как не используется никаких удаленных серверов.
 
-### I cannot connect to the internet when the VPN is on
+### Я не могу подключиться к интернету пока VPN включен
 
-Make sure you don't have an alternate DNS set up in your Wi-Fi and WireGuard configuration. If you know the DNS IP address works, then try removing it from your Wi-Fi configuration and adding it into the WireGuard config under DNS.
+Убедитесь, что у вас нет какого-то другого DNS сервера подключенному к вашему WiFi или конфигурации WireGuard. Если вы уверены, что IP адресс DNS-а работает, попробуйте убрать его из вашей WiFi конфигурации и добавить его в конфигурацию WirrGuard под DNS-ом.
 
 ### Updating SideStore hangs towards the end
 
