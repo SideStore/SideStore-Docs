@@ -5,8 +5,8 @@ description: JIT（Just-in-Time）コンパイルを必要とするアプリ向�
 
 :::note
 
-JITを有効にする方法はAltJITやSideJITServerなど複数ありますが、ここでは現在推奨している **StikJIT / StikDebug** を使用した方法を紹介します。  
-代替として、SideStore v0.6.2-nightly.2025.04.15以降では minimuxer に JIT機能が統合されており、StikDebugと同様の仕組みでJITを有効にできます。使用するには、StosVPNに接続した状態でWi-Fiを有効にするか、モバイルデータとWi-Fiの両方を無効にしてください。
+JITを有効にする方法はAltJITやSideJITServerなど複数ありますが、ここでは現在推奨している **StikJIT / StikDebug**を使用した方法を紹介します。  
+代替として、SideStore v0.6.2-nightly.2025.04.15以降では minimuxerにJIT機能が統合されており、StikDebugと同様の仕組みでJITを有効にできます。使用するには、StosVPNに接続した状態でWi-Fiを有効にするか、モバイルデータとWi-Fiの両方を無効にしてください。
 
 :::
 
@@ -14,47 +14,47 @@ JITを有効にする方法はAltJITやSideJITServerなど複数ありますが�
 
 * iOS/iPadOS 17.4 以降の iDevice（ただし 18.4b1 を除く）  
   - 17.0〜17.3 の場合は、[SideJITServer](https://github.com/nythepegasus/SideJITServer) など代替手段を使用してください。
-* StikJIT 用に空きアプリアップスロットが **1つ以上** 必要です。
+* StikJIT用に空きアプリスロットが **1つ以上** 必要です。
 
-## SideStore での StikJIT インストール方法
+## SideStoreでのStikJITのインストール方法
 
 1. **StikJITの取得**  
    SideStoreに以下のAltSourceを追加してください：  
    [StikJIT ソースを追加](sidestore://source?url=https://raw.githubusercontent.com/StephenDev0/StikJIT/refs/heads/main/repo.json)  
-   ※ SideStore がインストールされていない場合、このリンクは機能しません。
+   ※ SideStoreをインストールしていない場合、このリンクは機能しません。
 
 2. **インストール**  
-   SideStore を使用して StikJIT をインストールします。
+   SideStoreを使用してStikJITをインストールします。
 
 3. **インストール手順**  
    下記の「標準インストール手順」を参考に進めてください。
 
-## App Store での StikDebug インストール（スロット不要）
+## App StoreのStikDebugのインストール（スロット不要）
 
-1. **StikDebug をインストール**  
+1. **StikDebugをインストール**  
    App Store より [こちら](https://apps.apple.com/us/app/stikdebug/id6744045754) からインストールしてください。  
-   StikDebug に内蔵された VPN は SideStore の StosVPN と似た構造のため、**アプリのインストールや更新にも使用できます**。
+   StikDebugに内蔵されたVPNはSideStoreのStosVPNと似た構造のため、**アプリのインストールや更新にも使用できます**。
 
 2. **インストール手順**  
    下記の「標準インストール手順」を参考に進めてください。
 
 ### 標準インストール手順
 
-1. **VPN の有効化**  
-   StikJIT の場合は StosVPN を、StikDebug の場合は内蔵 VPN を有効にしてください。
+1. **VPNの有効化**  
+   StikJITの場合はStosVPNを、StikDebugの場合は内蔵VPNを有効にしてください。
 
 2. **ペアリングファイルのアップロード**  
-   プロンプトが表示されたら、SideStore 用に JitterbugPair で取得した **解凍済みのペアリングファイル** を読み込んでください。取得手順は[こちら](/docs/installation/pairing-file)を参照。
+   プロンプトが表示されたら、SideStore用にJitterbugPairで取得した **解凍済みのペアリングファイル** を読み込んでください。取得手順は[こちら](/docs/installation/pairing-file)を参照してください。
 
 ## JITを有効にするには
 
 1. **VPNの有効化**  
-   StikJIT は StosVPN を、StikDebug は内蔵 VPN を有効にしてください。
+   StikJITはStosVPNを、StikDebugは内蔵 VPNを有効にしてください。
 
 2. **JITの起動**  
-   「JIT を有効化」ボタンをタップし、JIT を有効にしたいアプリを選択します。
+   「JIT を有効化」ボタンをタップし、JITを有効にしたいアプリを選択します。
 
 ### オフラインでのJITの有効化
 
-JIT をオフラインで有効化するには、StosVPN または StikDebug を有効にした状態で、  
-**Wi-Fi とモバイルデータを両方 OFF（機内モード推奨）**にした後、StikJIT を起動してください。その後は通常通り JIT を有効化できます。
+JITをオフラインで有効化するには、StosVPNまたは StikDebugを有効にした状態で、  
+**Wi-Fiとモバイルデータを両方オフ（機内モード推奨**)にした後、StikJITを起動してください。その後は通常通りJITを有効化できます。
