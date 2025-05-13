@@ -12,29 +12,29 @@ Tải JitterbugPair cho hệ điều hành [Windows (64-bit)](https://github.com
 
 :::mẹo nhỏ
 
-Khi sử dụng lưu trữ đám mây (icloud, cloud, mediafile, google drives), phần mở rộng tệp có thể thay đổi (thường là .txt). Luôn nên nén tệp ghép nối của bạn trước khi chuyển. SideStore chỉ chấp nhận các tệp .mobiledevicepairing hoặc .plist.
+Khi sử dụng lưu trữ đám mây (icloud, cloud, mediafile, google drives), phần mở rộng tệp có thể thay đổi (thường là .txt). Luôn nên nén tệp kết nối của bạn trước khi chuyển. SideStore chỉ chấp nhận các tệp .mobiledevicepairing hoặc .plist.
 :::
 
 ### Windows
 
 1. Giải nén JitterbugPair.zip.
 2. Kết nối thiết bị của bạn vào máy bằng dây đi kèm, và mở khóa thiết bị của bạn vào màn hình chính. Khi xong, giải nén tệp đã giải nén được từ JitterbugPair.zip.
-    * Thiết bị của bạn có thể hỏi quyền tin tưởng trên màn hình thiết bị để kết nối vào máy của bạn. Hãy chắc chắn chấp nhận cửa sổ bật lên này, vì nó cần thiết cho quá trình ghép nối.
+    * Thiết bị của bạn có thể hỏi quyền tin tưởng trên màn hình thiết bị để kết nối vào máy của bạn. Hãy chắc chắn chấp nhận cửa sổ bật lên này, vì nó cần thiết cho quá trình kết nối.
 3. Sau khi hoàn tất, bạn sẽ nhận được một tập tin có đuôi là `.mobiledevicepairing`.
-4. Chuyển tệp này vào thiết bị của bạn bằng iTunes hoặc bất kỳ phương pháp nào khác. Nén tệp trước khi gửi đi là cách tốt nhất để đảm bảo tệp ghép nối sẽ không bị hỏng trong quá trình vận chuyển.
+4. Chuyển tệp này vào thiết bị của bạn bằng iTunes hoặc bất kỳ phương pháp nào khác. Nén tệp trước khi gửi đi là cách tốt nhất để đảm bảo tệp kết nối sẽ không bị hỏng trong quá trình vận chuyển.
     * Việc chuyển dữ liệu bằng lưu trữ đám mây có thể thay đổi phần mở rộng của tệp (nhiều khả năng sẽ chuyển thành tệp .txt), vì vậy hãy cẩn thận. Bạn cũng có thể thay đổi phần mở rộng thành `.plist` để sử dụng với các phiên bản SideStore cũ hơn, như `0.1.1`.
 
 Trên Windows, bạn có thể phải chạy chương trình bằng Command Prompt hoặc Powershell vì đôi khi không thể mở chương trình bằng cách nhấp đúp vào tệp `.exe`.
 
 5. Trong File Explorer, điều hướng đến thư mục chứa jitterbugpair.
 6. Trong thanh điều hướng nơi có vị trí thư mục, hãy nhấp vào một chỗ trống và nhập `powershell`. Nó sẽ mở một cửa sổ (có thể có màu xanh lam) có tên là PowerShell.
-7. Từ đó, nhập `./jitterbugpair.exe` và nhấn enter trong khi thiết bị của bạn vẫn đang được kết nối tới máy tính của bạnbạn.
+7. Từ đó, nhập `./jitterbugpair.exe` và nhấn enter trong khi thiết bị của bạn vẫn đang được kết nối tới máy tính của bạn.
 
 
 ### MacOS
 
 1. **Giải nén** `Jitterbugpair-macos.zip`.
-2. **Đặt mật mã** cho thiết bị của bạn nếu bạn chưa có. Mở khóa thiết bị, kết nối thiết bị với máy tính qua dây đi kèm của thiết bị của bạn. Thiết bị của bạn có thể hỏi quyền tin tưởng trên màn hình thiết bị để kết nối vào máy của bạn. Hãy chắc chắn chấp nhận cửa sổ bật lên này, vì nó cần thiết cho quá trình ghép nối.
+2. **Đặt mật mã** cho thiết bị của bạn nếu bạn chưa có. Mở khóa thiết bị, kết nối thiết bị với máy tính qua dây đi kèm của thiết bị của bạn. Thiết bị của bạn có thể hỏi quyền tin tưởng trên màn hình thiết bị để kết nối vào máy của bạn. Hãy chắc chắn chấp nhận cửa sổ bật lên này, vì nó cần thiết cho quá trình kết nối.
 3. Mở thiết bị của bạn ra màn hình chính.
 4. Tìm tệp `jitterbugpair` đã giải nén (tệp này sẽ có biểu tượng màu đen và xanh lục).
 5. Mở Terminal (trong Launchpad, nó ở trong thư mục "Utilities").
@@ -45,11 +45,11 @@ Trên Windows, bạn có thể phải chạy chương trình bằng Command Prom
    - Ấn "Open Anyway"
    - Hãy thử chạy lại jitterbugpair
 8. JitterBugPairsẽ tạo ra một **tệp kết nối** kết thúc bằng `.mobiledevicepairing`.
-9. Nếu bạn không tìm thấy tệp ghép nối:
-   - Sao chép tên của tệp ghép nối được tạo
+9. Nếu bạn không tìm thấy tệp kết nối:
+   - Sao chép tên của tệp kết nối được tạo
    - Dán nó vào Finder
-   - Nếu bạn chạy jitterbugpair nhiều lần, tất cả các tệp ghép nối cho thiết bị của bạn sẽ xuất hiện vì chúng có cùng tên
-10. **Chuyển tập tin ghép nối** đến thiết bị iOS của bạn bằng AirDrop, iCloud/One/Google Drive, email hoặc bất kỳ phương pháp nào khác. Để có kết quả tốt nhất, trước tiên hãy nén tệp vào thư mục .zip. đến thiết bị iOS của bạn bằng AirDrop, iCloud/One/Google Drive, email hoặc bất kỳ phương pháp nào khác. Để có kết quả tốt nhất, trước tiên hãy nén tệp vào thư mục .zip.
+   - Nếu bạn chạy jitterbugpair nhiều lần, tất cả các tệp kết nối cho thiết bị của bạn sẽ xuất hiện vì chúng có cùng tên
+10. **Chuyển tập tin kết nối** đến thiết bị iOS của bạn bằng AirDrop, iCloud/One/Google Drive, email hoặc bất kỳ phương pháp nào khác. Để có kết quả tốt nhất, trước tiên hãy nén tệp vào thư mục .zip. đến thiết bị iOS của bạn bằng AirDrop, iCloud/One/Google Drive, email hoặc bất kỳ phương pháp nào khác. Để có kết quả tốt nhất, trước tiên hãy nén tệp vào thư mục .zip.
 
 ### Linux
 
