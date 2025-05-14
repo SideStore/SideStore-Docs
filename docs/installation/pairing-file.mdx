@@ -12,18 +12,17 @@ Download JitterbugPair for [Windows (64-bit)](https://github.com/osy/Jitterbug/r
 
 :::tip
 
-When using cloud storage, the file extension might change (usually to .txt). It is always recommended to zip your pairing file before transferring it. SideStore only accepts .mobiledevicepairing files.
+When using cloud storage, the file extension might change (usually to .txt or .mobiledevicepair). It is always recommended to zip your pairing file before transferring it. SideStore only accepts .mobiledevicepairing files.
 :::
 
 ### Windows
 
 1. **Extract** `jitterbugpair-win64.zip`.
-2. **Set a passcode** for your device if you haven't already. Unlock your device and connect it to your computer via cable. When a prompt appears, tap "Trust."
+2. **Set a passcode** for your device if you haven't already. Unlock your device and connect it to your computer via cable. If a prompt appears, tap "trust" and type in your passcode.
 3. Open your device to the homescreen.
-4. In File Explorer, locate `jitterbugpair.exe` and run it by double-clicking or right-clicking and selecting "Open".
+4. In File Explorer, locate `jitterbugpair.exe` and run it by double-clicking or right-clicking and selecting "Open". The first time you run the tool, you will get a prompt for your passcode on your secondary device. Type it in, then keep the screen on and unlocked and run the tool again.
 5. JitterbugPair will generate a **pairing file** in the same folder. This file will have the extension `.mobiledevicepairing`.
-6. **Transfer the pairing file** to your iOS device using One/iCloud/Google Drive, email, or any other method.
-    * Transferring using cloud storage may change the file's extension (most likely turning into a .txt file), so be careful. It is also possible to change the extension to `.plist` for use with older SideStore versions, like `0.1.1`. For best results, compress the file into a .zip folder first.
+6. For best results, compress the file into a .zip folder. Then, **transfer the pairing file** to your iOS device using One/iCloud/Google Drive, email, or another method you prefer.
 
 On Windows, you might have to execute the program using Command Prompt or Powershell, as it can sometimes not open by double clicking the `.exe` file.
 
@@ -34,9 +33,9 @@ On Windows, you might have to execute the program using Command Prompt or Powers
 ### macOS
 
 1. **Extract** `jitterbugpair-macos.zip` (if applicable).
-2. **Set a passcode** for your device if you haven't already. Unlock your device and connect it to your computer via cable. When a prompt appears: tap "Trust."
+2. **Set a passcode** for your device if you haven't already. Unlock your device and connect it to your computer via cable. If a prompt appears, tap "trust" and type in your passcode.
 3. Open your device to the homescreen.
-4. Find and open the extracted `jitterbugpair` file (it should have a black and green icon) by double-clicking it or right-clicking it and selecting "Open."
+4. Find and open the extracted `jitterbugpair` file (it should have a black and green icon) by double-clicking it or right-clicking it and selecting "Open." The first time you run the tool, you will get a prompt for your passcode on your secondary device. Type it in, then keep the screen on and unlocked and run the tool again.
 5. If you get the message" "macOS cannot verify that this app is free from malware":
    - Go to System Settings > Privacy & Security
    - Scroll down to the message about the app
@@ -46,7 +45,7 @@ On Windows, you might have to execute the program using Command Prompt or Powers
    - Copy the name of the pairing file generated
    - Paste it into Finder
    - If you ran the program more than once, all pairing files for your device should appear since they share the same name
-8. **Transfer the pairing file** to your iOS device using AirDrop, iCloud/One/Google Drive, email, or any other method. For best results, compress the file into a .zip folder first.
+8. For best results, compress the file into a .zip folder. Then, **transfer the pairing file** to your iOS device using AirDrop, iCloud/One/Google Drive, email, or another method you prefer. 
 
 ### Linux
 
@@ -58,12 +57,13 @@ These instructions expect that you are familiar with the linux commandline.
    ```bash
    chmod +x ./jitterbugpair
    ```
-4. **Set a passcode** for your device if you haven't already. Unlock your device and connect it to your computer via cable. When a prompt appears: tap "Trust."
+4. **Set a passcode** for your device if you haven't already. Unlock your device and connect it to your computer via cable. If a prompt appears, tap "trust" and type in your passcode.
 5. Open your device to the homescreen.
 6. Execute the program:
    ```bash
    ./jitterbugpair
    ```
-7. JitterbugPair will generate a **pairing file** with the extension `.mobiledevicepairing`.
-8. **Transfer the pairing file** to your iOS device using your preferred method. For best results, compress the file into a .zip folder first.
+7. The first time you execute the tool, you will get a prompt for your passcode on your secondary device. Type it in, then keep the screen on and unlocked and run the tool again. Type it in, then keep the screen on and unlocked and execute the tool again.
+8. JitterbugPair will generate a **pairing file** with the extension `.mobiledevicepairing`.
+9. For best results, compress the file into a .zip folder. Then, **transfer the pairing file** to your iOS device using email, cloud storage, or another method you prefer. 
 
