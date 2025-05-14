@@ -32,7 +32,7 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'es', 'fr', 'de', 'nl', 'zh', 'ja', 'ru', 'ko','sv', 'vn'],
+    locales: ['en', 'es', 'fr', 'de', 'nl', 'zh', 'ja', 'ru', 'ko','sv', 'vi'],
   },
 
   presets: [
@@ -56,7 +56,7 @@ const config = {
       'docusaurus-lunr-search', 
       {
         // Chinese isnt supported yet
-        languages: ['en', 'es', 'fr', 'de', 'nl', 'ja', 'ru', 'ko'],
+        languages: ['en', 'es', 'fr', 'de', 'nl', 'ja', 'ru', 'ko','sv', 'vi'],
         // Keep max results to 10
         maxHits: 10
       }
