@@ -1,67 +1,65 @@
 ---
-title: Pairing File
-description: Pairing files are essential to SideStore's functionality.
+title: 페어링 파일
+description: 페어링 파일은 SideStore의 기능에 필수적인 요소입니다.
 sidebar_position: 2
 ---
 
-Using JitterbugPair (*not* the Jitterbug app) allows us to create a pairing file for programs like SideStore to talk to your device. This is required to use SideStore, or it will not function.
+(*Jitterbug 앱이 아닌*) JitterbugPair를 사용하면 SideStore와 같은 프로그램이 당신의 기기와 통신할 수 있도록 페어링 파일을 만들 수 있습니다. 이 페어링 파일은 SideStore를 사용하려면 필수이며, 그렇지 않으면 작동하지 않습니다.
 
-Download JitterbugPair for [Windows (64-bit)](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip), [macOS](https://github.com/SideStore/SideStore-Docs/releases/download/need-a-place-to-put-jittterbug/jitterbugpair), or [Linux](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip).
+JitterBugPair 다운로드 [Windows (64-bit)](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip), [macOS](https://github.com/SideStore/SideStore-Docs/releases/download/need-a-place-to-put-jittterbug/jitterbugpair), 또는 [Linux](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip).
 
-## Pairing Instructions
+## 페어링 방법
 
 :::tip
 
-When using cloud storage, the file extension might change (usually to .txt). It is always recommended to zip your pairing file before transferring it. SideStore only accepts .mobiledevicepairing files.
+클라우드 저장소를 사용하는 경우 파일 확장자가 변경될 수 있습니다(일반적으로 .txt로 변경됨). 페어링 파일을 전송하기 전에 항상 압축하는 것이 좋습니다. SideStore는 .mobiledevice 페어링 파일만 가능합니다.
 :::
 
 ### Windows
 
-1. Extract the JitterbugPair zip file.
-2. Plug your device into your computer, and open your device to its home screen. Once done, execute the program.
-    * Your device may ask you to trust your computer. Make sure to accept this prompt, as it is required for the pairing process.
-3. Once it is done, you will get a file that ends with `.mobiledevicepairing`.
-4. Transfer this file to your device using iTunes, or any other method. Zipping the file before sending it off is the best way to ensure the pairing file won't break during transport.
-    * Transferring using cloud storage may change the file's extension (most likely turning into a .txt file), so be careful. It is also possible to change the extension to `.plist` for use with older SideStore versions, like `0.1.1`.
+1. JitterbugPair 압축 파일을 압축 해제하세요.
+2. 기기를 컴퓨터에 연결하고 기기를 홈 화면으로 엽니다. 완료되면 프로그램을 실행합니다.
+    * 기기에서 "이 컴퓨터를 신뢰하겠습니까?" 메시지가 표시될 수 있습니다. 이 메시지는 페어링 과정에 필요하므로 반드시 수락하세요.
+3. 완료되면 `.mobiledevicepairing`으로 끝나는 파일이 생성됩니다.
+4. iTunes 또는 다른 방법을 사용하여 이 파일을 기기로 전송합니다. 전송하기 전에 파일을 압축하는 것이 전송 중에 페어링 파일이 손상되지 않도록 하는 가장 좋은 방법입니다.
+    * 클라우드 저장소를 사용하여 전송하면 파일 확장자가 변경될 수 있으므로(대부분 .txt 파일로 바뀜) 주의하세요. `0.1.1`과 같은 이전 SideStore 버전에서 사용하기 위해 확장자를 `.plist`로 변경할 수도 있습니다.
 
-On Windows, you might have to execute the program using Command Prompt or Powershell, as it can sometimes not open by double clicking the `.exe` file.
+Windows에서는 `.exe` 파일을 더블 클릭해도 열리지 않는 경우가 있으므로 명령 프롬프트 또는 PowerShell을 사용하여 프로그램을 실행해야 할 수도 있습니다.
 
-5. In File Explorer, navigate to the folder where jitterbugpair is located.
-6. In the navigation bar where the folder location is, click an empty spot and type `powershell`. It should open a (possibly blue colored) window called PowerShell.
-7. From there, type `./jitterbugpair.exe` and press enter while your device is plugged in.
-
+5. 파일 탐색기에서 jitterbugpair가 있는 폴더로 이동합니다.
+6. 폴더 위치가 적혀 있는 곳에서 빈 곳을 클릭하고 `powershell`을 입력합니다. PowerShell이라는 (파란색으로 표시된) 창이 열립니다.
+7. 거기에서 `./jitterbugpair.exe`를 입력하고 기기가 연결된 상태에서 Enter 키를 누릅니다.
 
 ### macOS
 
-1. **Extract** `Jitterbugpair-macos.zip`.
-2. **Set a passcode** for your device if you haven't already. Unlock your device, connect it to your computer via cable. If a prompt appears: tap "Trust."
-3. Open your device to the homescreen.
-4. Find the extracted `jitterbugpair` file (it should have a black and green icon).
-5. Open Terminal (in Launchpad, it's in the "Utilities" folder).
-6. Drag the `jitterbugpair` file into Terminal and press "Return" or Enter.
-7. If you get "macOS cannot verify that this app is free from malware":
-   - Go to System Settings > Privacy & Security
-   - Scroll down to the message about the app
-   - Click "Open Anyway"
-   - Try running the program again
-8. JitterBugPair will generate a **pairing file** with the extension `.mobiledevicepairing`.
-9. If you can't find the pairing file:
-   - Copy the name of the pairing file generated
-   - Paste it into Finder
-   - If you ran the program more than once all pairing files for your device should appear since they share the same name
-10. **Transfer the pairing file** to your iOS device using AirDrop, iCloud/One/Google Drive, email, or any other method. For best results, compress the file into a .zip folder first.
+1. `Jitterbugpair-macos.zip`을 **압축 해제**합니다.
+2. 아직 비밀번호를 설정하지 않았다면 기기에 **비밀번호**를 설정하세요. 기기의 잠금을 해제하고 케이블을 통해 컴퓨터에 연결합니다. "이 컴퓨터를 신뢰하겠습니까?"라는 메시지가 나타나면 “신뢰”를 탭 합니다.
+3. 기기를 홈 화면으로 엽니다.
+4. 압축을 푼 `jitterbugpair` 파일을 찾습니다(검은색과 녹색 아이콘이 있어야 합니다.)
+5. 터미널을 엽니다(런치패드에서는 “유틸리티” 폴더에 있습니다.)
+6. `jitterbugpair` 파일을 터미널로 드래그하고 “Return” 또는 Enter 키를 누릅니다.
+7. 만약 "Apple에서 이 앱에 악성 소프트웨어가 없는지 확인할 수 없습니다."라는 메시지가 표시되는 경우: 
+    - 시스템 환경설정 > 보안 및 개인 정보 보호
+    - 하단을 보면 발생했던 경고 메시지와 함께 '확인 없이 열기'라는 버튼이 있는 것을 확인할 수 있습니다.
+    - 확인 없이 열기' 버튼을 누르세요.
+    - 다시 프로그램을 실행하세요.
+8. JitterBugPair는 확장자가 `.mobiledevicepairing`인 **페어링 파일**을 생성합니다.
+9. 만약 페어링 파일을 찾을 수 없다면:
+    - 생성된 페어링 파일의 이름을 복사합니다.
+    - 그것을 Finder에 붙여 넣기 하세요.
+    - 프로그램을 두 번 이상 실행하면 장치의 모든 페어링 파일이 동일한 이름을 공유하기 때문에 표시될 것입니다.
+10. AirDrop을 이용하여 *페어링 파일*을 당신의 iOS 기기로 옮기세요. iCloud/One/Google 드라이브, 이메일 또는 기타 방법으로 전송할 때는 최상의 결과를 얻기 위해 페어링 파일을 먼저 .zip 폴더로 압축 후 전송하세요.
 
 ### Linux
 
-These instructions expect that you are familiar with the linux commandline.
+이 방법은 리눅스 명령줄(커맨드 라인)에 익숙한 사용자를 전제로 진행합니다.
 
-1. Extract the Jitterbug zip file, and open a terminal (if you haven't already) to the extracted directory. 
-2. In that terminal, run `chmod +x ./jitterbugpair`
-3. Plug your device into your computer, and open your device to its home screen. Once done, execute the program in your terminal with `./jitterbugpair`
-    * If you get a prompt saying you need to trust the computer from your iDevice, make sure to do so. You may need to rerun jitterbugpair.
-4. Once it is done, you will get a file that ends with `.mobiledevicepairing` in the directory you ran jitterbugpair from.
-5. Transfer this file to your device in a way of your choosing. Zipping the file before sending it off is the best way to ensure the pairing file won't break during transport
-    * Transferring using cloud storage may change the file's extension (most likely turning into a .txt file), so be careful. It is also possible to change the extension to `.plist` for use with older SideStore versions, like `0.1.1`.
+1. Jitterbug zip 파일을 압축 해제 후, 압축 해제된 경로에서 터미널을 엽니다(만약 준비가 안된 경우).
+2. 해당 터미널에서 `chmod +x ./jitterbugpair`를 실행합니다.
+3. 기기를 컴퓨터에 연결하고 기기의 홈 화면을 엽니다. 완료되면 터미널에서 `./jitterbugpair`로 프로그램을 실행합니다.
+    * iDevice에서 "이 컴퓨터를 신뢰하겠습니까?"라는 메시지가 표시되면 반드시 “신뢰”를 탭 합니다. JitterBugPair 프로그램을 다시 실행해야 할 수도 있습니다.
+4. 완료되면 jitterbugpair를 실행한 경로에 `.mobiledevicepairing`으로 끝나는 파일이 생성됩니다.
+5. 이 파일을 원하는 방식으로, 기기로 전송합니다. 전송하기 전에 파일을 압축하는 것이 전송 중에 페어링 파일이 손상되지 않도록 하는 가장 좋은 방법입니다.
+    * 클라우드 저장소를 사용하여 전송하면 파일 확장자가 변경될 수 있으므로(대부분 .txt 파일로 바뀜) 주의하세요. `0.1.1`과 같은 이전 SideStore 버전에서 사용하기 위해 확장자를 `.plist`로 변경할 수도 있습니다.
 
-You might have success by just adding execute permissions and running jitterbugpair from a file manager, but it is recommended to just do it from the terminal.
-
+파일 관리자에서 실행 권한을 추가하고 jitterbugpair만 실행해도 성공할 수 있지만, 터미널에서 직접 실행하는 것이 좋습니다.
