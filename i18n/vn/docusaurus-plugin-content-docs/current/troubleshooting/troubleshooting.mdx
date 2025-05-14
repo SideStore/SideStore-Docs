@@ -1,0 +1,133 @@
+---
+title: Cách sữa lỗi
+description: Hướng dẫn khắc phục sự cố khi gặp lỗi trên SideStore.
+---
+
+## Cài đặt
+
+#### Tôi đã làm theo hướng dẫn nhưng vẫn không cài đặt được Sidestore.
+
+### Hướng dẫn cho MacOS
+1. **Tin tưởng thiết bị**: Sau khi kết nối thiết bị iOS với máy Mac, hãy đảm bảo bạn đã nói "Tin cậy" trên cả máy Mac và thiết bị iOS. Bạn có thể xác minh điều này bằng cách:
+   - Mở Finder (macOS 10.15 Catalina hoặc trở lên) hoặc iTunes (macOS 10.14 Mojave hoặc trở lên).
+   - Ngắt kết nối và kết nối lại điện thoại với máy Mac của bạn và kiểm tra xem hộp thoại có xuất hiện hỏi bạn có muốn tin tưởng thiết bị không.
+2. **Sử dụng ID Apple khác**: Hãy thử sử dụng ID Apple khác. Nếu cần, bạn có thể [tạo ID Apple mới](https://appleid.apple.com/account#!\&page=create) dành riêng cho Sidestore miễn phí.
+
+### Hướng dẫn cho Windows
+1. **Tin tưởng thiết bị**: Sau khi kết nối thiết bị iOS với máy Mac, hãy đảm bảo bạn đã nói "Tin cậy" trên cả máy Mac và thiết bị iOS. Bạn có thể xác minh điều này bằng cách:
+   - Mở iTunes và kiểm tra nếu iTunes có xuất hiện hộp thoại hỏi bạn có muốn tin cậy thiết bị hay không.
+2. **Chạy AltServer bằng admin**: Nhấp chuột phải vào AltServer và chọn “Chạy với tư cách Quản trị viên” để đảm bảo quyền phù hợp.
+3. **Sử dụng ID Apple khác**: Hãy thử sử dụng ID Apple khác. Nếu cần, bạn có thể [tạo ID Apple mới](https://appleid.apple.com/account#!\&page=create) dành riêng cho Sidestore miễn phí.
+4. **Phiên bản iTunes và iCloud không phải của Microsoft Store**:
+   - Nếu bạn đã cài đặt iTunes hoặc iCloud từ Microsoft Store, bạn sẽ cần gỡ cài đặt chúng.
+   - Tải xuống và cài đặt phiên bản iTunes và iCloud không phải của Microsoft Store bằng các liên kết sau:
+     - [Tải iCloud](https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe)
+     - [Tải iTunes](https://www.apple.com/itunes/download/win64/)
+
+
+## Vấn đề đăng nhập
+
+#### Sidestore bị đóng băng hoặc hiển thị mã lỗi khi đăng nhập
+
+Nếu bạn gặp phải tình trạng đóng băng hoặc mã lỗi khi cố gắng đăng nhập vào Sidestore, có thể có một số nguyên nhân tiềm ẩn. Thực hiện theo các bước sau để giải quyết sự cố:
+
+1. **Thay đổi Anisette Server:** 
+   Giải pháp phổ biến nhất là chuyển sang máy chủ Anisette khác. Đôi khi Anisette Server có thể gặp tình trạng ngừng hoạt động. Việc chuyển sang máy chủ thay thế thường giải quyết được sự cố. Thực hiện như sau:
+   - Mở cài đặt Sidestore.
+   - Cuộn xuống tùy chọn "Anisette Server".
+   - Chọn một máy chủ khác từ danh sách.
+   - Bạn có thể cần thử một vài máy chủ trong danh sách và tìm máy chủ phù hợp nhất với mình.
+
+2. **Tạo một Anisette Server của riêng bạn:**
+   Nếu bạn thích, bạn có thể thiết lập máy chủ Anisette của riêng mình. Hướng dẫn chi tiết về việc lưu trữ máy chủ Anisette có sẵn trong tài liệu chính thức và bạn có thể tìm thấy cách tạo [ở đây](https://docs.sidestore.io/docs/advanced/anisette).
+
+#### Mã xác minh không nhận được khi đăng nhập bằng Apple ID
+
+Một vấn đề phổ biến khác trong quá trình đăng nhập là không nhận được mã xác minh khi sử dụng Apple ID của bạn với Sidestore. Bạn có thể giải quyết vấn đề này bằng cách làm theo các bước sau:
+
+**Đối với phiên bản iOS dưới 18.1:**
+
+1. Mỏ ứng dụng "Cài đặt".
+2. Chạm vào tên của bạn ở đầu màn hình.
+3. Điều hướng đến "Đăng nhập và Bảo mật".
+4. Chọn "Xác thực hai yếu tố".
+5. Chọn "Lấy mã xác minh".
+
+**Đối với iOS phiên bản 18.1 trở lên:**
+
+1. Truy cập [iCloud](https://www.icloud.com) trên trình duyệt web.
+2. Nhấp vào "Đăng nhập".
+3. Khi được nhắc, bạn sẽ thấy hai tùy chọn: "Đăng nhập" và "Sử dụng tài khoản Apple khác".
+   - Chọn tùy chọn ở dưới cùng, "Sử dụng tài khoản Apple khác".
+4. Nhập ID Apple và mật khẩu của bạn.
+5. Apple sẽ gửi cho bạn mã xác minh.
+   - Sử dụng mã này trong Sidestore để hoàn tất quá trình đăng nhập.
+
+
+## Không thể làm mới hoặc cài đặt ứng dụng
+
+#### Giải quyết lỗi không có Wi-Fi hoặc VPN
+
+1. Tắt dữ liệu di động của bạn/kết nối với mạng Wi-Fi ổn định.
+2. Đảm bảo rằng tên miền Apple và tên miền cho máy chủ anisette của bạn không bị hạn chế. Kiểm tra những điều sau:
+   - Tắt bất kỳ tên miền chặn DNS nào như `oscp.apple.com`
+   - Ngắt kết nối khỏi Wi-Fi của trường/công ty, thử kết nối với mạng không bị hạn chế.
+3. Xác minh VPN được kết nối trong StosVPN.
+4. Tắt StosVPN, sau đó bật lại và đợi vài giây trong SideStore trước khi thử làm mới.
+5. Tạo tệp ghép nối hoàn toàn mới.
+   - Nếu không có cách nào ở trên hiệu quả thì rất có thể tệp ghép nối đã bị hỏng. Bạn có thể tham khảo tài liệu về cách tạo tệp ghép nối mới [tại đây](/docs/installation/pairing-file).
+   - Sau khi tạo tệp ghép nối mới, hãy vào cài đặt Sidestore và nhấn "Đặt lại tệp ghép nối", sau đó chọn tệp ghép nối mới mà bạn vừa tạo.
+
+## Không thể chọn tệp ghép nối
+
+#### Nếu bạn không thể chọn tệp ghép nối trong Sidestore, hãy làm theo các bước sau để giải quyết sự cố:
+
+1. *Kiểm tra tên kết thúc của tệp**: Đảm bảo phần mở rộng tệp ghép nối của bạn kết thúc bằng `.mobiledevicepairing` hoặc `.plist`. Nếu không, hãy kiểm tra lại xem bạn đã nén tệp ghép nối của mình trước khi gửi đến điện thoại chưa. Nếu không, tệp có thể bị hỏng trong quá trình vận chuyển.
+2. **Di chuyển tệp ghép nối**: Nếu bạn không thể chọn tệp ghép nối từ trong ứng dụng, hãy đổi tên tệp thành `ALTPairingFile.mobiledevicepairing` và thử di chuyển tệp ghép nối đến thư mục gốc của thư mục SideStore trong ứng dụng Tệp trong "Trên iPhone/iPad". 
+2. **Ký chứng chỉ**: Khi ký Sidestore bằng chứng chỉ, bạn sẽ không thể chọn tệp ghép nối từ trong ứng dụng. Bạn có thể thử bản sửa lỗi được đề cập ở trên. Nếu bạn không thấy thư mục Sidestore trong ứng dụng Tệp, hãy kết nối điện thoại với máy tính và bạn có thể kéo và thả tệp ghép nối vào các tệp của ứng dụng Sidestore. Đảm bảo đổi tên thành tên được đề cập ở trên.
+
+
+## AltServer
+
+#### AltStore thông báo “Không tìm thấy AltServer” khi cố gắng tải hoặc làm mới ứng dụng.
+
+AltServer phải chạy trên máy tính được kết nối với cùng Wi-Fi với AltStore để có thể tải hoặc làm mới ứng dụng. Nếu AltServer đang chạy trên cùng mạng Wi-Fi với AltStore và bạn vẫn nhận được lỗi này, hãy thử các bước sau:
+
+- Bạn có đang sử dụng Wi-Fi công cộng/cơ quan/trường học không? Nếu có, Wi-Fi của bạn có thể đang ngăn các thiết bị phát hiện ra nhau. Hãy thử kết nối máy tính của bạn với điểm phát sóng của điện thoại và thử lại. (Nếu bạn đang sử dụng iPad, hãy đảm bảo rằng nó cũng được kết nối với điểm phát sóng của bạn.)
+- Bạn đã nói "Tin cậy" trên cả máy Mac và thiết bị iOS của mình sau khi kết nối thiết bị với máy Mac chưa? Bạn có thể kiểm tra bằng Finder (macOS 10.15 Catalina trở lên) hoặc iTunes (macOS 10.14 Mojave trở về trước) và xem hộp thoại có bật lên hỏi bạn có muốn tin cậy điện thoại của mình không.
+- (Windows) Tường lửa của bạn có thể đang chặn các kết nối mạng đến AltServer. Bạn phải bật quyền truy cập mạng cho AltServer trong cài đặt tường lửa của mình để nó nhận được các ứng dụng được làm mới từ AltStore.
+- (Windows) Bạn đã cài đặt iTunes hoặc iCloud từ Microsoft Store chưa? Nếu có, bạn sẽ cần gỡ cài đặt chúng và tải xuống phiên bản mới nhất trực tiếp từ Apple.
+- Cuối cùng, hãy thử cắm iPhone hoặc iPad của bạn vào máy tính. Điều này sẽ khắc phục mọi sự cố kết nối, nhưng có nghĩa là AltStore có thể không tự động làm mới ứng dụng cho bạn ở chế độ nền qua Wi-Fi.
+
+#### Tôi không thể thay đổi cài đặt mạng để cho phép các thiết bị giao tiếp với nhau (chẳng hạn như trên Wi-Fi trường học/công ty/công cộng).
+
+Bạn luôn có thể tải xuống và làm mới ứng dụng mà không cần Wi-Fi bằng cách cắm iPhone hoặc iPad vào máy tính. Tuy nhiên, điều này có nghĩa là AltStore có thể không làm mới ứng dụng cho bạn ở chế độ nền qua Wi-Fi.
+
+## AltJIT
+
+#### AltServer thông báo “Không thể bật JIT cho [Ứng dụng]”.
+
+Có nhiều lý do khiến điều này xảy ra. Nếu bạn gặp phải sự cố này, vui lòng kiểm tra những điều sau:
+
+- Đảm bảo ứng dụng bạn đang cố gắng bật JIT đang chạy ở chế độ nền trên thiết bị của bạn.
+- Bạn có đang sử dụng Wi-Fi công cộng/cơ quan/trường học không? Nếu có, Wi-Fi của bạn có thể đang ngăn các thiết bị phát hiện ra nhau. Hãy thử kết nối máy tính của bạn với điểm phát sóng trên điện thoại và thử lại. (Nếu bạn đang sử dụng iPad, hãy đảm bảo rằng nó cũng được kết nối với điểm phát sóng của bạn.)
+- Bạn đã nói "Tin cậy" trên cả máy Mac và thiết bị iOS sau khi kết nối thiết bị với máy Mac chưa? Bạn có thể kiểm tra bằng Finder (macOS 10.15 Catalina trở lên) hoặc iTunes (macOS 10.14 Mojave trở về trước) và xem hộp thoại có bật lên hỏi bạn có muốn tin cậy điện thoại của mình không.
+- (Windows) Tường lửa có thể đang chặn các kết nối mạng đến AltServer. Bạn phải bật quyền truy cập mạng cho AltServer trong cài đặt tường lửa của mình để AltServer có thể nhận các ứng dụng được làm mới từ AltStore.
+- (Windows) Bạn đã cài iTunes hoặc iCloud từ Microsoft Store chưa? Nếu có, bạn sẽ cần gỡ cài đặt chúng và tải xuống phiên bản mới nhất trực tiếp từ Apple.
+- Bạn có thể cần đảm bảo iTunes và iCloud cũng đang chạy trên máy tính của mình.
+- Cuối cùng, hãy thử cắm iPhone hoặc iPad vào máy tính. Thao tác này sẽ khắc phục mọi sự cố kết nối, nhưng có nghĩa là AltStore có thể không tự động làm mới ứng dụng cho bạn ở chế độ nền qua Wi-Fi.
+
+:::mẹo nhỏ
+Nếu bạn không tìm thấy câu trả lời cho câu hỏi của mình tại đây, bạn có thể gửi email đến [support@altstore.io](mailto:support@altstore.io) và chúng tôi sẽ cố gắng trả lời bạn sớm nhất có thể.
+:::
+
+#### Tôi phải làm sao nếu cần sử dụng phiên bản iCloud của Windows Store?
+
+AltStore yêu cầu bạn cài đặt iCloud trực tiếp từ Apple để xác thực ID Apple của bạn. Nếu bạn cần sử dụng phiên bản Windows Store thay thế, bạn có thể làm theo các hướng dẫn thay thế sau được sao chép từ [bài đăng reddit này](https://www.reddit.com/r/jailbreak/comments/rp5buz/tutorial\_how\_to\_use\_altserver\_if\_you\_have\_to\_use/?utm\_source=share\&utm\_medium=ios\_app\&utm\_name=iossmf):
+
+1. Tải xuống và cài đặt [iTunes](https://www.apple.com/itunes/) từ trang web chính thức của Apple. Đảm bảo **kéo xuống** và nhấp vào "Windows" bên cạnh văn bản "Looking for other versions?".
+2. Tải xuống và cài đặt [iCloud](https://support.apple.com/en-us/HT204283) từ trang web chính thức của Apple. Hãy đảm bảo **kéo xuống** và nhấp vào liên kết trong văn bản này: "\* Trên Windows 7 và Windows 8, bạn có thể _tải xuống iCloud cho Windows trên trang web của Apple_".
+3. Xác định vị trí thư mục "C:\Program Files (x86)\Common Files\Apple" của bạn. Sao chép các thư mục "Apple Application Support" và "Internet Services", sau đó tạo một thư mục mới, đặt tên theo ý muốn và dán chúng vào.
+4. Gỡ iCloud khỏi máy tính của bạn. **KHÔNG** gỡ iTunes! (Ngoài ra, **KHÔNG BAO GIỜ** gỡ "Apple Mobile Device Support" hoặc "Apple Application Support" được cài đặt cùng với iTunes và iCloud.)
+5. Cài đặt [iCloud](https://www.microsoft.com/store/productId/9PKTQ5699M62) từ Windows Store.
+6. Tải xuống và cài đặt [AltServer](https://altstore.io/). Khi bạn mở lần đầu tiên, hãy nhấp vào "Chọn thư mục..." và xác định vị trí thư mục bạn đã tạo ở bước thứ 3.
