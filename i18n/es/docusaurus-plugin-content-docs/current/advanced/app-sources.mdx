@@ -1,22 +1,23 @@
 ---
-title: App Sources
-description: A guide on custom app sources.
+titulo: Fuentes de Apps
+descripción: Una guía sobre fuentes de apps personalizadas.
 ---
 
-# Make a Source
+# Crea una fuente
 
-SideStore is fully compatible with AltSources. The official AltStore [source documentation](https://faq.altstore.io/developers/make-a-source) provides all the details you need to make your own AltSource. AltSources allow your audience to view, install, and update all your available apps easily across both AltStore and SideStore.
+SideStore es completamente compatible con AltSources. La [documentación fuente](https://faq.altstore.io/developers/make-a-source) de AltStore oficial contiene todos los detalles que necesitas para crear tu propio AltSource. AltSources permiten a tu audiencia a ver, instalar, y actualizar todas tus apps disponibles facilmente atraves de Altstore y SideStore.
 
-When editing your source, it is highly recommended to create and view a draft of your changes using the [AltSource Browser](https://altsource.by.lao.sb/browse) to see a visual display of your source and correct any errors before finalizing and publishing changes to your source.
+Cuando editas tu fuente, se recomienda encarecidamente que creen y visualizen u nboceto de tus cambios usando el [Buscador de AltSource](https://altsource.by.lao.sb/browse) para ver una demostración visual de tu fuente y asi corregir cualquier error antes de finalizar y publicar cambios a tu fuente.
 
-# Distributing your Source
+# Distribuir tu fuente
 
-You can create a link to automatically add your AltSource by using this template: 
+Puedes crear un link para así aladir automaticamente tu AltSource usando esta plantilla:
 ```
-sidestore://source?url=[source url]
+sidestore://source?url=[URL de tu fuente]
 ```
 For more info, see [URL Schema](/docs/advanced/url-schema). It is often helpful to create the link to your AltSource in this format, then put it into a link shortener such as ```tinyurl.com```. However, if a user tries to use a sidestore:// link without SideStore already installed, it will crash, so some documentation may be helpful.
+Para mas información, dirigete a [URL Schema](/docs/advanced/url-schema). A menudo es de ayuda crear el link de tu AltSource en este formato, para despues ponerlo en un acortador de links como ```tinyurl.com```. Sin embargo, si un usuario intenta usar un link sidestore:// sin tener SideStore instalado, crasheará, asíque la documentación sera de ayuda.
 
-## That's it!
+## Ya esta!
 
-Here are some good existing AltSources: The [official AltStore](https://apps.altstore.io) source, the [SideStore community](https://github.com/SideStore/Community-Source) source, the [StikJIT](https://raw.githubusercontent.com/StephenDev0/StikJIT/refs/heads/main/repo.json) source, and the [DolphiniOS](https://altstore.oatmealdome.me) source.
+Aqui unos buenos AltSources ya existentes: The [official AltStore](https://apps.altstore.io) source, the [SideStore community](https://github.com/SideStore/Community-Source) source, the [StikJIT](https://raw.githubusercontent.com/StephenDev0/StikJIT/refs/heads/main/repo.json) source, and the [DolphiniOS](https://altstore.oatmealdome.me) source.
