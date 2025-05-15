@@ -1,43 +1,43 @@
 ---
-title: 3-App Limit Bypass
-description: A tutorial on how to install more than 3 apps via SideStore using the SparseRestore exploit.
+title: Contourner la limite des 3 applications
+description: Un tutoriel sur la manière d'installer plus de 3 applications via SideStore en utilisant l'exploit SparseRestore.
 ---
 
 :::note
 
-The SparseRestore "Bypass 3 app limit" exploit **only works on iOS/iPadOS versions between 17.0 and 18.1 beta 4 (not including 17.7.1)**. If you are not on these versions and it doesn't work, **please do not ask for support on this**. 
+L'exploit SparseRestore pour "contourner la limite des 3 applications" **ne fonctionne que sur les versions iOS/iPadOS entre 17.0 et 18.1 bêta 4 (hors 17.7.1)**. Si vous n'êtes pas sur ces versions et que cela ne fonctionne pas, merci de **ne pas demander de support à ce sujet**.
 
 :::
 
-## Prerequisites
-* An iDevice running versions supported by the SparseRestore exploit (see note above).
-* At least 1 free app slot.
-* SideStore version 0.5.9 or later. You can find the latest versions [here](https://github.com/SideStore/SideStore/releases).
-* To perform this exploit, you MUST have **Find My** turned off on your iDevice during the process. It will not work otherwise. Here is how you can turn it off:
-  - Open the Settings app.
-  - Tap on your name at the top.
-  - Tap on Find My.
-  - Tap on Find My iPhone/iPad.
-  - Turn off Find My iPhone/iPad.
-  - You may be required to enter your Apple ID password to confirm.
+## Prérequis
+* Un appareil iOS/iPadOS fonctionnant sous une version compatible avec l'exploit SparseRestore (voir la note ci-dessus).
+* Au moins 1 emplacement d'application libre.
+* Version 0.5.9 de SideStore ou ultérieure. Vous pouvez trouver les dernières versions [ici](https://github.com/SideStore/SideStore/releases).
+* Pour effectuer cet exploit, vous DEVEZ désactiver **Localiser** sur votre appareil iOS pendant le processus. Sinon, cela ne fonctionnera pas. Voici comment vous pouvez le désactiver:
+  - Ouvrez l'application Réglages.
+  - Tapez sur votre nom en haut.
+  - Tapez sur Localiser.
+  - Tapez sur Localiser mon iPhone/iPad.
+  - Désactiver Localiser mon iPhone/iPad.
+  - Il se peut que vous soyez invité à entrer le mot de passe de votre identifiant Apple pour confirmer.
   
-  > **Note:** You may still not be able to turn off Find My since having Stolen Device Protection on might prevent you from turning it off. Turn off Stolen Device Protection before trying to turn off Find My.
+  > **Remarque:** Il se peut que vous ne puissiez toujours pas désactiver Localiser, car la Protection des appareils volés peut empêcher cette désactivation. Désactivez la Protection des appareils volés avant d'essayer de désactiver Localiser.
 
-## Steps
-1. Install SparseBox. This can be done with a variety of methods, but for the purposes of this, install it with SideStore. The latest version can be found [here](https://nightly.link/khanhduytran0/SparseBox/workflows/build/main/artifact.zip) (unzip artifact.zip for the .ipa file).
+## Étapes
+1. Installez SparseBox. Cela peut être fait de différentes manières, mais pour ce tutoriel, installez-le avec SideStore. La dernière version peut être trouvée [ici](https://nightly.link/khanhduytran0/SparseBox/workflows/build/main/artifact.zip) (décompressez artifact.zip pour obtenir le fichier .ipa).
 
-2. Tick on "Disable App Limit" in SideStore, and make sure SideStore is **closed** (not in background), then open SparseBox.
+2. Cochez "Désactiver la limite d'applications" dans SideStore, puis assurez-vous que SideStore est **fermé** (pas en arrière-plan), avant d'ouvrir SparseBox.
 
-3. Enable StosVPN, select your pairing file and tap 'Bypass 3-app limit'. This should bring up a log output. Wait for it to say `idevicebackup2 exited with code -18` or `idevicebackup2 exited with code 2`, then close the app. No need to hit apply.
+3. Activez StosVPN, sélectionnez votre fichier d'appairage et tapez sur 'Contourner la limite des 3 applications'. Cela devrait afficher une sortie de journal. Attendez que cela affiche `idevicebackup2 exited with code -18` ou `idevicebackup2 exited with code 2`, puis fermez l'application. Il n'est pas nécessaire de cliquer sur Appliquer.
 
-4. Re-open SideStore, and scroll down in SideStore settings. Press "clear cache", this will allow the exploit to be seen by SideStore.
+4. Rouvrez SideStore, puis faites défiler les paramètres de SideStore. Appuyez sur "Vider le cache", cela permettra à l'exploit d'être visible par SideStore.
 
-5. Test that the exploit has worked (you may need to install more than one app to test, depending on how many free slots you have). If it throws an error about the limit, reopen SideStore or retry the exploit. If it installs the app, congratulations! You can now have more than 3 apps installed at one time.
+5. Testez si l'exploit a fonctionné (vous devrez peut-être installer plus d'une application pour tester, en fonction du nombre de slots disponibles). Si une erreur concernant la limite apparaît, rouvrez SideStore ou réessayez l'exploit. Si l'application s'installe, félicitations! Vous pouvez désormais avoir plus de 3 applications installées en même temps.
 
-## Notes
-Due to certain limitations, this exploit must be done for every 3 additional apps you sideload.
+## Remarques
+En raison de certaines limitations, cet exploit doit être effectué pour chaque groupe de 3 applications supplémentaires que vous installez.
 
-If you want/need Find My for other purposes, you can now turn it back on. However, if you want to install or refresh more apps, you will need to turn it off again.
+Si vous souhaitez/utilisez Localiser pour d'autres raisons, vous pouvez maintenant le réactiver. Cependant, si vous souhaitez installer ou actualiser plus d'applications, vous devrez le désactiver à nouveau.
 
 ## Alternatives
-If either the exploit doesn't work for you, or your iDevice is on an unsupported version, there is an alternative to be able to use more than 3 apps at once. LiveContainer, developed by Duy Tran Khanh ([khanhduytran0](https://github.com/khanhduytran0)) (the person who also made SparseBox), allows for iOS apps to be run in containers in-app rather than installing them separately. This may also be easier to use over SparseRestore in some cases. The GitHub page can be found [here](https://github.com/khanhduytran0/LiveContainer).
+Si l'exploit ne fonctionne pas pour vous, ou si votre appareil iOS est sur une version non prise en charge, il existe une alternative pour pouvoir utiliser plus de 3 applications en même temps. LiveContainer, développé par ([khanhduytran0](https://github.com/khanhduytran0)) (la personne qui a également créé SparseBox), permet de faire fonctionner des applications iOS dans des conteneurs au sein de l'application, plutôt que de les installer séparément. Cela peut également être plus facile à utiliser que SparseRestore dans certains cas. La page GitHub peut être trouvée [ici](https://github.com/khanhduytran0/LiveContainer).
