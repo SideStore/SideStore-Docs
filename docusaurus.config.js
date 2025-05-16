@@ -32,7 +32,7 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'es', 'fr', 'de', 'nl', 'zh', 'ja', 'ru', 'ko','sv', 'vn'],
+    locales: ['en', 'es', 'fr', 'de', 'nl', 'zh', 'ja', 'ru', 'ko', 'sv', 'vi'],
   },
 
   presets: [
@@ -48,6 +48,19 @@ const config = {
         },
       }),
     ],
+  ],
+
+
+  plugins: [
+    [
+      'docusaurus-lunr-search', 
+      {
+        // Chinese isnt supported yet
+        languages: ['en', 'es', 'fr', 'de', 'nl', 'ja', 'ru', 'ko','sv', 'vi'],
+        // Keep max results to 10
+        maxHits: 10
+      }
+    ]
   ],
 
   themeConfig:
@@ -67,10 +80,10 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
-	  {
-	    type: 'localeDropdown',
-	    position: 'right'
-	  },
+          {
+            type: 'localeDropdown',
+            position: 'right'
+          },
           {
             href: 'https://github.com/SideStore/',
             label: 'GitHub',
