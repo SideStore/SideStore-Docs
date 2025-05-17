@@ -24,7 +24,7 @@ const sidebars = {
     'faq',
     {
       type: 'category',
-      label: 'Getting Started',
+      label: 'Installation',
       items: ['installation/prerequisites', 'installation/pairing-file', 'installation/windows', 'installation/mac', 'installation/linux', 'installation/post-install'],
     },
     {
