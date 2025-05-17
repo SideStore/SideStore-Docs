@@ -1,61 +1,62 @@
 ---
-title: Common Issues
-description: Common issues found in SideStore.
+title: 일반적인 문제
+description: SideStore에서 발견되는 일반적인 문제.
 ---
 
 :::warning
 
-This page is currently a work in progress. The information provided should be accurate, but please refer to our [Discord server](https://discord.com/invite/sidestore) for assistance if needed.
+이 페이지는 현재 진행 중입니다. 제공된 정보는 정확해야 하지만, 필요한 경우 [Discord 서버](https://discord.com/invite/sidestore)를 참조해 도움을 받으시기를 바랍니다
 
 :::
 
-## Common Issues with SideStore
+## SideStore의 일반적인 문제
 
 ### AFC Connection Failure
-#### Cause
-Connection issues or an invalid pairing file.
-#### Resolution
-1. Attempt to reconnect
-2. Generate a new pairing file using JitterbugPair and import it via the settings menu. See our [Pairing File instructions](/docs/installation/pairing-file) for details.
+#### 발생 원인
+연결 문제 또는 페어링 파일이 잘못되었습니다.
+#### 해결 방법
+1. 재연결 시도
+2. JitterbugPair를 사용하여 새 페어링 파일을 생성하고 설정 메뉴를 통해 가져옵니다. 자세한 내용은 [페어링 파일 지침](/docs/installation/pairing-file)을 참조하세요.
 
 ### No WiFi or VPN Connection
-#### Cause
-Connection issues with the minimuxer service.
-#### Resolution
-1. If using WireGuard, switch to StosVPN
-2. Try again (spamming the button usually helps)
-3. Restart SideStore
-4. Restart StosVPN
-5. Generate a new pairing file using JitterbugPair and import it via the settings menu. See our [Pairing File instructions](/docs/installation/pairing-file) for details.
+#### 발생 원인
+미니먹서 서비스의 연결 문제.
+#### 해결 방법
+1. WireGuard를 사용 중인 경우, StosVPN으로 전환하세요.
+2. 다시 시도하세요 (보통 버튼을 연타하면 도움이 됩니다.)
+3. SideStore를 다시 시작하세요.
+4. StosVPN 재시작
+5. JitterbugPair를 사용하여 새 페어링 파일을 생성하고 설정 메뉴를 통해 가져옵니다. 자세한 내용은 [페어링 파일 지침](/docs/installation/pairing-file)을 참조하세요.
 
-### Sidestore Hangs Halfway Through Installation
-#### Cause
-Cache issues.
-#### Resolution
-1. Restart SideStore
-2. Clear Cache
-3. Change Anisette Server
-4. Reset adi.pb
-5. Sign out from SideStore and sign back in
-6. Use WireGuard
-7. Restart device
-8. Regenerate pairing file
-9. Reinstall SideStore
+### 설치 도중에 SideStore가 멈춤
+#### 발생 원인
+캐시 문제.
+#### 해결 방법
+1. SideStore를 다시 시작합니다.
+2. 캐시 지우기
+3. Anisette 서버 변경
+4. adi.pb 재설정
+5. SideStore에서 로그아웃하고 다시 로그인합니다.
+6. WireGuard 사용
+7. 장치 다시 시작
+8. 페어링 파일 재생성
+9. SideStore를 다시 설치합니다.
 
-### Unable to Launch SideStore
-#### Cause
-Multiple possible causes.
-#### Resolution
-1. Make sure you installed SideStore through Altserver.
-2. Reinstall SideStore
+### SideStore를 열 수 없습니다.
+#### 발생 원인
+여러 가지 원인이 있을 수 있습니다.
+#### 해결 방법
+1. Altserver를 통해 SideStore를 설치했는지 확인합니다.
+2. SideStore를 재설치합니다.
 
-If the above doesnt work, do the following:
+위의 방법으로 해결되지 않으면 다음을 수행하세요:
 
-1. Delete SideStore and all apps that you have installed from SideStore.
-2. Reinstall SideStore.
-3. Select pairing file and login. (It will give you a promt to refresh SideStore, select no)
-4. Install the Sidestore.ipa file to your device.
-5. Import the Sidestore.ipa file into Sidestore like how you would install any other app.
-6. This will allow Sidestore to do a clean refresh, and hopefully fix the issue.
+1. SideStore 및 SideStore에서 설치한 모든 앱을 삭제합니다.
+2. SideStore를 다시 설치합니다.
+3. 페어링 파일을 선택하고 로그인합니다. (SideStore를 새로 고치라는 메시지가 표시되면 아니요를 선택합니다.)
+
+4. SideStore.ipa 파일을 장치에 설치합니다.
+5. 다른 앱을 설치할 때와 마찬가지로 Sidestore.ipa 파일을 Sidestore로 가져옵니다.
+6. 이렇게 하면 Sidestore가 새로 고침을 수행하여 문제가 해결될 수 있습니다.
 
 
