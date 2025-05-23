@@ -1,65 +1,52 @@
 ---
-title: Fichier d'appairage
-description: Les fichiers d'appairage sont essentiels au bon fonctionnement de SideStore.
+title: Pairing File
+description: Pairing files are essential to SideStore's functionality.
 sidebar_position: 2
 ---
 
-L'utilisation de JitterbugPair (*et non* de l'application Jitterbug) permet de créer un fichier d'appairage pour que des programmes comme SideStore puissent communiquer avec votre appareil. Ce fichier est indispensable pour utiliser SideStore, sans quoi il ne fonctionnera pas.
+iDevicePair nous permet de créer un fichier d'apparairage pour certain application, SideStore ayant un exemple pour permet l'appareil à parler a lui-meme. Il est requis pour utilisé SideStore, sinon il ne fonctionnerait pas.
 
-Téléchargez JitterbugPair pour [Windows (64-bit)](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip), [macOS](https://github.com/SideStore/SideStore-Docs/releases/download/need-a-place-to-put-jittterbug/jitterbugpair), ou [Linux](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip).
+Télécharger iDevicePair pour [Windows (64-bit)](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--windows-x86_64.exe), [macOS](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--macos-universal.dmg), ou Linux ([x86_64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--linux-x86_64.AppImage) ou [aarch64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--linux-aarch64.AppImage)).
 
 ## Instructions d'appairage
 
-:::tip
-
-Lorsque vous utilisez un service de stockage en ligne, l'extension du fichier peut être modifiée (généralement en .txt). Il est donc toujours recommandé de compresser votre fichier d'appairage au format .zip avant de le transférer. SideStore n'accepte que les fichiers avec l'extension .mobiledevicepairing.
-:::
-
 ### Windows
 
-1. Extrayez l'archive ZIP de JitterbugPair.
-2. Branchez votre appareil à l'ordinateur et déverrouillez-le pour accéder à l'écran d'accueil. Une fois cela fait, exécutez le programme.
-    * Votre appareil peut vous demander de faire confiance à cet ordinateur. Assurez-vous d'accepter cette demande, car elle est nécessaire au processus d'appairage.
-3. Une fois l'opération terminée, vous obtiendrez un fichier dont le nom se termine par `.mobiledevicepairing`.
-4. Transférez ce fichier vers votre appareil à l'aide d'iTunes ou de toute autre méthode. Le compresser au format ZIP avant l'envoi est le meilleur moyen de garantir que le fichier d'appairage ne sera pas corrompu pendant le transfert.
-    * Le transfert via un service de stockage en ligne peut modifier l'extension du fichier (le transformant le plus souvent en .txt), soyez donc vigilant. Il est également possible de changer l'extension en `.plist` pour une utilisation avec d'anciennes versions de SideStore, comme la version `0.1.1`.
-
-Sous Windows, vous devrez peut-être exécuter le programme via l'invite de commandes ou PowerShell, car il arrive que le fichier `.exe` ne s'ouvre pas en double-cliquant.
-
-5. Dans l'Explorateur de fichiers, accédez au dossier où se trouve JitterbugPair.
-6. Dans la barre de navigation où s'affiche l'emplacement du dossier, cliquez dans un espace vide puis tapez `powershell`. Une fenêtre (probablement bleue) appelée PowerShell devrait s'ouvrir.
-7. À partir de là, tapez `./jitterbugpair.exe` puis appuyez sur Entrée pendant que votre appareil est connecté.
+1. Télécharger iTunes dans le site Apple ([64-bit](https://apple.com/itunes/download/win64) or [32-bit](https://apple.com/itunes/download/win32)).
+2. Télécharger `iDevicePair--windows-x86_64.exe` (déplace le dans un endroit ou vous le perderai pas).
+3. Connectez votre appareil en utilisant cable. Si un prompt apparaise, appuier sur "Se fier" et entré votre code si vous en avez un.
+4. Ouvrez votre appareil. Ouvrez iDevicePair et selectionnez votre appareil dans le menu déroulant.
+5. Assurez-vous que votre appareil est ouvert et dans le menu principal, puis appuyer sur "generate". Si un prompte apparait dans to appareil, appuier sur "Se fier". Ton fichier d'apparairage va apparaitre.
+6. Assurez vous que votre appareil est quand même ouvert dans le menu principal, puis défile vers le bas dans la section SideStore et appuiez sur "Install". Les mots "success" vont apparaitre en vert.
 
 ### macOS
 
-1. **Extrayez** `Jitterbugpair-macos.zip`.
-2. **Définissez un code d'accès** sur votre appareil si ce n'est pas déjà fait. Déverrouillez-le, puis connectez-le à votre ordinateur via un câble. Si une invite apparaît, touchez "Faire confiance".
-3. Déverrouillez votre appareil et accédez à l'écran d'accueil.
-4. Repérez le fichier `jitterbugpair` extrait (il devrait avoir une icône noire et verte).
-5. Ouvrez le Terminal (dans Launchpad, il se trouve dans le dossier "Utilitaires").
-6. Faites glisser le fichier `jitterbugpair` dans le Terminal, puis appuyez sur la touche "Retour" ou Entrée.
-7. Si vous voyez le message "macOS ne peut pas vérifier que cette app ne contient aucun logiciel malveillant":
-   - Allez dans Réglages Système > Confidentialité et sécurité
-   - Faites défiler vers le bas jusqu'au message concernant l'app
-   - Cliquez sur "Ouvrir quand même"
-   - Essayez de lancer à nouveau le programme
-8. JitterbugPair générera un **fichier d'appairage** avec l'extension `.mobiledevicepairing`.
-9. Si vous ne trouvez pas le fichier d'appairage:
-   - Copiez le nom du fichier d'appairage généré
-   - Collez-le dans le Finder
-   - Si vous avez exécuté le programme plusieurs fois, tous les fichiers d'appairage correspondant à votre appareil devraient apparaître, car ils partagent le même nom.
-10. **Transférez le fichier d'appairage** vers votre appareil iOS à l'aide d'AirDrop, iCloud/OneDrive/Google Drive, e-mail ou toute autre méthode. Pour de meilleurs résultats, compressez d'abord le fichier dans une archive .zip.
+1. Download `iDevicePair--macos-universal.dmg`. Open the file and drag "iDevicePair" to your Applications folder.
+3. Connect your secondary device to your computer via cable. If a prompt appears, tap "trust" and type in your passcode.
+4. Unlock your device, open iDevicePair, and select your device in the drop-down menu.
+5. Ensure your device is unlocked and opened to the home screen, then select "generate". When a prompt appears on your device, tap "trust". Your pairing file should appear.
+6. Ensure your device is still open to the home screen, then scroll down to the SideStore section and select "install". The word "success" should appear in green.
 
 ### Linux
 
-Ces instructions supposent que vous êtes familiarisé avec la ligne de commande sous Linux.
+:::note
+The iDevicePair instructions for Linux are a work-in-progress. For now, instructions to create a pairing file using JitterbugPair for Linux are below!
+:::
 
-1. Extrayez l'archive ZIP de Jitterbug, puis ouvrez un terminal (si ce n'est pas déjà fait) dans le dossier extrait.
-2. Dans ce terminal, exécutez la commande `chmod +x ./jitterbugpair`
-3. Branchez votre appareil à l'ordinateur et déverrouillez-le pour accéder à l'écran d'accueil. Une fois cela fait, exécutez le programme dans le terminal avec la commande `./jitterbugpair`
-    * Si votre appareil iOS vous demande de faire confiance à l'ordinateur, assurez-vous d'accepter. Vous devrez peut-être relancer jitterbugpair.
-4. Une fois l'opération terminée, un fichier se terminant par `.mobiledevicepairing` sera créé dans le dossier depuis lequel vous avez exécuté jitterbugpair.
-5. Transférez ce fichier vers votre appareil par la méthode de votre choix. Le compresser au format ZIP avant l'envoi est le meilleur moyen de s'assurer qu'il ne sera pas corrompu pendant le transfert.
-    * Le transfert via un service de stockage en ligne peut modifier l'extension du fichier (le transformant le plus souvent en .txt), soyez donc vigilant. Il est également possible de changer l'extension en `.plist` pour utiliser le fichier avec d'anciennes versions de SideStore, comme la version `0.1.1`.
+These instructions expect that you are familiar with the linux commandline.
 
-Il est possible que l'ajout des permissions d'exécution et le lancement de jitterbugpair depuis un gestionnaire de fichiers suffisent, mais il est recommandé de l'exécuter directement depuis le terminal.
+1. **Download** `jitterbugpair-linux.zip` from [here](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip), then extract it.
+2. Open a terminal in the extracted directory.
+3. Make the program executable:
+   ```bash
+   chmod +x ./jitterbugpair
+   ```
+4. **Set a passcode** for your device if you haven't already. Unlock your device and connect it to your computer via cable. If a prompt appears, tap "trust" and type in your passcode.
+5. Open your device to the homescreen.
+6. Execute the program:
+   ```bash
+   ./jitterbugpair
+   ```
+7. The first time you execute the tool, you will get a prompt for your passcode on your secondary device. Type it in, then keep the screen on and unlocked and run the tool again. Type it in, then keep the screen on and unlocked and execute the tool again.
+8. JitterbugPair will generate a **pairing file** with the extension `.mobiledevicepairing`.
+9. Compress the file into a .zip folder. Then, **transfer the pairing file** to your iOS device using email, cloud storage, or another method you prefer.
