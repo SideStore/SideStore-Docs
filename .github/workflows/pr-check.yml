@@ -24,4 +24,4 @@ jobs:
         run: yarn build
         
       - name: Build Result
-        run: echo "Build completed successfully! The PR is ready to be merged." 
+        run: echo "Build completed successfully! The PR has no conflicts." 
