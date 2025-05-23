@@ -4,33 +4,56 @@ description: Tệp kết nối cực kỳ quan trọng để cho SideStore hoạ
 sidebar_position: 2
 ---
 
-Sử dụng JitterbugPair (*không phải* ứng dụng Jitterbug app trên thiết bị IOS/Ipad) giúp chúng ta tạo một tệp kết nối của thiết bị của bạn cho SideStore hoạt động với thiết bị của bạn. Tệp kết nối rất cần thiết cho  SideStore, không có là sẽ không sử dụng được.
+Sử dụng iDevicePair giúp chúng ta tạo một tệp kết nối của thiết bị của bạn cho SideStore hoạt động với thiết bị của bạn. Tệp kết nối rất cần thiết cho SideStore, không có là sẽ không sử dụng được. Bạn có thể sử dụng JitterbugPair (*không phải* ứng dụng Jitterbug app trên thiết bị IOS/Ipad) vì nó cũng là một cách khác để tạo tệp kết nối dễ dàng.
+
+Tải iDevicePair cho hệ điều hành [Windows (64-bit)](https://github.com/jkcoxson/idevice_pair/releases/download/v0.1.0/iDevicePair--windows-x86_64.exe), [macOS](https://github.com/jkcoxson/idevice_pair/releases/download/v0.1.0/iDevicePair--macos-universal.dmg), hoặc [Linux Aarch64](https://github.com/jkcoxson/idevice_pair/releases/download/v0.1.0/iDevicePair--linux-aarch64.AppImage)/[Linux x86-64](https://github.com/jkcoxson/idevice_pair/releases/download/v0.1.0/iDevicePair--linux-x86_64.AppImage).
 
 Tải JitterbugPair cho hệ điều hành [Windows (64-bit)](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip), [macOS](https://github.com/SideStore/SideStore-Docs/releases/download/need-a-place-to-put-jittterbug/jitterbugpair), hoặc [Linux](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip).
 
 ## Hướng dẫn tạo tệp kết nối
 
-:::mẹo nhỏ
+:::tip
 
 Khi sử dụng lưu trữ đám mây (icloud, cloud, mediafile, google drives), phần mở rộng tệp có thể thay đổi (thường là .txt). Luôn nên nén tệp kết nối của bạn trước khi chuyển. SideStore chỉ chấp nhận các tệp .mobiledevicepairing hoặc .plist.
 :::
 
-### Windows
+### Windows (dành cho JitterbugPair và iDevicePair)
 
-1. Giải nén JitterbugPair.zip.
-2. Kết nối thiết bị của bạn vào máy bằng dây đi kèm, và mở khóa thiết bị của bạn vào màn hình chính. Khi xong, giải nén tệp đã giải nén được từ JitterbugPair.zip.
+1. Chạy iDevicePair--windows-x86_64.exe nếu bạn tải iDevicePair hoặc là giải nén JitterbugPair.zip nếu bạn tải jitterbugPair.
+2. Kết nối thiết bị của bạn vào máy bằng dây đi kèm, và mở khóa thiết bị của bạn vào màn hình chính. Khi xong, nếu bạn đang có iDevicePair đang chạy ở nền, nó có thể cho ra thông báo thiết bị kết nối. Nếu bạn sử dụng jitterbugPair và đã giải nén tệp .zip, chạy jitterbugpair.exe
     * Thiết bị của bạn có thể hỏi quyền tin tưởng trên màn hình thiết bị để kết nối vào máy của bạn. Hãy chắc chắn chấp nhận cửa sổ bật lên này, vì nó cần thiết cho quá trình kết nối.
 3. Sau khi hoàn tất, bạn sẽ nhận được một tập tin có đuôi là `.mobiledevicepairing`.
 4. Chuyển tệp này vào thiết bị của bạn bằng iTunes hoặc bất kỳ phương pháp nào khác. Nén tệp trước khi gửi đi là cách tốt nhất để đảm bảo tệp kết nối sẽ không bị hỏng trong quá trình vận chuyển.
     * Thiết bị của bạn có thể hỏi quyền tin tưởng trên màn hình thiết bị để kết nối vào máy của bạn. Hãy chắc chắn chấp nhận cửa sổ bật lên này, vì nó cần thiết cho quá trình ghép nối.
     * Việc chuyển dữ liệu bằng lưu trữ đám mây có thể thay đổi phần mở rộng của tệp (nhiều khả năng sẽ chuyển thành tệp .txt), vì vậy hãy cẩn thận. Bạn cũng có thể thay đổi phần mở rộng thành `.plist` để sử dụng với các phiên bản SideStore cũ hơn, như `0.1.1`.
-    * Trên Windows, bạn có thể phải chạy chương trình bằng Command Prompt hoặc Powershell vì đôi khi không thể mở chương trình bằng cách nhấp đúp vào tệp `.exe`.
+    * Nếu bạn sử dụng Jitterbugpair trên Windows, bạn có thể phải chạy chương trình bằng Command Prompt hoặc Powershell vì đôi khi không thể mở chương trình bằng cách nhấp đúp vào tệp `.exe`.
 5. Trong File Explorer, điều hướng đến thư mục chứa jitterbugpair.
 6. Trong thanh điều hướng nơi có vị trí thư mục, hãy nhấp vào một chỗ trống và nhập `powershell`. Nó sẽ mở một cửa sổ (có thể có màu xanh lam) có tên là PowerShell.
 7. Từ đó, nhập `./jitterbugpair.exe` và nhấn enter trong khi thiết bị của bạn vẫn đang được kết nối tới máy tính của bạn.
 
 
-### MacOS
+
+### MacOS (dành cho iDevicePair)
+
+1. **Tải về** `iDevicePair--macos-universal.dmg`.
+2. **Đặt mật mã** cho thiết bị của bạn nếu bạn chưa có. Mở khóa thiết bị, kết nối thiết bị với máy tính qua dây đi kèm của thiết bị của bạn. Thiết bị của bạn có thể hỏi quyền tin tưởng trên màn hình thiết bị để kết nối vào máy của bạn. Hãy chắc chắn chấp nhận cửa sổ bật lên này, vì nó cần thiết cho quá trình kết nối.
+3. Mở thiết bị của bạn ra màn hình chính.
+4. Tìm tệp `iDevicePair--macos-universal.dmg`.
+5. Chạy tệp `iDevicePair--macos-universal.dmg` và chờ cho máy xác nhận tệp.
+6. Kéo tệp logo của têppj `iDevicePair--macos-universal.dmg` vào thư mục Ứng dụng (Applications) sau khi hoàn tất xác nhận.
+7. Nếu bạn nhận được thông báo "macOS không thể xác minh rằng ứng dụng này không có phần mềm độc hại":
+   - Đi đến System Settings > Privacy & Security
+   - Kéo xuống tin nhắn về ứng dụng
+   - Ấn "Open Anyway"
+   - Hãy thử chạy lại iDevicePair--macos-universal.dmg
+8. iDevicePair sẽ giúp bạn tạo ra một **tệp kết nối** kết thúc bằng `.mobiledevicepairing`.
+9. Nếu bạn không tìm thấy tệp kết nối:
+   - Sao chép tên của tệp kết nối được tạo
+   - Dán nó vào Finder
+   - Nếu bạn chạy jitterbugpair nhiều lần, tất cả các tệp kết nối cho thiết bị của bạn sẽ xuất hiện vì chúng có cùng tên
+10. **Chuyển tập tin kết nối** đến thiết bị iOS của bạn bằng AirDrop, iCloud/One/Google Drive, email hoặc bất kỳ phương pháp nào khác. Để có kết quả tốt nhất, trước tiên hãy nén tệp vào thư mục .zip. đến thiết bị iOS của bạn bằng AirDrop, iCloud/One/Google Drive, email hoặc bất kỳ phương pháp nào khác. Để có kết quả tốt nhất, trước tiên hãy nén tệp vào thư mục .zip.
+
+### MacOS (dành cho JitterbugPair)
 
 1. **Giải nén** `Jitterbugpair-macos.zip`.
 2. **Đặt mật mã** cho thiết bị của bạn nếu bạn chưa có. Mở khóa thiết bị, kết nối thiết bị với máy tính qua dây đi kèm của thiết bị của bạn. Thiết bị của bạn có thể hỏi quyền tin tưởng trên màn hình thiết bị để kết nối vào máy của bạn. Hãy chắc chắn chấp nhận cửa sổ bật lên này, vì nó cần thiết cho quá trình kết nối.
@@ -43,7 +66,7 @@ Khi sử dụng lưu trữ đám mây (icloud, cloud, mediafile, google drives),
    - Kéo xuống tin nhắn về ứng dụng
    - Ấn "Open Anyway"
    - Hãy thử chạy lại jitterbugpair
-8. JitterBugPairsẽ tạo ra một **tệp kết nối** kết thúc bằng `.mobiledevicepairing`.
+8. JitterBugPair sẽ tạo ra một **tệp kết nối** kết thúc bằng `.mobiledevicepairing`.
 9. Nếu bạn không tìm thấy tệp kết nối:
    - Sao chép tên của tệp kết nối được tạo
    - Dán nó vào Finder
@@ -51,7 +74,20 @@ Khi sử dụng lưu trữ đám mây (icloud, cloud, mediafile, google drives),
 10. **Chuyển tập tin kết nối** đến thiết bị iOS của bạn bằng AirDrop, iCloud/One/Google Drive, email hoặc bất kỳ phương pháp nào khác. Để có kết quả tốt nhất, trước tiên hãy nén tệp vào thư mục .zip. đến thiết bị iOS của bạn bằng AirDrop, iCloud/One/Google Drive, email hoặc bất kỳ phương pháp nào khác. Để có kết quả tốt nhất, trước tiên hãy nén tệp vào thư mục .zip.
 
 
-### Linux
+
+### Linux (dành cho iDevicePair)
+
+1. Tải về tệp iDevicePair dựa theo cấu hình của máy tính của.
+2. Nhấp chuột trái và ấn vào phần property của tệp
+3. Tìm đến phần Permissions và tích vào phần "Allow executing file as program". Bước này sẽ làm cho tệp .AppImage bạn đã tải về trở thành ứng dụng để bạn có thể chạy trên máy của bạn.
+4. Cắm thiết bị của bạn vào máy tính và mở thiết bị ra màn hình chính. Sau khi hoàn tất, hãy chạy tệp iDevicePair, nó sẽ hỗ trợ bạn tạo tệp kết nối.
+    * Nếu bạn nhận được cửa sổ bật lên cho biết bạn cần tin tưởng máy tính từ iDevice của mình, hãy đảm bảo thực hiện như vậy.
+5. Sau khi hoàn tất, bạn sẽ nhận được một tệp có đuôi là `.mobiledevicepairing` trong thư mục bạn đã chạy iDevicePair.
+6. Chuyển tệp này đến thiết bị của bạn theo cách bạn chọn. Nén tệp trước khi gửi đi là cách tốt nhất để đảm bảo tệp kết nối sẽ không bị hỏng trong quá trình vận chuyển 
+    * Việc chuyển dữ liệu bằng lưu trữ đám mây có thể thay đổi phần mở rộng của tệp (nhiều khả năng sẽ chuyển thành tệp .txt), vì vậy hãy cẩn thận. Bạn cũng có thể thay đổi phần mở rộng thành `.plist` để sử dụng với các phiên bản SideStore cũ hơn, như `0.1.1`.
+
+
+### Linux (dành cho JitterbugPair)
 
 Những hướng dẫn này yêu cầu bạn phải quen thuộc với dòng lệnh Linux.
 
