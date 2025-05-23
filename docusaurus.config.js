@@ -54,10 +54,15 @@ const config = {
     [
       'docusaurus-lunr-search', 
       {
-        // Chinese isnt supported yet
-        languages: ['en', 'es', 'fr', 'de', 'nl', 'ja', 'ru', 'ko','sv', 'vi'],
+        // Chinese isn't supported yet
+        languages: ['en', 'es', 'fr', 'de', 'nl', 'ja', 'ru', 'ko', 'sv', 'vi'],
         // Keep max results to 10
-        maxHits: 10
+        maxHits: 10,
+        indexBatchSize: 100,
+        excludeRoutes: [
+          'docs/tags/**',
+          '404'
+        ]
       }
     ]
   ],
