@@ -9,7 +9,7 @@ description: Un guide pour résoudre les problèmes de SideStore.
 
 ### Instructions pour Mac
 1. **Faire confiance à l'appareil**: Après avoir connecté votre appareil iOS à votre Mac, assurez-vous d'avoir sélectionné “Faire confiance” à la fois sur votre Mac et votre appareil iOS. Vous pouvez vérifier cela en:
-   - Ouvrir Finder (macOS 10.15 Catalina ou version ultérieure) ou iTunes (macOS 10.14 Mojave et versions antérieures).
+   - Ouvrir Finder (macOS 10.15 Catalina ou supérieur) ou iTunes (macOS 10.14 Mojave et versions antérieures).
    - Déconnectez et reconnectez votre téléphone à votre Mac, puis vérifiez si une boîte de dialogue apparaît vous demandant si vous voulez faire confiance à l'appareil.
 2. **Utiliser un autre identifiant Apple**: Essayez d'utiliser un autre identifiant Apple. Si nécessaire, vous pouvez [créer un nouvel identifiant Apple](https://appleid.apple.com/account#!\&page=create) spécifiquement pour SideStore, gratuitement.
 
@@ -93,7 +93,8 @@ Un autre problème courant lors de la connexion est de ne pas recevoir un code d
 AltServer doit être lancé sur un ordinateur connecté au même réseau Wi-Fi qu'AltStore afin de pouvoir installer ou actualiser des applications. Si AltServer est bien en cours d'exécution sur le même réseau Wi-Fi qu'AltStore et que vous recevez toujours cette erreur, essayez les solutions suivantes:
 
 - Êtes-vous connecté à un réseau Wi-Fi public/professionnel/scolaire? Si c'est le cas, ce type de réseau peut empêcher les appareils de se détecter mutuellement. Essayez de connecter votre ordinateur au point d'accès de votre téléphone, puis réessayez. (Si vous utilisez un iPad, assurez-vous qu'il est lui aussi connecté à votre point d'accès.)
-- Avez-vous cliqué sur "Faire confiance" sur votre Mac et votre appareil iOS après les avoir connectés? Pour vérifier, ouvrez le Finder (macOS 10.15 Catalina ou version ultérieure) ou iTunes (macOS 10.14 Mojave ou version antérieure) et voyez si une boîte de dialogue s'affiche vous demandant si vous faites confiance à cet appareil.
+- Avez-vous cliqué sur "Faire confiance" sur votre Mac et votre appareil iOS après les avoir connectés? Pour vérifier, ouvrez le Finder (macOS 10.15 Catalina ou    - Ouvrir Finder (macOS 10.15 Catalina ou supérieur) ou iTunes (macOS 10.14 Mojave et versions antérieures).
+) ou iTunes (macOS 10.14 Mojave ou version antérieure) et voyez si une boîte de dialogue s'affiche vous demandant si vous faites confiance à cet appareil.
 - (Windows) Il se peut que votre pare-feu bloque les connexions réseau entrantes vers AltServer. Vous devez autoriser l'accès réseau à AltServer dans les paramètres de votre pare-feu pour que les applications puissent être actualisées via AltStore.
 - (Windows) Avez-vous installé iTunes ou iCloud via le Microsoft Store? Si oui, vous devez les désinstaller et télécharger les dernières versions directement depuis le site d'Apple.
 - Enfin, essayez de connecter votre iPhone ou iPad directement à votre ordinateur via câble USB. Cela devrait résoudre tous les problèmes de connectivité, mais AltStore ne pourra alors plus actualiser automatiquement les applications en arrière-plan via le Wi-Fi.
@@ -110,23 +111,25 @@ Cela peut se produire pour plusieurs raisons. Si vous rencontrez ce problème, v
 
 - Assurez-vous que l'application pour laquelle vous essayez d'activer JIT est bien en cours d'exécution au premier plan sur votre appareil.
 - Êtes-vous connecté à un réseau Wi-Fi public/professionnel/scolaire? Si oui, il se peut que ce réseau empêche les appareils de se détecter entre eux. Essayez de connecter votre ordinateur au point d'accès de votre téléphone, puis réessayez. (Si vous utilisez un iPad, assurez-vous qu'il est également connecté à votre hotspot.)
-- Avez-vous cliqué sur "Faire confiance" sur votre Mac et sur votre appareil iOS après les avoir connectés? Pour vérifier, ouvrez le Finder (macOS 10.15 Catalina ou version ultérieure) ou iTunes (macOS 10.14 Mojave ou version antérieure), et voyez si une boîte de dialogue vous demande si vous faites confiance à cet appareil.
+- Avez-vous cliqué sur "Faire confiance" sur votre Mac et sur votre appareil iOS après les avoir connectés? Pour vérifier, ouvrez le Finder (macOS 10.15 Catalina ou    - Ouvrir Finder (macOS 10.15 Catalina ou supérieur) ou iTunes (macOS 10.14 Mojave et versions antérieures).
+) ou iTunes (macOS 10.14 Mojave ou version antérieure), et voyez si une boîte de dialogue vous demande si vous faites confiance à cet appareil.
 - (Windows) Le pare-feu peut bloquer les connexions réseau entrantes vers AltServer. Vous devez autoriser l'accès réseau à AltServer dans les paramètres de votre pare-feu pour que les applications puissent être actualisées ou que JIT fonctionne.
 - (Windows) Avez-vous installé iTunes ou iCloud via le Microsoft Store? Si c'est le cas, vous devez les désinstaller, puis télécharger les dernières versions directement depuis le site d'Apple.
 - Assurez-vous également qu'iTunes et iCloud sont bien en cours d'exécution sur votre ordinateur.
 - Enfin, essayez de connecter votre iPhone ou iPad à votre ordinateur via un câble USB. Cela devrait résoudre tous les problèmes de connectivité, mais cela signifie qu'AltStore ne pourra pas actualiser automatiquement les apps ou activer JIT en arrière-plan via le Wi-Fi.
 
 :::tip
-Si vous ne trouvez pas la réponse à votre question ici, vous pouvez envoyer un e-mail à [support@altstore.io](mailto:support@altstore.io), et nous ferons de notre mieux pour vous répondre dans les plus brefs délais.
+Si vous ne trouvez pas la réponse à votre question ici, vous pouvez envoyer un e-mail à [support@altstore.io](mailto:support@altstore.io), et nous essaierons de vous répondre dès que possible.
 :::
 
 #### Que faire si je dois utiliser la version Microsoft Store d'iCloud?
 
-AltStore nécessite que vous installiez iCloud directement depuis le site d'Apple afin de pouvoir authentifier votre identifiant Apple. Si vous devez utiliser la version d'iCloud disponible sur le Microsoft Store, vous pouvez suivre ces instructions alternatives, reprises de [ce post Reddit](https://www.reddit.com/r/jailbreak/comments/rp5buz/tutorial\_how\_to\_use\_altserver\_if\_you\_have\_to\_use/?utm\_source=share\&utm\_medium=ios\_app\&utm\_name=iossmf):
+AltStore nécessite que vous installiez iCloud directement depuis le site d'Apple afin d'authentifier votre identifiant Apple. Si vous souhaitez ou devez également utiliser la version Windows Store, vous pouvez suivre ces instructions alternatives, copiées et mises à jour depuis [ce post Reddit](https://www.reddit.com/r/jailbreak/comments/rp5buz/tutorial_how_to_use_altserver_if_you_have_to_use/?utm_source=share&utm_medium=ios_app&utm_name=iossmf):
 
-1. Téléchargez et installez [iTunes](https://www.apple.com/itunes/) depuis le site officiel d'Apple. Veillez à faire **défiler la page vers le bas** et à cliquer sur "Windows" à côté du texte "Vous cherchez d'autres versions?".
-2. Téléchargez et installez [iCloud](https://support.apple.com/en-us/HT204283) depuis le site officiel d'Apple. Faites également **défiler la page vers le bas** et cliquez sur le lien contenu dans ce texte: "\* Sur Windows 7 et Windows 8, vous pouvez _télécharger iCloud pour Windows sur le site d'Apple_".
-3. Allez dans le dossier "C:\Program Files (x86)\Common Files\Apple". Copiez les dossiers Apple Application Support et Internet Services, puis créez un nouveau dossier (vous pouvez lui donner le nom que vous voulez) et collez-les dedans.
+1. Téléchargez et installez [iTunes](https://www.apple.com/itunes/) depuis le site officiel d'Apple ici ([64 bits](https://secure-appldnld.apple.com/itunes12/001-80053-20210422-E8A3B28C-A3B2-11EB-BE07-CE1B67FC6302/iTunes64Setup.exe) ou [32 bits](https://secure-appldnld.apple.com/itunes12/001-80042-20210422-E8A351F2-A3B2-11EB-9A8F-CF1B67FC6302/iTunesSetup.exe)).
+2. Téléchargez et installez iCloud depuis le site officiel d'Apple [ici](https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe).
+3. Allez le dossier "C:\Program Files (x86)\Common Files\Apple" sur votre ordinateur. Copiez les dossiers "Apple Application Support" et "Internet Services", puis créez un nouveau dossier à un endroit où vous ne risquez pas de le perdre, donnez-lui le nom que vous voulez, et collez-les dedans.
+
 4. Désinstallez iCloud de votre ordinateur. **NE DÉSINSTALLEZ PAS** iTunes! (De plus, **NE SUPPRIMEZ JAMAIS** les éléments "Apple Mobile Device Support" ou "Apple Application Support" installés avec iTunes et iCloud.)
 5. Installez [iCloud](https://www.microsoft.com/store/productId/9PKTQ5699M62) depuis le Microsoft Store.
-6. Téléchargez et installez [AltServer](https://altstore.io/). Lors du premier lancement, cliquez sur "Choose Folder...", puis sélectionnez le dossier que vous avez créé à l'étape 3.
+6. Téléchargez et installez [AltServer](https://cdn.altstore.io/file/altstore/altinstaller.zip). Lorsque vous l'ouvrez pour la première fois (en mode administrateur), cliquez sur "Choose Folder..." et sélectionnez le dossier que vous avez créé à l'étape 3.
