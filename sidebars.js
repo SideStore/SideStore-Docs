@@ -20,13 +20,12 @@ const sidebars = {
   
   tutorialSidebar: [
     'intro',
-    'release-notes',
-    'faq',
     {
       type: 'category',
       label: 'Installation',
-      items: ['installation/prerequisites', 'installation/pairing-file', 'installation/windows', 'installation/mac', 'installation/linux', 'installation/post-install'],
+      items: ['installation/prerequisites', 'installation/mac', 'installation/windows', 'installation/linux', 'installation/pairing-file', 'installation/post-install'],
     },
+    'faq',
     {
       type: 'category',
       label: 'Troubleshooting',
@@ -37,6 +36,7 @@ const sidebars = {
       label: 'Advanced',
       items: ['advanced/anisette', 'advanced/app-sources', 'advanced/url-schema', 'advanced/sparserestore', 'advanced/jit'],
     },
+    'release-notes',
   ],
 };
 
