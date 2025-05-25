@@ -5,7 +5,9 @@ description: A tutorial on how to enable Just-in-Time (JIT) Compilation for apps
 
 :::note
 
-There are many methods to enabling JIT, such as AltJIT, SideJITServer, and more. This tutorial will cover the use of StikDebug (formerly StikJIT), as it is the method we currently recommend. As an alternative, SideStore 0.6.2-nightly.2025.04.15 also includes updates to minimuxer, allowing built-in JIT functionality similar to StikDebug. To use this, simply ensure you are connected to StosVPN and Wi-Fi or with mobile data and Wi-Fi disabled.
+There are many methods to enabling JIT, such as AltJIT, SideJITServer, and more. This tutorial will cover the use of StikDebug (formerly StikJIT), as it is the method we currently recommend. For more information, consult the [official StikDebug pairing guide](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md). 
+
+As an alternative, SideStore 0.6.2-nightly.2025.04.15 also includes updates to minimuxer, allowing built-in JIT functionality similar to StikDebug. To use this, simply ensure you are connected to StosVPN with either Wi-Fi enabled/connected or with mobile data and Wi-Fi disabled (Airplane Mode).
 :::
 
 ## Prerequisites
@@ -20,17 +22,6 @@ There are many methods to enabling JIT, such as AltJIT, SideJITServer, and more.
 2. **Installation procedures:**
    Follow the standard installation procedures in the usage guide below.
 
-## StikDebug installation with SideStore
-   
-1. **Obtain StiDebug:**  
-   Add the StikJIT AltSource to SideStore [here](sidestore://source?url=https://raw.githubusercontent.com/StephenDev0/StikDebug/refs/heads/main/repo.json) (You must have SideStore installed or this link will not function).
-
-2. **Install:**
-   Use SideStore to install StikDebug.
-
-3. **Installation procedures:**
-   Follow the standard installation procedures in the usage guide below.
-
 
 ### Standard installation procedures:
 
@@ -43,10 +34,10 @@ There are many methods to enabling JIT, such as AltJIT, SideJITServer, and more.
 ## To enable JIT:
 
 1. **Enable VPN:**  
-   Start by activating StosVPN (if sideloading) or the built-in VPN in StikDebug.
+   Start by activating the built-in VPN in StikDebug.
    
 2. **Activate JIT:**  
-   Select the “Enable JIT” button and select an app from the list to attach a debugger/activate JIT functionality.
+   Select the “Enable JIT” button and select an app from the list (must be sideloaded with proper entitlements to appear in the list) to attach a debugger/activate JIT functionality.
 
 ### Offline JIT Enabling
 To enable JIT offline, activate StosVPN (if sideloading) or the StikDebug VPN. Then, turn both Wi-Fi and Mobile Data OFF when you launch StikDebug (use Airplane Mode). You can then enable JIT as normal.

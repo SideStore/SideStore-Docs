@@ -5,19 +5,19 @@ description: A guide to troubleshooting SideStore.
 
 ## Installation
 
-#### I followed the instructions, but I still can't install Sidestore.
+#### I followed the instructions, but I still can't install SideStore.
 
 ### Mac Instructions
 1. **Trust Device**: After connecting your iOS device to your Mac, ensure you have said “Trust” on both your Mac and iOS device. You can verify this by:
    - Opening Finder (macOS 10.15 Catalina or later) or iTunes (macOS 10.14 Mojave and earlier).
    - Disconnect and reconnect your phone to your mac and check if a dialog box appears asking if you want to trust the device.
-2. **Use Another Apple ID**: Try using another Apple ID. If needed, you can [create a new Apple ID](https://appleid.apple.com/account#!\&page=create) specifically for Sidestore for free.
+2. **Use Another Apple ID**: Try using another Apple ID. If needed, you can [create a new Apple ID](https://appleid.apple.com/account#!\&page=create) specifically for SideStore use for free.
 
 ### Windows Instructions
 1. **Trust Device**: After connecting your iOS device to your Windows computer, ensure you have said “Trust” on both your computer and iOS device. You can verify this by:
    - Opening iTunes and checking if a dialog box appears asking if you want to trust the device.
 2. **Run AltServer as Administrator**: Right-click on AltServer and select “Run as Administrator” to ensure proper permissions.
-3. **Use Another Apple ID**: Try using another Apple ID. If needed, you can [create a new Apple ID](https://appleid.apple.com/account#!\&page=create) specifically for Sidestore for free.
+3. **Use Another Apple ID**: Try using another Apple ID. If needed, you can [create a new Apple ID](https://appleid.apple.com/account#!\&page=create) specifically for SideStore for free.
 4. **Non-Microsoft Store Version of iTunes and iCloud**:
    - If you installed iTunes or iCloud from the Microsoft Store, you’ll need to uninstall them.
    - Download and install the non-Microsoft Store versions of iTunes and iCloud using the following links:
@@ -27,23 +27,23 @@ description: A guide to troubleshooting SideStore.
 
 ## Sign-In Issues
 
-#### Sidestore Freezing or Displaying an Error Code During Sign-In
+#### SideStore Freezing or Displaying an Error Code During Sign-In
 
-If you encounter freezing or error codes while attempting to sign in to Sidestore, there could be several potential causes. Follow these steps to resolve the issue:
+If you encounter freezing or error codes while attempting to sign in to SideStore, there could be several potential causes. Follow these steps to resolve the issue:
 
 1. **Change the Anisette Server:**
    The most common solution is to switch to a different Anisette server. Anisette servers may occasionally experience downtime. Switching to an alternative server typically resolves the issue. Do this:
-   - Open Sidestore settings.
+   - Open SideStore settings.
    - Scroll down to the "Anisette Server" option.
    - Select a different server from the list.
    - You might need to try a few servers from the list and find which works best for you.
 
 2. **Host Your Own Anisette Server:**
-   If you prefer, you can set up your own Anisette server. Detailed instructions for hosting an Anisette server are available in the official documentation and can he found [here](https://docs.sidestore.io/docs/advanced/anisette).
+   If you prefer, you can set up your own Anisette server. Detailed instructions for hosting an Anisette server are available in the official documentation and can be found [here](https://docs.sidestore.io/docs/advanced/anisette).
 
 #### Verification Code Not Received When Signing In with Apple ID
 
-Another common issue during sign-in is not receiving a verification code when using your Apple ID with Sidestore. This can be resolved by following these steps:
+Another common issue during sign-in is not receiving a verification code when using your Apple ID with SideStore. This can be resolved by following these steps:
 
 **For iOS versions below 18.1:**
 
@@ -61,7 +61,7 @@ Another common issue during sign-in is not receiving a verification code when us
    - Select the bottom option, "Use Different Apple Account."
 4. Enter your Apple ID and password.
 5. Apple will send you a verification code.
-   - Use this code in Sidestore to complete the sign-in process.
+   - Use this code in SideStore to complete the sign-in process.
 
 
 ## Can't Refresh or Install Apps
@@ -75,8 +75,7 @@ Another common issue during sign-in is not receiving a verification code when us
 3. Verify VPN is connected in StosVPN.
 4. Turn StosVPN off, then back on, and wait a few seconds in SideStore before trying to refresh.
 5. Create a brand new pairing file.
-   - If none of the above worked it is very likely that the pairing file is corrupted. You can reference the documentation on how to create a new pairing file [here](/docs/installation/pairing-file). 
-   - After creating a new pairing file, go to Sidestore settings and press "Reset pairing file", then choose the new pairing file you just created.
+   - If none of the above worked, it is very likely that the pairing file is corrupted. You can reference the documentation on how to create a new pairing file [here](/docs/installation/pairing-file).
 
 
 ## Cannot Choose Pairing File
@@ -85,24 +84,7 @@ Another common issue during sign-in is not receiving a verification code when us
 
 1. **Check File Extension**: Make sure your pairing file's extension ends with `.mobiledevicepairing` or `.plist`. If it doesn't, double-check to see if you had zipped your pairing file before sending it to your phone. Failing to do so may lead to the file being corrupted during transport.
 2. **Move Pairing File**: If you are unable to select the pairing file from within the app, rename the file to `ALTPairingFile.mobiledevicepairing` and try moving the pairing file to the root directory of the SideStore folder in the Files app in "On My iPhone/iPad". 
-3. **Certificate Signing**: When signing Sidestore with a certificate, you won't be able to select the pairing file from within the app. You can try the fix mentioned above. If you do not see the Sidestore folder in the Files app, connect your phone to your computer, and you can drag and drop the pairing file to the files of the Sidestore app. Ensure to change it to the name mentioned above.
-
-
-## AltServer
-
-#### AltStore says “Could not find AltServer” when trying to sideload or refresh apps.
-
-AltServer must be running on a computer connected to the same Wi-Fi as AltStore in order to sideload or refresh apps. If AltServer is running on the same Wi-Fi network as AltStore and you're still receiving this error, try the following:
-
-- Are you on public/work/school Wi-Fi? If so, your Wi-Fi might be preventing devices from discovering each other. Try connecting your computer to your phone’s hotspot and trying again. (If you're using an iPad, make sure it's connected to your hotspot as well.)
-- Have you said “Trust” on both your Mac and iOS device after connecting your device to your Mac? You can check by Finder (macOS 10.15 Catalina or later) or iTunes (macOS 10.14 Mojave and earlier) and seeing if a dialog box pops up asking if you want to trust your phone.
-- (Windows) Your firewall might be blocking incoming network connections to AltServer. You must enable network access for AltServer in your firewall settings for it to receive refreshed apps from AltStore.
-- (Windows) Did you install iTunes or iCloud from the Microsoft Store? If so, you’ll need to uninstall them and download the latest versions directly from Apple.
-- Finally, try plugging your iPhone or iPad into your computer. This should fix all connectivity problems, but does mean AltStore may not be able to automatically refresh apps for you in the background over Wi-Fi.
-
-#### I’m unable to change my network settings to allow devices to communicate with each other (such as on school/work/public Wi-Fi).
-
-You can always sideload and refresh apps without Wi-Fi by plugging your iPhone or iPad into your computer. However, this means AltStore may not be able to refresh apps for you in the background over Wi-Fi.
+3. **Certificate Signing**: When signing SideStore with a certificate, you won't be able to select the pairing file from within the app. You can try the fix mentioned above. If you do not see the SideStore folder in the Files app, connect your phone to your computer, and you can drag and drop the pairing file to the files of the SideStore app. Ensure to change it to the name mentioned above.
 
 ## AltJIT
 
@@ -110,6 +92,7 @@ You can always sideload and refresh apps without Wi-Fi by plugging your iPhone o
 
 This could happen for a number of reasons. If you’re experiencing this issue, please check the following:
 
+- Make sure AltServer has been updated to the latest version.
 - Make sure the app you are trying to enable JIT for is running in the foreground on your device.
 - Are you on public/work/school Wi-Fi? If so, your Wi-Fi might be preventing devices from discovering each other. Try connecting your computer to your phone’s hotspot and trying again. (If you're using an iPad, make sure it's connected to your hotspot as well.)
 - Have you said “Trust” on both your Mac and iOS device after connecting your device to your Mac? You can check by Finder (macOS 10.15 Catalina or later) or iTunes (macOS 10.14 Mojave and earlier) and seeing if a dialog box pops up asking if you want to trust your phone.
@@ -122,9 +105,9 @@ This could happen for a number of reasons. If you’re experiencing this issue, 
 If you can't find the answer to your question here, you can email [support@altstore.io](mailto:support@altstore.io), and they will try to get back to you as soon as they can.
 :::
 
-#### What if I need to use the Windows Store version of iCloud?
+## What if I need to use the Windows Store version of iCloud?
 
-AltStore requires that you install iCloud directly from Apple in order to authenticate your Apple ID. If you want or need to use the Windows Store version as well, you can follow these alternate instructions copied from [this reddit post](https://www.reddit.com/r/jailbreak/comments/rp5buz/tutorial\_how\_to\_use\_altserver\_if\_you\_have\_to\_use/?utm\_source=share\&utm\_medium=ios\_app\&utm\_name=iossmf) and updated:
+AltServer requires that you install iCloud directly from Apple in order to authenticate your Apple ID. If you want or need to use the Windows Store version as well, you can follow these alternate instructions copied from [this reddit post](https://www.reddit.com/r/jailbreak/comments/rp5buz/tutorial\_how\_to\_use\_altserver\_if\_you\_have\_to\_use/?utm\_source=share\&utm\_medium=ios\_app\&utm\_name=iossmf) and updated:
 
 1. Download and install [iTunes](https://www.apple.com/itunes/) from the official Apple website here ([64-bit](https://secure-appldnld.apple.com/itunes12/001-80053-20210422-E8A3B28C-A3B2-11EB-BE07-CE1B67FC6302/iTunes64Setup.exe) or [32-bit](https://secure-appldnld.apple.com/itunes12/001-80042-20210422-E8A351F2-A3B2-11EB-9A8F-CF1B67FC6302/iTunesSetup.exe).
 2. Download and install iCloud from the official Apple website [here](https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe).
