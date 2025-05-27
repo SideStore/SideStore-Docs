@@ -6,14 +6,14 @@ sidebar_position: 4
 
 Before you start, make sure to have all steps completed found in the [prerequisites](prerequisites)!
 
-1. The following will install usbmuxd and docker. Run these as a non-root user and you only have to do this once.
+1. The following commands will install usbmuxd and docker. Run these as a non-root user on your machine and you will only have to do this once.
 ```bash
 sudo apt install -y usbmuxd
 curl -fsSL https://test.docker.com -o test-docker.sh
 sudo sh test-docker.sh
 sudo usermod -aG docker $USER
 ```
-2. Restart your shell to ensure changes are made. Now, plug in your iDevice. If you recieve a prompt, select "trust" and enter your passcode. Now, run Altcon with Docker using this code:
+2. Restart your shell to ensure changes are made. Now, plug in your iDevice. If you recieve a prompt, select "trust" and enter your passcode. Now, run Altcon with Docker using this code (must be run every time to install SideStore):
 ```bash
 docker run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd ghcr.io/sidestore/altcon
 ```
