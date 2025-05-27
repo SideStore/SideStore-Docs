@@ -1,0 +1,143 @@
+---
+title: 常见问题
+description: 一个包含了SideStore的常见问题的章节。
+sidebar_position: 3
+---
+
+# 常见问题（FAQ）
+
+这是SideStore的常见问题列表。也是我们在开发SideStore时遇到的常见问题的列表，包含了为不同类型的用户，或遇到问题的用户回答的一些问题。
+
+## 什么是SideStore？
+
+SideStore是一款允许在仅使用您的Apple ID的情况下在您的iOS设备上侧载应用的iOS应用。SideStore使用您的个人开发证书对应用进行重新签名，并使用专门设计的VPN来诱骗iOS安装它们。SideStore将定期在后台“刷新”您的应用程序，以防止其正常的7天开发期到期。SideStore的目标是提供不受限制的侧载体验。它是AltStore的一个由社区驱动的分支，并且已经实现了社区最受欢迎的一些功能。在安装过程中您只需要一台电脑。 
+
+(我们非常欢迎大家的贡献! 🙂)
+
+### 我可以启用JIT吗？
+
+对于使用iOS/iPadOS 16及更低版本的用户，您以在SideStore内“我的应用(My Apps)”界面按住您想要选择开启JIT的应用，在弹出的界面中选择“启用JIT(Enable JIT)”来激活JIT。
+
+对于使用iOS/iPadOS 17.4及更高版本的用户则需要使用StikJIT/StikDebug或者SideStore的每夜构建版本作为解决方案。请参考[进阶](advanced/jit)章节中提供的教程。
+
+### SideStore何时推出正式版？
+
+SideStore目前并未有明确的正式版发布日期，但我们处于公测状态。
+
+### 我现在就能侧载应用了吗？
+
+当然可以，就像AltStore一样！
+
+### 这款工具有AltStore beta的功能吗？
+
+我们确实有AltStore beta的功能，但并不总能保持是最新的。我们会尽可能保持更新，或者在必要时以自己的方式实现对应的功能。
+
+### 打开VPN会额外消耗我的电池吗？
+
+并不会，因为它只连接到您自己的设备。并不使用远程服务器，这意味着没有和外部的连接，也意味着没有额外的电池消耗。
+
+### 这个VPN会跟踪我吗？
+
+并不会，因为没有使用远程的服务器。
+
+### 在打开VPN的时候我无法连接到互联网了！
+
+请确保您的Wi-Fi和WireGuard配置中没有设置备用DNS。如果您确认DNS IP地址有效，请尝试将其从Wi-Fi配置中删除，并将其添加到WireGuard配置的DNS中。
+
+### 更新SideStore的时候在快要结束的位置卡住了
+
+请返回桌面静候其完成。我们不清楚为什么会出现这样的问题，这可能与使用VPN引导“installd”刷新SideStore本身有关。
+
+### 我可以签名多于3个应用并使其同时保持启用状态吗？
+
+一般来说并不允许，因为这是iOS和开发人员帐户的限制。Apple只允许免费的Apple Developer帐户同时安装3个应用程序。
+
+要取消此限制（并获得365天的软件可用时间），您可以支付99美元/年的费用获得一个付费的Apple Developer帐户。
+
+或者，您也可以使用目前的[每夜构建版本](https://github.com/SideStore/SideStore/releases/tag/nightly)（截至撰写本文时的0.5.9-2024.10.23.1+1e969a0版本），它利用了SparseRestore漏洞绕过了对于3个应用的限制。目前，这只适用于低于18 dev beta 5和18.0.1的iOS版本。
+
+使用教程可以在[这里](advanced/sparserestore)找到。
+
+### 我有一个问题，或bug，或功能的需求，或能提升生活质量的需求想要提交
+
+请在我们的GitHub页面上发布GitHub issue，以进行错误报告或功能请求（请带有相对应的标签）！
+
+### 我是一名开发者，这个工具会对我有什么影响？
+
+它不会直接影响您，除了我们需要因扩充功能而需要对AltKit进行更新的时候。
+
+### 我需要升级我的应用以适配这个工具吗？
+
+并不需要，因为目前它在签名的时候和AltStore一样。
+
+### 作为用户，我在登录SideStore的时候遇到了问题。我收到了一个错误提示。
+
+发生这种情况的原因有很多，但最常见的原因是Anisette服务器暂时性的停机。您目前可以在SideStore设置内的“Anisette URL”下更改软件使用的Anisette服务器。
+
+### SideStore会有自己的商店前端页面吗？
+
+我们当然有社区资源! 资源链接: https://community-apps.sidestore.io/sidecommunity.json
+
+同时我们还有叫做[SideStore Connect](https://connect.sidestore.io)的服务,它允许开发者公开发布他们自己的应用。
+
+### 为什么我的应用出现了名为"pacer test"的更新？
+
+这是一个用于查看主要版本之间是否存在问题的测试更新，在正常使用过程中不应该看到这项内容。如果您在发布后看到此问题，请重新安装SideStore或将其报告为bug。
+
+### 为什么我的基于JIT的应用没有自动激活JIT？
+
+我们目前没有自动激活JIT的方法，如果有，您则需要打开SideStore VPN。
+
+### SideStore有iPadOS的UI吗？
+
+当然有！
+
+### 我看到有一台iMac或者MacBook Pro被添加进我的账号上了。它安全吗，并且它是一台真正的Mac吗？
+
+这些Mac不是真实的，它们是被Anisette server自动生成以辅助登录用的。也没有任何私密数据被发送到Anisette server，这些服务器提供的数据仅被用于SideStore本身。
+
+### 当我使用SideStore的时候为什么我的账户被锁定了？
+
+已知，被太多用户使用的，旧的Anisette server会导致Apple ID被锁定的问题。请使用官方提供的Anisette server之一，或者自部署您自己的[anisette-v3-server](advanced/anisette)。
+
+### 为什么我看到了错误代码-36607？
+
+这说明了Anisette server出现了登陆上的问题。更换Anisette server有时会起作用，或者您可以继续尝试登录，直到登录为止。对于这个问题我们目前了解的关于它的信息并不多。
+
+### 我能转移我在AltStore/Sideloady侧载的应用吗？
+
+可以的，但不要删除原来在您设备上的应用。请进入SideStore并侧载相同或更新的IPA文件，然后它就应该被添加到了SideStore中的应用程序列表中，并且您的数据仍然完好无损。
+
+### 为什么刷新SideStore本体是我在登陆后需要做的第一件事？
+
+这是因为AltServer或者其他的应用使用他们自己的groupID来侧载SideStore，但是我们使用我们自己的。刷新SideStore会把软件的groupID换成我们自己的，这会让软件消失。因为他们的groupID没有被更新。在清洁安装的时候，刷新SideStore之前最好不要侧载任何东西。
+
+### 我可以进行OTA升级吗？
+
+当然！ 点击“更新(Update)”按钮就可以啦！
+
+### 我想要测试一个SideStore的版本，并且我想在切换到测试版本的时候保留数据。我需要删除我的应用还是我可以通过SideStore侧载测试版本？
+
+您可以通过SideStore侧载，并且您的数据应该是保持一致的。我们没有一个可以让您切换到其他版本的注册/登记开关。我们也不能保证在您测试非官方/每夜构建版本时的数据转移。
+
+### 我的软件消失了，但是我不知道怎么做
+
+不要恐慌！重新侧载，而不是移除您的应用，您的数据应该是没有问题的。但不幸的是，您选择停用的应用程序可能已经消失了，要确认这一点的话，只需刷新SideStore，并看看它们是否会回来。
+
+### 我不能选择任意格式的配对文件
+
+请确认您的配对文件的文件扩展名是以`.mobiledevicepairing`或者`.plist`结尾的。如果并不是，请在将配对文件发送到手机之前仔细检查是否已将文件进行压缩。如果不这样做，文件可能会在传输过程中被损坏。此外，使用证书对Sidestore进行签名时，您将无法从应用程序中选择配对文件。您可以尝试将配对文件移动到“文件”应用程序中的“我的iPhone/iPad”的SideStore文件夹的根目录中，并将其命名为`ALTPairingFile.mobiledevicepairing`。如果在“文件”应用程序中看不到SideStore文件夹，请将手机连接到电脑上，然后将配对文件拖放到SideStore应用程序的文件夹中。请确保将其更改为上述名称。请注意，它是区分大小写的。
+
+### 不能启动DebugServer
+
+确实存在Debugserver不工作的情况。但是您可以尝试如下操作：
+
+**创建一个新的配对文件**
+
+想要开始使用新的配对文件的话，您需要进入“设置(Settings)”标签页并点击“重置配对文件(Reset Pairing file)”，然后点击“删除并重置(Delete and Reset)”。然后您可以跟随[配对文件教程](installation/pairing-file)进行后续操作。
+
+### 关于目前已知的问题
+
+如果您在使用中出现了问题，并且想确认我们是否已经知悉。请确认我们的GitHub issue页面，其中列出了已知的问题以及缓解您可能遇到的一些问题的方法。一些我们已知的问题可能不在此列表中,但您可以确认这条[GitHub issues](https://github.com/SideStore/SideStore/issues/490)。
+
+如果您出现了一些在这个列表以外的问题。请提出一条GitHub issue或者[加入我们的Discord服务器](https://discord.gg/sidestore-949183273383395328)。
