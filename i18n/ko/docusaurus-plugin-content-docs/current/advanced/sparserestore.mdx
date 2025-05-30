@@ -1,43 +1,43 @@
 ---
-title: 3-App Limit Bypass
-description: A tutorial on how to install more than 3 apps via SideStore using the SparseRestore exploit.
+title: 3개 앱 제한 우회
+description: SparseRestore 익스플로잇을 사용하여 SideStore로 3개 이상의 앱을 설치하는 방법에 대한 튜토리얼.
 ---
 
 :::note
 
-The SparseRestore "Bypass 3 app limit" exploit **only works on iOS/iPadOS versions between 17.0 and 18.1 beta 4 (not including 17.7.1)**. If you are not on these versions and it doesn't work, **please do not ask for support on this**. 
+SparseRestore "3개 앱 제한 우회" 익스플로잇은 **iOS/iPadOS 17.0부터 18.1 베타 4(17.7.1 제외) 사이의 버전에서만 작동합니다**. 해당 버전이 아닌 경우 작동하지 않으며, **이에 대한 지원을 요청하지 마세요**.
 
 :::
 
-## Prerequisites
-* An iDevice running versions supported by the SparseRestore exploit (see note above).
-* At least 1 free app slot.
-* SideStore version 0.5.9 or later. You can find the latest versions [here](https://github.com/SideStore/SideStore/releases).
-* To perform this exploit, you MUST have **Find My** turned off on your iDevice during the process. It will not work otherwise. Here is how you can turn it off:
-  - Open the Settings app.
-  - Tap on your name at the top.
-  - Tap on Find My.
-  - Tap on Find My iPhone/iPad.
-  - Turn off Find My iPhone/iPad.
-  - You may be required to enter your Apple ID password to confirm.
+## 사전 요구사항
+* SparseRestore 익스플로잇이 지원하는 버전의 iOS 기기 (위 참고사항 참조).
+* 최소 1개의 빈 앱 슬롯.
+* SideStore 버전 0.5.9 이상. 최신 버전은 [여기](https://github.com/SideStore/SideStore/releases)에서 찾을 수 있습니다.
+* 이 익스플로잇을 수행하려면 반드시 **나의 찾기** 기능을 끄고 있어야 합니다. 그렇지 않으면 작동하지 않습니다. 끄는 방법은 다음과 같습니다:
+  - 설정 앱을 엽니다.
+  - 상단의 이름을 탭합니다.
+  - 나의 찾기를 탭합니다.
+  - 나의 찾기 iPhone/iPad를 탭합니다.
+  - 나의 찾기 iPhone/iPad를 끕니다.
+  - Apple ID 비밀번호를 입력해야 할 수 있습니다.
   
-  > **Note:** You may still not be able to turn off Find My since having Stolen Device Protection on might prevent you from turning it off. Turn off Stolen Device Protection before trying to turn off Find My.
+  > **참고:** 도난 방지 보호 기능이 켜져 있으면 나의 찾기를 끌 수 없을 수 있습니다. 나의 찾기를 끄기 전에 도난 방지 보호 기능을 먼저 끄세요.
 
-## Steps
-1. Install SparseBox. This can be done with a variety of methods, but for the purposes of this, install it with SideStore. The latest version can be found [here](https://nightly.link/khanhduytran0/SparseBox/workflows/build/main/artifact.zip) (unzip artifact.zip for the .ipa file).
+## 단계
+1. SparseBox를 설치합니다. 여러 방법으로 설치할 수 있지만, 이 가이드에서는 SideStore로 설치합니다. 최신 버전은 [여기](https://nightly.link/khanhduytran0/SparseBox/workflows/build/main/artifact.zip)에서 찾을 수 있습니다 (artifact.zip을 압축 해제하여 .ipa 파일을 얻으세요).
 
-2. Tick on "Disable App Limit" in SideStore, and make sure SideStore is **closed** (not in background), then open SparseBox.
+2. SideStore에서 "앱 제한 비활성화"를 체크하고, SideStore가 **완전히 종료**되어 있는지 확인한 후(백그라운드가 아님) SparseBox를 엽니다.
 
-3. Enable StosVPN, select your pairing file and tap 'Bypass 3-app limit'. This should bring up a log output. Wait for it to say `idevicebackup2 exited with code -18` or `idevicebackup2 exited with code 2`, then close the app. No need to hit apply.
+3. StosVPN을 활성화하고, 페어링 파일을 선택한 후 '3개 앱 제한 우회'를 탭합니다. 로그 출력이 표시될 것입니다. `idevicebackup2 exited with code -18` 또는 `idevicebackup2 exited with code 2`가 표시될 때까지 기다린 후 앱을 닫습니다. 적용 버튼을 누를 필요는 없습니다.
 
-4. Re-open SideStore, and scroll down in SideStore settings. Press "clear cache", this will allow the exploit to be seen by SideStore.
+4. SideStore를 다시 열고, SideStore 설정에서 아래로 스크롤합니다. "캐시 지우기"를 누르면 익스플로잇이 SideStore에서 인식됩니다.
 
-5. Test that the exploit has worked (you may need to install more than one app to test, depending on how many free slots you have). If it throws an error about the limit, reopen SideStore or retry the exploit. If it installs the app, congratulations! You can now have more than 3 apps installed at one time.
+5. 익스플로잇이 작동하는지 테스트합니다 (테스트하려면 사용 가능한 슬롯 수에 따라 여러 앱을 설치해야 할 수 있습니다). 제한 관련 오류가 발생하면 SideStore를 다시 열거나 익스플로잇을 다시 시도하세요. 앱이 설치되면 축하합니다! 이제 한 번에 3개 이상의 앱을 설치할 수 있습니다.
 
-## Notes
-Due to certain limitations, this exploit must be done for every 3 additional apps you sideload.
+## 참고사항
+특정 제한으로 인해, 3개의 추가 앱을 사이드로드할 때마다 이 익스플로잇을 다시 수행해야 합니다.
 
-If you want/need Find My for other purposes, you can now turn it back on. However, if you want to install or refresh more apps, you will need to turn it off again.
+다른 목적으로 나의 찾기가 필요하다면 지금 다시 켤 수 있습니다. 하지만 더 많은 앱을 설치하거나 새로고침하려면 다시 끄야 합니다.
 
-## Alternatives
-If either the exploit doesn't work for you, or your iDevice is on an unsupported version, there is an alternative to be able to use more than 3 apps at once. LiveContainer, developed by Duy Tran Khanh ([khanhduytran0](https://github.com/khanhduytran0)) (the person who also made SparseBox), allows for iOS apps to be run in containers in-app rather than installing them separately. This may also be easier to use over SparseRestore in some cases. The GitHub page can be found [here](https://github.com/khanhduytran0/LiveContainer).
+## 대안
+익스플로잇이 작동하지 않거나 기기가 지원되지 않는 버전인 경우, 3개 이상의 앱을 동시에 사용할 수 있는 대안이 있습니다. Duy Tran Khanh([khanhduytran0](https://github.com/khanhduytran0))이 개발한 LiveContainer(SparseBox도 만든 개발자)는 iOS 앱을 별도로 설치하는 대신 앱 내 컨테이너에서 실행할 수 있게 해줍니다. 경우에 따라 SparseRestore보다 사용하기 더 쉬울 수 있습니다. GitHub 페이지는 [여기](https://github.com/khanhduytran0/LiveContainer)에서 찾을 수 있습니다.

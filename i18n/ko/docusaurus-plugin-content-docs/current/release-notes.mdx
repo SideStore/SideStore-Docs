@@ -1,33 +1,33 @@
 ---
-title: Release Notes
-description: A collection of SideStore release notes.
+title: 릴리스 노트
+description: SideStore의 릴리스 노트 컬렉션입니다.
 sidebar_position: 2
 ---
 
-# Stable Notes
+# Stable 버전 노트
 
 ## 0.6.1
 
-### Changelog
-It's spring already? Here's a new update that should fix migration issues from 0.5.9/0.5.10 and an expiration bug. Happy sideloading!
+### 변경사항
+벌써 봄이 왔나요? 0.5.9/0.5.10 버전에서 0.6.0으로 업그레이드할 때 발생하는 문제와 만료 버그를 수정한 새로운 업데이트를 가져왔습니다. 즐거운 사이드로딩 되세요! 🎉
 
-### What's Changed:
-- fix: typo in hasUpdate comparison by @l2dy in [#900](https://github.com/SideStore/SideStore/pull/900)
-- Update SettingsViewController.swift by @neoarz in [#915](https://github.com/SideStore/SideStore/pull/915)
-- Fixes for migration issues when migrating from 0.5.9 to 0.6.0 by @mahee96 in [#920](https://github.com/SideStore/SideStore/pull/920)
-- Fix typo "levaraging" -> "leveraging" by @lafrenierejm in [#926](https://github.com/SideStore/SideStore/pull/926)
-- Added StosVPN to the EM Proxy part. by @Br0des in [#940](https://github.com/SideStore/SideStore/pull/940)
+### 변경된 내용:
+- fix: @l2dy님이 [#900](https://github.com/SideStore/SideStore/pull/900)에서 hasUpdate 비교 시 오타를 수정해주셨어요
+- @neoarz님이 [#915](https://github.com/SideStore/SideStore/pull/915)에서 SettingsViewController.swift를 업데이트해주셨어요
+- @mahee96님이 [#920](https://github.com/SideStore/SideStore/pull/920)에서 0.5.9에서 0.6.0으로 업그레이드할 때 발생하는 문제를 수정해주셨어요
+- @lafrenierejm님이 [#926](https://github.com/SideStore/SideStore/pull/926)에서 "levaraging"을 "leveraging"으로 오타를 수정해주셨어요
+- @Br0des님이 [#940](https://github.com/SideStore/SideStore/pull/940)에서 EM Proxy 부분에 StosVPN을 추가해주셨어요
 
 
 ## 0.6.0
 
-### Changelog
-It's March and we have some big changes. We've finally included AltStore 2.0 changes into SideStore. So you will get all the benefits of that and also some fixes in SideStore. Enjoy!
+### 변경사항
+3월이 왔고, 우리는 큰 변화를 가져왔습니다! 드디어 AltStore 2.0의 변경사항을 SideStore에 포함시켰어요. 이제 AltStore 2.0의 모든 장점과 함께 SideStore의 몇 가지 버그 수정도 받아보실 수 있습니다. 즐거운 사용 되세요! 🚀
 
-### What's Changed:
-- AltStore 2.0 changes in [#794](https://github.com/SideStore/SideStore/pull/794)
-- [Refresh]: Remove install stuffs from refresh since in refresh should only renew provisioning profiles by @mahee96 in [#846](https://github.com/SideStore/SideStore/pull/846)
-- [Settings]: Fix: DisableAppLimit switch reverting back to off state even if on iOS where sparseRestore is not patched yet by @mahee96 in [#850](https://github.com/SideStore/SideStore/pull/850)
-- [Backup]: Fix: update logic during install missed since override keyword was missing by @mahee96 in [#857](https://github.com/SideStore/SideStore/pull/857)
-- Feature: Bulk sources-add in sources screen with capability to stage them before persisting into database by @mahee96 in [#888](https://github.com/SideStore/SideStore/pull/888)
-- Feature: Render in-app update description as (full) markdown by @mahee96 in [#897](https://github.com/SideStore/SideStore/pull/897)
+### 변경된 내용:
+- [#794](https://github.com/SideStore/SideStore/pull/794)에서 AltStore 2.0 변경사항을 적용했어요
+- @mahee96님이 [#846](https://github.com/SideStore/SideStore/pull/846)에서 [Refresh] 기능을 개선했어요 - 새로고침은 프로비저닝 프로파일만 갱신하도록 변경했답니다
+- @mahee96님이 [#850](https://github.com/SideStore/SideStore/pull/850)에서 [Settings] 버그를 수정했어요 - sparseRestore가 아직 패치되지 않은 iOS에서도 DisableAppLimit 스위치가 꺼진 상태로 돌아가지 않도록 했어요
+- @mahee96님이 [#857](https://github.com/SideStore/SideStore/pull/857)에서 [Backup] 로직을 수정했어요 - override 키워드가 빠져있어서 설치 중 업데이트 로직이 누락되었던 문제를 해결했어요
+- @mahee96님이 [#888](https://github.com/SideStore/SideStore/pull/888)에서 소스 화면에 대량 소스 추가 기능을 추가했어요 - 데이터베이스에 저장하기 전에 소스를 미리 준비할 수 있답니다
+- @mahee96님이 [#897](https://github.com/SideStore/SideStore/pull/897)에서 앱 내 업데이트 설명을 (전체) 마크다운으로 렌더링하는 기능을 추가했어요
