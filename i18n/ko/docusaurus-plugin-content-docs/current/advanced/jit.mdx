@@ -1,51 +1,51 @@
 ---
-title: Enabling JIT
-description: A tutorial on how to enable Just-in-Time (JIT) Compilation for apps that require it.
+title: JIT 활성화하기
+description: Just-in-Time (JIT) 컴파일이 필요한 앱을 위한 JIT 활성화 튜토리얼입니다.
 ---
 
 :::note
 
-There are many methods to enabling JIT, such as AltJIT, SideJITServer, and more. This tutorial will cover the use of StikJIT/StikDebug, as it is the method we currently recommend. As an alternative, SideStore 0.6.2-nightly.2025.04.15 also includes updates to minimuxer, allowing built-in JIT functionality similar to StikDebug. To use this, simply ensure you are connected to StosVPN and Wi-Fi or with mobile data and Wi-Fi disabled.
+JIT를 활성화하는 방법은 AltJIT, SideJITServer 등 여러 가지가 있습니다. 이 튜토리얼에서는 현재 추천하는 방법인 StikJIT/StikDebug 사용법을 다룰 것입니다. 대안으로, SideStore 0.6.2-nightly.2025.04.15에는 minimuxer 업데이트가 포함되어 있어 StikDebug와 유사한 내장 JIT 기능을 제공합니다. 이를 사용하려면 StosVPN과 Wi-Fi에 연결되어 있거나 모바일 데이터와 Wi-Fi가 비활성화되어 있는지 확인하세요.
 :::
 
-## Prerequisites
-* An iDevice on iOS/iPadOS 17.4 or above, excluding 18.4b1. If you are on 17.0-17.3, you must use an alternative such as [SideJITServer](https://github.com/nythepegasus/SideJITServer)
-* At least 1 free app slot for StikJIT
+## 사전 요구사항
+* iOS/iPadOS 17.4 이상의 iDevice (18.4b1 제외). 17.0-17.3 버전을 사용 중이라면 [SideJITServer](https://github.com/nythepegasus/SideJITServer)와 같은 대안을 사용해야 합니다.
+* StikJIT를 위한 최소 1개의 무료 앱 슬롯
 
-## StikJIT installation with SideStore
+## SideStore로 StikJIT 설치하기
    
-1. **Obtain StikJIT:**  
-   Add the StikJIT AltSource to SideStore [here](sidestore://source?url=https://raw.githubusercontent.com/StephenDev0/StikJIT/refs/heads/main/repo.json) (You must have SideStore installed or this link will not function).
+1. **StikJIT 얻기:**  
+   [여기](sidestore://source?url=https://raw.githubusercontent.com/StephenDev0/StikJIT/refs/heads/main/repo.json)에서 StikJIT AltSource를 SideStore에 추가하세요 (SideStore가 설치되어 있어야 이 링크가 작동합니다).
 
-2. **Install:**
-   Use SideStore to install StikJIT.
+2. **설치:**
+   SideStore를 사용하여 StikJIT를 설치하세요.
 
-3. **Installation procedures:**
-   Follow the standard installation procedures in the usage guide below.
+3. **설치 절차:**
+   아래 사용 가이드의 표준 설치 절차를 따르세요.
 
-## StikDebug installation with App Store (Doesn't require an app slot)
+## App Store로 StikDebug 설치하기 (앱 슬롯이 필요 없음)
 
-1. **Install StikDebug**
-   Install StikDebug from the App Store [here](https://apps.apple.com/us/app/stikdebug/id6744045754). Something nice- the VPN present in StikDebug is similar to the one used in SideStore, meaning you use it to install and refresh apps as well.
+1. **StikDebug 설치**
+   [여기](https://apps.apple.com/us/app/stikdebug/id6744045754)에서 App Store에서 StikDebug를 설치하세요. 좋은 점은 StikDebug의 VPN이 SideStore에서 사용하는 것과 유사하다는 것입니다. 즉, 앱 설치 및 새로고침에도 사용할 수 있습니다.
 
-2. **Installation procedures:**
-   Follow the standard installation procedures in the usage guide below.
+2. **설치 절차:**
+   아래 사용 가이드의 표준 설치 절차를 따르세요.
 
-### Standard installation procedures:
+### 표준 설치 절차:
 
-1. **Enable VPN:**  
-   Start by activating StosVPN for StikJIT or the built-in VPN in StikDebug.
+1. **VPN 활성화:**  
+   StikJIT의 경우 StosVPN을, StikDebug의 경우 내장 VPN을 활성화하세요.
 
-2. **Upload the Pairing File:**  
-   When prompted, import the same **unzipped pairing file** obtained via JitterbugPair you use for SideStore. For more information on obtaining this pairing file, see [here](/docs/installation/pairing-file).
+2. **페어링 파일 업로드:**  
+   프롬프트가 표시되면 SideStore에 사용하는 것과 동일한 **압축 해제된 페어링 파일**을 JitterbugPair를 통해 가져온 파일을 가져오세요. 이 페어링 파일을 얻는 방법에 대한 자세한 내용은 [여기](/docs/installation/pairing-file)를 참조하세요.
 
-## To enable JIT:
+## JIT 활성화하기:
 
-1. **Enable VPN:**  
-   Start by activating StosVPN for StikJIT or the built-in VPN in StikDebug.
+1. **VPN 활성화:**  
+   StikJIT의 경우 StosVPN을, StikDebug의 경우 내장 VPN을 활성화하세요.
    
-2. **Activate JIT:**  
-   Click the “Enable JIT” button and select an app from the list to activate the JIT functionality.
+2. **JIT 활성화:**  
+   "Enable JIT" 버튼을 클릭하고 목록에서 앱을 선택하여 JIT 기능을 활성화하세요.
 
-### Offline JIT Enabling
-To enable JIT offline, enable the StosVPN VPN or StikDebug. Then, turn both Wi-Fi and Mobile Data OFF when you launch StikJIT (use Airplane Mode). You can then enable JIT as normal.
+### 오프라인 JIT 활성화
+오프라인에서 JIT를 활성화하려면 StosVPN VPN 또는 StikDebug를 활성화하세요. 그런 다음 StikJIT를 실행할 때 Wi-Fi와 모바일 데이터를 모두 끄세요 (비행기 모드 사용). 그런 다음 평소처럼 JIT를 활성화할 수 있습니다.
