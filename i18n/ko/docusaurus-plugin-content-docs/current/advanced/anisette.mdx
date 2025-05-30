@@ -1,115 +1,115 @@
 ---
-title: Custom Anisette Server
-description: A guide on anisette servers.
+title: 커스텀 Anisette 서버
+description: anisette 서버 가이드입니다.
 ---
 
 :::note
-Using any SideStore version after 0.4.0 is unlikely to lock your account as this is when support for v3 anisette servers was added.
+0.4.0 이후의 SideStore 버전을 사용하면 계정이 잠길 가능성이 낮습니다. 이는 v3 anisette 서버 지원이 추가된 시점이기 때문입니다.
 
-With this, it is **highly recommended** to use a v3 server for normal use of SideStore, if your version supports it.
+따라서 버전이 지원한다면 SideStore의 일반적인 사용을 위해 v3 서버를 사용하는 것을 **강력히 권장**합니다.
 :::
 
-Anisette data is information used in the app signing process that needs to be generated each time you install or refresh apps. SideStore gets this information from a server that spoofs a Mac and sends you back the anisette data. No account info is sent to the server ever in this process.
+Anisette 데이터는 앱 서명 과정에서 사용되는 정보로, 앱을 설치하거나 새로고침할 때마다 생성되어야 합니다. SideStore는 Mac을 스푸핑하는 서버에서 이 정보를 가져와 anisette 데이터를 보내줍니다. 이 과정에서 계정 정보는 절대 서버로 전송되지 않습니다.
 
-When many people use the same Anisette server (specifically a v1 server), it trips Apple's security, and locks the accounts that were using that machine. This is why we recommend using a separate burner Apple ID instead of your main one.
+많은 사람들이 동일한 Anisette 서버(특히 v1 서버)를 사용하면 Apple의 보안이 작동하여 해당 기기를 사용하던 계정들이 잠깁니다. 이것이 우리가 메인 계정 대신 별도의 버너 Apple ID를 사용하도록 권장하는 이유입니다.
 
-Our team has worked on better approaches to avoid locked accounts (in the form of _anisette-v3_). However, if you are using an older version of SideStore, hosting your own anisette server is a great way to avoid locked accounts. This is made incredibly easy thanks to our current server being open source and made for docker environments. This means we can deploy a server with nothing more than the GitHub link.
+우리 팀은 계정 잠금을 피하기 위한 더 나은 접근 방식(anisette-v3 형태)을 개발했습니다. 하지만 이전 버전의 SideStore를 사용 중이라면, 자체 anisette 서버를 호스팅하는 것이 계정 잠금을 피하는 좋은 방법입니다. 현재 서버가 오픈 소스이며 docker 환경을 위해 만들어졌기 때문에 이 작업이 매우 쉽습니다. 이는 GitHub 링크만으로 서버를 배포할 수 있다는 것을 의미합니다.
 
-## Deploy on Render
+## Render에 배포하기
 
-[Render](https://render.com/) is a service for easily creating servers. It supports loading server sources from GitHub. The free tier is quite limited in terms of resources, but the server can run comfortably on it without issue.
+[Render](https://render.com/)는 서버를 쉽게 생성할 수 있는 서비스입니다. GitHub에서 서버 소스를 로드하는 것을 지원합니다. 무료 티어는 리소스 측면에서 제한적이지만, 서버는 문제없이 편안하게 실행될 수 있습니다.
 
-Due to too many people using the same GitHub URL, you will have to fork the Git repository yourself.
+너무 많은 사람들이 동일한 GitHub URL을 사용하기 때문에, Git 저장소를 직접 포크해야 합니다.
 
-1. [Register](https://github.com/signup) for a GitHub account, if you do not already have one.
-2. [Open](https://github.com/Dadoum/anisette-v3-server) the Git repository.
-3. Click "Fork" in the top right, and fork the repository to your account.
-4. Once the forked repository is created, click the green "Code" dropdown in the top right, and copy the .git URL.
+1. 아직 계정이 없다면 GitHub 계정을 [등록](https://github.com/signup)하세요.
+2. Git 저장소를 [열어보세요](https://github.com/Dadoum/anisette-v3-server).
+3. 오른쪽 상단의 "Fork"를 클릭하고 저장소를 계정으로 포크하세요.
+4. 포크된 저장소가 생성되면 오른쪽 상단의 녹색 "Code" 드롭다운을 클릭하고 .git URL을 복사하세요.
 
-* Save this for later.
+* 나중에 사용할 수 있도록 저장해두세요.
 
-Once this is done, the Render server can be made.
+이 작업이 완료되면 Render 서버를 만들 수 있습니다.
 
-1. [Register](https://dashboard.render.com/register/) for an account.
-2. Create a [New Web Service](https://dashboard.render.com/select-repo?type=web).
-3. Scroll down to **Public Git repository** and enter the URL you copied earlier.
-4. Click "Continue" and fill in the form:
-    * **Name** - Does not matter
-    * **Region** - Closest to you
-    * **Branch** - main (default)
-    * **Root Directory** - blank (default)
-    * **Environment** - Docker (default)
+1. 계정을 [등록](https://dashboard.render.com/register/)하세요.
+2. [새 웹 서비스](https://dashboard.render.com/select-repo?type=web)를 생성하세요.
+3. **Public Git repository**로 스크롤하여 이전에 복사한 URL을 입력하세요.
+4. "Continue"를 클릭하고 양식을 작성하세요:
+    * **Name** - 상관없음
+    * **Region** - 가장 가까운 지역
+    * **Branch** - main (기본값)
+    * **Root Directory** - 비워두기 (기본값)
+    * **Environment** - Docker (기본값)
     * **Instance Type** - Free
 
-5. Wait for the server to build. You will see the following when it's done:
+5. 서버가 빌드될 때까지 기다리세요. 완료되면 다음이 표시됩니다:
 
 ```
 Machine requires provisioning... done !
 Your service is live 🎉
 ```
 
-*If the build fails for any reason, click **Manual Deploy**, then **Deploy latest commit**.*
+*빌드가 어떤 이유로든 실패하면 **Manual Deploy**를 클릭한 다음 **Deploy latest commit**을 클릭하세요.*
 
-6. Find the link for your new server at the top of the page:
+6. 페이지 상단에서 새 서버의 링크를 찾으세요:
 
 ```
 https://[your-server-name].onrender.com
 ```
 
-## Creating a custom anisette server list
+## 커스텀 anisette 서버 목록 만들기
 
-Since the release of version 0.5.8, SideStore uses an anisette server list system so officially endorsed anisette servers can be added more easily. This means that there is a little bit of extra work to be done in order to use your own server without requesting to have yours added to the official list.
+0.5.8 버전 출시 이후, SideStore는 공식적으로 승인된 anisette 서버를 더 쉽게 추가할 수 있도록 anisette 서버 목록 시스템을 사용합니다. 이는 공식 목록에 추가를 요청하지 않고 자체 서버를 사용하려면 약간의 추가 작업이 필요하다는 것을 의미합니다.
 
-If you want to keep the option of using included servers, follow the steps below:
-1. Go [here](https://servers.sidestore.io/servers.json) to obtain the current server list.
-2. Head to a file hosting service of your choice to host the file on the internet. We recommend using GitHub Pages to do so as it's easier to edit in future, and will be the service used as example for this guide. If you have your own way of hosting, adapt the following to your setup.
-3. If you have a Github Pages site set up already, skip to the sixth sub-step. Otherwise, do the following:
-* Create a new GitHub repository via either the plus (+) button on the top right on desktop, profile icon > Create new on mobile, or [this page](https://github.com/new).
-* Set the name to be [your GitHub username].github.io, check 'Initialize this repository with a README', and set the remaining settings to how you wish.
-* Once created, go to the Settings tab and navigate to the Pages section under Code and automation.
-* Set Build and deployment under Source to 'Deploy from branch'
-* If not auto-selected, set Branch to 'main'
-* Return to the code tab and hit 'Add files', then 'Upload files', then select the 'servers.json' file you downloaded earlier.
-* Once uploaded, click on the file and hit the Edit button.
-* Scroll down to the last server on the list and add a comma after the last server's closing curly bracket ('}'), then add your own server afterwards in the following format:
+포함된 서버를 사용하는 옵션을 유지하려면 다음 단계를 따르세요:
+1. 현재 서버 목록을 얻기 위해 [여기](https://servers.sidestore.io/servers.json)로 이동하세요.
+2. 파일을 인터넷에 호스팅하기 위해 원하는 파일 호스팅 서비스를 선택하세요. 향후 편집이 더 쉽고 이 가이드에서 예시로 사용할 서비스이므로 GitHub Pages를 사용하는 것을 추천합니다. 자체 호스팅 방법이 있다면 다음 내용을 해당 설정에 맞게 조정하세요.
+3. 이미 Github Pages 사이트가 설정되어 있다면 여섯 번째 하위 단계로 건너뛰세요. 그렇지 않다면 다음을 수행하세요:
+* 데스크톱의 오른쪽 상단에 있는 더하기(+) 버튼, 모바일의 프로필 아이콘 > Create new, 또는 [이 페이지](https://github.com/new)를 통해 새 GitHub 저장소를 생성하세요.
+* 이름을 [your GitHub username].github.io로 설정하고, 'Initialize this repository with a README'를 체크하고, 나머지 설정을 원하는 대로 설정하세요.
+* 생성되면 Settings 탭으로 이동하여 Code and automation 아래의 Pages 섹션으로 이동하세요.
+* Source 아래의 Build and deployment를 'Deploy from branch'로 설정하세요.
+* 자동 선택되지 않았다면 Branch를 'main'으로 설정하세요.
+* 코드 탭으로 돌아가서 'Add files'를 클릭한 다음 'Upload files'를 클릭하고 이전에 다운로드한 'servers.json' 파일을 선택하세요.
+* 업로드되면 파일을 클릭하고 Edit 버튼을 클릭하세요.
+* 목록의 마지막 서버로 스크롤하고 마지막 서버의 닫는 중괄호('}') 뒤에 쉼표를 추가한 다음 다음 형식으로 자체 서버를 추가하세요:
 ```
 {
-    "name": "[something identifiable like a username]",   //doesn't really matter unless you're sharing this server list with someone else
-    "address": "[your server's url]"
+    "name": "[사용자 이름과 같이 식별 가능한 것]",   //다른 사람과 이 서버 목록을 공유하지 않는 한 중요하지 않음
+    "address": "[서버의 URL]"
 }
 ```
-* Commit the changes, then head to https://[your GitHub username].github.io/[where you placed the file]/servers.json. If the file loads, you are ready to move on to the next section. Otherwise, you may need to wait up to 10 mins for your site to be properly set up for use before you try again.
+* 변경사항을 커밋한 다음 https://[your GitHub username].github.io/[where you placed the file]/servers.json로 이동하세요. 파일이 로드되면 다음 섹션으로 진행할 준비가 된 것입니다. 그렇지 않다면 사이트가 제대로 설정될 때까지 최대 10분 정도 기다린 후 다시 시도해야 할 수 있습니다.
 
-If you want to only use your own server, follow the steps above, but instead of getting the official server.json, create your own using this formatting;
+자체 서버만 사용하려면 위 단계를 따르되, 공식 server.json을 가져오는 대신 다음 형식을 사용하여 자체 server.json을 생성하세요:
 ```
 {
     "servers": [
         {
-            "name": "[as above]",
-            "address": "[also as above]"
+            "name": "[위와 동일]",
+            "address": "[위와 동일]"
         }
     ]
 }
 ```
-and continue as normal.
+그리고 평소처럼 계속하세요.
 
-## Use your server with SideStore
+## SideStore에서 서버 사용하기
 
-To use your newly created server list in the SideStore app, do the following:
+SideStore 앱에서 새로 생성한 서버 목록을 사용하려면 다음을 수행하세요:
 
-1. Open the Settings tab in SideStore.
-2. Scroll down to the bottom and tap on 'Anisette Servers'.
-3. Tap on the list URL and replace it with the URL of your server list.
-4. Hit 'Refresh Servers', and select your own server from the updated list.
+1. SideStore의 Settings 탭을 엽니다.
+2. 하단으로 스크롤하여 'Anisette Servers'를 탭합니다.
+3. 목록 URL을 탭하고 서버 목록의 URL로 교체합니다.
+4. 'Refresh Servers'를 탭하고 업데이트된 목록에서 자체 서버를 선택합니다.
 
-## Done!
+## 완료!
 
-SideStore will now use your new custom anisette server.
+이제 SideStore가 새 커스텀 anisette 서버를 사용합니다.
 
 
-## Links:
+## 링크:
 [<img src="https://uptime.sidestore.io/api/badge/4/uptime/48" />](https://uptime.sidestore.io/status/all)
-[All Official Anisette Servers Uptime](https://uptime.sidestore.io/status/all)
+[모든 공식 Anisette 서버 가동 시간](https://uptime.sidestore.io/status/all)
 
 [<img src="https://uptime.sidestore.io/api/badge/1/uptime/48" />](https://uptime.sidestore.io/status/ss)
-[Our Official Anisette Server's Uptime](https://uptime.sidestore.io/status/ss)
+[우리 공식 Anisette 서버의 가동 시간](https://uptime.sidestore.io/status/ss)
