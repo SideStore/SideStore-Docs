@@ -1,22 +1,22 @@
 ---
 title: App Sources
-description: A guide on custom app sources.
+description: 커스텀 앱 소스 가이드입니다.
 ---
 
-# Make a Source
+# 소스 만들기
 
-SideStore is fully compatible with AltSources. The official AltStore [source documentation](https://faq.altstore.io/developers/make-a-source) provides all the details you need to make your own AltSource. AltSources allow your audience to view, install, and update all your available apps easily across both AltStore and SideStore.
+SideStore는 AltSources와 완벽하게 호환됩니다. 공식 AltStore [소스 문서](https://faq.altstore.io/developers/make-a-source)에서 AltSource를 만드는 데 필요한 모든 세부 정보를 제공합니다. AltSources를 사용하면 사용자들이 AltStore와 SideStore 모두에서 쉽게 앱을 보고, 설치하고, 업데이트할 수 있습니다.
 
-When editing your source, it is highly recommended to create and view a draft of your changes using the [AltSource Browser](https://altsource.by.lao.sb/browse) to see a visual display of your source and correct any errors before finalizing and publishing changes to your source.
+소스를 편집할 때는 [AltSource Browser](https://altsource.by.lao.sb/browse)를 사용하여 변경사항의 초안을 만들고 확인하는 것을 강력히 추천합니다. 이렇게 하면 소스의 시각적 표시를 보고 최종 변경사항을 게시하기 전에 오류를 수정할 수 있습니다.
 
-# Distributing your Source
+# 소스 배포하기
 
-You can create a link to automatically add your AltSource by using this template: 
+다음 템플릿을 사용하여 AltSource를 자동으로 추가하는 링크를 만들 수 있습니다:
 ```
 sidestore://source?url=[source url]
 ```
-For more info, see [URL Schema](/docs/advanced/url-schema). It is often helpful to create the link to your AltSource in this format, then put it into a link shortener such as ```tinyurl.com```. However, if a user tries to use a sidestore:// link without SideStore already installed, it will crash, so some documentation may be helpful.
+자세한 내용은 [URL Schema](/docs/advanced/url-schema)를 참조하세요. AltSource 링크를 이 형식으로 만든 다음 ```tinyurl.com```과 같은 링크 단축 서비스에 넣는 것이 도움이 될 수 있습니다. 하지만 SideStore가 설치되어 있지 않은 상태에서 sidestore:// 링크를 사용하려고 하면 충돌이 발생할 수 있으므로, 일부 문서화가 도움이 될 수 있습니다.
 
-## That's it!
+## 끝!
 
-Here are some good existing AltSources: The [official AltStore](https://apps.altstore.io) source, the [SideStore community](https://github.com/SideStore/Community-Source) source, the [StikJIT](https://raw.githubusercontent.com/StephenDev0/StikJIT/refs/heads/main/repo.json) source, and the [DolphiniOS](https://altstore.oatmealdome.me) source.
+다음은 좋은 기존 AltSources의 예시입니다: [공식 AltStore](https://apps.altstore.io) 소스, [SideStore 커뮤니티](https://github.com/SideStore/Community-Source) 소스, [StikJIT](https://raw.githubusercontent.com/StephenDev0/StikJIT/refs/heads/main/repo.json) 소스, 그리고 [DolphiniOS](https://altstore.oatmealdome.me) 소스입니다.
