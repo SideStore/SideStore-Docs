@@ -3,12 +3,10 @@ title: 3-App Limit Bypass
 description: A tutorial on how to install more than 3 apps via SideStore using the SparseRestore exploit.
 ---
 
+# SparseRestore
 :::note
-
 The SparseRestore "Bypass 3 app limit" exploit **only works on iOS/iPadOS versions between 17.0 and 18.1 beta 4 (not including 17.7.1)**. If you are not on these versions and it doesn't work, **please do not ask for support on this**. 
-
 :::
-
 ## Prerequisites
 * An iDevice running versions supported by the SparseRestore exploit (see note above).
 * At least 1 free app slot.
@@ -39,5 +37,34 @@ Due to certain limitations, this exploit must be done for every 3 additional app
 
 If you want/need Find My for other purposes, you can now turn it back on. However, if you want to install or refresh more apps, you will need to turn it off again.
 
-## Alternatives
-If either the exploit doesn't work for you, or your iDevice is on an unsupported version, there is an alternative to be able to use more than 3 apps at once. LiveContainer, developed by Duy Tran Khanh ([khanhduytran0](https://github.com/khanhduytran0)) (the person who also made SparseBox), allows for iOS apps to be run in containers in-app rather than installing them separately. This may also be easier to use over SparseRestore in some cases. The GitHub page can be found [here](https://github.com/khanhduytran0/LiveContainer).
+# MacDirtyCow
+:::note
+The MacDirtyCow "Bypass 3 app limit" exploit **only works on iOS/iPadOS versions between 14.0 and 16.1.2**. If you are not on these versions and it doesn't work, **please do not ask for support on this**. 
+:::
+## Prerequisites
+* An iDevice running versions supported by the MacDirtyCow exploit (see note above).
+* At least 1 free app slot.
+* MDC-compatible SideStore build (see below)
+
+## Steps
+
+1. Download the latest verion of SideStore compatible with the MDC exploit [here](https://cdn.discordapp.com/attachments/949183273827983370/1074037820328521829/SideStore_MDC_14.ipa). The MDC version of SideStore above (bypass 3-app limit) is only compatible with <b>iOS 15.0-16.1.2</b>, and is very outdated, and so you may experience issues. If you want to have this feature, we reccomend you join our [Discord](https://discord.gg/RgpFBX3Q3k) and go to the [sidestore-downloads](https://discord.com/channels/949183273383395328/1126118099930861638) channel, which will contain MDC compatible SideStore builds.
+
+2. Download WDBRemoveThreeAppLimit.ipa [from GitHub](https://github.com/zhuowei/WDBRemoveThreeAppLimit/releases/tag/v1.0)
+
+3. Sideload the .ipa with SideStore
+
+4. Open WDBRemoveThreeAppLimit and tap ‘Go’
+
+5. Return to SideStore and open the Settings tab
+
+6. Swipe up with 3 fingers 3 times to reveal MacDirtyCow section
+
+7. Disable “Enforce 3-App Limit”
+
+8. You can now install more than 3 apps! (10 app id limit still applies)
+
+
+# Alternatives
+
+If either of the exploits doesn't work for you, or your iDevice is on an unsupported version, there is an alternative to be able to use more than 3 apps at once. [LiveContainer](https://livecontainer.github.io/), developed by Duy Tran Khanh ([khanhduytran0](https://github.com/khanhduytran0)) (the person who also made SparseBox), allows for iOS apps to be run in containers in-app rather than installing them separately. This may also be easier to use than the exploits in some cases. The GitHub page can be found [here](https://github.com/khanhduytran0/LiveContainer).
