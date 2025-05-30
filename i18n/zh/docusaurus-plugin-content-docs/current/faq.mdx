@@ -1,143 +1,143 @@
 ---
-title: Frequently Asked Questions
-description: A section on the most frequently asked questions for SideStore.
+title: 常见问题
+description: 一个包含了SideStore的常见问题的章节。
 sidebar_position: 3
 ---
 
-# FAQ
+# 常见问题（FAQ）
 
-This is a list of frequently asked questions for SideStore. This has a list of common questions we get with our development of SideStore, and some questions that might want to be answered for different types of people, or for people having problems.
+这是SideStore的常见问题列表。也是我们在开发SideStore时遇到的常见问题的列表，包含了为不同类型的用户，或遇到问题的用户回答的一些问题。
 
-## What is SideStore?
+## 什么是SideStore？
 
-SideStore is an iOS application that allows you to sideload apps onto your iOS device using only your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically "refresh" your apps in the background, to keep their normal 7-day development period from expiring. SideStore's goal is to provide an untethered sideloading experience. It's a community driven fork of AltStore, and has already implemented some of the community's most-requested features. You only need a computer once during installation.
+SideStore是一款允许在仅使用您的Apple ID的情况下在您的iOS设备上侧载应用的iOS应用。SideStore使用您的个人开发证书对应用进行重新签名，并使用专门设计的VPN来诱骗iOS安装它们。SideStore将定期在后台“刷新”您的应用程序，以防止其正常的7天开发期到期。SideStore的目标是提供不受限制的侧载体验。它是AltStore的一个由社区驱动的分支，并且已经实现了社区最受欢迎的一些功能。在安装过程中您只需要一台电脑。 
 
-(Contributions are welcome! 🙂)
+(我们非常欢迎大家的贡献! 🙂)
 
-### Can I activate JIT?
+### 我可以启用JIT吗？
 
-For users using iOS/iPadOS 16 or lower, you can activate JIT directly from the SideStore 'My Apps' page by holding down on your app and selecting 'Enable JIT'.
+对于使用iOS/iPadOS 16及更低版本的用户，您以在SideStore内“我的应用(My Apps)”界面按住您想要选择开启JIT的应用，在弹出的界面中选择“启用JIT(Enable JIT)”来激活JIT。
 
-Users on iOS or iPadOS 17.4 or higher will need to use a solution such as StikJIT/StikDebug or SideStore nightly. Please refer to the tutorial in the [Advanced](advanced/jit) section.
+对于使用iOS/iPadOS 17.4及更高版本的用户则需要使用StikJIT/StikDebug或者SideStore的每夜构建版本作为解决方案。请参考[进阶](advanced/jit)章节中提供的教程。
 
-### When will SideStore release?
+### SideStore何时推出正式版？
 
-SideStore currently does not have a release date, but is in a public beta state.
+SideStore目前并未有明确的正式版发布日期，但我们处于公测状态。
 
-### Can you sideload apps at the moment?
+### 我现在就能侧载应用了吗？
 
-Yes you can, just like AltStore!
+当然可以，就像AltStore一样！
 
-### Does this have AltStore beta features?
+### 这款工具有AltStore beta的功能吗？
 
-We do have AltStore beta features, but it isn't always latest. We try to keep up to date, or implement them in our own way if it's necessary.
+我们确实有AltStore beta的功能，但并不总能保持是最新的。我们会尽可能保持更新，或者在必要时以自己的方式实现对应的功能。
 
-### Will having the VPN on drain my battery?
+### 打开VPN会额外消耗我的电池吗？
 
-It does not, as it's only connecting to your own device. No remote servers are used, meaning no external connections, meaning no extra battery drain.
+并不会，因为它只连接到您自己的设备。并不使用远程服务器，这意味着没有和外部的连接，也意味着没有额外的电池消耗。
 
-### Will the VPN track me?
+### 这个VPN会跟踪我吗？
 
-It does not, as there is no remote server used.
+并不会，因为没有使用远程的服务器。
 
-### I cannot connect to the internet when the VPN is on
+### 在打开VPN的时候我无法连接到互联网了！
 
-Make sure you don't have an alternate DNS set up in your Wi-Fi and WireGuard configuration. If you know the DNS IP address works, then try removing it from your Wi-Fi configuration and adding it into the WireGuard config under DNS.
+请确保您的Wi-Fi和WireGuard配置中没有设置备用DNS。如果您确认DNS IP地址有效，请尝试将其从Wi-Fi配置中删除，并将其添加到WireGuard配置的DNS中。
 
-### Updating SideStore hangs towards the end
+### 更新SideStore的时候在快要结束的位置卡住了
 
-Go to the homescreen for it to finish. We don't know why this happens, but it might have to do with using a VPN to direct `installd` to refresh SideStore (itself).
+请返回桌面静候其完成。我们不清楚为什么会出现这样的问题，这可能与使用VPN引导“installd”刷新SideStore本身有关。
 
-### Can I sign more than 3 apps to be active?
+### 我可以签名多于3个应用并使其同时保持启用状态吗？
 
-Normally, no, as that’s an iOS and developer account limitation. Apple only allows 3 apps to be installed using a free Apple Developer account.
+一般来说并不允许，因为这是iOS和开发人员帐户的限制。Apple只允许免费的Apple Developer帐户同时安装3个应用程序。
 
-To remove this restriction (and also get a 365 day expiry), you can pay for a $99/year Apple Developer account.
+要取消此限制（并获得365天的软件可用时间），您可以支付99美元/年的费用获得一个付费的Apple Developer帐户。
 
-Alternatively, there is currently a nightly build available [here](https://github.com/SideStore/SideStore/releases/tag/nightly) (version 0.5.9-nightly.2024.10.23.1+1e969a0 as of writing) that utilizes the SparseRestore exploit to bypass the 3-app limit. Currently, this only works on iOS versions below 18 dev beta 5 plus 18.0.1 for definite.
+或者，您也可以使用目前的[每夜构建版本](https://github.com/SideStore/SideStore/releases/tag/nightly)（截至撰写本文时的0.5.9-2024.10.23.1+1e969a0版本），它利用了SparseRestore漏洞绕过了对于3个应用的限制。目前，这只适用于低于18 dev beta 5和18.0.1的iOS版本。
 
-A tutorial for using this can be found [here](advanced/sparserestore).
+使用教程可以在[这里](advanced/sparserestore)找到。
 
-### I have a problem or bug or request for a feature or quality of life improvement
+### 我有一个问题，或bug，或功能的需求，或能提升生活质量的需求想要提交
 
-Please make a GitHub issue on our GitHub page to make a bug report or feature request (with appropriate labels)!
+请在我们的GitHub页面上发布GitHub issue，以进行错误报告或功能请求（请带有相对应的标签）！
 
-### I am a developer, how does this affect me?
+### 我是一名开发者，这个工具会对我有什么影响？
 
-It doesn’t affect you directly, other than maybe an update to AltKit when/if we get our additions.
+它不会直接影响您，除了我们需要因扩充功能而需要对AltKit进行更新的时候。
 
-### Do I need to update my app to support this?
+### 我需要安装AltStore/Sidestore吗？
 
-Nope, as currently it acts like AltStore while signing.
+并不需要，您可以直接参考我们为(Windows)[windows]，(macOS)[mac]和(Linux)[linux]提供的教程直接侧载。因为目前它在签名的时候和AltStore操作是一样的。
 
-### As a user, I’m having trouble logging into SideStore. I get an error
+### 作为用户，我在登录SideStore的时候遇到了问题。我收到了一个错误提示。
 
-There are many reasons this can happen, but the most common issue is a temporary Anisette server downtime. You can currently change the Anisette server on your device’s Settings app in SideStore under “Anisette URL”.
+发生这种情况的原因有很多，但最常见的原因是Anisette服务器暂时性的停机。您目前可以在SideStore设置内的“Anisette URL”下更改软件使用的Anisette服务器。
 
-### Is SideStore going to have a Storefront?
+### SideStore会有自己的商店前端页面吗？
 
-We currently have a Community Source! Source URL: https://community-apps.sidestore.io/sidecommunity.json
+我们当然有社区资源! 资源链接: https://community-apps.sidestore.io/sidecommunity.json
 
-We also have a service called [SideStore Connect](https://connect.sidestore.io) which allows devs to publish their own apps.
+同时我们还有叫做[SideStore Connect](https://connect.sidestore.io)的服务,它允许开发者公开发布他们自己的应用。
 
-### Why does my app have an update called "pacer test"?
+### 为什么我的应用出现了名为"pacer test"的更新？
 
-This was a test update to see if there were problems between major versions, and shouldn’t be seen during normal use. If you see this issue, and it’s after release, then reinstall SideStore or report it as a bug.
+这是一个用于查看主要版本之间是否存在问题的测试更新，在正常使用过程中不应该看到这项内容。如果您在发布后看到此问题，请重新安装SideStore或将其报告为bug。
 
-### Why do my JIT based apps not automatically activate JIT?
+### 为什么我的基于JIT的应用没有自动激活JIT？
 
-We currently don’t have an automatic JIT activation method, and if we do you would need the SideStore VPN on.
+我们目前没有自动激活JIT的方法，如果有，您则需要打开SideStore VPN。
 
-### Does SideStore have an iPadOS UI?
+### SideStore有iPadOS的UI吗？
 
-We sure do!
+当然有！
 
-### I saw an iMac or MacBook Pro get added to my account. Is it safe, and is it a real Mac?
+### 我看到有一台iMac或者MacBook Pro被添加进我的账号上了。它安全吗，并且它是一台真正的Mac吗？
 
-These Macs are not real, and they are automatically generated by the Anisette server to assist with login. No private data is sent to the Anisette server either, as the data the server gives is used on SideStore only.
+这些Mac不是真实的，它们是被Anisette server自动生成以辅助登录用的。也没有任何私密数据被发送到Anisette server，这些服务器提供的数据仅被用于SideStore本身。
 
-### Why is my account getting locked when I use SideStore?
+### 当我使用SideStore的时候为什么我的账户被锁定了？
 
-Older Anisette servers that are used by many users are known to cause locking of Apple ID's. Please use one of the official Anisette servers, or host your own [anisette-v3-server](advanced/anisette).
+已知，被太多用户使用的，旧的Anisette server会导致Apple ID被锁定的问题。请使用官方提供的Anisette server之一，或者自部署您自己的[anisette-v3-server](advanced/anisette)。
 
-### Why do I get error -36607?
+### 为什么我看到了错误代码-36607？
 
-This is a login issue with the Anisette server. There isn’t really much of any info about it other than changing Anisette servers sometimes helps, or you can keep trying to login until it does.
+这说明了Anisette server出现了登陆上的问题。更换Anisette server有时会起作用，或者您可以继续尝试登录，直到登录为止。对于这个问题我们目前了解的关于它的信息并不多。
 
-### Can I transfer my AltStore/Sideloady apps?
+### 我能转移我在AltStore/Sideloady侧载的应用吗？
 
-Yes, just don’t remove the original app on your device. Go into SideStore and sideload the same or updated IPA, and it should be added to your list of apps within SideStore with your data still intact.
+可以的，但不要删除原来在您设备上的应用。请进入SideStore并侧载相同或更新的IPA文件，然后它就应该被添加到了SideStore中的应用程序列表中，并且您的数据仍然完好无损。
 
-### Why do I need to refresh SideStore first thing after login?
+### 为什么刷新SideStore本体是我在登陆后需要做的第一件事？
 
-This is because AltServer or other programs sideload SideStore with their own app groupID, while we use our own. Refreshing SideStore changes it to ours, which makes apps disappear as their groupIDs are not updated. It’s best to not sideload anything before refreshing SideStore on a clean install.
+这是因为AltServer或者其他的应用使用他们自己的groupID来侧载SideStore，但是我们使用我们自己的。刷新SideStore会把软件的groupID换成我们自己的，这会让软件消失。因为他们的groupID没有被更新。在清洁安装的时候，刷新SideStore之前最好不要侧载任何东西。
 
-### Can I do OTA updates?
+### 我可以进行OTA升级吗？
 
-Yep! Just click the update button!
+当然！ 点击“更新(Update)”按钮就可以啦！
 
-### I want to test a SideStore version, and I want my data to stay when switching to a test version. Do I remove my app or sideload the test version via SideStore?
+### 我想要测试一个SideStore的版本，并且我想在切换到测试版本的时候保留数据。我需要删除我的应用还是我可以通过SideStore侧载测试版本？
 
-You can sideload via SideStore and your data should be the same. We don’t have an enrollment toggle to go to other versions. We also cannot guarantee your data transfers when testing an unofficial or nightly build.
+您可以通过SideStore侧载，并且您的数据应该是保持一致的。我们没有一个可以让您切换到其他版本的注册/登记开关。我们也不能保证在您测试非官方/每夜构建版本时的数据转移。
 
-### My apps disappeared and I don't know what to do
+### 我的软件消失了，但是我不知道怎么做
 
-Don't panic! Re-sideload the apps without removing them from your device, and your data should be fine. Unfortunately it's possible that your deactivated apps are gone, but to confirm that just refresh SideStore to see if they come back.
+不要恐慌！重新侧载，而不是移除您的应用，您的数据应该是没有问题的。但不幸的是，您选择停用的应用程序可能已经消失了，要确认这一点的话，只需刷新SideStore，并看看它们是否会回来。
 
-### I'm unable to select my pairing file with any file type
+### 我不能选择任意格式的配对文件
 
-Make sure your pairing file's extension ends with `.mobiledevicepairing` or `.plist`. If it doesn't, double check to see if you had zipped your pairing file before sending it to your phone. Failing to do so may lead to the file being corrupted during transport. Also, when signing Sidestore with a certificate, you won't be able to select the pairing file from within app. You can try moving the pairing file to the root directory of the SideStore folder in the Files app in "On My iPhone/iPad", and naming it `ALTPairingFile.mobiledevicepairing`. If you do not see the Sidestore folder in the files app, connect your phone to your computer, and you can drag and drop the pairing file to the files of the Sidestore app. Ensure to change it to name mentioned above. Note that it is case sensitive.
+请确认您的配对文件的文件扩展名是以`.mobiledevicepairing`或者`.plist`结尾的。如果并不是，请在将配对文件发送到手机之前仔细检查是否已将文件进行压缩。如果不这样做，文件可能会在传输过程中被损坏。此外，使用证书对Sidestore进行签名时，您将无法从应用程序中选择配对文件。您可以尝试将配对文件移动到“文件”应用程序中的“我的iPhone/iPad”的SideStore文件夹的根目录中，并将其命名为`ALTPairingFile.mobiledevicepairing`。如果在“文件”应用程序中看不到SideStore文件夹，请将手机连接到电脑上，然后将配对文件拖放到SideStore应用程序的文件夹中。请确保将其更改为上述名称。请注意，它是区分大小写的。
 
-### Cannot start DebugServer
+### 不能启动DebugServer
 
-There is times when the Debugserver doesn't work. However, there is a fix you can try.
+确实存在Debugserver不工作的情况。遇到这种问题您可以尝试如下操作：
 
-**Make a new pairing file**
+**创建一个新的配对文件**
 
-To start the process of using a new pairing file you go to settings tab and click Reset Pairing file, and you accept the prompt. Then you just follow the [Pairing File instructions](installation/pairing-file).
+想要开始使用新的配对文件的话，您需要进入“设置(Settings)”标签页并点击“重置配对文件(Reset Pairing file)”，然后点击“删除并重置(Delete and Reset)”。然后您可以跟随[配对文件教程](installation/pairing-file)进行后续操作。
 
-### Currently Known issues
+### 关于目前已知的问题
 
-If you're currently having issues and want to know if we already know about them. Then check out our GitHub issue page which  has a list of known issues and ways to mitigate some of the issues you might be having. Some of the issues in this list might be known that are not there, but are in the GitHub issues section. https://github.com/SideStore/SideStore/issues/490
+如果您在使用中出现了问题，并且想确认我们是否已经知悉。请确认我们的GitHub issue页面，其中列出了已知的问题以及缓解您可能遇到的一些问题的方法。一些我们已知的问题可能不在此列表中,但您可以确认这条[GitHub issues](https://github.com/SideStore/SideStore/issues/490)。
 
-If you have any issues that aren't in this list. Just make a GitHub issue or [join our discord.](https://discord.gg/sidestore-949183273383395328)
+如果您出现了一些在这个列表以外的问题。请提出一条GitHub issue或者[加入我们的Discord服务器](https://discord.gg/sidestore-949183273383395328)。
