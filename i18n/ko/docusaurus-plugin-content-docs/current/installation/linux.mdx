@@ -4,7 +4,7 @@ description: Linux를 사용하여 SideStore를 설치하는 방법
 sidebar_position: 5
 ---
 
-Linux에 SideStore(또는 다른 IPA)를 설치하려면, Docker가 설치되어 있는지 확인하세요. 시작하기 전에 StosVPN 및 기타 [필수 요구 사항](prerequisites)이 완료되었는지 확인하세요!
+Linux에 SideStore(또는 다른 IPA)를 설치하려면, Docker가 설치되어 있는지 확인하세요. 시작하기 전에 StosVPN 및 기타 [필수 요구 사항](/docs/installation/prerequisites)이 완료되었는지 확인하세요!
 
 1. Docker로 altcon 실행
 ```bash
@@ -16,6 +16,6 @@ Podman으로 altcon을 실행할 수도 있습니다.
 podman run --privileged --rm -it -e ALTSERVER_ANISETTE_SERVER="https://ani.sidestore.io/" -v ${PWD}/:/mnt/ -v /var/run:/var/run ghcr.io/sidestore/altcon
 ```
 
-Altcon이 기기와 페어링을 시작하고 페어링을 진행할 것입니다. 연결되지 않은 경우 기기를 연결하세요. "신뢰"를 누르고 비밀번호를 입력하세요.
+Altcon이 기기와 페어링을 시작합니다. 아직 연결하지 않았다면 기기를 연결하세요. "신뢰"를 누르고 비밀번호를 입력하세요.
 
-완료되면 [설치 후 지침](post-install)을 따르세요.
+완료되면 [설치 후 지침](/docs/installation/post-install)을 따르세요.
