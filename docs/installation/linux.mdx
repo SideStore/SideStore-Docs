@@ -1,21 +1,28 @@
 ---
 title: Linux Instructions
 description: Instructions for installing SideStore using Linux
-sidebar_position: 5
+sidebar_position: 4
 ---
 
-To install SideStore (or any other IPA) on Linux, make sure you have Docker installed. Before you start, make sure to install StosVPN and any other and [prerequisites](prerequisites) that are satisfied!
+Before you start, make sure to have all steps completed found in the [prerequisites](prerequisites)!
 
-1. Run altcon with Docker
+1. The following commands will install usbmuxd and docker. Run these as a non-root user on your machine and you will only have to do this once.
 ```bash
-docker run --rm -it -e ALTSERVER_ANISETTE_SERVER="https://ani.sidestore.io/" -v ${PWD}/:/mnt/ -v /var/run:/var/run ghcr.io/sidestore/altcon
+sudo apt install -y usbmuxd
+curl -fsSL https://test.docker.com -o test-docker.sh
+sudo sh test-docker.sh
+sudo usermod -aG docker $USER
 ```
-
-You can also run altcon with Podman
+2. Restart your shell to ensure changes are made. Now, plug in your iDevice. If you recieve a prompt, select "trust" and enter your passcode. Now, run Altcon with Docker using this code (must be run every time to install SideStore):
 ```bash
-podman run --privileged --rm -it -e ALTSERVER_ANISETTE_SERVER="https://ani.sidestore.io/" -v ${PWD}/:/mnt/ -v /var/run:/var/run ghcr.io/sidestore/altcon
+docker run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd ghcr.io/sidestore/altcon
 ```
+3. Altcon will pair with your device. When you recieve another prompt, select "trust" and enter your passcode again.
+4. On your secondary device, do the following:
+    * Approve the "Developer App" under your Apple ID's email (you can find this in Settings, under "General", and then "VPN & Device Management").
+    * Open the Settings app.
+    * Navigate to the 'Privacy and Security' section.
+    * Turn on 'Developer Mode' at the bottom.
+5. Open SideStore and select "allow" for prompts until SideStore requests a pairing file. Exit the app now.
 
-Altcon will start to pair with your device, plug it in if you haven't. Press "trust" and enter your passcode.
-
-When you finish, then follow the [post-install instructions](post-install).
+Now, proceed to generate your [pairing file](pairing-file).
