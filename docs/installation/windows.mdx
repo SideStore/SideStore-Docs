@@ -4,15 +4,18 @@ description: Instructions for installing SideStore using Windows
 sidebar_position: 3
 ---
 
-Please make sure that on your machine the non-Microsoft Store versions of [iCloud](https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe) and iTunes ([64-bit](https://apple.com/itunes.download/win64) or [32-bit](https://apple.com/itunes.download/win32)) (iTunes should already be installed from the pairing guide section) are installed. Before you start, make sure to have all steps completed found in the [Prerequisites](prerequisites), and that you have a [Pairing File](pairing-file)!
+Before you start, make sure to have all steps completed found in the [prerequisites](prerequisites)!
 
-The non-Microsoft Store version of iCloud was removed from Apple’s website in mid-September 2022. The above link directs to an older version of iCloud that is still compatible with AltServer, and still available directly from Apple’s servers.
+On your machine, uninstall any version of iCloud or iTunes you may have downloaded from the Microsoft store, then install the non-Microsoft Store versions of [iCloud](https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe) and  [iTunes](https://apple.com/itunes.download/win64). The non-Microsoft Store version of iCloud was removed from Apple’s website in mid-September 2022, so the above link directs to an older version of iCloud that is still compatible with AltServer, and still available directly from Apple’s servers (safe).
 
-1. Download `altinstaller.zip` from [AltStore's website](https://cdn.altstore.io/file/altstore/altinstaller.zip). Extract `altinstaller.zip` and run `setup.exe`. In your Windows taskbar, type in "AltServer" and click "Run as administrator." Make sure to allow access to private networks if prompted. AltStore will appear as an icon in the tray.
+1. Download `altinstaller.zip` from [AltStore's website](https://cdn.altstore.io/file/altstore/altinstaller.zip). Extract `altinstaller.zip` and run `setup.exe`. In your Windows taskbar, type in "AltServer" and click "Run as administrator." Make sure to allow access to private networks if prompted. AltStore will appear as an icon in the system tray (where Internet, Wi-Fi, Battery, etc. are displayed).
 2. Download the SideStore IPA which you can find [here](https://github.com/sidestore/sidestore/releases/latest/download/sidestore.ipa).
-3. Hold shift and click on the AltServer tray icon. Click "Sideload .ipa", and select `sidestore.ipa`.
-4. Approve the "Developer App" with your Apple ID's email.
-    * You can find this in Settings, under "General", and then "VPN & Device Management".
-5. Open SideStore, select your pairing file, and sign in with your Apple ID.
+3. Hold shift and click on the AltServer tray icon. Click "Sideload .ipa", and select the `sidestore.ipa` you previously downloaded.
+4. On your secondary device, do the following:
+    * Approve the "Developer App" under your Apple ID's email (you can find this in Settings, under "General", and then "VPN & Device Management").
+    * Open the Settings app.
+    * Navigate to the 'Privacy and Security' section.
+    * Turn on 'Developer Mode' at the bottom.
+5. Open SideStore and select "allow" for prompts until SideStore requests a pairing file. Exit the app now.
 
-After you finish, follow the [post-install instructions](post-install).
+Now, proceed to generate your [pairing file](pairing-file).
