@@ -5,7 +5,7 @@ description: Un guide sur les sources d'applications personnalisées.
 
 # Créer une source
 
-SideStore est entièrement compatible avec les AltSources. La [documentation officielle](https://faq.altstore.io/developers/make-a-source) d'AltStore fournit toutes les informations nécessaires pour créer votre propre AltSource. Les AltSources permettent à votre public de consulter, d'installer et de mettre à jour facilement toutes vos applications disponibles, aussi bien via AltStore que SideStore.
+SideStore est entièrement compatible avec les AltSources. La [documentation](https://faq.altstore.io/developers/make-a-source) officielle d'AltStore fournit toutes les informations nécessaires pour créer votre propre AltSource. Les AltSources permettent à votre public de consulter, d'installer et de mettre à jour facilement toutes vos applications disponibles, aussi bien via AltStore que SideStore.
 
 Voici quelques outils tiers recommandés qui peuvent vous aider à créer et à consulter vos AltSources:
 - Vous pouvez utiliser [AltStudio](https://altstudio.app/) (en cours de développement), un outil développé par la communauté, pour générer automatiquement un AltSource à partir d'un fichier IPA!
@@ -17,7 +17,7 @@ Vous pouvez créer un lien pour ajouter automatiquement votre AltSource en utili
 ```
 sidestore://source?url=[URL source]
 ```
-Pour plus d'informations, consultez le [Schéma d'URL](/docs/advanced/url-schema). Il est souvent utile de créer le lien vers votre AltSource dans ce format, puis de le raccourcir avec un service comme ```tinyurl.com```. Cependant, si un utilisateur essaie d'ouvrir un lien sidestore:// sans avoir installé SideStore, cela provoquera un crash, il peut donc être judicieux de fournir une documentation explicative.
+Pour plus d'informations, consultez le [Schéma d'URL](/docs/advanced/url-schema). Il est souvent utile de créer le lien vers votre AltSource dans ce format, puis de le raccourcir avec un service comme ```tinyurl.com```. Cependant, si un utilisateur essaie d'ouvrir un lien `sidestore://` sans avoir installé SideStore, cela provoquera un plantage, il peut donc être judicieux de fournir une documentation explicative.
 
 ## C'est tout!
 
