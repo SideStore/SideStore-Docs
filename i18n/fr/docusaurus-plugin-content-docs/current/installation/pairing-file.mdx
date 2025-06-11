@@ -1,52 +1,49 @@
 ---
 title: Fichier d'appairage
 description: Les fichiers d'appairage sont essentiels au bon fonctionnement de SideStore.
-sidebar_position: 2
+sidebar_position: 5
 ---
 
-iDevicePair nous permet de créer un fichier d'appairage afin que des programmes comme SideStore puissent communiquer à distance avec votre appareil. Cela est nécessaire pour utiliser SideStore, sinon il ne fonctionnera pas.
+idevice pair est un programme qui crée un fichier d'appairage Jitterbug, permettant à des applications comme SideStore de communiquer à distance avec votre appareil. Ceci est indispensable pour utiliser SideStore dans le cas où sans cela, l'application ne fonctionnera pas.
+:::warning
+Attention, si vous mettez à jour ou réinitialisez votre iDevice, votre fichier d'appairage expirera et vous devrez en générer un nouveau. Cela peut également se produire de manière aléatoire, et il n'existe actuellement aucune solution pour éviter ce problème.
+:::
 
-Télécharger iDevicePair pour [Windows (64 bits)](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--windows-x86_64.exe), [macOS](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--macos-universal.dmg), ou Linux ([x86_64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--linux-x86_64.AppImage) ou [aarch64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--linux-aarch64.AppImage)).
+Télécharger idevice pair pour
+- [macOS](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--macos-universal.dmg)
+- [Windows](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--windows-x86_64.exe)
+- Linux ([x86_64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--linux-x86_64.AppImage) ou [AArch64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--linux-aarch64.AppImage))
 
 ## Instructions d'appairage
 
-### Windows
-
-1. Installez iTunes depuis le site web d'Apple. ([64 bits](https://apple.com/itunes/download/win64) ou [32 bits](https://apple.com/itunes/download/win32)).
-2. Téléchargez `iDevicePair--windows-x86_64.exe` (déplacez-le à un endroit où vous ne risquez pas de le perdre).
-3. Connectez votre appareil secondaire à votre ordinateur avec un câble. Si une invite s'affiche, appuyez sur "Faire confiance" et saisissez votre code d'accès.
-4. Déverrouillez votre appareil, ouvrez iDevicePair et sélectionnez votre appareil dans le menu déroulant.
-5. Assurez-vous que votre appareil est déverrouillé et affiché sur l'écran d'accueil, puis sélectionnez "generate". Lorsqu'une invite apparaît sur votre appareil, appuyez sur "Faire confiance". Votre fichier d'appairage devrait alors apparaître.
-6. Assurez-vous que votre appareil est toujours sur l'écran d'accueil, puis faites défiler jusqu'à la section SideStore et sélectionnez "install". Le mot "success" devrait apparaître en vert.
-
 ### macOS
 
-1. Téléchargez `iDevicePair--macos-universal.dmg`. Ouvrez le fichier et faites glisser "iDevicePair" dans votre dossier Applications.
+1. Téléchargez `iDevicePair--macos-universal.dmg`. Ouvrez le fichier et faites glisser `idevice pair` dans votre dossier `Applications`.
 2. Connectez votre appareil secondaire à votre ordinateur avec un câble. Si une invite s'affiche, appuyez sur "Faire confiance" et saisissez votre code d'accès.
-3. Déverrouillez votre appareil, ouvrez iDevicePair et sélectionnez votre appareil dans le menu déroulant.
+3. Déverrouillez votre appareil, puis, ouvrez idevice pair et sélectionnez votre appareil dans le menu déroulant.
 4. Assurez-vous que votre appareil est déverrouillé et affiché sur l'écran d'accueil, puis sélectionnez "generate". Lorsqu'une invite apparaît sur votre appareil, appuyez sur "Faire confiance". Votre fichier d'appairage devrait alors apparaître.
 5. Assurez-vous que votre appareil est toujours sur l'écran d'accueil, puis faites défiler jusqu'à la section SideStore et sélectionnez "install". Le mot "success" devrait apparaître en vert.
 
+### Windows (64-bit)
+
+1. Si ce n'est pas déjà fait pour AltServer, installez [iTunes](https://apple.com/itunes/download/win64) depuis le site web d'Apple.
+2. Téléchargez `iDevicePair--windows-x86_64.exe` (déplacez-le à un endroit où vous ne risquez pas de le perdre).
+3. Connectez votre appareil secondaire à votre ordinateur avec un câble. Si une invite s'affiche, appuyez sur "Faire confiance" et saisissez votre code d'accès.
+4. Déverrouillez votre appareil, puis, dans l'Explorateur de fichiers, ouvrez `idevice pair` et sélectionnez votre appareil dans le menu déroulant.
+5. Assurez-vous que votre appareil est déverrouillé et affiché sur l'écran d'accueil, puis sélectionnez "generate". Lorsqu'une invite apparaît sur votre appareil, appuyez sur "Faire confiance". Votre fichier d'appairage devrait alors apparaître.
+6. Assurez-vous que votre appareil est toujours sur l'écran d'accueil, puis faites défiler jusqu'à la section SideStore et sélectionnez "install". Le mot "success" devrait apparaître en vert.
+
 ### Linux
 
-:::note
-Les instructions pour iDevicePair sous Linux sont en cours de rédaction. Pour l'instant, les instructions pour créer un fichier d'appairage avec JitterbugPair sous Linux sont disponibles ci-dessous!
-:::
+1. Si ce n'est pas déjà fait pour Altcon, exécutez la commande suivante dans le terminal Linux pour installer usbmuxd:
+```bash
+sudo apt install -y usbmuxd
+```
+2. Téléchargez la version d'idevice pair correspondant à l'architecture de votre PC et rendez-la exécutable.
+3. Connectez votre appareil secondaire à votre ordinateur avec un câble. Si une invite s'affiche, appuyez sur "Faire confiance" et saisissez votre code d'accès.
+4. Déverrouillez votre appareil, puis, exécutez idevicepair et sélectionnez votre appareil dans le menu déroulant.
+5. Assurez-vous que votre appareil est déverrouillé et affiché sur l'écran d'accueil, puis sélectionnez "generate". Lorsqu'une invite apparaît sur votre appareil, appuyez sur "Faire confiance". Votre fichier d'appairage devrait alors apparaître.
+6. Assurez-vous que votre appareil est toujours sur l'écran d'accueil, puis faites défiler jusqu'à la section SideStore et sélectionnez "install". Le mot "success" devrait apparaître en vert.
 
-Ces instructions supposent que vous êtes familiarisé avec la ligne de commande sous Linux.
-
-1. **Téléchargez** `jitterbugpair-linux.zip` depuis [ce lien](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip), puis extrayez-le.
-2. Ouvrez un terminal dans le dossier extrait.
-3. Rendez le programme exécutable:
-   ```bash
-   chmod +x ./jitterbugpair
-   ```
-4. **Définissez un code d'accès** sur votre appareil si ce n'est pas déjà fait. Déverrouillez votre appareil et connectez-le à votre ordinateur avec un câble. Si une invite s'affiche, appuyez sur "Faire confiance" et saisissez votre code d'accès.
-5. Ouvrez votre appareil sur l'écran d'accueil.
-6. Exécutez le programme:
-   ```bash
-   ./jitterbugpair
-   ```
-7. La première fois que vous exécutez l'outil, une invite pour votre code d'accès apparaîtra sur votre appareil secondaire. Saisissez-le, puis gardez l'écran allumé et déverrouillé et exécutez à nouveau l'outil.
-8. JitterbugPair va générer un **fichier d'appairage** avec l'extension `.mobiledevicepairing`.
-9. Compressez le fichier dans un dossier .zip. Ensuite, **transférez le fichier d'appairage** vers votre appareil iOS par e-mail, stockage cloud ou tout autre moyen de votre choix.
+## Étapes suivantes
+À présent, suivez les [Instructions après installation](post-install).
