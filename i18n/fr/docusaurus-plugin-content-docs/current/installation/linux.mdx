@@ -1,21 +1,28 @@
 ---
 title: Instructions pour Linux
-description: Instructions pour installer SideStore via Linux
-sidebar_position: 5
+description: Instructions pour installer SideStore en utilisant Linux
+sidebar_position: 4
 ---
 
-Pour installer SideStore (ou toute autre application IPA) sous Linux, assurez-vous que Docker est installé. Avant de commencer, installez StosVPN ainsi que toutes les [Prérequis](prerequisites) nécessaires!
+Avant de commencer, assurez-vous d'avoir complété toutes les étapes indiquées dans les [Prérequis](prerequisites)!
 
-1. Exécutez altcon avec Docker
+1. Les commandes suivantes installeront usbmuxd et docker. Exécutez-les en tant qu'utilisateur non-root sur votre machine et cette étape n'est à réaliser qu'une seule fois.
 ```bash
-docker run --rm -it -e ALTSERVER_ANISETTE_SERVER="https://ani.sidestore.io/" -v ${PWD}/:/mnt/ -v /var/run:/var/run ghcr.io/sidestore/altcon
+sudo apt install -y usbmuxd
+curl -fsSL https://test.docker.com -o test-docker.sh
+sudo sh test-docker.sh
+sudo usermod -aG docker $USER
 ```
-
-Vous pouvez également exécuter altcon avec Podman
+2. Redémarrez votre terminal pour vous assurer que les modifications sont prises en compte. Ensuite, branchez votre iDevice. Si une fenêtre apparaît, sélectionnez "Faire confiance" et saisissez votre code d'accès. Enfin, lancez Altcon avec Docker en utilisant ce code (cette commande doit être exécutée à chaque installation de SideStore):
 ```bash
-podman run --privileged --rm -it -e ALTSERVER_ANISETTE_SERVER="https://ani.sidestore.io/" -v ${PWD}/:/mnt/ -v /var/run:/var/run ghcr.io/sidestore/altcon
+docker run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd ghcr.io/sidestore/altcon
 ```
+3. Altcon s'appairera avec votre appareil. Lorsque vous recevrez une nouvelle demande, sélectionnez "Faire confiance" et saisissez à nouveau votre code d'accès.
+4. Sur votre appareil secondaire, procédez comme suit:
+    * Approuvez l'"Application développeur" associée à l'adresse e-mail de votre identifiant Apple (vous pouvez la trouver dans Réglages, sous "Général", puis "VPN et gestion de l'appareil").
+    * Ouvrez l'application Réglages.
+    * Accédez à la section 'Confidentialité et sécurité'.
+    * Activez le 'Mode développeur' tout en bas.
+5. Ouvrez SideStore et sélectionnez "autoriser" à chaque demande jusqu'à ce que SideStore réclame un fichier d'appairage. Quittez ensuite l'application.
 
-Altcon commencera à s'apparier avec votre appareil. Branchez-le si ce n'est pas déjà fait, appuyez sur "Faire confiance" et saisissez votre code d'accès.
-
-Une fois terminé, suivez les [Instructions après installation](post-install).
+À présent, procédez à la génération de votre [Fichier d'appairage](pairing-file).
