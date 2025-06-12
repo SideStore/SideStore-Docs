@@ -5,30 +5,21 @@ description: Un tutoriel sur la manière d'activer la compilation Just-in-Time (
 
 :::note
 
-Il existe de nombreuses méthodes pour activer le JIT, comme AltJIT, SideJITServer et d'autres. Ce tutoriel expliquera l'utilisation de StikDebug (anciennement StikJIT), car c'est la méthode que nous recommandons actuellement. En alternative, SideStore 0.6.2-nightly.2025.04.15 inclut également des mises à jour de minimuxer, permettant une fonctionnalité JIT intégrée similaire à StikDebug. Pour utiliser cette méthode, il suffit de vous assurer que vous êtes connecté à StosVPN et en Wi-Fi, ou bien que les données mobiles et le Wi-Fi sont désactivés.
+Il existe plusieurs méthodes pour activer le JIT, comme AltJIT, SideJITServer, et d'autres. Ce tutoriel couvrira l'utilisation de StikDebug (anciennement StikJIT), car c'est la méthode que nous recommandons actuellement. Pour plus d'informations, consultez le [guide officiel d'appairage StikDebug](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md).
+
+En alternative, SideStore 0.6.2-nightly.2025.04.15 inclut également des mises à jour de minimuxer, permettant une fonctionnalité JIT intégrée similaire à StikDebug. Pour utiliser cette méthode, il vous suffit d'être connecté à StosVPN, soit avec le Wi-Fi activé/connecté, soit en ayant les données mobiles et le Wi-Fi désactivés (mode Avion).
 :::
 
 ## Prérequis
-* Un appareil iOS ou iPadOS sous 17.4 ou supérieur, à l'exception de 18.4b1. Si vous êtes sous 17.0 à 17.3, vous devez utiliser une alternative comme [SideJITServer](https://github.com/nythepegasus/SideJITServer)
+* Un appareil iOS sous iOS/iPadOS 17.4 jusqu'à iOS/iPadOS 18.5, à l'exception de la 18.4b1. Si vous êtes sous 17.0-17.3, vous devez utiliser une alternative comme [SideJITServer](https://github.com/nythepegasus/SideJITServer). Les versions ultérieures à 18.5 ne sont actuellement pas prises en charge.
 * Au moins 1 emplacement d'application libre (si vous utilisez le sideload)
 
 ## Installation de StikDebug avec l'App Store d'Apple (Ne nécessite pas d'emplacement d'application)
    
 1. **Installez StikDebug**
-   Installez StikDebug depuis l'[App Store d'Apple](https://apps.apple.com/us/app/stikdebug/id6744045754). Petite astuce- le VPN présent dans StikDebug est similaire à celui utilisé dans SideStore, ce qui signifie que vous pouvez aussi l'utiliser pour installer et rafraîchir des applications.
+   Installez StikDebug depuis l'[App Store d'Apple](https://apps.apple.com/fr/app/stikdebug/id6744045754). Petite astuce- le VPN présent dans StikDebug est similaire à celui utilisé dans SideStore, ce qui signifie que vous pouvez aussi l'utiliser pour installer et rafraîchir des applications.
 
 2. **Procédures d'installation:**
-   Suivez les procédures d'installation standard dans le guide d'utilisation ci-dessous.
-
-## Installation de StikDebug avec SideStore
-
-1. **Obtenez StikDebug:**  
-   Ajoutez l'AltSource StikJIT à SideStore [ici](sidestore://source?url=https://raw.githubusercontent.com/StephenDev0/StikDebug/refs/heads/main/repo.json) (Vous devez avoir SideStore installé, sinon ce lien ne fonctionnera pas).
-
-2. **Installation:**
-   Utilisez SideStore pour installer StikDebug.
-
-3. **Procédures d'installation:**
    Suivez les procédures d'installation standard dans le guide d'utilisation ci-dessous.
 
 
@@ -49,4 +40,4 @@ Il existe de nombreuses méthodes pour activer le JIT, comme AltJIT, SideJITServ
    Sélectionnez le bouton "Activer JIT" puis choisissez une application dans la liste pour y attacher un débogueur/activer la fonctionnalité JIT.
 
 ### Activation de JIT hors ligne
-Pour activer le JIT hors ligne, activez StosVPN (si vous utilisez le sideload) ou le VPN de StikDebug. Ensuite, désactivez à la fois le Wi-Fi et les données mobiles lorsque vous lancez StikDebug (utilisez le mode avion). Vous pourrez ensuite activer le JIT normalement.
+Pour activer le JIT hors ligne, activez StosVPN (si vous utilisez le sideload) ou le VPN de StikDebug. Ensuite, désactivez à la fois le Wi-Fi et les données mobiles lorsque vous lancez StikDebug (utilisez le mode Avion). Vous pourrez ensuite activer le JIT normalement.
