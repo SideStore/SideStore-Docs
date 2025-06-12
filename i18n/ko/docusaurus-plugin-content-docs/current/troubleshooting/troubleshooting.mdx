@@ -5,15 +5,15 @@ description: SideStore 문제 해결을 위한 가이드입니다.
 
 ## 설치 과정
 
-#### 안내에 따라 설치했지만, 여전히 SideStore를 설치할 수 없는경우
+### 안내에 따라 설치했지만, 여전히 SideStore를 설치할 수 없는경우
 
-### Mac 지침
+#### Mac 지침
 1. **기기 신뢰**: iOS 기기를 Mac에 연결한 후 Mac과 iOS 기기 모두에서 '신뢰'라고 선택했는지 확인합니다. 이를 확인하는 방법은 다음과 같습니다:
    - Finder(macOS 10.15 Catalina 이상) 또는 iTunes(macOS 10.14 Mojave 이하)를 엽니다.
    - 기기을 Mac에서 분리했다가 다시 연결한 다음 장치를 신뢰할 것인지 묻는 대화 상자가 나타나는지 확인합니다.
 2. **다른 Apple ID 사용**: 다른 Apple ID를 사용해 보세요. 필요한 경우, [새 Apple ID 생성](https://appleid.apple.com/account#!\&page=create)을 통해 무료로 SideStore 전용 Apple ID를 생성할 수 있습니다.
 
-### Windows 지침
+#### Windows 지침
 1. **장치 신뢰**: iOS 기기를 Windows 컴퓨터에 연결한 후 컴퓨터와 iOS 기기 모두에서 '신뢰'라고 선택했는지 확인합니다. 이를 확인하는 방법은 다음과 같습니다:
    - iTunes를 열고 기기를 신뢰할 것인지 묻는 대화 상자가 나타나는지 확인합니다.
 2. **관리자 권한으로 AltServer 실행**: AltServer를 마우스 오른쪽 버튼으로 클릭하고 '관리자 권한으로 실행'을 선택하여 적절한 권한을 부여합니다.
@@ -27,7 +27,7 @@ description: SideStore 문제 해결을 위한 가이드입니다.
 
 ## 로그인 문제
 
-#### 로그인 중 SideStore가 멈추거나 오류 코드가 표시되는 경우
+### 로그인 중 SideStore가 멈추거나 오류 코드가 표시되는 경우
 
 SideStore에 로그인하는 동안 멈추거나 오류 코드가 발생하는 경우 몇 가지 잠재적인 원인이 있을 수 있습니다. 다음 단계에 따라 문제를 해결하세요:
 
@@ -41,7 +41,7 @@ SideStore에 로그인하는 동안 멈추거나 오류 코드가 발생하는 �
 2. **나만의 Anisette 서버 호스팅:**
    원하는 경우 자체 Anisette 서버를 설정할 수 있습니다. Anisette 서버 호스팅에 대한 자세한 지침은 공식 문서에서 확인할 수 있으며 [여기](https://docs.sidestore.io/docs/advanced/anisette)에서 확인할 수 있습니다.
 
-#### Apple ID로 로그인할 때 인증 코드를 받지 못한 경우
+### Apple ID로 로그인할 때 인증 코드를 받지 못한 경우
 
 로그인 중 발생하는 또 다른 일반적인 문제는 Apple ID를 Sidestore에서 사용할 때 인증 코드가 수신되지 않는 것입니다. 이 문제는 다음 단계에 따라 해결할 수 있습니다:
 
@@ -66,7 +66,7 @@ SideStore에 로그인하는 동안 멈추거나 오류 코드가 발생하는 �
 
 ## 앱을 새로 고치거나 설치할 수 없는 경우
 
-#### No Wi-Fi or VPN 오류 해결
+### No Wi-Fi or VPN 오류 해결
 
 1. 셀룰러 데이터를 비활성화하거나 안정적인 Wi-Fi 네트워크에 연결하세요.
 2. Apple 도메인과 Anisette 서버의 도메인이 제한되지 않았는지 확인합니다. 다음을 확인합니다:
@@ -81,7 +81,7 @@ SideStore에 로그인하는 동안 멈추거나 오류 코드가 발생하는 �
 
 ## 페어링 파일을 선택할 수 없는 경우
 
-#### SideStore에서 페어링 파일을 선택할 수 없는 경우 다음 단계에 따라 문제를 해결하세요:
+### SideStore에서 페어링 파일을 선택할 수 없는 경우 다음 단계에 따라 문제를 해결하세요:
 
 1. **파일 확장자 확인**: 페어링 파일의 확장자가 `.mobiledevicepairing` 또는 `.plist`로 끝나는지 확인하세요. 그렇지 않은 경우, 페어링 파일을 기기로 보내기 전에 압축했는지 다시 확인하세요. 그렇지 않으면 전송 중에 파일이 손상될 수 있습니다.
 2. **페어링 파일 이동**: 앱 내에서 페어링 파일을 선택할 수 없는 경우, 파일 이름을 `ALTPairingFile.mobiledevicepairing`으로 변경하고 "내 iPhone/iPad"의 파일 앱에서 SideStore 폴더의 루트 디렉토리로 페어링 파일을 이동해 보세요.
@@ -90,7 +90,7 @@ SideStore에 로그인하는 동안 멈추거나 오류 코드가 발생하는 �
 
 ## AltServer
 
-#### 앱을 사이드로드하거나 새로고침 하려고 할 때 AltStore에서 "AltServer를 찾을 수 없습니다."라는 메시지가 표시됩니다.
+### 앱을 사이드로드하거나 새로고침 하려고 할 때 AltStore에서 "AltServer를 찾을 수 없습니다."라는 메시지가 표시됩니다.
 
 앱을 사이드로드하거나 새로 고치려면 AltStore와 동일한 Wi-Fi에 연결된 컴퓨터에서 AltServer가 실행 중이어야 합니다. AltServer가 AltStore와 동일한 Wi-Fi 네트워크에서 실행 중인데도 이 오류가 계속 발생하면 다음을 시도해 보세요:
 
@@ -106,7 +106,7 @@ iPhone 또는 iPad를 컴퓨터에 연결하면 Wi-Fi 없이도 언제든지 앱
 
 ## AltJIT
 
-#### AltServer에서 "JIT could not be enabled for [앱]"라고 말합니다.
+### AltServer에서 "JIT could not be enabled for [앱]"라고 말합니다.
 
 이 문제는 여러 가지 이유로 발생할 수 있습니다. 이 문제가 발생하는 경우 다음을 확인해 보세요:
 
@@ -122,7 +122,7 @@ iPhone 또는 iPad를 컴퓨터에 연결하면 Wi-Fi 없이도 언제든지 앱
 여기에서 질문에 대한 답변을 찾을 수 없는 경우 [support@altstore.io](mailto:support@altstore.io)으로 이메일을 보내주시면 최대한 빠른 시일 내에 답변해 드리겠습니다.
 :::
 
-#### Windows Store 버전의 iCloud를 사용해야 하는 경우 어떻게 해야 하나요?
+### Windows Store 버전의 iCloud를 사용해야 하는 경우 어떻게 해야 하나요?
 
 AltStore를 사용하려면 Apple ID를 인증하기 위해 Apple에서 직접 iCloud를 설치해야 합니다. 대신 Windows 스토어 버전을 사용해야 하는 경우 [이 레딧 게시물](https://www.reddit.com/r/jailbreak/comments/rp5buz/tutorial\_how\_to\_use\_altserver\_if\_you\_have\_to\_use/?utm\_source=share\&utm\_medium=ios\_app\&utm\_name=iossmf)에서 복사한 대체 지침을 따르세요:
 
