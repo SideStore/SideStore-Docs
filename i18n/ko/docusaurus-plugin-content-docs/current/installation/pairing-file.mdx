@@ -4,49 +4,43 @@ description: 페어링 파일은 SideStore의 기능에 필수적입니다.
 sidebar_position: 2
 ---
 
-iDevicePair를 사용하면 SideStore와 같은 프로그램이 원격으로 기기와 통신할 수 있는 페어링 파일을 생성할 수 있습니다. SideStore를 사용하려면 이 과정이 필수적이며, 없이는 작동하지 않습니다.
+idevice pair는 jitterbug pairing 파일을 생성하여 SideStore와 같은 프로그램이 내 장치와 원격으로 통신할 수 있도록 하는 프로그램입니다. 이 프로그램은 SideStore를 사용하는 데 필요하며, 그렇지 않으면 작동하지 않습니다.
+:::warning
+주의: iDevice를 업데이트하거나 초기화하면 페어링 파일이 만료되므로 새 파일을 생성해야 합니다. 이 또한 무작위로 발생하며 현재로서는 이 문제를 해결하기 위해 할 수 있는 조치가 없습니다.
+:::
 
-[Windows (64비트)](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--windows-x86_64.exe), [macOS](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--macos-universal.dmg), 또는 Linux ([x86_64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--linux-x86_64.AppImage) 또는 [aarch64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--linux-aarch64.AppImage))용 iDevicePair를 다운로드하세요.
+iDevice 페어링을 다운로드하세요:
+- [macOS](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--macos-universal.dmg)
+- [Windows](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--windows-x86_64.exe)
+- Linux ([x86_64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--linux-x86_64.AppImage) 또는 [AArch64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--linux-aarch64.AppImage))
 
 ## 페어링 방법
 
-### Windows
+### macOS
+
+1. `iDevicePair--macos-universal.dmg`를 다운로드하세요. 파일을 열고 `iDevicePair` 를 `Applications` 폴더로 드래그하세요.
+2. 케이블로 기기를 컴퓨터에 연결하세요. 프롬프트가 나타나면 "신뢰"를 탭하고 비밀번호를 입력하세요.
+3. 기기를 잠금 해제하고 `iDevice Pair`를 열어 드롭다운 메뉴에서 기기를 선택하세요.
+4. 기기가 잠금 해제되어 있고 홈 화면이 열려있는지 확인한 후 "generate"을 선택하세요. 기기에 프롬프트가 나타나면 "신뢰"를 탭하세요. 페어링 파일이 생성됩니다.
+5. 기기가 여전히 홈 화면에 있는지 확인한 후 SideStore 섹션으로 스크롤하여 "install"를 선택하세요. "success"이라는 단어가 녹색으로 표시되어야 합니다.
+
+### Windows (64-bit)
 
 1. Apple 웹사이트에서 iTunes를 설치하세요 ([64비트](https://apple.com/itunes/download/win64) 또는 [32비트](https://apple.com/itunes/download/win32)).
 2. `iDevicePair--windows-x86_64.exe`를 다운로드하세요 (잃어버리지 않을 곳으로 이동하세요).
 3. 케이블로 기기를 컴퓨터에 연결하세요. 프롬프트가 나타나면 "신뢰"를 탭하고 비밀번호를 입력하세요.
-4. 기기를 잠금 해제하고 iDevicePair를 열어 드롭다운 메뉴에서 기기를 선택하세요.
+4. 기기를 잠금 해제하고 `iDevice Pair`를 열어 드롭다운 메뉴에서 기기를 선택하세요.
 5. 기기가 잠금 해제되어 있고 홈 화면이 열려있는지 확인한 후 "generate"을 선택하세요. 기기에 프롬프트가 나타나면 "신뢰"를 탭하세요. 페어링 파일이 생성됩니다.
 6. 기기가 여전히 홈 화면에 있는지 확인한 후 SideStore 섹션으로 스크롤하여 "install"를 선택하세요. "success"이라는 단어가 녹색으로 표시되어야 합니다.
 
-### macOS
-
-1. `iDevicePair--macos-universal.dmg`를 다운로드하세요. 파일을 열고 "iDevicePair"를 Applications 폴더로 드래그하세요.
-2. 케이블로 기기를 컴퓨터에 연결하세요. 프롬프트가 나타나면 "신뢰"를 탭하고 비밀번호를 입력하세요.
-3. 기기를 잠금 해제하고 iDevicePair를 열어 드롭다운 메뉴에서 기기를 선택하세요.
-4. 기기가 잠금 해제되어 있고 홈 화면이 열려있는지 확인한 후 "generate"을 선택하세요. 기기에 프롬프트가 나타나면 "신뢰"를 탭하세요. 페어링 파일이 생성됩니다.
-5. 기기가 여전히 홈 화면에 있는지 확인한 후 SideStore 섹션으로 스크롤하여 "install"를 선택하세요. "success"이라는 단어가 녹색으로 표시되어야 합니다.
-
 ### Linux
 
-:::note
-Linux용 iDevicePair 지침은 현재 작업 중입니다. 현재는 아래의 JitterbugPair를 사용하여 Linux에서 페어링 파일을 생성하는 방법을 안내합니다!
-:::
-
-이 지침은 Linux 명령줄에 익숙한 사용자를 대상으로 합니다.
-
-1. [여기](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip)에서 `jitterbugpair-linux.zip`을 **다운로드**하고 압축을 해제하세요.
-2. 압축 해제된 디렉토리에서 터미널을 열세요.
-3. 프로그램을 실행 가능하게 만드세요:
-   ```bash
-   chmod +x ./jitterbugpair
-   ```
-4. 아직 설정하지 않았다면 기기에 **비밀번호를 설정**하세요. 기기를 잠금 해제하고 케이블로 컴퓨터에 연결하세요. 프롬프트가 나타나면 "신뢰"를 탭하고 비밀번호를 입력하세요.
-5. 기기의 홈 화면을 열어두세요.
-6. 프로그램을 실행하세요:
-   ```bash
-   ./jitterbugpair
-   ```
-7. 도구를 처음 실행할 때 보조 기기에서 비밀번호를 입력하라는 프롬프트가 나타납니다. 비밀번호를 입력한 후 화면을 켜두고 잠금을 해제한 상태로 도구를 다시 실행하세요.
-8. JitterbugPair는 `.mobiledevicepairing` 확장자를 가진 **페어링 파일**을 생성합니다.
-9. 파일을 .zip 폴더로 압축하세요. 그런 다음 이메일, 클라우드 저장소 또는 선호하는 다른 방법을 사용하여 페어링 파일을 iOS 기기로 **전송**하세요.
+1. Altcon이 아직 설치되어 있지 않은 경우, Linux 명령줄에서 다음 코드를 실행하여 usbmuxd를 설치합니다:
+```bash
+sudo apt install -y usbmuxd
+```
+2. 사용 중인 PC의 아키텍처에 맞는 버전의 iDevice pair를 다운로드하여 실행합니다.
+3. 케이블로 기기를 컴퓨터에 연결하세요. 프롬프트가 나타나면 "신뢰"를 탭하고 비밀번호를 입력하세요.
+4. 기기를 잠금 해제하고 `iDevice Pair`를 열어 드롭다운 메뉴에서 기기를 선택하세요.
+5. 기기가 잠금 해제되어 있고 홈 화면이 열려있는지 확인한 후 "generate"을 선택하세요. 기기에 프롬프트가 나타나면 "신뢰"를 탭하세요. 페어링 파일이 생성됩니다.
+6. 기기가 여전히 홈 화면에 있는지 확인한 후 SideStore 섹션으로 스크롤하여 "install"를 선택하세요. "success"이라는 단어가 녹색으로 표시되어야 합니다.
