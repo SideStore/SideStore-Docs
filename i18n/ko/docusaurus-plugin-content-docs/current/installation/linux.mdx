@@ -6,16 +6,23 @@ sidebar_position: 5
 
 Linux에 SideStore(또는 다른 IPA)를 설치하려면, Docker가 설치되어 있는지 확인하세요. 시작하기 전에 StosVPN 및 기타 [필수 요구 사항](/docs/installation/prerequisites)이 완료되었는지 확인하세요!
 
-1. Docker로 altcon 실행
+1. 다음 명령어들은 usbmuxd와 docker를 설치합니다. 이 명령어들은 일반 사용자(non-root user)로 실행하며, 한 번만 실행하면 됩니다.
 ```bash
-docker run --rm -it -e ALTSERVER_ANISETTE_SERVER="https://ani.sidestore.io/" -v ${PWD}/:/mnt/ -v /var/run:/var/run ghcr.io/sidestore/altcon
+sudo apt install -y usbmuxd
+curl -fsSL https://test.docker.com -o test-docker.sh
+sudo sh test-docker.sh
+sudo usermod -aG docker $USER
 ```
-
-Podman으로 altcon을 실행할 수도 있습니다.
+2. 이제 Docker를 사용하여 Altcon을 실행하세요. (이 명령은 SideStore를 설치할 때마다 매번 실행해야 합니다.)
 ```bash
-podman run --privileged --rm -it -e ALTSERVER_ANISETTE_SERVER="https://ani.sidestore.io/" -v ${PWD}/:/mnt/ -v /var/run:/var/run ghcr.io/sidestore/altcon
+docker run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd ghcr.io/sidestore/altcon
 ```
-
-Altcon이 기기와 페어링을 시작합니다. 아직 연결하지 않았다면 기기를 연결하세요. "신뢰"를 누르고 비밀번호를 입력하세요.
+3. Altcon이 장치와 페어링됩니다. 다른 메시지가 표시되면 '신뢰'를 선택하고 비밀번호를 다시 입력합니다.
+4. 기기에서 다음을 수행합니다:
+    * Apple ID의 이메일로 "개발자 앱"을 승인합니다(설정의 "일반", "VPN 및 장치 관리"에서 찾을 수 있습니다).
+    * 설정 앱을 엽니다.
+    * '개인정보 보호 및 보안' 섹션으로 이동합니다.
+    * 하단의 '개발자 모드'를 켭니다.
+5. SideStore를 열고 SideStore가 페어링 파일을 요청할 때까지 메시지가 표시되면 "허용"을 선택합니다. 이제 앱을 종료합니다.
 
 완료되면 [설치 후 지침](/docs/installation/post-install)을 따르세요.
