@@ -47,7 +47,7 @@ This means that you must enter your Apple ID information in the settings tab to 
 
 This means that SideStore could not locate the file to download or install, most likely because the file does not exist at the provided URL.
 
-#### (1006) AltStore could not determine this device's UDID.
+#### (1006) SideStore could not determine this device's UDID.
 
 `SideStore.OperationError 1006`
 
@@ -77,35 +77,17 @@ This means that you have reached the maximum amount of App IDs available. Apps I
 
 This means an internal error occured and SideStore is unable to fetch changes for any AltSources you've added. Please try again and check our [Troubleshooting Guide](./) for additional help. You can reach out to us directly at our Discord server if the issue persists.
 
-#### (1011) AltStore was denied permission to launch the app.
+#### (1011) SideStore was denied permission to launch the app.
 
 `SideStore.OperationError 1011`
 
 This means SideStore couldn't launch a sideloaded app because you tapped "Cancel" on the "SideStore wants to open \[app]" alert, or because you still need to trust your Apple ID in Settings.
 
-#### (1012) AltStore's shared app group could not be accessed.
+#### (1012) SideStore's shared app group could not be accessed.
 
 `SideStore.OperationError 1012`
 
 This means SideStore was not able to access the directory where app backups are stored. Make sure you're installing SideStore with the latest AltServer version and not via another method.
-
-#### (1200) AltServer could not be found.
-
-`AltStore.OperationError`
-
-This means that SideStore is having trouble discovering AltServer on your local network. Make sure you're connected to the same Wi-Fi network as your PC/Mac running AltServer, or try connecting your device to your computer via USB. (You shouldn't recieve this error as SideStore functions differently that AltStore)
-
-#### (1201) A connection to AltServer could not be established.
-
-`AltStore.OperationError`
-
-This means that SideStore is having trouble connecting to AltServer on your PC/Mac. Make sure you have Wi-Fi sync enabled, and otherwise you may try plugging in your device directly via USB.
-
-#### (1202) The connection to AltServer was dropped.
-
-`AltStore.OperationError`
-
-This means that SideStore's connection to AltServer on your PC/Mac was interrupted. Make sure you have Wi-Fi sync enabled, and otherwise you may try plugging in your device directly via USB.
 
 #### (1403) Unable to connect to SideJITServer.
 
@@ -133,7 +115,7 @@ You do not appear to be connected to Wi-Fi and/or StosVPN. SideStore cannot refr
 
 This means you have an invalid pairing file. Follow the steps to regenerate.
 
-More error codes coming...
+More coming, open to contributions...
 
 ## AltServer / SideServer Errors
 
