@@ -10,11 +10,12 @@ Before you start, make sure to have all steps completed found in the [prerequisi
 2. Plug in your iDevice. If you recieve a prompt, select "trust" and enter your passcode.
 
 3. Now, run Altcon with Docker or Podman using the following commands:
-Docker:
+
+Docker setup:
 ```bash
 docker run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd ghcr.io/sidestore/altcon
 ```
-Podman:
+Podman setup:
 ```bash
 docker run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd ghcr.io/sidestore/altcon
 ```
