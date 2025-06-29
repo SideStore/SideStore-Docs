@@ -10,7 +10,9 @@ This is a list of frequently asked questions for SideStore. This has a list of c
 
 ## What is SideStore?
 
-SideStore is an iOS application that allows you to sideload apps onto your iOS device using only your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically "refresh" your apps in the background, to keep their normal 7-day development period from expiring. SideStore's goal is to provide an untethered sideloading experience. It's a community driven fork of AltStore, and has already implemented some of the community's most-requested features. You only need a computer once during installation.
+SideStore is an iOS application that allows you to sideload apps onto your iOS device using only your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a [specially designed VPN](https://github.com/jkcoxson/em_proxy) in order to trick iOS into installing them. SideStore will periodically "refresh" your apps in the background, to keep their normal 7-day development period from expiring.
+
+SideStore's goal is to provide an untethered sideloading experience. It's a community driven fork of [AltStore](https://github.com/rileytestut/AltStore), and has already implemented some of the community's most-requested features. You only need a computer once during installation.
 
 (Contributions are welcome! 🙂)
 
@@ -28,9 +30,9 @@ SideStore currently does not have a release date, but is in a public beta state.
 
 Yes you can, just like AltStore!
 
-### Does this have AltStore beta features?
+### Does SideStore have AltStore (beta) features?
 
-We do have AltStore beta features, but it isn't always latest. We try to keep up to date, or implement them in our own way if it's necessary.
+We do implement AltStore (beta) features, but they aren't always latest. We try to keep up to date, or implement them in our own way if it's necessary.
 
 ### Will having the VPN on drain my battery?
 
@@ -82,7 +84,7 @@ This was a test update to see if there were problems between major versions, and
 
 ### Why do my JIT based apps not automatically activate JIT?
 
-We currently don’t have an automatic JIT activation method, and if we do you would need the SideStore VPN on.
+We currently don’t have an automatic JIT activation method, and if we did you would need StosVPN on.
 
 ### Does SideStore have an iPadOS UI?
 
@@ -100,17 +102,17 @@ Older Anisette servers that are used by many users are known to cause locking of
 
 This is a login issue with the Anisette server. There isn’t really much of any info about it other than changing Anisette servers sometimes helps, or you can keep trying to login until it does.
 
-### Can I transfer my AltStore/Sideloady apps?
+### Can I transfer my AltStore/Sideloadly apps?
 
-Yes, just don’t remove the original app on your device. Go into SideStore and sideload the same or updated IPA, and it should be added to your list of apps within SideStore with your data still intact.
+Yes, just don’t remove the original app on your device. Go into SideStore and sideload the same or an updated IPA of the app, and it should be added to your list of apps within SideStore with your data still intact.
 
 ### Why do I need to refresh SideStore first thing after login?
 
 This is because AltServer or other programs sideload SideStore with their own app groupID, while we use our own. Refreshing SideStore changes it to ours, which makes apps disappear as their groupIDs are not updated. It’s best to not sideload anything before refreshing SideStore on a clean install.
 
-### Can I do OTA updates?
+### Does SideStore support OTA updates?
 
-Yep! Just click the update button!
+Yep! Just click the update button when it appears!
 
 ### I want to test a SideStore version, and I want my data to stay when switching to a test version. Do I remove my app or sideload the test version via SideStore?
 
@@ -126,7 +128,7 @@ Make sure your pairing file's extension ends with `.mobiledevicepairing` or `.pl
 
 ### Cannot start DebugServer
 
-There is times when the Debugserver doesn't work. However, there is a fix you can try.
+There is times when the Debugserver doesn't work. However, there is a fix you can try:
 
 **Make a new pairing file**
 

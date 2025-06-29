@@ -9,12 +9,17 @@ To do this, you need to:
 
 1. Connect to StosVPN.
 2. Open SideStore.
-3. If you haven't already, select your pairing file.
+3. If you haven't already, import/select your pairing file.
 4. Sign in with your Apple ID.
 5. Navigate to "My Apps".
-6. Tap the "x DAYS" button to the right of SideStore, (x is the number of days until an app's expiry). A prompt asking about your signing certificate should appear, tap "Refresh Now". If a prompt appears asking you if you want to revoke a certificate from AltStore, tap "yes".
-    * If successful, this will open your device to your home screen, accompanied by a notification from SideStore documenting this behavior.
+6. Tap the "x DAYS" button to the right of SideStore, (x is the number of days until an app's expiry).
+7. A prompt asking to create a new signing certificate should appear, tap "Refresh Now".
+8. If a prompt appears asking if you want to revoke a certificate from AltStore, tap "Yes".
 
-If SideStore is not refreshed, a bug causing early expiry will require you to reinstall SideStore. There is a plan to have this done automatically, but for now it needs to be done manually.
+If this process is successful, SideStore will open your device to your home screen, accompanied by a notification.
 
-If you reinstall SideStore or install it on another device under the same Apple ID using AltServer, your certificate will be revoked and you will need to refresh it manually again as shown above (on all devices, if applicable).
+If SideStore is not refreshed like this immediately, a bug causing early expiry will require you to reinstall SideStore using AltServer. There is a plan to have this done automatically, but for now it needs to be done manually.
+
+If you reinstall SideStore using AltServer, your certificate will be revoked and you will need to manually refresh it again. 
+
+If you wish to install SideStore on another device using the same Apple ID, follow [these steps](https://github.com/SideStore/SideStore/pull/1008#issue-3138680291).
