@@ -28,11 +28,11 @@ Connection issues with the minimuxer service.
 4. Restart StosVPN
 5. Generate and import a new pairing file using idevice pair. See our [Pairing File instructions](/docs/installation/pairing-file) for details.
 
-### SideStore Hangs Halfway Through Installation
+### SideStore Hangs Partway Through Installation
 #### Cause
-Cache issues.
+Cache or protocol issues.
 #### Resolution
-1. Restart SideStore
+1. Update SideStore, if applicable. Otherwise, just restart.
 2. Clear Cache
 3. Change Anisette Server
 4. In servers- reset adi.pb, then sign out of SideStore and sign back in.
@@ -51,7 +51,7 @@ If the above doesn't work, do the following:
 
 1. Delete SideStore and all apps that you have installed from SideStore.
 2. Reinstall SideStore.
-3. Select pairing file and login. (It will give you a prompt to refresh SideStore, select no)
+3. Import your pairing file and login. (It will give you a prompt to refresh SideStore, select no)
 4. Install the `sidestore.ipa` file to your device.
 5. Import the `sidestore.ipa` file into SideStore like how you would install any other IPA.
 6. This will allow Sidestore to do a clean refresh, and hopefully fix the issue.
