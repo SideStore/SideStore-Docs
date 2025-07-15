@@ -93,7 +93,7 @@ This means SideStore was not able to access the directory where app backups are 
 
 `SideStore.OperationError 1403`
 
-Please make sure you are on the same Wi-Fi as your computer running SideJITServer and that your Firewall has been set appropriately.
+Please make sure you are on the same Wi-Fi as your computer running SideJITServer and that your Firewall has been set appropriately. Alternatively, you can use the built in "Enable JIT" option to enable JIT on iOS 17.4-18.6 with StosVPN enabled and Wi-Fi or Airplane Mode.
 
 #### (1412) Unable to connect to a V3 anisette server.
 
@@ -109,11 +109,17 @@ You do not appear to be connected to Wi-Fi and/or StosVPN. SideStore cannot refr
 
 ## Minimuxer Errors
 
+#### (4) AFC was unable to manage files on the device.
+
+`minimuxer.MinimuxerError 4`
+
+This means you are attempting to enable JIT on an unsupported iOS version. SideStore only supports enabling JIT on iOS 17.4-18.6.
+
 #### (27) AFC was unable to manage files on the device.
 
 `minimuxer.MinimuxerError 27`
 
-This means you have an invalid pairing file. Follow the steps to regenerate.
+This means you have an invalid pairing file. Follow the steps in these docs to regenerate it.
 
 More coming, open to contributions...
 
@@ -476,8 +482,3 @@ Updated information coming soon
 
 This means that an error occurred while writing files to disk. Make sure your phone and PC both have plenty of available disk space and try again.
 
-#### (1) AltJIT failed with error code 1 (iOS 17)
-
-`AltServer.ProcessError`
-
-If you are trying to enable JIT on an iOS 17 device, you may see this error. Make sure to install all dependencies and keep your device connected with the app open until JIT has successfully been enabled.
