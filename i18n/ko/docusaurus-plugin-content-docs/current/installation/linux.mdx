@@ -6,14 +6,15 @@ sidebar_position: 5
 
 Linux에 SideStore(또는 다른 IPA)를 설치하려면, Docker가 설치되어 있는지 확인하세요. 시작하기 전에 StosVPN 및 기타 [필수 요구 사항](/docs/installation/prerequisites)이 완료되었는지 확인하세요!
 
-1. 다음 명령어들은 usbmuxd와 docker를 설치합니다. 이 명령어들은 일반 사용자(non-root user)로 실행하며, 한 번만 실행하면 됩니다.
+1. 컴퓨터에 usbmuxd와 Docker 또는 Podman이 설치되어 있는지 확인하세요.
+2. iDevice를 연결하세요. 경고 메시지가 표시되면 “신뢰”를 선택하고 비밀번호를 입력하세요.
+
+3. 다음 명령어를 사용하여 Docker 또는 Podman으로 Altcon을 실행하세요:
+Docker:
 ```bash
-sudo apt install -y usbmuxd
-curl -fsSL https://test.docker.com -o test-docker.sh
-sudo sh test-docker.sh
-sudo usermod -aG docker $USER
+docker run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd ghcr.io/sidestore/altcon
 ```
-2. 이제 Docker를 사용하여 Altcon을 실행하세요. (이 명령은 SideStore를 설치할 때마다 매번 실행해야 합니다.)
+Podman:
 ```bash
 docker run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd ghcr.io/sidestore/altcon
 ```
