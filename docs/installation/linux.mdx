@@ -6,16 +6,18 @@ sidebar_position: 4
 
 Before you start, make sure to have all steps completed found in the [prerequisites](prerequisites)!
 
-1. The following commands will install usbmuxd and docker. Run these as a non-root user on your machine and you will only have to do this once.
-```bash
-sudo apt install -y usbmuxd
-curl -fsSL https://test.docker.com -o test-docker.sh
-sudo sh test-docker.sh
-sudo usermod -aG docker $USER
-```
-2. Restart your shell to ensure changes are made. Now, plug in your iDevice. If you recieve a prompt, select "trust" and enter your passcode. Now, run Altcon with Docker using this code (must be run every time to install SideStore):
+1. Make sure you have usbmuxd and either Docker or Podman installed on your machine.
+2. Plug in your iDevice. If you recieve a prompt, select "trust" and enter your passcode.
+
+3. Now, run Altcon with Docker or Podman using the following commands (may require `sudo`):
+
+Docker setup:
 ```bash
 docker run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd ghcr.io/sidestore/altcon
+```
+Podman setup:
+```bash
+podman run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd ghcr.io/sidestore/altcon
 ```
 3. Altcon will pair with your device. When you recieve another prompt, select "trust" and enter your passcode again.
 4. On your secondary device, do the following:

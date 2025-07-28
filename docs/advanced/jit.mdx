@@ -4,20 +4,22 @@ description: A tutorial on how to enable Just-in-Time (JIT) Compilation for apps
 ---
 
 :::note
+iOS 26 has broken JIT once again. A fix will be released to StikDebug after the iPhone 17 releases.
 
 There are many methods to enabling JIT, such as AltJIT, SideJITServer, and more. This tutorial will cover the use of StikDebug (formerly StikJIT), as it is the method we currently recommend. For more information, consult the [official StikDebug pairing guide](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md). 
 
-As an alternative, SideStore 0.6.2-nightly.2025.04.15 also includes updates to minimuxer, allowing built-in JIT functionality similar to StikDebug. To use this, simply ensure you are connected to StosVPN with either Wi-Fi enabled/connected or with mobile data and Wi-Fi disabled (Airplane Mode).
+As an alternative, SideStore 0.6.2 includes updates to minimuxer, allowing built-in JIT functionality similar to StikDebug. To use this, simply ensure you are connected to StosVPN with either Wi-Fi connected or Airplane Mode enabled, then navigate to "My Apps," longpress the app you wish to enable JIT for, and tap "enable JIT".
 :::
 
 ## Prerequisites
-* An iDevice on iOS/iPadOS 17.4 and up to iOS/iPadOS 18.5, excluding 18.4b1. If you are on 17.0-17.3, you must use an alternative such as [SideJITServer](https://github.com/nythepegasus/SideJITServer). Versions newer than 18.5 are currently unsupported. 
-* At least 1 free app slot (if sideloading).
+* An iDevice running iOS/iPadOS 17.4-18.6, excluding 18.4b1. If you are on 17.0-17.3, you must use an alternative such as [SideJITServer](https://github.com/nythepegasus/SideJITServer). As stated above, versions newer than 18.6 are currently unsupported. 
 
-## StikDebug installation with Apple App Store (Doesn't require an app slot)
+## StikDebug installation with Apple App Store
 
 1. **Install StikDebug**
-   Install StikDebug from the [Apple App Store](https://apps.apple.com/us/app/stikdebug/id6744045754). Something nice- the VPN present in StikDebug is similar to the one used in SideStore, meaning you use it to install and refresh apps as well.
+   Install StikDebug from the [Apple App Store](https://apps.apple.com/us/app/stikdebug/id6744045754).
+:::note Something nice- the VPN present in StikDebug is similar to the one used in SideStore, meaning you use it to install and refresh apps in SideStore as well, similar to StosVPN.
+:::
 
 2. **Installation procedures:**
    Follow the standard installation procedures in the usage guide below.
@@ -25,19 +27,16 @@ As an alternative, SideStore 0.6.2-nightly.2025.04.15 also includes updates to m
 
 ### Standard installation procedures:
 
-1. **Enable VPN:**  
-   Start by activating StosVPN (if sideloading StikDebug) or the built-in VPN in the official StikDebug.
+1. **Upload the Pairing File:**  
+   Open and close StikDebug to build the app's folder in files, then import the same **pairing file** you use for SideStore using idevice pair. For more information on this process, see [here](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md).
 
-2. **Upload the Pairing File:**  
-   Import the same **pairing file** you use for SideStore using iDevicePair. For more information on obtaining this pairing file, see [here](/docs/installation/pairing-file).
+2. **Mount the DDI:**  
+   Open StikDebug with Wi-Fi and the VPN connected and the pairing file imported, then close it and reopen it. This mounts the DDI and must be performed every time you restart your idevice.
 
 ## To enable JIT:
 
 1. **Enable VPN:**  
-   Start by activating the built-in VPN in StikDebug.
+   Start by opening StikDebug on Wi-Fi or with cellular data enabled to activate the built-in VPN. Now, if using cellular data, enable Airplane Mode and reopen the app with the VPN still enabled.
    
 2. **Activate JIT:**  
-   Select the “Enable JIT” button and select an app from the list (must be sideloaded with proper entitlements to appear in the list) to attach a debugger/activate JIT functionality.
-
-### Offline JIT Enabling
-To enable JIT offline, activate StosVPN (if sideloading) or the StikDebug VPN. Then, turn both Wi-Fi and Mobile Data OFF when you launch StikDebug (use Airplane Mode). You can then enable JIT as normal.
+   Select the “Connect by App” button and select an app from the list (must be sideloaded with proper entitlements to appear in the list) to attach a debugger and activate JIT functionality.
