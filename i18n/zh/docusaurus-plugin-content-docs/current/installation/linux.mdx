@@ -1,21 +1,30 @@
 ---
-title: Linux操作指南
-description: 使用Linux安装SideStore的操作指南
-sidebar_position: 5
+title: Linux 安装指引
+description: 使用Linux安装Sidestore的操作指引
+sidebar_position: 4
 ---
 
-想在Linux上安装SideStore（或者其他的IPA文件），请确保您已安装Docker。
+在开始之前，请确保您已完成[先决条件](prerequisites)中的所有步骤！
 
-1. 使用Docker启动altcon
+1.确保你的机器上安装了usbmuxd和Docker或Podman。
+2.插入您的iDevice。如果您收到了弹窗提示，请选择“信任”并输入密码。
+
+3.现在，通过以下命令（可能需要`sudo `）以使用Docker或Podman运行Altcon：
+
+Docker 安装:
 ```bash
-docker run --rm -it -e ALTSERVER_ANISETTE_SERVER="https://ani.sidestore.io/" -v ${PWD}/:/mnt/ -v /var/run:/var/run ghcr.io/sidestore/altcon
+docker run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd ghcr.io/sidestore/altcon
 ```
-
-您也可以使用Podman运行altcon
+Podman 安装:
 ```bash
-podman run --privileged --rm -it -e ALTSERVER_ANISETTE_SERVER="https://ani.sidestore.io/" -v ${PWD}/:/mnt/ -v /var/run:/var/run ghcr.io/sidestore/altcon
+podman run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd ghcr.io/sidestore/altcon
 ```
+4. Altcon将与您的设备配对。当您收到另一个弹窗提示时，选择“信任”并再次输入密码。
+5. 在您的辅助设备上，执行以下操作：
+    * 信任您的Apple ID的邮箱的“开发者APP”（您可以在“设置”中的“通用”选项卡下，然后“VPN和设备管理”下找到）。
+    * 打开“设置”应用程序。
+    * 导航到“隐私和安全”部分。
+    * 打开底部的“开发人员模式”。
+6. 打开SideStore，在SideStore请求配对文件的时候点击“允许”。然后退出应用。
 
-Altcon会开始和您的设备进行配对，如果您并未连接您的设备的话，请您连接您的设备。然后在设备上点击“信任”并输入您的设备密码。
-
-当您完成以上操作的时候，请前往[安装后说明页面](post-install)查看后续操作的指示。
+现在，生成您的[配对文件](pairing-file)。
