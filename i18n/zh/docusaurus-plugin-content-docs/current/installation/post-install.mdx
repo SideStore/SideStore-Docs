@@ -1,17 +1,25 @@
 ---
 title: 安装后说明
-description: 马上结束！
+description: 即将完成，就差最后几步！
 sidebar_position: 6
 ---
-安装SideStore的最后一步，是刷新SideStore本身。
+安装SideStore的最后一步是在SideStore内刷新SideStore本身。
 
 为此，您需要：
 
 1. 连接到StosVPN。
 2. 打开SideStore。
-3. 选择配对文件（如果您没有选择过的话）。
-4. 点击“我的应用（My Apps）”。
-5. 点击“x日（x DAYS）”按钮，x是指软件到期前的天数。
-    *如果成功了，将会弹出一个空白的Safari选项卡，或跳转到您的主屏幕。同时您也会收到一个通知以提醒您切换到主屏幕。
+3. 如果您没有选择过配对文件的话，请先导入/选择配对文件。
+4. 使用您的Apple ID登录。 
+5. 导航到“我的应用(My Apps)”。 
+6. 点击SideStore右侧的“x 天(X DAYS)”按钮（x是应用程序到期前的天数）。 
+7. 应出现一个要求创建新的签名证书的弹窗提示，点击“立即刷新”。 
+8. 如果出现了询问您是否要吊销AltStore的证书的弹窗，请点击“是”。
 
-如果SideStore没有刷新，可能是一个导致提前到期的bug出现了，这导致您需要重新安装SideStore。软件有一个自动化项目是是自动完成重新安装，但这种情况下您需要手动完成。
+如果进程成功，SideStore将退出并返回到主界面，同时带有通知。
+
+如果SideStore没有像这样立即刷新，那是由于一个bug导致提前到期的问题，您需要使用AltServer重新安装SideStore。有一个计划是自动完成这项工作，但目前需要手动完成。
+
+如果您使用AltServer重新安装SideStore，您的证书将被吊销，您需要再次手动刷新。 
+
+如果您希望使用相同的Apple ID在另一台设备上安装SideStore，请按照[这些步骤]进行操作(https://github.com/SideStore/SideStore/pull/1008#issue-3138680291).
