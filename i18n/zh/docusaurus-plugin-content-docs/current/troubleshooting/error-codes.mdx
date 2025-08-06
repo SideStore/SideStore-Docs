@@ -5,7 +5,7 @@ description: Error codes found in SideStore.
 
 :::warning
 
-This page is currently not fully accurate to how SideStore works, as this is based on AltStore's Error Codes page. Some info is still correct, but please don't rely on this word for word. Make sure to ask in our [Discord server](https://discord.com/invite/sidestore) for help if you need it.
+This page is currently not fully accurate to how SideStore works, as this is based on AltStore's Error Codes page. Some info is still correct, but please don't rely on this word for word. Make sure to ask in our [Discord server](https://discord.gg/sidestore-949183273383395328) for help if you need it.
 
 :::
 
@@ -13,97 +13,115 @@ This page is currently not fully accurate to how SideStore works, as this is bas
 
 #### (1000) An unknown error occurred.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1000`
 
 This means that SideStore ran into an unexpected error. Please check our [Troubleshooting Guide](./), and you can reach out to us directly if the issue persists.
 
 #### (1001) The operation returned an unknown result.
 
+`SideStore.OperationError 1001`
+
 This means that SideStore ran into an unexpected error. Please check our [Troubleshooting Guide](./), and you can reach out to us directly if the issue persists.
 
 #### (1002) The operation was cancelled.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1002`
 
 This means that the performed action was stopped. Please try again.
 
 #### (1003) The operation timed out.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1003`
 
 This means that SideStore ran into problems trying to complete the requested action. Please try again and check our [Troubleshooting Guide](./) for additional help. You can reach out to us directly if the issue persists.
 
 #### (1004) You are not signed in.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1004`
 
 This means that you must enter your Apple ID information in the settings tab to do the requested action.
 
 #### (1005) The app could not be found.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1005`
 
-This means that AltStore could not locate the file to download or install, most likely because the file does not exist at the provided URL.
+This means that SideStore could not locate the file to download or install, most likely because the file does not exist at the provided URL.
 
-#### (1006) AltStore could not determine this device's UDID.
+#### (1006) SideStore could not determine this device's UDID.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1006`
 
 This means that SideStore couldn't read the device UDID embedded by AltServer when installing SideStore. Make sure you're installing SideStore with the latest AltServer version and not via another method.
 
 #### (1007) This app is in an invalid format.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1007`
 
 This means the app you're trying to install is not a standard .ipa. Try downloading the app from another location.
 
 #### (1008) Invalid parameters.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1008`
 
-This means an internal error occured and SideStore couldn't provide the necessary information to perform the requested task. Please try again and check our [Troubleshooting Guide](./) for additional help. You can reach out to us directly if the issue persists.
+This means an internal error occured and SideStore couldn't provide the necessary information to perform the requested task. Please try again and check our [Troubleshooting Guide](./) for additional help. You can reach out to us directly if the issue persists at our Discord server.
 
 #### (1009) You cannot register more than 10 App IDs within a 7-day period.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1009`
 
-This means that you have reached the maximum amount of App IDs available. Please check the App IDs in the My Apps tab to see when they will expire.
+This means that you have reached the maximum amount of App IDs available. Apps IDs are not able to be deleted manually. App IDs renew if the app has exists 7 days after when it was first installed or renewed last, and expire if they have been deleted since. Please check the App IDs in the My Apps tab to see when they will expire.
 
 #### (1010) There are no AltStore sources.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1010`
 
-This means an internal error occured and SideStore is unable to fetch changes for any Sources you've added. Please try again and check our [Troubleshooting Guide](./) for additional help. You can reach out to us directly if the issue persists.
+This means an internal error occured and SideStore is unable to fetch changes for any AltSources you've added. Please try again and check our [Troubleshooting Guide](./) for additional help. You can reach out to us directly at our Discord server if the issue persists.
 
-#### (1011) AltStore was denied permission to launch the app.
+#### (1011) SideStore was denied permission to launch the app.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1011`
 
-This means SideStore couldn't launch a sideloaded app because you tapped "Cancel" on the "AltStore wants to open \[app]" alert, or because you still need to trust your Apple ID in Settings.
+This means SideStore couldn't launch a sideloaded app because you tapped "Cancel" on the "SideStore wants to open \[app]" alert, or because you still need to trust your Apple ID in Settings.
 
-#### (1012) AltStore's shared app group could not be accessed.
+#### (1012) SideStore's shared app group could not be accessed.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1012`
 
 This means SideStore was not able to access the directory where app backups are stored. Make sure you're installing SideStore with the latest AltServer version and not via another method.
 
-#### (1200) AltServer could not be found.
+#### (1403) Unable to connect to SideJITServer.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1403`
 
-This means that SideStore is having trouble discovering AltServer on your local network. Make sure you're connected to the same Wi-Fi network as your PC/Mac running AltServer, or try connecting your device to your computer via USB.
+Please make sure you are on the same Wi-Fi as your computer running SideJITServer and that your Firewall has been set appropriately. Alternatively, you can use the built in "Enable JIT" option to enable JIT on iOS 17.4-18.6 with StosVPN enabled and Wi-Fi or Airplane Mode.
 
-#### (1201) A connection to AltServer could not be established.
+#### (1412) Unable to connect to a V3 anisette server.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1412`
 
-This means that SideStore is having trouble connecting to AltServer on your PC/Mac. Make sure you have Wi-Fi sync enabled, and otherwise you may try plugging in your device directly via USB.
+Your device was unable to recieve data from a V3 anisette server. Please try again, or switch anisette servers.
 
-#### (1202) The connection to AltServer was dropped.
+#### (1414) No Wi-Fi/StosVPN.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1414`
 
-This means that SideStore's connection to AltServer on your PC/Mac was interrupted. Make sure you have Wi-Fi sync enabled, and otherwise you may try plugging in your device directly via USB.
+You do not appear to be connected to Wi-Fi and/or StosVPN. SideStore cannot refresh or install applications without Wi-Fi and StosVPN, ensure both are enabled. If that doesn't work, try regenerating your pairing file.
+
+## Minimuxer Errors
+
+#### (4) AFC was unable to manage files on the device.
+
+`minimuxer.MinimuxerError 4`
+
+This means you are attempting to enable JIT on an unsupported iOS version. SideStore only supports enabling JIT on iOS 17.4-18.6.
+
+#### (27) AFC was unable to manage files on the device.
+
+`minimuxer.MinimuxerError 27`
+
+This means you have an invalid pairing file. Follow the steps in these docs to regenerate it.
+
+More coming, open to contributions...
 
 ## AltServer / SideServer Errors
 
@@ -464,8 +482,3 @@ Updated information coming soon
 
 This means that an error occurred while writing files to disk. Make sure your phone and PC both have plenty of available disk space and try again.
 
-#### (1) AltJIT failed with error code 1 (iOS 17)
-
-`AltServer.ProcessError`
-
-If you are trying to enable JIT on an iOS 17 device, you may see this error. Make sure to install all dependencies and keep your device connected with the app open until JIT has successfully been enabled.
