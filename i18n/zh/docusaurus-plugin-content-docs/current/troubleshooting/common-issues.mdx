@@ -1,61 +1,58 @@
 ---
-title: Common Issues
-description: Common issues found in SideStore.
+title: 常见问题
+description: 在使用SideStore的过程中出现的常见问题
 ---
 
 :::warning
 
-This page is currently a work in progress. The information provided should be accurate, but please refer to our [Discord server](https://discord.com/invite/sidestore) for assistance if needed.
+此页面目前还在完善过程中。页面提供的信息应该是准确的，但如如果需要帮助，请前往我们的[Discord服务器](https://discord.gg/sidestore-949183273383395328)进行提问。
 
 :::
 
-## Common Issues with SideStore
+## SideStore的常见问题
 
-### AFC Connection Failure
-#### Cause
-Connection issues or an invalid pairing file.
+### AFC连接失败
+#### 原因
+连接问题或是配对文件不可用。
+#### 解决方案
+1. 尝试重新连接
+2. 使用idevice pair生成并导入新的配对文件。详情请参考[配对文件操作指引](../installation/pairing-file)
+
+### 没有Wi-Fi或VPN的连接
+#### 原因
+minimuxer服务的连接出现了问题。
+#### 解决方案
+1. 如果您正在使用WireGuard，请更换到StosVPN
+2. 关闭任何的DNS阻止服务器
+3. 再试一次（多点点总会有用的）
+4. 重新启动SideStore
+5. 重新启动StosVPN
+6. 使用idevice pair生成并导入新的配对文件。详情请参考[配对文件操作指引](../installation/pairing-file)
+
+### SideStore在安装过程中挂起
+#### 原因
+缓存或是协议出了问题。
+#### 解决方案
+1. 如果您并未更新SideStore的话，请更新SideStore，否则只需重启。
+2. 清理缓存
+3. 更换Anisette服务器
+4. 在设置-Anisette服务器-中重置adi.pb，然后登出，并重新登录SideStore
+5. 重启设备
+6. 重新生成配对文件
+7. 使用AltServer重新安装SideStore 
+
+### 无法启动SideStore
+#### 原因
+存在多种可能的原因。
 #### Resolution
-1. Attempt to reconnect
-2. Generate a new pairing file using JitterbugPair and import it via the settings menu. See our [Pairing File instructions](/docs/installation/pairing-file) for details.
+1. 确保您已通过AltServer安装了SideStore
+2. 重新安装SideStore
 
-### No WiFi or VPN Connection
-#### Cause
-Connection issues with the minimuxer service.
-#### Resolution
-1. If using WireGuard, switch to StosVPN
-2. Try again (spamming the button usually helps)
-3. Restart SideStore
-4. Restart StosVPN
-5. Generate a new pairing file using JitterbugPair and import it via the settings menu. See our [Pairing File instructions](/docs/installation/pairing-file) for details.
+如果以上方案均不可用，请按照以下步骤操作：
 
-### Sidestore Hangs Halfway Through Installation
-#### Cause
-Cache issues.
-#### Resolution
-1. Restart SideStore
-2. Clear Cache
-3. Change Anisette Server
-4. Reset adi.pb
-5. Sign out from SideStore and sign back in
-6. Use WireGuard
-7. Restart device
-8. Regenerate pairing file
-9. Reinstall SideStore
-
-### Unable to Launch SideStore
-#### Cause
-Multiple possible causes.
-#### Resolution
-1. Make sure you installed SideStore through Altserver.
-2. Reinstall SideStore
-
-If the above doesnt work, do the following:
-
-1. Delete SideStore and all apps that you have installed from SideStore.
-2. Reinstall SideStore.
-3. Select pairing file and login. (It will give you a promt to refresh SideStore, select no)
-4. Install the Sidestore.ipa file to your device.
-5. Import the Sidestore.ipa file into Sidestore like how you would install any other app.
-6. This will allow Sidestore to do a clean refresh, and hopefully fix the issue.
-
-
+1. 删除SideStore以及您在SideStore中安装的所有应用
+2. 重新安装SideStore
+3. 导入您的配对文件并登录。（接下来会提示您是否刷新SideStore，选择否）
+4. 将`sidestore.ipa`安装到您的设备上
+5. 将`sidestore.ipa`文件导入到SideStore，就像您安装其他IPA文件一样
+6. 这会允许Sidestore进行一次全新的安装，希望这会解决您的问题

@@ -6,11 +6,13 @@ sidebar_position: 3
 
 # 常见问题（FAQ）
 
-这是SideStore的常见问题列表。也是我们在开发SideStore时遇到的常见问题的列表，包含了为不同类型的用户，或遇到问题的用户回答的一些问题。
+这里是SideStore的常见问题列表。也是我们在开发SideStore时遇到的常见问题的列表，包含了为不同类型的用户，或遇到问题的用户回答的一些问题。
 
 ## 什么是SideStore？
 
-SideStore是一款允许在仅使用您的Apple ID的情况下在您的iOS设备上侧载应用的iOS应用。SideStore使用您的个人开发证书对应用进行重新签名，并使用专门设计的VPN来诱骗iOS安装它们。SideStore将定期在后台“刷新”您的应用程序，以防止其正常的7天开发期到期。SideStore的目标是提供不受限制的侧载体验。它是AltStore的一个由社区驱动的分支，并且已经实现了社区最受欢迎的一些功能。在安装过程中您只需要一台电脑。 
+SideStore是一款允许在仅使用您的Apple ID的情况下在您的iOS设备上侧载应用的iOS应用。SideStore使用您的个人开发证书对应用进行重新签名，并使用[专门设计的VPN](https://github.com/jkcoxson/em_proxy)来诱骗iOS安装它们。SideStore将定期在后台“刷新”您的应用程序，以防止其正常的7天开发期到期。
+
+SideStore的目标是提供不受限制的侧载体验。它是[AltStore](https://github.com/rileytestut/AltStore)的一个由社区驱动的分支，并且已经实现了社区最受欢迎的一些功能。在安装过程中您只需要一台电脑。 
 
 (我们非常欢迎大家的贡献! 🙂)
 
@@ -30,7 +32,7 @@ SideStore目前并未有明确的正式版发布日期，但我们处于公测�
 
 ### 这款工具有AltStore beta的功能吗？
 
-我们确实有AltStore beta的功能，但并不总能保持是最新的。我们会尽可能保持更新，或者在必要时以自己的方式实现对应的功能。
+我们确实有AltStore beta的功能，但并不总能保持最新。我们会尽可能保持更新，或者在必要时以自己的方式实现对应的功能。
 
 ### 打开VPN会额外消耗我的电池吗？
 
@@ -39,10 +41,6 @@ SideStore目前并未有明确的正式版发布日期，但我们处于公测�
 ### 这个VPN会跟踪我吗？
 
 并不会，因为没有使用远程的服务器。
-
-### 在打开VPN的时候我无法连接到互联网了！
-
-请确保您的Wi-Fi和WireGuard配置中没有设置备用DNS。如果您确认DNS IP地址有效，请尝试将其从Wi-Fi配置中删除，并将其添加到WireGuard配置的DNS中。
 
 ### 更新SideStore的时候在快要结束的位置卡住了
 
@@ -54,7 +52,7 @@ SideStore目前并未有明确的正式版发布日期，但我们处于公测�
 
 要取消此限制（并获得365天的软件可用时间），您可以支付99美元/年的费用获得一个付费的Apple Developer帐户。
 
-或者，您也可以使用目前的[每夜构建版本](https://github.com/SideStore/SideStore/releases/tag/nightly)（截至撰写本文时的0.5.9-2024.10.23.1+1e969a0版本），它利用了SparseRestore漏洞绕过了对于3个应用的限制。目前，这只适用于低于18 dev beta 5和18.0.1的iOS版本。
+或者，在iOS 18 db5/18.0.1及以下版本上，您可以利用SparseRestore漏洞绕过3个应用的限制。
 
 使用教程可以在[这里](advanced/sparserestore)找到。
 
@@ -94,11 +92,11 @@ SideStore目前并未有明确的正式版发布日期，但我们处于公测�
 
 ### 我看到有一台iMac或者MacBook Pro被添加进我的账号上了。它安全吗，并且它是一台真正的Mac吗？
 
-这些Mac不是真实的，它们是被Anisette server自动生成以辅助登录用的。也没有任何私密数据被发送到Anisette server，这些服务器提供的数据仅被用于SideStore本身。
+这些Mac设备不是真实的，它们是被Anisette服务器自动生成以辅助登录用的。也没有任何私密数据被发送到Anisette服务器，这些服务器提供的数据仅被用于SideStore本身。
 
 ### 当我使用SideStore的时候为什么我的账户被锁定了？
 
-已知，被太多用户使用的，旧的Anisette server会导致Apple ID被锁定的问题。请使用官方提供的Anisette server之一，或者自部署您自己的[anisette-v3-server](advanced/anisette)。
+已知，被太多用户使用的，旧的Anisette服务器会导致Apple ID被锁定的问题。请使用官方提供的Anisette服务器之一，或者自部署您自己的[anisette v3服务器](advanced/anisette)。
 
 ### 为什么我看到了错误代码-36607？
 
@@ -124,7 +122,7 @@ SideStore目前并未有明确的正式版发布日期，但我们处于公测�
 
 不要恐慌！重新侧载，而不是移除您的应用，您的数据应该是没有问题的。但不幸的是，您选择停用的应用程序可能已经消失了，要确认这一点的话，只需刷新SideStore，并看看它们是否会回来。
 
-### 我不能选择任意格式的配对文件
+### 我不能以任意格式选择配对文件
 
 请确认您的配对文件的文件扩展名是以`.mobiledevicepairing`或者`.plist`结尾的。如果并不是，请在将配对文件发送到手机之前仔细检查是否已将文件进行压缩。如果不这样做，文件可能会在传输过程中被损坏。此外，使用证书对Sidestore进行签名时，您将无法从应用程序中选择配对文件。您可以尝试将配对文件移动到“文件”应用程序中的“我的iPhone/iPad”的SideStore文件夹的根目录中，并将其命名为`ALTPairingFile.mobiledevicepairing`。如果在“文件”应用程序中看不到SideStore文件夹，请将手机连接到电脑上，然后将配对文件拖放到SideStore应用程序的文件夹中。请确保将其更改为上述名称。请注意，它是区分大小写的。
 
