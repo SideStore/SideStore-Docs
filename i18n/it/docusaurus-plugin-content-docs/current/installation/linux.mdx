@@ -1,0 +1,30 @@
+---
+title: Istruzioni per Linux
+description: Istruzioni per installare SideStore utilizzando Linux
+sidebar_position: 4
+---
+
+Prima di iniziare, assicurati di aver completato tutti gli step nella sezione [prerequisiti](prerequisites)!
+
+1. Assicurati di avere usbmuxd installato e aggiornato eseguendo nel terminale `sudo apt install -y usbmuxd`.
+2. Install Docker o Podman sul tuo PC.
+2. Connetti il tuo iDevice. Se vedi un pop-up, seleziona "Autorizza" e inserisci il tuo codice.
+
+3. Ora, esegui Altcon con Docker o Podman usando i comandi seguenti (potrebbero richiedere `sudo`):
+
+Docker setup:
+```bash
+docker run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd ghcr.io/sidestore/altcon
+```
+Podman setup:
+```bash
+podman run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd ghcr.io/sidestore/altcon
+```
+5. Altcon si abbinerà al tuo dispositivo. Quando ricevi un altro pop-up, seleziona "Autorizza" e inserisci di nuovo il tuo codice
+6. Sul tuo iDevice, esegui i seguenti passaggi:
+    * Autorizza le "App Sviluppatore" sotto la tua email (puoi farlo in "Impostazioni", "Generali", "VPN e Gestione Dispositivo").
+    * Apri l'app Impostazioni
+    * Vai in "Privacy e Sicurezza"
+    * Abilita la "Modalità Sviluppo" in fondo.
+
+Ora procedi alla generazione del [file di pairing](pairing-file).

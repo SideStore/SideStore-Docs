@@ -1,0 +1,103 @@
+---
+title: Guida per la risoluzione di problemi
+description: Una guida per la risoluzione di problemi in situazioni senza codice di errore.
+---
+
+## Installazione
+
+### Ho seguito le istruzioni ma non riesco a installare SideStore.
+
+#### Istruzioni per Mac
+1. **Autorizza il dispositivo**: Dopo aver collegato il tuo dispositivo iOS al Mac, assicurati di aver premuto "Autorizza" sia sul Mac che sul dispositivo iOS. Puoi verificarlo in questo modo:
+   - Aprendo Finder (macOS 10.15 Catalina o successivi) o iTunes (macOS 10.14 Mojave e precedenti).
+   - Disconnettendo e riconnettendo il tuo device al Mac e controllando se compare una finestra che richiede l'autorizzazione del dispositivo.
+2. **Usa un altro Apple ID**: Prova ad utilizzare un altro Apple ID. Se necessario, puoi [creare un nuovo Apple ID](https://appleid.apple.com/account#!\&page=create) solo per SideStore gratuitamente.
+
+#### Istruzioni per Windows
+
+1. **Autorizza il dispositivo**: Dopo aver collegato il tuo dispositivo iOS al PC, assicurati di aver premuto "Autorizza" sia sul PC che sul dispositivo iOS. Puoi verificarlo in questo modo:
+   - Aprendo iTunes e controllando se appare una finestra sul tuo dispositivo che chiede l'autorizzazione.
+2. **Esegui AltServer come Amministratore**: Clicca col tasto destro su AltServer e seleziona "Esegui come Amministratore" per avere i permessi necessari.
+3. **Usa un altro Apple ID**: Prova ad utilizzare un altro Apple ID. Se necessario, puoi [creare un nuovo Apple ID](https://appleid.apple.com/account#!\&page=create) solo per SideStore gratuitamente.
+4. **Versioni iTunes e iCloud non del Microsoft Store**:
+   - Se hai installato iTunes o iCloud dal Microsoft Store, devi disinstallarle.
+   - Scarica e installa le versioni non-Microsoft Store di iTunes e iCloud tramite i link seguenti:
+     - [Download iCloud](https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe)
+     - [Download iTunes](https://www.apple.com/itunes/download/win64/)
+
+
+## Problemi di Login
+
+### SideStore si blocca o mostra un codice di errore durante il Login
+
+Se SideStore si blocca o mostra codici di errore quando provi a loggarti, potrebbero esserci diversi problemi. Segui questi step per risolverli:
+
+1. **Cambia Server Anisette:**
+   La soluzione più comune è cambiare Server Anisette. I server anisette potrebbero avere downtime ogni tanto. Cambiare server di solito risolve il problema. Fai così:
+   - Apri le impostazioni di SideStore.
+   - Scorri fino a "Server Anisette".
+   - Seleziona un altro server dalla lista.
+   - Potresti dover provare diversi server della lista e trovare quello che funziona meglio per te.
+
+2. **Hosta il tuo Server Anisette:**
+   Se preferisci, puoi settare un tuo server Anisette personale. Puoi trovare istruzioni dettagliate [qui](https://docs.sidestore.io/docs/advanced/anisette).
+
+### Non ricevo il codice di verifica quando accedo con il mio Apple ID
+
+Un altro problema comune durante il login è non ricevere il codice di verifica quando usi il tuo Apple ID con SideStore. Puoi risolvere il problema seguendo questi step:
+
+**Per versioni iOS inferiori alla 18.1:**
+
+1. Apri l'app "Impostazioni".
+2. Tocca sul tuo nome in alto.
+3. Naviga a "Accesso e Sicurezza".
+4. Seleziona "Autenticazione a Due Fattori".
+5. Seleziona "Ottieni codice di verifica".
+
+**Per versioni iOS 18.1 e superiori:**
+
+1. Visita [iCloud](https://www.icloud.com) sul browser.
+2. Seleziona "Accedi".
+3. Avrai due opzioni: "Accedi" e "Usa un altro account Apple".
+   - Seleziona la seconda opzione: "Usa un altro account Apple".
+4. Inserisci il tuo Apple ID e la password (non usare una passkey).
+5. Apple ti invierà un codice di verifica.
+   - Usa questo codice in SideStore per completare il processo di login.
+
+
+## Non riesco a refreshare o installare app
+
+### Risolvere errore No Wi-Fi o VPN
+
+1. Attiva la modalità aereo e connettiti a un Wi-Fi stabile.
+2. Assicurati che i domini Apple e il dominio del tuo server anisette non siano bloccati.
+   - Disattiva qualsiasi server DNS blocking 
+   - Disattiva tutti i server DNS che bloccano domini come `oscp.apple.com`.
+   - Disconnettiti dal Wi-Fi di scuola/lavoro, prova a connetterti ad una rete senza restrizioni.
+3. Verifica che la VPN sia connessa in StosVPN.
+4. Spegni e riaccendi StosVPN, poi aspetta qualche secondo in SideStore prima di riprovare il refresh.
+5. Rigenera il pairing file.
+   - Se non ha funzionato nulla, è molto probabile che il file di pairing sia corrotto. Puoi guardare la documentazione su come creare un nuovo pairing file [qui](/docs/installation/pairing-file).
+
+
+## Non riesco a selezionare il file di pairing
+
+### Se non riesci a selezionare il file di pairing su SideStore, segui questi step:
+
+1. **Reimporta il file di pairing**: Usa idevice pair per rigenerare e importare il pairing file sul tuo device. Se idevice pair non funziona, prova jitterbugpair e segui gli ste qui sotto.
+2. **Controlla l'estensione del file**: Assicurati che il tuo pairing file finisca con `.mobiledevicepairing` o `.plist`. Se così non fosse, zippa il pairing file prima di inviarlo al tuo dispositivo. Se non lo fai potrebbe corrompersi durante il trasferimento.
+3. **Sposta il pairing file**: Se non riesci a selezionare il pairing file dall'app, rinomina il file a `ALTPairingFile.mobiledevicepairing` e prova a spostarlo nella cartella di SideStore dell'app File su "Il mio iPhone/iPad".
+4. **Firma con certificato**: Quando firmi SideStore con un certificato non sarai in grado di scegliere il pairing file dall'app. Puoi provare lo step qui sopra. Se non vedi la cartella di SideStore nell'app File, connetti il telefono al computer e trascina il pairing file nei file dell'app SideStore. Assicurati di cambiare il nome come sopra.
+
+## AltServer
+
+### Cosa faccio se mi serve la versione di iCloud del Microsoft Store? 
+
+AltServer richiede che tu installi iCloud direttamente da Apple per autenticarti correttamente. Se hai bisogno della versione del Microsoft Store puoi seguire le istruzioni prese da [questo post Reddit](https://www.reddit.com/r/jailbreak/comments/rp5buz/tutorial_how_to_use_altserver_if_you_have_to_use/) e aggiornate:
+
+1. Scarica e installa [iTunes](https://www.apple.com/itunes/) dal sito Apple qui ([64-bit](https://secure-appldnld.apple.com/itunes12/001-80053-20210422-E8A3B28C-A3B2-11EB-BE07-CE1B67FC6302/iTunes64Setup.exe) o [32-bit](https://secure-appldnld.apple.com/itunes12/001-80042-20210422-E8A351F2-A3B2-11EB-9A8F-CF1B67FC6302/iTunesSetup.exe).
+2. Scarica e installa iCloud dal sito Apple ufficiale [qui](https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe).
+3. Vai nella cartella "C:\Program Files (x86)\Common Files\Apple". Copia le cartelle "Apple Application Support" e "Internet Services", poi crea una nuova cartella facilmente raggiungibile, chiamala come vuoi e incolla qui le due cartelle.
+4. Rimuovi iCloud dal PC. **NON** cancellare iTunes! (inoltre, **MAI** rimuovere "Apple Mobile Device Support" o "Apple Application Support", installati insieme ad iTunes e iCloud.)
+5. Installa [iCloud](https://www.microsoft.com/store/productId/9PKTQ5699M62) dal Windows Store.
+6. Scarica e installa [AltServer](https://cdn.altstore.io/file/altstore/altinstaller.zip). Quando lo apri per la prima volta (con i permessi di admin), clicca su "Choose Folder..." e seleziona la cartella creata nel terzo step.

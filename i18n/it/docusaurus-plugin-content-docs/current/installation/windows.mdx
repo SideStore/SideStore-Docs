@@ -1,0 +1,20 @@
+---
+title: Istruzioni per Windows
+description: Istruzioni per installare SideStore utilizzando Windows
+sidebar_position: 3
+---
+
+Prima di iniziare, assicurati di aver completato tutti gli step nella sezione [prerequisiti](prerequisites)!
+
+Sul PC, disinstalla qualsiasi versione di iCloud e iTunes che potresti aver installato dal Microsoft Store, poi installa le versioni giuste di iTunes ([64-bit](https://apple.com/itunes/download/win64) o [32-bit](https://apple.com/itunes/download/win32)) e [iCloud](https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe). Le versioni non-MicrosoftStore di iCloud sono state tolte dal sito Apple a metà settembre 2022, il link sopra si riferisce a una vecchia versione di iCloud ancora compatibile con AltServer, scaricabile direttamente dai server Apple (sicuro).
+
+1. Scarica `altinstaller.zip` dal [sito di AltStore](https://cdn.altstore.io/file/altstore/altinstaller.zip). Estrai `altinstaller.zip` ed esegui `setup.exe`. Nella taskbar di Windows digita "AltServer" e clicca "Esegui come amministratore". Assicurati di abilitare l'accesso alle reti private. AltStore comparirà nel system tray (dove vengono mostrati Internet, Wi-Fi, Batteria, ecc...).
+2. Scarica l'IPA di SideStore che puoi trovare [qui](https://github.com/sidestore/sidestore/releases/latest/download/sidestore.ipa).
+3. Tieni premuto shift e clicca sull'icona di AltServer. Clicca "Sideload .ipa", poi seleziona il file `sidestore.ipa` che hai scaricato prima.
+4. Sul tuo iDevice, esegui i seguenti passaggi:
+    * Autorizza le "App Sviluppatore" sotto la tua email (puoi farlo in "Impostazioni", "Generali", "VPN e Gestione Dispositivo").
+    * Apri l'app Impostazioni
+    * Vai in "Privacy e Sicurezza"
+    * Abilita la "Modalità Sviluppo" in fondo.
+
+Ora procedi alla generazione del [file di pairing](pairing-file).

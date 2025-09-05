@@ -1,0 +1,24 @@
+---
+title: Sorgenti delle app
+description: Guida sulle sorgenti delle app personalizzate
+---
+
+# Creare una Sorgente
+
+SideStore è completamente compatibile con le Sorgenti di AltStore (o AltSources). La [documentazione](https://faq.altstore.io/developers/make-a-source) ufficiale di AltSource fornisce tutti i dettagli per creare la tua AltSource. Le AltSource permettono di visualizzare, installare e aggiornare facilmente tutte le tue app. 
+
+Ecco alcuni tool di terze parti consigliati che possono aiutare nella creazione di AltSource:
+- Puoi usare [AltStudio](https://altstudio.app/) (WIP) per generare automaticamente un'AltSource utilizzando un'IPA! (Attenzione- Dopo aver usato AltStudio devi rimuovere i campi autogenerati marketplaceID e Build, altrimenti SideStore crederà che sia una sorgente affidabile e impedirà la sua aggiunta)
+- Puoi usare [AltSource Browser](https://altsource.by.lao.sb/browse/) per visualizzare i tuoi aggiornamenti di AltSource in bozza prima di applicare i cambiamenti, permettendoti di correggere eventuali errori prima di pubblicarli.
+
+# Distribuire la Sorgente
+
+Puoi creare un link per aggiungere automaticamente la tua AltSource tramite questa sintassi:
+```
+sidestore://source?url=[url della sorgente]
+```
+Per più info, vedi [URL Schema](/docs/advanced/url-schema). Spesso è utile creare link all'AltSource in questo formato, per poi usare un link shortener come `tinyurl.com`. Comunque, se un utente prova a usare un link `sidestore://` senza avere SideStore installato, crasherà, quindi un po' di documentazione aiuta.
+
+## Finito!
+
+Ecco alcune AltSource consigliate che puoi aggiungere a SideStore: La [SideStore Community Source](https://github.com/SideStore/Community-Source), the [official AltStore Source](https://apps.altstore.io), la [LiveContainer Source](https://raw.githubusercontent.com/LiveContainer/LiveContainer/refs/heads/main/apps.json) e la [DolphiniOS Source](https://altstore.oatmealdome.me).
