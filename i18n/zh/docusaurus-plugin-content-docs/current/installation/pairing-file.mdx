@@ -4,43 +4,27 @@ description: 配对文件对于SideStore的功能实现十分重要
 sidebar_position: 5
 ---
 
-iDevicePair是一个创建Jitterbug配对文件的程序，以允许SideStore等程序远程与您的设备通信。这是使用SideStore所必需的，否则SideStore将无法运行。
+idevice_pair是一个生成配对文件的程序，配对文件允许SideStore等程序远程对您的设备进行调整。这是运行SideStore所必需的，否则SideStore将无法运行。
 :::warning
-注意，如果您更新或重置了您的iDevice，您的配对文件将过期，您需要生成一个新的配对文件。当然这也会随时发生，目前我们无法修复它。
+注意，如果您更新或重置了您的苹果设备，您的配对文件将过期，您需要生成一个新的配对文件。当然，由于苹果的政策，这可能会随时发生，目前我们无法修复它。
 :::
-
-下载iDevicePair：
-- [macOS](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--macos-universal.dmg)
-- [Windows](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--windows-x86_64.exe)
-- Linux [x86_64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--linux-x86_64.AppImage) 或 [aarch64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--linux-aarch64.AppImage)
 
 ## 配对教程
 
 ### macOS
 
-1. 下载 `iDevicePair--macos-universal.dmg`。 打开文件，并将 `idevice pair`拖拽至 `应用程序`。
-2. 通过数据线将您连接到计算机。如果出现提示，点击“信任”并键入密码。 
-3. 解锁您的设备，打开idevice pair并在下拉菜单中选择您的设备。 
-4. 确保您的设备已解锁并打开至主屏幕界面，然后选择“生成(generate)”。当您的设备上出现弹窗提示时，点击“信任”。您的配对文件应该会出现。 
-5. 确保您的设备仍然在主屏幕界面，然后向下滚动到SideStore选项并选择“安装”。而后应弹出绿色的“成功”文字。
+1. 下载 [macOS的idevice pair](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--macos-universal.dmg).。 打开文件，并将 `idevice pair`拖拽至 `应用程序`。
+2. 打开镜像并将`idevice pair`拖拽至`应用`目录
 
 ### Windows
 
-1. 如果尚未安装AltServer，请从苹果的官网安装[64位](https://apple.com/itunes/download/win64) / [32位](https://apple.com/itunes/download/win32)的iTunes(它应该在设置 AltServer 时就已经安装好了)。
-2. 下载`iDevicePair--windows-x86_64.exe` (将文件移动到您不会丢失的地方).
-3. 使用数据线将您需要侧载的设备连接到计算机。如果出现弹窗提示，点击“信任”并键入密码。
-4. 解锁您的设备，然后在文件资源管理器中打开“idevice pair”，并在下拉菜单中选择您的设备。
-5. 确保您的设备已解锁并打开主屏幕，然后选择“生成(generate)”。当您的设备上出现提示时，点击“信任”。您的配对文件应该会出现。
-6. 确保您的设备仍然在主屏幕界面，然后向下滚动到SideStore选项并选择“安装”。而后应弹出绿色的“成功”文字。
+1. 请确保您已安装[64位](https://apple.com/itunes/download/win64) / [32位](https://apple.com/itunes/download/win32)的iTunes(它应该在设置 AltServer 时就已经安装好了)。
+2. 下载[Windows的idevice pair](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--windows-x86_64.exe)并将文件移动到您不会丢失的地方。
 
 ### Linux
 
-1. 确保您的计算机上安装了usbmuxd。 
-2. 下载与您的PC架构相对应的idevice pair版本，并确保其可正常运行。
-3. 使用数据线将您需要侧载的设备连接到计算机。如果出现弹窗提示，点击“信任”并键入密码。
-4. 解锁您的设备，然后在文件资源管理器中打开“idevice pair”，并在下拉菜单中选择您的设备。
-5. 确保您的设备已解锁并打开主屏幕，然后选择“生成(generate)”。当您的设备上出现提示时，点击“信任”。您的配对文件应该会出现。
-6. 确保您的设备仍然在主屏幕界面，然后向下滚动到SideStore选项并选择“安装”。而后应弹出绿色的“成功”文字。
+1. 确保您的计算机已经通过在终端中运行`sudo apt install -y usbmuxd`安装了usbmuxd。 
+2. 下载与您的PC架构相对应的idevice pair版本([x86_64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-x86_64.AppImage) 或 [AArch64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-aarch64.AppImage))，并确保其可正常运行。
 
 ## 下一步
 现在，按照[安装后说明](post-install)进行后续操作。

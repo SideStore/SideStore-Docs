@@ -4,12 +4,13 @@ description: 使用Linux安装Sidestore的操作指引
 sidebar_position: 4
 ---
 
-在开始之前，请确保您已完成[先决条件](prerequisites)中的所有步骤！
+在开始之前，请确保您已完成[必要准备](prerequisites)中的所有步骤！
 
-1.确保你的机器上安装了usbmuxd和Docker或Podman。
-2.插入您的iDevice。如果您收到了弹窗提示，请选择“信任”并输入密码。
+1.确保您的计算机上已安装usbmuxd，并在Linux终端使用`sudo apt install -y usbmuxd`指令进行过更新。
+2.在您的计算机上安装Docker或者Podman。
+2.插入您的苹果设备。如果您收到了弹窗提示，请选择“信任”并输入密码。
 
-3.现在，通过以下命令（可能需要`sudo `）以使用Docker或Podman运行Altcon：
+3.现在，通过以下指令（可能需要`sudo`）以使用Docker或Podman运行Altcon：
 
 Docker 安装:
 ```bash
@@ -27,4 +28,4 @@ podman run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd ghcr.i
     * 打开底部的“开发人员模式”。
 6. 打开SideStore，在SideStore请求配对文件的时候点击“允许”。然后退出应用。
 
-现在，生成您的[配对文件](pairing-file)。
+现在，请移步生成您的[配对文件](pairing-file)。

@@ -1,43 +1,43 @@
 ---
-title: 3-App Limit Bypass
-description: A tutorial on how to install more than 3 apps via SideStore using the SparseRestore exploit.
+title: 绕过3-App限制
+description: 一个关于如何通过SparseRestore安装多于3个应用的教程。
 ---
 
 :::note
 
-The SparseRestore "Bypass 3 app limit" exploit **only works on iOS/iPadOS versions between 17.0 and 18.1 beta 4 (not including 17.7.1)**. If you are not on these versions and it doesn't work, **please do not ask for support on this**. 
+SparseRestore的"绕过3个应用的限制"**仅在iOS/iPadOS 17.0 和 18.1 beta 4 (不包括 17.7.1)中生效**。如果您没有使用这些版本的话，这些操作是没有用的，**请不要因此寻求帮助**。 
 
 :::
 
-## Prerequisites
-* An iDevice running versions supported by the SparseRestore exploit (see note above).
-* At least 1 free app slot.
-* SideStore version 0.5.9 or later. You can find the latest versions [here](https://github.com/SideStore/SideStore/releases).
-* To perform this exploit, you MUST have **Find My** turned off on your iDevice during the process. It will not work otherwise. Here is how you can turn it off:
-  - Open the Settings app.
-  - Tap on your name at the top.
-  - Tap on Find My.
-  - Tap on Find My iPhone/iPad.
-  - Turn off Find My iPhone/iPad.
-  - You may be required to enter your Apple ID password to confirm.
+## 必要准备
+* 一台运行了SparseRestore支持的版本系统的苹果设备(请参考上面的描述).
+* 至少有一个空闲的应用槽位。
+* SideStore 0.5.9或更高版本。您可以[在此](https://github.com/SideStore/SideStore/releases)找到最新版。
+* 为了执行漏洞利用，您**必须**在流程进行中，在您的苹果设备上关闭**查找网络**。否则执行不会成功。您可以参考以下的流程关闭：
+  - 打开“设置”。
+  - 点击最上面您的名字。
+  - 点击“查找”。
+  - 点击查找我的iPhone/iPad.
+  - 关闭查找我的iPhone/iPad.
+  - 您可能需要输入您的Apple ID密码以继续。
   
-  > **Note:** You may still not be able to turn off Find My since having Stolen Device Protection on might prevent you from turning it off. Turn off Stolen Device Protection before trying to turn off Find My.
+  > **提醒：** 您仍可能无法关闭查找我的设备，因为失窃设备保护可能避免您关闭它。请在在尝试关闭查找设备前关闭失窃设备保护。
 
-## Steps
-1. Install SparseBox. This can be done with a variety of methods, but for the purposes of this, install it with SideStore. The latest version can be found [here](https://nightly.link/khanhduytran0/SparseBox/workflows/build/main/artifact.zip) (unzip artifact.zip for the .ipa file).
+## 步骤
+1. 安装SparseBox。有很多种方式可以安装SparseBox，但如果是这种需求的话，请使用SideStore进行安装。您可以[在这里](https://nightly.link/khanhduytran0/SparseBox/workflows/build/main/artifact.zip)找到最新版 (解压artifact.zip以获得.ipa文件)。
 
-2. Tick on "Disable App Limit" in SideStore, and make sure SideStore is **closed** (not in background), then open SparseBox.
+2. 在SideStore内打开"Disable App Limit"开关，确保SideStore是**关闭的** (不在后台)，然后打开SparseBox。
 
-3. Enable StosVPN, select your pairing file and tap 'Bypass 3-app limit'. This should bring up a log output. Wait for it to say `idevicebackup2 exited with code -18` or `idevicebackup2 exited with code 2`, then close the app. No need to hit apply.
+3. 启用StosVPN，选择您的配对文件并点击'绕过3个应用的限制'。你将会看到一段很长的输出。请等待直到输出`idevicebackup2 exited with code -18`或者`idevicebackup2 exited with code 2`，关闭应用，无需点击“应用”。
 
-4. Re-open SideStore, and scroll down in SideStore settings. Press "clear cache", this will allow the exploit to be seen by SideStore.
+4. 重新打开SideStore在SideStore设置界面下滑。点击"清理缓存"，这允许绕过结果被SideStore使用。
 
-5. Test that the exploit has worked (you may need to install more than one app to test, depending on how many free slots you have). If it throws an error about the limit, reopen SideStore or retry the exploit. If it installs the app, congratulations! You can now have more than 3 apps installed at one time.
+5. 测试绕过成功(您可能需要安装多于一个app以测试，这取决于您剩余多少槽位)。如果应用弹出了和限制相关的错误，重新启动SideStore或者重试执行漏洞利用。如果安装应用成功，恭喜！您现在可以一次安装多于3个应用了！
 
-## Notes
-Due to certain limitations, this exploit must be done for every 3 additional apps you sideload.
+## 提醒
+由于某些限制，每当您侧载额外3个应用程序时，都必须执行此漏洞利用。
 
-If you want/need Find My for other purposes, you can now turn it back on. However, if you want to install or refresh more apps, you will need to turn it off again.
+如果您想/需要使用查找网络的话，您现在就可以打开它了。然而，如果您想安装或者刷新更多应用，您仍需再次关闭查找网络。
 
-## Alternatives
-If either the exploit doesn't work for you, or your iDevice is on an unsupported version, there is an alternative to be able to use more than 3 apps at once. LiveContainer, developed by Duy Tran Khanh ([khanhduytran0](https://github.com/khanhduytran0)) (the person who also made SparseBox), allows for iOS apps to be run in containers in-app rather than installing them separately. This may also be easier to use over SparseRestore in some cases. The GitHub page can be found [here](https://github.com/khanhduytran0/LiveContainer).
+## 备选方案
+如果该漏洞利用对您来说没起作用，或者您的苹果设备是不支持的版本，也有其他的备选方案允许您同时使用多于3个应用。由Duy Tran Khanh ([khanhduytran0](https://github.com/khanhduytran0)) (也是SparseBox的开发者) 开发的Live Container允许iOS应用运行在应用内容器内，而不是分别独立的运行。这在某种意义上比SparseRestore更实用。[点此访问GitHub页面](https://github.com/khanhduytran0/LiveContainer)。
