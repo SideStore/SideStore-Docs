@@ -13,77 +13,79 @@ description: SideStore에서 발생하는 오류 코드들
 
 #### (1000) An unknown error occurred.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1000`
 
 SideStore가 예상치 못한 오류를 만났습니다. [문제 해결 가이드](./)를 확인해 주시고, 문제가 지속되면 직접 문의해 주세요.
 
 #### (1001) The operation returned an unknown result.
 
+`SideStore.OperationError 1001`
+
 SideStore가 예상치 못한 오류를 만났습니다. [문제 해결 가이드](./)를 확인해 주시고, 문제가 지속되면 직접 문의해 주세요.
 
 #### (1002) The operation was cancelled.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1002`
 
 수행된 작업이 중단되었습니다. 다시 시도해 주세요.
 
 #### (1003) The operation timed out.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1003`
 
 SideStore가 요청된 작업을 완료하는 데 문제가 발생했습니다. 다시 시도해 주시고 추가 도움이 필요하시다면 [문제 해결 가이드](./)를 확인해 주세요. 문제가 지속되면 직접 문의해 주세요.
 
 #### (1004) You are not signed in.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1004`
 
 요청된 작업을 수행하기 위해서는 설정 탭에서 Apple ID 정보를 입력해야 합니다.
 
 #### (1005) The app could not be found.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1005`
 
 AltStore가 다운로드하거나 설치할 파일을 찾을 수 없습니다. 제공된 URL에 파일이 존재하지 않을 가능성이 높습니다.
 
 #### (1006) AltStore could not determine this device's UDID.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1006`
 
 SideStore가 AltServer가 SideStore를 설치할 때 포함한 기기 UDID를 읽을 수 없습니다. 최신 AltServer 버전으로 SideStore를 설치하고 있는지 확인해 주세요.
 
 #### (1007) This app is in an invalid format.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1007`
 
 설치하려는 앱이 표준 .ipa 형식이 아닙니다. 다른 위치에서 앱을 다운로드해 보세요.
 
 #### (1008) Invalid parameters.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1008`
 
 내부 오류가 발생하여 SideStore가 요청된 작업을 수행하는 데 필요한 정보를 제공할 수 없습니다. 다시 시도해 주시고 추가 도움이 필요하시다면 [문제 해결 가이드](./)를 확인해 주세요. 문제가 지속되면 직접 문의해 주세요.
 
 #### (1009) You cannot register more than 10 App IDs within a 7-day period.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1009`
 
 사용 가능한 최대 App ID 수에 도달했습니다. My Apps 탭에서 App ID가 언제 만료되는지 확인해 주세요.
 
 #### (1010) There are no AltStore sources.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1010`
 
 내부 오류가 발생하여 SideStore가 추가한 소스의 변경사항을 가져올 수 없습니다. 다시 시도해 주시고 추가 도움이 필요하시다면 [문제 해결 가이드](./)를 확인해 주세요. 문제가 지속되면 직접 문의해 주세요.
 
 #### (1011) AltStore was denied permission to launch the app.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1011`
 
 "AltStore가 [앱]을 열려고 합니다" 알림에서 "취소"를 탭했거나 설정에서 Apple ID를 신뢰해야 하기 때문에 SideStore가 사이드로드된 앱을 실행할 수 없습니다.
 
 #### (1012) AltStore's shared app group could not be accessed.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1012`
 
 SideStore가 앱 백업이 저장된 디렉토리에 접근할 수 없습니다. 최신 AltServer 버전으로 SideStore를 설치하고 있는지 확인해 주세요.
 
@@ -91,7 +93,7 @@ SideStore가 앱 백업이 저장된 디렉토리에 접근할 수 없습니다.
 
 `AltStore.OperationError`
 
-SideStore가 로컬 네트워크에서 AltServer를 찾는 데 문제가 있습니다. PC/Mac이 실행 중인 AltServer와 동일한 Wi-Fi 네트워크에 연결되어 있는지 확인하거나, 기기를 컴퓨터에 USB로 연결해 보세요.
+SideStore가 로컬 네트워크에서 AltServer를 찾는 데 문제가 있습니다. PC/Mac이 실행 중인 AltServer와 동일한 Wi-Fi 네트워크에 연결되어 있는지 확인하거나, 기기를 컴퓨터에 USB로 연결해 보세요. (이 오류는 발생하지 않아야 합니다. SideStore는 AltStore와 다르게 작동하기 때문입니다.)
 
 #### (1201) A connection to AltServer could not be established.
 
@@ -104,6 +106,34 @@ SideStore가 PC/Mac의 AltServer에 연결하는 데 문제가 있습니다. Wi-
 `AltStore.OperationError`
 
 SideStore와 PC/Mac의 AltServer 간의 연결이 중단되었습니다. Wi-Fi 동기화가 활성화되어 있는지 확인하고, 그렇지 않다면 기기를 USB로 직접 연결해 보세요.
+
+#### (1403) Unable to connect to SideJITServer.
+
+`SideStore.OperationError 1403`
+
+SideJITServer를 실행 중인 컴퓨터와 동일한 Wi-Fi 네트워크에 연결되어 있는지 확인하시고, 방화벽이 적절히 설정되어 있는지 확인해 주세요. 또는 StosVPN이 활성화된 상태에서 Wi-Fi 또는 비행기 모드를 사용하며 iOS 17.4-18.6에서 내장된 “JIT 활성화” 옵션을 사용하여 JIT를 활성화할 수 있습니다.
+
+#### (1412) Unable to connect to a V3 anisette server.
+
+`SideStore.OperationError 1412`
+
+귀하의 기기가 V3 Anisette 서버로부터 데이터를 수신하지 못했습니다. 다시 시도해 주시거나 다른 Anisette 서버로 전환해 주시기 바랍니다.
+
+#### (1414) No Wi-Fi/StosVPN.
+
+`SideStore.OperationError 1414`
+
+Wi-Fi 및/또는 StosVPN에 연결되어 있지 않은 것 같습니다. SideStore는 Wi-Fi 및 StosVPN이 활성화되지 않은 상태에서는 애플리케이션을 새로 고치거나 설치할 수 없습니다. 두 가지 모두 활성화되어 있는지 확인하세요. 만약 문제가 해결되지 않는다면, 페어링 파일을 재생성해 보세요.
+
+## Minimuxer Errors
+
+#### (27) AFC was unable to manage files on the device.
+
+`minimuxer.MinimuxerError 27`
+
+이것은 유효하지 않은 페어링 파일이 있음을 의미합니다. 재생성하기 위해 페어링 파일 단계를 따르세요.
+
+More error codes coming...
 
 ## AltServer / SideServer 오류
 
