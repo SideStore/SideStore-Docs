@@ -11,6 +11,7 @@ The translations are organized in the `i18n` directory with separate folders for
 - `de/` - German
 - `es/` - Spanish
 - `fr/` - French
+- `it/` - Italian
 - `ja/` - Japanese
 - `ko/` - Korean
 - `nl/` - Dutch

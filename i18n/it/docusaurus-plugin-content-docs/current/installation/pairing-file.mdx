@@ -1,0 +1,37 @@
+---
+title: File di Pairing
+description: I file di Pairing sono essenziali per far funzionare SideStore.
+sidebar_position: 5
+---
+
+idevice_pair è un programma che genera un file di pairing che permette ad app come SideStore di eseguire azioni sul tuo device da remoto. È necessario per il funzionamento di SideStore, altrimenti non funzionerebbe.
+:::warning
+Attenzione, se aggiorni o ripristini il tuo iDevice, il pairing file scadrà e dovrai generarne un altro. Questo succede anche randomicamente a causa delle politiche di Apple, non c'è niente che possiamo fare per prevenirlo.
+:::
+
+## Istruzioni di Installazione
+
+### macOS
+
+1. Scarica [idevice pair per macOS](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--macos-universal.dmg).
+2. Apri la Disk Image e trascina `idevice pair` in `Applicazioni`.
+
+### Windows
+
+1. Assicurati che iTunes ([64-bit](https://apple.com/itunes/download/win64) o [32-bit](https://apple.com/itunes/download/win32)) sia installato dal sito Apple (dovresti averlo già installato per il setup di AltServer).
+2. Scarica [idevice pair per Windows](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--windows-x86_64.exe) e spostalo in un posto dove lo puoi eseguire.
+
+### Linux
+
+1. Assicurati che usbmuxd sia installato sul tuo PC eseguendo da terminale `sudo apt install -y usbmuxd`
+2. Scarica la versione di idevice_pair per Linux ([x86_64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-x86_64.AppImage) o [AArch64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-aarch64.AppImage)) in base alla architettura del tuo PC. Spostalo e rendilo eseguibile.
+
+## Istruzioni di Pairing
+
+1. Collega il tuo iDevice al computer tramite cavo. Se appare un prompt, seleziona `Autorizza` e digita il tuo codice.
+2. Sblocca il dispositivo, apri `idevice pair` e seleziona il tuo dispositivo dal menu a tendina.
+3. Assicurati che il device sia sbloccato e nella schermata home, poi seleziona `load`. Se appare un prompt, tocca `Autorizza`. Dovrebbe comparire il tuo pairing file.
+4. Assicurati che il tuo device sia ancora sbloccato sulla home, scorri verso il basso e seleziona `install` sotto a "SideStore". Dovrebbe apparire `Success` in verde.
+
+## Next steps
+Ora segui le [istruzioni post-installazione](post-install).

@@ -1,0 +1,62 @@
+---
+title: Problemi Comuni
+description: Problemi comuni di SideStore.
+---
+
+:::warning
+
+Questa pagina è in costruzione. Le informazioni dovrebbero essere accurate, ma affidati al nostro [Server Discord](https://discord.gg/sidestore-949183273383395328) per assistenza.
+
+:::
+
+
+## Problemi comuni di SideStore
+
+### AFC Connection Failure
+#### Causa
+Problemi di connessione o file di pairing non valido.
+#### Soluzione
+1. Prova a riconnetterti
+2. Genera e importa un nuovo pairing file utilizzando idevice pair. Vedi le nostre [istruzioni pairing file](/docs/installation/pairing-file) per più dettagli
+
+### No Wi-Fi o Connessione VPN
+#### Causa
+Problema di connessione con il servizio minimuxer.
+#### Soluzione
+1. Se stai usando WireGuard, passa a StosVPN
+2. Spegni ogni eventuale server DNS-blocking
+2. Riprova (spammare il bottone a volte aiuta)
+3. Riavvia SideStore
+4. Riavvia StosVPN
+5. Rigenera e importa un nuovo pairing file utilizzando idevice pair. Vedi le nostre [istruzioni pairing file](/docs/installation/pairing-file) per più dettagli
+
+### SideStore si blocca a metà durante l'installazione
+#### Causa
+Problemi di cache o protocollo.
+#### Soluzione
+1. Aggiorna SideStore, se possibile. Altrimenti riavvialo
+2. Cancella la cache
+3. Cambia server anisette
+4. In server- resetta adi.pb, poi esegui il logout da SideStore e rifai il login
+5. Riavvia il dispositivo
+6. Rigenera il pairing file
+7. Reinstalla SideStore con AltServer
+
+### Impossibile eseguire SideStore
+#### Causa
+Diverse cause possibili.
+#### Soluzione
+1. Assicurati di aver installato SideStore tramite AltServer
+2. Reinstalla SideStore
+
+Se continua a non funzionare, procedi come segue:
+
+1. Cancella SideStore e tutte le app che hai installato con SideStore
+2. Reinstalla SideStore
+3. Importa il pairing file e accedi. (Se ti chiede se vuoi refreshare SideStore, scegli "no")
+4. Installa `sidestore.ipa` sul tuo device
+5. Importa il file `sidestore.ipa` in SideStore come se stessi installando un qualsiasi IPA
+6. Questo permette a SideStore di fare un avvio pulito, sperando risolva il problema
+
+
+

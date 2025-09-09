@@ -1,0 +1,73 @@
+---
+title: Release Notes
+description: A collection of SideStore release notes.
+sidebar_position: 6
+---
+
+# Stable Notes
+
+## 0.6.2
+
+### Changelog
+- Deprecation of WireGuard, complete transition to [StosVPN](https://apps.apple.com/us/app/stosvpn/id6744003051)
+- jitterbugpair is being superseded by [idevice pair](https://github.com/jkcoxson/idevice_pair)
+- Merge more of AltStore 2.0 upstream
+- Added support for importing/exporting your Apple ID's certificate for use with multiple devices, instructions to utilize this [here](https://github.com/SideStore/SideStore/pull/1008#issue-3138680291)
+- Adds url scheme/allow exporting certificate (to LiveContainer)
+- Fix issue where installing apps would get stuck around 75%
+- Add option to resuse the main App ID profile for extensions instead of removing/registering them (only one app id/app)
+- General type fixes and visual updates
+
+### What's Changed:
+- Rebase 2.0 wip by @nythepegasus in [#794](https://github.com/SideStore/SideStore/pull/794)
+- [Refresh]: Remove install stuffs from refresh since in refresh should only renew provisioning profiles by @mahee96 in [#846](https://github.com/SideStore/SideStore/pull/846)
+- [Settings]: Fix: DisableAppLimit switch reverting back to off state even if on iOS where sparseRestore is not patched yet by @mahee96 in [#850](https://github.com/SideStore/SideStore/pull/850)
+- Update trustedapps.json by @neoarz in [#853](https://github.com/SideStore/SideStore/pull/853)
+- [Backup]: Fix: update logic during install missed since override keyword was missing by @mahee96 in [#857](https://github.com/SideStore/SideStore/pull/857)
+- Fix Repository App Previews by @neoarz in [#871](https://github.com/SideStore/SideStore/pull/871)
+- Feature: Bulk sources-add in sources screen with capability to stage them before persisting into database by @mahee96 in [#888](https://github.com/SideStore/SideStore/pull/888)
+- Version 0.6.0: CoreData Migrations fix including xcdatamodels and xcmappingmodels by @mahee96 in #894
+- Feature: Render in-app update description as (full) markdown by @mahee96 in #897
+- fix: typo in hasUpdate comparison by @l2dy in [#900](https://github.com/SideStore/SideStore/pull/900)
+- Update SettingsViewController.swift by @neoarz in [#915](https://github.com/SideStore/SideStore/pull/915)
+- WIP: Fixes for migration issues when migrating from 0.5.9 to 0.6.0 by @mahee96 in #920
+- Fix typo "levaraging" -> "leveraging" by @lafrenierejm in [#926](https://github.com/SideStore/SideStore/pull/926)
+- Added StosVPN to the EM Proxy part. by @Br0des in [#940](https://github.com/SideStore/SideStore/pull/940)
+- StosVPN-integration: Removed em_proxy and EmotionalDamage module in favour of stosVPN by @mahee96 in [#945](https://github.com/SideStore/SideStore/pull/945)
+- Disable minimuxer ready check which shows NO WIFI/VPN error since stosVPN can work on cellular too by @mahee96 in [#935](https://github.com/SideStore/SideStore/pull/935)
+- Add iOS 17.4+ JIT and mounting by @jkcoxson in [#953](https://github.com/SideStore/SideStore/pull/953)
+- Add export certificate feature by @hugeBlack in [#959](https://github.com/SideStore/SideStore/pull/959)
+- Feat: Add Pairing File Export URL callback and replace Wireguard with StosVPN by @stossy11 in [#962](https://github.com/SideStore/SideStore/pull/962)
+- Change front-facing references to AltStore by @owoellen in [#987](https://github.com/SideStore/SideStore/pull/987)
+- Update OperationError.swift for idevice_pair by @CelloSerenity in [#995](https://github.com/SideStore/SideStore/pull/995)
+- Add import/export certificate feature by @hugeBlack in [#1008](https://github.com/SideStore/SideStore/pull/1008)
+- Fix pairing file doc link by @CelloSerenity in [#1011](https://github.com/SideStore/SideStore/pull/1011)
+- Add option for using main bundle's profile for app extensions, update AltSign & libmd by @hugeBlack in [#1012](https://github.com/SideStore/SideStore/pull/1012)
+- Use main profile when refreshing by @hugeBlack in [#1013](https://github.com/SideStore/SideStore/pull/1013)
+
+
+## 0.6.1
+
+### Changelog
+It's spring already? Here's a new update that should fix migration issues from 0.5.9/0.5.10 and an expiration bug. Happy sideloading!
+
+### What's Changed:
+- fix: typo in hasUpdate comparison by @l2dy in [#900](https://github.com/SideStore/SideStore/pull/900)
+- Update SettingsViewController.swift by @neoarz in [#915](https://github.com/SideStore/SideStore/pull/915)
+- Fixes for migration issues when migrating from 0.5.9 to 0.6.0 by @mahee96 in [#920](https://github.com/SideStore/SideStore/pull/920)
+- Fix typo "levaraging" -> "leveraging" by @lafrenierejm in [#926](https://github.com/SideStore/SideStore/pull/926)
+- Added StosVPN to the EM Proxy part. by @Br0des in [#940](https://github.com/SideStore/SideStore/pull/940)
+
+
+## 0.6.0 - DO NOT use this build, use either 0.6.1 or 0.5.10 instead
+
+### Changelog
+It's March and we have some big changes. We've finally included AltStore 2.0 changes into SideStore. So you will get all the benefits of that and also some fixes in SideStore. Enjoy!
+
+### What's Changed:
+- AltStore 2.0 changes in [#794](https://github.com/SideStore/SideStore/pull/794)
+- [Refresh]: Remove install stuffs from refresh since in refresh should only renew provisioning profiles by @mahee96 in [#846](https://github.com/SideStore/SideStore/pull/846)
+- [Settings]: Fix: DisableAppLimit switch reverting back to off state even if on iOS where sparseRestore is not patched yet by @mahee96 in [#850](https://github.com/SideStore/SideStore/pull/850)
+- [Backup]: Fix: update logic during install missed since override keyword was missing by @mahee96 in [#857](https://github.com/SideStore/SideStore/pull/857)
+- Feature: Bulk sources-add in sources screen with capability to stage them before persisting into database by @mahee96 in [#888](https://github.com/SideStore/SideStore/pull/888)
+- Feature: Render in-app update description as (full) markdown by @mahee96 in [#897](https://github.com/SideStore/SideStore/pull/897)
