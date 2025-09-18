@@ -1,0 +1,492 @@
+---
+sidebar_position: 2
+---
+
+# Code Formatting Guidelines
+
+This document outlines the code formatting standards for Swift and Objective-C code in the SideStore project. Consistent formatting makes the codebase more readable and maintainable.
+
+## General Principles
+
+- **Consistency**: Follow the existing code style in the project
+- **Readability**: Code should be easy to read and understand
+- **Simplicity**: Prefer simple, clear solutions over clever ones
+- **Apple conventions**: Follow Apple's official Swift and Objective-C conventions where possible
+
+## Swift Formatting
+
+### Naming Conventions
+
+#### Variables and Functions
+- Use **camelCase** for variables, functions, and methods
+- Use descriptive names that clearly indicate purpose
+
+```swift
+// ✅ Good
+let downloadProgress: Float
+func validateUserCredentials() -> Bool
+var isAppInstalling: Bool
+
+// ❌ Bad
+let dp: Float
+func validate() -> Bool
+var installing: Bool
+```
+
+#### Classes, Structs, Enums, and Protocols
+- Use **PascalCase** for types
+- Use descriptive, noun-based names
+
+```swift
+// ✅ Good
+class AppInstaller
+struct InstallationProgress
+enum AppState
+protocol AppManaging
+
+// ❌ Bad
+class installer
+struct progress
+enum state
+protocol managing
+```
+
+#### Constants
+- Use **camelCase** for constants
+- Consider using **SCREAMING_SNAKE_CASE** for global constants
+
+```swift
+// ✅ Good
+let maxRetryAttempts = 3
+private let defaultTimeout: TimeInterval = 30.0
+
+// Global constants
+let MAX_CONCURRENT_DOWNLOADS = 5
+
+// ❌ Bad
+let MaxRetryAttempts = 3
+let max_retry_attempts = 3
+```
+
+### Indentation and Spacing
+
+#### Indentation
+- Use **4 spaces** for indentation (not tabs)
+- Align continuation lines with the opening delimiter
+
+```swift
+// ✅ Good
+func installApp(withIdentifier identifier: String,
+                sourceURL: URL,
+                completion: @escaping (Result<Void, Error>) -> Void) {
+    // Implementation
+}
+
+// ❌ Bad
+func installApp(withIdentifier identifier: String,
+sourceURL: URL,
+completion: @escaping (Result<Void, Error>) -> Void) {
+// Implementation
+}
+```
+
+#### Line Length
+- Keep lines under **120 characters** when possible
+- Break long lines at logical points
+
+```swift
+// ✅ Good
+let longVariableName = SomeClass.createInstanceWithVeryLongMethodName(
+    parameter1: value1,
+    parameter2: value2
+)
+
+// ❌ Bad
+let longVariableName = SomeClass.createInstanceWithVeryLongMethodName(parameter1: value1, parameter2: value2, parameter3: value3)
+```
+
+#### Spacing
+- Use single spaces around operators
+- No trailing whitespace
+- Single empty line between functions and major code sections
+
+```swift
+// ✅ Good
+let result = value1 + value2
+if condition && anotherCondition {
+    // Code
+}
+
+func firstFunction() {
+    // Implementation
+}
+
+func secondFunction() {
+    // Implementation
+}
+
+// ❌ Bad
+let result=value1+value2
+if condition&&anotherCondition{
+    // Code
+}
+func firstFunction(){
+    // Implementation
+}
+func secondFunction(){
+    // Implementation
+}
+```
+
+### Braces and Control Flow
+
+#### Brace Style
+- Opening brace on the same line as the statement
+- Closing brace on its own line, aligned with the opening statement
+
+```swift
+// ✅ Good
+if condition {
+    doSomething()
+} else {
+    doSomethingElse()
+}
+
+class MyClass {
+    func myMethod() {
+        // Implementation
+    }
+}
+
+// ❌ Bad
+if condition
+{
+    doSomething()
+}
+else
+{
+    doSomethingElse()
+}
+```
+
+#### Guard Statements
+- Use guard statements for early returns
+- Keep guard conditions simple and readable
+
+```swift
+// ✅ Good
+guard let url = URL(string: urlString) else {
+    completion(.failure(ValidationError.invalidURL))
+    return
+}
+
+guard !apps.isEmpty else {
+    return
+}
+
+// ❌ Bad
+if let url = URL(string: urlString) {
+    // Long nested code block
+} else {
+    completion(.failure(ValidationError.invalidURL))
+    return
+}
+```
+
+### Type Annotations and Inference
+
+#### When to Use Type Annotations
+- Use type annotations when the type isn't obvious
+- Omit type annotations when Swift can clearly infer the type
+
+```swift
+// ✅ Good
+let name = "SideStore"  // Type is obvious
+let timeout: TimeInterval = 30  // Type clarifies intent
+var apps: [App] = []  // Empty array needs type annotation
+
+// ❌ Bad
+let name: String = "SideStore"  // Redundant type annotation
+let timeout = 30  // Unclear if Int or TimeInterval
+```
+
+### Function Declarations
+
+#### Parameter Labels
+- Use descriptive parameter labels
+- Omit first parameter label when it reads naturally
+
+```swift
+// ✅ Good
+func install(_ app: App, to device: Device)
+func download(from url: URL, completion: @escaping (Data?) -> Void)
+
+// ❌ Bad
+func install(app: App, device: Device)
+func download(url: URL, completion: @escaping (Data?) -> Void)
+```
+
+#### Return Types
+- Put return type on the same line when possible
+- Break to new line for very long signatures
+
+```swift
+// ✅ Good
+func processData() -> Result<ProcessedData, ProcessingError>
+
+func complexFunction(withManyParameters param1: String,
+                    param2: Int,
+                    param3: Bool) 
+    -> Result<ComplexReturnType, ComplexErrorType> {
+    // Implementation
+}
+```
+
+## Objective-C Formatting
+
+### Naming Conventions
+
+#### Methods
+- Use descriptive method names with clear parameter labels
+- Start with lowercase letter
+- Use camelCase
+
+```objc
+// ✅ Good
+- (void)installAppWithIdentifier:(NSString *)identifier 
+                       sourceURL:(NSURL *)sourceURL 
+                      completion:(void (^)(NSError *error))completion;
+
+// ❌ Bad
+- (void)install:(NSString *)id url:(NSURL *)url completion:(void (^)(NSError *))completion;
+```
+
+#### Variables and Properties
+- Use camelCase
+- Use descriptive names
+- Prefix instance variables with underscore
+
+```objc
+// ✅ Good
+@interface AppManager : NSObject
+@property (nonatomic, strong) NSArray<App *> *installedApps;
+@property (nonatomic, assign) BOOL isInstalling;
+@end
+
+@implementation AppManager {
+    NSURLSession *_networkSession;
+    dispatch_queue_t _processingQueue;
+}
+```
+
+#### Classes and Protocols
+- Use PascalCase
+- Consider using prefixes for public classes (e.g., SS for SideStore)
+
+```objc
+// ✅ Good
+@interface SSAppInstaller : NSObject
+@protocol SSAppManaging <NSObject>
+
+// ❌ Bad
+@interface appInstaller : NSObject
+@protocol appManaging <NSObject>
+```
+
+### Spacing and Formatting
+
+#### Method Declarations
+- Align parameters vertically
+- Use consistent spacing
+
+```objc
+// ✅ Good
+- (instancetype)initWithIdentifier:(NSString *)identifier
+                             title:(NSString *)title
+                           version:(NSString *)version;
+
+// ❌ Bad
+- (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title version:(NSString *)version;
+```
+
+#### Braces
+- Opening brace on the same line
+- Closing brace on its own line
+
+```objc
+// ✅ Good
+if (condition) {
+    [self doSomething];
+} else {
+    [self doSomethingElse];
+}
+
+// ❌ Bad
+if (condition)
+{
+    [self doSomething];
+}
+else
+{
+    [self doSomethingElse];
+}
+```
+
+## Comments and Documentation
+
+### Swift Documentation
+- Use `///` for documentation comments
+- Include parameter and return value descriptions for public APIs
+
+```swift
+/// Downloads and installs an app from the specified URL
+/// - Parameters:
+///   - identifier: The unique identifier for the app
+///   - sourceURL: The URL to download the app from
+///   - completion: Called when installation completes or fails
+/// - Returns: A cancellable operation
+func installApp(withIdentifier identifier: String,
+                sourceURL: URL,
+                completion: @escaping (Result<Void, Error>) -> Void) -> Operation {
+    // Implementation
+}
+```
+
+### Objective-C Documentation
+- Use `/** */` for documentation comments
+- Follow HeaderDoc or Doxygen conventions
+
+```objc
+/**
+ * Downloads and installs an app from the specified URL
+ * @param identifier The unique identifier for the app
+ * @param sourceURL The URL to download the app from
+ * @param completion Block called when installation completes or fails
+ */
+- (void)installAppWithIdentifier:(NSString *)identifier
+                       sourceURL:(NSURL *)sourceURL
+                      completion:(void (^)(NSError *error))completion;
+```
+
+### Inline Comments
+- Use `//` for single-line comments
+- Keep comments concise and relevant
+- Explain **why**, not **what**
+
+```swift
+// ✅ Good
+// Retry failed downloads up to 3 times to handle temporary network issues
+let maxRetryAttempts = 3
+
+// ❌ Bad
+// Set maxRetryAttempts to 3
+let maxRetryAttempts = 3
+```
+
+## Error Handling
+
+### Swift Error Handling
+- Use Swift's native error handling with `throws` and `Result` types
+- Create meaningful error types
+
+```swift
+enum InstallationError: Error {
+    case invalidURL
+    case networkFailure(Error)
+    case insufficientStorage
+    case deviceNotSupported
+}
+
+func installApp() throws -> App {
+    guard let url = URL(string: urlString) else {
+        throw InstallationError.invalidURL
+    }
+    // Implementation
+}
+```
+
+### Objective-C Error Handling
+- Use `NSError **` parameter pattern
+- Always check if error parameter is non-nil before setting
+
+```objc
+- (BOOL)installAppWithError:(NSError **)error {
+    if (someCondition) {
+        if (error) {
+            *error = [NSError errorWithDomain:SSErrorDomain 
+                                         code:SSErrorCodeInvalidInput 
+                                     userInfo:nil];
+        }
+        return NO;
+    }
+    return YES;
+}
+```
+
+## Best Practices
+
+### Memory Management
+- Use ARC properly in both Swift and Objective-C
+- Be careful with retain cycles; use `weak` and `unowned` references appropriately
+
+```swift
+// ✅ Good
+class AppInstaller {
+    weak var delegate: AppInstallerDelegate?
+    
+    private lazy var networkManager: NetworkManager = {
+        let manager = NetworkManager()
+        manager.delegate = self  // Self is strong reference, but manager doesn't retain self
+        return manager
+    }()
+}
+```
+
+### Threading
+- Always update UI on the main queue
+- Use appropriate queues for background work
+
+```swift
+// ✅ Good
+DispatchQueue.global(qos: .userInitiated).async {
+    let result = self.processData()
+    DispatchQueue.main.async {
+        self.updateUI(with: result)
+    }
+}
+```
+
+### Optional Handling
+- Use safe unwrapping techniques
+- Prefer guard statements for early returns
+
+```swift
+// ✅ Good
+guard let data = response.data,
+      let apps = try? JSONDecoder().decode([App].self, from: data) else {
+    completion(.failure(ParsingError.invalidResponse))
+    return
+}
+```
+
+## Tools and Automation
+
+### SwiftLint
+Consider using SwiftLint to automatically enforce many of these formatting rules:
+
+```yaml
+# .swiftlint.yml
+line_length: 120
+function_body_length: 60
+file_length: 400
+type_body_length: 300
+
+disabled_rules:
+  - trailing_whitespace
+  
+opt_in_rules:
+  - empty_count
+  - force_unwrapping
+```
+
+Remember: These guidelines should help code readability and maintainability. When in doubt, you should prioritize clarity and consistency with the existing codebase.
