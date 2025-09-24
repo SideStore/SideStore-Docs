@@ -1,0 +1,492 @@
+---
+sidebar_position: 2
+---
+
+# Linee guida sulla formattazione del codice
+
+Questo documento schematizza gli standard della formattazione di Swift e Objective-C per SideStore. Una formattazione coerente rende il codice più leggibile e manutenibile.  
+
+## Principi Generali
+
+- **Consistenza**: Segui lo stile già esistente nel progetto
+- **Leggibilità**: Il codice deve essere semplice da leggere e da capire
+- **Semplicità**: Preferisci soluzioni semplici e chiare a quelle furbe
+- **Convenzioni di Apple**: Segui le convenzioni di Apple per Swift e Objective-C quando possibile
+
+## Formattazione Swift
+
+### Convenzione sui Nomi
+
+#### Variabili e Funzioni
+- Usa il **camelCase** per variabili, funzioni e metodi
+- Usa nomi descrittivi che indichino chiaramente lo scopo
+
+```swift
+// ✅ Giusto
+let downloadProgress: Float
+func validateUserCredentials() -> Bool
+var isAppInstalling: Bool
+
+// ❌ Sbagliato
+let dp: Float
+func validate() -> Bool
+var installing: Bool
+```
+
+#### Classi, Struct, Enums, e Protocolli
+- Usa il **PascalCase** per i tipi
+- Usa nomi descrittivi
+
+```swift
+// ✅ Giusto
+class AppInstaller
+struct InstallationProgress
+enum AppState
+protocol AppManaging
+
+// ❌ Sbagliato
+class installer
+struct progress
+enum state
+protocol managing
+```
+
+#### Costanti
+- Usa il **camelCase** per le costanti
+- Considera l'utilizzo del **SCREAMING_SNAKE_CASE** per costanti globali
+
+```swift
+// ✅ Giusto
+let maxRetryAttempts = 3
+private let defaultTimeout: TimeInterval = 30.0
+
+// Global constants
+let MAX_CONCURRENT_DOWNLOADS = 5
+
+// ❌ Sbagliato
+let MaxRetryAttempts = 3
+let max_retry_attempts = 3
+```
+
+### Indentazione e spaziatura
+
+#### Indentazione
+- Usa **4 spazi** per l'indentazione (non tab)
+- Allinea le righe successive con il delimitatore aperto
+
+```swift
+// ✅ Giusto
+func installApp(withIdentifier identifier: String,
+                sourceURL: URL,
+                completion: @escaping (Result<Void, Error>) -> Void) {
+    // Implementazione
+}
+
+// ❌ Sbagliato
+func installApp(withIdentifier identifier: String,
+sourceURL: URL,
+completion: @escaping (Result<Void, Error>) -> Void) {
+// Implementazione
+}
+```
+
+#### Lunghezza delle righe
+- Tieni le righe sotto i **120 caratteri** quando possibile
+- Spezza le righe lunghe in punti logici
+
+```swift
+// ✅ Giusto
+let longVariableName = SomeClass.createInstanceWithVeryLongMethodName(
+    parameter1: value1,
+    parameter2: value2
+)
+
+// ❌ Sbagliato
+let longVariableName = SomeClass.createInstanceWithVeryLongMethodName(parameter1: value1, parameter2: value2, parameter3: value3)
+```
+
+#### Spaziatura
+- Usa spazi singoli intorno agli operatori
+- Nessuno spazio bianco finale
+- Una sola riga vuota tra le funzioni e le sezioni principali del codice
+
+```swift
+// ✅ Giusto
+let result = value1 + value2
+if condition && anotherCondition {
+    // Codice
+}
+
+func firstFunction() {
+    // Implementazione
+}
+
+func secondFunction() {
+    // Implementazione
+}
+
+// ❌ Sbagliato
+let result=value1+value2
+if condition&&anotherCondition{
+    // Codice
+}
+func firstFunction(){
+    // Implementazione
+}
+func secondFunction(){
+    // Implementazione
+}
+```
+
+### Parentesi e Control Flow
+
+#### Stile delle parentesi
+- Apri la parentesi nella stessa riga dello statement
+- Chiudi la parentesi in una riga tutta sua, allineata con lo statement di apertura
+
+```swift
+// ✅ Giusto
+if condition {
+    doSomething()
+} else {
+    doSomethingElse()
+}
+
+class MyClass {
+    func myMethod() {
+        // Implementazione
+    }
+}
+
+// ❌ Sbagliato
+if condition
+{
+    doSomething()
+}
+else
+{
+    doSomethingElse()
+}
+```
+
+#### Guard Statement
+- Usa i guard statement per return anticipati
+- Mantieni le condizioni del guard semplici e leggibili
+
+```swift
+// ✅ Giusto
+guard let url = URL(string: urlString) else {
+    completion(.failure(ValidationError.invalidURL))
+    return
+}
+
+guard !apps.isEmpty else {
+    return
+}
+
+// ❌ Sbagliato
+if let url = URL(string: urlString) {
+    // Blocco di codice lungo e annidato
+} else {
+    completion(.failure(ValidationError.invalidURL))
+    return
+}
+```
+
+### Type Annotation e Inference
+
+#### Quando usare le Type Annotation
+- Usa le type annotation quando il tipo non è ovvio
+- Ometti le type annotation quando Swift può chiaramente capire il tipo
+
+```swift
+// ✅ Giusto
+let name = "SideStore"  // Il tipo è ovvio
+let timeout: TimeInterval = 30  // Il tipo chiarisce l'intento
+var apps: [App] = []  // L'array vuoto necessita del tipo
+
+// ❌ Sbagliato
+let name: String = "SideStore"  // Tipo superfluo
+let timeout = 30  // Non è chiaro se è Int o TimeInterval
+```
+
+### Dichiarare le Funzioni
+
+#### Etichette dei parametri
+- Usa etichette descrittive
+- Ometti la prima etichetta quando si legge naturalmente
+
+```swift
+// ✅ Giusto
+func install(_ app: App, to device: Device)
+func download(from url: URL, completion: @escaping (Data?) -> Void)
+
+// ❌ Sbagliato
+func install(app: App, device: Device)
+func download(url: URL, completion: @escaping (Data?) -> Void)
+```
+
+#### Return Type
+- Tieni i return type sulla stessa riga quando possibile
+- Mettili su una nuova riga se diventa troppo lunga
+
+```swift
+// ✅ Giusto
+func processData() -> Result<ProcessedData, ProcessingError>
+
+func complexFunction(withManyParameters param1: String,
+                    param2: Int,
+                    param3: Bool) 
+    -> Result<ComplexReturnType, ComplexErrorType> {
+    // Implementazione
+}
+```
+
+## Formattazione Objective-C
+
+### Convenzione dei nomi
+
+#### Metodi
+- Usa nomi dei metodi descrittivi con etichette dei parametri chiare
+- Inizia con la lettera minuscola
+- Usa il camelCase
+
+```objc
+// ✅ Giusto
+- (void)installAppWithIdentifier:(NSString *)identifier 
+                       sourceURL:(NSURL *)sourceURL 
+                      completion:(void (^)(NSError *error))completion;
+
+// ❌ Sbagliato
+- (void)install:(NSString *)id url:(NSURL *)url completion:(void (^)(NSError *))completion;
+```
+
+#### Variabili e Proprietà
+- Usa il camelCase
+- Usa nomi descrittivi
+- Metti un underscore davanti alle instance variable
+
+```objc
+// ✅ Giusto
+@interface AppManager : NSObject
+@property (nonatomic, strong) NSArray<App *> *installedApps;
+@property (nonatomic, assign) BOOL isInstalling;
+@end
+
+@implementation AppManager {
+    NSURLSession *_networkSession;
+    dispatch_queue_t _processingQueue;
+}
+```
+
+#### Classi e Protocolli
+- Usa il PascalCase
+- Considera l'utilizzo di prefissi per classi pubbliche (es: SS per SideStore)
+
+```objc
+// ✅ Giusto
+@interface SSAppInstaller : NSObject
+@protocol SSAppManaging <NSObject>
+
+// ❌ Sbagliato
+@interface appInstaller : NSObject
+@protocol appManaging <NSObject>
+```
+
+### Spaziatura e Formattazione
+
+#### Dichiarazione dei metodi
+- Allinea i parametri verticalmente
+- Usa una spaziatura uniforme
+
+```objc
+// ✅ Giusto
+- (instancetype)initWithIdentifier:(NSString *)identifier
+                             title:(NSString *)title
+                           version:(NSString *)version;
+
+// ❌ Sbagliato
+- (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title version:(NSString *)version;
+```
+
+#### Parentesi
+- La parentesi si apre nella stessa riga
+- La parentesi si chiude in una riga sua
+
+```objc
+// ✅ Giusto
+if (condition) {
+    [self doSomething];
+} else {
+    [self doSomethingElse];
+}
+
+// ❌ Sbagliato
+if (condition)
+{
+    [self doSomething];
+}
+else
+{
+    [self doSomethingElse];
+}
+```
+
+## Commenti e Documentazione
+
+### Documentazione Swift
+- Usa `///` per commenti di documentazione
+- Includi le descrizioni dei parametri e dei valori per API pubbliche
+
+```swift
+/// Downloads and installs an app from the specified URL
+/// - Parameters:
+///   - identifier: The unique identifier for the app
+///   - sourceURL: The URL to download the app from
+///   - completion: Called when installation completes or fails
+/// - Returns: A cancellable operation
+func installApp(withIdentifier identifier: String,
+                sourceURL: URL,
+                completion: @escaping (Result<Void, Error>) -> Void) -> Operation {
+    // Implementazione
+}
+```
+
+### Documentazione Objective-C
+- Usa `/** */` per commenti sulla documentazione
+- Segui le convenzioni HeaderDoc o Doxygen
+
+```objc
+/**
+ * Downloads and installs an app from the specified URL
+ * @param identifier The unique identifier for the app
+ * @param sourceURL The URL to download the app from
+ * @param completion Block called when installation completes or fails
+ */
+- (void)installAppWithIdentifier:(NSString *)identifier
+                       sourceURL:(NSURL *)sourceURL
+                      completion:(void (^)(NSError *error))completion;
+```
+
+### Commenti inline
+- Usa `//` per commenti in una sola riga
+- Mantieni i commenti concisi e rilevanti
+- Spiega **perché**, non **cosa**
+
+```swift
+// ✅ Giusto
+// Retry failed downloads up to 3 times to handle temporary network issues
+let maxRetryAttempts = 3
+
+// ❌ Sbagliato
+// Set maxRetryAttempts to 3
+let maxRetryAttempts = 3
+```
+
+## Gestione degli Errori
+
+### Gestione degli Errori di Swift
+- Usa la gestione degli errori nativa di Swift con `throws` e `Result`
+- Crea tipi significativi per gli errori
+
+```swift
+enum InstallationError: Error {
+    case invalidURL
+    case networkFailure(Error)
+    case insufficientStorage
+    case deviceNotSupported
+}
+
+func installApp() throws -> App {
+    guard let url = URL(string: urlString) else {
+        throw InstallationError.invalidURL
+    }
+    // Implementazione
+}
+```
+
+### Gestione degli Errori per Objective-C
+- Utilizza il modello di parametro `NSError **`
+- Controlla sempre che il parametro di errore sia non-nullo
+
+```objc
+- (BOOL)installAppWithError:(NSError **)error {
+    if (someCondition) {
+        if (error) {
+            *error = [NSError errorWithDomain:SSErrorDomain 
+                                         code:SSErrorCodeInvalidInput 
+                                     userInfo:nil];
+        }
+        return NO;
+    }
+    return YES;
+}
+```
+
+## Best Practice
+
+### Gestione della Memoria
+- Utilizza ARC correttamente sia in Swift che in Objective-C
+- Fai attenzione ai cicli retain; utilizza i riferimenti `weak` e `unowned` in modo appropriato
+
+```swift
+// ✅ Giusto
+class AppInstaller {
+    weak var delegate: AppInstallerDelegate?
+    
+    private lazy var networkManager: NetworkManager = {
+        let manager = NetworkManager()
+        manager.delegate = self  // Self è un riferimento forte, ma il gestore non conserva self
+        return manager
+    }()
+}
+```
+
+### Threading
+- Aggiorna sempre l'UI sulla coda principale
+- Usa code appropriate per task in background
+
+```swift
+// ✅ Giusto
+DispatchQueue.global(qos: .userInitiated).async {
+    let result = self.processData()
+    DispatchQueue.main.async {
+        self.updateUI(with: result)
+    }
+}
+```
+
+### Gestione facoltativa
+- Usa tecniche sicure di unwrapping
+- Prediligi le istruzioni guard per i return anticipati
+
+```swift
+// ✅ Giusto
+guard let data = response.data,
+      let apps = try? JSONDecoder().decode([App].self, from: data) else {
+    completion(.failure(ParsingError.invalidResponse))
+    return
+}
+```
+
+## Strumenti e Automazioni
+
+### SwiftLint
+Considera l'utilizzo di SwiftLint per applicare automaticamente queste regole di formattazione:
+
+```yaml
+# .swiftlint.yml
+line_length: 120
+function_body_length: 60
+file_length: 400
+type_body_length: 300
+
+disabled_rules:
+  - trailing_whitespace
+  
+opt_in_rules:
+  - empty_count
+  - force_unwrapping
+```
+
+Ricorda: Queste linee guida dovrebbero migliorare la leggibilità e la manutenibilità del codice. Se sei in dubbio, prediligi la chiarezza e l'omogeneità col codice già scritto.
