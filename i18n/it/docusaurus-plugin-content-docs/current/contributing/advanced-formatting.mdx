@@ -2,21 +2,21 @@
 sidebar_position: 3
 ---
 
-# Advanced Formatting Guidelines
+# Linee guida avanzate per la formattazione 
 
-We will go through advanced formatting situations, architectural patterns, and complex Swift/Objective-C features for the SideStore project.
+Esamineremo situazioni di formattazione avanzata, modelli architetturali e funzionalità complesse di Swift/Objective-C per SideStore.
 
-## Advanced Swift Patterns
+## Pattern Swift Avanzati
 
-### Protocol-Oriented Programming
+### Programmazione Protocol-Oriented
 
-#### Protocol Definitions
-- Keep protocols focused and cohesive
-- Use associated types for generic protocols
-- Provide default implementations in extensions when appropriate
+#### Definizione dei Protocolli
+- Mantieni i protocolli mirati e coerenti
+- Utilizza tipi associati per i protocolli generici
+- Fornisci implementazioni predefinite nelle estensioni quando opportuno
 
 ```swift
-// ✅ Good
+// ✅ Giusto
 protocol AppInstalling {
     associatedtype AppType: App
     
@@ -30,23 +30,23 @@ extension AppInstalling {
     }
 }
 
-// ❌ Bad
+// ❌ Sbagliato
 protocol AppManager {
     func install(_ app: Any) -> Bool
     func uninstall(_ app: Any) -> Bool
     func update(_ app: Any) -> Bool
     func backup(_ app: Any) -> Bool
     func restore(_ app: Any) -> Bool
-    // Too many responsibilities
+    // Troppe responsabilità
 }
 ```
 
-#### Protocol Composition
-- Use protocol composition for complex requirements
-- Keep individual protocols small and focused
+#### Composizione del Protocollo
+- Usa la composizione del protocollo per requisiti complessi
+- Mantieni i protocolli individuali piccoli e mirati
 
 ```swift
-// ✅ Good
+// ✅ Giusto
 protocol Downloadable {
     var downloadURL: URL { get }
     func download() async throws -> Data
@@ -67,15 +67,15 @@ class AppDeployer {
 }
 ```
 
-### Generics and Type Constraints
+### Generici e vincoli di tipo
 
-#### Generic Type Definitions
-- Use meaningful constraint names
-- Prefer protocol constraints over class constraints
-- Use `where` clauses for complex constraints
+#### Definizioni di Tipo Generico
+- Usa nomi significativi per i vincoli
+- Preferisci vincoli di protocollo anziché vincoli di classe
+- Usa le clausole `where` per vincoli complessi
 
 ```swift
-// ✅ Good
+// ✅ Giusto
 struct Repository<Entity: Identifiable & Codable> {
     private var entities: [Entity.ID: Entity] = [:]
     
@@ -88,19 +88,19 @@ struct Repository<Entity: Identifiable & Codable> {
     }
 }
 
-// ❌ Bad
+// ❌ Sbagliato
 struct Repository<T> {
     private var items: [String: T] = [:]
-    // No type safety
+    // Nessuna sicurezza dei tipi
 }
 ```
 
-#### Advanced Generic Constraints
-- Use conditional conformance appropriately
-- Leverage phantom types when needed
+#### Vincoli Generici Avanzati
+- Utilizzare la conformità condizionale in modo appropriato
+- Sfrutta i tipi fantasma quando necessario
 
 ```swift
-// ✅ Good
+// ✅ Giusto
 extension Array: AppCollection where Element: App {
     var installedApps: [Element] {
         return filter { $0.isInstalled }
@@ -111,7 +111,7 @@ extension Array: AppCollection where Element: App {
     }
 }
 
-// Phantom types for type safety
+// Tipi fantasma per la sicurezza dei tipi
 struct AppState<Status> {
     let app: App
 }
@@ -123,20 +123,20 @@ typealias DownloadedApp = AppState<Downloaded>
 typealias InstalledApp = AppState<Installed>
 ```
 
-### Async/Await Patterns
+### Pattern Async/Await
 
-#### Async Function Design
-- Use async/await consistently
-- Structure concurrent operations clearly
-- Handle cancellation appropriately
+#### Design Funzione Async
+- Utilizza async/await in modo coerente
+- Struttura le operazioni simultanee in modo chiaro
+- Gestisci le cancellazioni in modo appropriato
 
 ```swift
-// ✅ Good
+// ✅ Giusto
 actor AppInstallationManager {
     private var activeInstallations: [String: Task<Void, Error>] = [:]
     
     func installApp(_ app: App) async throws {
-        // Prevent duplicate installations
+        // Previene installazioni duplicate
         if activeInstallations[app.identifier] != nil {
             throw InstallationError.alreadyInstalling
         }
@@ -155,7 +155,7 @@ actor AppInstallationManager {
     }
     
     private func performInstallation(_ app: App) async throws {
-        // Check for cancellation at key points
+        // Controlla cancellazioni durante i punti chiave
         try Task.checkCancellation()
         
         let data = try await downloadApp(app)
@@ -166,10 +166,10 @@ actor AppInstallationManager {
     }
 }
 
-// ❌ Bad
+// ❌ Sbagliato
 func installApp(_ app: App, completion: @escaping (Error?) -> Void) {
     DispatchQueue.global().async {
-        // Mixing old completion handler style with new async code
+        // Mischia il vecchio completion handler style con il nuovo codice async
         let result = await self.downloadApp(app)
         DispatchQueue.main.async {
             completion(nil)
@@ -178,12 +178,12 @@ func installApp(_ app: App, completion: @escaping (Error?) -> Void) {
 }
 ```
 
-#### Structured Concurrency
-- Use task groups for related concurrent operations
-- Prefer structured concurrency over unstructured tasks
+#### Concorrenza Strutturata
+- Usa i task group per operazioni concorrenti correlate
+- Prediligi la concorrenza strutturata alle task non strutturate
 
 ```swift
-// ✅ Good
+// ✅ Giusto
 func installMultipleApps(_ apps: [App]) async throws {
     try await withThrowingTaskGroup(of: Void.self) { group in
         for app in apps {
@@ -192,12 +192,12 @@ func installMultipleApps(_ apps: [App]) async throws {
             }
         }
         
-        // Wait for all installations to complete
+        // Attende che tutte le installazioni siano completate
         try await group.waitForAll()
     }
 }
 
-// For independent results
+// Per risultati indipendenti
 func downloadMultipleApps(_ apps: [App]) async throws -> [App: Data] {
     try await withThrowingTaskGroup(of: (App, Data).self) { group in
         for app in apps {
@@ -216,14 +216,14 @@ func downloadMultipleApps(_ apps: [App]) async throws -> [App: Data] {
 }
 ```
 
-### Result Builders and DSLs
+### Result Builder e DSL
 
-#### Custom Result Builders
-- Create focused, single-purpose result builders
-- Provide clear syntax for domain-specific operations
+#### Result Builder Personalizzati
+- Crea result builder mirati e mono-funzione
+- Usa una sintassi chiara per operazioni domain-specific
 
 ```swift
-// ✅ Good
+// ✅ Giusto
 @resultBuilder
 struct AppConfigurationBuilder {
     static func buildBlock(_ components: AppConfigurationComponent...) -> AppConfiguration {
@@ -243,7 +243,7 @@ struct AppConfigurationBuilder {
     }
 }
 
-// Usage
+// Utilizzo
 func configureApp(@AppConfigurationBuilder builder: () -> AppConfiguration) -> App {
     let config = builder()
     return App(configuration: config)
@@ -262,14 +262,14 @@ let app = configureApp {
 }
 ```
 
-## Advanced Objective-C Patterns
+## Pattern Objective-C Avanzati
 
-### Category Organization
-- Use categories to organize related functionality
-- Keep category names descriptive and specific
+### Organizzazione di Categorie
+- Usa le categorie per organizzare funzionalità correlate
+- Mantieni i nomi delle categorie descrittivi e specifici
 
 ```objc
-// ✅ Good
+// ✅ Giusto
 @interface NSString (SSValidation)
 - (BOOL)ss_isValidAppIdentifier;
 - (BOOL)ss_isValidVersion;
@@ -280,19 +280,19 @@ let app = configureApp {
 - (void)ss_showInstallationProgress:(SSInstallationProgress *)progress;
 @end
 
-// ❌ Bad
+// ❌ Sbagliato
 @interface NSString (Helpers)
-- (BOOL)isValid;  // Too generic
-- (NSString *)cleanup;  // Unclear purpose
+- (BOOL)isValid;  // Troppo generico
+- (NSString *)cleanup;  // Utilità non chiara
 @end
 ```
 
-### Advanced Memory Management
-- Use proper patterns for delegate relationships
-- Handle complex object graphs correctly
+### Gestione Avanzata della Memoria
+- Usa modelli adeguati per le relazioni dei delegati
+- Gestisci correttamente i grafi complessi degli oggetti
 
 ```objc
-// ✅ Good
+// ✅ Giusto
 @interface SSAppInstaller : NSObject
 @property (nonatomic, weak) id<SSAppInstallerDelegate> delegate;
 @property (nonatomic, strong) NSOperationQueue *installationQueue;
@@ -330,12 +330,12 @@ let app = configureApp {
 @end
 ```
 
-### Block Usage Patterns
-- Use proper block patterns for asynchronous operations
-- Handle memory management in blocks correctly
+### Utilizzo Pattern Block
+- Usa pattern block appropriati per operazioni asincrone
+- Gestisci correttamente la gestione della memoria nei blocchi
 
 ```objc
-// ✅ Good
+// ✅ Giusto
 typedef void (^SSInstallationProgressBlock)(float progress);
 typedef void (^SSInstallationCompletionBlock)(SSApp *app, NSError *error);
 
@@ -367,7 +367,7 @@ typedef void (^SSInstallationCompletionBlock)(SSApp *app, NSError *error);
                 return;
             }
             
-            // Process downloaded file
+            // Processa il file scaricato
             [strongSelf processDownloadedFile:location 
                                        forApp:app 
                                    completion:completion];
@@ -380,14 +380,14 @@ typedef void (^SSInstallationCompletionBlock)(SSApp *app, NSError *error);
 @end
 ```
 
-## Architectural Patterns
+## Pattern Architetturali
 
-### MVVM Implementation
-- Separate concerns clearly between Model, View, and ViewModel
-- Use proper data binding patterns
+### Implementazione MVVM
+- Separa chiaramente tra Model, View e ViewModel
+- Utilizza pattern appropriati di data binding
 
 ```swift
-// ✅ Good
+// ✅ Giusto
 // Model
 struct App {
     let identifier: String
@@ -425,7 +425,7 @@ class AppListViewModel: ObservableObject {
     func installApp(_ app: App) async {
         do {
             try await appService.installApp(app)
-            await loadApps() // Refresh the list
+            await loadApps() // Aggiorna la lista
         } catch {
             errorMessage = "Failed to install \(app.name): \(error.localizedDescription)"
         }
@@ -471,11 +471,11 @@ struct AppListView: View {
 ```
 
 ### Dependency Injection
-- Use dependency injection for testability and flexibility
-- Consider using a DI container for complex applications
+- Usa il dependency injection per la provabilità e la flessibilità
+- Prendi in considerazione l'utilizzo di un container DI per applicazioni complesse
 
 ```swift
-// ✅ Good
+// ✅ Giusto
 protocol AppService {
     func fetchAvailableApps() async throws -> [App]
     func installApp(_ app: App) async throws
@@ -509,7 +509,7 @@ class DefaultAppService: AppService {
     }
 }
 
-// DI Container
+// Container DI
 class ServiceContainer {
     static let shared = ServiceContainer()
     
@@ -524,12 +524,12 @@ class ServiceContainer {
 }
 ```
 
-### Error Handling Architecture
-- Create comprehensive error handling strategies
-- Use typed errors for better error handling
+### Architettura di Gestione degli Errori
+- Crea strategie globali di gestione degli errori
+- Usa errori tipo per una migliore gestione degli errori
 
 ```swift
-// ✅ Good
+// ✅ Giusto
 enum SideStoreError: Error {
     case network(NetworkError)
     case installation(InstallationError)
@@ -566,7 +566,7 @@ extension SideStoreError: LocalizedError {
     }
 }
 
-// Error handling in services
+// Gestione degli errori nei servizi
 class AppService {
     func installApp(_ app: App) async throws {
         do {
@@ -586,14 +586,14 @@ class AppService {
 }
 ```
 
-## Performance Considerations
+## Considerazioni di Performance
 
-### Memory Optimization
-- Use lazy loading for expensive resources
-- Implement proper caching strategies
+### Ottimizzazione della Memoria
+- Usa il lazy loading per risorse costose
+- Implementa strategie di caching adatte
 
 ```swift
-// ✅ Good
+// ✅ Giusto
 class AppImageCache {
     private let cache = NSCache<NSString, UIImage>()
     private let downloadQueue = DispatchQueue(label: "image-download", qos: .utility)
@@ -606,12 +606,12 @@ class AppImageCache {
     func image(for app: App) async -> UIImage? {
         let key = app.identifier as NSString
         
-        // Check cache first
+        // Prima controllo la cache
         if let cachedImage = cache.object(forKey: key) {
             return cachedImage
         }
         
-        // Download if not cached
+        // Scarico se non è nella cache
         return await withCheckedContinuation { continuation in
             downloadQueue.async { [weak self] in
                 guard let self = self else {
@@ -638,11 +638,11 @@ class AppImageCache {
 ```
 
 ### Threading Best Practices
-- Use appropriate queue priorities
-- Minimize context switching
+- Utilizza priorità appropriate della coda 
+- Minimizza il context switching
 
 ```swift
-// ✅ Good
+// ✅ Giusto
 actor BackgroundProcessor {
     private let processingQueue = DispatchQueue(
         label: "background-processing",
@@ -672,7 +672,7 @@ actor BackgroundProcessor {
     }
     
     private func processChunk(_ chunk: [LargeDataItem]) async -> ProcessedItem? {
-        // CPU-intensive processing
+        // Calcolo CPU-intensive
         return await withCheckedContinuation { continuation in
             processingQueue.async {
                 let result = chunk.map { self.expensiveOperation($0) }
@@ -683,14 +683,14 @@ actor BackgroundProcessor {
 }
 ```
 
-## Testing Patterns
+## Pattern di Testing 
 
-### Protocol-Based Testing
-- Use protocols for dependency injection in tests
-- Create focused test doubles
+### Testing Protocol-Based
+- Usa i protocolli per la dependency injection nei test
+- Crea test double mirati
 
 ```swift
-// ✅ Good
+// ✅ Giusto
 class MockAppService: AppService {
     var shouldFailInstallation = false
     var installedApps: [App] = []
@@ -742,22 +742,22 @@ class AppListViewModelTests: XCTestCase {
 }
 ```
 
-## Documentation Standards
+## Standard della Documentazione
 
-### Complex API Documentation
-- Document complex behaviors and edge cases
-- Provide usage examples for non-trivial APIs
+### Documentazione API Complessa
+- Documenta comportamenti complessi e gli edge case
+- Fornisci esempi di utilizzo per API non-trivial
 
 ```swift
 /**
- * A thread-safe manager for handling app installations with automatic retry logic.
+ * Un gestore thread-safe per la gestione delle installazioni delle app con logica di riprova automatica.
  * 
- * This class manages the installation process for iOS applications, handling
- * network downloads, signature verification, and device communication.
- * It provides automatic retry functionality for transient failures and
- * comprehensive error reporting.
+ * Questa classe gestisce il processo di installazione delle applicazioni iOS, occupandosi dei
+ * download di rete, della verifica delle firme e della comunicazione con i dispositivi.
+ * Fornisce una funzionalità di riprova automatica per gli errori transitori e una
+ * reportistica completa degli errori.
  *
- * ## Usage Example
+ * ## Esempio di utilizzo
  * ```swift
  * let installer = AppInstallationManager()
  * 
@@ -767,28 +767,28 @@ class AppListViewModelTests: XCTestCase {
  *         identifier: app.bundleID,
  *         maxRetries: 3
  *     )
- *     print("Installation completed: \(result.installedPath)")
+ *     print(“Installazione completata: \(result.installedPath)”)
  * } catch InstallationError.insufficientStorage {
- *     // Handle storage error
+ *     // Gestisci errore di archiviazione
  * } catch {
- *     // Handle other errors
+ *     // Gestisci altri errori
  * }
  * ```
  *
- * ## Thread Safety
- * This class is thread-safe and can be called from any queue. All completion
- * handlers are called on the main queue unless otherwise specified.
+ * ## Sicurezza dei thread
+ * Questa classe è thread-safe e può essere richiamata da qualsiasi coda. Tutti i gestori di 
+ * completamento vengono richiamati sulla coda principale, salvo diversamente specificato.
  *
- * ## Error Handling
- * Installation failures are categorized into recoverable and non-recoverable
- * errors. Recoverable errors (network timeouts, temporary device issues) will
- * be automatically retried up to the specified limit. Non-recoverable errors
- * (invalid signatures, incompatible devices) will fail immediately.
+ * ## Gestione degli errori
+ * Gli errori di installazione sono classificati in errori recuperabili e non recuperabili.
+ * Gli errori recuperabili (timeout di rete, problemi temporanei del dispositivo)
+ * verranno riprovati automaticamente fino al limite specificato. Gli errori non recuperabili
+ * (firme non valide, dispositivi incompatibili) causeranno un errore immediato.
  */
 @MainActor
 class AppInstallationManager {
-    // Implementation
+    // Implementazione
 }
 ```
 
-Remember: These advanced patterns should be used judiciously. Always prioritize code clarity and maintainability over clever implementations. When in doubt, choose the simpler approach that still meets the requirements.
+Ricorda: questi modelli avanzati devono essere utilizzati con giudizio. Dai sempre la priorità alla chiarezza e alla manutenibilità del codice rispetto a implementazioni ingegnose. In caso di dubbio, scegli l'approccio più semplice che soddisfi comunque i requisiti.
