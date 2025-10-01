@@ -1,0 +1,240 @@
+---
+sidebar_position: 1
+---
+
+# Contribuire a SideStore
+
+Ti ringraziamo per l'interesse nel contribuire a SideStore! SideStore è un progetto guidato dalla community ed è reso possibile grazie a gente come te.
+
+Contribuendo a questo progetto (SideStore) accetti il Developer Certificate of Origin che puoi trovare in [CERTIFICATE-OF-ORIGIN.md](https://github.com/SideStore/SideStore/blob/develop/CERTIFICATE-OF-ORIGIN.md). Qualsiasi contributo a questo progetto dopo l'aggiunta del Developer Certificate of Origin è soggetto alla sua politica.
+
+Ci sono diversi modi per contribuire a SideStore, quindi se non sei uno sviluppatore ci sono comunque vari medi per aiutare:
+
+- [Scrivere la documentazione](https://github.com/SideStore/SideStore-Docs)
+- [Inviare bug report dettagliati e consigliare nuove funzionalità](https://github.com/SideStore/SideStore/issues/new/choose)
+- Aiutarci col supporto:
+    - [Discord](https://discord.gg/sidestore-949183273383395328)
+    - [GitHub Discussions](https://github.com/SideStore/SideStore/discussions)
+
+In ogni caso, questa guida si concentrerà sulla parte dello sviluppo. Per ora qui troverai solo le info per il setup, ma puoi [unirti al nostro Discord](https://discord.gg/sidestore-949183273383395328) se hai bisogno di più aiuto.
+
+## Requisiti
+
+Questa guida assume che tu:
+
+- abbia un Mac
+- abbia Xcode installato
+- abbia una conoscenza base del terminale (come eseguire comandi, fare cd in una directory)
+- abbia una conoscenza base di Git ([GitHub Desktop](https://desktop.github.com/) è un ottimo tool per beginner e semplifica molto il lavorare con Git)
+- abbia una conoscenza base di Swift e sviluppo iOS
+
+## Setup
+
+1. **Forka la repo SideStore su GitHub**.
+
+2. **Clona il fork**:
+   ```bash
+   git clone https://github.com/<il-tuo-username-GitHub>/SideStore.git --recurse
+   cd SideStore
+   ```
+   
+   Se stai usando GitHub Desktop, guarda [questa guida](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop).
+
+3. **Copia `CodeSigning.xcconfig.sample` in `CodeSigning.xcconfig`** e inserisci i valori.
+
+4. **(Solo sviluppo)** Cambia il valore di `ALTDeviceID` nell'Info.plist con l'UDID del tuo dispositivo. Di solito SideServer lo fa in automatico durante l'installazione. Quando utilizzi Xcode devi settarlo manualmente altrimenti SideStore non ri-firmerà (né installerà) correttamente le app.
+
+5. **Infine, apri `AltStore.xcworkspace` in Xcode**.
+
+Successivamente fai e prova le tue modifiche. Poi fai il commit e pusha i cambiamenti con git e apri una pull request. 
+
+
+## Info sui binari precompilati
+
+minimuxer ed em_proxy utilizzano binari precompilati con librerie statiche creati da GitHub Actions per velocizzare le compilazioni ed eliminare la necessità di installare Rust quando si lavora su SideStore. [`SideStore/fetch-prebuilt.sh`](https://github.com/SideStore/SideStore/blob/develop/SideStore/fetch-prebuilt.sh) verrà eseguito prima di ogni compilazione da Xcode e verificherà una volta ogni 6 ore se i binari scaricati sono aggiornati. Se si desidera forzare la verifica della presenza di nuovi binari, esegui `bash ./SideStore/fetch-prebuilt.sh force`.
+
+## Compilare con Xcode
+
+Se necessario installa cocoapods con: `brew install cocoapods`
+Ora dal terminale nella root della repository, esegui un Pod-Install con il comando `pod install` per installare le dipendenze di cocoapod.
+Dopodiché potrai compilare con Xcode normalmente.
+
+## Compilare un IPA per la Distribuzione
+
+Se necessario installa cocoapods con: `brew install cocoapods`
+Ora dal terminale nella root della repository, esegui un Pod-Install con il comando `pod install` per installare le dipendenze di cocoapod.
+
+Puoi ora usare il comando Makefile `make build fakesign ipa` nella root directory.
+La configurazione di default per la compilazione è `Release`
+Per le build di debug: `export BUILD_CONFIG=Debug;make build fakesign ipa` nella root directory.
+Per le build alpha/beta: `export IS_ALPHA=1;` o `export IS_BETA=1;` prima di invocare il comando per la build.
+Questo creerà il file SideStore.ipa.
+
+```sh
+Esempi: 
+
+    # cocoapods
+    brew install cocoapods
+    # esegui l'installazione dei pods
+    pod install
+
+    # build alpha release
+    export IS_ALPHA=1;make build fakesign ipa
+    # build alpha debug 
+    export IS_ALPHA=1;export BUILD_CONFIG=Debug;make build fakesign ipa
+
+    # build beta release 
+    export IS_BETA=1;make build fakesign ipa
+    # build beta debug 
+    export IS_BETA=1;export BUILD_CONFIG=Debug;make build fakesign ipa
+
+    # build release stabile 
+    make build fakesign ipa
+    # build debug stabile 
+    export BUILD_CONFIG=Debug;make build fakesign ipa
+```
+
+Di default SideStore verrà compilato con il suo bundleIdentifier di default `com.SideStore.SideStore`, se hai bisogno di impostarne uno personalizzato puoi farlo esportando la variabile `BUNDLE_ID_SUFFIX`:
+
+```sh
+    # build release stabile
+    export BUNDLE_ID_SUFFIX=XYZ0123456;make build fakesign ipa
+    # build debug stabile
+    export BUNDLE_ID_SUFFIX=XYZ0123456;export BUILD_CONFIG=Debug;make build fakesign ipa
+```
+
+**NOTA**: Quando si compila da XCode, `BUNDLE_ID_SUFFIX` è impostato di default al valore di `DEVELOPMENT_TEAM`
+
+Questo comportamento può essere modificato impostando/rimuovendo BUNDLE_ID_SUFFIX sovrascrivendo CodeSigning.xcconfig creato da CodeSigning.xcconfig.sample
+
+:::warning
+Il binario creato conterrà i percorsi dei DerivedData di Xcode e, se hai compilato minimuxer sulla tua macchina, i percorsi di $HOME/.cargo. Questi includono il tuo username. Se vuoi mantenere primato il tuo username, puoi far compilare l'IPA da GitHub Actions.
+:::
+
+## Sviluppare minimuxer affianco a SideStore
+
+Leggi il [README di minimuxer](https://github.com/SideStore/minimuxer) per istruzioni sullo sviluppo.
+
+## Procedura per una Pull Request
+
+### Prima di presentarla
+
+1. **Segui gli standard della programmazione**: Assicurati che il tuo codice segua le nostre [linee guida sulla formattazione](./formatting.mdx).
+
+2. **Testa i cambiamenti**: 
+   - Testa su diverse versioni iOS quando possibile
+   - Assicurati che le funzioni esistenti non siano rotte
+   - Aggiungi test per le nuove funzioni quando possibile
+
+3. **Aggiorna la documentazione**: Aggiorna la documentazione se le modifiche apportate influiscono su funzionalità visibili all'utente.
+
+### Presentare la tua PR
+
+1. **Crea una feature branch**:
+   ```bash
+   git checkout -b feature/nome-della-feature
+   ```
+
+2. **Applica i cambiamenti**: Segui le linee guida e le best-practice.
+
+3. **Committa i cambiamenti firmandoli**:
+   ```bash.
+   git add .
+   git commit -s -m "Aggiungi un messaggio descrittivo"
+   ```
+   
+   **Importante**: Tutti i commit devono essere firmati con il Developer Certificate of Origin (DCO). Il flag `-s` aggiunge automaticamente la linea `Signed-off-by` al tuo messaggio del commit.
+
+4. **Pusha nel tuo fork**:
+   ```bash
+   git push origin feature/nome-della-feature
+   ```
+
+5. **Crea una Pull Request**: Vai nella repo di SideStore e crea una pull request dal tuo branch.
+
+:::caution
+**Non** accettiamo pull request che sono palesemente generate da AI o "vibe-coded" (es: troppi commenti ovvi, codice generico, mancanza di comprensione del progetto o codice non pensato appositamente per SideStore). Assicurati che i tuoi contributi siano originali e dimostrino chiara comprensione del codice e dei suoi obiettivi.
+:::
+
+### PR Guidelines
+
+- **Clear title**: Use a descriptive title that summarizes the change
+- **Detailed description**: Explain what changes you made and why
+- **Link related issues**: Reference any related GitHub issues
+- **Screenshots**: Include screenshots for UI changes
+- **Testing notes**: Describe how you tested your changes
+
+## Developer Certificate of Origin (DCO)
+
+SideStore richiede che tutti i collaboratori firmino i commit utilizzando il Developer Certificate of Origin (DCO). Questo funge da Codice di Condotta dei collaboratori ed è un modo semplice per certificare che hai scritto e hai diritto di inviare il codice che stai pushando. 
+
+### Cos'è il DCO?
+
+Firmando i tuoi commit, certifichi che:
+
+- **(a)** La contribuzione è stata creata interamente o in parte da te e hai il diritto di inviarla sotto la licenza open source indicata nel file; oppure
+- **(b)** La contribuzione è basata su lavori esistenti che, secondo la tua conoscenza, sono coperti da una licenza open source appropriata e hai il diritto, in base a tale licenza, di presentare il lavoro con quelle modifiche; oppure
+- **(c)** La contribuzione ti è stata direttamente fornita da qualche altra persona che ha certificato (a) o (b) e non hai apportato modifiche. 
+- **(d)** Comprendi e accetti che questo progetto e il contributo sono pubblici e che la registrazione del contributo è conservata per un tempo indeterminato.
+
+### Come firmare
+
+Per firmare i tuoi commit, aggiungi semplicemente il flag `-s` quando fai un commit:
+
+```bash
+git commit -s -m "Messaggio del commit"
+```
+
+Questo aggiungerà automaticamente la riga `Signed-off-by` al tuo messaggio del commit:
+
+```
+Messaggio del commit
+
+Signed-off-by: SternXD <stern@sidestore.io>
+```
+
+### Note importanti
+
+- **Tutti i commit devono essere firmati** - Di solito preferiamo che tu firmi i tuoi commit.
+- **Usa l'indirizzo email corretto** - L'indirizzo email deve corrispondere al tuo account GitHub
+- **Firma retroattiva** - Se dimentichi di firmare, puoi modificare il tuo ultimo commit con `git commit --amend -s`
+
+Per maggiori dettagli, vedi il documento completo del [Certificato di Origine](https://github.com/SideStore/SideStore/blob/develop/CERTIFICATE-OF-ORIGIN.md).
+
+## Processo di revisione del codice
+
+1. **Revisione iniziale**: un responsabile della manutenzione esaminerà la tua PR entro pochi giorni
+2. **Feedback**: rispondi a eventuali richieste di modifiche o domande
+3. **Approvazione finale**: una volta approvata, un responsabile della manutenzione mergerà la tua PR
+
+## Linee guida per contributi di qualità 
+
+### Qualità del codice
+- Scrivi un codice pulito e leggibile
+- Segui le best-practice di Swift e Objective-C
+- Usa nomi di funzioni e variabili sensati
+- Aggiungi commenti dove il codice è complesso
+
+### Testing
+- Testa su device fisico quando possibile
+- Testa gli edge case e i possibili errori
+- Verifica la retro-compatibilità
+
+### Documentazione
+- Aggiorna i commenti sul codice
+- Aggiorna la documentazione destinata agli utenti
+- Includei documentazione inline per le API pubbliche
+
+## Ottenere Aiuto
+
+Se hai bisogno di aiuto o hai domande:
+
+- **GitHub Discussions**: Usa GitHub Discussions per domande generiche
+- **GitHub Issues**: Crea un'issue per bug o una feature request
+- **Discord**: Unisciti alla community di SideStore su Discord
+
+## Riconoscimenti
+
+I collaboratori che contribuiscono in modo importante saranno inseriti nei crediti e nel changelog del progetto.
+
+Grazie per contribuire a SideStore!
