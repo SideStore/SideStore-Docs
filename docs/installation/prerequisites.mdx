@@ -10,14 +10,15 @@ SideStore's installation process may seem tricky, but with the ***one-time*** us
 
 To install SideStore, you will need:
 
-- An iPhone or iPad [with a passcode](https://support.apple.com/en-us/119586) running iOS/iPadOS 14 or higher
-- A [Mac](/docs/installation/mac), [Windows](/docs/installation/windows), or [Linux (support is experimental)](/docs/installation/linux) computer
-- An Apple ID
-- The StosVPN app (see below)
+- An iPhone/iPad [with a passcode](https://support.apple.com/en-us/119586) running iOS/iPadOS 14 or higher
+- A computer (one-time)
+- An Apple Account
 - A Wi-Fi connection
 - Some time (This is a quick process, but you should [leave time for troubleshooting](/docs/troubleshooting/))
 
-## StosVPN
+## Preparing Your Devices
+
+### On your iPhone/iPad:
 
 SideStore utilizes an on-device VPN which allows SideStore to communicate with internal services.
 
@@ -26,9 +27,22 @@ SideStore utilizes an on-device VPN which allows SideStore to communicate with i
 
 This VPN is required to be turned on any time you wish to install, update, or refresh apps in SideStore.
 
+### On your Mac
+1. Download and install iloader for Mac ([M-Series](https://github.com/nab138/iloader/releases/latest/download/iloader-darwin-aarch64.dmg) or [Intel](https://github.com/nab138/iloader/releases/latest/download/iloader-darwin-x64.dmg)).
+2. Open Terminal, run `sudo xattr -c ./Applications/iloader.app`, and enter your password if prompted.
+
+
+## On your Windows PC
+1. Download and install [iTunes](https://apple.co/ms)
+2. Download the iloader installer ([exe](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.exe) or [msi](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.msi)).
+3. Run the installer.
+
+## On your Linux Machine
+1. Download and install `usbmuxd` (may be preinstalled for your distro, otherwise install with your package manager).
+2. Download and install iloader for your distro ([Debian/Ubuntu](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.deb), [Fedora/openSUSE](https://github.com/nab138/iloader/releases/download/v0.1.3/iloader-linux-x86_64.rpm), [other](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.AppImage)).
+
+
 ## Next Steps 
 
-Next, follow the installation instructions for your operating system!
-- [macOS](mac)
-- [Windows](windows)
-- [Linux (experimental)](linux)
+Next, follow the installation instructions to install SideStore!
+- [Install](install)

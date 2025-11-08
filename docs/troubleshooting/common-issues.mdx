@@ -1,6 +1,6 @@
 ---
 title: Common Issues
-description: Common issues found in SideStore.
+description: Common issues found in SideStore not associated with error codes.
 ---
 
 :::warning
@@ -15,19 +15,19 @@ This page is currently a work in progress. The information provided should be ac
 #### Cause
 Connection issues or an invalid pairing file.
 #### Resolution
-1. Attempt to reconnect
-2. Create and import a new pairing file using idevice pair. See our [Pairing File instructions](/docs/installation/pairing-file) for details
+1. Attempt to reconnect. Ensure Wi-Fi and StosVPN are connected.
+2. Load and import a new pairing file using iloader.
 
 ### No Wi-Fi or VPN Connection
 #### Cause
 Connection issues with the minimuxer service.
 #### Resolution
 1. If using WireGuard, switch to StosVPN
-2. Turn off any DNS-blocking servers
-2. Try again (spamming the button often helps)
-3. Restart SideStore
-4. Restart StosVPN
-5. Recreate and import a new pairing file using idevice pair. See our [Pairing File instructions](/docs/installation/pairing-file) for details
+2. Turn off any DNS-blockers
+3. Try again (spamming the button sometimes helps)
+4. Restart SideStore
+5. Restart StosVPN
+6. Load and import a new pairing file using iloader.
 
 ### SideStore Hangs Partway Through Installation
 #### Cause
@@ -45,7 +45,7 @@ Cache or protocol issues.
 #### Cause
 Multiple possible causes.
 #### Resolution
-1. Make sure you installed SideStore through AltServer
+1. Make sure you installed SideStore through iloader
 2. Reinstall SideStore
 
 If the above doesn't work, do the following:
