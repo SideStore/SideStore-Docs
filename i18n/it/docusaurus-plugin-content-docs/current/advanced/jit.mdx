@@ -4,11 +4,17 @@ description: Tutorial su come abilitare la compilazione Just-In-Time (JIT) per a
 ---
 
 :::note
-iOS 26 ha rotto di nuovo JIT. Un fix sarà rilasciato in StikDebug dopo il rilascio dell'iPhone 17.
+iOS 26 ha rotto di nuovo JIT. È stato rilasciato un fix in StikDebug, ma il supporto è **molto** limitato. Ad oggi (16 sett), le uniche app supportate sono:
+* UTM
+* Amethyst
+* MeloNX
+* maciOS (non rilasciata completamente)
 
 Ci sono diversi metodi per abilitare JIT, come AltJIT, SideJITServer e altri. Questo tutorial copre l'uso di StikDebug (prima StikJIT), in quanto è il metodo raccomandato. Per più info, vedi la [guida ufficiale per il pairing StikDebug](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md).
 
-Come alternativa, SideStore 0.6.2 include aggiornamente a minimuxeer, permettendo la funzionalità JIT built-in, in modo simile a StikDebug. Per usarlo, assicurati di essere connesso a StosVPN con il Wi-Fi connesso o la Modalità Aereo attiva, poi naviga in "Le mie app", tieni premuto l'app in cui vuoi abilitare JIT e tocca "abilita JIT". 
+Come alternativa, SideStore 0.6.2 include aggiornamenti a minimuxer, permettendo la funzionalità JIT built-in, in modo simile a StikDebug. Per usarlo, assicurati di essere connesso a StosVPN con il Wi-Fi connesso o la Modalità Aereo attiva, poi naviga in "Le mie app", tieni premuto l'app in cui vuoi abilitare JIT e tocca "abilita JIT". 
+
+Tieni d'occhio il nostro canale di annunci nel server Discord e sul [server di idevice](https://discord.gg/mACqxMxP3X) per ulteriori aggiornamenti.
 :::
 
 ## Prerequisiti
@@ -17,8 +23,9 @@ Come alternativa, SideStore 0.6.2 include aggiornamente a minimuxeer, permettend
 ## Installazione di StikDebug nell'App Store di Apple
 
 1. **Installa StikDebug**
-   Install StikDebug dall'[App Store](https://apps.apple.com/us/app/stikdebug/id6744045754).
-:::note Punto a favore- la VPN di StikDebug è simile a quella di SideStore, puoi dunque usarla per installare e refreshare le app in SideStore, in modo simile a StosVPN.
+   Installa StikDebug dall'[App Store](https://apps.apple.com/us/app/stikdebug/id6744045754).
+:::note 
+Punto a favore- la VPN di StikDebug è simile a quella di SideStore, puoi dunque usarla per installare e refreshare le app in SideStore, in modo simile a StosVPN.
 :::
 
 2. **Procedura di installazione:**
