@@ -51,7 +51,7 @@ This means that SideStore could not locate the file to download or install, most
 
 `SideStore.OperationError 1006`
 
-This means that SideStore couldn't read the device UDID embedded by AltServer when installing SideStore. Make sure you're installing SideStore with the latest AltServer version and not via another method.
+This means that your pairing file has been corrupted. [Reimport it with iloader](../advanced/pairing-file).
 
 #### (1007) This app is in an invalid format.
 
@@ -105,7 +105,7 @@ Your device was unable to receive data from a V3 anisette server. Please try aga
 
 `SideStore.OperationError 1414`
 
-You do not appear to be connected to Wi-Fi and/or StosVPN. SideStore cannot refresh or install applications without Wi-Fi and StosVPN, ensure both are enabled. If that doesn't work, try regenerating your pairing file.
+You do not appear to be connected to Wi-Fi and/or StosVPN. SideStore cannot refresh or install applications without Wi-Fi and StosVPN, ensure both are connected. If that doesn't work, [reimport your pairing file with iloader](../advanced/pairing-file).
 
 ## Minimuxer Errors
 
@@ -119,9 +119,8 @@ This means you are attempting to enable JIT on an unsupported iOS version. SideS
 
 `minimuxer.MinimuxerError 27`
 
-This means you have an invalid pairing file. Follow the steps in these docs to recreate it.
+Ensure Wi-Fi and StosVPN are both connected. If the error doesn't resolve, [reimport your pairing file with iloader](../advanced/pairing-file).
 
-More coming, open to contributions...
 
 ## AltServer / SideServer Errors
 

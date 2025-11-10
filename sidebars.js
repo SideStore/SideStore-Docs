@@ -23,7 +23,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Installation',
-      items: ['installation/prerequisites', 'installation/mac', 'installation/windows', 'installation/linux', 'installation/pairing-file', 'installation/post-install'],
+      items: ['installation/prerequisites', 'installation/install'],
     },
     'faq',
     {
@@ -34,7 +34,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Advanced',
-      items: ['advanced/anisette', 'advanced/app-sources', 'advanced/url-schema', 'advanced/sparserestore', 'advanced/jit'],
+      items: ['advanced/anisette', 'advanced/app-sources', 'advanced/jit', 'advanced/pairing-file', 'advanced/url-schema', 'advanced/sparserestore'],
     },
     {
       type: 'category',
