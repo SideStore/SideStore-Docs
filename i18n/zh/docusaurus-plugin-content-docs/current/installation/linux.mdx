@@ -14,11 +14,11 @@ sidebar_position: 4
 
 Docker 安装:
 ```bash
-docker run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd ghcr.io/sidestore/altcon
+docker run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd -v /var/lib/lockdown:/tmp/lockdown ghcr.io/sidestore/altcon
 ```
 Podman 安装:
 ```bash
-podman run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd ghcr.io/sidestore/altcon
+podman run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd -v /var/lib/lockdown:/tmp/lockdown ghcr.io/sidestore/altcon
 ```
 4. Altcon将与您的设备配对。当您收到另一个弹窗提示时，选择“信任”并再次输入密码。
 5. 在您的辅助设备上，执行以下操作：
@@ -28,4 +28,4 @@ podman run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd ghcr.i
     * 打开底部的“开发人员模式”。
 6. 打开SideStore，在SideStore请求配对文件的时候点击“允许”。然后退出应用。
 
-现在，请移步生成您的[配对文件](pairing-file)。
+现在，请移步创建您的[配对文件](pairing-file)。

@@ -4,16 +4,16 @@ description: 配对文件对于SideStore的功能实现十分重要
 sidebar_position: 5
 ---
 
-idevice_pair是一个生成配对文件的程序，配对文件允许SideStore等程序远程对您的设备进行调整。这是运行SideStore所必需的，否则SideStore将无法运行。
+idevice_pair是一个创建配对文件的程序，配对文件允许SideStore等程序远程对您的设备进行调整。这是运行SideStore所必需的，否则SideStore将无法运行。
 :::warning
-注意，如果您更新或重置了您的苹果设备，您的配对文件将过期，您需要生成一个新的配对文件。当然，由于苹果的政策，这可能会随时发生，目前我们无法修复它。
+注意，如果您更新或重置了您的苹果设备，您的配对文件将无法使用，您需要创建一个新的配对文件。当然，由于苹果的政策，您可能随时需要重新创建，目前我们无法解决这个问题。
 :::
 
 ## 配对教程
 
 ### macOS
 
-1. 下载 [macOS的idevice pair](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--macos-universal.dmg).。 打开文件，并将 `idevice pair`拖拽至 `应用程序`。
+1. 下载 [macOS的idevice pair](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--macos-universal.dmg)。 打开文件，并将 `idevice pair`拖拽至 `应用程序`。
 2. 打开镜像并将`idevice pair`拖拽至`应用`目录
 
 ### Windows
@@ -23,8 +23,14 @@ idevice_pair是一个生成配对文件的程序，配对文件允许SideStore�
 
 ### Linux
 
-1. 确保您的计算机已经通过在终端中运行`sudo apt install -y usbmuxd`安装了usbmuxd。 
-2. 下载与您的PC架构相对应的idevice pair版本([x86_64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-x86_64.AppImage) 或 [AArch64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-aarch64.AppImage))，并确保其可正常运行。
+1. 安装usbmuxd
+```bash
+sudo apt install -y usbmuxd
+```。 
+2. 下载与您的PC架构相对应的idevice pair版本，并将其存储在您找得到的位置
+  - [x86_64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-x86_64.AppImage) 
+  - [AArch64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-aarch64.AppImage)，
+3. 确保下载的文件可正常运行。
 
 ## 下一步
 现在，按照[安装后说明](post-install)进行后续操作。
