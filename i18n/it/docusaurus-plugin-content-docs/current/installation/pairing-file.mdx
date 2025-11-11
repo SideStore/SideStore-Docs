@@ -1,0 +1,47 @@
+---
+title: File di Pairing
+description: I file di Pairing sono essenziali per far funzionare SideStore.
+sidebar_position: 5
+---
+
+idevice_pair è un programma che crea un file di pairing che permette ad app come SideStore di eseguire azioni sul tuo device da remoto. È necessario per il funzionamento di SideStore, altrimenti non funzionerebbe.
+:::warning
+Attenzione, se aggiorni o ripristini il tuo iDevice, il pairing file scadrà e dovrai crearne un altro. Questo succede anche randomicamente a causa di Apple, non c'è niente che possiamo fare per prevenirlo.
+:::
+
+### Istruzioni di Installazione
+
+#### macOS
+1. Scarica [idevice_pair per macOS](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--macos-universal.dmg).
+2. Apri la Disk Image e trascina `idevice_pair` in `Applicazioni`.
+
+#### Windows
+1. Scarica [iTunes](https://apple.com/itunes/download/win64) dal sito di Apple
+2. Scarica [idevice_pair per Windows](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--windows-x86_64.exe) e spostalo in un posto dove lo puoi eseguire.
+
+#### Linux
+1. Installa usbmuxd: 
+   ```bash
+   sudo apt install -y usbmuxd
+   ```
+2. Scarica idevice_pair per la tua architettura e salvalo in una cartella dove puoi eseguirlo:
+   - [x86_64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-x86_64.AppImage)
+   - [AArch64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-aarch64.AppImage)
+3. Rendi eseguibile il file scaricato
+
+### Istruzioni di Pairing
+
+1. **Collega il tuo dispositivo** al computer tramite cavo USB
+   - Se te lo chiede, tocca `Autorizza` e inserisci il codice
+2. **Apri idevice_pair** e seleziona il tuo dispositivo dalla lista
+3. **Carica il pairing file**:
+   - Assicurati che il tuo dispositivo sia sbloccato e nella home
+   - Clicca `Load`
+   - Se te lo chiede, tocca `Autorizza` e inserisci il codice
+4. **Installalo su SideStore**:
+   - Tieni il tuo dispositivo sbloccato e nella home
+   - Scorri e clicca `Install` sotto "SideStore"
+   - Dovresti veder apparire `Success` in verde
+
+## Step successivi
+Ora segui le [istruzioni post-installazione](post-install).

@@ -25,14 +25,19 @@ const config = {
   projectName: 'sidestore-docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  //onBrokenMarkdownLinks: 'warn',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'es', 'fr', 'de', 'nl', 'zh', 'ja', 'ru', 'ko', 'sv', 'vi'],
+    locales: ['en', 'es', 'fr', 'de', 'it', 'nl', 'zh', 'ja', 'ru', 'ko', 'sv', 'vi'],
   },
 
   presets: [
@@ -55,7 +60,7 @@ const config = {
       'docusaurus-lunr-search', 
       {
         // Chinese isn't supported yet
-        languages: ['en', 'es', 'fr', 'de', 'nl', 'ja', 'ru', 'ko', 'sv', 'vi'],
+        languages: ['en', 'es', 'fr', 'de', 'it', 'nl', 'ja', 'ru', 'ko', 'sv', 'vi'],
         // Keep max results to 10
         maxHits: 10,
         indexBatchSize: 100,

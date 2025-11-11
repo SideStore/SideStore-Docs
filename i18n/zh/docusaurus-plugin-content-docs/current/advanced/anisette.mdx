@@ -1,37 +1,37 @@
 ---
-title: 自定义 Anisette 服务器
-description: 关于 anisette 服务器的指南
+title: 自定义Anisette服务器
+description: 关于anisette服务器的指南
 ---
 
 :::note
-由于我们在在0.4.0版本添加了对 v3 anisette 服务器的支持，所以使用在0.4.0以后的任意版本 SideStore 均不太可能导致您的帐户被锁定。
+使用任何在0.4.0以后版本的SideStore不太可能导致您的帐户被锁定，因为此时我们添加了对v3 anisette服务器的支持。
 
-因此，如果您的版本支持，**强烈建议**您使用v3服务器以正常使用 SideStore。
+因此，如果您的版本支持，**强烈建议**使用v3服务器以正常使用SideStore。
 :::
 
-Anisette 数据是在每次安装或刷新应用程序时，进行应用程序签名过程中所使用到的信息。SideStore 从一个模拟的 Mac 的服务器中获取此信息，并将 Anisette 数据发回给您。当然在此过程中，任何的帐户信息都不会发送到服务器。
+Anisette数据是在每次安装或刷新应用程序时，进行应用程序签名过程中所使用到的信息。SideStore从一个模拟的Mac的服务器中获取此信息，并将Anisette数据发回给您。在此过程中，任何的帐户信息都不会发送到服务器。
 
-当很多人使用同一台 Anisette 服务器（尤其是 v1 服务器）的时候，它会触发苹果的安全机制，并锁定使用该机器的帐户。这就是为什么我们建议使用另外的临时 Apple ID 而不是您的主要ID。
+当很多人使用同一台Anisette服务器（尤其是v1服务器）的时候，它会触发苹果的安全机制，并锁定使用该机器的帐户。这就是为什么我们建议使用单独的临时Apple ID而不是您的主ID。
 
-我们的团队一直在研究更好的方法来避免帐户的锁定（以_anisette-v3_的形式）。但如果您使用的是旧版本的 SideStore，那么部署您自己的 Anisette 服务器是避免锁定帐户的好方法。得益于我们当前的服务器是开源的，且为 Docker 环境设计，这使得操作变得异常简单。这意味着我们可以仅通过一个 GitHub 链接来部署服务器。
+我们的团队一直在研究更好的方法来避免帐户的锁定（以_anisette-v3_的形式）。但如果您使用的是旧版本的SideStore，那么部署您自己的Anisette服务器是避免锁定帐户的好方法。得益于我们当前的服务器是开源的，且专为 Docker 环境设计，这使得操作变得异常简单。这意味着我们可以仅通过一个GitHub链接来部署服务器。
 
-## 在 Render 上部署
+## 在Render上部署
 
-[Render](https://render.com/) 是一个提供轻松创建服务器的服务。它支持从 GitHub 加载服务器源代码。虽然免费版提供的资源非常有限，但服务器可以在上面运行良好，且不会出现问题。（参考信息————它确实需要信用卡/借记卡以进行身份验证，但它完全免费）
+[Render](https://render.com/) 是一个提供轻松创建服务器的服务。它支持从GitHub加载服务器源代码。虽然免费版提供的资源非常有限，但服务器可以在上面舒适地运行，且不会出现问题。（仅供参考————它确实需要信用卡/借记卡以进行身份验证，但它完全免费）
 
-由于太多人使用了同一个 GitHub 链接，所以您需要分叉一份自己的 Git 存储库。
+由于太多人使用同一个GitHub链接，您需要亲自fork Git库。
 
-1. 如果您没有 Github 账户，请[注册](https://github.com/signup)一个 GitHub 账户。
-2. [打开](https://github.com/Dadoum/anisette-v3-server) Git 存储库。
-3. 点击右上角的“fork”，将当前存储库分叉一份到您的帐户。
-4. 一旦分叉的存储库建立完毕，点击右上角绿色的“code”下拉菜单，复制.git链接。
+1. 如果您没有Github账户，请[注册](https://github.com/signup)一个GitHub账户。
+2. [打开](https://github.com/Dadoum/anisette-v3-server)Git库。
+3. 点击右上角的“fork”，将库fork到您的帐户。
+4. 一旦fork的库建立完毕，点击右上角绿色的“code”下拉菜单，复制.git链接。
 
 * 稍后会用到这个链接，请好好保留。
 
-完成以上操作后，您就可以创建 Render 服务器了。
+完成以上操作后，您就可以创建Render服务器了。
 
-1. [注册](https://dashboard.render.com/register/)一个 Render 账户。
-2. [创建](https://dashboard.render.com/select-repo?type=web)一个新的 Web 服务。
+1. [注册](https://dashboard.render.com/register/)一个账户。
+2. 创建一个[新的Web服务](https://dashboard.render.com/select-repo?type=web).
 3. 下滑到**Public Git repository**，并输入您前面复制的链接。
 4. 点击"Continue"并填写表格:
     * **Name** - 名字，"不会造成任何影响"
@@ -48,7 +48,7 @@ Machine requires provisioning... done !
 Your service is live 🎉
 ```
 
-*如果构建因任何原因失败，请单击 **Manual Deploy** ，然后点击 **Deploy latest commit** 。*
+*如果构建因任何原因失败，请单击**Manual Deploy**，然后**Deploy latest commit**。*
 
 6. 在页面顶部找到新服务器的链接:
 
@@ -58,16 +58,16 @@ https://[your-server-name].onrender.com
 
 ## 创建自定义anisette服务器列表
 
-自0.5.8版本发布以来，SideStore 使用了 anisette 服务器列表系统，因此您可以更容易地添加官方认可的 anisette 服务器。这意味着，要使用自己的服务器，同时不要求将您的服务器添加到官方列表中，还需要做一些额外的工作。
+自0.5.8版本发布以来，SideStore使用了anisette服务器列表系统，因此您可以更容易地添加官方认可的anisette服务器。这意味着，要使用自己的服务器，同时不要求将您的服务器添加到官方列表中，还需要做一些额外的工作。
 
 如果您想保留使用列表提供的服务器的选项，请按照以下步骤操作：
 1. 点击[这里](https://servers.sidestore.io/servers.json)以获取当前的服务器列表。
-2. 请前往您选择的文件托管服务，将文件托管到互联网上。我们建议使用 GitHub Pages，因为它更容易以后进行编辑，且本指南也将按照 Github Pages 的操作提供指引。当然如果您有自己的托管方式，请根据您的设置调整以下内容。
-3. 如果您已经设置了 Github Page s网站，请跳到第六个子步骤。否则，请执行以下操作：
-* 通过桌面端右上角的加号（+）按钮，或者移动端的个人资料图标 > Create new，或者[这个页面](https://github.com/new)以添加新的 GitHub 存储库。
+2. 请前往您选择的文件托管服务，将文件托管到互联网上。我们建议使用GitHub Pages，因为它更容易在未来进行编辑，并且本指南也将按照Github Pages的操作作为参考。如果您有自己的托管方式，请根据您的设置调整以下内容。
+3. 如果您已经设置了Github Pages网站，请跳到第六个子步骤。否则，请执行以下操作：
+* 通过桌面端右上角的加号（+）按钮，或者移动端的个人资料图标 > Create new，或者[这个页面](https://github.com/new)以添加新的GitHub存储库。
 * 将名称设置为[您的GitHub用户名].GitHub.io，选中'Initialize this repository with a README'，并将其余设置设置为您所希望的方式。
 * 创建后，转到“Settings”选项卡，导航到“Code and automation”下的“Pages”部分。
-* 将 Build and deployment 下的 Source 切换成'Deploy from branch'
+* 将Build and deployment下的Source切换成'Deploy from branch'
 * 如果没有自动选择的话，将Branch切换到'main'
 * 返回代码选项卡，点击'Add files'，然后点击'Upload files'，再选择您之前下载的'servers.json'文件。   
 * 上传后，单击文件并点击编辑(Edit)按钮。
@@ -80,7 +80,7 @@ https://[your-server-name].onrender.com
 ```
 *提交更改，然后前往https://[您的GitHub用户名].GitHub.io/[您放置文件的位置]/servers.json。如果文件成功加载了，那么您就可以继续下一节了。否则，您可能需要等待10分钟才能正确设置您的网站，然后再试一次。
 
-如果您只想使用自己的服务器，请按照上述步骤操作，但不要直接复制官方的servers.json，而是使用此格式创建自己的服务器；
+如果您只想使用自己的服务器，请按照上述步骤操作，但不要复制官方servers.json，而是使用此格式创建自己的服务器；
 ```
 {
     "servers": [
@@ -93,23 +93,15 @@ https://[your-server-name].onrender.com
 ```
 并继续进行。
 
-## 通过 SideStore 使用您的服务器
+## 通过SideStore使用您的服务器
 
-要在 SideStore 应用程序中使用新创建的服务器列表，请执行以下操作： 
+要在SideStore应用程序中使用新创建的服务器列表，请执行以下操作： 
 
-1. 打开 SideStore 中的“设置”选项卡。
+1. 打开SideStore中的“设置”选项卡。
 2. 向下滚动到底部，然后点击“Anisette服务器”。
 3. 点击输入框中的链接，并将其替换为您的服务器列表的链接。
 4. 点击“刷新服务器”，然后从更新的列表中选择您自己的服务器。
 
 ## 完毕！
 
-SideStore 将会使用您提供的新自定义 anisette 服务器。
-
-
-## 相关链接:
-[<img src="https://uptime.sidestore.io/api/badge/4/uptime/48" />](https://uptime.sidestore.io/status/all)
-[所有认证的Anisette服务器的在线时间(Uptime)](https://uptime.sidestore.io/status/all)
-
-[<img src="https://uptime.sidestore.io/api/badge/1/uptime/48" />](https://uptime.sidestore.io/status/ss)
-[SideStore官方Anisette服务器的Uptime](https://uptime.sidestore.io/status/ss)
+SideStore将会使用您的新自定义anisette服务器。

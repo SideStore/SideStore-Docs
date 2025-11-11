@@ -36,6 +36,11 @@ const sidebars = {
       label: 'Advanced',
       items: ['advanced/anisette', 'advanced/app-sources', 'advanced/url-schema', 'advanced/sparserestore', 'advanced/jit'],
     },
+    {
+      type: 'category',
+      label: 'Contributing',
+      items: ['contributing/contributing', 'contributing/formatting', 'contributing/advanced-formatting'],
+    },
     'release-notes',
   ],
 };

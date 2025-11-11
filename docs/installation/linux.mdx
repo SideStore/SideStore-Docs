@@ -8,17 +8,17 @@ Before you start, make sure to have all steps completed found in the [prerequisi
 
 1. Ensure you have usbmuxd installed and updated by running `sudo apt install -y usbmuxd` in the Linux terminal.
 2. Install either Docker or Podman on your machine. 
-2. Plug in your secondary iDevice. If you recieve a prompt, select "trust" and enter your passcode.
+2. Plug in your secondary iDevice. If you receive a prompt, select "trust" and enter your passcode.
 
-3. Now, run Altcon with Docker or Podman using the following commands (may require `sudo`):
+3. Now, run Altcon with Docker or Podman using the following command (may require `sudo`):
 
 Docker setup:
 ```bash
-docker run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd ghcr.io/sidestore/altcon
+docker run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd -v /var/lib/lockdown:/tmp/lockdown ghcr.io/sidestore/altcon
 ```
 Podman setup:
 ```bash
-podman run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd ghcr.io/sidestore/altcon
+podman run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd -v /var/lib/lockdown:/tmp/lockdown ghcr.io/sidestore/altcon
 ```
 5. Altcon will pair with your device. When you receive another prompt, select "trust" and enter your passcode again.
 6. On your secondary device, do the following:
@@ -27,4 +27,4 @@ podman run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd ghcr.i
     * Navigate to the 'Privacy and Security' section.
     * Turn on 'Developer Mode' at the bottom.
 
-Now, proceed to generate your [pairing file](pairing-file).
+Now, proceed to create your [pairing file](pairing-file).

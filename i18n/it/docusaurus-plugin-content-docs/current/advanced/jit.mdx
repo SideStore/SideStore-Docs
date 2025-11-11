@@ -1,0 +1,48 @@
+---
+title: Abilitare JIT
+description: Tutorial su come abilitare la compilazione Just-In-Time (JIT) per app che la richiedono.
+---
+
+:::note
+iOS 26 ha rotto di nuovo JIT. È stato rilasciato un fix in StikDebug, ma il supporto è **molto** limitato. Ad oggi (16 sett), le uniche app supportate sono:
+* UTM
+* Amethyst
+* MeloNX
+* maciOS (non rilasciata completamente)
+
+Ci sono diversi metodi per abilitare JIT, come AltJIT, SideJITServer e altri. Questo tutorial copre l'uso di StikDebug (prima StikJIT), in quanto è il metodo raccomandato. Per più info, vedi la [guida ufficiale per il pairing StikDebug](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md).
+
+Come alternativa, SideStore 0.6.2 include aggiornamenti a minimuxer, permettendo la funzionalità JIT built-in, in modo simile a StikDebug. Per usarlo, assicurati di essere connesso a StosVPN con il Wi-Fi connesso o la Modalità Aereo attiva, poi naviga in "Le mie app", tieni premuto l'app in cui vuoi abilitare JIT e tocca "abilita JIT". 
+
+Tieni d'occhio il nostro canale di annunci nel server Discord e sul [server di idevice](https://discord.gg/mACqxMxP3X) per ulteriori aggiornamenti.
+:::
+
+## Prerequisiti
+* Un iDevice con iOS/iPadOS 17.4-18.6, esclusa 18.4b1. Se sei su 17.0-17.3 devi usare un metodo alternativo come [SideJITServer](https://github.com/nythepegasus/SideJITServer). Come scritto sopra, le versioni successive alla 18.6 non sono supportate al momento.
+
+## Installazione di StikDebug nell'App Store di Apple
+
+1. **Installa StikDebug**
+   Installa StikDebug dall'[App Store](https://apps.apple.com/us/app/stikdebug/id6744045754).
+:::note 
+Punto a favore- la VPN di StikDebug è simile a quella di SideStore, puoi dunque usarla per installare e refreshare le app in SideStore, in modo simile a StosVPN.
+:::
+
+2. **Procedura di installazione:**
+   Segui la procedura standard qui sotto.
+
+### Procedura di installazione standard:
+
+1. **Carica il pairing file:**
+   Apri e chiudi StikDebug per creare la cartella dell'app su File, poi importa lo stesso **pairing file** che usi per SideStore usando idevice pair. Per più info sul processo, vedi [qui](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md).
+
+2. **Monta il DDI:**
+   Apri StikDebug con il Wi-Fi, la VPN connessa e il pairing file importato, poi chiudila e riaprila. Questo monta il DDI e deve essere fatto ogni volta che riavvii il tuo iDevice.
+
+## Per abilitare JIT:
+
+1. **Abilita la VPN:**
+   Inizia aprendo StikDebug in Wi-FI o sotto Rete Dati per attivare la VPN built-in. Ora, se sei sotto Rete Dati, attiva la modalità aereo e riapri l'app con la VPN ancora attiva.
+   
+2. **Attiva JIT:**
+   Seleziona il bottone "Connect by App" e scegli un'app dalla lista (deve essere sideloadata con gli entitlements giusti per apparire nella lista) per attaccare un debugger e attivare la funzionalità JIT.
