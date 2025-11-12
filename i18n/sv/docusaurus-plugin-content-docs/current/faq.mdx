@@ -1,143 +1,137 @@
 ---
-title: Vanliga frågor
-description: En sektion om de vanligast förekommande frågorna för SideStore.
+title: Frequently Asked Questions
+description: A section on the most frequently asked questions for SideStore.
 sidebar_position: 3
 ---
 
-# Vanliga frågor
+# FAQ
 
-Detta är en lista över vanliga frågor som vi får kring utvecklingen av SideStore, samt frågor som kan vara relevanta för olika typer av användare eller för dem som har problem.
+This is a list of frequently asked questions for SideStore. This has a list of common questions we get with our development of SideStore, and some questions that might want to be answered for different types of people, or for people having problems.
 
-## Vad är SideStore?
+## What is SideStore?
 
-SideStore är en iOS-applikation som låter dig sideloada appar på din iOS-enhet med bara ditt Apple-ID. SideStore skriver om appar med ditt personliga utvecklarcertifikat och använder sedan en specialdesignad VPN för att lura iOS att installera dem. SideStore kommer periodiskt att "uppdatera" dina appar i bakgrunden för att hindra den normala 7-dagars period för utvecklare från att löpa ut. Målet med SideStore är att erbjuda en fristående sideloading-upplevelse. Det är en gemenskapsdriven fork av AltStore och har redan implementerat några av de mest efterfrågade funktionerna från communityn. Du behöver bara en dator en gång under installationen.
+SideStore is an iOS application that allows you to sideload apps onto your iOS device using only your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a [specially designed VPN](https://apps.apple.com/us/app/stosvpn/id6744003051) in order to trick iOS into installing them. SideStore will periodically "refresh" your apps in the background, to keep their normal 7-day development period from expiring.
+
+SideStore's goal is to provide an untethered sideloading experience. It's a community driven fork of [AltStore](https://github.com/rileytestut/AltStore), and has already implemented some of the community's most-requested features. You only need a computer once during installation.
 
 (Contributions are welcome! 🙂)
 
-### Kan jag aktivera JIT?
+### What limitations does SideStore have?
 
-För användare som kör iOS/iPadOS 16 eller lägre kan du aktivera JIT direkt från SideStore-sidan "Mina appar" genom att hålla ned på din app och välja "Aktivera JIT".
+If using a free Apple Account, SideStore can only install 3 apps (including itself) at a time. Additionally, only 10 different apps may be installed in a week. (Referred to as App IDs).
 
-Användare på iOS eller iPadOS 17.4 eller senare behöver använda en lösning såsom StikJIT/StikDebug eller SideStore nightly. Se guiden i avsnittet [Avancerat](advanced/jit).
+### Can I activate JIT?
 
-### När kommer SideStore att släppas?
+For users using iOS/iPadOS 16 or lower, you can activate JIT directly from the SideStore 'My Apps' page by holding down on your app and selecting 'Enable JIT'.
 
-SideStore har för närvarande inget officiellt releasedatum, utan befinner sig i ett publikt betastadium.
+Users on iOS or iPadOS 17.4 or higher can use a solution such as SideStore 0.6.2 or StikDebug (formerly StikJIT). Please refer to the tutorial in the [Advanced](advanced/jit) section.
 
-### Kan man sideloada appar just nu?
+### When will SideStore release?
 
-Ja, precis som med AltStore!
+SideStore currently does not have a release date, but is in a public beta state.
 
-### Har detta AltStore-beta-funktioner?
+### Can you sideload apps at the moment?
 
-Vi har AltStore-beta-funktioner, men det är inte alltid den senaste versionen. Vi försöker hålla oss uppdaterade eller implementera dem på vårt eget sätt om det behövs.
+Yes you can, just like AltStore!
 
-### Kommer VPN-anslutningen att tömma batteriet?
+### Does SideStore have AltStore (beta) features?
 
-Nej, eftersom den endast ansluter till din egen enhet. Inga fjärrservrar används, vilket innebär inga externa anslutningar och därmed ingen extra batteriförbrukning.
+We do implement AltStore (beta) features, but they aren't always latest. We try to keep up to date, or implement them in our own way if necessary.
 
-### Kommer VPN att spåra mig?
+### Will having the VPN on drain my battery?
 
-Nej, eftersom ingen fjärrserver används.
+It does not, as it's only connecting to your own device. No remote servers are used, meaning no external connections, meaning no extra battery drain.
 
-### Jag kan inte ansluta till internet när VPN är på
+### Will the VPN track me?
 
-Se till att du inte har en alternativ DNS inställd i din Wi-Fi- eller WireGuard-konfiguration. Om du vet att DNS-IP-adressen fungerar, prova att ta bort den från din Wi-Fi-konfiguration och lägga till den i WireGuard-inställningarna under DNS.
+It does not, as there is no remote server used.
 
-### Uppdatering av SideStore fastnar mot slutet
+### Updating SideStore hangs towards the end
 
-Gå till hemskärmen så slutförs uppdateringen. Vi vet inte varför detta händer, men det kan bero på att en VPN används för att dirigera `installd` till att uppdatera SideStore (sig självt).
+Go to the homescreen for it to finish. We don't know why this happens, but it might have to do with using a VPN to direct `installd` to refresh SideStore (itself).
 
-### Kan jag signera fler än 3 appar som aktiva?
+### Can I sign more than 3 apps to be active?
 
-Normalt sett nej, eftersom det är en begränsning i iOS och för utvecklarkonton. Apple tillåter endast 3 appar att installeras med ett kostnadsfritt Apple Developer-konto.
+Normally, no, as that’s an iOS and developer account limitation. Apple only allows 3 apps to be installed using a free Apple Developer account.
 
-För att ta bort denna begränsning (och också få 365 dagars giltighet) kan du betala för ett Apple Developer-konto för 99 USD/år.
+To remove this restriction (and also get a 365 day expiry), you can pay for a $99/year Apple Developer account.
 
-Alternativt finns det för närvarande en nightly-build tillgänglig [här](https://github.com/SideStore/SideStore/releases/tag/nightly) (version 0.5.9-nightly.2024.10.23.1+1e969a0 vid skrivande stund) som använder SparseRestore-exploit för att kringgå 3-appgränsen. För närvarande fungerar detta bara på iOS-versioner under 18 dev beta 5 plus 18.0.1 definitivt.
+Alternatively, you can use LiveContainer, or on iOS versions 18 db5/18.0.1 and below, you can utilize the SparseRestore exploit to bypass the 3-app limit. (doesn't bypass the 10 app-id limit)
 
-En guide för hur du använder detta finns [här](advanced/sparserestore).
+A tutorial for using this can be found [here](advanced/sparserestore).
 
-### Jag har ett problem, bugg eller en förfrågan om ny funktion eller förbättrad användarvänlighet
+### I have a problem or bug or request for a feature or quality of life improvement
 
-Vänligen skapa en GitHub-issue på vår GitHub-sida för att rapportera en bugg eller föreslå en funktion (med lämpliga etiketter)!
+Please make a GitHub issue on our GitHub page to make a bug report or feature request (with appropriate labels)!
 
-### Jag är utvecklare, hur påverkar detta mig?
+### I am a developer, how does this affect me?
 
-Det påverkar dig inte direkt, förutom möjligen en uppdatering av AltKit när/om vi lägger till våra tillägg.
+Your apps shouldn't need any modification to work with SideStore!
 
-### Behöver jag uppdatera min app för att stödja detta?
+### Do I need to install AltStore to install SideStore?
 
-Nej, eftersom det för närvarande agerar som AltStore vid signering.
+Nope, you can sideload SideStore directly following our helpful guide!
 
-### Som användare har jag problem att logga in på SideStore. Jag får ett felmeddelande
+### As a user, I’m having trouble logging into SideStore. I get an error.
 
-Det finns många orsaker till att detta kan hända, men det vanligaste problemet är tillfälliga driftstörningar på Anisette-servern. Du kan för närvarande ändra Anisette-servern i din enhets Inställningar-app under SideStore under “Anisette URL”.
+There are many reasons this can happen, but the most common issue is a temporary Anisette server downtime. You can currently change the Anisette server on your device’s Settings app in SideStore under “Anisette URL”.
 
-### Kommer SideStore att ha en Storefront?
+### Is SideStore going to have a Storefront?
 
-Vi har för närvarande en Community Source! Source URL: https://community-apps.sidestore.io/sidecommunity.json
+We currently have a Community Source! Source URL: https://community-apps.sidestore.io/sidecommunity.json
 
-Vi har också en tjänst som heter [SideStore Connect](https://connect.sidestore.io) som låter utvecklare publicera sina egna appar.
+We also have a service called [SideStore Connect](https://connect.sidestore.io) which allows developers to publish their own apps.
 
-### Varför har min app en uppdatering som heter "pacer test"?
+### Why does my app have an update called "pacer test"?
 
-Detta var en testuppdatering för att se om det uppstod problem mellan större versioner, och bör inte synas vid normal användning. Om du ser detta problem efter release, installera om SideStore eller rapportera det som en bugg.
+This was a test update to see if there were problems between major versions, and shouldn’t be seen during normal use. If you see this issue, and it’s after release, then reinstall SideStore or report it as a bug.
 
-### Varför aktiveras inte JIT automatiskt för mina JIT-baserade appar?
+### Why do my JIT based apps not automatically activate JIT?
 
-Vi har för närvarande ingen automatisk JIT-aktiveringsmetod, och om vi får det skulle du behöva ha SideStore-VPN på.
+We currently don’t have an automatic JIT activation method, and if we did you would need StosVPN on. Alternatively, you can use StikDebug.
 
-### Har SideStore ett iPadOS-gränssnitt?
+### Does SideStore have an iPadOS UI?
 
-Det har vi absolut!
+We sure do!
 
-### Jag såg att en iMac eller MacBook Pro lagts till på mitt konto. Är det säkert, och är det en riktig Mac?
+### I saw an iMac or MacBook Pro get added to my account. Is it safe, and is it a real Mac?
 
-Dessa Macar är inte riktiga, utan genereras automatiskt av Anisette-servern för att hjälpa vid inloggning. Ingen privat data skickas heller till Anisette-servern, eftersom den data som servern tillhandahåller endast används i SideStore.
+These Macs are not real, and they are automatically generated by the Anisette server to assist with login. No private data is sent to the Anisette server either, as the data the server gives is used on SideStore only.
 
-### Varför blir mitt konto låst när jag använder SideStore?
+### Why is my account getting locked when I use SideStore?
 
-Äldre Anisette-servrar som används av många användare är kända för att orsaka att Apple-ID:n låses. Vänligen använd en av de officiella Anisette-servrarna eller hosta din egen [anisette-v3-server](advanced/anisette).
+Older Anisette servers that are used by many users are known to cause locking of Apple ID's. Please use one of the official Anisette servers, or host your own [anisette-v3-server](advanced/anisette).
 
-### Varför får jag fel -36607?
+### Can I transfer my AltStore/Sideloadly apps?
 
-Detta är ett inloggningsproblem med Anisette-servern. Det finns egentligen inte mycket information om det, men att byta Anisette-server ibland hjälper, eller så kan du fortsätta försöka logga in tills det fungerar.
+Yes, just don’t remove the original app on your device. Go into SideStore and sideload the same or an updated IPA of the app, and it should be added to your list of apps within SideStore with your data still intact.
 
-### Kan jag överföra mina AltStore/Sideloady-appar?
+### Why do I need to refresh SideStore first thing after login?
 
-Ja, ta bara inte bort den ursprungliga appen på din enhet. Gå in i SideStore och sideloada samma eller uppdaterade IPA, så bör den läggas till i din lista över appar i SideStore med dina data intakta.
+This is because AltServer or other programs sideload SideStore with their own app groupID, while we use our own. Refreshing SideStore changes it to ours, which makes apps disappear as their groupIDs are not updated. It’s best to not sideload anything before refreshing SideStore on a clean install.
 
-### Varför behöver jag uppdatera SideStore direkt efter inloggning?
+### Does SideStore support OTA updates?
 
-Detta beror på att AltServer eller andra program sideloada SideStore med sin egen app-groupID, medan vi använder vår egen. Att uppdatera SideStore ändrar det till vårt, vilket gör att appar försvinner eftersom deras groupID inte uppdateras. Det är bäst att inte sideloada något innan du uppdaterat SideStore vid en ren installation.
+Yep! Just click the update button when it appears!
 
-### Kan jag göra OTA-uppdateringar?
+### I want to test a SideStore version, and I want my data to stay when switching to a test version. Do I remove my app or sideload the test version via SideStore?
 
-Ja! Klicka bara på uppdateringsknappen!
+You can sideload a nightly SideStore version via SideStore or AltServer and your data should be the same, or enable beta updates and select "nightly" in Settings. We cannot guarantee your data transfers when testing an unofficial or nightly build.
 
-### Jag vill testa en SideStore-version, och vill behålla mina data när jag byter till en testversion. Ska jag ta bort appen eller sideloada testversionen via SideStore?
+### My apps disappeared from SideStore and I don't know what to do!
 
-Du kan sideloada via SideStore och dina data bör vara desamma. Vi har ingen registreringstoggle för att byta till andra versioner. Vi kan inte heller garantera att dina data överförs när du testar en inofficiell eller nightly-build.
+Don't panic! Re-sideload the apps as usual without removing them from your device, and your data should be fine. Unfortunately it's possible that your deactivated apps are gone, but to confirm that, just refresh SideStore to see if they come back.
 
-### Mina appar försvann och jag vet inte vad jag ska göra
+### Cannot start DebugServer
 
-Få inte Panik! Sideloada apparna igen utan att ta bort dem från din enhet, så bör dina data vara desamma. Tyvärr kan det hända att dina inaktiverade appar är borta, men för att kontrollera det uppdaterar du bara SideStore för att se om de återkommer.
+There is times when the DebugServer doesn't work. However, there is a fix you can try:
 
-### Jag kan inte välja min pairing-fil med någon filtyp
+**Make a new pairing file**
 
-Se till att din pairing-fils filändelse slutar med `.mobiledevicepairing` eller `.plist`. Om den inte gör det, kontrollera om du har zippat din pairing-fil innan du skickade den till din telefon. Om du missar detta kan filen bli korrupt under överföring. Dessutom, när du signerar SideStore med ett certifikat kommer du inte att kunna välja pairing-filen inifrån appen. Du kan prova att flytta pairing-filen till rotkatalogen i SideStore-mappen i appen Filer under "På min iPhone/iPad" och namnge den `ALTPairingFile.mobiledevicepairing`. Om du inte ser SideStore-mappen i appen Filer, anslut din telefon till datorn och dra och släpp pairing-filen till SideStore-appen. Se till att ändra namnet till det nämnda. Observera att det är skiftlägeskänsligt.
+Reimport your pairing file using iloader.
 
-### Kan inte starta DebugServer
+### Currently Known issues
 
-Det finns tillfällen då DebugServer inte fungerar. Du kan dock prova en lösning.
+If you're currently having issues and want to know if we already know about them. Then check out our GitHub issue page which  has a list of known issues and ways to mitigate some of the issues you might be having. Some of the issues in this list might be known that are not there, but are in the GitHub issues section. https://github.com/SideStore/SideStore/issues/490
 
-**Skapa en ny pairing-fil**
-
-För att börja använda en ny pairing-fil går du till fliken Inställningar och klickar på Återställ pairing-fil, och accepterar dialogen. Följ sedan instruktionerna för [pairing-fil](installation/pairing-file).
-
-### För närvarande kända problem
-
-Om du för närvarande har problem och vill veta om vi redan känner till dem, ta en titt på vår GitHub-issue-sida som har en lista över kända problem och sätt att mildra några av de problem du kan ha. Vissa problem i den här listan kan vara kända men inte där, utan finns i GitHub-issues. https://github.com/SideStore/SideStore/issues/490
-
-Om du har några problem som inte finns i denna lista, skapa en GitHub-issue eller [gå med i vår Discord.](https://discord.gg/sidestore-949183273383395328)
+If you have any issues that aren't in this list. Just make a GitHub issue or [join our discord.](https://discord.gg/sidestore-949183273383395328)

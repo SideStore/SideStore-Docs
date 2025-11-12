@@ -1,100 +1,84 @@
 ---
-title: Felsökningsguide
-description: En guide för felsökning av SideStore.
+title: Troubleshooting Guide
+description: A guide to troubleshooting SideStore in situations without an error code.
 ---
 
 ## Installation
 
-#### Jag följde instruktionerna, men jag kan fortfarande inte installera SideStore.
+### I followed the instructions, but I still can't install SideStore.
 
-### Instruktioner för macOS
-1. **Trust Device**: Efter att du anslutit din iOS-enhet till din Mac, se till att du har tryckt på “Trust” på både din Mac och din enhet. Du kan verifiera detta genom att:
-   - Öppna Finder (macOS 10.15 Catalina eller senare) eller iTunes (macOS 10.14 Mojave och tidigare).
-   - Koppla från och återanslut din telefon till din Mac och kontrollera om en dialogruta visas som frågar om du vill lita på enheten.
-2. **Use Another Apple ID**: Prova att använda ett annat Apple ID. Vid behov kan du [skapa ett nytt Apple ID](https://appleid.apple.com/account#!\&page=create) specifikt för SideStore, gratis.
+#### Mac Instructions
+1. **Trust Device**: After connecting your iOS device to your Mac, ensure you have said “Trust” on both your Mac and iOS device. You can verify this by:
+   - Opening Finder (macOS 10.15 Catalina or later) or iTunes (macOS 10.14 Mojave and earlier).
+   - Disconnect and reconnect your phone to your mac and check if a dialog box appears asking if you want to trust the device.
+2. **Use Another Apple ID**: Try using another Apple ID. If needed, you can [create a new Apple ID](https://appleid.apple.com/account#!\&page=create) specifically for SideStore use for free.
 
-### Instruktioner för Windows
-1. **Trust Device**: Efter att du anslutit din iOS-enhet till din Windows-dator, se till att du har tryckt på “Trust” på både datorn och enheten. Du kan verifiera detta genom att:
-   - Öppna iTunes och kontrollera om en dialogruta visas som frågar om du vill lita på enheten.
-2. **Run AltServer as Administrator**: Högerklicka på AltServer och välj “Run as Administrator” för att säkerställa att programmet har nödvändiga rättigheter.
-3. **Use Another Apple ID**: Prova att använda ett annat Apple ID. Vid behov kan du [skapa ett nytt Apple ID](https://appleid.apple.com/account#!\&page=create) specifikt för SideStore, gratis.
-4. **Non-Microsoft Store Version of iTunes and iCloud**:
-   - Om du installerade iTunes eller iCloud från Microsoft Store måste du avinstallera dem.
-   - Ladda ner och installera de icke-Microsoft Store-versionerna av iTunes och iCloud från följande länkar:
-     - [Download iCloud](https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe)
-     - [Download iTunes](https://www.apple.com/itunes/download/win64/)
+#### Windows Instructions
+1. **Trust Device**: After connecting your iOS device to your Windows computer, ensure you have selected “Trust” on both your computer and iOS device. You can verify this by:
+   - Opening iTunes and checking if a dialog box appears asking if you want to trust the device.
+2. **Use Another Apple ID**: Try using another Apple ID. If needed, you can [create a new Apple ID](https://appleid.apple.com/account#!\&page=create) specifically for SideStore for free.
 
-## Inloggningsproblem
 
-#### SideStore fryser eller visar en felkod vid inloggning
+## Sign-In Issues
 
-1. **Change the Anisette Server**  
-   Öppna SideStore-inställningarna.  
-   Scrolla ner till “Anisette Server” och välj en annan server från listan.  
-2. **Host Your Own Anisette Server**  
-   Du kan också sätta upp din egen Anisette-server. Se instruktionerna i den officiella dokumentationen: https://docs.sidestore.io/docs/advanced/anisette  
+### SideStore Freezing or Displaying an Error Code During Sign-In
 
-#### Verification Code Not Received When Signing In with Apple ID
+If you encounter freezing or error codes while attempting to sign in to SideStore, there could be several potential causes. Follow these steps to resolve the issue:
 
-**För iOS-versioner under 18.1:**
+1. **Change the Anisette Server:**
+   The most common solution is to switch to a different Anisette server. Anisette servers may occasionally experience downtime. Switching to an alternative server typically resolves the issue. Do this:
+   - Open SideStore settings.
+   - Scroll down to the "Anisette Server" option.
+   - Select a different server from the list.
+   - You might need to try a few servers from the list and find which works best for you.
 
-1. Öppna appen “Settings”.  
-2. Tryck på ditt namn högst upp.  
-3. Gå till “Sign-In and Security”.  
-4. Välj “Two-Factor Authentication”.  
-5. Tryck på “Get Verification Code”.
+2. **Host Your Own Anisette Server:**
+   If you prefer, you can set up your own Anisette server. Detailed instructions for hosting an Anisette server are available in the official documentation and can be found [here](https://docs.sidestore.io/docs/advanced/anisette).
 
-**För iOS-versioner 18.1 och senare:**
+### Verification Code Not Received When Signing In with Apple ID
 
-1. Besök [iCloud](https://www.icloud.com) i en webbläsare.  
-2. Klicka på “Sign In”.  
-3. Välj “Use Different Apple Account”.  
-4. Ange ditt Apple ID och lösenord.  
-5. Apple skickar en verifieringskod – använd den i SideStore.
+Another common issue during sign-in is not receiving a verification code when using your Apple ID with SideStore. This can be resolved by following these steps:
 
-## Kan inte uppdatera eller installera appar
+**For iOS versions below 18.1:**
 
-#### Åtgärda felmeddelandet “No Wi-Fi or VPN Connection”
+1. Open the "Settings" app.
+2. Tap on your name at the top of the screen.
+3. Navigate to "Sign-In and Security."
+4. Select "Two-Factor Authentication."
+5. Choose "Get Verification Code."
 
-1. Inaktivera mobildata eller anslut till ett stabilt Wi-Fi-nätverk.  
-2. Kontrollera att Apple-domäner och din anisette-servers domän inte blockeras.  
-3. Se till att StosVPN är anslutet.  
-4. Stäng av och på StosVPN och vänta några sekunder innan du försöker uppdatera igen.  
-5. Skapa en ny parningsfil med JitterbugPair. I SideStore-inställningarna, tryck på “Reset pairing file” och välj den nya filen.
+**For iOS versions 18.1 and above:**
 
-## Kan inte välja parningsfil
+1. Visit [iCloud](https://www.icloud.com) on a web browser.
+2. Click "Sign In."
+3. You may be prompted with see two options: "Sign In" and "Use Different Apple Account."
+   - Select the bottom option, "Use Different Apple Account."
+4. Enter your Apple ID and password (don't use a passkey).
+5. Apple will send you a verification code.
+   - Use this code in SideStore to complete the sign-in process.
 
-1. **Check File Extension**  
-   Se till att filändelsen är `.mobiledevicepairing` eller `.plist`.  
-2. **Move Pairing File**  
-   Byt namn på filen till `ALTPairingFile.mobiledevicepairing` och flytta den till rotkatalogen för SideStore i appen Filer på iOS.  
-3. **Certificate Signing**  
-   Vid sideloading med certifikat kan du behöva ansluta enheten till datorn och dra in parningsfilen i SideStore-mappen via iTunes/Finder.
+
+## Can't Refresh or Install Apps
+
+### Resolving No Wi-Fi or VPN Error
+
+1. Enable Airplane Mode and connect to a stable Wi-Fi network.
+2. Ensure that Apple domains and the domain for your anisette server are not restricted. Check the following:
+   - Turn off any DNS servers blocking domains such as `ocsp.apple.com`
+   - Disconnect from school/work Wi-Fi and connect to a restriction-free network.
+3. Verify VPN is connected in StosVPN.
+4. Turn StosVPN off, then back on, and wait a few seconds in SideStore before trying to refresh.
+5. [Reimport your pairing file using iloader](../advanced/pairing-file).
 
 ## AltServer
 
-#### AltStore säger “Could not find AltServer” vid sideload eller uppdatering
+### What if I need to use the Windows Store version of iCloud?
 
-- AltServer måste vara igång på samma Wi-Fi som din enhet.  
-- Vid offentliga nätverk kan du prova att använda datorns hotspot.  
-- På Windows: tillåt AltServer i brandväggen och använd icke-Microsoft Store-versioner av iTunes/iCloud.  
-- Som sista utväg, anslut enheten via USB.
+AltServer requires that you install iCloud directly from Apple in order to authenticate your Apple ID. If you want or need to use the Windows Store version as well, you can follow these alternate instructions copied from [this reddit post](https://www.reddit.com/r/jailbreak/comments/rp5buz/tutorial\_how\_to\_use\_altserver\_if\_you\_have\_to\_use/?utm\_source=share\&utm\_medium=ios\_app\&utm\_name=iossmf) and updated:
 
-#### Jag kan inte ändra nätverksinställningar (t.ex. på skola/arbetet)
-
-Anslut enheten med USB för att sideloada och uppdatera – automatisk Wi-Fi-uppdatering fungerar då inte.
-
-## AltJIT
-
-#### AltServer säger “JIT could not be enabled for [App]”
-
-- Kontrollera att appen körs i förgrunden.  
-- Prova hotspot eller annat nätverk.  
-- Bekräfta “Trust” på både dator och enhet.  
-- På Windows: tillåt AltServer i brandväggen och kör icke-Store-versioner av iTunes/iCloud.  
-- Se till att iTunes och iCloud körs på datorn.  
-- Som sista utväg, anslut via USB.
-
-:::tip
-Om du inte hittar svaret här kan du mejla [support@altstore.io](mailto:support@altstore.io).
-:::
+1. Download and install [iTunes](https://www.apple.com/itunes/) from the official Apple website here ([64-bit](https://secure-appldnld.apple.com/itunes12/001-80053-20210422-E8A3B28C-A3B2-11EB-BE07-CE1B67FC6302/iTunes64Setup.exe) or [32-bit](https://secure-appldnld.apple.com/itunes12/001-80042-20210422-E8A351F2-A3B2-11EB-9A8F-CF1B67FC6302/iTunesSetup.exe).
+2. Download and install iCloud from the official Apple website [here](https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe).
+3. Locate your "C:\Program Files (x86)\Common Files\Apple" folder. Copy the "Apple Application Support" and "Internet Services" folders, then create a new folder somewhere you won't lose it, name it anything you want, and paste them in.
+4. Remove iCloud from your computer. **DO NOT** remove iTunes! (Also, **NEVER** remove the "Apple Mobile Device Support" or the "Apple Application Support" that are installed alongside iTunes and iCloud.)
+5. Install [iCloud](https://www.microsoft.com/store/productId/9PKTQ5699M62) from the Windows Store.
+6. Download and install [AltServer](https://cdn.altstore.io/file/altstore/altinstaller.zip). When you open it for the first time (with admin rights), click on "Choose Folder..." and select the folder you created in the 3rd step.
