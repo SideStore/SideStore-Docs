@@ -4,7 +4,15 @@ description: 关于如何为需要即时编译（JIT）的应用程序启用JIT�
 ---
 
 :::note
-iOS 26再次破坏了JIT。在iPhone 17发布后，StikDebug将会发布一个修复程序。
+iOS 26再次破坏了JIT。StikDebug发布了一个新版本尝试解决，但是目前支持仍处于受限阶段。截止本指南编写时(11月10日)支持的应用如下:
+* UTM
+* Amethyst
+* MeloNX
+* maciOS
+* DolphiniOS
+* Geode
+
+请留意我们在Discord服务器的公告频道以及[idevice服务器](https://discord.gg/mACqxMxP3X)的公告和兼容性频道以获取未来的进展。
 
 启用JIT的方法有很多，如AltJIT、SideJITServer等。本教程将介绍StikDebug（旧称StikJIT）的使用，因为它是我们目前推荐的方法。有关更多信息，请参阅[官方StikDebug配对指南](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md)。
 
@@ -12,14 +20,14 @@ iOS 26再次破坏了JIT。在iPhone 17发布后，StikDebug将会发布一个�
 :::
 
 ## 使用前提
-* 一台运行了iOS/iPadOS 17.4-18.6的苹果设备（包含18.4b1）。如果您正在使用iOS/iPadOS17.0-17.3, 您必须使用诸如[SideJITServer](https://github.com/nythepegasus/SideJITServer)之类的替代方案。如上所述，目前不支持高于18.6的版本。 
+* 一台运行了iOS/iPadOS 17.4-18.x的苹果设备(包括18.4b1)。如果您正在使用iOS/iPadOS17.0-17.3, 您必须使用诸如[SideJITServer](https://github.com/nythepegasus/SideJITServer)之类的替代方案。如果您的设备已经发布4年以上(且不支持TXM)的话，SideStore的JIT启用工具仅在iOS26可用。
 
 ## 使用App Store安装StikDebug
 
-1. **安装StikDebug**
+1. **安装StikDebug** 
    从[App Store](https://apps.apple.com/us/app/stikdebug/id6744045754)安装StikDebug。
 :::note 
-不错的是，StikDebug中的VPN与SideStore中使用的VPN类似，这意味着您也可以使用它在SideStore中安装和刷新应用程序，类似于StosVPN。
+不错的是，目前StikDebug中使用的VPN与SideStore中使用的VPN类似，这意味着您也可以使用它在SideStore中安装和刷新应用程序，类似于StosVPN。
 :::
 
 2. **安装步骤：**
@@ -28,7 +36,7 @@ iOS 26再次破坏了JIT。在iPhone 17发布后，StikDebug将会发布一个�
 
 ### 标准安装步骤：
 
-1. **上传配对文件：**  
+1. **上传配对用文件：**  
    打开并关闭StikDebug以在文件中构建应用程序需求的文件夹，然后导入您使用idevice pair生成的，导入到SideStore的**同一个配对文件**。有关此过程的更多信息，请参阅[此处](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md)。
 
 2. **挂载DDI:**  
@@ -38,5 +46,6 @@ iOS 26再次破坏了JIT。在iPhone 17发布后，StikDebug将会发布一个�
 
 1. **启用VPN:**  
    首先，在Wi-Fi上打开StikDebug或启用蜂窝数据以激活内置的VPN。现在，如果您正在使用蜂窝数据，请启用飞行模式，并在VPN启用的情况下重新打开应用程序。   
+
 2. **激活JIT:**  
    选择“按应用程序连接”按钮，然后从列表中选择一个应用程序（必须带有正确的权限侧载的应用才能显示在列表中）以附加调试器并激活JIT功能。
