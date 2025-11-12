@@ -1,60 +1,58 @@
 ---
-title: Common Issues
-description: Common issues found in SideStore not associated with error codes.
+title: Vanliga problem
+description: Vanliga SideStore-problem utan felkoder.
 ---
 
 :::warning
 
-This page is currently a work in progress. The information provided should be accurate, but please refer to our [Discord server](https://discord.gg/sidestore-949183273383395328) for assistance if needed.
+Den här sidan är under arbete. Informationen ska stämma, men kontakta gärna vår [Discord-server](https://discord.gg/sidestore-949183273383395328) om du behöver hjälp.
 
 :::
 
-## Common Issues with SideStore
+## Vanliga SideStore-problem
 
 ### AFC Connection Failure
-#### Cause
-Connection issues or an invalid pairing file.
-#### Resolution
-1. Attempt to reconnect. Ensure Wi-Fi and StosVPN are connected.
-2. Load and import a new pairing file using iloader.
+#### Orsak
+Anslutningsproblem eller ogiltig pairing-fil.
+#### Åtgärd
+1. Försök ansluta igen. Kontrollera att Wi-Fi och StosVPN är aktiva.
+2. Ladda in och importera en ny pairing-fil via iloader.
 
 ### No Wi-Fi or VPN Connection
-#### Cause
-Connection issues with the minimuxer service.
-#### Resolution
-1. If using WireGuard, switch to StosVPN
-2. Turn off any DNS-blockers
-3. Try again (spamming the button sometimes helps)
-4. Restart SideStore
-5. Restart StosVPN
-6. Load and import a new pairing file using iloader.
+#### Orsak
+Anslutningsproblem mot minimuxer.
+#### Åtgärd
+1. Om du använder WireGuard, byt till StosVPN.
+2. Stäng av eventuella DNS-blockerare.
+3. Försök igen (upprepade försök kan hjälpa).
+4. Starta om SideStore.
+5. Starta om StosVPN.
+6. Ladda in och importera en ny pairing-fil via iloader.
 
-### SideStore Hangs Partway Through Installation
-#### Cause
-Cache or protocol issues.
-#### Resolution
-1. Update SideStore, if applicable. Otherwise, just restart
-2. Clear Cache
-3. Change Anisette Server
-4. In servers- reset adi.pb, then sign out of SideStore and sign back in
-5. Restart device
-6. Recreate pairing file
-7. Reinstall SideStore using AltServer
+### SideStore fastnar mitt i installationen
+#### Orsak
+Cache- eller protokollproblem.
+#### Åtgärd
+1. Uppdatera SideStore om möjligt, annars starta om.
+2. Töm cache.
+3. Byt anisette-server.
+4. I Settings > Servers: återställ adi.pb, logga ut och in igen i SideStore.
+5. Starta om enheten.
+6. Skapa pairing-filen på nytt.
+7. Installera SideStore igen via AltServer.
 
-### Unable to Launch SideStore
-#### Cause
-Multiple possible causes.
-#### Resolution
-1. Make sure you installed SideStore through iloader
-2. Reinstall SideStore
+### Går inte att starta SideStore
+#### Orsak
+Flera möjliga orsaker.
+#### Åtgärd
+1. Kontrollera att du installerat via iloader.
+2. Installera om SideStore.
 
-If the above doesn't work, do the following:
+Om det inte hjälper, gör så här:
 
-1. Delete SideStore and all apps that you have installed from SideStore
-2. Reinstall SideStore
-3. Import your pairing file and login. (It will give you a prompt to refresh SideStore, select no)
-4. Install the `sidestore.ipa` file to your device
-5. Import the `sidestore.ipa` file into SideStore like how you would install any other IPA
-6. This will allow SideStore to do a clean refresh, and hopefully fix the issue
-
-
+1. Ta bort SideStore och alla appar du installerat via SideStore.
+2. Installera SideStore igen.
+3. Importera pairing-filen och logga in (när du får frågan om att uppdatera SideStore väljer du nej).
+4. Installera `sidestore.ipa` på enheten.
+5. Importera `sidestore.ipa` i SideStore som vilken IPA som helst.
+6. Detta gör en ren uppdatering och bör lösa problemet.
