@@ -1,11 +1,11 @@
 ---
 title: Felkoder
-description: Felkoder som förekommer i SideStore.
+description: Felkoder som kan visas i SideStore.
 ---
 
 :::warning
 
-Denna sida är för närvarande inte helt korrekt återgivande av hur SideStore fungerar, eftersom den är baserad på AltStores felkoder. Viss information är fortfarande korrekt, men förlita dig inte ordagrant på detta. Be om hjälp i vår [Discord-server](https://discord.com/invite/sidestore) om du behöver det.
+Den här sidan är inte helt uppdaterad i förhållande till hur SideStore fungerar, eftersom den bygger på AltStores sida om felkoder. Mycket stämmer fortfarande, men lita inte blint på den. Be gärna om hjälp i vår [Discord-server](https://discord.gg/sidestore-949183273383395328) vid behov.
 
 :::
 
@@ -13,101 +13,114 @@ Denna sida är för närvarande inte helt korrekt återgivande av hur SideStore 
 
 #### (1000) An unknown error occurred.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1000`
 
-Detta betyder att SideStore stötte på ett oväntat fel. Kontrollera vår [felsökningsguide](./) och kontakta oss om problemet kvarstår.
+SideStore stötte på ett oväntat fel. Kontrollera vår [felsökningsguide](./) och kontakta oss om problemet kvarstår.
 
 #### (1001) The operation returned an unknown result.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1001`
 
-Detta betyder att SideStore stötte på ett oväntat fel. Kontrollera vår [felsökningsguide](./) och kontakta oss om problemet kvarstår.
+Åtgärden gav ett oväntat resultat. Se [felsökningsguiden](./) och hör av dig om det fortsätter.
 
 #### (1002) The operation was cancelled.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1002`
 
-Detta betyder att den utförda åtgärden avbröts. Försök igen.
+Åtgärden stoppades. Försök igen.
 
 #### (1003) The operation timed out.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1003`
 
-Detta betyder att SideStore hade problem att slutföra den begärda åtgärden. Försök igen och se vår [felsökningsguide](./) för mer hjälp.
+SideStore fick inte slutföra begäran i tid. Försök igen och se [felsökningen](./) om du behöver mer hjälp.
 
 #### (1004) You are not signed in.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1004`
 
-Detta betyder att du måste ange dina Apple ID-uppgifter i inställningarna för att utföra åtgärden.
+Du måste logga in med ditt Apple-ID i inställningsfliken för att köra åtgärden.
 
 #### (1005) The app could not be found.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1005`
 
-Detta betyder att SideStore inte kunde hitta filen för nedladdning eller installation, troligtvis eftersom URL:en är felaktig.
+SideStore kunde inte hitta filen att ladda ner eller installera, troligen för att den inte finns på URL:en.
 
-#### (1006) AltStore could not determine this device’s UDID.
+#### (1006) SideStore could not determine this device's UDID.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1006`
 
-Detta betyder att SideStore inte kunde läsa UDID som AltServer lade in vid installation. Se till att du använder senaste AltServer.
+Din pairing-fil är korrupt. [Importera den igen med iloader](../advanced/pairing-file).
 
 #### (1007) This app is in an invalid format.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1007`
 
-Detta betyder att appen inte är en giltig .ipa. Försök ladda ner från en annan källa.
+Appen du försöker installera är inte en standard-IPA. Ladda ner från annan källa.
 
 #### (1008) Invalid parameters.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1008`
 
-Detta betyder att ett internt fel uppstod och att SideStore inte kunde hämta nödvändig information. Försök igen.
+Ett internt fel gjorde att SideStore saknade data för att utföra åtgärden. Försök igen och se [felsökningen](./) eller kontakta oss vid behov.
 
 #### (1009) You cannot register more than 10 App IDs within a 7-day period.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1009`
 
-Detta betyder att du nått gränsen för App IDs. Kolla fliken _Mina appar_ för utgångsdatum.
+Du har nått maxantalet App ID:n. De kan inte tas bort manuellt. App-ID:n förnyas om appen finns kvar 7 dagar efter installation/uppdatering och försvinner om appen tas bort. Kontrollera utgångsdatum i fliken My Apps.
 
 #### (1010) There are no AltStore sources.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1010`
 
-Detta betyder att SideStore inte kan hämta uppdateringar för några källor. Försök igen.
+Ett internt fel gjorde att SideStore inte kunde hämta data för dina AltSources. Försök igen och se [felsökningen](./) eller kontakta oss.
 
-#### (1011) AltStore was denied permission to launch the app.
+#### (1011) SideStore was denied permission to launch the app.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1011`
 
-Detta betyder att du avbröt varningen “AltStore wants to open [app]” eller att du behöver lita på ditt Apple ID i Inställningar.
+SideStore kunde inte starta appen eftersom du valde "Avbryt" på dialogen "SideStore vill öppna [app]", eller för att du måste lita på ditt Apple-ID i Inställningar.
 
-#### (1012) AltStore’s shared app group could not be accessed.
+#### (1012) SideStore's shared app group could not be accessed.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1012`
 
-Detta betyder att SideStore inte kan nå katalogen där säkerhetskopior lagras. Se till att du använder senaste AltServer.
+SideStore kunde inte komma åt mappen för app-backuper. Se till att du installerar SideStore med senaste AltServer-versionen och inte via andra metoder.
 
-#### (1200) AltServer could not be found.
+#### (1403) Unable to connect to SideJITServer.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1403`
 
-Detta betyder att SideStore inte hittar AltServer i nätverket. Kontrollera Wi-Fi eller USB-anslutning.
+Kontrollera att du är på samma Wi-Fi som datorn med SideJITServer och att brandväggen släpper igenom. Alternativt kan du använda inbyggda "Enable JIT" på iOS 17.4-18.6 med StosVPN och Wi-Fi eller flygplansläge.
 
-#### (1201) A connection to AltServer could not be established.
+#### (1412) Unable to connect to a V3 anisette server.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1412`
 
-Detta betyder att SideStore inte kan ansluta till AltServer. Kontrollera Wi-Fi-synkronisering eller prova USB.
+Enheten kunde inte ta emot data från anisette-server v3. Försök igen eller byt server.
 
-#### (1202) The connection to AltServer was dropped.
+#### (1414) No Wi-Fi/StosVPN.
 
-`AltStore.OperationError`
+`SideStore.OperationError 1414`
 
-Detta betyder att SideStore tappade anslutningen till AltServer. Kontrollera nätverket.
+Du verkar inte vara ansluten till Wi-Fi och/eller StosVPN. SideStore kan inte installera eller uppdatera appar utan det. Om det inte hjälper, [importera pairing-filen igen](../advanced/pairing-file).
 
----
+## Minimuxer-fel
+
+#### (4) AFC was unable to manage files on the device.
+
+`minimuxer.MinimuxerError 4`
+
+Du försöker aktivera JIT på en iOS-version som inte stöds. SideStore stöder JIT mellan iOS 17.4 och 18.6.
+
+#### (27) AFC was unable to manage files on the device.
+
+`minimuxer.MinimuxerError 27`
+
+Säkerställ att både Wi-Fi och StosVPN är på. Om felet kvarstår, [importera pairing-filen på nytt](../advanced/pairing-file).
+
 
 ## AltServer / SideServer-fel
 
@@ -115,129 +128,131 @@ Detta betyder att SideStore tappade anslutningen till AltServer. Kontrollera nä
 
 `AltServer.ExceptionError`
 
-Detta fel kan ha flera orsaker, t.ex. “vector too long” vilket indikerar att Windows Defender blockerar. Inaktivera Real-Time Protection om det behövs.
+Felet kan ha flera orsaker, t.ex. meddelandet "vector too long".
+
+"vector too long"
+
+Windows Defender blockerar begäran. Stäng av realtidsskyddet temporärt för att låta SideStore fungera.
 
 #### (1999) Underlying Error
 
 `AltServer.ServerError`
 
-Detta betyder att AltServer stötte på ett okänt fel. Kontakta support om det kvarstår.
+AltServer stötte på ett okänt fel. Kontakta support om det fortsätter.
 
 #### (2000) Unknown Error
 
 `AltServer.ServerError`
 
-Detta betyder att AltServer stötte på ett okänt fel. Kontakta support om det kvarstår.
+Ett okänt fel i AltServer. Kontakta oss om det kvarstår.
 
-#### (2001) Could not connect to AltServer. / There was an error connecting to the device.
+#### (2001) Could not connect to AltServer. / There was an error connecting to the device. 
 
 `AltServer.ServerError`
 
-Detta betyder att AltServer har problem att ansluta till din enhet. Prova USB.
+AltServer kan inte ansluta till din iOS-enhet. Anslut enheten direkt via USB om möjligt.
 
 #### (2002) Lost Connection to AltServer.
 
 `AltServer.ServerError`
 
-Detta betyder att anslutningen mellan AltServer och enheten tappades. Kontrollera nätverket.
+Anslutningen mellan AltServer och enheten bröts. Kontrollera att båda är på samma Wi-Fi och försök igen.
 
 #### (2003) AltServer could not find this device.
 
 `AltServer.ServerError`
 
-Detta betyder att AltServer inte hittar din enhet över USB eller Wi-Fi. Kontrollera anslutningen och att du litar på datorn.
+AltServer hittar inte enheten via USB eller Wi-Fi. Kontrollera nätverk, att enheten är betrodd, och försök igen.
 
 #### (2004) Failed to write app data to device.
 
 `AltServer.ServerError`
 
-Detta betyder att AltServer inte kunde skriva filer till enheten. Kontrollera anslutningen.
+AltServer kunde inte skriva filen. Se till att enhet och dator är på samma nätverk, att enheten är betrodd och försök igen.
 
 #### (2005) AltServer received an invalid request.
 
 `AltServer.ServerError`
 
-Detta betyder att AltServer fick en okänd förfrågan. Uppdatera till senaste versionen.
+AltServer fick en okänd begäran. Du kör troligen en äldre AltServer-version, uppdatera den.
 
 #### (2006) AltServer sent an invalid response.
 
 `AltServer.ServerError`
 
-Detta betyder att SideStore fick ett svar den inte förstod. Uppdatera till senaste versionen.
+SideStore fick ett svar som inte kunde tolkas. Uppdatera SideStore till senaste version.
 
 #### (2007) The app is invalid.
 
 `AltServer.ServerError`
 
-Detta betyder att appen är i ett felaktigt format. Ladda ner en kompatibel version.
+Appen du försökte installera hade ogiltigt format. Prova att ladda ner från annan källa.
 
 #### (2008) An error occurred while installing the app.
 
 `AltServer.ServerError`
 
-Detta betyder att iOS avvisade installationen. Använd en version som stöds av din iOS.
+iOS avvisade appen. Se till att använda en version som stöder din iOS-version.
 
 #### (2009) Cannot activate more than 3 apps with a non-developer Apple ID.
 
 `AltServer.ServerError`
 
-Detta betyder att du nått gränsen för sideloadade appar med ett gratis-konto. Skaffa ett betalt utvecklarkonto för att ta bort gränsen.
+Du har nått gränsen för sideloadade appar med gratisutvecklarkonto. För att ta bort gränsen behöver du ett betalt konto på [developer.apple.com](https://developer.apple.com).
 
 #### (2010) Your device must be running iOS 12.2 or later to install AltStore.
 
 `AltServer.ServerError`
 
-Detta betyder att du måste uppgradera din iOS-version före installation.
+Uppdatera enheten till minst iOS 12.2 för att kunna använda AltStore.
 
 #### (2011) AltServer does not support this request.
 
 `AltServer.ServerError`
 
-Detta betyder att AltServer inte förstår förfrågan. Uppdatera till senaste versionen.
+AltServer kände inte igen begäran. Uppdatera till senaste versionen.
 
 #### (2012) Received an unknown response from AltServer.
 
 `AltServer.ServerError`
 
-Detta betyder att SideStore fick ett svar den inte känner igen. Uppdatera till senaste versionen.
+AltStore fick ett svar den inte kände igen. Uppdatera AltStore.
 
 #### (2013) The provided anisette data is invalid.
 
 `AltServer.ServerError`
 
-Detta betyder att anisette-datan som användes var ogiltig. Kontrollera iCloud och systemets datum/tid.
+Datos uppgifterna från Apple ID:t var ogiltiga. Om du använder Windows, se till att du har senaste iCloud och att datum/tid stämmer.
 
 #### (2014) AltServer could not connect to Mail plug-in. (macOS)
 
 `AltServer.ServerError`
 
-Detta betyder att Mail-plugin:en inte är aktiverad eller att Mail inte körs. Aktivera plugin:en i Mail.
+AltServer hittade inte Mail-pluginen eftersom den inte är aktiverad eller för att Mail inte körs. Starta Mail på din Mac och aktivera pluginen.
 
 #### (2015) Could not find provisioning profile.
 
 `AltServer.ServerError`
 
-Detta betyder att den nödvändiga provisioning-profilen saknas. Kontakta support.
+Provisioningprofilen saknas. Det är troligen ett problem i AltStore, kontakta support eller Patreon-inboxen.
 
 #### (2016) An error occurred while removing the app.
 
 `AltServer.ServerError`
 
-Detta betyder att ett fel uppstod vid borttagning av en app. Kontrollera loggarna för mer detaljer.
+Ett fel uppstod när appen skulle tas bort. Se loggen för mer detaljer.
 
 #### (2100) The Requested app is not currently running on the device.
 
 `AltServer.ServerError`
 
-Detta betyder att du försökte aktivera JIT utan att appen kördes. Starta appen först.
+Du försökte aktivera JIT utan att appen körs i förgrunden. Starta appen först.
 
 #### (2101) The disk is incompatible with [iOS version].
 
 `AltServer.ServerError`
 
-Detta betyder att utvecklardisken inte stödjer din iOS-version. Uppdatera AltStore/AltServer och försök senare.
-
----
+Developer-disken som krävs för JIT matchar inte din iOS-version. Uppdatera AltStore/AltServer och försök senare.
 
 ## Apple Developer-fel
 
@@ -245,157 +260,153 @@ Detta betyder att utvecklardisken inte stödjer din iOS-version. Uppdatera AltSt
 
 `AltStore.AppleDeveloperError`
 
-Uppdaterad information kommer snart.
+Information uppdateras senare.
 
 #### (3001) The provided parameters are invalid.
 
 `AltStore.AppleDeveloperError`
 
-Uppdaterad information kommer snart.
+Information uppdateras senare.
 
 #### (3002) Incorrect Apple ID or password.
 
 `AltStore.AppleDeveloperError`
 
-Detta betyder att inloggningsuppgifterna är ogiltiga. Kontrollera användarnamn/lösenord eller skapa ett nytt Apple ID.
+Fel användarnamn eller lösenord. Kontrollera uppgifterna. Du kan också skapa ett nytt Apple-ID särskilt för SideStore.
 
 #### (3003) An app-specific password is required. You can create one at appleid.apple.com.
 
 `AltStore.AppleDeveloperError`
 
-Uppdaterad information kommer snart.
+Information uppdateras senare.
 
 #### (3004) You are not a member of any development teams.
 
 `AltStore.AppleDeveloperError`
 
-Uppdaterad information kommer snart.
+Information uppdateras senare.
 
-#### (3005) This device’s UDID is invalid.
+#### (3005) This device's UDID is invalid.
 
 `AltStore.AppleDeveloperError`
 
-Uppdaterad information kommer snart.
+Information uppdateras senare.
 
 #### (3006) This device is already registered with another ID.
 
 `AltStore.AppleDeveloperError`
 
-Uppdaterad information kommer snart.
+Information uppdateras senare.
 
 #### (3007) The certificate request is invalid.
 
 `AltStore.AppleDeveloperError`
 
-Uppdaterad information kommer snart.
+Information uppdateras senare.
 
 #### (3008) There is no certificate with the requested serial number for this team.
 
 `AltStore.AppleDeveloperError`
 
-Uppdaterad information kommer snart.
+Information uppdateras senare.
 
 #### (3009) The name for this app is invalid.
 
 `AltStore.AppleDeveloperError`
 
-SideStore kunde inte registrera App ID eftersom namnet innehåller icke-ASCII-tecken. Ladda ner från annan källa.
+App-namnet innehåller tecken utanför ASCII så SideStore kan inte registrera App ID:t. Ladda ner från annan källa.
 
 #### (3010) The bundle identifier for this app is invalid.
 
 `AltStore.AppleDeveloperError`
 
-Uppdaterad information kommer snart.
+Information uppdateras senare.
 
 #### (3011) The bundle identifier for this app has already been registered.
 
 `AltStore.AppleDeveloperError`
 
-Uppdaterad information kommer snart.
+Information uppdateras senare.
 
 #### (3012) There is no App ID with the requested identifier on this team.
 
 `AltStore.AppleDeveloperError`
 
-Uppdaterad information kommer snart.
+Information uppdateras senare.
 
 #### (3013) You may only register 10 App IDs every 7 days.
 
 `AltStore.AppleDeveloperError`
 
-Uppdaterad information kommer snart.
+Information uppdateras senare.
 
 #### (3014) The provided app group is invalid.
 
 `AltStore.AppleDeveloperError`
 
-Uppdaterad information kommer snart.
+Information uppdateras senare.
 
 #### (3015) App group does not exist.
 
 `AltStore.AppleDeveloperError`
 
-Uppdaterad information kommer snart.
+Information uppdateras senare.
 
 #### (3016) The identifier for the requested provisioning profile is invalid.
 
 `AltStore.AppleDeveloperError`
 
-Uppdaterad information kommer snart.
+Information uppdateras senare.
 
 #### (3017) There is no provisioning profile with the requested identifier on this team.
 
 `AltStore.AppleDeveloperError`
 
-Om du ser detta fel kan det bero på en serverändring hos Apple. Se: [Twitter-annons](https://twitter.com/altstoreio/status/1638599316762664974?s=20)
+Felet kan bero på en serverändring från Apple. Se detta meddelande för mer info: [https://twitter.com/altstoreio/status/1638599316762664974?s=20](https://twitter.com/altstoreio/status/1638599316762664974?s=20)
 
 #### (3018) This account requires signing in with two-factor authentication.
 
 `AltStore.AppleDeveloperError`
 
-Uppdaterad information kommer snart.
+Information uppdateras senare.
 
 #### (3019) Incorrect verification code.
 
 `AltStore.AppleDeveloperError`
 
-Uppdaterad information kommer snart.
+Information uppdateras senare.
 
 #### (3020) Failed to perform authentication handshake with server.
 
 `AltStore.AppleDeveloperError`
 
-Uppdaterad information kommer snart.
+Information uppdateras senare.
 
 #### (3021) The provided anisette data is invalid.
 
 `AltStore.AppleDeveloperError`
 
-Detta fel betyder att anisette-datan har gått ut eller är ogiltig. Kontrollera datum/tid och att iCloud/iTunes är installerat.
+Apple-ID:t kunde inte autentiseras eftersom anisette-datan var ogiltig eller för gammal. Säkerställ att datorns datum/tid stämmer och att du installerat iTunes och iCloud från Apple.
 
----
-
-## Apple API-fel
+#### Apple API Error
 
 #### (1100) Your session has expired.
 
 `Apple.APIError`
 
-Detta fel betyder att autentiseringsinformationen för ditt Apple ID är utgången eller ogiltig. Kontrollera datum och tid på datorn och försök igen.
+Apple-ID-uppgifterna är utgångna. Kontrollera datorns datum/tid och försök igen.
 
 #### (1102) Apple ID cannot be used for development.
 
 `Apple.APIError`
 
-Du kan behöva acceptera Apples användarvillkor på [developer.apple.com](https://developer.apple.com). Alternativt skapa ett nytt “engångs”-Apple ID.
+Du kan behöva godkänna Apples villkor på [developer.apple.com](https://developer.apple.com). Annars kan du skapa ett separat Apple-ID för sideloading.
 
 #### (-20101) Your account information was entered incorrectly.
 
 `Apple.APIError`
 
-Detta fel betyder att användarnamn eller lösenord är ogiltiga eller utgångna. Kontrollera uppgifterna och datorns datum/tid.
-
----
+Fel användarnamn eller lösenord. Kontrollera uppgifterna och att datorns datum/tid stämmer.
 
 ## Anslutningsfel
 
@@ -403,45 +414,43 @@ Detta fel betyder att användarnamn eller lösenord är ogiltiga eller utgångna
 
 `AltServer.ConnectionError`
 
-Detta betyder att AltServer stötte på ett okänt fel. Kontakta support.
+AltServer fick ett okänt fel. Kontakta support om det fortsätter.
 
 #### (1) Device Locked.
 
 `AltServer.ConnectionError`
 
-Detta betyder att du måste låsa upp din enhet innan AltServer kan ansluta.
+Lås upp enheten för att AltServer ska kunna ansluta.
 
 #### (2) Invalid Request.
 
 `AltServer.ConnectionError`
 
-Uppdaterad information kommer snart.
+Information uppdateras senare.
 
 #### (3) Invalid Response.
 
 `AltServer.ConnectionError`
 
-Uppdaterad information kommer snart.
+Information uppdateras senare.
 
 #### (4) Usbmuxd.
 
 `AltServer.ConnectionError`
 
-Uppdaterad information kommer snart.
+Information uppdateras senare.
 
 #### (5) SSL Error.
 
 `AltServer.ConnectionError`
 
-Uppdaterad information kommer snart.
+Information uppdateras senare.
 
 #### (6) Timed Out.
 
 `AltServer.ConnectionError`
 
-Uppdaterad information kommer snart.
-
----
+Information uppdateras senare.
 
 ## Windows-fel
 
@@ -449,24 +458,15 @@ Uppdaterad information kommer snart.
 
 `NSURLErrorDomain`
 
-1. Se till att iTunes är stängt.
-2. Gå till `ProgramData → Apple Computer → iTunes → ADI` och ta bort filerna.
-3. Starta om iTunes.
+1. Säkerställ att iTunes är stängt.
+2. Gå till ProgramData -> Apple Computer -> iTunes -> ADI -> radera filerna.
+3. Starta iTunes.
 4. Försök installera SideStore igen.
 
----
-
-## Andra fel
+## Övriga fel
 
 #### (512) Failed to write to disk
 
 `NSCocoaErrorDomain`
 
-Detta betyder att skrivning till disk misslyckades. Kontrollera diskutrymme på både telefon och dator.
-
-#### (1) AltJIT failed with error code 1 (iOS 17)
-
-`AltServer.ProcessError`
-
-Om du försöker aktivera JIT på iOS 17 kan du få detta fel. Kontrollera att alla beroenden är installerade och att enheten är ansluten med appen öppen tills JIT är aktiverat.
-```
+Det gick inte att skriva filerna. Se till att både telefon och dator har gott om lagringsutrymme och försök igen.

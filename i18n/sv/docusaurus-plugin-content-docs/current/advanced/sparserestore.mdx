@@ -1,51 +1,43 @@
 ---
-title: Omgå 3-appsgräns
-description: En handledning om hur du installerar fler än 3 appar via SideStore med SparseRestore-exploit.
+title: Bypass av 3-appsgränsen
+description: En guide för att installera fler än tre appar i SideStore med SparseRestore-exploiten.
 ---
 
 :::note
 
-SparseRestore-exploit:et "Bypass 3 app limit" **fungerar endast på iOS/iPadOS version 17.0–18.1 beta 4 (exklusive 17.7.1)**. Om du inte använder någon av dessa versioner och det inte fungerar, **vänligen be inte om support för detta**.
+SparseRestore-exploiten "Bypass 3 app limit" **fungerar bara på iOS/iPadOS-versioner mellan 17.0 och 18.1 beta 4 (exklusive 17.7.1)**. Om du inte kör någon av dessa versioner och det inte fungerar, **be inte om support för det**. 
 
 :::
 
-## Förutsättningar
-* En iDevice med en iOS/iPadOS-version som stöds av SparseRestore-exploit:et (se noten ovan).  
-* Minst 1 ledig app-plats.  
-* SideStore version 0.5.9 eller senare. De senaste versionerna hittar du [här](https://github.com/SideStore/SideStore/releases).  
-* För att utföra detta exploit MÅSTE du ha **Hitta min iPhone/iPad** avstängt på din enhet under hela processen. Det fungerar inte annars. Så här stänger du av det:
-  1. Öppna Inställningar.  
-  2. Tryck på ditt namn högst upp.  
-  3. Tryck på **Hitta**.  
-  4. Tryck på **Hitta min iPhone/iPad**.  
-  5. Stäng av **Hitta min iPhone/iPad**.  
-  6. Du kan behöva ange ditt Apple ID-lösenord för att bekräfta.  
-
-  > **Obs:** Om du ändå inte kan stänga av Hitta min kan det bero på att Stöldskydd är aktiverat. Stäng av Stöldskydd innan du försöker stänga av Hitta min.
+## Förkrav
+* En iDevice som kör en version som stöds av SparseRestore-exploiten (se notisen ovan).
+* Minst en ledig app-plats.
+* SideStore version 0.5.9 eller senare. Senaste versionerna finns [här](https://github.com/SideStore/SideStore/releases).
+* För att köra exploiten måste **Hitta min** vara avstängt på iDevice under hela processen. Annars fungerar det inte. Så här stänger du av funktionen:
+  - Öppna Inställningar.
+  - Tryck på ditt namn överst.
+  - Tryck på Hitta min.
+  - Tryck på Hitta min iPhone/iPad.
+  - Stäng av Hitta min iPhone/iPad.
+  - Du kan behöva ange ditt Apple-ID-lösenord för att bekräfta.
+  
+  > **Obs:** Det kan ändå vara omöjligt att stänga av Hitta min om Stolen Device Protection är aktiv. Stäng av Stolen Device Protection innan du försöker stänga av Hitta min.
 
 ## Steg
-1. **Installera SparseBox.**  
-   Du kan installera SparseBox på flera sätt, men här använder vi SideStore. Hämta den senaste versionen [här](https://nightly.link/khanhduytran0/SparseBox/workflows/build/main/artifact.zip) och packa upp `artifact.zip` för att få `.ipa`-filen.
+1. Installera SparseBox. Det kan göras på flera sätt men i denna guide använder vi SideStore. Senaste versionen finns [här](https://nightly.link/khanhduytran0/SparseBox/workflows/build/main/artifact.zip) (packa upp artifact.zip för att få .ipa-filen).
 
-2. **Aktivera “Disable App Limit” i SideStore**, se till att SideStore är **helt stängd** (inte bara i bakgrunden), och öppna sedan SparseBox.
+2. Markera "Disable App Limit" i SideStore och stäng SideStore helt (inte bara i bakgrunden), öppna sedan SparseBox.
 
-3. **Kör exploit:et.**  
-   - Aktivera StosVPN.  
-   - Välj din parningsfil och tryck på “Bypass 3-app limit”.  
-   - Vänta tills du ser `idevicebackup2 exited with code -18` eller `idevicebackup2 exited with code 2` i loggen, och stäng sedan appen (ingen “Apply” krävs).
+3. Slå på StosVPN, välj din pairing-fil och tryck på "Bypass 3-app limit". En logg visas. Vänta tills den säger `idevicebackup2 exited with code -18` eller `idevicebackup2 exited with code 2` och stäng appen. Du behöver inte trycka Apply.
 
-4. **Rensa cache i SideStore.**  
-   - Öppna SideStore igen.  
-   - I Inställningar scrollar du ned och trycker på “Clear Cache”. Då upptäcker SideStore exploit:et.
+4. Öppna SideStore igen och scrolla ner i inställningarna. Tryck på "clear cache" så att SideStore kan upptäcka exploiten.
 
-5. **Testa att det fungerar.**  
-   - Försök installera en (eller flera) appar till.  
-   - Om du får ett felmeddelande om gränsen, öppna SideStore på nytt eller kör exploit:et igen.  
-   - Om installationen lyckas – grattis! Du kan nu ha fler än 3 appar installerade samtidigt.
+5. Testa att exploiten fungerar (du kan behöva installera fler än en app beroende på hur många lediga platser du hade). Om du får ett fel om gränsen, öppna SideStore igen eller kör exploiten på nytt. Om installationen fungerar kan du nu ha fler än tre appar installerade samtidigt.
 
-## Noteringar
-* På grund av vissa begränsningar måste du köra exploit:et varje gång du installerar 3 ytterligare appar.
-* Om du behöver Hitta min för andra ändamål kan du slå på det igen när du är klar. För att installera eller uppdatera fler appar måste du dock stänga av det igen.
+## Övrigt
+På grund av vissa begränsningar måste du köra exploiten varje gång du vill lägga till tre extra appar.
+
+Om du behöver Hitta min för andra syften kan du slå på den igen nu. Men om du vill installera eller uppdatera fler appar måste du stänga av funktionen igen.
 
 ## Alternativ
-Om exploit:et inte fungerar för dig, eller om din iDevice kör en ej stödd version, finns ett alternativ för att använda fler än 3 appar samtidigt. **LiveContainer**, utvecklat av Duy Tran Khanh ([khanhduytran0](https://github.com/khanhduytran0)), låter dig köra iOS-appar i behållare inuti en app istället för att installera dem separat. Detta kan i vissa fall vara enklare än SparseRestore. Se GitHub-sidan [här](https://github.com/khanhduytran0/LiveContainer).
+Om exploiten inte fungerar eller om din iDevice kör en version som inte stöds finns ett alternativ för att använda fler än tre appar: [LiveContainer](https://livecontainer.github.io/), utvecklat av Duy Tran Khanh ([khanhduytran0](https://github.com/khanhduytran0)) som även gjort SparseBox. LiveContainer kör iOS-appar i containers i appen i stället för att installera dem separat och kan i vissa fall vara enklare än SparseRestore. GitHub-sidan finns [här](https://github.com/khanhduytran0/LiveContainer).
