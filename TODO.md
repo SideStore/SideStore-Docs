@@ -1,6 +1,6 @@
 # Todo List for SideStore-Docs
 
-[ ] Error Codes and Troubleshooting cleanup
+- [ ] Error Codes and Troubleshooting cleanup
 
 iloader translation:
 - [X] EN
