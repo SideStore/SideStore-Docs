@@ -84,7 +84,7 @@ i18n/[language-code]/
 ### Don'ts
 
 - Don't translate code snippets
-- Don't change image paths or URLs
+- Don't change image paths or URLs (Exception: if an appropriate locale exists for a linked page, you may link to the locale instead, e.g `https://apple.com` becomes `https://apple.com/es` in the Spanish docs)
 - Don't modify the sidebar position or document metadata
 - Don't add or remove content beyond what's in the original documents
 
