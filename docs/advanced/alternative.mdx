@@ -1,31 +1,14 @@
 ---
 title: Alternative/Outdated instructions
-description: A place for alternative/outdated SideStore setup instructions. Note: many of these may be incompatible or not work entirely with outdated versions.
+description: A place for alternative/outdated SideStore setup instructions. Note: many of these walkthroughs may be incompatible with latest iOS or SideStore versions.
 ---
 
 ## Installation
 ### AltServer
-#### Mac
-1. Download AltServer from [AltStore's website](https://cdn.altstore.io/file/altstore/altserver.zip). Copy AltServer.app to your `Applications` folder, then open it (using Finder, Launchpad, or Spotlight). It should appear as an icon in your menu bar.
-2. Download the SideStore IPA which you can find [here](https://github.com/sidestore/sidestore/releases/latest/download/sidestore.ipa).
-3. Hold option and click on the AltServer menu bar icon. Click "Sideload .ipa", and select the SideStore IPA file.
-4. On your secondary device, do the following:
-    * Approve the "Developer App" under your Apple ID's email (you can find this in Settings, under "General", and then "VPN & Device Management").
-    * Open the Settings app.
-    * Navigate to the 'Privacy and Security' section.
-    * Turn on 'Developer Mode' at the bottom.
+#### macOS
+Follow the instructions (steps 1-3) [here](https://faq.altstore.io/altstore-classic/how-to-install-altstore-macos) to setup AltServer
 #### Windows
-On your machine, uninstall any version of iCloud or iTunes you may have downloaded from the Microsoft store, then install the non-Microsoft Store versions of iTunes ([64-bit](https://apple.com/itunes/download/win64) or [32-bit](https://apple.com/itunes/download/win32)) and [iCloud](https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe). The non-Microsoft Store version of iCloud was removed from Apple’s website in mid-September 2022, so the above link directs to an older version of iCloud that is still compatible with AltServer, and still available directly from Apple’s servers (safe).
-
-1. Download `altinstaller.zip` from [AltStore's website](https://cdn.altstore.io/file/altstore/altinstaller.zip). Extract `altinstaller.zip` and run `setup.exe`. In your Windows taskbar, type in "AltServer" and click "Run as administrator." Make sure to allow access to private networks if prompted. AltStore will appear as an icon in the system tray (where Internet, Wi-Fi, Battery, etc. are displayed).
-2. Download the SideStore IPA which you can find [here](https://github.com/sidestore/sidestore/releases/latest/download/sidestore.ipa).
-3. Hold shift and click on the AltServer tray icon. Click "Sideload .ipa", and select the `sidestore.ipa` you previously downloaded.
-4. On your secondary device, do the following:
-    * Approve the "Developer App" under your Apple ID's email (you can find this in Settings, under "General", and then "VPN & Device Management").
-    * Open the Settings app.
-    * Navigate to the 'Privacy and Security' section.
-    * Turn on 'Developer Mode' at the bottom.
-
+Follow the instructions (steps 1-3) [here](https://faq.altstore.io/altstore-classic/how-to-install-altstore-windows) to setup AltServer
 #### Linux (Altcon)
 Before you start, make sure to have installed usbmuxd.
 
@@ -44,11 +27,29 @@ Podman setup:
 podman run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd -v /var/lib/lockdown:/tmp/lockdown ghcr.io/sidestore/altcon
 ```
 5. Altcon will pair with your device. When you receive another prompt, select "trust" and enter your passcode again.
-6. On your secondary device, do the following:
-    * Approve the "Developer App" under your Apple ID's email (you can find this in Settings, under "General", and then "VPN & Device Management").
-    * Open the Settings app.
-    * Navigate to the 'Privacy and Security' section.
-    * Turn on 'Developer Mode' at the bottom.
+
+#### Setting up SideStore on Multiple Devices
+Steps:
+1. Setup AltServer on macOS/Windows using instructions above
+2. Install AltStore to one device using AltServer (We need AltStore once since it seems AltServer won't put machine identifier in apps other than AltStore)
+3. Sign in Apple ID in AltStore
+4. Export Certificate
+5. Delete AltStore
+
+Then for each device:
+1. Install SideStore using AltServer with the same Apple ID (Hold [Option/Mac, Shift/Windows] when clicking AltServer -> Install IPA -> Select SideStore.ipa)
+2. Import certificate
+3. Sign in Apple ID in SideStore (We need to sign in after importing the certificate otherwise it won't let you sign in without revoking AltStore's certificate)
+4. Sideload
+
+When the old certificate expires:
+1. SideStore will prompt to reinstall itself on one device
+2. After reinstalling, export the certificate
+
+Then for each other device:
+1. Import new certificate
+2. Sideload SideStore ipa from SideStore
+
 
 ## Pairing
 ### idevice_pair
