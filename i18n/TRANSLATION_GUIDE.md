@@ -99,4 +99,4 @@ Once you've completed translating a document:
 
 ## Need Help?
 
-If you have any questions about the translation process or need clarification on technical terms, ping us in our [discord server](https://discord.gg/sidestore-949183273383395328) and we'll help you out as soon as possible.
+If you have any questions about the translation process or need clarification on technical terms, ping us in our [discord server](https://dis.sidestore.io/) and we'll help you out as soon as possible.
