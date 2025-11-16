@@ -1,134 +1,136 @@
 ---
-title: Troubleshooting Guide
-description: A guide to troubleshooting SideStore.
+title: Troubleshooten gids
+description: Een gids voor het oplossen van problemen met SideStore.
 ---
 
-## Installation
+## Installatie
 
-#### I followed the instructions, but I still can't install Sidestore.
+#### Ik heb de instructies gevolgd, maar ik kan Sidestore nog steeds niet installeren.
 
-### Mac Instructions
-1. **Trust Device**: After connecting your iOS device to your Mac, ensure you have said “Trust” on both your Mac and iOS device. You can verify this by:
-   - Opening Finder (macOS 10.15 Catalina or later) or iTunes (macOS 10.14 Mojave and earlier).
-   - Disconnect and reconnect your phone to your mac and check if a dialog box appears asking if you want to trust the device.
-2. **Use Another Apple ID**: Try using another Apple ID. If needed, you can [create a new Apple ID](https://appleid.apple.com/account#!\&page=create) specifically for Sidestore for free.
+### Mac-instructies
+1. **Vertrouw het apparaat**: Nadat je je iOS-apparaat met je Mac hebt verbonden, zorg je ervoor dat je op zowel je Mac als je iOS-apparaat op “Vertrouw” hebt gedrukt. Je kunt dit controleren door:
+   - Finder te openen (macOS 10.15 Catalina of later) of iTunes (macOS 10.14 Mojave en eerder).
+   - Je telefoon los te koppelen en opnieuw te verbinden met je Mac en te kijken of er een dialoog verschijnt met de vraag of je het apparaat wilt vertrouwen.
+2. **Gebruik een ander Apple ID**: Probeer een ander Apple ID te gebruiken. Indien nodig kun je [een nieuw Apple ID](https://appleid.apple.com/account#!\&page=create) aanmaken, speciaal voor Sidestore, helemaal gratis.
 
-### Windows Instructions
-1. **Trust Device**: After connecting your iOS device to your Windows computer, ensure you have said “Trust” on both your computer and iOS device. You can verify this by:
-   - Opening iTunes and checking if a dialog box appears asking if you want to trust the device.
-2. **Run AltServer as Administrator**: Right-click on AltServer and select “Run as Administrator” to ensure proper permissions.
-3. **Use Another Apple ID**: Try using another Apple ID. If needed, you can [create a new Apple ID](https://appleid.apple.com/account#!\&page=create) specifically for Sidestore for free.
-4. **Non-Microsoft Store Version of iTunes and iCloud**:
-   - If you installed iTunes or iCloud from the Microsoft Store, you’ll need to uninstall them.
-   - Download and install the non-Microsoft Store versions of iTunes and iCloud using the following links:
+### Windows-instructies
+1. **Vertrouw het apparaat**: Nadat je je iOS-apparaat met je Windows-computer hebt verbonden, zorg je ervoor dat je op zowel je computer als je iOS-apparaat op “Vertrouw” hebt gedrukt. Je kunt dit controleren door:
+   - iTunes te openen en te kijken of er een dialoog verschijnt met de vraag of je het apparaat wilt vertrouwen.
+2. **AltServer als administrator uitvoeren**: Klik met de rechtermuisknop op AltServer en selecteer “Run as Administrator” om de juiste rechten te geven.
+3. **Gebruik een ander Apple ID**: Probeer een ander Apple ID te gebruiken. Indien nodig kun je [een nieuw Apple ID](https://appleid.apple.com/account#!\&page=create) aanmaken, speciaal voor Sidestore, helemaal gratis.
+4. **Niet-Microsoft Store-versie van iTunes en iCloud**:
+   - Als je iTunes of iCloud via de Microsoft Store hebt geïnstalleerd, moet je die versies verwijderen.
+   - Download en installeer de niet-Microsoft Store-versies van iTunes en iCloud via de volgende links:
      - [Download iCloud](https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe)
      - [Download iTunes](https://www.apple.com/itunes/download/win64/)
 
 
-## Sign-In Issues
+## Inlogproblemen
 
-#### Sidestore Freezing or Displaying an Error Code During Sign-In
+#### Sidestore loopt vast of toont een foutcode tijdens het inloggen
 
-If you encounter freezing or error codes while attempting to sign in to Sidestore, there could be several potential causes. Follow these steps to resolve the issue:
+Als Sidestore vastloopt of een foutcode weergeeft tijdens het inloggen, kan dat meerdere oorzaken hebben. Volg deze stappen om het probleem op te lossen:
 
-1. **Change the Anisette Server:**
-   The most common solution is to switch to a different Anisette server. Anisette servers may occasionally experience downtime. Switching to an alternative server typically resolves the issue. Do this:
-   - Open Sidestore settings.
-   - Scroll down to the "Anisette Server" option.
-   - Select a different server from the list.
-   - You might need to try a few servers from the list and find which works best for you.
+1. **Wijzig de Anisette-server:**  
+   De meest voorkomende oplossing is overschakelen naar een andere Anisette-server. Anisette-servers kunnen soms downtime hebben. Wisselen naar een alternatieve server lost het probleem meestal op. Doe dit:
+   - Open de Sidestore-instellingen.
+   - Scroll omlaag naar de optie “Anisette Server”.
+   - Selecteer een andere server uit de lijst.
+   - Mogelijk moet je meerdere servers proberen om te zien welke het beste werkt.
 
-2. **Host Your Own Anisette Server:**
-   If you prefer, you can set up your own Anisette server. Detailed instructions for hosting an Anisette server are available in the official documentation and can he found [here](https://docs.sidestore.io/docs/advanced/anisette).
+2. **Host je eigen Anisette-server:**  
+   Als je wilt, kun je je eigen Anisette-server opzetten. Gedetailleerde instructies hiervoor zijn beschikbaar in de officiële documentatie en zijn te vinden [hier](https://docs.sidestore.io/docs/advanced/anisette).
 
-#### Verification Code Not Received When Signing In with Apple ID
+#### Verificatiecode niet ontvangen bij inloggen met Apple ID
 
-Another common issue during sign-in is not receiving a verification code when using your Apple ID with Sidestore. This can be resolved by following these steps:
+Een ander veelvoorkomend probleem tijdens het inloggen is het niet ontvangen van een verificatiecode wanneer je je Apple ID met Sidestore gebruikt. Dit kun je oplossen door de volgende stappen te volgen:
 
-**For iOS versions below 18.1:**
+**Voor iOS-versies onder 18.1:**
 
-1. Open the "Settings" app.
-2. Tap on your name at the top of the screen.
-3. Navigate to "Sign-In and Security."
-4. Select "Two-Factor Authentication."
-5. Choose "Get Verification Code."
+1. Open de app “Instellingen”.
+2. Tik bovenaan op je naam.
+3. Ga naar “Sign-In and Security”.
+4. Selecteer “Two-Factor Authentication”.
+5. Kies “Get Verification Code”.
 
-**For iOS versions 18.1 and above:**
+**Voor iOS-versies 18.1 en hoger:**
 
-1. Visit [iCloud](https://www.icloud.com) on a web browser.
-2. Click "Sign In."
-3. When prompted, you will see two options: "Sign In" and "Use Different Apple Account."
-   - Select the bottom option, "Use Different Apple Account."
-4. Enter your Apple ID and password.
-5. Apple will send you a verification code.
-   - Use this code in Sidestore to complete the sign-in process.
-
-
-## Can't Refresh or Install Apps
-
-#### Resolving No Wi-Fi or VPN Error
-
-1. Disable your cellular data / connect to a stable Wi-Fi network.
-2. Ensure that Apple domains, and the domain for your anisette server, are not restricted. Check the following:
-   - Turn off any DNS blocking domains such as `oscp.apple.com`
-   - Disconnect from school/work Wi-Fi, try connecting to a restriction-free network.
-3. Verify VPN is connected in StosVPN.
-4. Turn StosVPN off, then back on, and wait a few seconds in SideStore before trying to refresh.
-5. Create a brand new pairing file.
-   - If none of the above worked it is very likely that the pairing file is corrupted. You can reference the documentation on how to create a new pairing file [here](/docs/installation/pairing-file). 
-   - After creating a new pairing file, go to Sidestore settings and press "Reset pairing file", then choose the new pairing file you just created.
+1. Ga naar [iCloud](https://www.icloud.com) in een webbrowser.
+2. Klik op “Sign In”.
+3. Wanneer er om inloggegevens wordt gevraagd, zie je twee opties: “Sign In” en “Use Different Apple Account”.
+   - Selecteer de onderste optie, “Use Different Apple Account”.
+4. Voer je Apple ID en wachtwoord in.
+5. Apple stuurt je een verificatiecode.
+   - Gebruik deze code in Sidestore om het inlogproces te voltooien.
 
 
-## Cannot Choose Pairing File
+## Kan apps niet verversen of installeren
 
-#### If you are unable to select a pairing file in Sidestore, follow these steps to resolve the issue:
+#### “Geen Wi-Fi of VPN”-fout oplossen
 
-1. **Check File Extension**: Make sure your pairing file's extension ends with `.mobiledevicepairing` or `.plist`. If it doesn't, double-check to see if you had zipped your pairing file before sending it to your phone. Failing to do so may lead to the file being corrupted during transport.
-2. **Move Pairing File**: If you are unable to select the pairing file from within the app, rename the file to `ALTPairingFile.mobiledevicepairing` and try moving the pairing file to the root directory of the SideStore folder in the Files app in "On My iPhone/iPad". 
-2. **Certificate Signing**: When signing Sidestore with a certificate, you won't be able to select the pairing file from within the app. You can try the fix mentioned above. If you do not see the Sidestore folder in the Files app, connect your phone to your computer, and you can drag and drop the pairing file to the files of the Sidestore app. Ensure to change it to the name mentioned above.
+1. Schakel mobiele data uit / maak verbinding met een stabiel Wi-Fi-netwerk.
+2. Zorg dat Apple-domeinen en het domein van je Anisette-server niet geblokkeerd worden. Controleer het volgende:
+   - Zet DNS-blokkering van domeinen als `oscp.apple.com` uit.
+   - Verbreek de verbinding met school-/werk-Wi-Fi en probeer een netwerk zonder beperkingen.
+3. Controleer of de VPN is verbonden in StosVPN.
+4. Zet StosVPN uit en weer aan, en wacht een paar seconden in SideStore voordat je opnieuw probeert te verversen.
+5. Maak een geheel nieuw pairing-bestand.
+   - Als niets van het bovenstaande werkt, is het zeer waarschijnlijk dat je pairing-bestand corrupt is. Je kunt de documentatie voor het maken van een nieuw pairing-bestand [hier](/docs/installation/pairing-file) raadplegen.
+   - Nadat je een nieuw pairing-bestand hebt aangemaakt, ga je naar de Sidestore-instellingen en druk je op “Reset pairing file”, en selecteer je het nieuwe pairing-bestand dat je zojuist gemaakt hebt.
+
+
+## Kan geen pairing-bestand kiezen
+
+#### Als je geen pairing-bestand kunt selecteren in Sidestore, volg dan deze stappen om het probleem op te lossen:
+
+1. **Controleer de bestandsextensie**: Zorg dat de extensie van je pairing-bestand eindigt op `.mobiledevicepairing` of `.plist`. Zo niet, controleer dan of je het bestand hebt ge-zip’t voordat je het naar je telefoon stuurde. Doe je dat niet, dan kan het bestand tijdens transport corrupt raken.
+2. **Verplaats het pairing-bestand**: Als je het pairing-bestand niet vanuit de app kunt selecteren, hernoem het bestand naar `ALTPairingFile.mobiledevicepairing` en probeer het naar de hoofdmap van de SideStore-map te verplaatsen in de Bestanden-app onder “On My iPhone/iPad”.
+2. **Certificaat-ondertekening**: Wanneer je Sidestore met een certificaat ondertekent, kun je het pairing-bestand niet vanuit de app selecteren. Je kunt dan de bovenstaande oplossing proberen. Zie je de Sidestore-map niet in de Bestanden-app, sluit dan je telefoon aan op je computer en sleep het pairing-bestand naar de Sidestore-app in de bestandsdeling. Zorg ervoor dat je de bestandsnaam wijzigt naar de naam hierboven.
 
 
 ## AltServer
 
-#### AltStore says “Could not find AltServer” when trying to sideload or refresh apps.
+#### AltStore zegt “Could not find AltServer” bij het sideloaden of verversen van apps.
 
-AltServer must be running on a computer connected to the same Wi-Fi as AltStore in order to sideload or refresh apps. If AltServer is running on the same Wi-Fi network as AltStore and you're still receiving this error, try the following:
+AltServer moet draaien op een computer die met hetzelfde Wi-Fi-netwerk is verbonden als AltStore om apps te kunnen sideloaden of verversen. Als AltServer actief is op hetzelfde netwerk als AltStore en je deze foutmelding nog steeds krijgt, probeer dan het volgende:
 
-- Are you on public/work/school Wi-Fi? If so, your Wi-Fi might be preventing devices from discovering each other. Try connecting your computer to your phone’s hotspot and trying again. (If you're using an iPad, make sure it's connected to your hotspot as well.)
-- Have you said “Trust” on both your Mac and iOS device after connecting your device to your Mac? You can check by Finder (macOS 10.15 Catalina or later) or iTunes (macOS 10.14 Mojave and earlier) and seeing if a dialog box pops up asking if you want to trust your phone.
-- (Windows) Your firewall might be blocking incoming network connections to AltServer. You must enable network access for AltServer in your firewall settings for it to receive refreshed apps from AltStore.
-- (Windows) Did you install iTunes or iCloud from the Microsoft Store? If so, you’ll need to uninstall them and download the latest versions directly from Apple.
-- Finally, try plugging your iPhone or iPad into your computer. This should fix all connectivity problems, but does mean AltStore may not be able to automatically refresh apps for you in the background over Wi-Fi.
+- Zit je op een openbaar/werk-/schoolnetwerk? In dat geval kan het zijn dat het netwerk voorkomt dat apparaten elkaar zien. Probeer je computer te verbinden met de hotspot van je telefoon en probeer het opnieuw. (Als je een iPad gebruikt, zorg dan dat die ook met je hotspot is verbonden.)
+- Heb je op zowel je Mac als je iOS-apparaat op “Vertrouw” gedrukt nadat je het apparaat met je Mac hebt verbonden? Je kunt dit controleren door Finder (macOS 10.15 Catalina of later) of iTunes (macOS 10.14 Mojave en eerder) te openen en te kijken of er een dialoog verschijnt met de vraag of je je telefoon wilt vertrouwen.
+- (Windows) Je firewall kan inkomende netwerkverbindingen naar AltServer blokkeren. Je moet netwerktoegang voor AltServer toestaan in je firewallinstellingen, zodat het ververste apps van AltStore kan ontvangen.
+- (Windows) Heb je iTunes of iCloud via de Microsoft Store geïnstalleerd? Zo ja, verwijder ze dan en download de nieuwste versies rechtstreeks van Apple.
+- Probeer ten slotte je iPhone of iPad met een kabel op je computer aan te sluiten. Dit zou alle verbindingsproblemen moeten oplossen, maar betekent wel dat AltStore je apps mogelijk niet meer automatisch op de achtergrond via Wi-Fi kan verversen.
 
-#### I’m unable to change my network settings to allow devices to communicate with each other (such as on school/work/public Wi-Fi).
+#### Ik kan mijn netwerkinstellingen niet veranderen om apparaten met elkaar te laten communiceren (bijvoorbeeld op school-/werk-/publiek Wi-Fi).
 
-You can always sideload and refresh apps without Wi-Fi by plugging your iPhone or iPad into your computer. However, this means AltStore may not be able to refresh apps for you in the background over Wi-Fi.
+Je kunt altijd apps sideloaden en verversen zonder Wi-Fi door je iPhone of iPad met een kabel met je computer te verbinden. Dit betekent echter wel dat AltStore apps niet automatisch op de achtergrond via Wi-Fi kan verversen.
+
 
 ## AltJIT
 
-#### AltServer says “JIT could not be enabled for [App]".
+#### AltServer zegt “JIT could not be enabled for [App]".
 
-This could happen for a number of reasons. If you’re experiencing this issue, please check the following:
+Dit kan om verschillende redenen gebeuren. Als je dit probleem tegenkomt, controleer dan het volgende:
 
-- Make sure the app you are trying to enable JIT for is running in the foreground on your device.
-- Are you on public/work/school Wi-Fi? If so, your Wi-Fi might be preventing devices from discovering each other. Try connecting your computer to your phone’s hotspot and trying again. (If you're using an iPad, make sure it's connected to your hotspot as well.)
-- Have you said “Trust” on both your Mac and iOS device after connecting your device to your Mac? You can check by Finder (macOS 10.15 Catalina or later) or iTunes (macOS 10.14 Mojave and earlier) and seeing if a dialog box pops up asking if you want to trust your phone.
-- (Windows) Firewall might be blocking incoming network connections to AltServer. You must enable network access for AltServer in your firewall settings for it to receive refreshed apps from AltStore.
-- (Windows) Did you install iTunes or iCloud from the Microsoft Store? If so, you’ll need to uninstall them and download the latest versions directly from Apple.
-- You may need to make sure iTunes and iCloud are running on your computer as well.
-- Finally, try plugging your iPhone or iPad into your computer. This should fix all connectivity problems, but does mean AltStore may not be able to automatically refresh apps for you in the background over Wi-Fi.
+- Zorg dat de app waarvoor je JIT probeert in te schakelen, actief is en op de voorgrond draait op je apparaat.
+- Zit je op een openbaar/werk-/schoolnetwerk? In dat geval kan het netwerk voorkomen dat apparaten elkaar zien. Probeer je computer te verbinden met de hotspot van je telefoon en probeer het opnieuw. (Als je een iPad gebruikt, zorg dan dat die ook met je hotspot is verbonden.)
+- Heb je op zowel je Mac als je iOS-apparaat op “Vertrouw” gedrukt nadat je het apparaat met je Mac hebt verbonden? Je kunt dit controleren via Finder (macOS 10.15 Catalina of later) of iTunes (macOS 10.14 Mojave en eerder) en kijken of er een dialoog verschijnt met de vraag of je je telefoon wilt vertrouwen.
+- (Windows) Je firewall kan inkomende netwerkverbindingen naar AltServer blokkeren. Je moet netwerktoegang voor AltServer toestaan in je firewallinstellingen, zodat het ververste apps van AltStore kan ontvangen.
+- (Windows) Heb je iTunes of iCloud via de Microsoft Store geïnstalleerd? Zo ja, verwijder ze dan en download de nieuwste versies rechtstreeks van Apple.
+- Mogelijk moet je er ook voor zorgen dat iTunes en iCloud op je computer actief zijn.
+- Probeer ten slotte je iPhone of iPad met een kabel op je computer aan te sluiten. Dit zou alle verbindingsproblemen moeten oplossen, maar betekent wel dat AltStore je apps mogelijk niet meer automatisch op de achtergrond via Wi-Fi kan verversen.
 
 :::tip
-If you can't find the answer to your question here, you can email [support@altstore.io](mailto:support@altstore.io), and we will try to get back to you as soon as we can.
+Als je het antwoord op je vraag hier niet kunt vinden, kun je een e-mail sturen naar [support@altstore.io](mailto:support@altstore.io). We proberen je dan zo snel mogelijk te helpen.
 :::
 
-#### What if I need to use the Windows Store version of iCloud?
+#### Wat als ik de Windows Store-versie van iCloud moet gebruiken?
 
-AltStore requires that you install iCloud directly from Apple in order to authenticate your Apple ID. If you need to use the Windows Store version instead, you can follow these alternate instructions copied from [this reddit post](https://www.reddit.com/r/jailbreak/comments/rp5buz/tutorial\_how\_to\_use\_altserver\_if\_you\_have\_to\_use/?utm\_source=share\&utm\_medium=ios\_app\&utm\_name=iossmf):
+AltStore vereist dat je iCloud rechtstreeks vanaf Apple installeert om je Apple ID te kunnen verifiëren. Als je toch de Windows Store-versie moet gebruiken, kun je deze alternatieve instructies volgen, gekopieerd uit [deze Reddit-post](https://www.reddit.com/r/jailbreak/comments/rp5buz/tutorial\_how\_to\_use\_altserver\_if\_you\_have\_to\_use/?utm\_source=share\&utm\_medium=ios\_app\&utm\_name=iossmf):
 
-1. Download and install [iTunes](https://www.apple.com/itunes/) from the official Apple website. Make sure to **scroll down** and click on "Windows" next to the "Looking for other versions?" text.
-2. Download and install [iCloud](https://support.apple.com/en-us/HT204283) from the official Apple website. Make sure to **scroll down** and click on the link in this text: "\* On Windows 7 and Windows 8, you can _download iCloud for Windows on Apple's website_".
-3. Locate your "C:\Program Files (x86)\Common Files\Apple" folder. Copy the "Apple Application Support" and "Internet Services" folders, then create a new folder, name it anyway you want, and paste them in.
-4. Remove iCloud from your computer. **DO NOT** remove iTunes! (Also, **NEVER** remove the "Apple Mobile Device Support" or the "Apple Application Support" that are installed alongside iTunes and iCloud.)
-5. Install [iCloud](https://www.microsoft.com/store/productId/9PKTQ5699M62) from the Windows Store.
-6. Download and install [AltServer](https://altstore.io/). When you open it for the first time, click on "Choose Folder...", and locate the folder you created in the 3rd step.
+1. Download en installeer [iTunes](https://www.apple.com/itunes/) vanaf de officiële Apple-website. Zorg dat je **omlaag scrolt** en klikt op “Windows” naast de tekst “Looking for other versions?”.
+2. Download en installeer [iCloud](https://support.apple.com/en-us/HT204283) vanaf de officiële Apple-website. Zorg dat je **omlaag scrolt** en klikt op de link in deze tekst:  
+   "\* On Windows 7 and Windows 8, you can _download iCloud for Windows on Apple's website_".
+3. Zoek de map "C:\Program Files (x86)\Common Files\Apple". Kopieer de mappen "Apple Application Support" en "Internet Services", maak vervolgens een nieuwe map, geef die een naam naar keuze en plak de gekopieerde mappen daarin.
+4. Verwijder iCloud van je computer. **VERWIJDER iTunes NIET!** (Verwijder ook **NOOIT** "Apple Mobile Device Support" of "Apple Application Support" die samen met iTunes en iCloud zijn geïnstalleerd.)
+5. Installeer [iCloud](https://www.microsoft.com/store/productId/9PKTQ5699M62) uit de Windows Store.
+6. Download en installeer [AltServer](https://altstore.io/). Wanneer je AltServer voor de eerste keer opent, klik je op "Choose Folder..." en selecteer je de map die je in stap 3 hebt aangemaakt.
