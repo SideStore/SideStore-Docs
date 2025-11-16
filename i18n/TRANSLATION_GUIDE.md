@@ -84,7 +84,7 @@ i18n/[language-code]/
 ### Don'ts
 
 - Don't translate code snippets
-- Don't change image paths or URLs
+- Don't change image paths or URLs (Exception: if an appropriate locale exists for a linked page, you may link to the locale instead. e.g. `https://apple.com` becomes `https://apple.com/es` in the Spanish documentation.)
 - Don't modify the sidebar position or document metadata
 - Don't add or remove content beyond what's in the original documents
 
@@ -99,4 +99,4 @@ Once you've completed translating a document:
 
 ## Need Help?
 
-If you have any questions about the translation process or need clarification on technical terms, ping us in our [discord server](https://discord.gg/sidestore-949183273383395328) and we'll help you out as soon as possible.
+If you have any questions about the translation process or need clarification on technical terms, ping us in our [discord server](https://dis.sidestore.io/) and we'll help you out as soon as possible.
