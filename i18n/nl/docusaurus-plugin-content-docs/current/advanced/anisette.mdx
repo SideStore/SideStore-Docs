@@ -69,23 +69,25 @@ Als je de optie wilt behouden om ook de ingebouwde servers te gebruiken, volg da
 * Ga terug naar het Code-tabblad, klik op “Add files”, daarna “Upload files” en upload het bestand ‘servers.json’ dat je eerder hebt gedownload.
 * Klik op het bestand en vervolgens op “Edit”.
 * Scroll naar de laatste server in de lijst en voeg een komma toe na de laatste sluitende accolade (‘}’). Voeg daarna je eigen server toe in het volgende formaat:
+```
 {
-"name": "[iets herkenbaars, zoals een gebruikersnaam]", //maakt niet echt uit tenzij je de lijst met iemand anders deelt
-"address": "[de URL van jouw server]"
+    "name": "[iets herkenbaars, zoals een gebruikersnaam]", //maakt niet echt uit tenzij je de lijst met iemand anders deelt
+    "address": "[de URL van jouw server]"
 }
-
+```
 * Commit de wijzigingen en ga naar https://[jouw-GitHub-gebruikersnaam].github.io/[de-map-waar-je-het-bestand-plaatst]/servers.json. Als het geladen wordt, kun je verder naar de volgende sectie. Zo niet, wacht dan tot 10 minuten totdat GitHub Pages volledig is ingeschakeld en probeer opnieuw.
 
 Als je alleen je eigen server wilt gebruiken, volg dan de stappen hierboven, maar in plaats van de officiële server.json te gebruiken, maak je je eigen bestand met dit formaat:
+```
 {
-"servers": [
-{
-"name": "[zoals hierboven]",
-"address": "[zoals hierboven]"
+    "servers": [
+        {
+            "name": "[zoals hierboven]",
+            "address": "[zoals hierboven]"
+        }
+    ]
 }
-]
-}
-
+```
 en ga vervolgens verder zoals normaal.
 
 ## Je server gebruiken met SideStore
