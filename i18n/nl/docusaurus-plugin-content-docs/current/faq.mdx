@@ -1,143 +1,145 @@
 ---
-title: Frequently Asked Questions
-description: A section on the most frequently asked questions for SideStore.
+title: Meest gestelde vragen
+description: Meest gestelde vragen over SideStore.
 sidebar_position: 3
 ---
 
 # FAQ
 
-This is a list of frequently asked questions for SideStore. This has a list of common questions we get with our development of SideStore, and some questions that might want to be answered for different types of people, or for people having problems.
+Dit is een lijst met veelgestelde vragen over SideStore. Hier staan vragen die we vaak krijgen tijdens de ontwikkeling van SideStore, maar ook vragen die nuttig zijn voor verschillende soorten gebruikers of mensen die problemen ervaren.
 
-## What is SideStore?
+## Wat is SideStore?
 
-SideStore is an iOS application that allows you to sideload apps onto your iOS device using only your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically "refresh" your apps in the background, to keep their normal 7-day development period from expiring. SideStore's goal is to provide an untethered sideloading experience. It's a community driven fork of AltStore, and has already implemented some of the community's most-requested features. You only need a computer once during installation.
+SideStore is een iOS-applicatie waarmee je apps kunt sideloaden op je iOS-apparaat, uitsluitend met je Apple-ID. SideStore ondertekent apps opnieuw met jouw persoonlijke ontwikkelaarscertificaat en gebruikt vervolgens een speciaal ontworpen VPN om iOS te misleiden zodat het de apps installeert. SideStore zal je apps periodiek in de achtergrond “verversen” om te voorkomen dat de standaard 7-dagen ontwikkelperiode verloopt. Het doel van SideStore is een ontkoppelde (untethered) sideload-ervaring te bieden. Het is een community-gedreven fork van AltStore en bevat al veel van de meestgevraagde functies uit de community. Je hebt slechts één keer een computer nodig tijdens de installatie.
 
-(Contributions are welcome! 🙂)
+(Bijdrages zijn welkom! 🙂)
 
-### Can I activate JIT?
+### Kan ik JIT activeren?
 
-For users using iOS/iPadOS 16 or lower, you can activate JIT directly from the SideStore 'My Apps' page by holding down on your app and selecting 'Enable JIT'.
+Voor gebruikers op iOS/iPadOS 16 of lager kun je JIT activeren vanuit de SideStore-pagina ‘My Apps’ door je vinger op de app te houden en ‘Enable JIT’ te selecteren.
 
-Users on iOS or iPadOS 17.4 or higher will need to use a solution such as StikJIT/StikDebug or SideStore nightly. Please refer to the tutorial in the [Advanced](advanced/jit) section.
+Gebruikers op iOS/iPadOS 17.4 of hoger moeten een oplossing zoals StikJIT/StikDebug of SideStore-nightly gebruiken. Zie de tutorial in het gedeelte [Advanced](advanced/jit).
 
-### When will SideStore release?
+### Wanneer wordt SideStore officieel uitgebracht?
 
-SideStore currently does not have a release date, but is in a public beta state.
+SideStore heeft momenteel geen officiële releasedatum, maar bevindt zich in een publieke bètafase.
 
-### Can you sideload apps at the moment?
+### Kun je momenteel apps sideloaden?
 
-Yes you can, just like AltStore!
+Ja, dat kan! Net zoals met AltStore.
 
-### Does this have AltStore beta features?
+### Heeft dit de AltStore-bètafuncties?
 
-We do have AltStore beta features, but it isn't always latest. We try to keep up to date, or implement them in our own way if it's necessary.
+We hebben AltStore-bètafuncties, maar niet altijd de nieuwste. We proberen up-to-date te blijven, of implementeren functies op onze eigen manier wanneer dat nodig is.
 
-### Will having the VPN on drain my battery?
+### Zorgt het gebruik van de VPN voor extra batterijverbruik?
 
-It does not, as it's only connecting to your own device. No remote servers are used, meaning no external connections, meaning no extra battery drain.
+Nee, want de VPN maakt alleen verbinding met je eigen apparaat. Er worden geen externe servers gebruikt, dus ook geen extra batterijverbruik.
 
-### Will the VPN track me?
+### Volgt de VPN mijn gegevens?
 
-It does not, as there is no remote server used.
+Nee, want er wordt geen externe server gebruikt.
 
-### I cannot connect to the internet when the VPN is on
+### Ik kan geen verbinding met internet maken wanneer de VPN aanstaat
 
-Make sure you don't have an alternate DNS set up in your Wi-Fi and WireGuard configuration. If you know the DNS IP address works, then try removing it from your Wi-Fi configuration and adding it into the WireGuard config under DNS.
+Controleer of je geen alternatieve DNS hebt ingesteld in zowel je Wi-Fi als WireGuard-configuratie. Als je weet dat het DNS-adres werkt, verwijder het dan uit de Wi-Fi-instellingen en voeg het toe in de WireGuard-configuratie onder DNS.
 
-### Updating SideStore hangs towards the end
+### Het updaten van SideStore hangt tegen het einde vast
 
-Go to the homescreen for it to finish. We don't know why this happens, but it might have to do with using a VPN to direct `installd` to refresh SideStore (itself).
+Ga naar het beginscherm zodat het kan afronden. We weten niet precies waarom dit gebeurt, maar het heeft waarschijnlijk te maken met het gebruik van een VPN om `installd` SideStore (zichzelf) te laten vernieuwen.
 
-### Can I sign more than 3 apps to be active?
+### Kan ik meer dan 3 apps actief ondertekenen?
 
-Normally, no, as that’s an iOS and developer account limitation. Apple only allows 3 apps to be installed using a free Apple Developer account.
+Normaal gesproken niet, omdat dit een beperking van iOS en het ontwikkelaarsaccount is. Apple staat slechts 3 apps toe met een gratis Apple Developer-account.
 
-To remove this restriction (and also get a 365 day expiry), you can pay for a $99/year Apple Developer account.
+Om deze beperking te verwijderen (en een vervaldatum van 365 dagen te krijgen), kun je een Apple Developer-account nemen van $99/jaar.
 
-Alternatively, there is currently a nightly build available [here](https://github.com/SideStore/SideStore/releases/tag/nightly) (version 0.5.9-nightly.2024.10.23.1+1e969a0 as of writing) that utilizes the SparseRestore exploit to bypass the 3-app limit. Currently, this only works on iOS versions below 18 dev beta 5 plus 18.0.1 for definite.
+Alternatief is er een nightly build beschikbaar [hier](https://github.com/SideStore/SideStore/releases/tag/nightly) (versie 0.5.9-nightly.2024.10.23.1+1e969a0 ten tijde van schrijven) die de SparseRestore-exploit gebruikt om de 3-app-limiet te omzeilen. Dit werkt momenteel alleen op iOS-versies onder 18 dev beta 5 plus 18.0.1.
 
-A tutorial for using this can be found [here](advanced/sparserestore).
+Een tutorial hiervoor is te vinden [hier](advanced/sparserestore).
 
-### I have a problem or bug or request for a feature or quality of life improvement
+### Ik heb een probleem, bug of verzoek voor een functie of quality-of-life-verbetering
 
-Please make a GitHub issue on our GitHub page to make a bug report or feature request (with appropriate labels)!
+Maak een GitHub-issue op onze GitHub-pagina om een bugreport of feature request in te dienen (met de juiste labels)!
 
-### I am a developer, how does this affect me?
+### Ik ben een ontwikkelaar. Hoe beïnvloedt dit mij?
 
-It doesn’t affect you directly, other than maybe an update to AltKit when/if we get our additions.
+Het beïnvloedt je niet rechtstreeks, behalve mogelijk een update aan AltKit wanneer/we die veranderingen doorvoeren.
 
-### Do I need to update my app to support this?
+### Moet ik mijn app updaten om dit te ondersteunen?
 
-Nope, as currently it acts like AltStore while signing.
+Nee, SideStore werkt momenteel hetzelfde als AltStore bij het ondertekenen.
 
-### As a user, I’m having trouble logging into SideStore. I get an error
+### Als gebruiker heb ik problemen met inloggen in SideStore. Ik krijg een foutmelding
 
-There are many reasons this can happen, but the most common issue is a temporary Anisette server downtime. You can currently change the Anisette server on your device’s Settings app in SideStore under “Anisette URL”.
+Er kunnen veel redenen zijn, maar de meest voorkomende is een tijdelijke Anisette-serverstoring. Je kunt de Anisette-server wijzigen in de Instellingen-app van je apparaat, onder SideStore → “Anisette URL”.
 
-### Is SideStore going to have a Storefront?
+### Krijgt SideStore een Storefront?
 
-We currently have a Community Source! Source URL: https://community-apps.sidestore.io/sidecommunity.json
+We hebben momenteel een Community Source!  
+Source URL: https://community-apps.sidestore.io/sidecommunity.json
 
-We also have a service called [SideStore Connect](https://connect.sidestore.io) which allows devs to publish their own apps.
+We hebben ook een dienst genaamd [SideStore Connect](https://connect.sidestore.io), waarmee ontwikkelaars hun eigen apps kunnen publiceren.
 
-### Why does my app have an update called "pacer test"?
+### Waarom heeft mijn app een update genaamd “pacer test”?
 
-This was a test update to see if there were problems between major versions, and shouldn’t be seen during normal use. If you see this issue, and it’s after release, then reinstall SideStore or report it as a bug.
+Dit was een testupdate om te zien of er problemen waren tussen grote versies, en zou niet moeten verschijnen tijdens normaal gebruik. Zie je dit na release, installeer dan SideStore opnieuw of meld het als bug.
 
-### Why do my JIT based apps not automatically activate JIT?
+### Waarom activeren mijn JIT-apps JIT niet automatisch?
 
-We currently don’t have an automatic JIT activation method, and if we do you would need the SideStore VPN on.
+We hebben momenteel geen automatische JIT-activatiemethode, en als deze er komt heb je de SideStore-VPN nodig.
 
-### Does SideStore have an iPadOS UI?
+### Heeft SideStore een iPadOS-interface?
 
-We sure do!
+Zeker!
 
-### I saw an iMac or MacBook Pro get added to my account. Is it safe, and is it a real Mac?
+### Ik zag dat een iMac of MacBook Pro aan mijn account werd toegevoegd. Is dat veilig en is het een echte Mac?
 
-These Macs are not real, and they are automatically generated by the Anisette server to assist with login. No private data is sent to the Anisette server either, as the data the server gives is used on SideStore only.
+Deze Macs zijn niet echt; ze worden automatisch gegenereerd door de Anisette-server om te helpen bij het inloggen. Er wordt geen privédata naar de Anisette-server gestuurd; de gegevens zijn uitsluitend bedoeld voor gebruik in SideStore.
 
-### Why is my account getting locked when I use SideStore?
+### Waarom wordt mijn account vergrendeld wanneer ik SideStore gebruik?
 
-Older Anisette servers that are used by many users are known to cause locking of Apple ID's. Please use one of the official Anisette servers, or host your own [anisette-v3-server](advanced/anisette).
+Oudere Anisette-servers die door veel gebruikers gedeeld worden, staan erom bekend Apple-ID’s te vergrendelen. Gebruik een van de officiële Anisette-servers of host je eigen [anisette-v3-server](advanced/anisette).
 
-### Why do I get error -36607?
+### Waarom krijg ik foutcode -36607?
 
-This is a login issue with the Anisette server. There isn’t really much of any info about it other than changing Anisette servers sometimes helps, or you can keep trying to login until it does.
+Dit is een inlogprobleem met de Anisette-server. Er is weinig informatie over, behalve dat het soms helpt om van Anisette-server te wisselen, of om het inloggen meerdere keren te proberen.
 
-### Can I transfer my AltStore/Sideloady apps?
+### Kan ik mijn AltStore/Sideloady-apps overzetten?
 
-Yes, just don’t remove the original app on your device. Go into SideStore and sideload the same or updated IPA, and it should be added to your list of apps within SideStore with your data still intact.
+Ja, zolang je de originele app niet verwijdert van je apparaat. Sideload dezelfde of bijgewerkte IPA via SideStore, en het zou moeten verschijnen in je SideStore-lijst met behoud van je bestaande gegevens.
 
-### Why do I need to refresh SideStore first thing after login?
+### Waarom moet ik SideStore direct na het inloggen verversen?
 
-This is because AltServer or other programs sideload SideStore with their own app groupID, while we use our own. Refreshing SideStore changes it to ours, which makes apps disappear as their groupIDs are not updated. It’s best to not sideload anything before refreshing SideStore on a clean install.
+Omdat AltServer of andere programma’s SideStore sideloaden met hun eigen app-groupID, terwijl wij onze eigen gebruiken. Verversen zorgt dat deze verandert naar de juiste, waardoor apps tijdelijk verdwijnen als hun groupID niet overeenkomt. Verversen op een schone installatie voorkomt dit.
 
-### Can I do OTA updates?
+### Kan ik OTA-updates doen?
 
-Yep! Just click the update button!
+Ja! Klik gewoon op de updateknop.
 
-### I want to test a SideStore version, and I want my data to stay when switching to a test version. Do I remove my app or sideload the test version via SideStore?
+### Ik wil een testversie van SideStore proberen, maar mijn gegevens behouden. Verwijder ik mijn app of sideload ik de testversie?
 
-You can sideload via SideStore and your data should be the same. We don’t have an enrollment toggle to go to other versions. We also cannot guarantee your data transfers when testing an unofficial or nightly build.
+Je kunt sideloaden via SideStore en je gegevens zouden behouden moeten blijven. Er is geen enrollment-toggle om tussen versies te wisselen. We kunnen niet garanderen dat je gegevens behouden blijven bij unofficial of nightly builds.
 
-### My apps disappeared and I don't know what to do
+### Mijn apps zijn verdwenen en ik weet niet wat ik moet doen
 
-Don't panic! Re-sideload the apps without removing them from your device, and your data should be fine. Unfortunately it's possible that your deactivated apps are gone, but to confirm that just refresh SideStore to see if they come back.
+Geen paniek! Sideload de apps opnieuw zonder ze te verwijderen van je apparaat; je gegevens zouden intact moeten zijn. Helaas is het mogelijk dat gedeactiveerde apps verdwenen zijn, maar je kunt dit controleren door SideStore te verversen om te zien of ze terugkomen.
 
-### I'm unable to select my pairing file with any file type
+### Ik kan mijn pairing-bestand niet selecteren, ongeacht het bestandstype
 
-Make sure your pairing file's extension ends with `.mobiledevicepairing` or `.plist`. If it doesn't, double check to see if you had zipped your pairing file before sending it to your phone. Failing to do so may lead to the file being corrupted during transport. Also, when signing Sidestore with a certificate, you won't be able to select the pairing file from within app. You can try moving the pairing file to the root directory of the SideStore folder in the Files app in "On My iPhone/iPad", and naming it `ALTPairingFile.mobiledevicepairing`. If you do not see the Sidestore folder in the files app, connect your phone to your computer, and you can drag and drop the pairing file to the files of the Sidestore app. Ensure to change it to name mentioned above. Note that it is case sensitive.
+Zorg dat de extensie eindigt op `.mobiledevicepairing` of `.plist`. Controleer ook of je het bestand hebt ge-zipt voordat je het naar je telefoon stuurde; anders kan het beschadigd zijn. Wanneer je SideStore ondertekent met een certificaat kun je het pairing-bestand niet vanuit de app selecteren. Je kunt proberen het bestand te verplaatsen naar de hoofdmap van de SideStore-map in de Bestanden-app onder “Op mijn iPhone/iPad”, met de naam `ALTPairingFile.mobiledevicepairing`. Als je de SideStore-map niet ziet, sluit je telefoon aan op je computer en sleep je het bestand naar de SideStore-map. Let op: de bestandsnaam is hoofdlettergevoelig.
 
-### Cannot start DebugServer
+### DebugServer kan niet starten
 
-There is times when the Debugserver doesn't work. However, there is a fix you can try.
+Soms werkt DebugServer niet. Er is echter een mogelijke oplossing:
 
-**Make a new pairing file**
+**Maak een nieuw pairing-bestand**
 
-To start the process of using a new pairing file you go to settings tab and click Reset Pairing file, and you accept the prompt. Then you just follow the [Pairing File instructions](installation/pairing-file).
+Om dit proces te starten ga je naar de instellingenpagina en kies je Reset Pairing File, en accepteer je de prompt. Volg daarna de [Pairing File-instructies](installation/pairing-file).
 
-### Currently Known issues
+### Momenteel bekende problemen
 
-If you're currently having issues and want to know if we already know about them. Then check out our GitHub issue page which  has a list of known issues and ways to mitigate some of the issues you might be having. Some of the issues in this list might be known that are not there, but are in the GitHub issues section. https://github.com/SideStore/SideStore/issues/490
+Als je problemen hebt en wilt zien of ze al bekend zijn, bekijk dan onze GitHub-issues-pagina. Daar staat een lijst van bekende problemen en manieren om sommige problemen te verminderen. Mogelijk zijn er ook bekende problemen die niet in deze lijst staan, maar wel in de GitHub-issues.  
+https://github.com/SideStore/SideStore/issues/490
 
-If you have any issues that aren't in this list. Just make a GitHub issue or [join our discord.](https://discord.gg/sidestore-949183273383395328)
+Heb je een probleem dat niet in deze lijst staat? Maak een GitHub-issue of [join onze Discord.](https://discord.gg/sidestore-949183273383395328)
