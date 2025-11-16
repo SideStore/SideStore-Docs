@@ -1,0 +1,184 @@
+---
+title: Alternative/Outdated instructions
+description: A place for alternative/outdated SideStore setup instructions. Note: many of these walkthroughs may be incompatible with latest iOS or SideStore versions.
+---
+
+## Installation
+### AltServer
+#### macOS
+Follow the instructions (steps 1-3) [here](https://faq.altstore.io/altstore-classic/how-to-install-altstore-macos) to setup AltServer
+#### Windows
+Follow the instructions (steps 1-3) [here](https://faq.altstore.io/altstore-classic/how-to-install-altstore-windows) to setup AltServer
+#### Linux (Altcon)
+Before you start, make sure to have installed usbmuxd.
+
+1. Ensure you have usbmuxd installed and updated by running `sudo apt install -y usbmuxd` in the Linux terminal.
+2. Install either Docker or Podman on your machine. 
+2. Plug in your secondary iDevice. If you recieve a prompt, select "trust" and enter your passcode.
+
+3. Now, run Altcon with Docker or Podman using the following command (may require `sudo`):
+
+Docker setup:
+```bash
+docker run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd -v /var/lib/lockdown:/tmp/lockdown ghcr.io/sidestore/altcon
+```
+Podman setup:
+```bash
+podman run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd -v /var/lib/lockdown:/tmp/lockdown ghcr.io/sidestore/altcon
+```
+5. Altcon will pair with your device. When you receive another prompt, select "trust" and enter your passcode again.
+
+#### Setting up SideStore on Multiple Devices
+Steps:
+1. Setup AltServer on macOS/Windows using instructions above
+2. Install AltStore to one device using AltServer (We need AltStore once since it seems AltServer won't put machine identifier in apps other than AltStore)
+3. Sign in Apple ID in AltStore
+4. Export Certificate
+5. Delete AltStore
+
+Then for each device:
+1. Install SideStore using AltServer with the same Apple ID (Hold [Option/Mac, Shift/Windows] when clicking AltServer -> Install IPA -> Select SideStore.ipa)
+2. Import certificate
+3. Sign in Apple ID in SideStore (We need to sign in after importing the certificate otherwise it won't let you sign in without revoking AltStore's certificate)
+4. Sideload
+
+When the old certificate expires:
+1. SideStore will prompt to reinstall itself on one device
+2. After reinstalling, export the certificate
+
+Then for each other device:
+1. Import new certificate
+2. Sideload SideStore ipa from SideStore
+
+
+## Pairing
+### idevice_pair
+#### Installation Instructions
+
+##### macOS
+
+1. Download [idevice pair for macOS](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--macos-universal.dmg).
+2. Open the Disk Image and drag `idevice pair` to `Applications`.
+
+##### Windows
+
+1. Ensure iTunes ([64-bit](https://apple.com/itunes/download/win64) or [32-bit](https://apple.com/itunes/download/win32)) is installed from from Apple's website (it should already be installed from the process of setting up AltServer).
+2. Download [idevice pair for Windows](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--windows-x86_64.exe) and move it somewhere you will remember it.
+
+##### Linux
+
+1. Ensure usbmuxd is installed on your machine by running `sudo apt install -y usbmuxd` in the Linux terminal.
+2. Download the version of idevice_pair for Linux ([x86_64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-x86_64.AppImage) or [AArch64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-aarch64.AppImage)) which corresponds to your PC's architecture. Move it somewhere you will remember it, and make it executable.
+
+#### Pairing Instructions
+
+1. Connect your secondary device to your computer via cable. If a prompt appears, select `trust` and type in your passcode.
+2. Unlock your device, then open `idevice pair` and select your device in the drop-down menu.
+3. Ensure your device is unlocked and opened to the home screen, then select `load`. If a prompt appears on your device, tap `trust`. Your pairing file should appear.
+4. Ensure your device is still open to the home screen, then scroll down and select `install` underneath "SideStore". `Success` should appear in green.
+
+### JitterbugPair
+JitterbugPair (*not* the Jitterbug app) allows us to create a pairing file for programs like SideStore to talk to your device remotely. This is required to use SideStore, or it will not function.
+
+Download JitterbugPair for [Windows (64-bit)](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip), [macOS](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-macos.zip), or [Linux](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip).
+
+#### Pairing Instructions
+
+:::tip
+
+Depending on your method, when transferring your .mobiledevicepariring file, the file extension might change (usually to .txt or cropping off the "ing"). It is always recommended to zip your pairing file before transferring it. SideStore only accepts .mobiledevicepairing files (or .plist files in older versions).
+:::
+
+##### Windows
+
+1. **Extract** `jitterbugpair-win64.zip`.
+2. **Set a passcode** for your device if you haven't already. Unlock your device and connect it to your computer via cable. If a prompt appears, tap "trust" and type in your passcode.
+3. Open your device to the homescreen.
+4. In File Explorer, locate `jitterbugpair.exe` and run it by double-clicking or right-clicking and selecting "open". The first time you run the tool, you will get a prompt for your passcode on your secondary device. Type it in, then keep the screen on and unlocked and run the tool again.
+5. JitterbugPair will generate a **pairing file** in the same folder. This file will have the extension `.mobiledevicepairing`.
+6. For best results, compress the file into a .zip folder. Then, **transfer the pairing file** to your iOS device using One/iCloud/Google Drive, email, or another method you prefer.
+
+On Windows, you might have to execute the program using Command Prompt or Powershell, as double-clicking the `.exe` file doesn't always open it.
+
+7. In File Explorer, navigate to the folder where jitterbugpair is located.
+8. In the navigation bar where the folder location is, click an empty spot and type `powershell`. It should open a (possibly blue colored) window called PowerShell.
+9. From there, type `./jitterbugpair.exe` and press enter while your device is plugged in.
+
+##### macOS
+
+1. **Extract** `jitterbugpair-macos.zip`.
+2. **Set a passcode** for your device if you haven't already. Unlock your device and connect it to your computer via cable. If a prompt appears, tap "trust" and type in your passcode.
+3. Open your device to the homescreen.
+4. Find and open the extracted `jitterbugpair` file (it should have a black and green icon) by double-clicking it or right-clicking it and selecting "open". The first time you run the tool, you will get a prompt for your passcode on your secondary device. Type it in, then keep the screen on and unlocked and run the tool again.
+5. If you get the message" "macOS cannot verify that this app is free from malware":
+   - Go to System Settings > Privacy & Security
+   - Scroll down to the message about the app
+   - Click "Open Anyway," if the program doesn't run automatically, try manually running it again
+6. JitterbugPair will generate a **pairing file** with the extension `.mobiledevicepairing` to your user's home folder.
+7. If you can't find the pairing file:
+   - Copy the name of the pairing file generated
+   - Paste it into Finder
+   - If you ran the program more than once, all pairing files for your device should appear since they share the same name
+8. For best results, compress the file into a .zip folder. Then, **transfer the pairing file** to your iOS device via AirDrop, iCloud/One/Google Drive, email, or another method you prefer. 
+
+##### Linux
+
+These instructions expect that you are familiar with the linux commandline.
+
+1. **Extract** `jitterbugpair-linux.zip`.
+2. Open a terminal in the extracted directory.
+3. Make the program executable:
+   ```bash
+   chmod +x ./jitterbugpair
+   ```
+4. **Set a passcode** for your device if you haven't already. Unlock your device and connect it to your computer via cable. If a prompt appears, tap "trust" and type in your passcode.
+5. Open your device to the homescreen.
+6. Execute the program:
+   ```bash
+   ./jitterbugpair
+   ```
+7. The first time you execute the tool, you will get a prompt for your passcode on your secondary device. Type it in, then keep the screen on and unlocked and run the tool again. Type it in, then keep the screen on and unlocked and execute the tool again.
+8. JitterbugPair will generate a **pairing file** with the extension `.mobiledevicepairing`.
+9. For best results, compress the file into a .zip folder. Then, **transfer the pairing file** to your iOS device using email, cloud storage, or another method you prefer.
+## SideStore exploits
+### SparseRestore (3-app limit)
+:::note
+
+The SparseRestore "Bypass 3 app limit" exploit **only works on iOS/iPadOS versions between 17.0 and 18.1 beta 4 (not including 17.7.1)**. If you are not on these versions and it doesn't work, **please do not ask for support on this**. 
+
+:::
+
+#### Prerequisites
+* An iDevice running versions supported by the SparseRestore exploit (see note above).
+* At least 1 free app slot.
+* SideStore version 0.5.9 or later. You can find the latest versions [here](https://github.com/SideStore/SideStore/releases).
+* To perform this exploit, you MUST have **Find My** turned off on your iDevice during the process. It will not work otherwise. Here is how you can turn it off:
+  - Open the Settings app.
+  - Tap on your name at the top.
+  - Tap on Find My.
+  - Tap on Find My iPhone/iPad.
+  - Turn off Find My iPhone/iPad.
+  - You may be required to enter your Apple ID password to confirm.
+  
+  > **Note:** You may still not be able to turn off Find My since having Stolen Device Protection on might prevent you from turning it off. Turn off Stolen Device Protection before trying to turn off Find My.
+
+#### Steps
+1. Install SparseBox. This can be done with a variety of methods, but for the purposes of this, install it with SideStore. The latest version can be found [here](https://nightly.link/khanhduytran0/SparseBox/workflows/build/main/artifact.zip) (unzip artifact.zip for the .ipa file).
+
+2. Tick on "Disable App Limit" in SideStore, and make sure SideStore is **closed** (not in background), then open SparseBox.
+
+3. Enable StosVPN, select your pairing file and tap 'Bypass 3-app limit'. This should bring up a log output. Wait for it to say `idevicebackup2 exited with code -18` or `idevicebackup2 exited with code 2`, then close the app. No need to hit apply.
+
+4. Re-open SideStore, and scroll down in SideStore settings. Press "clear cache", this will allow the exploit to be seen by SideStore.
+
+5. Test that the exploit has worked (you may need to install more than one app to test, depending on how many free slots you have). If it throws an error about the limit, reopen SideStore or retry the exploit. If it installs the app, congratulations! You can now have more than 3 apps installed at one time.
+
+#### Notes
+Due to certain limitations, this exploit must be done for every 3 additional apps you sideload.
+
+If you want/need Find My for other purposes, you can now turn it back on. However, if you want to install or refresh more apps, you will need to turn it off again.
+
+### MacDirtyCow (3-app limit)
+[MDC-Compatible IPA](https://cdn.discordapp.com/attachments/949183273827983370/1074037820328521829/SideStore_MDC_14.ipa)
+
+The MDC version of SideStore above (bypass 3-app limit) is only compatible with iOS 15.0-16.1.2, and is very outdated, and so you may experience issues. If you want to have this feature, we reccomend you join our Discord and go to the [sidestore-downloads](https://discord.com/channels/949183273383395328/1126118099930861638) channel, which will contain MDC compatible SideStore builds. Then, [seperately install WDBRemoveThreeAppLimit with SideStore](https://github.com/zhuowei/WDBRemoveThreeAppLimit/releases/tag/v1.0) to apply the patch.

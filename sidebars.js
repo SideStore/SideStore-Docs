@@ -34,7 +34,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Advanced',
-      items: ['advanced/anisette', 'advanced/app-sources', 'advanced/jit', 'advanced/pairing-file', 'advanced/url-schema', 'advanced/sparserestore'],
+      items: ['advanced/alternative', 'advanced/anisette', 'advanced/app-sources', 'advanced/jit', 'advanced/pairing-file', 'advanced/url-schema'],
     },
     {
       type: 'category',
