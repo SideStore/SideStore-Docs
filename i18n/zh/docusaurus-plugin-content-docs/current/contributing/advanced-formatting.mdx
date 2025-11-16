@@ -2,18 +2,18 @@
 sidebar_position: 3
 ---
 
-# Advanced Formatting Guidelines
+# 高级格式指南
 
-We will go through advanced formatting situations, architectural patterns, and complex Swift/Objective-C features for the SideStore project.
+我们将介绍 SideStore 项目中的高级格式化场景、架构模式以及复杂的 Swift/Objective-C 特性。
 
-## Advanced Swift Patterns
+## 高级 Swift 模式
 
-### Protocol-Oriented Programming
+### 协议导向编程
 
-#### Protocol Definitions
-- Keep protocols focused and cohesive
-- Use associated types for generic protocols
-- Provide default implementations in extensions when appropriate
+#### 协议定义
+- 保持协议专注和内聚
+- 为泛型协议使用关联类型
+- 在扩展中提供适当的默认实现
 
 ```swift
 // ✅ Good
@@ -37,13 +37,13 @@ protocol AppManager {
     func update(_ app: Any) -> Bool
     func backup(_ app: Any) -> Bool
     func restore(_ app: Any) -> Bool
-    // Too many responsibilities
+    // 指责过多
 }
 ```
 
-#### Protocol Composition
-- Use protocol composition for complex requirements
-- Keep individual protocols small and focused
+#### 协议组合
+- 为复杂需求使用协议组合
+- 保持单个协议小巧和专注
 
 ```swift
 // ✅ Good
@@ -67,12 +67,12 @@ class AppDeployer {
 }
 ```
 
-### Generics and Type Constraints
+### 泛型和类型约束
 
-#### Generic Type Definitions
-- Use meaningful constraint names
-- Prefer protocol constraints over class constraints
-- Use `where` clauses for complex constraints
+#### 泛型类型定义
+- 使用有意义的约束名称
+- 优先选择协议约束而不是类约束
+- 为复杂约束使用 `where` 子句
 
 ```swift
 // ✅ Good
@@ -95,9 +95,9 @@ struct Repository<T> {
 }
 ```
 
-#### Advanced Generic Constraints
-- Use conditional conformance appropriately
-- Leverage phantom types when needed
+#### 高级泛型约束
+- 适当使用条件一致性
+- 在需要时利用幻影类型
 
 ```swift
 // ✅ Good
@@ -123,12 +123,12 @@ typealias DownloadedApp = AppState<Downloaded>
 typealias InstalledApp = AppState<Installed>
 ```
 
-### Async/Await Patterns
+### 异步/等待模式
 
-#### Async Function Design
-- Use async/await consistently
-- Structure concurrent operations clearly
-- Handle cancellation appropriately
+#### 异步函数设计
+- 一致地使用 async/await
+- 清晰地组织并发操作
+- 适当处理取消
 
 ```swift
 // ✅ Good
@@ -178,9 +178,9 @@ func installApp(_ app: App, completion: @escaping (Error?) -> Void) {
 }
 ```
 
-#### Structured Concurrency
-- Use task groups for related concurrent operations
-- Prefer structured concurrency over unstructured tasks
+#### 结构化并发
+- 使用任务组进行相关的并发操作
+- 优先选择结构化并发而不是非结构化任务
 
 ```swift
 // ✅ Good
@@ -216,11 +216,11 @@ func downloadMultipleApps(_ apps: [App]) async throws -> [App: Data] {
 }
 ```
 
-### Result Builders and DSLs
+### Result Builders 和 DSL
 
-#### Custom Result Builders
-- Create focused, single-purpose result builders
-- Provide clear syntax for domain-specific operations
+#### 自定义 Result Builders
+- 创建专注、单一用途的 Result Builders
+- 为领域特定操作提供清晰的语法
 
 ```swift
 // ✅ Good
@@ -262,11 +262,11 @@ let app = configureApp {
 }
 ```
 
-## Advanced Objective-C Patterns
+## 高级 Objective-C 模式
 
-### Category Organization
-- Use categories to organize related functionality
-- Keep category names descriptive and specific
+### 分类组织
+- 使用分类（Categories）来组织相关功能
+- 保持分类名称具有描述性和特异性
 
 ```objc
 // ✅ Good
@@ -287,9 +287,9 @@ let app = configureApp {
 @end
 ```
 
-### Advanced Memory Management
-- Use proper patterns for delegate relationships
-- Handle complex object graphs correctly
+### 高级内存管理
+- 为委托关系使用正确的模式
+- 正确处理复杂的对象图
 
 ```objc
 // ✅ Good
@@ -330,9 +330,9 @@ let app = configureApp {
 @end
 ```
 
-### Block Usage Patterns
-- Use proper block patterns for asynchronous operations
-- Handle memory management in blocks correctly
+### Block 使用模式
+- 为异步操作使用正确的 Block 模式
+- 在 Block 中正确处理内存管理
 
 ```objc
 // ✅ Good
@@ -380,11 +380,11 @@ typedef void (^SSInstallationCompletionBlock)(SSApp *app, NSError *error);
 @end
 ```
 
-## Architectural Patterns
+## 架构模式
 
-### MVVM Implementation
-- Separate concerns clearly between Model, View, and ViewModel
-- Use proper data binding patterns
+### MVVM 实现
+- 明确分离模型（Model）、视图（View）和视图模型（ViewModel）的职责
+- 使用正确的数据绑定模式
 
 ```swift
 // ✅ Good
@@ -470,9 +470,9 @@ struct AppListView: View {
 }
 ```
 
-### Dependency Injection
-- Use dependency injection for testability and flexibility
-- Consider using a DI container for complex applications
+### 依赖注入
+- 使用依赖注入进行可测试性和灵活性
+- 对于复杂应用程序，考虑使用 DI 容器
 
 ```swift
 // ✅ Good
@@ -524,9 +524,9 @@ class ServiceContainer {
 }
 ```
 
-### Error Handling Architecture
-- Create comprehensive error handling strategies
-- Use typed errors for better error handling
+### 错误处理架构
+- 创建全面的错误处理策略
+- 使用类型化错误以更好地处理错误
 
 ```swift
 // ✅ Good
@@ -586,11 +586,11 @@ class AppService {
 }
 ```
 
-## Performance Considerations
+## 性能考量
 
-### Memory Optimization
-- Use lazy loading for expensive resources
-- Implement proper caching strategies
+### 内存优化
+- 对昂贵的资源使用延迟加载
+- 实施适当的缓存策略
 
 ```swift
 // ✅ Good
@@ -637,9 +637,9 @@ class AppImageCache {
 }
 ```
 
-### Threading Best Practices
-- Use appropriate queue priorities
-- Minimize context switching
+### 线程最佳实践
+- 使用适当的队列优先级
+- 最小化上下文切换
 
 ```swift
 // ✅ Good
@@ -683,11 +683,11 @@ actor BackgroundProcessor {
 }
 ```
 
-## Testing Patterns
+## 测试模式
 
-### Protocol-Based Testing
-- Use protocols for dependency injection in tests
-- Create focused test doubles
+### 基于协议的测试
+- 在测试中使用协议进行依赖注入
+- 创建专注于功能测试的替身（Test Doubles）
 
 ```swift
 // ✅ Good
@@ -742,20 +742,17 @@ class AppListViewModelTests: XCTestCase {
 }
 ```
 
-## Documentation Standards
+## 文档标准
 
-### Complex API Documentation
-- Document complex behaviors and edge cases
-- Provide usage examples for non-trivial APIs
+### 复杂 API 文档
+- 文档复杂行为和边缘情况
+- 为非平凡的 API 提供使用示例
 
 ```swift
 /**
- * A thread-safe manager for handling app installations with automatic retry logic.
- * 
- * This class manages the installation process for iOS applications, handling
- * network downloads, signature verification, and device communication.
- * It provides automatic retry functionality for transient failures and
- * comprehensive error reporting.
+ * 这是一个线程安全的管理器，用于处理具有自动重试逻辑的应用程序安装。
+ * 此类管理 iOS 应用程序的安装过程，处理网络下载、签名验证和设备通信。
+ * 它为瞬时故障提供自动重试功能，并提供全面的错误报告。
  *
  * ## Usage Example
  * ```swift
@@ -774,16 +771,12 @@ class AppListViewModelTests: XCTestCase {
  *     // Handle other errors
  * }
  * ```
- *
- * ## Thread Safety
- * This class is thread-safe and can be called from any queue. All completion
- * handlers are called on the main queue unless otherwise specified.
- *
- * ## Error Handling
- * Installation failures are categorized into recoverable and non-recoverable
- * errors. Recoverable errors (network timeouts, temporary device issues) will
- * be automatically retried up to the specified limit. Non-recoverable errors
- * (invalid signatures, incompatible devices) will fail immediately.
+ * 
+ * ## 线程安全
+ * 此类是线程安全的，可以从任何队列调用。除非另有说明，所有完成处理程序都在主队列上调用。
+ * ## 错误处理
+ * 安装失败分为可恢复错误和不可恢复错误。可恢复错误（网络超时、临时设备问题）将自动重试至指定限制。
+ * 不可恢复错误（无效签名、不兼容设备）将立即失败。
  */
 @MainActor
 class AppInstallationManager {
@@ -791,4 +784,4 @@ class AppInstallationManager {
 }
 ```
 
-Remember: These advanced patterns should be used judiciously. Always prioritize code clarity and maintainability over clever implementations. When in doubt, choose the simpler approach that still meets the requirements.
+请记住：这些高级模式应谨慎使用。始终优先考虑代码清晰度和可维护性，而不是巧妙的实现。如有疑问，请选择能够满足需求的更简单方法。
