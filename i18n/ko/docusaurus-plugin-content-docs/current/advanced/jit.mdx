@@ -1,24 +1,31 @@
 ---
 title: JIT 활성화하기
-description: Just-in-Time (JIT) 컴파일이 필요한 앱을 위한 JIT 활성화 튜토리얼입니다.
+description: Just-in-Time (JIT) 컴파일이 필요한 앱을 위한 JIT 활성화 가이드이에요.
 ---
 
 :::note
+iOS 26에서 JIT가 작동하지 않게 되었어요. StikDebug에 수정 사항이 포함된 업데이트가 출시되었으나 지원 범위는 제한적이에요. 작성 시점(11월 10일) 기준으로 지원되는 앱은 다음과 같아요:
+* UTM
+* Amethyst
+* MeloNX
+* maciOS
+* DolphiniOS
+* Geode
 
-iOS 26에서 JIT가 작동하지 않게 되었습니다. iPhone 17 출시 후 StikDebug에 대한 수정 패치가 제공될 예정입니다.
+추가 업데이트를 위해 저희 디스코드 서버의 공지 채널과 [idevice 서버](https://discord.gg/mACqxMxP3X)의 공지 및 호환성 채널을 확인해 주세요.
 
-JIT를 활성화하는 방법은 AltJIT, SideJITServer 등 여러 가지가 있습니다. 이 튜토리얼에서는 현재 추천하는 방법인 StikDebug(이전 명칭: StikJIT)의 사용 방법을 다룰 것입니다. 자세한 내용은 [공식 StikDebug 페어링 가이드](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md)를 참고하세요. 
+JIT를 활성화하는 방법은 AltJIT, SideJITServer 등 여러 가지가 있어요. 이 가이드에서는 현재 추천하는 방법인 StikDebug(이전 명칭: StikJIT)의 사용 방법을 다룰 거에요. 자세한 내용은 [공식 StikDebug 페어링 가이드](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md)를 참고헤 주세요. 
 
 대안으로, SideStore 0.6.2에는 minimuxer에 대한 업데이트가 포함되어 있어 StikDebug와 유사한 내장형 JIT 기능을 사용할 수 있습니다. 이를 사용하려면 Wi-Fi 연결 또는 비행기 모드가 활성화된 상태로 StosVPN에 연결된 후 “내 앱”으로 이동하여 JIT를 활성화하려는 앱을 길게 눌러 “JIT 활성화”를 터치하시면 됩니다.
 :::
 
 ## 사전 요구사항
-* iOS/iPadOS 17.4-18.6를 실행하는 iDevice(18.4b1 제외). 17.0-17.3 버전을 사용 중인 경우 [SideJITServer](https://github.com/nythepegasus/SideJITServer)와 같은 대안을 사용해야 합니다. 위에서 언급된 대로, 18.6보다 새로운 버전은 현재 지원되지 않습니다.
+* iOS/iPadOS 17.4-18.6를 실행하는 iDevice(18.4b1 제외). 17.0-모든 iOS 18 버전을 사용 중인 경우 (18.4b1 제외) [SideJITServer](https://github.com/nythepegasus/SideJITServer)와 같은 대안을 사용해야 해요. SideStore의 JIT 활성화 기능은 기기가 약 4년 이상 된(TXM 미지원) 기기에서만 iOS 26에서 작동해요.
 
 ## Apple 앱 스토어를 통한 StikDebug 설치
    
 1. **StikDebug 설치**
-   StikDebug를 [Apple App Store](https://apps.apple.com/us/app/stikdebug/id6744045754)에서 설치하세요.
+   StikDebug를 [Apple App Store](https://apps.apple.com/ko/app/stikdebug/id6744045754)에서 설치해 주세요.
 :::note 
 좋은 점 - StikDebug에 포함된 VPN은 SideStore에서 사용되는 것과 유사합니다. 즉, SideStore에서 앱을 설치하고 업데이트하는 데도 사용할 수 있으며, StosVPN과 유사한 방식입니다.
 :::

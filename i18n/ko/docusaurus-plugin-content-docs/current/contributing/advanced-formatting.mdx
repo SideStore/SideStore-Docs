@@ -2,21 +2,21 @@
 sidebar_position: 3
 ---
 
-# Advanced Formatting Guidelines
+# 고급 포매팅 가이드라인
 
-We will go through advanced formatting situations, architectural patterns, and complex Swift/Objective-C features for the SideStore project.
+이 문서는 SideStore 프로젝트에서 다루게 될 고급 포매팅 상황, 아키텍처 패턴, 복잡한 Swift/Objective-C 기능을 정리해요.
 
-## Advanced Swift Patterns
+## 고급 Swift 패턴
 
-### Protocol-Oriented Programming
+### 프로토콜 지향 프로그래밍
 
-#### Protocol Definitions
-- Keep protocols focused and cohesive
-- Use associated types for generic protocols
-- Provide default implementations in extensions when appropriate
+#### 프로토콜 정의
+- 프로토콜은 집중도와 응집도를 유지해 주세요.
+- 제네릭 프로토콜에는 연관 타입을 활용해 주세요.
+- 필요하다면 익스텐션에서 기본 구현을 제공해 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋습니다
 protocol AppInstalling {
     associatedtype AppType: App
     
@@ -30,7 +30,7 @@ extension AppInstalling {
     }
 }
 
-// ❌ Bad
+// ❌ 나빠요
 protocol AppManager {
     func install(_ app: Any) -> Bool
     func uninstall(_ app: Any) -> Bool
@@ -41,12 +41,12 @@ protocol AppManager {
 }
 ```
 
-#### Protocol Composition
-- Use protocol composition for complex requirements
-- Keep individual protocols small and focused
+#### 프로토콜 합성
+- 요구 사항이 복잡하면 프로토콜 합성을 활용해 주세요.
+- 개별 프로토콜은 작고 집중되게 유지해 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋습니다다
 protocol Downloadable {
     var downloadURL: URL { get }
     func download() async throws -> Data
@@ -67,15 +67,15 @@ class AppDeployer {
 }
 ```
 
-### Generics and Type Constraints
+### 제네릭과 타입 제약
 
-#### Generic Type Definitions
-- Use meaningful constraint names
-- Prefer protocol constraints over class constraints
-- Use `where` clauses for complex constraints
+#### 제네릭 타입 정의
+- 의미 있는 제약 이름을 사용해 주세요.
+- 클래스 제약보다 프로토콜 제약을 선호해 주세요.
+- 복잡한 제약은 `where` 절로 표현해 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋습니다
 struct Repository<Entity: Identifiable & Codable> {
     private var entities: [Entity.ID: Entity] = [:]
     
@@ -88,19 +88,19 @@ struct Repository<Entity: Identifiable & Codable> {
     }
 }
 
-// ❌ Bad
+// ❌ 나빠요
 struct Repository<T> {
     private var items: [String: T] = [:]
     // No type safety
 }
 ```
 
-#### Advanced Generic Constraints
-- Use conditional conformance appropriately
-- Leverage phantom types when needed
+#### 고급 제네릭 제약
+- 조건부 채택을 적절히 사용해 주세요.
+- 필요하다면 팬텀 타입으로 타입 안전성을 높여 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋습니다 
 extension Array: AppCollection where Element: App {
     var installedApps: [Element] {
         return filter { $0.isInstalled }
@@ -123,15 +123,15 @@ typealias DownloadedApp = AppState<Downloaded>
 typealias InstalledApp = AppState<Installed>
 ```
 
-### Async/Await Patterns
+### Async/Await 패턴
 
-#### Async Function Design
-- Use async/await consistently
-- Structure concurrent operations clearly
-- Handle cancellation appropriately
+#### 비동기 함수 설계
+- async/await를 일관되게 사용해 주세요.
+- 동시 작업의 구조를 명확히 해 주세요.
+- 취소 흐름을 적절히 처리해 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋습니다
 actor AppInstallationManager {
     private var activeInstallations: [String: Task<Void, Error>] = [:]
     
@@ -166,7 +166,7 @@ actor AppInstallationManager {
     }
 }
 
-// ❌ Bad
+// ❌ 나빠요
 func installApp(_ app: App, completion: @escaping (Error?) -> Void) {
     DispatchQueue.global().async {
         // Mixing old completion handler style with new async code
@@ -178,12 +178,12 @@ func installApp(_ app: App, completion: @escaping (Error?) -> Void) {
 }
 ```
 
-#### Structured Concurrency
-- Use task groups for related concurrent operations
-- Prefer structured concurrency over unstructured tasks
+#### 구조화된 동시성
+- 관련 작업에는 태스크 그룹을 사용해 주세요.
+- 비구조화된 태스크보다 구조화된 동시성을 선호해 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋습니다
 func installMultipleApps(_ apps: [App]) async throws {
     try await withThrowingTaskGroup(of: Void.self) { group in
         for app in apps {
@@ -216,14 +216,14 @@ func downloadMultipleApps(_ apps: [App]) async throws -> [App: Data] {
 }
 ```
 
-### Result Builders and DSLs
+### 리절트 빌더와 DSL
 
-#### Custom Result Builders
-- Create focused, single-purpose result builders
-- Provide clear syntax for domain-specific operations
+#### 커스텀 리절트 빌더
+- 단일 목적에 집중한 리절트 빌더를 만들어 주세요.
+- 도메인 특화 작업에 명확한 문법을 제공해 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋아요
 @resultBuilder
 struct AppConfigurationBuilder {
     static func buildBlock(_ components: AppConfigurationComponent...) -> AppConfiguration {
@@ -262,14 +262,14 @@ let app = configureApp {
 }
 ```
 
-## Advanced Objective-C Patterns
+## 고급 Objective-C 패턴
 
-### Category Organization
-- Use categories to organize related functionality
-- Keep category names descriptive and specific
+### 카테고리 구성
+- 관련 기능을 묶을 때 카테고리를 활용해 주세요.
+- 카테고리 이름은 구체적으로 지어 주세요.
 
 ```objc
-// ✅ Good
+// ✅ 좋아요
 @interface NSString (SSValidation)
 - (BOOL)ss_isValidAppIdentifier;
 - (BOOL)ss_isValidVersion;
@@ -280,19 +280,19 @@ let app = configureApp {
 - (void)ss_showInstallationProgress:(SSInstallationProgress *)progress;
 @end
 
-// ❌ Bad
+// ❌ 나빠요
 @interface NSString (Helpers)
 - (BOOL)isValid;  // Too generic
 - (NSString *)cleanup;  // Unclear purpose
 @end
 ```
 
-### Advanced Memory Management
-- Use proper patterns for delegate relationships
-- Handle complex object graphs correctly
+### 고급 메모리 관리
+- 델리게이트 관계에는 적절한 패턴을 사용해 주세요.
+- 복잡한 오브젝트 그래프를 올바르게 처리해 주세요.
 
 ```objc
-// ✅ Good
+// ✅ 좋아요
 @interface SSAppInstaller : NSObject
 @property (nonatomic, weak) id<SSAppInstallerDelegate> delegate;
 @property (nonatomic, strong) NSOperationQueue *installationQueue;
@@ -330,12 +330,12 @@ let app = configureApp {
 @end
 ```
 
-### Block Usage Patterns
-- Use proper block patterns for asynchronous operations
-- Handle memory management in blocks correctly
+### 블록 사용 패턴
+- 비동기 작업에는 알맞은 블록 패턴을 사용해 주세요.
+- 블록 안에서도 메모리 관리를 정확히 해 주세요.
 
 ```objc
-// ✅ Good
+// ✅ 좋아요
 typedef void (^SSInstallationProgressBlock)(float progress);
 typedef void (^SSInstallationCompletionBlock)(SSApp *app, NSError *error);
 
@@ -380,14 +380,14 @@ typedef void (^SSInstallationCompletionBlock)(SSApp *app, NSError *error);
 @end
 ```
 
-## Architectural Patterns
+## 아키텍처 패턴
 
-### MVVM Implementation
-- Separate concerns clearly between Model, View, and ViewModel
-- Use proper data binding patterns
+### MVVM 구현
+- 모델, 뷰, 뷰모델의 역할을 명확히 분리해 주세요.
+- 올바른 데이터 바인딩 패턴을 사용해 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 나빠요
 // Model
 struct App {
     let identifier: String
@@ -470,12 +470,12 @@ struct AppListView: View {
 }
 ```
 
-### Dependency Injection
-- Use dependency injection for testability and flexibility
-- Consider using a DI container for complex applications
+### 의존성 주입
+- 테스트 가능성과 유연성을 위해 의존성 주입을 사용해 주세요.
+- 규모가 크면 DI 컨테이너를 도입해 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋습니다
 protocol AppService {
     func fetchAvailableApps() async throws -> [App]
     func installApp(_ app: App) async throws
@@ -524,12 +524,12 @@ class ServiceContainer {
 }
 ```
 
-### Error Handling Architecture
-- Create comprehensive error handling strategies
-- Use typed errors for better error handling
+### 오류 처리 아키텍처
+- 포괄적인 오류 처리 전략을 세워 주세요.
+- 타입이 있는 오류를 사용해서 처리를 명확히 해 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋아요
 enum SideStoreError: Error {
     case network(NetworkError)
     case installation(InstallationError)
@@ -586,14 +586,14 @@ class AppService {
 }
 ```
 
-## Performance Considerations
+## 성능 고려 사항
 
-### Memory Optimization
-- Use lazy loading for expensive resources
-- Implement proper caching strategies
+### 메모리 최적화
+- 비용이 큰 리소스에는 지연 로딩을 사용해 주세요.
+- 적절한 캐싱 전략을 구현해 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋아요
 class AppImageCache {
     private let cache = NSCache<NSString, UIImage>()
     private let downloadQueue = DispatchQueue(label: "image-download", qos: .utility)
@@ -637,12 +637,12 @@ class AppImageCache {
 }
 ```
 
-### Threading Best Practices
-- Use appropriate queue priorities
-- Minimize context switching
+### 스레딩 모범 사례
+- 알맞은 큐 우선순위를 사용해 주세요.
+- 컨텍스트 스위칭을 최소화해 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋아요
 actor BackgroundProcessor {
     private let processingQueue = DispatchQueue(
         label: "background-processing",
@@ -683,14 +683,14 @@ actor BackgroundProcessor {
 }
 ```
 
-## Testing Patterns
+## 테스트 패턴
 
-### Protocol-Based Testing
-- Use protocols for dependency injection in tests
-- Create focused test doubles
+### 프로토콜 기반 테스트
+- 테스트에서도 의존성 주입을 위해 프로토콜을 사용해 주세요.
+- 목적에 맞는 테스트 더블을 만들어 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋아요
 class MockAppService: AppService {
     var shouldFailInstallation = false
     var installedApps: [App] = []
@@ -742,11 +742,11 @@ class AppListViewModelTests: XCTestCase {
 }
 ```
 
-## Documentation Standards
+## 문서화 기준
 
-### Complex API Documentation
-- Document complex behaviors and edge cases
-- Provide usage examples for non-trivial APIs
+### 복잡한 API 문서
+- 복잡한 동작과 엣지 케이스를 문서화해 주세요.
+- 비자명한 API에는 사용 예시를 제공해 주세요.
 
 ```swift
 /**
@@ -791,4 +791,4 @@ class AppInstallationManager {
 }
 ```
 
-Remember: These advanced patterns should be used judiciously. Always prioritize code clarity and maintainability over clever implementations. When in doubt, choose the simpler approach that still meets the requirements.
+기억해 주세요. 이런 고급 패턴은 신중하게 사용해야 해요. 똑똑해 보이는 구현보다 코드의 명확성과 유지 보수성을 우선해 주세요. 확신이 서지 않으면 요구 사항을 충족하는 가장 단순한 접근을 선택해 주세요.

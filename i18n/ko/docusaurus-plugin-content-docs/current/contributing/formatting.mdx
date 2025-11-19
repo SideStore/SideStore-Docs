@@ -2,87 +2,87 @@
 sidebar_position: 2
 ---
 
-# Code Formatting Guidelines
+# 코드 포매팅 가이드라인
 
-This document outlines the code formatting standards for Swift and Objective-C code in the SideStore project. Consistent formatting makes the codebase more readable and maintainable.
+이 문서는 SideStore 프로젝트에서 Swift와 Objective-C 코드를 포맷팅하는 기준을 정리했어요. 일관된 포맷팅은 코드베이스를 더 읽기 쉽고 관리하기 편하게 만들어 줘요.
 
-## General Principles
+## 일반 원칙
 
-- **Consistency**: Follow the existing code style in the project
-- **Readability**: Code should be easy to read and understand
-- **Simplicity**: Prefer simple, clear solutions over clever ones
-- **Apple conventions**: Follow Apple's official Swift and Objective-C conventions where possible
+- **일관성**: 프로젝트에서 이미 사용 중인 스타일을 따라 주세요.
+- **가독성**: 코드는 쉽게 읽히고 이해돼야 해요.
+- **단순함**: 복잡한 해결책보다 단순하고 명확한 방식을 선호해 주세요.
+- **Apple 관례**: 가능하면 Apple이 권장하는 Swift/Objective-C 관례를 따라 주세요.
 
-## Swift Formatting
+## Swift 포매팅
 
-### Naming Conventions
+### 네이밍 규칙
 
-#### Variables and Functions
-- Use **camelCase** for variables, functions, and methods
-- Use descriptive names that clearly indicate purpose
+#### 변수와 함수
+- 변수, 함수, 메서드에는 **camelCase**를 사용해 주세요.
+- 목적이 명확히 드러나도록 설명적인 이름을 붙여 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋아요
 let downloadProgress: Float
 func validateUserCredentials() -> Bool
 var isAppInstalling: Bool
 
-// ❌ Bad
+// ❌ 나빠요
 let dp: Float
 func validate() -> Bool
 var installing: Bool
 ```
 
-#### Classes, Structs, Enums, and Protocols
-- Use **PascalCase** for types
-- Use descriptive, noun-based names
+#### 클래스, 구조체, 열거형, 프로토콜
+- 타입 이름에는 **PascalCase**를 사용해 주세요.
+- 명사 기반의 설명적인 이름을 붙여 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋아요
 class AppInstaller
 struct InstallationProgress
 enum AppState
 protocol AppManaging
 
-// ❌ Bad
+// ❌ 나빠요
 class installer
 struct progress
 enum state
 protocol managing
 ```
 
-#### Constants
-- Use **camelCase** for constants
-- Consider using **SCREAMING_SNAKE_CASE** for global constants
+#### 상수
+- 상수에도 **camelCase**를 사용해 주세요.
+- 전역 상수라면 **SCREAMING_SNAKE_CASE**를 고려해 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋아요
 let maxRetryAttempts = 3
 private let defaultTimeout: TimeInterval = 30.0
 
 // Global constants
 let MAX_CONCURRENT_DOWNLOADS = 5
 
-// ❌ Bad
+// ❌ 나빠요
 let MaxRetryAttempts = 3
 let max_retry_attempts = 3
 ```
 
-### Indentation and Spacing
+### 들여쓰기와 공백
 
-#### Indentation
-- Use **4 spaces** for indentation (not tabs)
-- Align continuation lines with the opening delimiter
+#### 들여쓰기
+- 들여쓰기는 **스페이스 4개**예요. 탭은 사용하지 말아 주세요.
+- 줄바꿈한 인자는 여는 구분자와 맞춰 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋아요
 func installApp(withIdentifier identifier: String,
                 sourceURL: URL,
                 completion: @escaping (Result<Void, Error>) -> Void) {
     // Implementation
 }
 
-// ❌ Bad
+// ❌ 나빠요
 func installApp(withIdentifier identifier: String,
 sourceURL: URL,
 completion: @escaping (Result<Void, Error>) -> Void) {
@@ -90,28 +90,28 @@ completion: @escaping (Result<Void, Error>) -> Void) {
 }
 ```
 
-#### Line Length
-- Keep lines under **120 characters** when possible
-- Break long lines at logical points
+#### 줄 길이
+- 가능한 한 줄 길이를 **120자 이하**로 유지해 주세요.
+- 길어지면 의미 단위에서 줄바꿈해 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋아요
 let longVariableName = SomeClass.createInstanceWithVeryLongMethodName(
     parameter1: value1,
     parameter2: value2
 )
 
-// ❌ Bad
+// ❌ 나빠요
 let longVariableName = SomeClass.createInstanceWithVeryLongMethodName(parameter1: value1, parameter2: value2, parameter3: value3)
 ```
 
-#### Spacing
-- Use single spaces around operators
-- No trailing whitespace
-- Single empty line between functions and major code sections
+#### 공백
+- 연산자 주변에는 공백 한 칸을 넣어 주세요.
+- 줄 끝 공백은 남기지 말아 주세요.
+- 함수나 큰 코드 블록 사이에는 빈 줄 한 줄을 넣어 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋아요
 let result = value1 + value2
 if condition && anotherCondition {
     // Code
@@ -125,7 +125,7 @@ func secondFunction() {
     // Implementation
 }
 
-// ❌ Bad
+// ❌ 나빠요
 let result=value1+value2
 if condition&&anotherCondition{
     // Code
@@ -138,14 +138,14 @@ func secondFunction(){
 }
 ```
 
-### Braces and Control Flow
+### 중괄호와 제어 흐름
 
-#### Brace Style
-- Opening brace on the same line as the statement
-- Closing brace on its own line, aligned with the opening statement
+#### 중괄호 스타일
+- 여는 중괄호는 구문과 같은 줄에 둬 주세요.
+- 닫는 중괄호는 별도 줄에 두고 구문과 맞춰 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋아요
 if condition {
     doSomething()
 } else {
@@ -158,7 +158,7 @@ class MyClass {
     }
 }
 
-// ❌ Bad
+// ❌ 나빠요
 if condition
 {
     doSomething()
@@ -169,12 +169,12 @@ else
 }
 ```
 
-#### Guard Statements
-- Use guard statements for early returns
-- Keep guard conditions simple and readable
+#### Guard 구문
+- 조기 반환이 필요하면 guard를 사용해 주세요.
+- 조건은 간결하고 읽기 쉽게 유지해 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋아요
 guard let url = URL(string: urlString) else {
     completion(.failure(ValidationError.invalidURL))
     return
@@ -184,7 +184,7 @@ guard !apps.isEmpty else {
     return
 }
 
-// ❌ Bad
+// ❌ 나빠요
 if let url = URL(string: urlString) {
     // Long nested code block
 } else {
@@ -193,45 +193,45 @@ if let url = URL(string: urlString) {
 }
 ```
 
-### Type Annotations and Inference
+### 타입 표기와 추론
 
-#### When to Use Type Annotations
-- Use type annotations when the type isn't obvious
-- Omit type annotations when Swift can clearly infer the type
+#### 타입 표기 사용 시점
+- 타입이 명확하지 않을 때는 타입을 명시해 주세요.
+- Swift가 분명히 추론할 수 있을 때는 생략해 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋아요
 let name = "SideStore"  // Type is obvious
 let timeout: TimeInterval = 30  // Type clarifies intent
 var apps: [App] = []  // Empty array needs type annotation
 
-// ❌ Bad
+// ❌ 나빠요
 let name: String = "SideStore"  // Redundant type annotation
 let timeout = 30  // Unclear if Int or TimeInterval
 ```
 
-### Function Declarations
+### 함수 선언
 
-#### Parameter Labels
-- Use descriptive parameter labels
-- Omit first parameter label when it reads naturally
+#### 파라미터 라벨
+- 설명적인 라벨을 사용해 주세요.
+- 문장이 자연스럽게 읽힌다면 첫 번째 라벨을 생략해 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋아요
 func install(_ app: App, to device: Device)
 func download(from url: URL, completion: @escaping (Data?) -> Void)
 
-// ❌ Bad
+// ❌ 나빠요
 func install(app: App, device: Device)
 func download(url: URL, completion: @escaping (Data?) -> Void)
 ```
 
-#### Return Types
-- Put return type on the same line when possible
-- Break to new line for very long signatures
+#### 반환 타입
+- 가능하면 반환 타입을 같은 줄에 둬 주세요.
+- 시그니처가 길다면 새 줄에서 정리해 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋아요
 func processData() -> Result<ProcessedData, ProcessingError>
 
 func complexFunction(withManyParameters param1: String,
@@ -242,32 +242,31 @@ func complexFunction(withManyParameters param1: String,
 }
 ```
 
-## Objective-C Formatting
+## Objective-C 포매팅
 
-### Naming Conventions
+### 네이밍 규칙
 
-#### Methods
-- Use descriptive method names with clear parameter labels
-- Start with lowercase letter
-- Use camelCase
+#### 메서드
+- 파라미터 라벨이 명확한 설명형 이름을 사용해 주세요.
+- 소문자로 시작하고 camelCase를 사용해 주세요.
 
 ```objc
-// ✅ Good
+// ✅ 좋습니다
 - (void)installAppWithIdentifier:(NSString *)identifier 
                        sourceURL:(NSURL *)sourceURL 
                       completion:(void (^)(NSError *error))completion;
 
-// ❌ Bad
+// ❌ 나빠요
 - (void)install:(NSString *)id url:(NSURL *)url completion:(void (^)(NSError *))completion;
 ```
 
-#### Variables and Properties
-- Use camelCase
-- Use descriptive names
-- Prefix instance variables with underscore
+#### 변수와 프로퍼티
+- camelCase를 사용해 주세요.
+- 설명적인 이름을 붙여 주세요.
+- 인스턴스 변수에는 밑줄을 접두사로 붙여 주세요.
 
 ```objc
-// ✅ Good
+// ✅ 좋아요
 @interface AppManager : NSObject
 @property (nonatomic, strong) NSArray<App *> *installedApps;
 @property (nonatomic, assign) BOOL isInstalling;
@@ -279,49 +278,49 @@ func complexFunction(withManyParameters param1: String,
 }
 ```
 
-#### Classes and Protocols
-- Use PascalCase
-- Consider using prefixes for public classes (e.g., SS for SideStore)
+#### 클래스와 프로토콜
+- PascalCase를 사용해 주세요.
+- 공개 클래스라면 `SS` 같은 접두사를 붙이는 걸 고려해 주세요.
 
 ```objc
-// ✅ Good
+// ✅ 좋아요
 @interface SSAppInstaller : NSObject
 @protocol SSAppManaging <NSObject>
 
-// ❌ Bad
+// ❌ 나빠요
 @interface appInstaller : NSObject
 @protocol appManaging <NSObject>
 ```
 
-### Spacing and Formatting
+### 공백과 포매팅
 
-#### Method Declarations
-- Align parameters vertically
-- Use consistent spacing
+#### 메서드 선언
+- 파라미터를 세로로 정렬해 주세요.
+- 일관된 공백을 유지해 주세요.
 
 ```objc
-// ✅ Good
+// ✅ 좋아요
 - (instancetype)initWithIdentifier:(NSString *)identifier
                              title:(NSString *)title
                            version:(NSString *)version;
 
-// ❌ Bad
+// ❌ 싫어요
 - (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title version:(NSString *)version;
 ```
 
-#### Braces
-- Opening brace on the same line
-- Closing brace on its own line
+#### 중괄호
+- 여는 중괄호를 같은 줄에 둬 주세요.
+- 닫는 중괄호는 별도 줄에 둬 주세요.
 
 ```objc
-// ✅ Good
+// ✅ 좋아요요
 if (condition) {
     [self doSomething];
 } else {
     [self doSomethingElse];
 }
 
-// ❌ Bad
+// ❌ 나빠요
 if (condition)
 {
     [self doSomething];
@@ -332,11 +331,11 @@ else
 }
 ```
 
-## Comments and Documentation
+## 주석과 문서화
 
-### Swift Documentation
-- Use `///` for documentation comments
-- Include parameter and return value descriptions for public APIs
+### Swift 문서 주석
+- 문서 주석에는 `///`를 사용해 주세요.
+- 공개 API라면 파라미터와 반환 값을 설명해 주세요.
 
 ```swift
 /// Downloads and installs an app from the specified URL
@@ -352,9 +351,9 @@ func installApp(withIdentifier identifier: String,
 }
 ```
 
-### Objective-C Documentation
-- Use `/** */` for documentation comments
-- Follow HeaderDoc or Doxygen conventions
+### Objective-C 문서 주석
+- `/** */`를 사용해 주세요.
+- HeaderDoc이나 Doxygen 관례를 따라 주세요.
 
 ```objc
 /**
@@ -368,26 +367,26 @@ func installApp(withIdentifier identifier: String,
                       completion:(void (^)(NSError *error))completion;
 ```
 
-### Inline Comments
-- Use `//` for single-line comments
-- Keep comments concise and relevant
-- Explain **why**, not **what**
+### 인라인 주석
+- 한 줄 주석에는 `//`를 사용해 주세요.
+- 간결하고 필요한 내용만 적어 주세요.
+- 무엇인지보다는 왜 그런지 설명해 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋아요
 // Retry failed downloads up to 3 times to handle temporary network issues
 let maxRetryAttempts = 3
 
-// ❌ Bad
+// ❌ 나빠요
 // Set maxRetryAttempts to 3
 let maxRetryAttempts = 3
 ```
 
-## Error Handling
+## 오류 처리
 
-### Swift Error Handling
-- Use Swift's native error handling with `throws` and `Result` types
-- Create meaningful error types
+### Swift 오류 처리
+- Swift의 `throws`와 `Result`를 활용해 주세요.
+- 의미 있는 오류 타입을 만들어 주세요.
 
 ```swift
 enum InstallationError: Error {
@@ -405,9 +404,9 @@ func installApp() throws -> App {
 }
 ```
 
-### Objective-C Error Handling
-- Use `NSError **` parameter pattern
-- Always check if error parameter is non-nil before setting
+### Objective-C 오류 처리
+- `NSError **` 패턴을 사용해 주세요.
+- 값을 설정하기 전에 포인터가 nil이 아닌지 확인해 주세요.
 
 ```objc
 - (BOOL)installAppWithError:(NSError **)error {
@@ -423,14 +422,14 @@ func installApp() throws -> App {
 }
 ```
 
-## Best Practices
+## 모범 사례
 
-### Memory Management
-- Use ARC properly in both Swift and Objective-C
-- Be careful with retain cycles; use `weak` and `unowned` references appropriately
+### 메모리 관리
+- Swift와 Objective-C 모두 ARC를 올바르게 활용해 주세요.
+- 순환 참조에 주의하고 `weak`, `unowned`를 적절히 사용해 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋습니다
 class AppInstaller {
     weak var delegate: AppInstallerDelegate?
     
@@ -442,12 +441,12 @@ class AppInstaller {
 }
 ```
 
-### Threading
-- Always update UI on the main queue
-- Use appropriate queues for background work
+### 스레딩
+- UI 업데이트는 항상 메인 큐에서 해 주세요.
+- 백그라운드 작업에는 알맞은 큐를 사용해 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋아요
 DispatchQueue.global(qos: .userInitiated).async {
     let result = self.processData()
     DispatchQueue.main.async {
@@ -456,12 +455,12 @@ DispatchQueue.global(qos: .userInitiated).async {
 }
 ```
 
-### Optional Handling
-- Use safe unwrapping techniques
-- Prefer guard statements for early returns
+### 옵셔널 처리
+- 안전한 언래핑 기법을 사용해 주세요.
+- 조기 반환이 필요하면 guard를 선호해 주세요.
 
 ```swift
-// ✅ Good
+// ✅ 좋아요
 guard let data = response.data,
       let apps = try? JSONDecoder().decode([App].self, from: data) else {
     completion(.failure(ParsingError.invalidResponse))
@@ -469,10 +468,10 @@ guard let data = response.data,
 }
 ```
 
-## Tools and Automation
+## 도구와 자동화
 
 ### SwiftLint
-Consider using SwiftLint to automatically enforce many of these formatting rules:
+SwiftLint를 사용하면 많은 포매팅 규칙을 자동으로 강제할 수 있어요.
 
 ```yaml
 # .swiftlint.yml
@@ -489,4 +488,4 @@ opt_in_rules:
   - force_unwrapping
 ```
 
-Remember: These guidelines should help code readability and maintainability. When in doubt, you should prioritize clarity and consistency with the existing codebase.
+기억해 주세요. 이 가이드는 코드의 가독성과 유지 보수성을 높이기 위한 거예요. 헷갈릴 때는 명확성과 기존 코드베이스와의 일관성을 최우선으로 해 주세요.

@@ -1,43 +1,13 @@
 ---
 title: 페어링 파일
-description: 페어링 파일은 SideStore의 기능에 필수적입니다.
-sidebar_position: 2
+description: 페어링 파일을 수동으로 다시 가져오는 방법을 안내할게요.
 ---
-
-idevice pair는 jitterbug pairing 파일을 생성하여 SideStore와 같은 프로그램이 내 장치와 원격으로 통신할 수 있도록 하는 프로그램입니다. 이 프로그램은 SideStore를 사용하는 데 필요하며, 그렇지 않으면 작동하지 않습니다.
 :::warning
-주의: iDevice를 업데이트하거나 초기화하면 페어링 파일이 만료되므로 새 파일을 생성해야 합니다. 이 또한 무작위로 발생하며 현재로서는 이 문제를 해결하기 위해 할 수 있는 조치가 없습니다.
+iDevice를 업데이트하거나 초기화하면 페어링 파일이 만료되어 다시 가져와야 해요. 이는 가끔 무작위로 발생하기도 해요. 이는 단순히 Apple 소프트웨어의 작동 방식 때문이며, 현재로서는 이를 해결할 방법이 없어요. 본 가이드에서 iloader를 사용하여 페어링 파일을 수동으로 교체하는 방법을 안내할게요.
 :::
 
-iDevice 페어링을 다운로드하세요:
-- [macOS](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--macos-universal.dmg)
-- [Windows](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--windows-x86_64.exe)
-- Linux ([x86_64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--linux-x86_64.AppImage) 또는 [Arch64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--linux-aarch64.AppImage))
-
-## 페어링 방법
-
-### macOS
-
-1. `iDevicePair--macos-universal.dmg`를 다운로드하세요. 파일을 열고 `iDevicePair` 를 `Applications` 폴더로 드래그하세요.
-2. 케이블로 기기를 컴퓨터에 연결하세요. 프롬프트가 나타나면 "신뢰"를 탭하고 비밀번호를 입력하세요.
-3. 기기를 잠금 해제하고 `iDevice Pair`를 열어 드롭다운 메뉴에서 기기를 선택하세요.
-4. 기기가 잠금 해제되어 있고 홈 화면이 열려있는지 확인한 후 "generate"을 선택하세요. 기기에 프롬프트가 나타나면 "신뢰"를 탭하세요. 페어링 파일이 생성됩니다.
-5. 기기가 여전히 홈 화면에 있는지 확인한 후 SideStore 섹션으로 스크롤하여 "install"를 선택하세요. "success"이라는 단어가 녹색으로 표시되어야 합니다.
-
-### Windows (64-bit)
-
-1. Apple 웹사이트에서 iTunes를 설치하세요 ([64비트](https://apple.com/itunes/download/win64) 또는 [32비트](https://apple.com/itunes/download/win32)).
-2. `iDevicePair--windows-x86_64.exe`를 다운로드하세요 (잃어버리지 않을 곳으로 이동하세요).
-3. 케이블로 기기를 컴퓨터에 연결하세요. 프롬프트가 나타나면 "신뢰"를 탭하고 비밀번호를 입력하세요.
-4. 기기를 잠금 해제하고 `iDevice Pair`를 열어 드롭다운 메뉴에서 기기를 선택하세요.
-5. 기기가 잠금 해제되어 있고 홈 화면이 열려있는지 확인한 후 "generate"을 선택하세요. 기기에 프롬프트가 나타나면 "신뢰"를 탭하세요. 페어링 파일이 생성됩니다.
-6. 기기가 여전히 홈 화면에 있는지 확인한 후 SideStore 섹션으로 스크롤하여 "install"를 선택하세요. "success"이라는 단어가 녹색으로 표시되어야 합니다.
-
-### Linux
-
-1. 컴퓨터에 usbmuxd가 설치되어 있는지 확인하십시오.
-2. 사용 중인 PC의 아키텍처에 맞는 버전의 iDevice pair를 다운로드하여 실행합니다.
-3. 케이블로 기기를 컴퓨터에 연결하세요. 프롬프트가 나타나면 "신뢰"를 탭하고 비밀번호를 입력하세요.
-4. 기기를 잠금 해제하고 `iDevice Pair`를 열어 드롭다운 메뉴에서 기기를 선택하세요.
-5. 기기가 잠금 해제되어 있고 홈 화면이 열려있는지 확인한 후 "generate"을 선택하세요. 기기에 프롬프트가 나타나면 "신뢰"를 탭하세요. 페어링 파일이 생성됩니다.
-6. 기기가 여전히 홈 화면에 있는지 확인한 후 SideStore 섹션으로 스크롤하여 "install"를 선택하세요. "success"이라는 단어가 녹색으로 표시되어야 합니다.
+## 페어링 파일 교체하기
+1. iloader 및 SideStore 설치하고 설정하려면, [설치 가이드](../installation/prerequisites)의 있는 단계들을 제대로 따랐는지 확인해 주세요.
+2. 최상의 결과를 위해 iDevice를 USB 케이블로 컴퓨터에 연결해 주세요. 무선으로 표시되면 그것도 괜찮아요.
+3. "Manage Pairing File"를 클릭해 주세요.
+4. "SideStore" 및 원하는 다른 앱 오른쪽에 있는 "Place"를 클릭해 주세요. "Pairing file placed successfully! 라고 초록색 메시지가 표시되어야 해요.
