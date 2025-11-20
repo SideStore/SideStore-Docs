@@ -5,13 +5,13 @@
 iloader translation:
 - [X] EN
 - [ ] ES
-- [ ] FR
+- [X] FR
 - [X] DE
 - [X] IT
-- [ ] NL
+- [ ] NL (in progress)
 - [X] ZH
 - [ ] JA
 - [ ] RU
-- [ ] KO
+- [X] KO
 - [X] SV
-- [ ] TI
+- [ ] VI
