@@ -1,0 +1,239 @@
+---
+sidebar_position: 1
+---
+
+# 为SideStore贡献代码
+
+感谢您对为SideStore提供贡献感兴趣！SideStore是一个由社区驱动的工程，它是由像您一样的人共同努力的结果。
+
+通过为本项目(SideStore)贡献代码，即代表您已同意遵守开发者来源证书，详见[CERTIFICATE-OF-ORIGIN.md](https://github.com/SideStore/SideStore/blob/develop/CERTIFICATE-OF-ORIGIN.md)。在开发者来源证书生效后，对本项目的任何贡献均须遵循其政策。 
+
+为SideStore贡献有很多种方式，所以如果您不是一个开发者，也有其他您可以提供帮助的方式：
+
+- [撰写文档](https://github.com/SideStore/SideStore-Docs)
+- [提交详细的bug报告，或建议新的功能](https://github.com/SideStore/SideStore/issues/new/choose)
+- 提供支持协助:
+    - [Discord](https://discord.gg/sidestore-949183273383395328)
+    - [GitHub讨论](https://github.com/SideStore/SideStore/discussions)
+
+当然，这个指南将会专注于开发侧相关的内容。从现在开始，这里仅提供设置说明，若设置完成后需要帮助，您可以[加入我们的Discord频道](https://discord.gg/sidestore-949183273383395328)。
+
+## 需求
+
+这个指南已预设您满足以下条件：
+
+- 正在使用一台Mac
+- 安装了Xcode
+- 拥有基础的命令行相关知识(知道如何运行指令，导航至目录)
+- 拥有基础的Git知识，([GitHub Desktop](https://desktop.github.com/)对于初学者来说是一个很好的工具，它极大程度的简化了使用Git工作的体验)
+- 拥有基础的Swift/iOS开发知识
+
+## 安装
+
+1. **在GitHub分叉SideStore的存储库**.
+
+2. **克隆分叉**:
+   ```bash
+   git clone https://github.com/<your-github-username>/SideStore.git --recurse
+   cd SideStore
+   ```
+   
+   如果您正在使用GitHub Desktop，请参考[这个指南](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop)。
+
+3. **将`CodeSigning.xcconfig.sample`复制到`CodeSigning.xcconfig`**然后填入数值。
+
+4. **(只有开发者需要)** 修改Info.plist中`ALTDeviceID`的数值为您的设备的UDID。正常来说，SideServer会在安装过程中将设备的UDID嵌入SideStore的Info.plist文件中。通过Xcode运行时，您需要手动设置该值，否则SideStore将无法为正确设备重新签名（甚至安装）应用程序。
+
+5. **最后，在Xcode打开`AltStore.xcworkspace`**。
+
+接下来，您就可以进行属于您的修改并进行测试了。然后，使用Git提交并推送您的修改，不要忘了拉取请求(pr)。
+
+## 关于预构建的二进制文件
+
+minimuxer和em_proxy使用由GitHub Actions预构建的静态库二进制文件以加快编译，这移除了在SideStore上工作的时候安装Rust的需求。[`SideStore/fetch-prebuilt.sh`](https://github.com/SideStore/SideStore/blob/develop/SideStore/fetch-prebuilt.sh)会在每次Xcode编译之前运行，它会每6个小时检查下载的二进制文件是否是最新的。如果您想强制检查是否存在新的二进制文件，运行`bash ./SideStore/fetch-prebuilt.sh force`。
+
+## 使用Xcode进行构建
+
+如果您有需要，您可以使用`brew install cocoapods`安装cocoapods
+现在，在仓库工作区根目录下使用命令行，使用执行Pod-Install指令：`pod install` 以安装cocoapod的相关依赖
+在这之后您可以在Xcode内执行正常的构建
+
+## 编译用于分发的IPA包
+
+如果您有需要，您可以使用`brew install cocoapods`安装cocoapods
+现在，在仓库工作区根目录下使用命令行，使用执行Pod-Install指令：`pod install` 以安装cocoapod的相关依赖
+
+您可以在根目录使用Makefile指令：`make build fakesign ipa`
+默认情况下，构建的配置为：`Release`  
+对于调试版本，在根目录下使用：`export BUILD_CONFIG=Debug;make build fakesign ipa`
+对于alpha/beta版本，在调用构建指令前运行：`export IS_ALPHA=1;` or `export IS_BETA=1;`
+这会创建SideStore.ipa
+
+```sh
+示例：
+
+    # cocoapods
+    brew install cocoapods
+    # 执行安装pods
+    pod install
+
+    # alpha 发布构建
+    export IS_ALPHA=1;make build fakesign ipa
+    # alpha 测试构建
+    export IS_ALPHA=1;export BUILD_CONFIG=Debug;make build fakesign ipa
+
+    # beta 发布构建
+    export IS_BETA=1;make build fakesign ipa
+    # beta 测试构建
+    export IS_BETA=1;export BUILD_CONFIG=Debug;make build fakesign ipa
+
+    # stable 发布构建
+    make build fakesign ipa
+    # stable 测试构建
+    export BUILD_CONFIG=Debug;make build fakesign ipa
+```
+
+在默认情况下，SideStore会使用默认的包标识符 `com.SideStore.SideStore` 进行构建，但如果你需要为命令行构建配置自定义的bundleID ，您可以通过导出`BUNDLE_ID_SUFFIX`环境变量来实现:
+
+```sh
+    # stable 发布构建
+    export BUNDLE_ID_SUFFIX=XYZ0123456;make build fakesign ipa
+    # stable 测试构建
+    export BUNDLE_ID_SUFFIX=XYZ0123456;export BUILD_CONFIG=Debug;make build fakesign ipa
+```
+
+**提示**：当您使用XCode构建的时候，`BUNDLE_ID_SUFFIX`默认配置的值为`DEVELOPMENT_TEAM`
+
+可通过在覆盖生成的 CodeSigning.xcconfig 文件（基于 CodeSigning.xcconfig.sample）中设置/移除 BUNDLE_ID_SUFFIX 进行自定义。
+
+:::warning
+生成的二进制文件将包含指向Xcode派生数据的路径，若您在本地构建了minimuxer，则还包含指向$HOME/.cargo的路径。这些路径将包含您的用户名。若需保护用户名隐私，建议改用GitHub Actions构建IPA文件。
+:::
+
+## 在进行SideStore的开发时同时开发minimuxer
+
+请参考[minimuxer's README](https://github.com/SideStore/minimuxer)获取开发指引
+
+## 拉取请求流程
+
+### 在提交之前
+
+1. **遵循代码标准**：确保您的代码符合我们的[代码格式指南](./formatting.mdx).
+
+2. **测试您做出的修改**：
+   - 尽可能的在不同的iOS版本进行测试
+   - 确保现存的功能不会出现损坏
+   - 根据适用情况为新功能添加测试
+
+3. **更新文档**：如果您的更改影响用户可见的功能，请更新相关文档。
+
+### 提交您的PR
+
+1. **创建一个功能分支**:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+2. **进行修改**：遵循编码规范和最佳实践
+
+3. **提交您的更改并签名**:
+   ```bash
+   git add .
+   git commit -s -m "Add descriptive commit message"
+   ```
+   
+   **重要提示**：所有提交都应使用开发者来源证书（DCO）签名。`-s` 标志会自动在提交信息中添加必需的 `Signed-off-by` 行。
+
+4. **推送到您的分支**:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+
+5. **创建一个Pull Request**：前往SideStore的主库并且从您的分支创建一个pull request
+
+:::caution
+我们**不**接受由AI生成或“氛围编码”生成的pull请求（例如：包含过多生硬注释、代码缺乏个性化特征、未能理解项目核心、或未针对SideStore进行精心设计的代码）。请确保您的贡献具有原创性，且充分展现对代码库及其目标的清晰理解。
+:::
+
+### PR指南
+
+- **使用清晰的标题**：使用描述性的标题概括变更的内容
+- **详细的说明**：阐述所作变更及原因
+- **关联相关的问题**：引用相关GitHub问题
+- **截图**：附上界面变更的截图
+- **测试记录**：描述您如何测试您做的变更
+
+## 开发者来源证书 (DCO)
+
+SideStore要求所有贡献者使用开发者来源声明（DCO）签署其提交内容。该声明既作为我们的《贡献者行为准则》，也是确认您编写或拥有提交所贡献代码权限的简易方式。
+
+### DCO是什么?
+
+通过签署您的提交，您确认：
+
+- **(a)** 该贡献全部或部分由您创作，且您有权根据文件中指定的开源许可证提交该贡献；或
+- **(b)** 该贡献基于先前作品，据您所知该作品受适当开源许可证覆盖，且您有权根据该许可证提交修改后的作品；或  
+- **(c)** 该贡献由他人直接提供给您，且该人已证明满足(a)、(b)或(c)项要求，而您未对其进行修改。
+- **(d)** 您理解且同意：本项目及贡献内容均属公开性质，且贡献记录将永久保存。
+
+### 如何签名
+
+要签署您的提交，只需在提交时添加 `-s` 标志：
+
+```bash
+git commit -s -m "您的提交信息"
+```
+
+这将自动在您的提交信息中添加一行`Signed-off-by`：
+
+```
+您的提交信息
+
+Signed-off-by: SternXD <stern@sidestore.io>
+```
+
+### Important Notes
+
+- **所有的提交都应是签名的** - 我们更倾向您为您的提交进行签名
+- **使用正确的邮箱** - 邮箱应和您的GitHub账户保持一致
+- **追溯性签名确认** - 如果您忘记了签名，您可以使用`git commit --amend -s`修改您的最后一次提交
+
+更多详情请参阅完整的[原产地证书](https://github.com/SideStore/SideStore/blob/develop/CERTIFICATE-OF-ORIGIN.md)文件。
+
+## 代码审查流程
+
+1. **初步审查**：一位维护者将会在数日内审查您的PR
+2. **反馈**：处理任何请求的变更或问题
+3. **最终通过**：一旦通过，一位维护者将会合并您的PR
+
+## 优质贡献的指南
+
+### 代码质量
+- 编写干净，有阅读性的代码
+- 遵循Swift和Objective-C的最佳实践
+- 使用有意义的变量和函数名
+- 为复杂的代码添加注释
+
+### 测试
+- 尽可能在物理设备上测试
+- 测试边界情况和错误条件
+- 验证向后兼容性
+
+### 文档
+- 更新代码注释
+- 更新面向用户的文档
+- 为公共API添加内联文档
+
+## 获取帮助
+
+如果您需要帮助/有问题需要解决：
+
+- **GitHub讨论**：一般性问题请使用GitHub Discussions
+- **GitHub Issues**：为bug/功能请求提交issue
+- **Discord**：加入SideStore的Discord社区
+
+## 认可
+
+对项目作出重大贡献的贡献者将在项目鸣谢名单和变更日志中予以表彰
+
+感谢您对SideStore的贡献！

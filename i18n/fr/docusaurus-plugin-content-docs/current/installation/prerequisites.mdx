@@ -11,24 +11,37 @@ Le processus d'installation de SideStore peut sembler compliqué, mais avec l'ut
 Pour installer SideStore, vous aurez besoin de:
 
 - Un iPhone ou iPad [avec un code d'accès](https://support.apple.com/fr-fr/119586) fonctionnant sous iOS/iPadOS 14 ou supérieur
-- Un ordinateur sous [Windows](installation/windows.mdx), [macOS](installation/mac.mdx) ou [Linux](installation/linux.mdx) (le support de Linux est expérimental)
+- Un ordinateur (une seule fois)
 - Un identifiant Apple
-- L'application StosVPN (voir ci-dessous)
 - Une connexion Wi-Fi
 - Un peu de temps (C'est un processus rapide, mais il vaut mieux [prévoir du temps pour le dépannage](/docs/troubleshooting/))
 
-## StosVPN
+## Préparez votre appareil
+
+### Dans votre iPhone/iPad:
 
 SideStore utilise un VPN intégré qui permet à SideStore de communiquer avec les services internes.
 
-1. Téléchargez l'application StosVPN depuis l'[App Store officiel](https://apps.apple.com/fr/app/stosvpn/id6744003051).
+1. Téléchargez l'application StosVPN dans l'[App Store officiel](https://apps.apple.com/fr/app/stosvpn/id6744003051).
 2. Activez le VPN.
 
-Ce VPN doit être activé à chaque fois que vous souhaitez installer ou mettre à jour des applications dans SideStore.
+Ce VPN doit être activé à chaque fois que vous souhaitez installer, mettre à jour, ou rafraîchir des applications dans SideStore.
 
-## Étapes suivantes
+### Dans votre Mac
+1. Télechargez et installez iloader pour Mac ([Séries M](https://github.com/nab138/iloader/releases/latest/download/iloader-darwin-aarch64.dmg) ou [Intel](https://github.com/nab138/iloader/releases/latest/download/iloader-darwin-x64.dmg)).
+2. Ouvrez le Terminal, éxecuter `sudo xattr -c ./Applications/iloader.app` et entrez votre mot de passe si demandé.
 
-Ensuite, suivez les instructions d'installation correspondant à votre système d'exploitation!
-- [macOS](mac)
-- [Windows (64-bit)](windows)
-- [Linux (expérimental)](linux)
+### Dans votre Ordinateur Windows
+1. Télechargez et installez [iTunes](https://apple.co/ms).
+2. Télegarchez l'installateur iloader ([exe](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.exe) ou [msi](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.msi)).
+3. Éxecutez le programme d'installation.
+
+### Dans votre Machine Linux
+1. Télechargez et installez `usbmuxd` (peut être près-installer dans votre distro, sinon l'installe avec votre package manager).
+2. Télecharger et installez iloader pour votre distro ([Debian/Ubuntu](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.deb), [Fedora/openSUSE](https://github.com/nab138/iloader/releases/download/v0.1.3/iloader-linux-x86_64.rpm), [other](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.AppImage)).
+
+
+## Prochaines étapes
+
+Maintenenant, suivez les processus d'installation pour installer SideStore!
+- [Installer](install.mdx)

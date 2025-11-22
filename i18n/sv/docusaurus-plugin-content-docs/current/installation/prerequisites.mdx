@@ -1,36 +1,48 @@
 ---
-title: Förutsättningar
+title: Förberedelser
 description: 'De första stegen i installationen.'
 sidebar_position: 1
 ---
 
-SideStores installationsprocess kan verka knepig, men med en ***engångsanvändning*** av en dator och lite tid kommer du att ha SideStore på din enhet!
+SideStores installationsprocess kan verka knepig, men med ***engångs***hjälp av en dator och lite tid har du SideStore på din enhet!
 
 ## Krav
 
 För att installera SideStore behöver du:
-- En iOS- eller iPadOS-enhet med iOS eller iPadOS 14 eller senare.  
-- En Windows-, macOS- eller Linux-dator (Linux-stöd är experimentellt).  
-- Ett Apple-ID.  
-- Appen StosVPN.  
-- Lite tid (processen är snabb, men se till att ha tid för felsökning).  
 
-Användare av iOS/iPadOS 16 eller senare *måste* ha Utvecklarläge (Developer Mode) aktiverat. Gör så här:  
-1. Öppna Inställningar.  
-2. Gå till **Integritet och säkerhet**.  
-3. Aktivera **Utvecklarläge** längst ned.  
+- En iPhone/iPad [med lösenkod](https://support.apple.com/en-us/119586) som kör iOS/iPadOS 14 eller senare
+- En dator (engångsbruk)
+- Ett Apple-konto
+- En Wi-Fi-anslutning
+- Lite tid (processen går snabbt, men [avsätt tid för felsökning](/docs/troubleshooting/))
 
-> **Obs:** Du ser endast alternativet **Utvecklarläge** efter att du har installerat SideStore.
+## Förbered dina enheter
 
-## StosVPN
+### På din iPhone/iPad
 
-SideStore använder en inbyggd VPN för att kommunicera med interna tjänster.
+SideStore använder ett VPN på enheten som gör att SideStore kan prata med interna tjänster.
 
-1. Ladda ner appen StosVPN från [App Store](https://apps.apple.com/us/app/stosvpn/id6744003051).  
-2. Aktivera VPN-anslutningen.  
+1. Ladda ner appen StosVPN från [Apple App Store](https://apps.apple.com/us/app/stosvpn/id6744003051).
+2. Aktivera VPN:t.
 
-Denna VPN måste vara aktiv när du vill installera eller uppdatera appar i SideStore.
+VPN:t måste vara på varje gång du vill installera, uppdatera eller uppfräscha appar i SideStore.
 
-## Nästa steg
+### På din Mac
+1. Ladda ner och installera iloader för Mac ([M-Series](https://github.com/nab138/iloader/releases/latest/download/iloader-darwin-aarch64.dmg) eller [Intel](https://github.com/nab138/iloader/releases/latest/download/iloader-darwin-x64.dmg)).
+2. Öppna Terminal, kör `sudo xattr -c ./Applications/iloader.app` och ange ditt lösenord om du blir ombedd.
 
-Gå nu till nästa sida för att skapa din parningsfil!
+
+## På din Windows-dator
+1. Ladda ner och installera [iTunes](https://apple.co/ms).
+2. Ladda ner iloader-installationsprogrammet ([exe](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.exe) eller [msi](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.msi)).
+3. Kör installationsprogrammet.
+
+## På din Linux-dator
+1. Ladda ner och installera `usbmuxd` (kan redan vara installerat i din distribution, annars installerar du via pakethanteraren).
+2. Ladda ner och installera iloader för din distribution ([Debian/Ubuntu](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.deb), [Fedora/openSUSE](https://github.com/nab138/iloader/releases/download/v0.1.3/iloader-linux-x86_64.rpm), [övriga](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.AppImage)).
+
+
+## Nästa steg 
+
+Följ sedan installationsinstruktionerna för att lägga in SideStore!
+- [Installera](install)

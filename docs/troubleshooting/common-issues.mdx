@@ -1,6 +1,6 @@
 ---
 title: Common Issues
-description: Common issues found in SideStore.
+description: Common issues encountered using SideStore.
 ---
 
 :::warning
@@ -11,23 +11,29 @@ This page is currently a work in progress. The information provided should be ac
 
 ## Common Issues with SideStore
 
-### AFC Connection Failure
+### I have an issue with the latest nightly
 #### Cause
-Connection issues or an invalid pairing file.
+Our nightly builds include bleeding-edge features and improvements, some of which may cause instablity.
 #### Resolution
-1. Attempt to reconnect
-2. Create and import a new pairing file using idevice pair. See our [Pairing File instructions](/docs/installation/pairing-file) for details
+Switch to the latest stable build. Please do not create issues or request support for bugs encountered in nightly builds.
 
-### No Wi-Fi or VPN Connection
+### I am receiving error code: "X"
+#### Cause
+An error occurred.
+#### Resolution
+Check our helpful [list of error codes](error-codes)!
+
+### AFC Connection Failure / No Wi-Fi or VPN Connection
 #### Cause
 Connection issues with the minimuxer service.
 #### Resolution
 1. If using WireGuard, switch to StosVPN
-2. Turn off any DNS-blocking servers
-2. Try again (spamming the button often helps)
-3. Restart SideStore
-4. Restart StosVPN
-5. Recreate and import a new pairing file using idevice pair. See our [Pairing File instructions](/docs/installation/pairing-file) for details
+2. Turn off any DNS-blockers
+3. Ensure StosVPN and Wi-Fi are both connected
+4. Try again (spamming the button sometimes helps)
+5. Restart SideStore
+6. Restart StosVPN
+7. [Replace your pairing file](../advanced/pairing-file) using iloader.
 
 ### SideStore Hangs Partway Through Installation
 #### Cause
@@ -45,7 +51,7 @@ Cache or protocol issues.
 #### Cause
 Multiple possible causes.
 #### Resolution
-1. Make sure you installed SideStore through AltServer
+1. Make sure you installed SideStore through iloader
 2. Reinstall SideStore
 
 If the above doesn't work, do the following:
@@ -53,8 +59,10 @@ If the above doesn't work, do the following:
 1. Delete SideStore and all apps that you have installed from SideStore
 2. Reinstall SideStore
 3. Import your pairing file and login. (It will give you a prompt to refresh SideStore, select no)
-4. Install the `sidestore.ipa` file to your device
-5. Import the `sidestore.ipa` file into SideStore like how you would install any other IPA
+4. Install the `SideStore.ipa` file to your device
+5. Import the `SideStore.ipa` file into SideStore like how you would install any other IPA
 6. This will allow SideStore to do a clean refresh, and hopefully fix the issue
 
-
+### I couldn't find my issue here
+#### Resolution
+Please check our [comprehensive troubleshooting guide](/docs/troubleshooting).

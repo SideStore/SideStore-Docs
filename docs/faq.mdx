@@ -10,11 +10,15 @@ This is a list of frequently asked questions for SideStore. This has a list of c
 
 ## What is SideStore?
 
-SideStore is an iOS application that allows you to sideload apps onto your iOS device using only your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a [specially designed VPN](https://github.com/jkcoxson/em_proxy) in order to trick iOS into installing them. SideStore will periodically "refresh" your apps in the background, to keep their normal 7-day development period from expiring.
+SideStore is an iOS application that allows you to sideload apps onto your iOS device using only your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a [specially designed VPN](https://apps.apple.com/us/app/stosvpn/id6744003051) in order to trick iOS into installing them. SideStore will periodically "refresh" your apps in the background, to keep their normal 7-day development period from expiring.
 
 SideStore's goal is to provide an untethered sideloading experience. It's a community driven fork of [AltStore](https://github.com/rileytestut/AltStore), and has already implemented some of the community's most-requested features. You only need a computer once during installation.
 
 (Contributions are welcome! 🙂)
+
+### What limitations does SideStore have?
+
+If using a free Apple Account, SideStore can only install 3 apps (including itself) at a time. Additionally, only 10 different apps may be installed in a week. (Referred to as App IDs).
 
 ### Can I activate JIT?
 
@@ -32,7 +36,7 @@ Yes you can, just like AltStore!
 
 ### Does SideStore have AltStore (beta) features?
 
-We do implement AltStore (beta) features, but they aren't always latest. We try to keep up to date, or implement them in our own way if it's necessary.
+We do implement AltStore (beta) features, but they aren't always latest. We try to keep up to date, or implement them in our own way if necessary.
 
 ### Will having the VPN on drain my battery?
 
@@ -42,33 +46,29 @@ It does not, as it's only connecting to your own device. No remote servers are u
 
 It does not, as there is no remote server used.
 
-### Updating SideStore hangs towards the end
-
-Go to the homescreen for it to finish. We don't know why this happens, but it might have to do with using a VPN to direct `installd` to refresh SideStore (itself).
-
 ### Can I sign more than 3 apps to be active?
 
 Normally, no, as that’s an iOS and developer account limitation. Apple only allows 3 apps to be installed using a free Apple Developer account.
 
 To remove this restriction (and also get a 365 day expiry), you can pay for a $99/year Apple Developer account.
 
-Alternatively, on iOS versions 18 db5/18.0.1 and below, you can utilize the SparseRestore exploit to bypass the 3-app limit.
+Alternatively, you can use LiveContainer, or on iOS versions 18 db5/18.0.1 and below, you can utilize the SparseRestore exploit to bypass the 3-app limit. (doesn't bypass the 10 app-id limit)
 
-A tutorial for using this can be found [here](advanced/sparserestore).
+A tutorial for using this can be found [here](advanced/alternative).
 
 ### I have a problem or bug or request for a feature or quality of life improvement
 
-Please make a GitHub issue on our GitHub page to make a bug report or feature request (with appropriate labels)!
+Please check [common issues](troubleshooting/common-issues) and existing GitHub issues, if you don't find it, please create a new a GitHub issue on our GitHub page to make a bug report or feature request (with appropriate labels)!
 
 ### I am a developer, how does this affect me?
 
-It doesn’t affect you directly, other than maybe an update to AltKit when/if we get our additions.
+Your apps shouldn't need any modification to work with SideStore!
 
 ### Do I need to install AltStore to install SideStore?
 
-Nope, you can sideload SideStore directly following our guides for [Windows](/docs/installation/windows.mdx), [macOS](/docs/installation/mac.mdx), and [Linux](/docs/installation/linux.mdx) since currently it operates like AltStore while signing.
+Nope, you can sideload SideStore directly by following our helpful [guide](installation/prerequisites)!
 
-### As a user, I’m having trouble logging into SideStore. I get an error
+### As a user, I’m having trouble logging into SideStore. I get an error.
 
 There are many reasons this can happen, but the most common issue is a temporary Anisette server downtime. You can currently change the Anisette server on your device’s Settings app in SideStore under “Anisette URL”.
 
@@ -76,7 +76,7 @@ There are many reasons this can happen, but the most common issue is a temporary
 
 We currently have a Community Source! Source URL: https://community-apps.sidestore.io/sidecommunity.json
 
-We also have a service called [SideStore Connect](https://connect.sidestore.io) which allows devs to publish their own apps.
+We also have a service called [SideStore Connect](https://connect.sidestore.io) which allows developers to publish their own apps.
 
 ### Why does my app have an update called "pacer test"?
 
@@ -84,7 +84,7 @@ This was a test update to see if there were problems between major versions, and
 
 ### Why do my JIT based apps not automatically activate JIT?
 
-We currently don’t have an automatic JIT activation method, and if we did you would need StosVPN on.
+We currently don’t have an automatic JIT activation method, and if we did you would need StosVPN on. Alternatively, you can use StikDebug.
 
 ### Does SideStore have an iPadOS UI?
 
@@ -98,17 +98,13 @@ These Macs are not real, and they are automatically generated by the Anisette se
 
 Older Anisette servers that are used by many users are known to cause locking of Apple ID's. Please use one of the official Anisette servers, or host your own [anisette-v3-server](advanced/anisette).
 
-### Why do I get error -36607?
-
-This is a login issue with the Anisette server. There isn’t really much of any info about it other than changing Anisette servers sometimes helps, or you can keep trying to login until it does.
-
 ### Can I transfer my AltStore/Sideloadly apps?
 
 Yes, just don’t remove the original app on your device. Go into SideStore and sideload the same or an updated IPA of the app, and it should be added to your list of apps within SideStore with your data still intact.
 
 ### Why do I need to refresh SideStore first thing after login?
 
-This is because AltServer or other programs sideload SideStore with their own app groupID, while we use our own. Refreshing SideStore changes it to ours, which makes apps disappear as their groupIDs are not updated. It’s best to not sideload anything before refreshing SideStore on a clean install.
+This is because AltServer and other programs tend to sideload SideStore with their own app groupID, while we use our own. Refreshing SideStore changes it to ours, which makes apps disappear as their groupIDs are not updated. It’s best to not sideload anything before refreshing SideStore on a clean install.
 
 ### Does SideStore support OTA updates?
 
@@ -116,26 +112,10 @@ Yep! Just click the update button when it appears!
 
 ### I want to test a SideStore version, and I want my data to stay when switching to a test version. Do I remove my app or sideload the test version via SideStore?
 
-You can sideload a nightly SideStore version via SideStore or AltServer and your data should be the same, or enable beta updates and select "nightly" in Settings. We cannot guarantee your data transfers when testing an unofficial or nightly build.
-
-### My apps disappeared and I don't know what to do
-
-Don't panic! Re-sideload the apps without removing them from your device, and your data should be fine. Unfortunately it's possible that your deactivated apps are gone, but to confirm that just refresh SideStore to see if they come back.
-
-### I'm unable to select my pairing file with any file type
-
-Make sure your pairing file's extension ends with `.mobiledevicepairing` or `.plist`. If it doesn't, double check to see if you had zipped your pairing file before sending it to your phone. Failing to do so may lead to the file being corrupted during transport. Also, when signing SideStore with a certificate, you won't be able to select the pairing file from within app. You can try moving the pairing file to the root directory of the SideStore folder in the Files app in "On My iPhone/iPad", and naming it `ALTPairingFile.mobiledevicepairing`. If you do not see the SideStore folder in the files app, connect your phone to your computer, and you can drag and drop the pairing file to the files of the SideStore app. Ensure to change it to name mentioned above. Note that it is case sensitive.
-
-### Cannot start DebugServer
-
-There is times when the DebugServer doesn't work. However, there is a fix you can try:
-
-**Make a new pairing file**
-
-To start the process of using a new pairing file you go to settings tab and click Reset Pairing file, and you accept the prompt. Then you just follow the [Pairing File instructions](installation/pairing-file).
+You can sideload a nightly SideStore version via SideStore or iloader and your data should remain, or enable beta updates and select "nightly" in Settings. We cannot guarantee your data transfers when testing an unofficial or nightly build.
 
 ### Currently Known issues
 
-If you're currently having issues and want to know if we already know about them. Then check out our GitHub issue page which  has a list of known issues and ways to mitigate some of the issues you might be having. Some of the issues in this list might be known that are not there, but are in the GitHub issues section. https://github.com/SideStore/SideStore/issues/490
+If you're currently having issues and want to know if we already know about them, check out our GitHub issue page and the troubleshooting page which has a list of known issues and ways to mitigate some of the issues you might be having. Some of the issues in this list might be known that are not there, but are in the GitHub issues section. [GitHub](https://github.com/SideStore/SideStore/issues/490), [troubleshooting](/docs/troubleshooting/).
 
 If you have any issues that aren't in this list. Just make a GitHub issue or [join our discord.](https://dis.sidestore.io/)

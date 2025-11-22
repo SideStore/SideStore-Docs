@@ -4,21 +4,23 @@ description: Tutorial su come abilitare la compilazione Just-In-Time (JIT) per a
 ---
 
 :::note
-iOS 26 ha rotto di nuovo JIT. È stato rilasciato un fix in StikDebug, ma il supporto è **molto** limitato. Ad oggi (16 sett), le uniche app supportate sono:
+iOS 26 ha rotto di nuovo JIT. È stato rilasciato un fix in StikDebug, ma il supporto è **molto** limitato. Ad oggi (10 Nov), le uniche app supportate sono:
 * UTM
 * Amethyst
 * MeloNX
-* maciOS (non rilasciata completamente)
-
-Ci sono diversi metodi per abilitare JIT, come AltJIT, SideJITServer e altri. Questo tutorial copre l'uso di StikDebug (prima StikJIT), in quanto è il metodo raccomandato. Per più info, vedi la [guida ufficiale per il pairing StikDebug](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md).
-
-Come alternativa, SideStore 0.6.2 include aggiornamenti a minimuxer, permettendo la funzionalità JIT built-in, in modo simile a StikDebug. Per usarlo, assicurati di essere connesso a StosVPN con il Wi-Fi connesso o la Modalità Aereo attiva, poi naviga in "Le mie app", tieni premuto l'app in cui vuoi abilitare JIT e tocca "abilita JIT". 
+* maciOS
+* DolphiniOS
+* Geode
 
 Tieni d'occhio il nostro canale di annunci nel server Discord e sul [server di idevice](https://discord.gg/mACqxMxP3X) per ulteriori aggiornamenti.
+
+Ci sono diversi metodi per abilitare JIT in base alla tua versione iOS. Questo tutorial copre l'uso di StikDebug (prima StikJIT), in quanto è il metodo raccomandato. Per più info, vedi la [guida ufficiale per il pairing StikDebug](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md).
+
+Come alternativa, SideStore 0.6.2 include aggiornamenti a minimuxer, permettendo la funzionalità JIT built-in, in modo simile a StikDebug. Per usarlo, assicurati di essere connesso a StosVPN con il Wi-Fi connesso o la Modalità Aereo attiva, poi naviga in "Le mie app", tieni premuto l'app in cui vuoi abilitare JIT e tocca "abilita JIT".
 :::
 
 ## Prerequisiti
-* Un iDevice con iOS/iPadOS 17.4-18.6, esclusa 18.4b1. Se sei su 17.0-17.3 devi usare un metodo alternativo come [SideJITServer](https://github.com/nythepegasus/SideJITServer). Come scritto sopra, le versioni successive alla 18.6 non sono supportate al momento.
+* Un iDevice con iOS/iPadOS 17.4-tutte le versioni di iOS 18, esclusa 18.4b1. Se sei su 17.0-17.3 devi usare un metodo alternativo come [SideJITServer](https://github.com/nythepegasus/SideJITServer). Il JIT-enabler di SideStore funziona su iOS 26 solo se il tuo dispositivo ha più di 4 anni (non-TMX capable).
 
 ## Installazione di StikDebug nell'App Store di Apple
 

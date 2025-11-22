@@ -1,484 +1,304 @@
 ---
-title: Error Codes
-description: Error codes found in SideStore.
+title: 错误代码
+description: SideStore内的错误代码
 ---
 
 :::warning
 
-This page is currently not fully accurate to how SideStore works, as this is based on AltStore's Error Codes page. Some info is still correct, but please don't rely on this word for word. Make sure to ask in our [Discord server](https://discord.gg/sidestore-949183273383395328) for help if you need it.
+本页面目前尚未完全准确反映SideStore的工作原理，因其内容基于AltStore的错误代码页面。部分信息仍属有效，但请勿逐字依赖此处说明。如需帮助，请务必前往我们的[Discord服务器](https://discord.gg/sidestore-949183273383395328)咨询。
 
 :::
 
-## SideStore Errors
+## SideStore相关错误
 
 #### (1000) An unknown error occurred.
 
 `SideStore.OperationError 1000`
 
-This means that SideStore ran into an unexpected error. Please check our [Troubleshooting Guide](./), and you can reach out to us directly if the issue persists.
+这意味着SideStore遇到了意外错误。请查阅我们的[故障排除指南](./troubleshooting.mdx)，若问题仍未解决，可直接联系我们。
 
 #### (1001) The operation returned an unknown result.
 
 `SideStore.OperationError 1001`
 
-This means that SideStore ran into an unexpected error. Please check our [Troubleshooting Guide](./), and you can reach out to us directly if the issue persists.
+这意味着SideStore遇到了意外错误。请查阅我们的[故障排除指南](./troubleshooting.mdx)，若问题仍未解决，可直接联系我们。
 
 #### (1002) The operation was cancelled.
 
 `SideStore.OperationError 1002`
 
-This means that the performed action was stopped. Please try again.
+这意味着操作已被中止。请重新尝试。
 
 #### (1003) The operation timed out.
 
 `SideStore.OperationError 1003`
 
-This means that SideStore ran into problems trying to complete the requested action. Please try again and check our [Troubleshooting Guide](./) for additional help. You can reach out to us directly if the issue persists.
+这意味着SideStore在尝试完成请求操作时遇到了问题。请重新尝试操作，并查阅我们的[故障排除指南](./troubleshooting.mdx)获取更多帮助。若问题持续存在，您可直接联系我们。
 
 #### (1004) You are not signed in.
 
 `SideStore.OperationError 1004`
 
-This means that you must enter your Apple ID information in the settings tab to do the requested action.
+这意味着您必须在设置选项卡中输入您的Apple ID信息才能执行所请求的操作。
 
 #### (1005) The app could not be found.
 
 `SideStore.OperationError 1005`
 
-This means that SideStore could not locate the file to download or install, most likely because the file does not exist at the provided URL.
+这意味着SideStore无法找到要下载或安装的文件，很可能是因为该文件在提供的URL地址不存在。
 
 #### (1006) SideStore could not determine this device's UDID.
 
 `SideStore.OperationError 1006`
 
-This means that SideStore couldn't read the device UDID embedded by AltServer when installing SideStore. Make sure you're installing SideStore with the latest AltServer version and not via another method.
+这意味着您的配对文件已损坏。[请使用 iloader 重新导入](../advanced/pairing-file)。
 
 #### (1007) This app is in an invalid format.
 
 `SideStore.OperationError 1007`
 
-This means the app you're trying to install is not a standard .ipa. Try downloading the app from another location.
+这意味着您尝试安装的应用程序并非标准的.ipa格式。请尝试从其他位置下载该应用程序。
 
 #### (1008) Invalid parameters.
 
 `SideStore.OperationError 1008`
 
-This means an internal error occured and SideStore couldn't provide the necessary information to perform the requested task. Please try again and check our [Troubleshooting Guide](./) for additional help. You can reach out to us directly if the issue persists at our Discord server.
+这意味着发生了内部错误，SideStore 无法提供执行请求任务所需的信息。请重新尝试操作，并查阅我们的[故障排除指南](./troubleshooting.mdx)获取更多帮助。若问题持续存在，您可直接通过我们的 Discord 服务器联系我们。
 
 #### (1009) You cannot register more than 10 App IDs within a 7-day period.
 
 `SideStore.OperationError 1009`
 
-This means that you have reached the maximum amount of App IDs available. Apps IDs are not able to be deleted manually. App IDs renew if the app has exists 7 days after when it was first installed or renewed last, and expire if they have been deleted since. Please check the App IDs in the My Apps tab to see when they will expire.
+这意味着您已达到可用的应用ID数量上限。应用ID无法手动删除。若应用在首次安装或上次更新后仍存在7天，应用ID将自动续期；若在此期间被删除，则会过期。请在“我的应用”标签页中查看应用ID的到期时间。
 
 #### (1010) There are no AltStore sources.
 
 `SideStore.OperationError 1010`
 
-This means an internal error occured and SideStore is unable to fetch changes for any AltSources you've added. Please try again and check our [Troubleshooting Guide](./) for additional help. You can reach out to us directly at our Discord server if the issue persists.
+这意味着发生了内部错误，SideStore 无法提供执行请求任务所需的信息。请重新尝试操作，并查阅我们的[故障排除指南](./troubleshooting.mdx)获取更多帮助。若问题持续存在，您可直接通过我们的 Discord 服务器联系我们。
 
 #### (1011) SideStore was denied permission to launch the app.
 
 `SideStore.OperationError 1011`
 
-This means SideStore couldn't launch a sideloaded app because you tapped "Cancel" on the "SideStore wants to open \[app]" alert, or because you still need to trust your Apple ID in Settings.
+这意味着SideStore无法启动侧载应用，因为您在“SideStore想要打开\[应用]”的提示中点击了“取消”，或者您仍需在设置中信任您的Apple ID。
 
 #### (1012) SideStore's shared app group could not be accessed.
 
 `SideStore.OperationError 1012`
 
-This means SideStore was not able to access the directory where app backups are stored. Make sure you're installing SideStore with the latest AltServer version and not via another method.
+这意味着SideStore无法访问应用备份存储目录。请确保您使用的是最新版AltServer安装SideStore，而非通过其他方式安装。
 
 #### (1403) Unable to connect to SideJITServer.
 
 `SideStore.OperationError 1403`
 
-Please make sure you are on the same Wi-Fi as your computer running SideJITServer and that your Firewall has been set appropriately. Alternatively, you can use the built in "Enable JIT" option to enable JIT on iOS 17.4-18.6 with StosVPN enabled and Wi-Fi or Airplane Mode.
+请确保您与运行SideJITServer的计算机处于同一Wi-Fi网络，且防火墙已正确配置。或者，您可以在启用StosVPN并处于Wi-Fi或飞行模式时，通过iOS 17.4-18.6系统内置的“启用JIT”选项来启用JIT功能。
 
 #### (1412) Unable to connect to a V3 anisette server.
 
 `SideStore.OperationError 1412`
 
-Your device was unable to recieve data from a V3 anisette server. Please try again, or switch anisette servers.
+您的设备无法从V3 Anisette服务器接收数据。请重试，或切换Anisette服务器。
 
 #### (1414) No Wi-Fi/StosVPN.
 
 `SideStore.OperationError 1414`
 
-You do not appear to be connected to Wi-Fi and/or StosVPN. SideStore cannot refresh or install applications without Wi-Fi and StosVPN, ensure both are enabled. If that doesn't work, try regenerating your pairing file.
+您似乎未连接至Wi-Fi和/或StosVPN。SideStore在未连接Wi-Fi和StosVPN的情况下无法刷新或安装应用程序，请确保两者均已连接。若仍无法解决，请[使用iloader重新导入配对文件](../advanced/pairing-file)。
 
-## Minimuxer Errors
+
+## Minimuxer相关错误
 
 #### (4) AFC was unable to manage files on the device.
 
 `minimuxer.MinimuxerError 4`
 
-This means you are attempting to enable JIT on an unsupported iOS version. SideStore only supports enabling JIT on iOS 17.4-18.6.
+这意味着您正在尝试在不受支持的iOS版本上启用即时编译（JIT）。SideStore仅支持在iOS 17.4-18.6版本上启用即时编译功能。
 
 #### (27) AFC was unable to manage files on the device.
 
 `minimuxer.MinimuxerError 27`
 
-This means you have an invalid pairing file. Follow the steps in these docs to regenerate it.
+请确保Wi-Fi和StosVPN均已连接。若错误仍未解决，请[使用iloader重新导入配对文件](../advanced/pairing-file)。
 
-More coming, open to contributions...
 
-## AltServer / SideServer Errors
-
-#### (0) Exception Error
-
-`AltServer.ExceptionError`
-
-This error can appear for many reasons, and below are a few that you might see (this is not an exhaustive list).
-
-"vector too long"
-
-This means that Windows Defender is blocking your request. You may need to first disable Real-Time Protection on Windows in order for SideStore to work as expected.
-
-#### (1999) Underlying Error
-
-`AltServer.ServerError`
-
-This means that AltServer ran into an unknown error. We recommend reaching out to our support channels if the issue persists.
-
-#### (2000) Unknown Error
-
-`AltServer.ServerError`
-
-This means that AltServer ran into an unknown error. We recommend reaching out to our support channels if the issue persists.
-
-#### (2001) Could not connect to AltServer. / There was an error connecting to the device.&#x20;
-
-`AltServer.ServerError`
-
-This means that AltServer is having trouble connecting to your iOS device. Try plugging your device directly into your computer if it is not already.
-
-If you still have issues, please refer to the [Troubleshooting Guide](./).
-
-#### (2002) Lost Connection to AltServer.
-
-`AltServer.ServerError`
-
-This means that the connection was dropped between AltServer and your iOS device. Make sure your device and computer are connected to the same Wi-Fi network and try again.
-
-If you still have issues, please refer to the [Troubleshooting Guide](./).
-
-#### (2003) AltServer could not find this device.
-
-`AltServer.ServerError`
-
-This means that AltServer had trouble locating your iOS device either over USB or via Wi-Fi. Make sure your device and computer are connected to the same Wi-Fi network and that your device is trusted and try again.
-
-If you still have issues, please refer to the [Troubleshooting Guide](./).
-
-#### (2004) Failed to write app data to device.
-
-`AltServer.ServerError`
-
-This means that AltServer tried to write a file to your device and could not or was interrupted. Make sure your device and computer are connected to the same Wi-Fi network and that your device is trusted and try again.
-
-If you still have issues, please refer to the [Troubleshooting Guide](./).
-
-#### (2005) AltServer received an invalid request.
-
-`AltServer.ServerError`
-
-This means that AltServer received a request it did not understand. This may be because you are running an outdated AltServer version, so please make sure to update to the latest version.
-
-#### (2006) AltServer sent an invalid response.
-
-`AltServer.ServerError`
-
-This means that SideStore received a response from AltServer it did not understand. This may be because you are running an outdated SideStore version, so please make sure to update to the latest version.
-
-#### (2007) The app is invalid.
-
-`AltServer.ServerError`
-
-This means that the app your were attempting to install was found to be in an invalid format. If you continue to have issues, try downloading from alternate source.
-
-#### (2008) An error occurred while installing the app.
-
-`AltServer.ServerError`
-
-This means that iOS rejected the app you were attempting to install. Make sure to use a version compatible your iOS version.
-
-#### (2009) Cannot activate more than 3 apps with a non-developer Apple ID.
-
-`AltServer.ServerError`
-
-This means that you have reached the maximum amount of sideloaded apps you can have with a Free Developer Account. Apple limits the amount of sideloaded apps you can have with a free account, and to remove the limit you need to sign up for a Paid Developer account at [developer.apple.com](https://developer.apple.com).
-
-#### (2010) Your device must be running iOS 12.2 or later to install AltStore.
-
-`AltServer.ServerError`
-
-This means that you will need to update your phone to the minimum iOS version required before you can continue to use AltStore.
-
-#### (2011) AltServer does not support this request.
-
-`AltServer.ServerError`
-
-This means that AltServer received a request it did not recognize. You may be running an outdated AltServer version, so be sure to update.
-
-#### (2012) Received an unknown response from AltServer.
-
-`AltServer.ServerError`
-
-This means that AltStore received a response from AltServer it did not recognize. You may be running an outdated AltStore version, so be sure to update.
-
-#### (2013) The provided anisette data is invalid.
-
-`AltServer.ServerError`
-
-This means that the Apple ID information AltStore used to try to sign in was invalid because of an unknown issue. Make sure you are using the latest version of iCloud if you are on Windows and that your date/time are accurate.
-
-#### (2014) AltServer could not connect to Mail plug-in. (macOS)
-
-`AltServer.ServerError`
-
-This means that AltServer could not find the Mail plug-in either because it is not enable or you are not running the Mail app on your Mac. Make sure the Mail app is running on your Mac and that the plug-in is enabled.
-
-#### (2015) Could not find provisioning profile.
-
-`AltServer.ServerError`
-
-This means that the provisioning profile needed to install this app could not be located. This is most likely a problem with AltStore itself, so please message support or to our Patreon inbox.
-
-#### (2016) An error occurred while removing the app.
-
-`AltServer.ServerError`
-
-This means that there was an issue while removing an app. There are a number of different issues so make sure to check your error log for a more specific message on your issue.
-
-#### (2100) The Requested app is not currently running on the device.
-
-`AltServer.ServerError`
-
-This means that you tried to enable JIT without the requested app running in the foreground. Make sure to launch the app and have it running before you enable JIT.
-
-#### (2101) The disk is incompatible with \[iOS version].
-
-`AltServer.ServerError`
-
-This means that the developer disk required to enable JIT is not compatible with your device's OS version. Make sure you're running the latest version of AltStore and AltServer, and try again later.
-
-## Apple Developer Errors
+## Apple开发者相关错误
 
 #### (3000) An unknown error occurred.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon
+新信息即将发布。
 
 #### (3001) The provided parameters are invalid.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon
+新信息即将发布。
 
 #### (3002) Incorrect Apple ID or password.
 
 `AltStore.AppleDeveloperError`
 
-This means that the Apple ID credentials you used were invalid. Make sure the username and password are correct.
+这意味着您使用的Apple ID凭据无效。请确保用户名和密码正确无误。
 
-If you still have issues, you can also try creating a new Apple ID to use with SideStore.
+若问题仍未解决，您也可尝试创建新的Apple ID用于SideStore。
 
 #### (3003) An app-specific password is required. You can create one at appleid.apple.com.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+新信息即将发布。
 
 #### (3004) You are not a member of any development teams.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+新信息即将发布。
 
 #### (3005) This device's UDID is invalid.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+新信息即将发布。
 
 #### (3006) This device is already registered with another ID.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+新信息即将发布。
 
 #### (3007) The certificate request is invalid.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+新信息即将发布。
 
 #### (3008) There is no certificate with the requested serial number for this team.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+新信息即将发布。
 
 #### (3009) The name for this app is invalid.
 
 `AltStore.AppleDeveloperError`
 
-SideStore couldn’t register an App ID with Apple because the app name contains non-ASCII characters. You can try downloading from another source.
+SideStore 无法向 Apple 注册应用程序 ID，因为应用名称包含非 ASCII 字符。您可以尝试从其他来源下载。
 
 #### (3010) The bundle identifier for this app is invalid.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+新信息即将发布。
 
 #### (3011) The bundle identifier for this app has already been registered.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+新信息即将发布。
 
 #### (3012) There is no App ID with the requested identifier on this team.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+新信息即将发布。
 
 #### (3013) You may only register 10 App IDs every 7 days.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+新信息即将发布。
 
 #### (3014) The provided app group is invalid.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+新信息即将发布。
 
 #### (3015) App group does not exist.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+新信息即将发布。
 
 #### (3016) The identifier for the requested provisioning profile is invalid.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+新信息即将发布。
 
 #### (3017) There is no provisioning profile with the requested identifier on this team.
 
 `AltStore.AppleDeveloperError`
 
-If you are seeing this error, it's likely due to a recent server-side change made by Apple. Please see the following announcement with more info: [https://twitter.com/altstoreio/status/1638599316762664974?s=20](https://twitter.com/altstoreio/status/1638599316762664974?s=20)
+若您看到此错误提示，很可能是由于苹果公司近期在服务器端进行的变更所致。更多详情请参阅以下公告：[Twitter](https://twitter.com/altstoreio/status/1638599316762664974?s=20)
 
 #### (3018) This account requires signing in with two-factor authentication.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+新信息即将发布。
 
 #### (3019) Incorrect verification code.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+新信息即将发布。
 
 #### (3020) Failed to perform authentication handshake with server.
 
 `AltStore.AppleDeveloperError`
 
-Updated information coming soon.
+新信息即将发布。
 
 #### (3021) The provided anisette data is invalid.
 
 `AltStore.AppleDeveloperError`
 
-This error means that the information used to authenticate your AppleID information either expired or invalid. Make sure your computer date and time are accurate and that you’ve installed iTunes and iCloud from Apple.
+此错误表示用于验证您的AppleID信息的数据已过期或无效。请确保您的计算机日期和时间设置准确无误，并已从Apple官方渠道安装iTunes和iCloud。
 
-#### Apple API Error
+#### Apple API相关错误
 
 #### (1100) Your session has expired.
 
 `Apple.APIError`
 
-This error means that the information used to authenticate your Apple ID is either expired or invalid. Make sure your computer's date and time are accurate and try again.
+此错误表示用于验证您的 Apple ID 的信息已过期或无效。请确保计算机的日期和时间设置准确无误，然后重试。
 
 #### (1102) Apple ID cannot be used for development.
 
 `Apple.APIError`
 
-You may need to agree to Apple’s Terms of Service on [developer.apple.com](https://developer.apple.com). If that doesn’t work, you can create a new “throwaway” Apple ID dedicated to sideloading.
+您可能需要在[developer.apple.com](https://developer.apple.com)上同意苹果的服务条款。如果此方法无效，您可以创建一个专用于侧载的新“一次性”Apple ID。
 
 #### (-20101) Your account information was entered incorrectly.
 
 `Apple.APIError`
 
-This error means that the username or password used to authenticate your Apple ID is either expired or invalid. Make sure you've entered them both in correctly and that your computer's date and time are accurate.
+此错误表示用于验证 Apple ID 的用户名或密码已过期或无效。请确保您已正确输入两者，并确认计算机的日期和时间设置准确无误。
 
-#### Connection Errors
-
-#### (0) Error Unknown.
-
-`AltServer.ConnectionError`
-
-This means that AltServer ran into an unknown error. We recommend reaching out to our support channels if the issue persists.
-
-#### (1) Device Locked.
-
-`AltServer.ConnectionError`
-
-This means that you will need to unlock your device before AltServer can connect.
-
-#### (2) Invalid Request.
-
-`AltServer.ConnectionError`
-
-Updated information coming soon
-
-#### (3) Invalid Response.
-
-`AltServer.ConnectionError`
-
-Updated information coming soon
-
-#### (4) Usbmuxd.
-
-`AltServer.ConnectionError`
-
-Updated information coming soon
-
-#### (5) SSL Error.
-
-`AltServer.ConnectionError`
-
-Updated information coming soon
-
-#### (6) Timed Out.
-
-`AltServer.ConnectionError`
-
-Updated information coming soon
-
-## Windows Errors
-
-#### (1100) Your session has expired. Please log in.
-
-`NSURLErrorDomain`
-
-1. Make sure iTunes is closed.
-2. Go to Program Data -> Apple Computer -> iTunes -> ADI -> delete the files
-3. Start iTunes
-4. Retry installing SideStore
-
-## Other Errors
+## 其他错误
 
 #### (512) Failed to write to disk
 
 `NSCocoaErrorDomain`
 
-This means that an error occurred while writing files to disk. Make sure your phone and PC both have plenty of available disk space and try again.
+这意味着将文件写入磁盘时发生了错误。请确保您的手机和电脑都有足够的可用磁盘空间，然后重试。
 
+#### ldid相关错误
+
+`ldid.cpp(X): X`
+
+请按照以下步骤修复此错误：
+
+1. 首先，您需要安装 Feather。
+2. 随后，将存在问题的 IPA 文件导入 Feather 应用，同时导入任意 .mobileprovision 和 .p12 文件（这些文件可以是过期的，因为我们仅利用该应用重新分配 IPA 文件的头部信息）。
+3. 使用导入的证书对 IPA 文件进行签名。
+4. 在文件管理器中打开签名后的应用，重新打包为IPA格式。
+5. 将打包后的IPA安装至AltStore。
+
+### (-1011) NSURLErrorDomain
+
+访问 https://developer.apple.com/，登录并接受新的 Apple 开发者服务条款。

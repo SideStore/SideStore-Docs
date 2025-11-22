@@ -11,29 +11,33 @@ description: 在使用SideStore的过程中出现的常见问题
 
 ## SideStore的常见问题
 
+### 我收到错误代码："X"
+#### 解决方案
+确认我们提供的[错误代码列表](error-codes)！
+
 ### AFC连接失败
 #### 原因
 连接问题或是配对文件不可用。
 #### 解决方案
-1. 尝试重新连接
-2. 使用idevice pair生成并导入新的配对文件。详情请参考[配对文件操作指引](../installation/pairing-file)
+1. 尝试重新连接，确保Wi-Fi和StosVPN均已连接
+2. 使用iloader生成并导入新的配对文件
 
 ### 没有Wi-Fi或VPN的连接
 #### 原因
 minimuxer服务的连接出现了问题。
 #### 解决方案
 1. 如果您正在使用WireGuard，请更换到StosVPN
-2. 关闭任何的DNS阻止服务器
+2. 关闭任何的DNS阻止器
 3. 再试一次（多点点总会有用的）
 4. 重新启动SideStore
 5. 重新启动StosVPN
-6. 使用idevice pair生成并导入新的配对文件。详情请参考[配对文件操作指引](../installation/pairing-file)
+6. 使用iloader生成并导入新的配对文件。
 
 ### SideStore在安装过程中挂起
 #### 原因
 缓存或是协议出了问题。
 #### 解决方案
-1. 如果您并未更新SideStore的话，请更新SideStore，否则只需重启。
+1. 如果您并未更新SideStore的话，请进行更新，否则重启
 2. 清理缓存
 3. 更换Anisette服务器
 4. 在设置-Anisette服务器-中重置adi.pb，然后登出，并重新登录SideStore
@@ -44,7 +48,7 @@ minimuxer服务的连接出现了问题。
 ### 无法启动SideStore
 #### 原因
 存在多种可能的原因。
-#### Resolution
+#### 解决方案
 1. 确保您已通过AltServer安装了SideStore
 2. 重新安装SideStore
 
@@ -56,3 +60,5 @@ minimuxer服务的连接出现了问题。
 4. 将`sidestore.ipa`安装到您的设备上
 5. 将`sidestore.ipa`文件导入到SideStore，就像您安装其他IPA文件一样
 6. 这会允许Sidestore进行一次全新的安装，希望这会解决您的问题
+
+

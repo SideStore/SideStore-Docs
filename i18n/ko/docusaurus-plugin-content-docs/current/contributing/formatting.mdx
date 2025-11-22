@@ -1,0 +1,491 @@
+---
+sidebar_position: 2
+---
+
+# 코드 포매팅 가이드라인
+
+이 문서는 SideStore 프로젝트에서 Swift와 Objective-C 코드를 포맷팅하는 기준을 정리했어요. 일관된 포맷팅은 코드베이스를 더 읽기 쉽고 관리하기 편하게 만들어 줘요.
+
+## 일반 원칙
+
+- **일관성**: 프로젝트에서 이미 사용 중인 스타일을 따라 주세요.
+- **가독성**: 코드는 쉽게 읽히고 이해돼야 해요.
+- **단순함**: 복잡한 해결책보다 단순하고 명확한 방식을 선호해 주세요.
+- **Apple 관례**: 가능하면 Apple이 권장하는 Swift/Objective-C 관례를 따라 주세요.
+
+## Swift 포매팅
+
+### 네이밍 규칙
+
+#### 변수와 함수
+- 변수, 함수, 메서드에는 **camelCase**를 사용해 주세요.
+- 목적이 명확히 드러나도록 설명적인 이름을 붙여 주세요.
+
+```swift
+// ✅ 좋아요
+let downloadProgress: Float
+func validateUserCredentials() -> Bool
+var isAppInstalling: Bool
+
+// ❌ 나빠요
+let dp: Float
+func validate() -> Bool
+var installing: Bool
+```
+
+#### 클래스, 구조체, 열거형, 프로토콜
+- 타입 이름에는 **PascalCase**를 사용해 주세요.
+- 명사 기반의 설명적인 이름을 붙여 주세요.
+
+```swift
+// ✅ 좋아요
+class AppInstaller
+struct InstallationProgress
+enum AppState
+protocol AppManaging
+
+// ❌ 나빠요
+class installer
+struct progress
+enum state
+protocol managing
+```
+
+#### 상수
+- 상수에도 **camelCase**를 사용해 주세요.
+- 전역 상수라면 **SCREAMING_SNAKE_CASE**를 고려해 주세요.
+
+```swift
+// ✅ 좋아요
+let maxRetryAttempts = 3
+private let defaultTimeout: TimeInterval = 30.0
+
+// Global constants
+let MAX_CONCURRENT_DOWNLOADS = 5
+
+// ❌ 나빠요
+let MaxRetryAttempts = 3
+let max_retry_attempts = 3
+```
+
+### 들여쓰기와 공백
+
+#### 들여쓰기
+- 들여쓰기는 **스페이스 4개**예요. 탭은 사용하지 말아 주세요.
+- 줄바꿈한 인자는 여는 구분자와 맞춰 주세요.
+
+```swift
+// ✅ 좋아요
+func installApp(withIdentifier identifier: String,
+                sourceURL: URL,
+                completion: @escaping (Result<Void, Error>) -> Void) {
+    // Implementation
+}
+
+// ❌ 나빠요
+func installApp(withIdentifier identifier: String,
+sourceURL: URL,
+completion: @escaping (Result<Void, Error>) -> Void) {
+// Implementation
+}
+```
+
+#### 줄 길이
+- 가능한 한 줄 길이를 **120자 이하**로 유지해 주세요.
+- 길어지면 의미 단위에서 줄바꿈해 주세요.
+
+```swift
+// ✅ 좋아요
+let longVariableName = SomeClass.createInstanceWithVeryLongMethodName(
+    parameter1: value1,
+    parameter2: value2
+)
+
+// ❌ 나빠요
+let longVariableName = SomeClass.createInstanceWithVeryLongMethodName(parameter1: value1, parameter2: value2, parameter3: value3)
+```
+
+#### 공백
+- 연산자 주변에는 공백 한 칸을 넣어 주세요.
+- 줄 끝 공백은 남기지 말아 주세요.
+- 함수나 큰 코드 블록 사이에는 빈 줄 한 줄을 넣어 주세요.
+
+```swift
+// ✅ 좋아요
+let result = value1 + value2
+if condition && anotherCondition {
+    // Code
+}
+
+func firstFunction() {
+    // Implementation
+}
+
+func secondFunction() {
+    // Implementation
+}
+
+// ❌ 나빠요
+let result=value1+value2
+if condition&&anotherCondition{
+    // Code
+}
+func firstFunction(){
+    // Implementation
+}
+func secondFunction(){
+    // Implementation
+}
+```
+
+### 중괄호와 제어 흐름
+
+#### 중괄호 스타일
+- 여는 중괄호는 구문과 같은 줄에 둬 주세요.
+- 닫는 중괄호는 별도 줄에 두고 구문과 맞춰 주세요.
+
+```swift
+// ✅ 좋아요
+if condition {
+    doSomething()
+} else {
+    doSomethingElse()
+}
+
+class MyClass {
+    func myMethod() {
+        // Implementation
+    }
+}
+
+// ❌ 나빠요
+if condition
+{
+    doSomething()
+}
+else
+{
+    doSomethingElse()
+}
+```
+
+#### Guard 구문
+- 조기 반환이 필요하면 guard를 사용해 주세요.
+- 조건은 간결하고 읽기 쉽게 유지해 주세요.
+
+```swift
+// ✅ 좋아요
+guard let url = URL(string: urlString) else {
+    completion(.failure(ValidationError.invalidURL))
+    return
+}
+
+guard !apps.isEmpty else {
+    return
+}
+
+// ❌ 나빠요
+if let url = URL(string: urlString) {
+    // Long nested code block
+} else {
+    completion(.failure(ValidationError.invalidURL))
+    return
+}
+```
+
+### 타입 표기와 추론
+
+#### 타입 표기 사용 시점
+- 타입이 명확하지 않을 때는 타입을 명시해 주세요.
+- Swift가 분명히 추론할 수 있을 때는 생략해 주세요.
+
+```swift
+// ✅ 좋아요
+let name = "SideStore"  // Type is obvious
+let timeout: TimeInterval = 30  // Type clarifies intent
+var apps: [App] = []  // Empty array needs type annotation
+
+// ❌ 나빠요
+let name: String = "SideStore"  // Redundant type annotation
+let timeout = 30  // Unclear if Int or TimeInterval
+```
+
+### 함수 선언
+
+#### 파라미터 라벨
+- 설명적인 라벨을 사용해 주세요.
+- 문장이 자연스럽게 읽힌다면 첫 번째 라벨을 생략해 주세요.
+
+```swift
+// ✅ 좋아요
+func install(_ app: App, to device: Device)
+func download(from url: URL, completion: @escaping (Data?) -> Void)
+
+// ❌ 나빠요
+func install(app: App, device: Device)
+func download(url: URL, completion: @escaping (Data?) -> Void)
+```
+
+#### 반환 타입
+- 가능하면 반환 타입을 같은 줄에 둬 주세요.
+- 시그니처가 길다면 새 줄에서 정리해 주세요.
+
+```swift
+// ✅ 좋아요
+func processData() -> Result<ProcessedData, ProcessingError>
+
+func complexFunction(withManyParameters param1: String,
+                    param2: Int,
+                    param3: Bool) 
+    -> Result<ComplexReturnType, ComplexErrorType> {
+    // Implementation
+}
+```
+
+## Objective-C 포매팅
+
+### 네이밍 규칙
+
+#### 메서드
+- 파라미터 라벨이 명확한 설명형 이름을 사용해 주세요.
+- 소문자로 시작하고 camelCase를 사용해 주세요.
+
+```objc
+// ✅ 좋습니다
+- (void)installAppWithIdentifier:(NSString *)identifier 
+                       sourceURL:(NSURL *)sourceURL 
+                      completion:(void (^)(NSError *error))completion;
+
+// ❌ 나빠요
+- (void)install:(NSString *)id url:(NSURL *)url completion:(void (^)(NSError *))completion;
+```
+
+#### 변수와 프로퍼티
+- camelCase를 사용해 주세요.
+- 설명적인 이름을 붙여 주세요.
+- 인스턴스 변수에는 밑줄을 접두사로 붙여 주세요.
+
+```objc
+// ✅ 좋아요
+@interface AppManager : NSObject
+@property (nonatomic, strong) NSArray<App *> *installedApps;
+@property (nonatomic, assign) BOOL isInstalling;
+@end
+
+@implementation AppManager {
+    NSURLSession *_networkSession;
+    dispatch_queue_t _processingQueue;
+}
+```
+
+#### 클래스와 프로토콜
+- PascalCase를 사용해 주세요.
+- 공개 클래스라면 `SS` 같은 접두사를 붙이는 걸 고려해 주세요.
+
+```objc
+// ✅ 좋아요
+@interface SSAppInstaller : NSObject
+@protocol SSAppManaging <NSObject>
+
+// ❌ 나빠요
+@interface appInstaller : NSObject
+@protocol appManaging <NSObject>
+```
+
+### 공백과 포매팅
+
+#### 메서드 선언
+- 파라미터를 세로로 정렬해 주세요.
+- 일관된 공백을 유지해 주세요.
+
+```objc
+// ✅ 좋아요
+- (instancetype)initWithIdentifier:(NSString *)identifier
+                             title:(NSString *)title
+                           version:(NSString *)version;
+
+// ❌ 싫어요
+- (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title version:(NSString *)version;
+```
+
+#### 중괄호
+- 여는 중괄호를 같은 줄에 둬 주세요.
+- 닫는 중괄호는 별도 줄에 둬 주세요.
+
+```objc
+// ✅ 좋아요요
+if (condition) {
+    [self doSomething];
+} else {
+    [self doSomethingElse];
+}
+
+// ❌ 나빠요
+if (condition)
+{
+    [self doSomething];
+}
+else
+{
+    [self doSomethingElse];
+}
+```
+
+## 주석과 문서화
+
+### Swift 문서 주석
+- 문서 주석에는 `///`를 사용해 주세요.
+- 공개 API라면 파라미터와 반환 값을 설명해 주세요.
+
+```swift
+/// Downloads and installs an app from the specified URL
+/// - Parameters:
+///   - identifier: The unique identifier for the app
+///   - sourceURL: The URL to download the app from
+///   - completion: Called when installation completes or fails
+/// - Returns: A cancellable operation
+func installApp(withIdentifier identifier: String,
+                sourceURL: URL,
+                completion: @escaping (Result<Void, Error>) -> Void) -> Operation {
+    // Implementation
+}
+```
+
+### Objective-C 문서 주석
+- `/** */`를 사용해 주세요.
+- HeaderDoc이나 Doxygen 관례를 따라 주세요.
+
+```objc
+/**
+ * Downloads and installs an app from the specified URL
+ * @param identifier The unique identifier for the app
+ * @param sourceURL The URL to download the app from
+ * @param completion Block called when installation completes or fails
+ */
+- (void)installAppWithIdentifier:(NSString *)identifier
+                       sourceURL:(NSURL *)sourceURL
+                      completion:(void (^)(NSError *error))completion;
+```
+
+### 인라인 주석
+- 한 줄 주석에는 `//`를 사용해 주세요.
+- 간결하고 필요한 내용만 적어 주세요.
+- 무엇인지보다는 왜 그런지 설명해 주세요.
+
+```swift
+// ✅ 좋아요
+// Retry failed downloads up to 3 times to handle temporary network issues
+let maxRetryAttempts = 3
+
+// ❌ 나빠요
+// Set maxRetryAttempts to 3
+let maxRetryAttempts = 3
+```
+
+## 오류 처리
+
+### Swift 오류 처리
+- Swift의 `throws`와 `Result`를 활용해 주세요.
+- 의미 있는 오류 타입을 만들어 주세요.
+
+```swift
+enum InstallationError: Error {
+    case invalidURL
+    case networkFailure(Error)
+    case insufficientStorage
+    case deviceNotSupported
+}
+
+func installApp() throws -> App {
+    guard let url = URL(string: urlString) else {
+        throw InstallationError.invalidURL
+    }
+    // Implementation
+}
+```
+
+### Objective-C 오류 처리
+- `NSError **` 패턴을 사용해 주세요.
+- 값을 설정하기 전에 포인터가 nil이 아닌지 확인해 주세요.
+
+```objc
+- (BOOL)installAppWithError:(NSError **)error {
+    if (someCondition) {
+        if (error) {
+            *error = [NSError errorWithDomain:SSErrorDomain 
+                                         code:SSErrorCodeInvalidInput 
+                                     userInfo:nil];
+        }
+        return NO;
+    }
+    return YES;
+}
+```
+
+## 모범 사례
+
+### 메모리 관리
+- Swift와 Objective-C 모두 ARC를 올바르게 활용해 주세요.
+- 순환 참조에 주의하고 `weak`, `unowned`를 적절히 사용해 주세요.
+
+```swift
+// ✅ 좋습니다
+class AppInstaller {
+    weak var delegate: AppInstallerDelegate?
+    
+    private lazy var networkManager: NetworkManager = {
+        let manager = NetworkManager()
+        manager.delegate = self  // Self is strong reference, but manager doesn't retain self
+        return manager
+    }()
+}
+```
+
+### 스레딩
+- UI 업데이트는 항상 메인 큐에서 해 주세요.
+- 백그라운드 작업에는 알맞은 큐를 사용해 주세요.
+
+```swift
+// ✅ 좋아요
+DispatchQueue.global(qos: .userInitiated).async {
+    let result = self.processData()
+    DispatchQueue.main.async {
+        self.updateUI(with: result)
+    }
+}
+```
+
+### 옵셔널 처리
+- 안전한 언래핑 기법을 사용해 주세요.
+- 조기 반환이 필요하면 guard를 선호해 주세요.
+
+```swift
+// ✅ 좋아요
+guard let data = response.data,
+      let apps = try? JSONDecoder().decode([App].self, from: data) else {
+    completion(.failure(ParsingError.invalidResponse))
+    return
+}
+```
+
+## 도구와 자동화
+
+### SwiftLint
+SwiftLint를 사용하면 많은 포매팅 규칙을 자동으로 강제할 수 있어요.
+
+```yaml
+# .swiftlint.yml
+line_length: 120
+function_body_length: 60
+file_length: 400
+type_body_length: 300
+
+disabled_rules:
+  - trailing_whitespace
+  
+opt_in_rules:
+  - empty_count
+  - force_unwrapping
+```
+
+기억해 주세요. 이 가이드는 코드의 가독성과 유지 보수성을 높이기 위한 거예요. 헷갈릴 때는 명확성과 기존 코드베이스와의 일관성을 최우선으로 해 주세요.
