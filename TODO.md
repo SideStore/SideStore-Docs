@@ -5,10 +5,10 @@
 iloader translation:
 - [X] EN
 - [ ] ES
-- [X] FR
-- [X] DE
+- [ ] FR (partial)
+- [ ] DE (partial)
 - [X] IT
-- [ ] NL (in progress)
+- [ ] NL (partial)
 - [X] ZH
 - [ ] JA
 - [ ] RU
