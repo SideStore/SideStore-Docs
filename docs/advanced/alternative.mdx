@@ -50,6 +50,22 @@ Then for each other device:
 1. Import new certificate
 2. Sideload SideStore ipa from SideStore
 
+## VPN
+### WireGuard
+:::note
+The SideStore VPN **only works on SideStore versions between 0.3.1-0.6.1, and 0.6.3-nightly.4e6756d on**, and is not recommended if you have an alternative avaliable such as StosVPN or Stikdebug. If you are not on these versions and it doesn't work, **please do not ask for support with this**. 
+:::
+
+SideStore utilizes an on-device WireGuard VPN which allows SideStore to communicate with internal services.
+
+1. Download the WireGuard app from the [Official App Store](https://apps.apple.com/us/app/wireguard/id1441195209).
+2. Also, download the WireGuard config found [here](https://github.com/SideStore/SideStore/releases/download/0.3.1/SideStore.conf).
+3. Open WireGuard, and press the 'Add a Tunnel' or '+' button.
+4. Select 'Create from file or archive', and choose the SideStore.conf file.
+5. Your device may ask if you want to 'Allow VPN Configurations', choose 'Allow' and authenticate.
+6. Toggle on the SideStore VPN option.
+
+This VPN is required to be on any time you use SideStore, as most functions will not work without it.
 
 ## Pairing
 ### idevice_pair
@@ -143,9 +159,7 @@ These instructions expect that you are familiar with the linux commandline.
 ## SideStore exploits
 ### SparseRestore (3-app limit)
 :::note
-
-The SparseRestore "Bypass 3 app limit" exploit **only works on iOS/iPadOS versions between 17.0 and 18.1 beta 4 (not including 17.7.1)**. If you are not on these versions and it doesn't work, **please do not ask for support on this**. 
-
+The SparseRestore "Bypass 3 app limit" exploit **only works on iOS/iPadOS versions between 17.0 and 18.1 beta 4 (not including 17.7.1)**. If you are not on these versions and it doesn't work, **please do not ask for support with this**. 
 :::
 
 #### Prerequisites
@@ -179,6 +193,9 @@ Due to certain limitations, this exploit must be done for every 3 additional app
 If you want/need Find My for other purposes, you can now turn it back on. However, if you want to install or refresh more apps, you will need to turn it off again.
 
 ### MacDirtyCow (3-app limit)
+:::note
+The MacDirtyCow "Bypass 3 app limit" exploit **only works on iOS/iPadOS versions between 15.0 and 16.1.2**. If you are not on these versions and it doesn't work, **please do not ask for support with this**. 
+:::
 [MDC-Compatible IPA](https://cdn.discordapp.com/attachments/949183273827983370/1074037820328521829/SideStore_MDC_14.ipa)
 
-The MDC version of SideStore above (bypass 3-app limit) is only compatible with iOS 15.0-16.1.2, and is very outdated, and so you may experience issues. If you want to have this feature, we reccomend you join our Discord and go to the [sidestore-downloads](https://discord.com/channels/949183273383395328/1126118099930861638) channel, which will contain MDC compatible SideStore builds. Then, [seperately install WDBRemoveThreeAppLimit with SideStore](https://github.com/zhuowei/WDBRemoveThreeAppLimit/releases/tag/v1.0) to apply the patch.
+If you want to have this feature, we reccomend you join our Discord and go to the [sidestore-downloads](https://discord.com/channels/949183273383395328/1126118099930861638) channel, which will contain MDC compatible SideStore builds. Then, [seperately install WDBRemoveThreeAppLimit with SideStore](https://github.com/zhuowei/WDBRemoveThreeAppLimit/releases/tag/v1.0) to apply the patch.
