@@ -10,11 +10,15 @@ Questa è una lista di domande frequenti su SideStore. Contiene una serie di dom
 
 ## Cos'è SideStore?
 
-SideStore è un'app di iOS che ti permette di eseguire il sideload delle app sul tuo dispositivo iOS utilizzando solo il tuo Apple ID. SideStore rifirma le app con il tuo certificato sviluppatore personale, poi usa una [VPN realizzata ad-hoc](https://github.com/jkcoxson/em_proxy) per ingannare iOS e installare le app. SideStore eseguirà il "refresh" periodico delle app in background, affinché non scadano ogni 7 giorni.
+SideStore è un'app di iOS che ti permette di eseguire il sideload delle app sul tuo dispositivo iOS utilizzando solo il tuo Apple ID. SideStore rifirma le app con il tuo certificato sviluppatore personale, poi usa una [VPN realizzata ad-hoc](https://apps.apple.com/us/app/stosvpn/id6744003051) per ingannare iOS e installare le app. SideStore eseguirà il "refresh" periodico delle app in background, affinché non scadano ogni 7 giorni.
 
 L'obbiettivo di SideStore è quello di fornire un'esperienza di sideload untethered. È un fork di [AltStore](https://github.com/rileytestut/AltStore) guidato dalla community e ha già implementato diverse feature molto richieste. Ti servirà un computer solo durante l'installazione.
 
 (I contributi sono ben accetti! 🙂)
+
+### Che limitazioni ha SideStore?
+
+Se stai usando un Account Apple gratuito, SideStore può installare solo 3 app (incluso se stesso) alla volta. Inoltre, possono essere installate solo 10 app diverse alla settimana.
 
 ### Posso attivare JIT?
 
@@ -52,9 +56,9 @@ Normalmente no, in quanto è una limitazione di iOS e dell'account sviluppatore.
 
 Per rimuovere questa restrizione (e avere una scadenza di 365 giorni), puoi pagare €99/anno per un account Apple Sviluppatore.
 
-In alternativa, sulle versioni di iOS 18 db5/18.0.1 e inferiori, puoi utilizzare l'exploit di SparseRestore per bypassare il limite di 3 app.
+In alternativa, puoi usare LiveContainer, oppure sulle versioni di iOS 18 db5/18.0.1 e inferiori, puoi utilizzare l'exploit di SparseRestore per bypassare il limite di 3 app (non bypassa il limite di 10 app-id).
 
-Puoi trovare la guida [qui](advanced/sparserestore).
+Puoi trovare la guida [qui](/docs/advanced/alternative).
 
 ### Ho un problema o un bug o una richiesta per una funzionalità
 
@@ -62,13 +66,13 @@ Apri una issue sulla nostra pagina GitHub per reportare un bug o richiedere una 
 
 ### Sono uno sviluppatore, in che modo mi riguarda?
 
-Non ti riguarda direttamente, se non forse per un aggiornamento di AltKit quando/se faremo le nostre aggiunte.
+Le tue app non dovrebbero necessitare di modifiche per funzionare con SideStore!
 
 ### Devo installare AltStore per installare SideStore?
 
-No, puoi eseguire il sideload di SideStore direttamente seguendo le nostre guide per [Windows](/docs/installation/windows), [macOS](/docs/installation/mac) e [Linux](/docs/installation/linux) dato che funziona come AltStore nel processo di firma.
+No, puoi eseguire il sideload di SideStore seguendo le nostre guide!
 
-### Come utente, sto avendo problemi a fare il login su SideStore. Ho un errore
+### Come utente, sto avendo problemi a fare il login su SideStore. Ho un errore.
 
 Ci sono diverse motivazioni, la più comune è un downtime temporaneo del server Anisette. Puoi cambiare il server Anisette nelle impostazioni di SideStore in "URL Anisette".
 
@@ -84,7 +88,7 @@ Questo era un aggiornamento di test per vedere se ci fossero problemi tra versio
 
 ### Perché le mie app JIT non attivano automaticamente JIT?
 
-Non abbiamo al momento un metodo di attivazione automatico del JIT, e se lo avessimo sarebbe necessario avere attiva StosVPN.
+Non abbiamo al momento un metodo di attivazione automatico del JIT, e se lo avessimo sarebbe necessario avere attiva StosVPN. In alternativa puoi usare StikDebug.
 
 ### SideStore ha un UI per iPadOS?
 
@@ -97,10 +101,6 @@ Questi Mac non sono veri, sono generati automaticamente dal server Anisette per 
 ### Perché il mio account viene bloccato quando uso SideStore?
 
 I vecchi server Anisette che vengono usati da tanti utenti sono soliti causare il blocco degli Apple ID. Usa uno dei server Anisette ufficiali, o hosta tu stesso un [anisette-v3-server](advanced/anisette).
-
-### Perché ho l'errore -36607?
-
-È un problema di login con il server Anisette. Non c'è molto da fare se non provare a cambiare server Anisette o continuare a provare ad accedere finché funziona.
 
 ### Posso trasferire le mie app di AltStore/Sideloadly?
 
@@ -118,13 +118,9 @@ Certo! Clicca sul bottone "Aggiorna" quando compare!
 
 Puoi fare il sideload di una versione nightly di SideStore tramite SideStore o AltServer e i dati dovrebbero rimanere, o abilita gli aggiornamenti beta e seleziona "nightly" nelle Impostazioni. Non possiamo garantirti che i dati rimangano quando provi una versione non ufficiale o nightly.
 
-### Le mie app sono scomparse e non so cosa fare
+### Le mie app sono scomparse da SideStore e non so cosa fare!
 
 Non andare nel panico! Ri-esegui il sideload delle app senza rimuoverle dal dispositivo e i dati dovrebbero essere salvi. Sfortunatamente è possibile che le app vadano perse, ma per esserne certo fai il refresh di SideStore per vedere se ricompaiono.
-
-### Non riesco a selezionare il pairing file con qualsiasi estensione
-
-Assicurati che l'estensione del file di pairing sia `.mobiledevicepairing` o `.plist`. Se non dovesse essere così, controlla se hai zippato il pairing file prima di averlo mandato sul tuo dispositivo. Altrimenti potrebbe essere che venga corrotto durante il trasferimento. Inoltre quando firmi SideStore con un certificato, non sarai in grado di selezionare il file di pairing dall'app. Puoi provare a spostare il file di pairing nella cartella di SideStore nell'app File e cambiare il nome in `ALTPairingFile.mobiledevicepairing`. Se non vedi la cartella SideStore nell'app File, connetti il dispositivo al computer e trascina il file di pairing nei file dell'app SideStore. Assicurati di cambiare il nome come scritto sopra. Nota che è case sensitive.
 
 ### Impossibile eseguire DebugServer
 
@@ -132,11 +128,10 @@ Ci sono delle volte in cui DebugServer non funziona. Ci sono delle possibili sol
 
 **Creare un nuovo file di pairing**
 
-Per iniziare il processo di utilizzo di un nuovo pairing file, vai nelle impostazioni e clicca "Resetta file di pairing", poi premi accetta. Successivamente segui le [Istruzioni del Pairing File](installation/pairing-file).
+[Reimporta il tuo pairing file utilizzando iloader](advanced/pairing-file).
 
 ### Problemi noti
 
 Se stai avendo problemi e vuoi sapere se ne siamo già al corrente, controlla la nostra pagina GitHub nella sezione issue che ha una lista di problemi noti ed eventuali soluzioni. Alcuni dei problemi presenti in questo elenco potrebbero essere noti, ma non sono riportati qui, bensì nella sezione dedicata alle issue su GitHub. https://github.com/SideStore/SideStore/issues/490
 
-Se hai problemi che non sono in questa lista, apri una issue su GitHub o [entra nel nostro Discord](https://discord.gg/sidestore-949183273383395328).
-
+Se hai problemi che non sono in questa lista, apri una issue su GitHub o [entra nel nostro Discord](https://dis.sidestore.io/).

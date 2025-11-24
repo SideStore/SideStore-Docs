@@ -1,11 +1,17 @@
 # Todo List for SideStore-Docs
 
-[ ] Fix error codes and troubleshooting
+- [ ] Error Codes and Troubleshooting cleanup
 
-[X] Add details in faq about 3 app limit
-
-[X] macOS Pairing File Instructions
-
-[X] Linux Pairing File Instructions
-
-[ ] SideJITServer Docs (start)
+iloader translation:
+- [X] EN
+- [ ] ES
+- [ ] FR (partial)
+- [ ] DE (partial)
+- [X] IT
+- [ ] NL (partial)
+- [X] ZH
+- [ ] JA
+- [ ] RU
+- [X] KO
+- [X] SV
+- [ ] VI

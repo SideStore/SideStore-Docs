@@ -5,7 +5,7 @@ description: Codici di errore presenti in SideStore.
 
 :::warning
 
-Questa pagina non è completamente accurata in base a come funziona SideStore, è basata sugli errori di AltStore. Qualche info è comunque corretta, ma non riporci troppa fiducia. Assicurati di chiedere nel nostro [Server Discord](https://discord.gg/sidestore-949183273383395328) se hai bisogno di aiuto.
+Questa pagina non è completamente accurata in base a come funziona SideStore, è basata sugli errori di AltStore. Qualche info è comunque corretta, ma non riporci troppa fiducia. Assicurati di chiedere nel nostro [Server Discord](https://dis.sidestore.io/) se hai bisogno di aiuto.
 
 :::
 
@@ -51,7 +51,7 @@ Significa che SideStore non è riuscito a trovare il file da scaricare o install
 
 `SideStore.OperationError 1006`
 
-Significa che SideStore non è riuscito a leggere l'UDID del dispositivo da AltServer mentre installava SideStore. Assicurati che hai installato SideStore con l'ultima versione di AltServer e non con altri metodi.
+Significa che il tuo pairing file è corrotto. [Importalo di nuovo con iloader](../advanced/pairing-file).
 
 #### (1007) This app is in an invalid format.
 
@@ -105,7 +105,7 @@ Il tuo device non è stato in grado di ricevere info da un server anisette V3. R
 
 `SideStore.OperationError 1414`
 
-Sembra che tu non sia connesso al Wi-Fi o a StosVPN. SideStore non può refreshare o installare app senza Wi-Fi e StosVPN, assicurati che entrambe siano abilitate. Se non funziona, prova a ricreare il pairing file.
+Sembra che tu non sia connesso al Wi-Fi o a StosVPN. SideStore non può refreshare o installare app senza Wi-Fi e StosVPN, assicurati che entrambe siano connesse. Se non funziona, [reimporta il pairing file con iloader](../advanced/pairing-file).
 
 ## Minimuxer Errors
 
@@ -119,148 +119,7 @@ Sembra che tu stia provando ad abilitare JIT su una versione iOS non supportata.
 
 `minimuxer.MinimuxerError 27`
 
-Significa che hai un pairing file invalido. Segui gli step in questa documentazione per crearlo di nuovo.
-
-Altre novità in arrivo, aperto a contributi...
-
-## AltServer / SideServer Errors
-
-#### (0) Exception Error
-
-`AltServer.ExceptionError`
-
-Questo errore può presentarsi per varie ragioni, sotto puoi trovarne alcune (non tutte).
-
-"vector too long"
-
-Significa che Windows Defender sta bloccando la tua richiesta. Potresti dover disattivare la Protezione in tempo reale su Windows per installare SideStore correttamente.
-
-#### (1999) Underlying Error
-
-`AltServer.ServerError`
-
-Significa che AltServer ha incontrato un errore sconosciuto. È consigliato scriverci tramite i nostri canali di supporto se il problema persiste.
-
-#### (2000) Unknown Error
-
-`AltServer.ServerError`
-
-Significa che AltServer ha incontrato un errore sconosciuto. È consigliato scriverci tramite i nostri canali di supporto se il problema persiste.
-
-#### (2001) Could not connect to AltServer. / There was an error connecting to the device.&#x20;
-
-`AltServer.ServerError`
-
-Significa che AltServer non riesce a connetterti al tuo dispositivo iOS. Prova a collegare direttamente il tuo dispositivo se non lo è già.
-
-Se hai ancora problemi, visita la [Guida per la risoluzione di problemi](./).
-
-#### (2002) Lost Connection to AltServer.
-
-`AltServer.ServerError`
-
-Significa che la connessione tra AltServer e il tuo dispositivo si è interrotta. Assicurati che il dispositivo e il pc siano sotto la stessa rete Wi-Fi e riprova.
-
-Se hai ancora problemi, visita la [Guida per la risoluzione di problemi](./).
-
-#### (2003) AltServer could not find this device.
-
-`AltServer.ServerError`
-
-Significa che AltServer non è riuscito a trovare il tuo device iOS tramite USB o Wi-Fi. Assicurati che il dispositivo e il computer siano sotto la stessa rete Wi-Fi e che il dispositivo sia autorizzato e riprova.
-
-Se hai ancora problemi, visita la [Guida per la risoluzione di problemi](./).
-
-#### (2004) Failed to write app data to device.
-
-`AltServer.ServerError`
-
-Significa che AltServer ha tentato di scrivere un file sul tuo device e non è riuscito. Assicurati che il dispositivo e il computer siano sotto la stessa rete Wi-Fi e che il dispositivo sia autorizzato e riprova.
-
-Se hai ancora problemi, visita la [Guida per la risoluzione di problemi](./).
-
-#### (2005) AltServer received an invalid request.
-
-`AltServer.ServerError`
-
-Significa che AltServer ha ricevuto una richiesta che non ha capito. Potrebbe essere causato da una versione vecchia di AltServer, quindi assicurati di aggiornarla all'ultima versione.
-
-#### (2006) AltServer sent an invalid response.
-
-`AltServer.ServerError`
-Significa che SideStore ha ricevuto una richiesta che non ha capito. Potrebbe essere causato da una versione vecchia di SideStore, quindi assicurati di aggiornarla all'ultima versione.
-
-#### (2007) The app is invalid.
-
-`AltServer.ServerError`
-
-Significa che l'app che stavi provando ad installare è in un formato sbagliato. Se continui ad avere problemi, prova a scaricarla da un'altra sorgente.
-
-#### (2008) An error occurred while installing the app.
-
-`AltServer.ServerError`
-
-Significa che iOS ha rifiutato l'app che stavi provando ad installare. Assicurati di usare una versione compatibile con la tua versione di iOS.
-
-#### (2009) Cannot activate more than 3 apps with a non-developer Apple ID.
-
-`AltServer.ServerError`
-
-Significa che hai raggiunto il massimo numero di app in sideload che puoi installare con un Account Sviluppatore Gratuito. Apple limita il numero di app in sideload che puoi avere con un account gratuito, per rimuovere questo limite devi acquistare un Account Sviluppatore a Pagamento su [developer.apple.com](https://developer.apple.com).
-
-#### (2010) Your device must be running iOS 12.2 or later to install AltStore.
-
-`AltServer.ServerError`
-
-Significa che devi aggiornare il tuo device alla versione iOS minima richiesta prima di usare AltStore.
-
-#### (2011) AltServer does not support this request.
-
-`AltServer.ServerError`
-
-Significa che AltServer ha ricevuto una richiesta che non ha riconosciuto. Potresti star eseguendo una versione vecchia di AltServer, aggiornala.
-
-#### (2012) Received an unknown response from AltServer.
-
-`AltServer.ServerError`
-
-Significa che AltStore ha ricevuto una risposta da AltServer che non ha riconosciuto. Potresti star eseguendo una versione vecchia di AltStore, aggiornala.
-
-#### (2013) The provided anisette data is invalid.
-
-`AltServer.ServerError`
-
-Significa che le info dell'Apple ID usato per accedere non sono valide a causa di un errore sconosciuto. Assicurati di star eseguendo l'ultima versione di iCloud se sei su Windows e che la data e l'ora siano corrette.
-
-#### (2014) AltServer could not connect to Mail plug-in. (macOS)
-
-`AltServer.ServerError`
-
-Significa che AltServer non ha trovato il plugin Mail o perché non è attivo o perché l'app Mail non è aperta sul Mac. Assicurati che l'app Mail sia aperta e che il plugin sia abilitato.
-
-#### (2015) Could not find provisioning profile.
-
-`AltServer.ServerError`
-
-Significa che il profilo provisioning necessario per installare quest'app non è stato trovato. Questo è un errore dovuto ad AltStore stesso, quindi contatta il supporto.
-
-#### (2016) An error occurred while removing the app.
-
-`AltServer.ServerError`
-
-Significa che c'è stato un problema durante la rimozione dell'app. Ci sono diverse cause possibili quindi assicurati di controllare i log di errore per avere più info sul problema.
-
-#### (2100) The Requested app is not currently running on the device.
-
-`AltServer.ServerError`
-
-Significa che hai provato ad attivare JIT senza che l'app richiesta fosse in esecuzione in foreground. Assicurati di eseguire l'app e di aprirla prima di attivare JIT.
-
-#### (2101) The disk is incompatible with \[iOS version].
-
-`AltServer.ServerError`
-
-Significa che la developer disk richiesta per abilitare JIT non è compatibile con la versione del tuo dispositivo. Assicurati di star eseguendo l'ultima versione di AltStore e AltServer e riprova.
+Assicurati che Wi-Fi e StosVPN siano connesse. Se l'errore persiste, [reimporta il pairing file con iloader](../advanced/pairing-file).
 
 ## Apple Developer Errors
 
@@ -417,60 +276,6 @@ Potresti dover accettare i Termini e le Condizioni di Apple su [developer.apple.
 `Apple.APIError`
 
 Solitamente significa che l'username o la password dell'Apple ID usato per autenticarsi sono scaduti o invalidi. Assicurati di inserirli correttamente e che la data e l'ora del tuo computer siano corrette.
-
-#### Connection Errors
-
-#### (0) Error Unknown.
-
-`AltServer.ConnectionError`
-
-Significa che AltServer ha incontrato un errore sconosciuto. Ti consigliamo di scriverci tramite i nostri canali di supporto se il problema persiste.
-
-#### (1) Device Locked.
-
-`AltServer.ConnectionError`
-
-Significa che devi sbloccare il tuo device prima che AltServer possa connettersi.
-
-#### (2) Invalid Request.
-
-`AltServer.ConnectionError`
-
-Info aggiornate in arrivo.
-
-#### (3) Invalid Response.
-
-`AltServer.ConnectionError`
-
-Info aggiornate in arrivo.
-
-#### (4) Usbmuxd.
-
-`AltServer.ConnectionError`
-
-Info aggiornate in arrivo.
-
-#### (5) SSL Error.
-
-`AltServer.ConnectionError`
-
-Info aggiornate in arrivo.
-
-#### (6) Timed Out.
-
-`AltServer.ConnectionError`
-
-Info aggiornate in arrivo.
-
-## Windows Errors
-
-#### (1100) Your session has expired. Please log in.
-
-`NSURLErrorDomain`
-1. Assicurati che iTunes sia chiuso.
-2. Vai in Program Data -> Apple Computer -> iTunes -> ADI -> cancella i file
-3. Avvia iTunes
-4. Ritenta l'installazione di SideStore
 
 ## Altri Errori
 

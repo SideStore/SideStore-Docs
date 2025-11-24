@@ -1,0 +1,43 @@
+---
+title: Bypass av 3-appsgränsen
+description: En guide för att installera fler än tre appar i SideStore med SparseRestore-exploiten.
+---
+
+:::note
+
+SparseRestore-exploiten "Bypass 3 app limit" **fungerar bara på iOS/iPadOS-versioner mellan 17.0 och 18.1 beta 4 (exklusive 17.7.1)**. Om du inte kör någon av dessa versioner och det inte fungerar, **be inte om support för det**. 
+
+:::
+
+## Förkrav
+* En iDevice som kör en version som stöds av SparseRestore-exploiten (se notisen ovan).
+* Minst en ledig app-plats.
+* SideStore version 0.5.9 eller senare. Senaste versionerna finns [här](https://github.com/SideStore/SideStore/releases).
+* För att köra exploiten måste **Hitta min** vara avstängt på iDevice under hela processen. Annars fungerar det inte. Så här stänger du av funktionen:
+  - Öppna Inställningar.
+  - Tryck på ditt namn överst.
+  - Tryck på Hitta min.
+  - Tryck på Hitta min iPhone/iPad.
+  - Stäng av Hitta min iPhone/iPad.
+  - Du kan behöva ange ditt Apple-ID-lösenord för att bekräfta.
+  
+  > **Obs:** Det kan ändå vara omöjligt att stänga av Hitta min om Stolen Device Protection är aktiv. Stäng av Stolen Device Protection innan du försöker stänga av Hitta min.
+
+## Steg
+1. Installera SparseBox. Det kan göras på flera sätt men i denna guide använder vi SideStore. Senaste versionen finns [här](https://nightly.link/khanhduytran0/SparseBox/workflows/build/main/artifact.zip) (packa upp artifact.zip för att få .ipa-filen).
+
+2. Markera "Disable App Limit" i SideStore och stäng SideStore helt (inte bara i bakgrunden), öppna sedan SparseBox.
+
+3. Slå på StosVPN, välj din pairing-fil och tryck på "Bypass 3-app limit". En logg visas. Vänta tills den säger `idevicebackup2 exited with code -18` eller `idevicebackup2 exited with code 2` och stäng appen. Du behöver inte trycka Apply.
+
+4. Öppna SideStore igen och scrolla ner i inställningarna. Tryck på "clear cache" så att SideStore kan upptäcka exploiten.
+
+5. Testa att exploiten fungerar (du kan behöva installera fler än en app beroende på hur många lediga platser du hade). Om du får ett fel om gränsen, öppna SideStore igen eller kör exploiten på nytt. Om installationen fungerar kan du nu ha fler än tre appar installerade samtidigt.
+
+## Övrigt
+På grund av vissa begränsningar måste du köra exploiten varje gång du vill lägga till tre extra appar.
+
+Om du behöver Hitta min för andra syften kan du slå på den igen nu. Men om du vill installera eller uppdatera fler appar måste du stänga av funktionen igen.
+
+## Alternativ
+Om exploiten inte fungerar eller om din iDevice kör en version som inte stöds finns ett alternativ för att använda fler än tre appar: [LiveContainer](https://livecontainer.github.io/), utvecklat av Duy Tran Khanh ([khanhduytran0](https://github.com/khanhduytran0)) som även gjort SparseBox. LiveContainer kör iOS-appar i containers i appen i stället för att installera dem separat och kan i vissa fall vara enklare än SparseRestore. GitHub-sidan finns [här](https://github.com/khanhduytran0/LiveContainer).

@@ -1,6 +1,6 @@
 ---
-title: 必要准备
-description: '安装的第一步'
+title: 安装前准备
+description: '安装SideStore的第一步'
 sidebar_position: 1
 ---
 
@@ -9,24 +9,40 @@ SideStore的安装过程可能看起来很棘手，但随着花一些时间***�
 ## 要求
 
 想要安装SideStore，您需要：
-- 一个运行了iOS/iPadOS 14及更高版本，并且[带有密码](https://support.apple.com/en-us/119586)的iOS/iPadOS设备。
-- 一台运行了[macOS](mac)，[Windows](windows)，或者[Linux](linux)的电脑（Linux支持目前还在试验性测试阶段）。
+
+- 一台运行了iOS/iPadOS 14及更高版本，并且[带有密码](https://support.apple.com/en-us/119586)的iOS/iPadOS设备
+- 一台电脑（只会用一次）
 - 一个Apple ID。
-- StosVPN应用。
+- Wi-Fi连接
 - 一些时间（流程很快，但是您需要留出一些[处理问题](../troubleshooting)的时间）。
 
-## StosVPN
+## 需要在您的设备上做的准备
+
+### 在您的iPhone/iPad上
 
 SideStore利用设备上内置的VPN客户端功能以允许SideStore与内部服务通信。
 
-1. 从[App Store](https://apps.apple.com/us/app/stosvpn/id6744003051)下载StosVPN。
-2. 启用VPN。
+1. 从[App Store](https://apps.apple.com/us/app/stosvpn/id6744003051)下载StosVPN
+2. 启用VPN
 
 该VPN需要在您期望安装/升级/刷新SideStore内安装的任意应用时保持开启。
 
-## 下一步
+### 在您的Mac上
+1. 下载并安装([M系列芯片](https://github.com/nab138/iloader/releases/latest/download/iloader-darwin-aarch64.dmg)或[Intel芯片](https://github.com/nab138/iloader/releases/latest/download/iloader-darwin-x64.dmg))的Mac版iloader
+2. 打开终端，运行`sudo xattr -c ./Applications/iloader.app`，如果弹出提示框请输入您的密码
 
-现在，按照您的操作系统的安装指引进行后续操作！
-- [macOS](mac)
-- [Windows](windows)
-- [Linux (开发中)](linux)
+
+## 在您的Windows电脑上
+1. 下载并安装[iTunes](https://apple.co/ms)
+2. 下载iloader安装器的([exe文件](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.exe)/[msi文件](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.msi))
+3. 运行安装器
+
+## 在您的Linux机器上
+1. 下载并安装`usbmuxd`(它可能已预装在您使用的发行版中，否则请使用您的软件包管理器进行安装)
+2. 下载并安装适用于您使用的发行版的iloader(([Debian/Ubuntu](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.deb), [Fedora/openSUSE](https://github.com/nab138/iloader/releases/download/v0.1.3/iloader-linux-x86_64.rpm), [other](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.AppImage)))
+
+
+## 下一步 
+
+接下来，按照安装指引来安装SideStore!
+- [安装指引](install)

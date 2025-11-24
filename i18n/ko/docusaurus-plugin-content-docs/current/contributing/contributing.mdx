@@ -1,0 +1,239 @@
+---
+sidebar_position: 1
+---
+
+# SideStore에 기여하기
+
+SideStore에 기여하려는 관심에 감사드려요. SideStore는 커뮤니티가 이끄는 프로젝트이고, 여러분 같은 분들 덕분에 가능해요.
+
+이 프로젝트(SideStore)에 기여하면 [CERTIFICATE-OF-ORIGIN.md](https://github.com/SideStore/SideStore/blob/develop/CERTIFICATE-OF-ORIGIN.md)에 있는 개발자 기원 증명서(DCO)에 동의하는 거예요. DCO 도입 이후의 모든 기여는 해당 정책을 따르게 돼요.
+
+SideStore에 기여하는 방법은 아주 많아요. 개발자가 아니더라도 도울 수 있는 방법이 있어요.
+
+- [문서 작성하기](https://github.com/SideStore/SideStore-Docs)
+- [자세한 버그 리포트 제출하기와 새 기능 제안하기](https://github.com/SideStore/SideStore/issues/new/choose)
+- 지원 활동 돕기
+    - [Discord](https://dis.sidestore.io/)
+    - [GitHub Discussions](https://github.com/SideStore/SideStore/discussions)
+
+하지만 이 가이드는 개발 측면에 집중해요. 지금은 설정 정보만 정리돼 있고, 설정 이후 도움이 필요하면 [Discord](https://discord.gg/sidestore-949183273383395328)에 참여해 주세요.
+
+## 요구 사항
+
+이 가이드는 다음을 전제로 하고 있어요.
+
+- macOS를 사용하고 있어요.
+- Xcode가 설치돼 있어요.
+- 기본 명령줄 지식을 가지고 있어요(명령 실행과 `cd` 사용이 가능해요).
+- 기본 Git 지식을 가지고 있어요. 초보자라면 [GitHub Desktop](https://desktop.github.com/)을 쓰셔도 좋아요.
+- 기본적인 Swift/iOS 개발 지식을 가지고 있어요.
+
+## 준비
+
+1. **GitHub에서 SideStore 저장소를 포크해 주세요.**
+
+2. **포크한 저장소를 클론해 주세요.**
+   ```bash
+   git clone https://github.com/<당신의-깃허브-사용자이름>/SideStore.git --recurse
+   cd SideStore
+   ```
+
+   GitHub Desktop을 사용 중이면 [이 가이드](https://docs.github.com/ko/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop)를 참고해 주세요.
+
+3. **`CodeSigning.xcconfig.sample`을 `CodeSigning.xcconfig`로 복사한 뒤 값을 채워 주세요.**
+
+4. **(개발 전용)** Info.plist 안 `ALTDeviceID` 값을 본인 기기의 UDID로 바꿔 주세요. 일반적으로 SideServer가 설치 중에 SideStore의 Info.plist에 기기 UDID를 넣어 줘요. Xcode에서 직접 실행하면 앱이 올바른 기기용으로 서명되지 않으니 값을 직접 설정해 주세요.
+
+5. **마지막으로 Xcode에서 `AltStore.xcworkspace`를 열어 주세요.**
+
+이제 변경 사항을 만들고 테스트해 주세요. 그런 다음 git으로 커밋하고 푸시한 뒤 Pull Request를 열어 주세요.
+
+## 사전 빌드 바이너리 정보
+
+minimuxer와 em_proxy는 GitHub Actions가 빌드한 사전 빌드 정적 라이브러리를 사용해요. 덕분에 빌드가 빨라지고 SideStore 작업 시 Rust를 설치할 필요가 없어요. [`SideStore/fetch-prebuilt.sh`](https://github.com/SideStore/SideStore/blob/develop/SideStore/fetch-prebuilt.sh)는 Xcode가 매 빌드 전에 실행하고, 6시간마다 바이너리가 최신인지 확인해 줘요. 강제로 새 바이너리를 확인하고 싶으면 `bash ./SideStore/fetch-prebuilt.sh force`를 실행해 주세요.
+
+## Xcode로 빌드하기
+
+필요하면 `brew install cocoapods`로 cocoapods를 설치해 주세요.  
+저장소 루트에서 `pod install`을 실행해서 의존성을 설치해 주세요.  
+그다음에는 Xcode에서 일반 빌드를 진행해도 돼요.
+
+## 배포용 IPA 빌드하기
+
+필요하면 `brew install cocoapods`로 cocoapods를 설치해 주세요.  
+저장소 루트에서 `pod install`을 실행해 주세요.
+
+그다음 루트 디렉터리에서 `make build fakesign ipa`를 실행해 주세요.  
+기본 빌드 설정은 `Release`예요.  
+디버그 빌드는 `export BUILD_CONFIG=Debug;make build fakesign ipa`예요.  
+알파/베타 빌드는 빌드 명령 전에 `export IS_ALPHA=1;` 또는 `export IS_BETA=1;`을 설정해 주세요.  
+이렇게 하면 `SideStore.ipa`가 생성돼요.
+
+```sh
+예시예요.
+
+    # cocoapods
+    brew install cocoapods
+    # pod 설치
+    pod install
+
+    # alpha release build
+    export IS_ALPHA=1;make build fakesign ipa
+    # alpha debug build
+    export IS_ALPHA=1;export BUILD_CONFIG=Debug;make build fakesign ipa
+
+    # beta release build
+    export IS_BETA=1;make build fakesign ipa
+    # beta debug build
+    export IS_BETA=1;export BUILD_CONFIG=Debug;make build fakesign ipa
+
+    # stable release build
+    make build fakesign ipa
+    # stable debug build
+    export BUILD_CONFIG=Debug;make build fakesign ipa
+```
+
+SideStore는 기본적으로 `com.SideStore.SideStore` 번들 ID로 빌드돼요. 명령줄 빌드에서 사용자 지정 번들 ID가 필요하면 `BUNDLE_ID_SUFFIX` 환경 변수를 설정해 주세요.
+
+```sh
+    # stable release build
+    export BUNDLE_ID_SUFFIX=XYZ0123456;make build fakesign ipa
+    # stable debug build
+    export BUNDLE_ID_SUFFIX=XYZ0123456;export BUILD_CONFIG=Debug;make build fakesign ipa
+```
+
+**주의**: Xcode에서 빌드할 때 `BUNDLE_ID_SUFFIX`는 기본적으로 `DEVELOPMENT_TEAM` 값으로 설정돼요.
+
+CodeSigning.xcconfig.sample에서 만든 파일을 수정해서 `BUNDLE_ID_SUFFIX`를 설정하거나 제거할 수 있어요.
+
+:::warning
+생성된 바이너리에는 Xcode DerivedData 경로가 포함되고, 로컬에서 minimuxer를 빌드했다면 `$HOME/.cargo` 경로도 들어가요. 즉 사용자 이름이 드러날 수 있어요. 사용자 이름을 공개하고 싶지 않다면 GitHub Actions로 IPA를 빌드해 주세요.
+:::
+
+## SideStore와 함께 minimuxer 개발하기
+
+개발 안내는 [minimuxer README](https://github.com/SideStore/minimuxer)를 참고해 주세요.
+
+## Pull Request 절차
+
+### 제출 전에
+
+1. **코딩 표준을 따라 주세요.** 코드가 [포매팅 가이드](./formatting.mdx)를 따르도록 해 주세요.
+
+2. **변경 사항을 테스트해 주세요.**
+   - 가능하면 다양한 iOS 버전에서 테스트해 주세요.
+   - 기존 기능이 깨지지 않았는지 확인해 주세요.
+   - 새 기능에는 필요한 테스트를 추가해 주세요.
+
+3. **문서를 업데이트해 주세요.** 사용자에게 영향을 주는 변경이라면 관련 문서를 갱신해 주세요.
+
+### PR 제출하기
+
+1. **기능 브랜치를 만들어 주세요.**
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+2. **변경 작업을 진행해 주세요.** 가이드라인과 모범 사례를 따라 주세요.
+
+3. **서명 옵션을 포함해 커밋해 주세요.**
+   ```bash
+   git add .
+   git commit -s -m "Add descriptive commit message"
+   ```
+
+   **중요해요.** 모든 커밋은 DCO에 따라 서명해야 해요. `-s` 플래그가 자동으로 `Signed-off-by` 줄을 추가해 줘요.
+
+4. **포크 저장소에 푸시해 주세요.**
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+
+5. **Pull Request를 만들어 주세요.** 메인 SideStore 저장소에 가서 브랜치에서 PR을 생성해 주세요.
+
+:::caution
+명백하게 AI가 생성했거나 “감으로 짠” 것처럼 보이는 PR은 받지 않아요. 예를 들어 불필요한 주석이 많거나, 일반적인 코드처럼 보여서 프로젝트 이해도가 없다고 느껴지거나, SideStore를 위한 고민이 담기지 않은 코드가 그렇죠. 기여가 오리지널이고 코드베이스와 목표를 명확히 이해했다는 점을 보여 주세요.
+:::
+
+### PR 가이드라인
+
+- **명확한 제목**: 변경 내용을 요약하는 제목을 사용해 주세요.
+- **상세한 설명**: 무엇을 왜 바꿨는지 설명해 주세요.
+- **관련 이슈 링크**: 관련 GitHub 이슈를 연결해 주세요.
+- **스크린샷**: UI 변경이 있다면 스크린샷을 포함해 주세요.
+- **테스트 메모**: 어떻게 테스트했는지 적어 주세요.
+
+## 개발자 기원 증명서(DCO)
+
+SideStore는 모든 기여자가 DCO로 커밋을 서명해 주길 요구해요. 이는 우리 프로젝트의 기여자 행동 강령 역할을 하고, 제공하는 코드가 직접 작성됐거나 제출 권한이 있다는 사실을 확인하는 간단한 방법이에요.
+
+### DCO는 무엇인가요?
+
+커밋에 서명하면 다음 내용을 확인하는 거예요.
+
+- **(a)** 기여는 전부 혹은 일부가 본인이 만든 것이고, 파일에 명시된 오픈소스 라이선스 아래 제출할 권리가 있어요.
+- **(b)** 기여가 이전 작업을 기반으로 하고, 해당 라이선스 하에서 수정한 작업을 제출할 권리가 있다는 걸 알고 있어요.
+- **(c)** 다른 사람이 (a), (b) 또는 (c)를 확인하고 직접 제공한 기여이며, 본인은 수정하지 않았어요.
+- **(d)** 이 프로젝트와 기여가 공개되고, 기여 기록이 영구히 보존된다는 사실을 이해하고 동의해요.
+
+### 서명하는 방법
+
+커밋할 때 `-s` 플래그만 추가하면 돼요.
+
+```bash
+git commit -s -m "Your commit message"
+```
+
+그러면 커밋 메시지에 자동으로 `Signed-off-by` 줄이 추가돼요.
+
+```
+Your commit message
+
+Signed-off-by: SternXD <stern@sidestore.io>
+```
+
+### 중요한 참고 사항
+
+- **모든 커밋에 서명해 주세요.** 가능하면 항상 서명하는 걸 선호해요.
+- **올바른 이메일을 사용해 주세요.** GitHub 계정 이메일과 맞춰 주세요.
+- **사후 서명도 가능해요.** 서명을 깜박했다면 `git commit --amend -s`로 마지막 커밋을 고쳐 주세요.
+
+자세한 내용은 [Certificate of Origin](https://github.com/SideStore/SideStore/blob/develop/CERTIFICATE-OF-ORIGIN.md) 문서를 참고해 주세요.
+
+## 코드 리뷰 절차
+
+1. **초기 리뷰**: 유지 관리자가 며칠 내 PR을 살펴봐요.
+2. **피드백**: 요청된 변경이나 질문에 답변해 주세요.
+3. **최종 승인**: 승인되면 유지 관리자가 PR을 머지해요.
+
+## 좋은 기여를 위한 가이드라인
+
+### 코드 품질
+- 깔끔하고 읽기 쉬운 코드를 작성해 주세요.
+- Swift와 Objective-C 모범 사례를 따라 주세요.
+- 의미 있는 변수와 함수 이름을 사용해 주세요.
+- 복잡한 코드에는 주석을 남겨 주세요.
+
+### 테스트
+- 가능하면 실제 기기에서 테스트해 주세요.
+- 엣지 케이스와 오류 상황을 테스트해 주세요.
+- 역호환성을 확인해 주세요.
+
+### 문서화
+- 코드 주석을 업데이트해 주세요.
+- 사용자 문서를 업데이트해 주세요.
+- 공개 API에는 인라인 문서를 포함해 주세요.
+
+## 도움 받기
+
+도움이 필요하거나 질문이 있으면 이렇게 해 주세요.
+
+- **GitHub Discussions**: 일반 질문은 여기로 올려 주세요.
+- **GitHub Issues**: 버그나 기능 요청은 이슈로 등록해 주세요.
+- **Discord**: SideStore Discord 커뮤니티에 참여해 주세요.
+
+## 감사와 인정
+
+의미 있는 기여를 해 주신 분들은 프로젝트 크레딧과 변경 로그에서 소개돼요.
+
+SideStore에 기여해 주셔서 감사해요!

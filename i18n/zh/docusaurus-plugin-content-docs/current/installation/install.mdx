@@ -1,0 +1,34 @@
+---
+title: 安装指引
+description: 将SideStore安装至您的苹果设备上
+sidebar_position: 2
+---
+## 安装SideStore
+1. 使用数据线将您的苹果设备连接到电脑上。如果弹出了是否信任电脑的提示框的话，信任电脑并输入您的锁屏密码
+2. 打开iloader
+3. 登录您的Apple账户
+4. 选择您的苹果设备
+3. 选择"Install SideStore".
+
+### 需要在您的苹果设备上进行的操作
+请参考以下步骤
+1. 打开“设置”
+2. 点击“通用”，“VPN与设备管理”
+3. 在“开发者APP”下找到您Apple账户的邮箱，点击该邮箱，并在接下来的页面点击“验证 App”
+4. 在设置的主界面找到“隐私与安全性”
+5. 划到页面的底部，打开“开发者模式”，此时您的设备应该会重启
+6. 打开StosVPN，点击“Connect”
+7. 打开SideStore
+9. 使用您前面使用的Apple账户登录
+10. 点击"My Apps".
+11. 点击SideStore右侧的"x DAYS"按钮，(x是应用过期的剩余天数)
+12. 此时应该弹出一个提示框询问您创建一个新的签名证书，点击"Refresh Now"
+
+在进行完这一步后，SideStore会退出，返回至您的桌面。同时您会收到一条通知，在几秒后SideStore就可以使用了。
+
+需要注意的是，如果您的设备升级/重置了，您的配对用文件会过期，您需要使用[这条指南](../advanced/pairing-file)重新导入。当然配对用文件也可能因为Apple的应用政策过期。
+
+如果您使用iloader重新安装了SideStore，您原来的证书可能会被吊销，这时需要您再次手动刷新应用。
+
+如果您想使用同一个Apple ID在另一台设备上安装SideStore，请[参考这几个步骤](https://github.com/SideStore/SideStore/pull/1008#issue-3138680291)。
+

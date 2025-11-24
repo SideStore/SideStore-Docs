@@ -37,7 +37,7 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'es', 'fr', 'de', 'it', 'nl', 'zh', 'ja', 'ru', 'ko', 'sv', 'vi'],
+    locales: ['en', 'it', 'zh', 'ko', 'sv'],
   },
 
   presets: [
@@ -60,7 +60,7 @@ const config = {
       'docusaurus-lunr-search', 
       {
         // Chinese isn't supported yet
-        languages: ['en', 'es', 'fr', 'de', 'it', 'nl', 'ja', 'ru', 'ko', 'sv', 'vi'],
+        languages: ['en', 'it', 'ko', 'sv'],
         // Keep max results to 10
         maxHits: 10,
         indexBatchSize: 100,
@@ -127,7 +127,7 @@ const config = {
             items: [
               {
                 label: 'Discord',
-                href: 'https://discord.gg/sidestore-949183273383395328',
+                href: 'https://dis.sidestore.io',
               },
               {
                 label: 'X (formerly Twitter)',

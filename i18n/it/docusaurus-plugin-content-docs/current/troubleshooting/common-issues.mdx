@@ -1,34 +1,39 @@
 ---
 title: Problemi Comuni
-description: Problemi comuni di SideStore.
+description: Problemi comuni di SideStore non associati a codici di errore.
 ---
 
 :::warning
 
-Questa pagina è in costruzione. Le informazioni dovrebbero essere accurate, ma affidati al nostro [Server Discord](https://discord.gg/sidestore-949183273383395328) per assistenza.
+Questa pagina è in costruzione. Le informazioni dovrebbero essere accurate, ma affidati al nostro [Server Discord](https://dis.sidestore.io/) per assistenza.
 
 :::
 
 
 ## Problemi comuni di SideStore
 
+### Mi esce l'errore con il codice "X"
+#### Soluzione
+
+Controlla la nostra [lista di codici di errore](error-codes)!
+
 ### AFC Connection Failure
 #### Causa
 Problemi di connessione o file di pairing non valido.
 #### Soluzione
-1. Prova a riconnetterti
-2. Crea e importa un nuovo pairing file utilizzando idevice pair. Vedi le nostre [istruzioni pairing file](/docs/installation/pairing-file) per più dettagli
+1. Prova a riconnetterti. Assicurati che il Wi-Fi e StosVPN siano connessi.
+2. Carica e importa un nuovo pairing file usando iloader.
 
 ### No Wi-Fi o Connessione VPN
 #### Causa
 Problema di connessione con il servizio minimuxer.
 #### Soluzione
 1. Se stai usando WireGuard, passa a StosVPN
-2. Spegni ogni eventuale server DNS-blocking
-2. Riprova (spammare il bottone a volte aiuta)
-3. Riavvia SideStore
-4. Riavvia StosVPN
-5. Ricrea e importa un nuovo pairing file utilizzando idevice pair. Vedi le nostre [istruzioni pairing file](/docs/installation/pairing-file) per più dettagli
+2. Spegni ogni eventuale DNS-blocker
+3. Riprova (spammare il bottone a volte aiuta)
+4. Riavvia SideStore
+5. Riavvia StosVPN
+6. Carica e importa un nuovo pairing file usando iloader.
 
 ### SideStore si blocca a metà durante l'installazione
 #### Causa
@@ -40,13 +45,13 @@ Problemi di cache o protocollo.
 4. In server- resetta adi.pb, poi esegui il logout da SideStore e rifai il login
 5. Riavvia il dispositivo
 6. Ricrea il pairing file
-7. Reinstalla SideStore con AltServer
+7. Reinstalla SideStore con iloader
 
 ### Impossibile eseguire SideStore
 #### Causa
 Diverse cause possibili.
 #### Soluzione
-1. Assicurati di aver installato SideStore tramite AltServer
+1. Assicurati di aver installato SideStore tramite iloader
 2. Reinstalla SideStore
 
 Se continua a non funzionare, procedi come segue:
@@ -57,6 +62,3 @@ Se continua a non funzionare, procedi come segue:
 4. Installa `sidestore.ipa` sul tuo device
 5. Importa il file `sidestore.ipa` in SideStore come se stessi installando un qualsiasi IPA
 6. Questo permette a SideStore di fare un avvio pulito, sperando risolva il problema
-
-
-

@@ -1,0 +1,492 @@
+---
+sidebar_position: 2
+---
+
+# 代码格式指南
+
+本文件概述了SideStore项目中Swift和Objective-C代码的格式规范。统一的格式规范能提升代码库的可读性与可维护性。
+
+## 基本原则
+
+- **一致性**：遵循项目中现有的代码风格
+- **可读性**：代码应易于阅读和理解
+- **简洁性**：优先选择简单明了的解决方案，而非花哨的方案
+- **规范性**：尽可能遵循苹果官方的Swift和Objective-C规范
+
+## Swift格式
+
+### 命名规范
+
+#### 变量和函数
+- 使用**驼峰命名法**为变量，函数，以及方法命名
+- 使用能明确说明用途的描述性名称
+
+```swift
+// ✅ Good
+let downloadProgress: Float
+func validateUserCredentials() -> Bool
+var isAppInstalling: Bool
+
+// ❌ Bad
+let dp: Float
+func validate() -> Bool
+var installing: Bool
+```
+
+#### 类、结构体、枚举和协议
+- 使用 **驼峰式大小写** 表示类型
+- 使用有描述性、名词化的名称
+
+```swift
+// ✅ Good
+class AppInstaller
+struct InstallationProgress
+enum AppState
+protocol AppManaging
+
+// ❌ Bad
+class installer
+struct progress
+enum state
+protocol managing
+```
+
+#### 常量
+- 使用**驼峰式命名法**为常量命名
+- 建议为全局常量使用 **全部大写的蛇形命名法**
+
+```swift
+// ✅ Good
+let maxRetryAttempts = 3
+private let defaultTimeout: TimeInterval = 30.0
+
+// Global constants
+let MAX_CONCURRENT_DOWNLOADS = 5
+
+// ❌ Bad
+let MaxRetryAttempts = 3
+let max_retry_attempts = 3
+```
+
+### 缩进与间距
+
+#### 缩进
+- 使用**4个空格**作为缩进(非tab)
+- 将续行与起始分隔符对齐
+
+```swift
+// ✅ Good
+func installApp(withIdentifier identifier: String,
+                sourceURL: URL,
+                completion: @escaping (Result<Void, Error>) -> Void) {
+    // Implementation
+}
+
+// ❌ Bad
+func installApp(withIdentifier identifier: String,
+sourceURL: URL,
+completion: @escaping (Result<Void, Error>) -> Void) {
+// Implementation
+}
+```
+
+#### 行长度
+- 尽可能保持行长度在**120字符**以下
+- 在合乎逻辑的位置拆分过长的行
+
+```swift
+// ✅ Good
+let longVariableName = SomeClass.createInstanceWithVeryLongMethodName(
+    parameter1: value1,
+    parameter2: value2
+)
+
+// ❌ Bad
+let longVariableName = SomeClass.createInstanceWithVeryLongMethodName(parameter1: value1, parameter2: value2, parameter3: value3)
+```
+
+#### 间距
+- 运算符两侧使用单个空格
+- 不允许尾随空格
+- 函数与主要代码段之间应留单行空行
+
+```swift
+// ✅ Good
+let result = value1 + value2
+if condition && anotherCondition {
+    // Code
+}
+
+func firstFunction() {
+    // Implementation
+}
+
+func secondFunction() {
+    // Implementation
+}
+
+// ❌ Bad
+let result=value1+value2
+if condition&&anotherCondition{
+    // Code
+}
+func firstFunction(){
+    // Implementation
+}
+func secondFunction(){
+    // Implementation
+}
+```
+
+### 花括号与控制流
+
+#### 花括号式样
+- 在语句同一行上放置左大括号
+- 闭合大括号单独成行，与开头语句对齐
+
+```swift
+// ✅ Good
+if condition {
+    doSomething()
+} else {
+    doSomethingElse()
+}
+
+class MyClass {
+    func myMethod() {
+        // Implementation
+    }
+}
+
+// ❌ Bad
+if condition
+{
+    doSomething()
+}
+else
+{
+    doSomethingElse()
+}
+```
+
+#### 卫语句
+- 使用卫语句实现提前返回
+- 保持卫语句简单易读
+
+```swift
+// ✅ Good
+guard let url = URL(string: urlString) else {
+    completion(.failure(ValidationError.invalidURL))
+    return
+}
+
+guard !apps.isEmpty else {
+    return
+}
+
+// ❌ Bad
+if let url = URL(string: urlString) {
+    // Long nested code block
+} else {
+    completion(.failure(ValidationError.invalidURL))
+    return
+}
+```
+
+### 类型注解与推断
+
+#### 何时使用类型注解
+- 当类型不明确时使用类型注解
+- 当Swift能明确推断类型时省略类型注解
+
+```swift
+// ✅ Good
+let name = "SideStore"  // Type is obvious
+let timeout: TimeInterval = 30  // Type clarifies intent
+var apps: [App] = []  // Empty array needs type annotation
+
+// ❌ Bad
+let name: String = "SideStore"  // Redundant type annotation
+let timeout = 30  // Unclear if Int or TimeInterval
+```
+
+### 函数声明
+
+#### 参数标签
+- 使用描述性参数标签
+- 当首参数标签符合自然语境时可省略
+
+```swift
+// ✅ Good
+func install(_ app: App, to device: Device)
+func download(from url: URL, completion: @escaping (Data?) -> Void)
+
+// ❌ Bad
+func install(app: App, device: Device)
+func download(url: URL, completion: @escaping (Data?) -> Void)
+```
+
+#### 返回类型
+- 尽可能将返回类型置于同一行
+- 换行处理非常长的签名
+
+```swift
+// ✅ Good
+func processData() -> Result<ProcessedData, ProcessingError>
+
+func complexFunction(withManyParameters param1: String,
+                    param2: Int,
+                    param3: Bool) 
+    -> Result<ComplexReturnType, ComplexErrorType> {
+    // Implementation
+}
+```
+
+## Objective-C 格式规范
+
+### 命名规范
+
+#### 方法
+- 使用描述性方法名并明确标注参数
+- 以小写字母开头
+- 使用驼峰式命名法
+
+```objc
+// ✅ Good
+- (void)installAppWithIdentifier:(NSString *)identifier 
+                       sourceURL:(NSURL *)sourceURL 
+                      completion:(void (^)(NSError *error))completion;
+
+// ❌ Bad
+- (void)install:(NSString *)id url:(NSURL *)url completion:(void (^)(NSError *))completion;
+```
+
+#### 变量与属性
+- 使用驼峰命名法
+- 使用描述性名称
+- 实例变量前添加下划线
+
+```objc
+// ✅ Good
+@interface AppManager : NSObject
+@property (nonatomic, strong) NSArray<App *> *installedApps;
+@property (nonatomic, assign) BOOL isInstalling;
+@end
+
+@implementation AppManager {
+    NSURLSession *_networkSession;
+    dispatch_queue_t _processingQueue;
+}
+```
+
+#### 类与协议
+- 使用驼峰命名法
+- 考虑为公共类添加前缀(例如 SS 表示 SideStore)
+
+```objc
+// ✅ Good
+@interface SSAppInstaller : NSObject
+@protocol SSAppManaging <NSObject>
+
+// ❌ Bad
+@interface appInstaller : NSObject
+@protocol appManaging <NSObject>
+```
+
+### 间距与格式
+
+#### 方法声明
+- 参数垂直对齐
+- 使用统一间距
+
+```objc
+// ✅ Good
+- (instancetype)initWithIdentifier:(NSString *)identifier
+                             title:(NSString *)title
+                           version:(NSString *)version;
+
+// ❌ Bad
+- (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title version:(NSString *)version;
+```
+
+#### 大括号
+- 开括号与内容同行
+- 闭括号单独成行
+
+```objc
+// ✅ Good
+if (condition) {
+    [self doSomething];
+} else {
+    [self doSomethingElse];
+}
+
+// ❌ Bad
+if (condition)
+{
+    [self doSomething];
+}
+else
+{
+    [self doSomethingElse];
+}
+```
+
+## 注释与文档
+
+### Swift 文档规范
+- 使用 `///` 标记文档注释
+- 公开 API 需包含参数与返回值说明
+
+```swift
+/// Downloads and installs an app from the specified URL
+/// - Parameters:
+///   - identifier: The unique identifier for the app
+///   - sourceURL: The URL to download the app from
+///   - completion: Called when installation completes or fails
+/// - Returns: A cancellable operation
+func installApp(withIdentifier identifier: String,
+                sourceURL: URL,
+                completion: @escaping (Result<Void, Error>) -> Void) -> Operation {
+    // Implementation
+}
+```
+
+### Objective-C 文档规范
+- 使用 `/** */` 标记文档注释
+- 遵循 HeaderDoc 或 Doxygen 规范
+
+```objc
+/**
+ * Downloads and installs an app from the specified URL
+ * @param identifier The unique identifier for the app
+ * @param sourceURL The URL to download the app from
+ * @param completion Block called when installation completes or fails
+ */
+- (void)installAppWithIdentifier:(NSString *)identifier
+                       sourceURL:(NSURL *)sourceURL
+                      completion:(void (^)(NSError *error))completion;
+```
+
+### 内联注释
+- 单行注释使用`//`
+- 请保持评论简洁且切题
+- 解释**为什么**，而非**是什么**
+
+```swift
+// ✅ Good
+// Retry failed downloads up to 3 times to handle temporary network issues
+let maxRetryAttempts = 3
+
+// ❌ Bad
+// Set maxRetryAttempts to 3
+let maxRetryAttempts = 3
+```
+
+## 错误处理
+
+### Swift错误处理
+- 使用带有`throws`和`Result`类型的Swift原生错误处理
+- 使用有意义的错误类型
+
+```swift
+enum InstallationError: Error {
+    case invalidURL
+    case networkFailure(Error)
+    case insufficientStorage
+    case deviceNotSupported
+}
+
+func installApp() throws -> App {
+    guard let url = URL(string: urlString) else {
+        throw InstallationError.invalidURL
+    }
+    // Implementation
+}
+```
+
+### Objective-C错误处理
+- 使用`NSError **`参数模式
+- 设置前请务必检查错误参数是否为非空值
+
+```objc
+- (BOOL)installAppWithError:(NSError **)error {
+    if (someCondition) {
+        if (error) {
+            *error = [NSError errorWithDomain:SSErrorDomain 
+                                         code:SSErrorCodeInvalidInput 
+                                     userInfo:nil];
+        }
+        return NO;
+    }
+    return YES;
+}
+```
+
+## 最佳实践
+
+### 内存管理
+- 在 Swift 和 Objective-C 中正确使用 ARC
+- 请注意引用周期问题；请正确使用`weak`和`unowned`引用
+
+```swift
+// ✅ Good
+class AppInstaller {
+    weak var delegate: AppInstallerDelegate?
+    
+    private lazy var networkManager: NetworkManager = {
+        let manager = NetworkManager()
+        manager.delegate = self  // Self is strong reference, but manager doesn't retain self
+        return manager
+    }()
+}
+```
+
+### 线程处理
+- 始终在主队列上更新用户界面
+- 使用合适的队列处理后台任务
+
+```swift
+// ✅ Good
+DispatchQueue.global(qos: .userInitiated).async {
+    let result = self.processData()
+    DispatchQueue.main.async {
+        self.updateUI(with: result)
+    }
+}
+```
+
+### 可选的处理
+- 使用安全的拆包技术
+- 优先使用guard语句实现提前返回
+
+```swift
+// ✅ Good
+guard let data = response.data,
+      let apps = try? JSONDecoder().decode([App].self, from: data) else {
+    completion(.failure(ParsingError.invalidResponse))
+    return
+}
+```
+
+## Tools and Automation
+
+### SwiftLint
+您可以考虑使用SwiftLint自动执行这些格式化规则：
+
+```yaml
+# .swiftlint.yml
+line_length: 120
+function_body_length: 60
+file_length: 400
+type_body_length: 300
+
+disabled_rules:
+  - trailing_whitespace
+  
+opt_in_rules:
+  - empty_count
+  - force_unwrapping
+```
+
+切记: 这些准则应有助于提高代码的可读性和可维护性。如有疑问，应优先考虑清晰度以及与现有代码库的一致性。
