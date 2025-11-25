@@ -107,6 +107,7 @@ Il tuo device non è stato in grado di ricevere info da un server anisette V3. R
 
 Sembra che tu non sia connesso al Wi-Fi o a StosVPN. SideStore non può refreshare o installare app senza Wi-Fi e StosVPN, assicurati che entrambe siano connesse. Se non funziona, [reimporta il pairing file con iloader](../advanced/pairing-file).
 
+
 ## Minimuxer Errors
 
 #### (4) AFC was unable to manage files on the device.
@@ -120,6 +121,7 @@ Sembra che tu stia provando ad abilitare JIT su una versione iOS non supportata.
 `minimuxer.MinimuxerError 27`
 
 Assicurati che Wi-Fi e StosVPN siano connesse. Se l'errore persiste, [reimporta il pairing file con iloader](../advanced/pairing-file).
+
 
 ## Apple Developer Errors
 
@@ -285,3 +287,18 @@ Solitamente significa che l'username o la password dell'Apple ID usato per auten
 
 È avvenuto un errore durante la scrittura di file sul disco. Assicurati che il tuo iPhone e PC abbiano abbastanza spazio disponibile e riprova.
 
+#### ldid Error
+
+`ldid.cpp(X): X`
+
+Segui gli step seguenti per fixare l'errore:
+
+1. Prima di tutto, devi installare Feather.
+2. Poi, importa l'IPA che ha questo problema nell'app Feather insieme a qualsiasi file .mobileprovision e .p12, possono anche essere scaduti visto che dobbiamo solo riallocare gli header dell'IPA
+3. Firma l'IPA col certificato che hai importao.
+4. Apri l'app firmata in File e re-impacchettala come IPA. 
+5. Installa l'IPA impacchettata in AltStore
+
+### (-1011) NSURLErrorDomain
+
+Vai a https://developer.apple.com/, accedi e accetta i nuovi Termini e Condizioni di Apple Developer.

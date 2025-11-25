@@ -15,6 +15,7 @@ Prima di iniziare, assicurati di aver installato usbmuxd.
 1. Assicurati di avere usbmuxd installato e aggiornato eseguendo `sudo apt install -y usbmuxd` nel terminale Linux.
 2. Installa Docker o Podman sul tuo PC.
 3. Collega il tuo iDevice. Se ricevi un avviso, seleziona "autorizza" e inserisci il codice.
+
 4. Ora, esegui Altcon con Docker o Podman con il seguente comando (potrebbe richiedere `sudo`):
 
 Docker setup:
@@ -27,7 +28,7 @@ podman run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd -v /va
 ```
 5. Altcon si collegherà al tuo dispositivo. Quando ricevi un altro avviso, seleziona di nuovo "autorizza" e inserisci il codice.
 
-#### Configurare SideStore su più dispositivi
+#### Configurare SideStore su più dispositivi con lo stesso account usando AltServer
 Step:
 1. Configura AltServer su macOS/Windows utilizzando le istruzioni qui sopra
 2. Installa AltStore su un dispositivo tramite AltServer (Abbiamo bisogno di AltStore perché pare che AltServer non inserisca il machine identifier in applicazioni che non siano AltStore)
@@ -49,6 +50,22 @@ Poi, per ogni device:
 1. Importa il nuovo certificato
 2. Esegui il sideload di SideStore ipa da SideStore
 
+## VPN
+### WireGuard
+:::note
+SideStore VPN **funziona solo su versioni di SideStore tra la 0.3.1-0.6.1 e dalla 0.6.3-nightly.4e6756d in poi** e non è consigliato se hai alternative disponibili come StosVPN o StikDebug. Se non sei su queste versioni e non funziona, **non richiedere supporto**.
+:::
+
+SideStore usa una VPN di WireGuard on-device che permette a SideStore di comunicare con servizi interni.
+
+1. Scarica l'app di WireGuard dall'[App Store](https://apps.apple.com/app/wireguard/id1441195209).
+2. Scarica la configurazione WireGuard da [qua](https://github.com/SideStore/SideStore/releases/download/0.3.1/SideStore.conf).
+3. Apri WireGuard e premi 'Add a Tunnel' o il tasto '+'.
+4. Seleziona 'Create from file or archive' e seleziona il file SideStore.conf
+5. Il tuo dispositivo ti chiederà di 'Consentire la configurazione della VPN', scegli 'Consenti' e autenticati.
+6. Abilita SideStore VPN.
+
+Questa VPN deve essere accesa ogni volta che vuoi usare SideStore, molte funzioni non andranno senza di essa.
 
 ## Pairing
 ### idevice_pair
@@ -84,6 +101,7 @@ Scarica JitterbugPair per [Windows (64-bit)](https://github.com/osy/Jitterbug/re
 #### Istruzioni di Pairing
 
 :::tip
+
 A seconda del tuo metodo, trasferendo il file .mobiledevicepairing l'estensione potrebbe cambiare (di solito a .txt o senza "ing" finale). È sempre consigliato zippare il file prima di trasferirlo. SideStore accetta solo file .mobiledevicepairing (o file .plist nelle vecchie versioni).
 :::
 
@@ -121,7 +139,7 @@ Su Windows, potresti dover eseguire il programma utilizzando il Prompt dei Coman
 
 ##### Linux
 
-Queste istruzioni sottointendono che tu sia familiare con la commandline Linux.
+Queste istruzioni sottintendono che tu sia familiare con la commandline Linux.
 
 1. **Estrai** `jitterbugpair-linux.zip`.
 2. Apri il terminale nella cartella estratta.
@@ -138,13 +156,10 @@ Queste istruzioni sottointendono che tu sia familiare con la commandline Linux.
 7. La prima volta che esegui il tool, riceverai un avviso per il tuo codice. Inseriscilo, poi mantieni il device sbloccato ed esegui di nuovo il tool.
 8. JitterbugPair genererà un **pairing file** con l'estensione `.mobiledevicepairing`.
 9. Per una migliore esperienza, comprimi il file in una cartella .zip. Poi **trasferisci il pairing file** al tuo dispositivo iOS tramite OneDrive/iCloud/Google Drive, email, o qualsiasi altro metodo tu voglia.
-
 ## Exploit SideStore
 ### SparseRestore (limite 3-app)
 :::note
-
 L'exploit di SparseRestore "Bypass 3 app limit" **funziona solo su versioni iOS/iPadOS tra la 17.0 e la 18.1 beta 4 (escludendo 17.7.1)**. Se non sei su queste versioni non funzionerà, **non chiedere supporto**.
-
 :::
 
 #### Prerequisiti
@@ -163,16 +178,24 @@ L'exploit di SparseRestore "Bypass 3 app limit" **funziona solo su versioni iOS/
 
 #### Step
 1. Installa SparseBox. Può essere fatto in vari modi, ma in questo caso la installeremo con SideStore. Scarica [qui](https://github.com/khanhduytran0/SparseBox/releases/) l'ultima versione.
+
 2. Abilita "Disable App Limit" in SideStore e assicurati che SideStore sia **chiuso** (anche in background), poi apri SparseBox.
+
 3. Abilita StosVPN, seleziona il tuo pairing file e tocca 'Bypass 3-app limit'. Dovrebbe apparire un log. Aspetta che dica `idevicebackup2 exited with code -18` o `idevicebackup2 exited with code 2`, poi chiudi l'app. Non è necessario premere Apply. 
+
 4. Riapri SideStore, scorri nelle impostazioni. Premi "clear cache", questo permetterà all'exploit di essere visto da SideStore.
+
 5. Prova a vedere se funziona l'exploit (potresti dover installare più di un'app, in base a quante ne avevi installate). Se dà un errore riguardante il limite, riapri SideStore o riesegui l'exploit. Se installa l'app, congratulazioni! Puoi avere più di 3 app installata allo stesso tempo.
 
 #### Note
 A causa di certi limit, questo exploit deve essere applicato ogni 3 ulteriori app.
+
 Se vuoi/ti serve Dov'è per altri motivi, puoi riattivarlo. Però, ogni volta che installi o refeshi altre app, dovrai spegnerlo di nuovo.
 
 ### MacDirtyCow (3-app limit)
+:::note
+L'exploit di MacDirtyCow "Bypass 3 app limit" **funziona solo su versioni iOS/iPadOS tra la 15.0 e la 16.1.2**. Se non sei su queste versioni e non funziona, **non chiedere supporto**.
+:::
 [MDC-Compatible IPA](https://cdn.discordapp.com/attachments/949183273827983370/1074037820328521829/SideStore_MDC_14.ipa)
 
-La versione MDC di SideStore qui sopra è compatibile solo con iOS 15.0-16.1.2 ed è molto vecchia, potresti incontrare problemi. Se vuoi questa funzionalità, entra nel nostro Discord e vai nel canale [sidestore-downloads](https://discord.com/channels/949183273383395328/1126118099930861638), che contiene build di SideStore compatibili con MDC. Poi, [installa separatamente WDBRemoveThreeAppLimit con SideStore](https://github.com/zhuowei/WDBRemoveThreeAppLimit/releases/tag/v1.0) per applicare la patch.
+Se vuoi questa funzionalità ti consigliamo di entrare nel nostro Discord e di andare nel canale [sidestore-downloads](https://discord.com/channels/949183273383395328/1126118099930861638), che contiene build di SideStore compatibili con MDC. Poi, [installa separatamente WDBRemoveThreeAppLimit con SideStore](https://github.com/zhuowei/WDBRemoveThreeAppLimit/releases/tag/v1.0) per applicare la patch.

@@ -46,10 +46,6 @@ No, visto che si collega solo al tuo device. Non vengono usati server remoti, qu
 
 No, visto che non vengono usati server remoti.
 
-### L'aggiornamento di SideStore si blocca verso la fine
-
-Vai nella pagina Home affinché finisca. Non sappiamo perché succeda, ma potrebbe avere a che fare con l'utilizzo della VPN per ordinare a `installd` di auto-eseguire il refresh di SideStore.
-
 ### Posso firmare più di 3 app attive?
 
 Normalmente no, in quanto è una limitazione di iOS e dell'account sviluppatore. Apple consente solo 3 app installate con un account sviluppatore gratuito.
@@ -58,11 +54,11 @@ Per rimuovere questa restrizione (e avere una scadenza di 365 giorni), puoi paga
 
 In alternativa, puoi usare LiveContainer, oppure sulle versioni di iOS 18 db5/18.0.1 e inferiori, puoi utilizzare l'exploit di SparseRestore per bypassare il limite di 3 app (non bypassa il limite di 10 app-id).
 
-Puoi trovare la guida [qui](/docs/advanced/alternative).
+Puoi trovare la guida [qui](advanced/alternative).
 
 ### Ho un problema o un bug o una richiesta per una funzionalità
 
-Apri una issue sulla nostra pagina GitHub per reportare un bug o richiedere una funzionalità (con le etichette adeguate)!
+Controlla i [problemi comuni](troubleshooting/common-issues) e le issues su GitHub, se non trovi nulla, crea una nuova issue sulla nostra pagina GitHub per segnalare un bug o richiedere una feature (con l'etichetta adeguata)! 
 
 ### Sono uno sviluppatore, in che modo mi riguarda?
 
@@ -70,7 +66,7 @@ Le tue app non dovrebbero necessitare di modifiche per funzionare con SideStore!
 
 ### Devo installare AltStore per installare SideStore?
 
-No, puoi eseguire il sideload di SideStore seguendo le nostre guide!
+No, puoi eseguire il sideload di SideStore seguendo la nostra [guida](installation/prerequisites)!
 
 ### Come utente, sto avendo problemi a fare il login su SideStore. Ho un errore.
 
@@ -118,20 +114,8 @@ Certo! Clicca sul bottone "Aggiorna" quando compare!
 
 Puoi fare il sideload di una versione nightly di SideStore tramite SideStore o AltServer e i dati dovrebbero rimanere, o abilita gli aggiornamenti beta e seleziona "nightly" nelle Impostazioni. Non possiamo garantirti che i dati rimangano quando provi una versione non ufficiale o nightly.
 
-### Le mie app sono scomparse da SideStore e non so cosa fare!
-
-Non andare nel panico! Ri-esegui il sideload delle app senza rimuoverle dal dispositivo e i dati dovrebbero essere salvi. Sfortunatamente è possibile che le app vadano perse, ma per esserne certo fai il refresh di SideStore per vedere se ricompaiono.
-
-### Impossibile eseguire DebugServer
-
-Ci sono delle volte in cui DebugServer non funziona. Ci sono delle possibili soluzioni:
-
-**Creare un nuovo file di pairing**
-
-[Reimporta il tuo pairing file utilizzando iloader](advanced/pairing-file).
-
 ### Problemi noti
 
-Se stai avendo problemi e vuoi sapere se ne siamo già al corrente, controlla la nostra pagina GitHub nella sezione issue che ha una lista di problemi noti ed eventuali soluzioni. Alcuni dei problemi presenti in questo elenco potrebbero essere noti, ma non sono riportati qui, bensì nella sezione dedicata alle issue su GitHub. https://github.com/SideStore/SideStore/issues/490
+Se stai avendo problemi e vuoi sapere se ne siamo già al corrente, controlla la nostra pagina GitHub nella sezione issue che ha una lista di problemi noti ed eventuali soluzioni. Alcuni dei problemi presenti in questo elenco potrebbero essere noti, ma non sono riportati qui, bensì nella sezione dedicata alle issue su GitHub. [GitHub](https://github.com/SideStore/SideStore/issues/490), [risoluzione di problemi](/docs/troubleshooting/).
 
-Se hai problemi che non sono in questa lista, apri una issue su GitHub o [entra nel nostro Discord](https://dis.sidestore.io/).
+Se hai problemi che non sono in questa lista, apri una issue su GitHub o [entra nel nostro Discord](https://dis.sidestore.io/)

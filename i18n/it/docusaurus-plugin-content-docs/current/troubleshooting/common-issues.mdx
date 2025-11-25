@@ -12,28 +12,29 @@ Questa pagina è in costruzione. Le informazioni dovrebbero essere accurate, ma 
 
 ## Problemi comuni di SideStore
 
-### Mi esce l'errore con il codice "X"
+### Ho un problema con l'ultima nightly
+#### Causa
+Le nostre build nightly includono funzionalità e miglioramenti bleeding-edge, alcuni dei quali possono causare instabilità.
 #### Soluzione
+Passa all'ultima build stabile. Non creare issues e non richiedere supporto riguardo a bug delle versioni nightly.
 
+### Mi esce l'errore con il codice "X"
+#### Causa
+Si è presentato un errore.
+#### Soluzione
 Controlla la nostra [lista di codici di errore](error-codes)!
 
-### AFC Connection Failure
-#### Causa
-Problemi di connessione o file di pairing non valido.
-#### Soluzione
-1. Prova a riconnetterti. Assicurati che il Wi-Fi e StosVPN siano connessi.
-2. Carica e importa un nuovo pairing file usando iloader.
-
-### No Wi-Fi o Connessione VPN
+### AFC Connection Failure / No Wi-Fi o Connessione VPN
 #### Causa
 Problema di connessione con il servizio minimuxer.
 #### Soluzione
 1. Se stai usando WireGuard, passa a StosVPN
 2. Spegni ogni eventuale DNS-blocker
-3. Riprova (spammare il bottone a volte aiuta)
-4. Riavvia SideStore
-5. Riavvia StosVPN
-6. Carica e importa un nuovo pairing file usando iloader.
+3. Assicurati che StosVPN e Wi-Fi siano connesse
+4. Riprova (spammare il bottone a volte aiuta)
+5. Riavvia SideStore
+6. Riavvia StosVPN
+7. [Piazza un nuovo pairing file](../advanced/pairing-file) usando iloader.
 
 ### SideStore si blocca a metà durante l'installazione
 #### Causa
@@ -45,7 +46,7 @@ Problemi di cache o protocollo.
 4. In server- resetta adi.pb, poi esegui il logout da SideStore e rifai il login
 5. Riavvia il dispositivo
 6. Ricrea il pairing file
-7. Reinstalla SideStore con iloader
+7. Reinstalla SideStore con AltServer
 
 ### Impossibile eseguire SideStore
 #### Causa
@@ -62,3 +63,7 @@ Se continua a non funzionare, procedi come segue:
 4. Installa `sidestore.ipa` sul tuo device
 5. Importa il file `sidestore.ipa` in SideStore come se stessi installando un qualsiasi IPA
 6. Questo permette a SideStore di fare un avvio pulito, sperando risolva il problema
+
+### Non sono riuscito a trovare il mio problema qui
+#### Soluzione
+Controlla la nostra [guida per la risoluzione di problemi](/docs/troubleshooting).

@@ -19,6 +19,9 @@ description: Una guida per la risoluzione di problemi in situazioni senza codice
    - Aprendo iTunes e controllando se appare una finestra sul tuo dispositivo che chiede l'autorizzazione.
 2. **Usa un altro Apple ID**: Prova ad utilizzare un altro Apple ID. Se necessario, puoi [creare un nuovo Apple ID](https://appleid.apple.com/account#!\&page=create) solo per SideStore gratuitamente.
 
+### L'aggiornamento di SideStore si blocca verso la fine
+
+Vai nella schermata home per far si che termini. Non sappiamo perché accade, ma potrebbe avere a che fare con l'utilizzo di una VPN per dire ad `installd` di refreshare SideStore stesso.
 
 ## Problemi di Login
 
@@ -34,7 +37,7 @@ Se SideStore si blocca o mostra codici di errore quando provi a loggarti, potreb
    - Potresti dover provare diversi server della lista e trovare quello che funziona meglio per te.
 
 2. **Hosta il tuo Server Anisette:**
-   Se preferisci, puoi settare un tuo server Anisette personale. Puoi trovare istruzioni dettagliate [qui](/docs/advanced/anisette).
+   Se preferisci, puoi settare un tuo server Anisette personale. Le istruzioni dettagliate per hostare un server Anisette sono disponibili nella documentazione ufficiale e possono essere trovate [qui](/docs/advanced/anisette).
 
 ### Non ricevo il codice di verifica quando accedo con il mio Apple ID
 
@@ -59,14 +62,11 @@ Un altro problema comune durante il login è non ricevere il codice di verifica 
    - Usa questo codice in SideStore per completare il processo di login.
 
 
-## Non riesco a refreshare o installare app
+## Le mie app sono scomparse da SideStore e non so che fare!
 
-### Risolvere errore No Wi-Fi o VPN
+Non ti preoccupare! Rifai il sideload delle app nel solito modo senza cancellarle dal dispositivo e i dati dovrebbero rimanere. Sfortunatamente è possibile che le app disattivate siano scomparse, ma per esserne certi refresha SideStore per vedere se riappaiono.
 
-1. Attiva la modalità aereo e connettiti a un Wi-Fi stabile.
-2. Assicurati che i domini Apple e il dominio del tuo server anisette non siano bloccati.
-   - Disattiva qualsiasi server DNS che blocchi domini come `ocsp.apple.com`.
-   - Disconnettiti dal Wi-Fi di scuola/lavoro, prova a connetterti ad una rete senza restrizioni.
-3. Verifica che la VPN sia connessa in StosVPN.
-4. Spegni e riaccendi StosVPN, poi aspetta qualche secondo in SideStore prima di riprovare il refresh.
-5. [Reimporta il pairing file con iloader](../advanced/pairing-file).
+
+## Non riesco a far partire DebugServer
+
+Ci sono situazioni in cui DebugServer non funziona. Però, puoi provare a [ripiazzare il pairing file con iloader](../advanced/pairing-file)
