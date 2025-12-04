@@ -22,24 +22,22 @@ Come alternativa, SideStore 0.6.2 include aggiornamenti a minimuxer, permettendo
 ## Prerequisiti
 * Un iDevice con iOS/iPadOS 17.4-tutte le versioni di iOS 18, esclusa 18.4b1. Se sei su 17.0-17.3 devi usare un metodo alternativo come [SideJITServer](https://github.com/nythepegasus/SideJITServer). Il JIT-enabler di SideStore funziona su iOS 26 solo se il tuo dispositivo ha più di 4 anni (non-TMX capable).
 
-## Installazione di StikDebug nell'App Store di Apple
+## Installazione di StikDebug:
 
 1. **Installa StikDebug**
-   Installa StikDebug dall'[App Store](https://apps.apple.com/us/app/stikdebug/id6744045754).
-:::note 
-Punto a favore- la VPN di StikDebug è simile a quella di SideStore, puoi dunque usarla per installare e refreshare le app in SideStore, in modo simile a StosVPN.
+   Installa StikDebug dall'[App Store](https://apps.apple.com/us/app/stikdebug/id6744045754). Se vivi nell'UE, installa StikDebug da AltStore PAL ([Installa AltStore PAL](https://altstore.io/download), [Aggiungi la repo StikDebug](https://intradeus.github.io/http-protocol-redirector?r=altstore-pal://source?url=https://stikdebug.xyz/apps.json)).
+
+:::note Punto a favore- la VPN di StikDebug è simile a quella di SideStore, puoi dunque usarla per installare e refreshare le app in SideStore, in modo simile a StosVPN.
 :::
 
-2. **Procedura di installazione:**
-   Segui la procedura standard qui sotto.
+2. **Aggiungi il pairing file:**
+Usa iloader per importare lo stesso **pairing file** che hai usato per SideStore. Per più info su questo procedimento, guarda [qui](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md).
 
-### Procedura di installazione standard:
 
-1. **Carica il pairing file:**
-   Apri e chiudi StikDebug per creare la cartella dell'app su File, poi importa lo stesso **pairing file** che usi per SideStore usando idevice pair. Per più info sul processo, vedi [qui](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md).
+### Procedura di setup standard (va fatta ad ogni riavvio del device)
 
-2. **Monta il DDI:**
-   Apri StikDebug con il Wi-Fi, la VPN connessa e il pairing file importato, poi chiudila e riaprila. Questo monta il DDI e deve essere fatto ogni volta che riavvii il tuo iDevice.
+1. **Monta il DDI:**
+   Apri StikDebug con il Wi-Fi, la VPN connessa e il pairing file importato, poi chiudila e riaprila. Questo monta il DDI. StikDebug dovrebbe avere tutti gli indicatori verdi. 
 
 ## Per abilitare JIT:
 
