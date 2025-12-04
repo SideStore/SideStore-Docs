@@ -53,7 +53,7 @@ Then for each other device:
 ## VPN
 ### WireGuard
 :::note
-The SideStore VPN **only works on SideStore versions between 0.3.1-0.6.1, and 0.6.3-nightly.4e6756d on**, and is not recommended if you have an alternative available such as StosVPN or Stikdebug. If you are not on these versions and it doesn't work, **please do not ask for support with this**. 
+The SideStore WireGuard VPN **only works on SideStore versions between 0.3.1-0.6.1, and 0.6.3-nightly.4e6756d on**, and is not recommended if you have an alternative available such as LocalDevVPN or StikDebug. If you are not on these versions and it doesn't work, **please do not ask for support with this**. 
 :::
 
 SideStore utilizes an on-device WireGuard VPN which allows SideStore to communicate with internal services.
@@ -181,7 +181,7 @@ The SparseRestore "Bypass 3 app limit" exploit **only works on iOS/iPadOS versio
 
 2. Tick on "Disable App Limit" in SideStore, and make sure SideStore is **closed** (not in background), then open SparseBox.
 
-3. Enable StosVPN, select your pairing file and tap 'Bypass 3-app limit'. This should bring up a log output. Wait for it to say `idevicebackup2 exited with code -18` or `idevicebackup2 exited with code 2`, then close the app. No need to hit apply.
+3. Enable LocalDevVPN, select your pairing file and tap 'Bypass 3-app limit'. This should bring up a log output. Wait for it to say `idevicebackup2 exited with code -18` or `idevicebackup2 exited with code 2`, then close the app. No need to hit apply.
 
 4. Re-open SideStore, and scroll down in SideStore settings. Press "clear cache", this will allow the exploit to be seen by SideStore.
 
