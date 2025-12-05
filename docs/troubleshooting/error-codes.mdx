@@ -3,12 +3,6 @@ title: Error Codes
 description: Error codes found in SideStore.
 ---
 
-:::warning
-
-This page is currently not fully accurate to how SideStore works, as this is based on AltStore's Error Codes page. Some info is still correct, but please don't rely on this word for word. Make sure to ask in our [Discord server](https://dis.sidestore.io/) for help if you need it.
-
-:::
-
 ## SideStore Errors
 
 #### (1000) An unknown error occurred.
@@ -71,7 +65,7 @@ This means an internal error occurred and SideStore couldn't provide the necessa
 
 This means that you have reached the maximum amount of App IDs available. Apps IDs are not able to be deleted manually. App IDs renew if the app has exists 7 days after when it was first installed or renewed last, and expire if they have been deleted since. Please check the App IDs in the My Apps tab to see when they will expire.
 
-#### (1010) There are no AltStore sources.
+#### (1010) There are no SideStore sources.
 
 `SideStore.OperationError 1010`
 
@@ -127,19 +121,19 @@ Ensure Wi-Fi and LocalDevVPN are both connected. If the error doesn't resolve, [
 
 #### (3000) An unknown error occurred.
 
-`AltStore.AppleDeveloperError`
+`SideStore.AppleDeveloperError`
 
 Updated information coming soon
 
 #### (3001) The provided parameters are invalid.
 
-`AltStore.AppleDeveloperError`
+`SideStore.AppleDeveloperError`
 
 Updated information coming soon
 
 #### (3002) Incorrect Apple ID or password.
 
-`AltStore.AppleDeveloperError`
+`SideStore.AppleDeveloperError`
 
 This means that the Apple ID credentials you used were invalid. Make sure the username and password are correct.
 
@@ -147,115 +141,115 @@ If you still have issues, you can also try creating a new Apple ID to use with S
 
 #### (3003) An app-specific password is required. You can create one at appleid.apple.com.
 
-`AltStore.AppleDeveloperError`
+`SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 #### (3004) You are not a member of any development teams.
 
-`AltStore.AppleDeveloperError`
+`SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 #### (3005) This device's UDID is invalid.
 
-`AltStore.AppleDeveloperError`
+`SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 #### (3006) This device is already registered with another ID.
 
-`AltStore.AppleDeveloperError`
+`SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 #### (3007) The certificate request is invalid.
 
-`AltStore.AppleDeveloperError`
+`SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 #### (3008) There is no certificate with the requested serial number for this team.
 
-`AltStore.AppleDeveloperError`
+`SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 #### (3009) The name for this app is invalid.
 
-`AltStore.AppleDeveloperError`
+`SideStore.AppleDeveloperError`
 
 SideStore couldn’t register an App ID with Apple because the app name contains non-ASCII characters. You can try downloading from another source.
 
 #### (3010) The bundle identifier for this app is invalid.
 
-`AltStore.AppleDeveloperError`
+`SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 #### (3011) The bundle identifier for this app has already been registered.
 
-`AltStore.AppleDeveloperError`
+`SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 #### (3012) There is no App ID with the requested identifier on this team.
 
-`AltStore.AppleDeveloperError`
+`SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 #### (3013) You may only register 10 App IDs every 7 days.
 
-`AltStore.AppleDeveloperError`
+`SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 #### (3014) The provided app group is invalid.
 
-`AltStore.AppleDeveloperError`
+`SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 #### (3015) App group does not exist.
 
-`AltStore.AppleDeveloperError`
+`SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 #### (3016) The identifier for the requested provisioning profile is invalid.
 
-`AltStore.AppleDeveloperError`
+`SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 #### (3017) There is no provisioning profile with the requested identifier on this team.
 
-`AltStore.AppleDeveloperError`
+`SideStore.AppleDeveloperError`
 
-If you are seeing this error, it's likely due to a recent server-side change made by Apple. Please see the following announcement with more info: [https://twitter.com/altstoreio/status/1638599316762664974?s=20](https://twitter.com/altstoreio/status/1638599316762664974?s=20)
+If you are seeing this error, it's likely due to a recent server-side change made by Apple. Please see the following announcement with more info: [https://twitter.com/SideStoreio/status/1638599316762664974?s=20](https://twitter.com/SideStoreio/status/1638599316762664974?s=20)
 
 #### (3018) This account requires signing in with two-factor authentication.
 
-`AltStore.AppleDeveloperError`
+`SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 #### (3019) Incorrect verification code.
 
-`AltStore.AppleDeveloperError`
+`SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 #### (3020) Failed to perform authentication handshake with server.
 
-`AltStore.AppleDeveloperError`
+`SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 #### (3021) The provided anisette data is invalid.
 
-`AltStore.AppleDeveloperError`
+`SideStore.AppleDeveloperError`
 
 This error means that the information used to authenticate your AppleID information either expired or invalid. Make sure your computer date and time are accurate and that you’ve installed iTunes and iCloud from Apple.
 
@@ -297,7 +291,7 @@ Follow the steps here to fix this error:
 2. Then, import the IPA with this issue to Feather app as well as any random .mobileprovision and .p12 file, they can be expired since we are just using this app to reallocate the headers of the IPA
 3. Sign the IPA with the certificate you imported.
 4. Open the signed app in files and pack it back to IPA.
-5. Install the packed IPA in AltStore
+5. Install the packed IPA in SideStore.
 
 ### (-1011) NSURLErrorDomain
 
