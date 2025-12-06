@@ -22,22 +22,24 @@ SideStore를 설치하기 위해서는 아래의 요구사항을 충족해야 �
 
 SideStore는 기기 내 VPN을 활용하여 내부 서비스와 통신해요.
 
-1. StosVPN을 [공식 App Store](https://apps.apple.com/kr/app/stosvpn/id6744003051)에서 다운로드해 주세요.
-2. VPN을 활성화해 주세요.
+1. LocalDevVPN을 [공식 App Store](https://apps.apple.com/kr/app/localdevvpn/id6755608044)에서 다운로드해 주세요.
+2. VPN을 활성화해 주세요. "VPN 구성을 추가하겠냐"는 메시지가 뜨면 '허용'을 누르고 기기 암호를 입력해야 해요.
 
-StosVPN은 SideStore에서 앱을 설치하거나 업데이트 또는 서명을 갱신 할 때마다 활성화되어 있어야 해요.
+SideStore에서 앱을 설치, 업데이트, 새로고침하려면 이 VPN을 항상 켜두어야 해요.
 
-## 당신의 Mac에서
+이제 사용하는 컴퓨터 OS에 맞는 안내를 따라가주세요.
+
+### Mac에서
 1. iloader를 다운로드 하고 설치해 주세요. ([M시리즈](https://github.com/nab138/iloader/releases/latest/download/iloader-darwin-aarch64.dmg) 또는 [Intel](https://github.com/nab138/iloader/releases/latest/download/iloader-darwin-x64.dmg)).
 2. 터미널을 연 후, `sudo xattr -c ./Applications/iloader.app`를 입력해 주세요. 그리고 만약 비밀번호를 물어보는 창이 나타나면 비밀번호를 입력해 주세요.
 
 
-## 당신의 Windows PC에서
+### Windows PC에서
 1. [iTunes](https://apple.co/ms)를 다운로드하고 설치해 주세요.
 2. iloader 인스톨러를 다운로드해 주세요. ([exe](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.exe) 또는 [msi](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.msi)).
 3. 인스톨러를 실행해 주세요.
 
-## 당신의 Linux 머신에서
+### Linux 머신에서
 1. `usbmuxd`를 다운로드 하고 설치해 주세요. (당신이 쓰는 Linux 배포판에는 기본으로 깔려 있을 수도 있어요. 아니면 패키지 관리자로 설치하면 돼요.)
 2. 당신의 Linux 배포판에 맞는 iloader를 다운로드하고 설치해 주세요. ([Debian/Ubuntu](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.deb), [Fedora/openSUSE](https://github.com/nab138/iloader/releases/download/v0.1.3/iloader-linux-x86_64.rpm), [기타](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.AppImage)).
 
