@@ -279,20 +279,19 @@ This error means that the username or password used to authenticate your Apple I
 
 `NSCocoaErrorDomain`
 
-This means that an error occurred while writing files to disk. Make sure your phone and PC both have plenty of available disk space and try again.
+This means that an error occurred while writing files to disk. Make sure your phone has plenty of available disk space and try again.
 
+### (-1011) NSURLErrorDomain
+
+Navigate to https://developer.apple.com/, sign in, and accept the new Apple Developer Terms of Service.
 #### ldid Error
 
 `ldid.cpp(X): X`
 
 Follow the steps here to fix this error:
 
-1. First, you need to install Feather.
-2. Then, import the IPA with this issue to Feather app as well as any random .mobileprovision and .p12 file, they can be expired since we are just using this app to reallocate the headers of the IPA
+1. Install [Feather](https://github.com/khcrysalis/Feather/releases/latest).
+2. Import the IPA with this issue to Feather, as well as any random .mobileprovision and .p12 file (they can be expired since we are just using this app to reallocate the headers of the IPA).
 3. Sign the IPA with the certificate you imported.
 4. Open the signed app in files and pack it back to IPA.
 5. Install the packed IPA in SideStore.
-
-### (-1011) NSURLErrorDomain
-
-Navigate to https://developer.apple.com/, sign in, and accept the new Apple Developer Terms of Service.
