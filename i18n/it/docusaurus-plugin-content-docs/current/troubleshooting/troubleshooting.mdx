@@ -4,27 +4,25 @@ description: Una guida per la risoluzione di problemi in situazioni senza codice
 ---
 
 ## Installazione
-
 ### Ho seguito le istruzioni ma non riesco a installare SideStore.
 
 #### Istruzioni per Mac
 1. **Autorizza il dispositivo**: Dopo aver collegato il tuo dispositivo iOS al Mac, assicurati di aver premuto "Autorizza" sia sul Mac che sul dispositivo iOS. Puoi verificarlo in questo modo:
    - Aprendo Finder (macOS 10.15 Catalina o successivi) o iTunes (macOS 10.14 Mojave e precedenti).
    - Disconnettendo e riconnettendo il tuo device al Mac e controllando se compare una finestra che richiede l'autorizzazione del dispositivo.
-2. **Usa un altro Apple ID**: Prova ad utilizzare un altro Apple ID. Se necessario, puoi [creare un nuovo Apple ID](https://appleid.apple.com/account#!\&page=create) solo per SideStore gratuitamente.
+2. **Usa un altro Account Apple**: Prova ad utilizzare un altro Account Apple. Se necessario, puoi [creare un nuovo Account Apple](https://appleid.apple.com/account#!\&page=create) solo per SideStore gratuitamente.
 
 #### Istruzioni per Windows
 
 1. **Autorizza il dispositivo**: Dopo aver collegato il tuo dispositivo iOS al PC, assicurati di aver premuto "Autorizza" sia sul PC che sul dispositivo iOS. Puoi verificarlo in questo modo:
    - Aprendo iTunes e controllando se appare una finestra sul tuo dispositivo che chiede l'autorizzazione.
-2. **Usa un altro Apple ID**: Prova ad utilizzare un altro Apple ID. Se necessario, puoi [creare un nuovo Apple ID](https://appleid.apple.com/account#!\&page=create) solo per SideStore gratuitamente.
+2. **Usa un altro Account Apple**: Prova ad utilizzare un altro Account Apple. Se necessario, puoi [creare un nuovo Account Apple](https://appleid.apple.com/account#!\&page=create) solo per SideStore gratuitamente.
 
 ### L'aggiornamento di SideStore si blocca verso la fine
 
 Vai nella schermata home per far si che termini. Non sappiamo perché accade, ma potrebbe avere a che fare con l'utilizzo di una VPN per dire ad `installd` di refreshare SideStore stesso.
 
 ## Problemi di Login
-
 ### SideStore si blocca o mostra un codice di errore durante il Login
 
 Se SideStore si blocca o mostra codici di errore quando provi a loggarti, potrebbero esserci diversi problemi. Segui questi step per risolverli:
@@ -39,9 +37,8 @@ Se SideStore si blocca o mostra codici di errore quando provi a loggarti, potreb
 2. **Hosta il tuo Server Anisette:**
    Se preferisci, puoi settare un tuo server Anisette personale. Le istruzioni dettagliate per hostare un server Anisette sono disponibili nella documentazione ufficiale e possono essere trovate [qui](/docs/advanced/anisette).
 
-### Non ricevo il codice di verifica quando accedo con il mio Apple ID
-
-Un altro problema comune durante il login è non ricevere il codice di verifica quando usi il tuo Apple ID con SideStore. Puoi risolvere il problema seguendo questi step:
+### Non ricevo il codice di verifica quando accedo con il mio Account Apple
+Un altro problema comune durante il login è non ricevere il codice di verifica quando usi il tuo Account Apple con SideStore. Puoi risolvere il problema seguendo questi step:
 
 **Per versioni iOS inferiori alla 18.1:**
 
@@ -57,18 +54,15 @@ Un altro problema comune durante il login è non ricevere il codice di verifica 
 2. Seleziona "Accedi".
 3. Avrai due opzioni: "Accedi" e "Usa un altro account Apple".
    - Seleziona la seconda opzione: "Usa un altro account Apple".
-4. Inserisci il tuo Apple ID e la password (non usare una passkey).
+4. Inserisci il tuo Apple Account identifier (indirizzo mail o numero di telefono) e la password (non usare una passkey).
 5. Apple ti invierà un codice di verifica.
    - Usa questo codice in SideStore per completare il processo di login.
 
 
 ## Altro
-
 ### Le mie app sono scomparse da SideStore e non so che fare!
-
 Non ti preoccupare! Rifai il sideload delle app nel solito modo senza cancellarle dal dispositivo e i dati dovrebbero rimanere. Sfortunatamente è possibile che le app disattivate siano scomparse, ma per esserne certi refresha SideStore per vedere se riappaiono.
 
 
 ### Non riesco a far partire DebugServer
-
 Ci sono situazioni in cui DebugServer non funziona. Però, puoi provare a [ripiazzare il pairing file con iloader](/docs/advanced/pairing-file)

@@ -4,44 +4,62 @@ description: "I primi step dell'installazione."
 sidebar_position: 1
 ---
 
-Il processo di installazione di SideStore potrebbe sembrare complesso, ma con l'utilizzo ***una sola volta*** di un computer e un po' di tempo, avrai SideStore sul tuo dispositivo!
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
 
 ## Requisiti
-
 Per installare SideStore ti serviranno:
 
-- Un iPhone/iPad [con un codice](https://support.apple.com/it-it/119586) con iOS/iPadOS 14 o superiori
-- Un computer (una volta sola)
-- Un Account Apple 
+- Un iPhone, iPad o iPod Touch [con un codice](https://support.apple.com/it-it/119586) con iOS/iPadOS 15.0 o successivi
+- Un computer con Windows 7 o successivi, macOS High Sierra o successivi o una distro Linux aggiornata; solo per l'installazione iniziale
+- Un Account Apple (o Apple ID)
 - Una connessione Wi-Fi
-- Un po' di tempo (È un processo rapido, ma potresti aver bisogno di [tempo per la risoluzione di problemi](/docs/troubleshooting/))
+- Un po' di tempo! È un processo rapido, ma potresti aver bisogno di [tempo per la risoluzione di problemi](/docs/troubleshooting/)
 
 ## Preparare il tuo Dispositivo
-
-### Sul tuo iPhone/iPad
-
 SideStore utilizza una VPN on-device che permette a SideStore di comunicare con dei servizi interni
 
-1. Scarica LocalDevVPN dall'[Apple App Store](https://apps.apple.com/app/localdevvpn/id6755608044). Se sei in UE e non l'app non appare, puoi provare la [repo di AltStore PAL](https://intradeus.github.io/http-protocol-redirector?r=altstore-pal://source?url=https://adp.se2crid.me/). Nota: non puoi eseguire il sideload delle VPN da un account gratuito.
+1. Scarica LocalDevVPN [dall'Apple App Store](https://apps.apple.com/app/localdevvpn/id6755608044) o [dalla repo di AltStore PAL](https://api.altstore.io/source/adp.se2crid.me?app=com.jkcoxson.LocalDevVPN).
 2. Attiva la VPN. Se ti viene chiesto di "Autorizzare la configurazione della VPN", tocca 'Consenti' e inserisci il tuo codice.
 
-La VPN servirà accesa tutte le volte in cui vorrai installare, aggiornare o refreshare le app in SideStore.
+La VPN dovrà essere accesa tutte le volte in cui vorrai installare, aggiornare o refreshare le app in SideStore.
 
 Ora, segui le istruzioni corrispondenti al sistema operativo del tuo computer:
 
-### Sul tuo Mac
-1. Scarica e installa iloader per [Mac](https://github.com/nab138/iloader/releases/latest/download/iloader-darwin-universal.dmg).
+<Tabs groupId="operating-systems">
+    <TabItem value="mac" label="macOS">
+        1. Scarica e installa [iloader](https://github.com/nab138/iloader/releases/latest/download/iloader-darwin-universal.dmg).
+    </TabItem>
+    <TabItem value="win" label="Windows">
+        :::warning
+        Le versioni a 32-bit di Windows o Windows 10 on Arm non sono supportate.
 
-### Sul tuo PC Windows
-1. Scarica e installa [iTunes](https://apple.co/ms).
-2. Scarica l'installer di iloader ([exe](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.exe) o [msi](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.msi)).
-3. Esegui l'installer.
+        <details>
+          <summary>**La maggior parte delle versioni di Windows è a 64-bit.** Comunque, se vuoi verificare di stare usando una versione supportata, puoi seguire queste istruzioni</summary>
+            1. Apri la finestra Esegui con Windows+R (o Command+R o Super+R).
+            2. Scrivi `control /name microsoft.system`. Si aprirà il Pannello di Controllo.
+            3. Sotto il tab "System", clicca "System Type".
 
-### Sulla tua Macchina Linux
-1. Scarica e installa `usbmuxd` (potrebbe essere preinstallata sulla tua distro, altrimenti installalo con il tuo package manager).
-2. Scarica e installa iloader per la tua distro ([Debian/Ubuntu](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.deb), [Fedora/openSUSE](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-x86_64.rpm), [altre](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.AppImage)).
+            * Se hai un "Sistema Operativo a 32-bit", la tua versione di Windows non è supportata.        
+            * Se hai un "Processore ARM64" E stai usando Windows 10, la tua versione di Windows non è supportata.
+        </details>
+        ::: 
 
-## Step Successivi
+        1. Scarica e installa iTunes [dal Microsoft Store](https://apps.microsoft.com/store/detail/9PB2MZ1ZMB1S) o [direttamente da Apple](https://www.apple.com/itunes/download/win64).
+        2. Scarica l'installer di iloader [come MSI](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.msi) (consigliato) o [come EXE](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.exe).
+        3. Esegui l'installer.
 
-Ora, segui le istruzioni di installazione per installare SideStore!
-- [Installazione](install)
+    </TabItem>
+    <TabItem value="linux" label="Linux">
+        :::warning
+        Sono supportate solo distro a 64-bit.
+
+        **La maggior parte delle distro è a 64-bit.** Per determinare se stai usando una distro a 64-bit, apri il terminale e digita `uname -m`. Dovrebbe restituire `x86_64`.
+        :::
+
+        1. Scarica e installa `usbmuxd`. Dovrebbe essere preinstallato sulla tua distro, altrimenti installalo con il tuo package manager: una ricerca Google "install usbmuxd [nome distro]" potrebbe aiutare.
+        2. Scarica e installa iloader per la tua distro. È disponibile come [DEB](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.deb) per Debian/Ubuntu, [RPM](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-x86_64.rpm) per Fedora/openSUSE, e come [AppImage](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.AppImage) per le altre. (Ci sono anche pacchetti della community, come [questo sull'AUR di Arch Linux](https://aur.archlinux.org/packages/iloader-bin), ma non possiamo garantire la sua sicurezza. Dovresti sempre controllare tutti i pacchetti prima di installare qualcosa sul tuo sistema.)
+    </TabItem>
+</Tabs>
