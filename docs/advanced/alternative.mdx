@@ -3,35 +3,46 @@ title: Alternative/Outdated Instructions
 description: "A place for alternative/outdated SideStore setup instructions. Note: many of these walkthroughs may be incompatible with latest iOS or SideStore versions."
 ---
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 ## Installation
 ### AltServer
-#### macOS
-Follow the instructions (steps 1-3) [here](https://faq.altstore.io/altstore-classic/how-to-install-altstore-macos) to setup AltServer
-#### Windows
-Follow the instructions (steps 1-3) [here](https://faq.altstore.io/altstore-classic/how-to-install-altstore-windows) to setup AltServer
-#### Linux (Altcon)
-Before you start, make sure to have installed usbmuxd.
 
-1. Ensure you have usbmuxd installed and updated by running `sudo apt install -y usbmuxd` in the Linux terminal.
-2. Install either Docker or Podman on your machine. 
-2. Plug in your secondary iDevice. If you receive a prompt, select "trust" and enter your passcode.
+<Tabs groupId="operating-systems">
+  <TabItem value="mac" label="macOS">
+    Follow the instructions (steps 1-3) [here](https://faq.altstore.io/altstore-classic/how-to-install-altstore-macos) to setup AltServer
+  </TabItem>
+  <TabItem value="win" label="Windows">
+    Follow the instructions (steps 1-3) [here](https://faq.altstore.io/altstore-classic/how-to-install-altstore-windows) to setup AltServer
+  </TabItem>
+  <TabItem value="linux" label="Linux (Altcon)">
+    Before you start, make sure to have installed usbmuxd.
+   1. Ensure you have usbmuxd installed and updated by running `sudo apt install -y usbmuxd` in the Linux terminal.
+   2. Install either Docker or Podman on your machine. 
+   3. Plug in your secondary iDevice. If you receive a prompt, select "trust" and enter your passcode.
+   4. Now, run Altcon with Docker or Podman using the following command (may require `sudo`):
 
-3. Now, run Altcon with Docker or Podman using the following command (may require `sudo`):
+   Docker setup:
+   ```bash
+   docker run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd -v /var/lib/lockdown:/tmp/lockdown ghcr.io/sidestore/altcon
+   ```
 
-Docker setup:
-```bash
-docker run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd -v /var/lib/lockdown:/tmp/lockdown ghcr.io/sidestore/altcon
-```
-Podman setup:
-```bash
-podman run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd -v /var/lib/lockdown:/tmp/lockdown ghcr.io/sidestore/altcon
-```
-5. Altcon will pair with your device. When you receive another prompt, select "trust" and enter your passcode again.
+   Podman setup:
+   ```bash
+   podman run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd -v /var/lib/lockdown:/tmp/lockdown ghcr.io/sidestore/altcon
+   ```
 
-#### Setting up SideStore for multiple devices on the same account using AltServer
+   5. Altcon will pair with your device. When you receive another prompt, select "trust" and enter your passcode again.
+  </TabItem>
+</Tabs>
+
+#### Setting up SideStore for multiple devices on the same account using AltServer (only works with macOS/Windows)
 Steps:
 1. Setup AltServer on macOS/Windows using instructions above
-2. Install AltStore to one device using AltServer (We need AltStore once since it seems AltServer won't put machine identifier in apps other than AltStore)
+2. Install AltStore to one device using AltServer 
 3. Sign in Apple ID in AltStore
 4. Export Certificate
 5. Delete AltStore
@@ -71,20 +82,20 @@ This VPN is required to be on any time you use SideStore, as most functions will
 ### idevice_pair
 #### Installation Instructions
 
-##### macOS
-
-1. Download [idevice pair for macOS](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--macos-universal.dmg).
-2. Open the Disk Image and drag `idevice pair` to `Applications`.
-
-##### Windows
-
-1. Ensure iTunes ([64-bit](https://apple.com/itunes/download/win64) or [32-bit](https://apple.com/itunes/download/win32)) is installed from from Apple's website (it should already be installed from the process of setting up AltServer).
-2. Download [idevice pair for Windows](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--windows-x86_64.exe) and move it somewhere you will remember it.
-
-##### Linux
-
-1. Ensure usbmuxd is installed on your machine by running `sudo apt install -y usbmuxd` in the Linux terminal.
-2. Download the version of idevice_pair for Linux ([x86_64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-x86_64.AppImage) or [AArch64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-aarch64.AppImage)) which corresponds to your PC's architecture. Move it somewhere you will remember it, and make it executable.
+<Tabs groupId="operating-systems">
+  <TabItem value="mac" label="macOS">
+   1. Download [idevice pair for macOS](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--macos-universal.dmg).
+   2. Open the Disk Image and drag `idevice pair` to `Applications`.
+  </TabItem>
+  <TabItem value="win" label="Windows">
+   1. Ensure iTunes ([64-bit](https://apple.com/itunes/download/win64) or [32-bit](https://apple.com/itunes/download/win32)) is installed from from Apple's website (it should already be installed from the process of setting up AltServer).
+   2. Download [idevice pair for Windows](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--windows-x86_64.exe) and move it somewhere you will remember it.
+  </TabItem>
+  <TabItem value="linux" label="Linux">
+   1. Ensure usbmuxd is installed on your machine by running `sudo apt install -y usbmuxd` in the Linux terminal.
+   2. Download the version of idevice_pair for Linux ([x86_64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-x86_64.AppImage) or [AArch64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-aarch64.AppImage)) which corresponds to your PC's architecture. Move it somewhere you will remember it, and make it executable.
+  </TabItem>
+</Tabs>
 
 #### Pairing Instructions
 
@@ -105,57 +116,61 @@ Download JitterbugPair for [Windows (64-bit)](https://github.com/osy/Jitterbug/r
 Depending on your method, when transferring your .mobiledevicepariring file, the file extension might change (usually to .txt or cropping off the "ing"). It is always recommended to zip your pairing file before transferring it. SideStore only accepts .mobiledevicepairing files (or .plist files in older versions).
 :::
 
-##### Windows
+<Tabs groupId="operating-systems">
+  <TabItem value="mac" label="macOS">
+   1. Download JitterbugPair for [macOS](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-macos.zip).
+   2. **Extract** `jitterbugpair-macos.zip`.
+   3. **Set a passcode** for your device if you haven't already. Unlock your device and connect it to your computer via cable. If a prompt appears, tap "trust" and type in your passcode.
+   4. Open your device to the homescreen.
+   5. Find and open the extracted `jitterbugpair` file (it should have a black and green icon) by double-clicking it or right-clicking it and selecting "open". The first time you run the tool, you will get a prompt for your passcode on your secondary device. Type it in, then keep the screen on and unlocked and run the tool again.
+   6. If you get the message" "macOS cannot verify that this app is free from malware":
+      - Go to System Settings > Privacy & Security
+      - Scroll down to the message about the app
+      - Click "Open Anyway," if the program doesn't run automatically, try manually running it again
+   7. JitterbugPair will generate a **pairing file** with the extension `.mobiledevicepairing` to your user's home folder.
+   8. If you can't find the pairing file:
+      - Copy the name of the pairing file generated
+      - Paste it into Finder
+      - If you ran the program more than once, all pairing files for your device should appear since they share the same name
+   9. For best results, compress the file into a .zip folder. Then, **transfer the pairing file** to your iOS device via AirDrop, iCloud/One/Google Drive, email, or another method you prefer.
+  </TabItem>
+  <TabItem value="win" label="Windows">
+   1. Download JitterbugPair for [Windows (64-bit)](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip).
+   2. **Extract** `jitterbugpair-win64.zip`.
+   3. **Set a passcode** for your device if you haven't already. Unlock your device and connect it to your computer via cable. If a prompt appears, tap "trust" and type in your passcode.
+   4. Open your device to the homescreen.
+   5. In File Explorer, locate `jitterbugpair.exe` and run it by double-clicking or right-clicking and selecting "open". The first time you run the tool, you will get a prompt for your passcode on your secondary device. Type it in, then keep the screen on and unlocked and run the tool again.
+   6. JitterbugPair will generate a **pairing file** in the same folder. This file will have the extension `.mobiledevicepairing`.
+   7. For best results, compress the file into a .zip folder. Then, **transfer the pairing file** to your iOS device using One/iCloud/Google Drive, email, or another method you prefer.
 
-1. **Extract** `jitterbugpair-win64.zip`.
-2. **Set a passcode** for your device if you haven't already. Unlock your device and connect it to your computer via cable. If a prompt appears, tap "trust" and type in your passcode.
-3. Open your device to the homescreen.
-4. In File Explorer, locate `jitterbugpair.exe` and run it by double-clicking or right-clicking and selecting "open". The first time you run the tool, you will get a prompt for your passcode on your secondary device. Type it in, then keep the screen on and unlocked and run the tool again.
-5. JitterbugPair will generate a **pairing file** in the same folder. This file will have the extension `.mobiledevicepairing`.
-6. For best results, compress the file into a .zip folder. Then, **transfer the pairing file** to your iOS device using One/iCloud/Google Drive, email, or another method you prefer.
+   On Windows, you might have to execute the program using Command Prompt or Powershell, as double-clicking the `.exe` file doesn't always open it.
 
-On Windows, you might have to execute the program using Command Prompt or Powershell, as double-clicking the `.exe` file doesn't always open it.
+   8. In File Explorer, navigate to the folder where jitterbugpair is located.
+   9. In the navigation bar where the folder location is, click an empty spot and type `powershell`. It should open a (possibly blue colored) window called PowerShell.
+   10. From there, type `./jitterbugpair.exe` and press enter while your device is plugged in.
 
-7. In File Explorer, navigate to the folder where jitterbugpair is located.
-8. In the navigation bar where the folder location is, click an empty spot and type `powershell`. It should open a (possibly blue colored) window called PowerShell.
-9. From there, type `./jitterbugpair.exe` and press enter while your device is plugged in.
+  </TabItem>
+  <TabItem value="linux" label="Linux">
+   These steps expect that you are familiar with the Linux commandline
+   1. Download JitterbugPair for [Linux](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip).
+   2. **Extract** `jitterbugpair-linux.zip`.
+   3. Open a terminal in the extracted directory.
+   4. Make the program executable:
+      ```bash
+      chmod +x ./jitterbugpair
+      ```
+   5. **Set a passcode** for your device if you haven't already. Unlock your device and connect it to your computer via cable. If a prompt appears, tap "trust" and type in your passcode.
+   6. Open your device to the homescreen.
+   7. Execute the program:
+     ```bash
+     ./jitterbugpair
+     ```
+   8. The first time you execute the tool, you will get a prompt for your passcode on your secondary device. Type it in, then keep the screen on and unlocked and run the tool again. Type it in, then keep the screen on and unlocked and execute the tool again.
+   9. JitterbugPair will generate a **pairing file** with the extension `.mobiledevicepairing`.
+   10. For best results, compress the file into a .zip folder. Then, **transfer the pairing file** to your iOS device using email, cloud storage, or another method you prefer.
+  </TabItem>
+</Tabs>
 
-##### macOS
-
-1. **Extract** `jitterbugpair-macos.zip`.
-2. **Set a passcode** for your device if you haven't already. Unlock your device and connect it to your computer via cable. If a prompt appears, tap "trust" and type in your passcode.
-3. Open your device to the homescreen.
-4. Find and open the extracted `jitterbugpair` file (it should have a black and green icon) by double-clicking it or right-clicking it and selecting "open". The first time you run the tool, you will get a prompt for your passcode on your secondary device. Type it in, then keep the screen on and unlocked and run the tool again.
-5. If you get the message" "macOS cannot verify that this app is free from malware":
-   - Go to System Settings > Privacy & Security
-   - Scroll down to the message about the app
-   - Click "Open Anyway," if the program doesn't run automatically, try manually running it again
-6. JitterbugPair will generate a **pairing file** with the extension `.mobiledevicepairing` to your user's home folder.
-7. If you can't find the pairing file:
-   - Copy the name of the pairing file generated
-   - Paste it into Finder
-   - If you ran the program more than once, all pairing files for your device should appear since they share the same name
-8. For best results, compress the file into a .zip folder. Then, **transfer the pairing file** to your iOS device via AirDrop, iCloud/One/Google Drive, email, or another method you prefer. 
-
-##### Linux
-
-These instructions expect that you are familiar with the linux commandline.
-
-1. **Extract** `jitterbugpair-linux.zip`.
-2. Open a terminal in the extracted directory.
-3. Make the program executable:
-   ```bash
-   chmod +x ./jitterbugpair
-   ```
-4. **Set a passcode** for your device if you haven't already. Unlock your device and connect it to your computer via cable. If a prompt appears, tap "trust" and type in your passcode.
-5. Open your device to the homescreen.
-6. Execute the program:
-   ```bash
-   ./jitterbugpair
-   ```
-7. The first time you execute the tool, you will get a prompt for your passcode on your secondary device. Type it in, then keep the screen on and unlocked and run the tool again. Type it in, then keep the screen on and unlocked and execute the tool again.
-8. JitterbugPair will generate a **pairing file** with the extension `.mobiledevicepairing`.
-9. For best results, compress the file into a .zip folder. Then, **transfer the pairing file** to your iOS device using email, cloud storage, or another method you prefer.
 ## SideStore exploits
 ### SparseRestore (3-app limit)
 :::note
