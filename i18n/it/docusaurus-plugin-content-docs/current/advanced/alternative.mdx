@@ -3,43 +3,54 @@ title: Istruzioni alternative/obsolete
 description: "Posto per istruzioni alternative/obsolete per il setup di SideStore. Nota: alcuni di questi step potrebbero essere non compatibili col le ultime versioni di iOS o SideStore"
 ---
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 ## Installazione
 ### AltServer
-#### macOS
-Segui le istruzioni (step 1-3) [qui](https://faq.altstore.io/altstore-classic/how-to-install-altstore-macos) per configurare AltServer
-#### Windows
-Segui le istruzioni (step 1-3) [qui](https://faq.altstore.io/altstore-classic/how-to-install-altstore-windows) per configurare AltServer
-#### Linux (Altcon)
-Prima di iniziare, assicurati di aver installato usbmuxd.
 
-1. Assicurati di avere usbmuxd installato e aggiornato eseguendo `sudo apt install -y usbmuxd` nel terminale Linux.
-2. Installa Docker o Podman sul tuo PC.
-3. Collega il tuo iDevice. Se ricevi un avviso, seleziona "autorizza" e inserisci il codice.
+<Tabs groupId="operating-systems">
+   <TabItem value="mac" label="macOS">
+      Segui le istruzioni (step 1-3) [qui](https://faq.altstore.io/altstore-classic/how-to-install-altstore-macos) per configurare AltServer
+   </TabItem>
+   <TabItem value="win" label="Windows">
+      Segui le istruzioni (step 1-3) [qui](https://faq.altstore.io/altstore-classic/how-to-install-altstore-windows) per configurare AltServer
+   </TabItem>
+   <TabItem value="linux" label="Linux (Altcon)">
+      Prima di iniziare, assicurati di aver installato usbmuxd.
 
-4. Ora, esegui Altcon con Docker o Podman con il seguente comando (potrebbe richiedere `sudo`):
+      1. Assicurati di avere usbmuxd installato e aggiornato eseguendo `sudo apt install -y usbmuxd` nel terminale Linux.
+      2. Installa Docker o Podman sul tuo PC.
+      3. Collega il tuo iPhone, iPad o iPod Touch. Se ricevi un avviso, seleziona "Autorizza" e inserisci il codice.
 
-Docker setup:
-```bash
-docker run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd -v /var/lib/lockdown:/tmp/lockdown ghcr.io/sidestore/altcon
-```
-Podman setup:
-```bash
-podman run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd -v /var/lib/lockdown:/tmp/lockdown ghcr.io/sidestore/altcon
-```
-5. Altcon si collegherà al tuo dispositivo. Quando ricevi un altro avviso, seleziona di nuovo "autorizza" e inserisci il codice.
+      4. Ora, esegui Altcon con Docker o Podman con il seguente comando (potrebbe richiedere `sudo`):
 
-#### Configurare SideStore su più dispositivi con lo stesso account usando AltServer
-Step:
+      Docker setup:
+      ```bash
+      docker run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd -v /var/lib/lockdown:/tmp/lockdown ghcr.io/sidestore/altcon
+      ```
+      Podman setup:
+      ```bash
+      podman run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd -v /var/lib/lockdown:/tmp/lockdown ghcr.io/sidestore/altcon
+      ```
+      5. Altcon si collegherà al tuo dispositivo. Quando ricevi un altro avviso, seleziona di nuovo "autorizza" e inserisci il codice.
+   </TabItem>
+</Tabs>  
+
+#### Configurare SideStore su più dispositivi con lo stesso account usando AltServer (funziona solo su macOS/Windows)
+Passaggi:
 1. Configura AltServer su macOS/Windows utilizzando le istruzioni qui sopra
-2. Installa AltStore su un dispositivo tramite AltServer (Abbiamo bisogno di AltStore perché pare che AltServer non inserisca il machine identifier in applicazioni che non siano AltStore)
-3. Accedi col tuo Apple ID in AltStore
+2. Installa AltStore su un dispositivo tramite AltServer
+3. Accedi col tuo Account Apple in AltStore
 4. Esporta il certificato
 5. Cancella AltStore
 
 Poi per ogni device:
-1. Installa SideStore tramite AltServer con lo stesso Apple ID(Tieni premuto [Option/Mac, Shift/Windows] quando clicchi su AltServer -> Install IPA -> Seleziona l'ipa di SideStore)
+1. Installa SideStore tramite AltServer con lo stesso Account Apple (Tieni premuto [Option/Mac, Shift/Windows] quando clicchi su AltServer -> Install IPA -> Seleziona l'ipa di SideStore)
 2. Importa il certificato
-3. Accedi col tuo Apple ID in SideStore (Bisogna accedere dopo aver importato il certificato altrimenti non sarà possibile accedere senza revocare il certificato di AltStore)
+3. Accedi col tuo Account Apple in SideStore (Bisogna accedere dopo aver importato il certificato altrimenti non sarà possibile accedere senza revocare il certificato di AltStore)
 4. Sideload
 
 Quando scade il vecchio certificato:
@@ -71,20 +82,20 @@ Questa VPN deve essere accesa ogni volta che vuoi usare SideStore, molte funzion
 ### idevice_pair
 #### Istruzioni di installazione
 
-##### macOS
-
-1. Scarica [idevice pair per macOS](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--macos-universal.dmg).
-2. Apri la disk image e trascina `idevice pair` in `Applicazioni`.
-
-##### Windows
-
-1. Assicurati che iTunes ([64-bit](https://apple.com/itunes/download/win64) o [32-bit](https://apple.com/itunes/download/win32)) sia installato dal sito Apple (dovresti averlo già installato dal processo di setup di AltServer).
-2. Scarica [idevice pair per Windows](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--windows-x86_64.exe) e spostalo in un posto comodo.
-
-##### Linux
-
-1. Assicurati che usbmuxd sia installato sulla tua macchina eseguendo `sudo apt install -y usbmuxd` nel terminale Linux.
-2. Scarica la versione di idevice_pair per Linux ([x86_64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-x86_64.AppImage) o [AArch64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-aarch64.AppImage)) corrispondente all'architettura del tuo PC. Spostala in un posto comodo e rendila eseguibile
+<Tabs groupId="operating-systems">
+   <TabItem value="mac" label="macOS">
+      1. Scarica [idevice pair per macOS](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--macos-universal.dmg).
+      2. Apri la disk image e trascina `idevice pair` in `Applicazioni`.
+   </TabItem>
+   <TabItem value="win" label="Windows">
+      1. Assicurati che iTunes ([64-bit](https://apple.com/itunes/download/win64) o [32-bit](https://apple.com/itunes/download/win32)) sia installato dal sito Apple (dovresti averlo già installato dal processo di setup di AltServer).
+      2. Scarica [idevice pair per Windows](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--windows-x86_64.exe) e spostalo in un posto comodo.
+   </TabItem>
+   <TabItem value="linux" label="Linux">
+      1. Assicurati che usbmuxd sia installato sulla tua macchina eseguendo `sudo apt install -y usbmuxd` nel terminale Linux.
+      2. Scarica la versione di idevice_pair per Linux ([x86_64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-x86_64.AppImage) o [AArch64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-aarch64.AppImage)) corrispondente all'architettura del tuo PC. Spostala in un posto comodo e rendila eseguibile
+   </TabItem>
+</Tabs>
 
 #### Istruzioni di Pairing
 
@@ -105,57 +116,61 @@ Scarica JitterbugPair per [Windows (64-bit)](https://github.com/osy/Jitterbug/re
 A seconda del tuo metodo, trasferendo il file .mobiledevicepairing l'estensione potrebbe cambiare (di solito a .txt o senza "ing" finale). È sempre consigliato zippare il file prima di trasferirlo. SideStore accetta solo file .mobiledevicepairing (o file .plist nelle vecchie versioni).
 :::
 
-##### Windows
+<Tabs groupId="operating-systems">
+   <TabItem value="mac" label="macOS">
+      1. Scarica JitterbugPair per [macOS](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-macos.zip).
+      2. **Estrai** `jitterbugpair-macos.zip`.
+      3. **Imposta un passcode** al tuo device se non l'hai già fatto. Sblocca il tuo device e collegalo al pc via cavo. Se appare un avviso, tocca "autorizza" e inserisci il tuo codice.
+      4. Sblocca il tuo device nella schermata home.
+      5. Trova ed apri il file `jitterbugpair` (dovrebbe avere un'icona nera e verde) cliccando due volte o cliccando col destro e selezionando "Apri". La prima volta che esegui il tool, riceverai un avviso per il tuo codice. Inseriscilo, poi mantieni il device sbloccato ed esegui di nuovo il tool.
+      6. Se ricevi il messaggio "macOS non può verificare che questa app non contenga malware":
+         - Vai nelle Impostazioni > Privacy e Sicurezza
+         - Scorri in basso fino a trovare un messaggio relativo all'app
+         - Clicca "Apri Comunque", se il programma non si esegue automaticamente, prova ad eseguirlo di nuovo manualmente
+      7. JitterbugPair genererà un **pairing file** con l'estensione `.mobiledevicepairing` nella cartella home del tuo utente.
+      8. Se non riesci a trovare il pairing file:
+         - Copia il nome del pairing file generato
+         - Incollalo nel Finder
+         - Se hai eseguito il programma più di una volta, compariranno tutti i pairing file visto che hanno lo stesso nome
+      9. Per una migliore esperienza, comprimi il file in una cartella .zip. Poi **trasferisci il pairing file** al tuo dispositivo iOS tramite AirDrop, OneDrive/iCloud/Google Drive, email, o qualsiasi altro metodo tu voglia.
+   </TabItem>
+   <TabItem value="win" label="Windows">
+      1. Scarica JitterbugPair per [Windows (64-bit)](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip).
+      2. **Estrai** `jitterbugpair-win64.zip`.
+      3. **Imposta un passcode** al tuo device se non l'hai già fatto. Sblocca il tuo device e collegalo al pc via cavo. Se appare un avviso, tocca "autorizza" e inserisci il tuo codice.
+      4. Sblocca il tuo device nella schermata home.
+      5. In Esplora File, trova `jitterbugpair.exe` ed eseguilo cliccando due volte. La prima volta che esegui il tool, riceverai un avviso per il tuo codice. Inseriscilo, poi mantieni il device sbloccato ed esegui di nuovo il tool.
+      6. JitterbugPair genererà un **pairing file** nella stessa cartella. Questo file avrà l'estensione `.mobiledevicepairing`.
+      7. Per una migliore esperienza, comprimi il file in una cartella .zip. Poi **trasferisci il pairing file** al tuo dispositivo iOS tramite OneDrive/iCloud/Google Drive, email, o qualsiasi altro metodo tu voglia.
 
-1. **Estrai** `jitterbugpair-win64.zip`.
-2. **Imposta un passcode** al tuo device se non l'hai già fatto. Sblocca il tuo device e collegalo al pc via cavo. Se appare un avviso, tocca "autorizza" e inserisci il tuo codice.
-3. Sblocca il tuo device nella schermata home.
-4. In Esplora File, trova `jitterbugpair.exe` ed eseguilo cliccando due volte. La prima volta che esegui il tool, riceverai un avviso per il tuo codice. Inseriscilo, poi mantieni il device sbloccato ed esegui di nuovo il tool.
-5. JitterbugPair genererà un **pairing file** nella stessa cartella. Questo file avrà l'estensione `.mobiledevicepairing`.
-6. Per una migliore esperienza, comprimi il file in una cartella .zip. Poi **trasferisci il pairing file** al tuo dispositivo iOS tramite OneDrive/iCloud/Google Drive, email, o qualsiasi altro metodo tu voglia.
+      Su Windows, potresti dover eseguire il programma utilizzando il Prompt dei Comandi o PowerShell, visto che cliccare due volte il file `.exe` non lo apre sempre.
 
-Su Windows, potresti dover eseguire il programma utilizzando il Prompt dei Comandi o PowerShell, visto che cliccare due volte il file `.exe` non lo apre sempre.
+      8. In Esplora File, naviga alla cartella in cui hai messo jitterbugpair.
+      9. Nella barra di navigazione, clicca su un posto vuoto e scrivi `powershell`. Dovrebbe aprirsi una finestra (probabilmente blu) chiamata PowerShell.
+      10. Da lì, scrivi `./jitterbugpair.exe` e premi enter col device collegato.
+   </TabItem>
+   <TabItem value="linux" label="Linux">
+      Queste istruzioni sottintendono che tu sia familiare con la commandline Linux.
 
-7. In Esplora File, naviga alla cartella in cui hai messo jitterbugpair.
-8. Nella barra di navigazione, clicca su un posto vuoto e scrivi `powersheel`. Dovrebbe aprirsi una finestra (probabilmente blu) chiamata PowerShell.
-9. Da lì, scrivi `./jitterbugpair.exe` e premi enter col device collegato.
+      1. Scarica JitterbugPair per [Linux](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip).
+      2. **Estrai** `jitterbugpair-linux.zip`.
+      3. Apri il terminale nella cartella estratta.
+      4. Rendi eseguibile il programma
+         ```bash
+         chmod +x ./jitterbugpair
+         ```
+      5. **Imposta un passcode** al tuo device se non lo ha già. Sblocca il dispositivo e connettilo al PC via cavo. Se appare un avviso, tocca "autorizza" e inserisci il codice.
+      6. Sblocca il tuo device nella home.
+      7. Esegui il programma:
+         ```bash
+         ./jitterbugpair
+         ```
+      8. La prima volta che esegui il tool, riceverai un avviso per il tuo codice. Inseriscilo, poi mantieni il device sbloccato ed esegui di nuovo il tool.
+      9. JitterbugPair genererà un **pairing file** con l'estensione `.mobiledevicepairing`.
+      10. Per una migliore esperienza, comprimi il file in una cartella .zip. Poi **trasferisci il pairing file** al tuo dispositivo iOS tramite OneDrive/iCloud/Google Drive, email, o qualsiasi altro metodo tu voglia.
+   </TabItem>
+</Tabs>
 
-##### macOS
-
-1. **Estrai** `jitterbugpair-macos.zip`.
-2. **Imposta un passcode** al tuo device se non l'hai già fatto. Sblocca il tuo device e collegalo al pc via cavo. Se appare un avviso, tocca "autorizza" e inserisci il tuo codice.
-3. Sblocca il tuo device nella schermata home.
-4. Trova ed apri il file `jitterbugpair` (dovrebbe avere un'icona nera e verde) cliccando due volte o cliccando col destro e selezionando "Apri". La prima volta che esegui il tool, riceverai un avviso per il tuo codice. Inseriscilo, poi mantieni il device sbloccato ed esegui di nuovo il tool.
-5. Se ricevi il messaggio "macOS non può verificare che questa app non contenga malware":
-   - Vai nelle Impostazioni > Privacy e Sicurezza
-   - Scorri in basso fino a trovare un messaggio relativo all'app
-   - Clicca "Apri Comunque", se il programma non si esegue automaticamente, prova ad eseguirlo di nuovo manualmente
-6. JitterbugPair genererà un **pairing file** con l'estensione `.mobiledevicepairing` nella cartella home del tuo utente.
-7. Se non riesci a trovare il pairing file:
-   - Copia il nome del pairing file generato
-   - Incollalo nel Finder
-   - Se hai eseguito il programma più di una volta, compariranno tutti i pairing file visto che hanno lo stesso nome
-8. Per una migliore esperienza, comprimi il file in una cartella .zip. Poi **trasferisci il pairing file** al tuo dispositivo iOS tramite AirDrop, OneDrive/iCloud/Google Drive, email, o qualsiasi altro metodo tu voglia.
-
-##### Linux
-
-Queste istruzioni sottintendono che tu sia familiare con la commandline Linux.
-
-1. **Estrai** `jitterbugpair-linux.zip`.
-2. Apri il terminale nella cartella estratta.
-3. Rendi eseguibile il programma
-   ```bash
-   chmod +x ./jitterbugpair
-   ```
-4. **Imposta un passcode** al tuo device se non lo ha già. Sblocca il dispositivo e connettilo al PC via cavo. Se appare un avviso, tocca "autorizza" e inserisci il codice.
-5. Sblocca il tuo device nella home.
-6. Esegui il programma:
-   ```bash
-   ./jitterbugpair
-   ```
-7. La prima volta che esegui il tool, riceverai un avviso per il tuo codice. Inseriscilo, poi mantieni il device sbloccato ed esegui di nuovo il tool.
-8. JitterbugPair genererà un **pairing file** con l'estensione `.mobiledevicepairing`.
-9. Per una migliore esperienza, comprimi il file in una cartella .zip. Poi **trasferisci il pairing file** al tuo dispositivo iOS tramite OneDrive/iCloud/Google Drive, email, o qualsiasi altro metodo tu voglia.
 ## Exploit SideStore
 ### SparseRestore (limite 3-app)
 :::note
@@ -163,16 +178,16 @@ L'exploit di SparseRestore "Bypass 3 app limit" **funziona solo su versioni iOS/
 :::
 
 #### Prerequisiti
-* Un iDevice con una versione supportata da SparseRestore (vedi la nota sopra).
+* Un iPhone, iPad o iPod Touch con una versione supportata da SparseRestore (vedi la nota sopra).
 * Almeno uno slot app libero.
 * SideStore 0.5.9 o successivi. Puoi trovare le ultime versioni [qui](https://github.com/SideStore/SideStore/releases).
-* Per eseguire l'exploit, DEVI avere **Dov'è** disattivato sul tuo dispositivo durante il processo. Altrimenti non funzionerà. Ecco come puoi disattivarlo:
+* Per eseguire l'exploit, DEVI avere **Dov'è** disattivato sul tuo iPhone, iPad o iPod Touch durante il processo. Altrimenti non funzionerà. Ecco come puoi disattivarlo:
   - Apri l'app Impostazioni.
   - Tocca sul tuo nome in alto.
   - Tocca su Dov'è.
   - Tocca su Trova il mio iPhone/iPad.
   - Disattiva Trova il mio iPhone/iPad.
-  - Ti chiederà la password dell'Apple ID per confermare.
+  - Ti chiederà la password dell'Account Apple per confermare.
 
   > **Nota:** Potresti non essere in grado di disattivare Trova il mio iPhone/iPad se hai attiva la Protezione Dispositivo Rubato. Disattivala per continuare.
 
