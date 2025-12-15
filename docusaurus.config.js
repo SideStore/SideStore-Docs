@@ -21,10 +21,11 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'sidestore', // Usually your GitHub org/user name.
-  projectName: 'sidestore-docs', // Usually your repo name.
+  organizationName: 'SideStore', // Usually your GitHub org/user name.
+  projectName: 'SideStore-Docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
+  trailingSlash: false,
   //onBrokenMarkdownLinks: 'warn',
   markdown: {
     hooks: {

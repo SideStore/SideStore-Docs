@@ -4,288 +4,238 @@ description: Error codes found in SideStore.
 ---
 
 ## SideStore Errors
-
 ### (1000) An unknown error occurred.
-
 `SideStore.OperationError 1000`
 
 This means that SideStore ran into an unexpected error. Please check our [Troubleshooting Guide](./), and you can reach out to us directly if the issue persists.
 
 ### (1001) The operation returned an unknown result.
-
 `SideStore.OperationError 1001`
 
 This means that SideStore ran into an unexpected error. Please check our [Troubleshooting Guide](./), and you can reach out to us directly if the issue persists.
 
 ### (1002) The operation was cancelled.
-
 `SideStore.OperationError 1002`
 
 This means that the performed action was stopped. Please try again.
 
 ### (1003) The operation timed out.
-
 `SideStore.OperationError 1003`
 
 This means that SideStore ran into problems trying to complete the requested action. Please try again and check our [Troubleshooting Guide](./) for additional help. You can reach out to us directly if the issue persists.
 
 ### (1004) You are not signed in.
-
 `SideStore.OperationError 1004`
 
-This means that you must enter your Apple ID information in the settings tab to do the requested action.
+This means that you must enter your Apple Account information in the settings tab to do the requested action.
 
 ### (1005) The app could not be found.
-
 `SideStore.OperationError 1005`
 
 This means that SideStore could not locate the file to download or install, most likely because the file does not exist at the provided URL.
 
 ### (1006) SideStore could not determine this device's UDID.
-
 `SideStore.OperationError 1006`
 
-This means that your pairing file has been corrupted. [Replace it using iloader](../advanced/pairing-file).
+This means that your pairing file has been corrupted. [Replace it using iloader](/docs/advanced/pairing-file).
 
 ### (1007) This app is in an invalid format.
-
 `SideStore.OperationError 1007`
 
 This means the app you're trying to install is not a standard .ipa. Try downloading the app from another location.
 
 ### (1008) Invalid parameters.
-
 `SideStore.OperationError 1008`
 
 This means an internal error occurred and SideStore couldn't provide the necessary information to perform the requested task. Please try again and check our [Troubleshooting Guide](./) for additional help. You can reach out to us directly if the issue persists at our [Discord server](https://dis.sidestore.io/).
 
 ### (1009) You cannot register more than 10 App IDs within a 7-day period.
-
 `SideStore.OperationError 1009`
 
 This means that you have reached the maximum amount of App IDs available. Apps IDs are not able to be deleted manually. App IDs renew if the app has exists 7 days after when it was first installed or renewed last, and expire if they have been deleted since. Please check the App IDs in the My Apps tab to see when they will expire.
 
 ### (1010) There are no SideStore sources.
-
 `SideStore.OperationError 1010`
 
 This means an internal error occurred and SideStore is unable to fetch changes for any AltSources you've added. Please try again and check our [Troubleshooting Guide](./) for additional help. You can reach out to us directly at our [Discord server](https://dis.sidestore.io/) if the issue persists.
 
 ### (1011) SideStore was denied permission to launch the app.
-
 `SideStore.OperationError 1011`
 
-This means SideStore couldn't launch a sideloaded app because you tapped "Cancel" on the "SideStore wants to open \[app]" alert, or because you still need to trust your Apple ID in Settings.
+This means SideStore couldn't launch a sideloaded app because you tapped "Cancel" on the "SideStore wants to open \[app]" alert, or because you still need to trust your Apple Account in Settings.
 
 ### (1012) SideStore's shared app group could not be accessed.
-
 `SideStore.OperationError 1012`
 
 This means SideStore was not able to access the directory where app backups are stored. Make sure you're installing SideStore with the latest AltServer version and not via another method.
 
 ### (1403) Unable to connect to SideJITServer.
-
 `SideStore.OperationError 1403`
 
 Please make sure you are on the same Wi-Fi as your computer running SideJITServer and that your Firewall has been set appropriately. Alternatively, you can use the built in "Enable JIT" option to enable JIT on iOS 17.4-18.6 with LocalDevVPN enabled and Wi-Fi or Airplane Mode.
 
 ### (1412) Unable to connect to a V3 anisette server.
-
 `SideStore.OperationError 1412`
 
 Your device was unable to receive data from a V3 anisette server. Please try again, or switch anisette servers.
 
 ### (1414) No Wi-Fi/StosVPN.
-
 `SideStore.OperationError 1414`
 
-You do not appear to be connected to Wi-Fi and/or LocalDevVPN. SideStore cannot refresh or install applications without Wi-Fi and LocalDevVPN, ensure both are connected. If that doesn't work, [replace your pairing file using iloader](../advanced/pairing-file).
+You do not appear to be connected to Wi-Fi and/or LocalDevVPN. SideStore cannot refresh or install applications without Wi-Fi and LocalDevVPN, ensure both are connected. If that doesn't work, [replace your pairing file using iloader](/docs/advanced/pairing-file).
 
 
 ## Minimuxer Errors
-
 ### (4) AFC was unable to manage files on the device.
-
 `minimuxer.MinimuxerError 4`
 
 This means you are attempting to enable JIT on an unsupported iOS version. SideStore only supports enabling JIT on iOS 17.4-18.6.
 
 ### (27) AFC was unable to manage files on the device.
-
 `minimuxer.MinimuxerError 27`
 
-Ensure Wi-Fi and LocalDevVPN are both connected. If the error doesn't resolve, [replace your pairing file with iloader](../advanced/pairing-file).
+Ensure Wi-Fi and LocalDevVPN are both connected. If the error doesn't resolve, [replace your pairing file with iloader](/docs/advanced/pairing-file).
 
 
 ## Apple Developer Errors
-
 ### (3000) An unknown error occurred.
-
 `SideStore.AppleDeveloperError`
 
 Updated information coming soon
 
 ### (3001) The provided parameters are invalid.
-
 `SideStore.AppleDeveloperError`
 
 Updated information coming soon
 
 ### (3002) Incorrect Apple ID or password.
-
 `SideStore.AppleDeveloperError`
 
-This means that the Apple ID credentials you used were invalid. Make sure the username and password are correct.
+This means that the Apple Account credentials you used were invalid. Make sure the username and password are correct.
 
-If you still have issues, you can also try creating a new Apple ID to use with SideStore.
+If you still have issues, you can also try creating a new Apple Account to use with SideStore.
 
 ### (3003) An app-specific password is required. You can create one at appleid.apple.com.
-
 `SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 ### (3004) You are not a member of any development teams.
-
 `SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 ### (3005) This device's UDID is invalid.
-
 `SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 ### (3006) This device is already registered with another ID.
-
 `SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 ### (3007) The certificate request is invalid.
-
 `SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 ### (3008) There is no certificate with the requested serial number for this team.
-
 `SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 ### (3009) The name for this app is invalid.
-
 `SideStore.AppleDeveloperError`
 
 SideStore couldn’t register an App ID with Apple because the app name contains non-ASCII characters. You can try downloading from another source.
 
 ### (3010) The bundle identifier for this app is invalid.
-
 `SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 ### (3011) The bundle identifier for this app has already been registered.
-
 `SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 ### (3012) There is no App ID with the requested identifier on this team.
-
 `SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 ### (3013) You may only register 10 App IDs every 7 days.
-
 `SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 ### (3014) The provided app group is invalid.
-
 `SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 ### (3015) App group does not exist.
-
 `SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 ### (3016) The identifier for the requested provisioning profile is invalid.
-
 `SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 ### (3017) There is no provisioning profile with the requested identifier on this team.
-
 `SideStore.AppleDeveloperError`
 
 If you are seeing this error, it's likely due to a recent server-side change made by Apple. Please see the following announcement with more info: [https://twitter.com/SideStoreio/status/1638599316762664974?s=20](https://twitter.com/SideStoreio/status/1638599316762664974?s=20)
 
 ### (3018) This account requires signing in with two-factor authentication.
-
 `SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 ### (3019) Incorrect verification code.
-
 `SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 ### (3020) Failed to perform authentication handshake with server.
-
 `SideStore.AppleDeveloperError`
 
 Updated information coming soon.
 
 ### (3021) The provided anisette data is invalid.
-
 `SideStore.AppleDeveloperError`
 
 This error means that the information used to authenticate your AppleID information either expired or invalid. Make sure your computer date and time are accurate and that you’ve installed iTunes and iCloud from Apple.
 
 ### Apple API Error
-
 ### (1100) Your session has expired.
-
 `Apple.APIError`
 
-This error means that the information used to authenticate your Apple ID is either expired or invalid. Make sure your computer's date and time are accurate and try again.
+This error means that the information used to authenticate your Apple Account is either expired or invalid. Make sure your computer's date and time are accurate and try again.
 
 ### (1102) Apple ID cannot be used for development.
-
 `Apple.APIError`
 
-You may need to agree to Apple’s Terms of Service on [developer.apple.com](https://developer.apple.com). If that doesn’t work, you can create a new “throwaway” Apple ID dedicated to sideloading.
+You may need to agree to Apple’s Terms of Service on [developer.apple.com](https://developer.apple.com). If that doesn’t work, you can create a new “throwaway” Apple Account dedicated to sideloading.
 
 ### (-20101) Your account information was entered incorrectly.
-
 `Apple.APIError`
 
-This error means that the username or password used to authenticate your Apple ID is either expired or invalid. Make sure you've entered them both in correctly and that your computer's date and time are accurate.
+This error means that the username or password used to authenticate your Apple Account is either expired or invalid. Make sure you've entered them both in correctly and that your computer's date and time are accurate.
 
 ## Other Errors
-
 ### (512) Failed to write to disk
-
 `NSCocoaErrorDomain`
 
 This means that an error occurred while writing files to disk. Make sure your phone has plenty of available disk space and try again.
 
 ### (-1011) NSURLErrorDomain
-
 Navigate to https://developer.apple.com/, sign in, and accept the new Apple Developer Terms of Service.
-### ldid Error
 
+### ldid Error
 `ldid.cpp(X): X`
 
 Follow the steps here to fix this error:

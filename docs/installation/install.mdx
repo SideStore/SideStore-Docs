@@ -1,32 +1,69 @@
 ---
 title: Install
-description: Installing SideStore to your iDevice
+description: Installing SideStore to your iPhone, iPad, or iPod touch
 sidebar_position: 2
 ---
+
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 Before you start, make sure to download all software and complete all setup found in the [prerequisites page](prerequisites)!
 
 ## Installing SideStore
-### On your Computer
-1. Connect your iDevice to your computer via cable. If you are prompted, trust the computer and enter your passcode.
+### On your computer
+1. Connect your iPhone, iPad, or iPod touch to your computer via a USB cable. If you are prompted, trust the computer and enter your passcode.
 2. Open iloader.
-3. Sign in to an Apple Account (It doesn't need to be the account associated with the device. Remember that it is case-sensitive!).
-4. Select your iDevice.
+3. Sign in with your Apple Account. (It doesn't need to be the account associated with the device. Remember that it is case-sensitive!)
+4. Select your iPhone, iPad, or iPod touch.
 5. Select 'Install SideStore (Stable)'.
 
-### On your iDevice
-1. Open the Settings app.
-2. Navigate to 'General', and then 'VPN & Device Management'.
-3. Approve the "Developer App" under the Apple Account's email.
-4. Navigate to 'Privacy and Security'.
-5. Scroll to the bottom, and turn on "Developer Mode". Your phone will restart.
-6. Open LocalDevVPN and select 'Connect'.
-7. Open SideStore.
-9. Sign in to the Apple Account you used with iloader.
-10. Navigate to 'My Apps'.
-11. Tap the '7 DAYS' counter to the right of SideStore to manually refresh it ("7" represents the number of days until an app's expiry, it will update dynamically to show the number of days left. Tap it to refresh the associated app.).
-12. If you receive a prompt asking to revoke or create a new signing certificate, tap 'Yes' or 'Refresh Now'.
+### On your iPhone, iPad, or iPod touch
+<Tabs groupId="ios-versions">
+    <TabItem value="15" label="iOS/iPadOS 15.0-15.8.5">
+        1. Open the Settings app.
+        2. Navigate to 'General', and then 'VPN & Device Management'.
+        3. Under the "Developer App" section, select the option named after your Apple Account.
+        4. Select "Trust [Apple Account name]", then select "Trust" to confirm.
+        5. Open LocalDevVPN and select 'Connect'.
+        6. Open SideStore.
+        7. Sign in to the Apple Account you used with iloader.
+        8. Navigate to 'My Apps'.
+        9. Tap the '7 DAYS' counter to the right of SideStore to manually refresh it and finish setting up SideStore. (7 represents the number of days until an app's expiry. It will update dynamically to show the number of days left. Tap it to refresh the associated app.)
+        10. If you receive a prompt asking to revoke or create a new signing certificate, tap 'Yes' or 'Refresh Now'.
+    </TabItem>
+    <TabItem value="16" label="iOS/iPadOS 16.0-17.7.7">
+        1. Open the Settings app.
+        2. Navigate to 'General', and then 'VPN & Device Management'.
+        3. Under the "Developer App" section, select the option named after your Apple Account.
+        4. Select "Trust [Apple Account name]", then select "Trust" to confirm.
+        5. Navigate to 'Privacy and Security'.
+        6. Scroll to the bottom, and turn on "Developer Mode". Your device will restart.
+        7. Open LocalDevVPN and select 'Connect'.
+        8. Open SideStore.
+        9. Sign in to the Apple Account you used with iloader.
+        10. Navigate to 'My Apps'.
+        11. Tap the '7 DAYS' counter to the right of SideStore to manually refresh it and finish setting up SideStore. (7 represents the number of days until an app's expiry. It will update dynamically to show the number of days left. Tap it to refresh the associated app.)
+        12. If you receive a prompt asking to revoke or create a new signing certificate, tap 'Yes' or 'Refresh Now'.
+    </TabItem>
+    <TabItem value="18" label="iOS/iPadOS 18.0-26.2" default>
+        1. Open the Settings app.
+        2. Navigate to 'General', and then 'VPN & Device Management'.
+        3. Under the "Developer App" section, select the option named after your Apple Account.
+        4. Select "Trust [Apple Account name]", then select "Allow & Restart".
+        5. Enter your passcode to confirm you want to trust the app.
+        6. Navigate to 'Privacy and Security'.
+        7. Scroll to the bottom, and turn on "Developer Mode". Your device will restart.
+        8. Open LocalDevVPN and select 'Connect'.
+        9. Open SideStore.
+        10. Sign in to the Apple Account you used with iloader.
+        11. Navigate to 'My Apps'.
+        12. Tap the '7 DAYS' counter to the right of SideStore to manually refresh it and finish setting up SideStore. (7 represents the number of days until an app's expiry. It will update dynamically to show the number of days left. Tap it to refresh the associated app.)
+        13. If you receive a prompt asking to revoke or create a new signing certificate, tap 'Yes' or 'Refresh Now'.
+    </TabItem>
+</Tabs>
 
-If this process is successful, SideStore will open your device to your home screen (accompanied by a notification), and SideStore will be available again within a few seconds.
+If this process is successful, SideStore will open your device to your Home Screen (accompanied by a notification). SideStore will be available again within a few seconds.
 
-Caution, if you update or reset your iDevice, your pairing file may expire, requiring you to replace it using [this guide](../advanced/pairing-file). This also occurs at random times because of Apple's software. 
-
+Your pairing file may expire if you update or reset your iPhone, iPad, or iPod touch. If this happens, you'll need to replace it using [this guide](/docs/advanced/pairing-file). This also occurs at random times because of Apple's software. 
