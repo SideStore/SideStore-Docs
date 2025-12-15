@@ -22,7 +22,7 @@ import TabItem from '@theme/TabItem';
     Before you start, make sure to have installed usbmuxd.
    1. Ensure you have usbmuxd installed and updated by running `sudo apt install -y usbmuxd` in the Linux terminal.
    2. Install either Docker or Podman on your machine. 
-   3. Plug in your secondary iDevice. If you receive a prompt, select "trust" and enter your passcode.
+   3. Plug in your secondary iPhone, iPad, or iPod touch. If you receive a prompt, select "Trust" and enter your passcode.
    4. Now, run Altcon with Docker or Podman using the following command (may require `sudo`):
 
    Docker setup:
@@ -43,14 +43,14 @@ import TabItem from '@theme/TabItem';
 Steps:
 1. Setup AltServer on macOS/Windows using instructions above
 2. Install AltStore to one device using AltServer 
-3. Sign in Apple ID in AltStore
+3. Sign in Apple Account in AltStore
 4. Export Certificate
 5. Delete AltStore
 
 Then for each device:
-1. Install SideStore using AltServer with the same Apple ID (Hold [Option/Mac, Shift/Windows] when clicking AltServer -> Install IPA -> Select SideStore.ipa)
+1. Install SideStore using AltServer with the same Apple Account (Hold [Option/Mac, Shift/Windows] when clicking AltServer -> Install IPA -> Select SideStore.ipa)
 2. Import certificate
-3. Sign in Apple ID in SideStore (We need to sign in after importing the certificate otherwise it won't let you sign in without revoking AltStore's certificate)
+3. Sign in Apple Account in SideStore (We need to sign in after importing the certificate otherwise it won't let you sign in without revoking AltStore's certificate)
 4. Sideload
 
 When the old certificate expires:
@@ -69,7 +69,7 @@ The SideStore WireGuard VPN **only works on SideStore versions between 0.3.1-0.6
 
 SideStore utilizes an on-device WireGuard VPN which allows SideStore to communicate with internal services.
 
-1. Download the WireGuard app from the [Official App Store](https://apps.apple.com/us/app/wireguard/id1441195209).
+1. Download the WireGuard app from the [Apple App Store](https://apps.apple.com/app/wireguard/id1441195209).
 2. Also, download the WireGuard config found [here](https://github.com/SideStore/SideStore/releases/download/0.3.1/SideStore.conf).
 3. Open WireGuard, and press the 'Add a Tunnel' or '+' button.
 4. Select 'Create from file or archive', and choose the SideStore.conf file.
@@ -178,16 +178,16 @@ The SparseRestore "Bypass 3 app limit" exploit **only works on iOS/iPadOS versio
 :::
 
 #### Prerequisites
-* An iDevice running versions supported by the SparseRestore exploit (see note above).
+* An iPhone or iPad running versions supported by the SparseRestore exploit (see note above).
 * At least 1 free app slot.
 * SideStore version 0.5.9 or later. You can find the latest versions [here](https://github.com/SideStore/SideStore/releases).
-* To perform this exploit, you MUST have **Find My** turned off on your iDevice during the process. It will not work otherwise. Here is how you can turn it off:
+* To perform this exploit, you MUST have **Find My** turned off on your iPhone or iPad during the process. It will not work otherwise. Here is how you can turn it off:
   - Open the Settings app.
   - Tap on your name at the top.
   - Tap on Find My.
   - Tap on Find My iPhone/iPad.
   - Turn off Find My iPhone/iPad.
-  - You may be required to enter your Apple ID password to confirm.
+  - You may be required to enter your Apple Account password to confirm.
   
   > **Note:** You may still not be able to turn off Find My since having Stolen Device Protection on might prevent you from turning it off. Turn off Stolen Device Protection before trying to turn off Find My.
 

@@ -4,26 +4,24 @@ description: A guide to troubleshooting SideStore in situations without an error
 ---
 
 ## Installation
-
 ### I followed the instructions, but I still can't install SideStore.
 
 #### Mac Instructions
 1. **Trust Device**: After connecting your iOS device to your Mac, ensure you have said “Trust” on both your Mac and iOS device. You can verify this by:
    - Opening Finder (macOS 10.15 Catalina or later) or iTunes (macOS 10.14 Mojave and earlier).
    - Disconnect and reconnect your phone to your mac and check if a dialog box appears asking if you want to trust the device.
-2. **Use Another Apple ID**: Try using another Apple ID. If needed, you can [create a new Apple ID](https://appleid.apple.com/account#!\&page=create) specifically for SideStore use for free.
+2. **Use Another Apple Account**: Try using another Apple Account. If needed, you can [create a new Apple Account](https://appleid.apple.com/account#!\&page=create) specifically for SideStore use for free.
 
 #### Windows Instructions
 1. **Trust Device**: After connecting your iOS device to your Windows computer, ensure you have selected “Trust” on both your computer and iOS device. You can verify this by:
    - Opening iTunes and checking if a dialog box appears asking if you want to trust the device.
-2. **Use Another Apple ID**: Try using another Apple ID. If needed, you can [create a new Apple ID](https://appleid.apple.com/account#!\&page=create) specifically for SideStore for free.
+2. **Use Another Apple Account**: Try using another Apple Account. If needed, you can [create a new Apple Account](https://appleid.apple.com/account#!\&page=create) specifically for SideStore for free.
 
 ### Updating SideStore hangs towards the end
 
 Go to the homescreen for it to finish. We don't know why this happens, but it might have to do with using a VPN to direct `installd` to refresh SideStore (itself).
 
 ## Sign-In Issues
-
 ### SideStore Freezing or Displaying an Error Code During Sign-In
 
 If you encounter freezing or error codes while attempting to sign in to SideStore, there could be several potential causes. Follow these steps to resolve the issue:
@@ -38,12 +36,10 @@ If you encounter freezing or error codes while attempting to sign in to SideStor
 2. **Host Your Own Anisette Server:**
    If you prefer, you can set up your own Anisette server. Detailed instructions for hosting an Anisette server are available in the official documentation and can be found [here](https://docs.sidestore.io/docs/advanced/anisette).
 
-### Verification Code Not Received When Signing In with Apple ID
-
-Another common issue during sign-in is not receiving a verification code when using your Apple ID with SideStore. This can be resolved by following these steps:
+### Verification Code Not Received When Signing In with Apple Account
+Another common issue during sign-in is not receiving a verification code when using your Apple Account with SideStore. This can be resolved by following these steps:
 
 **For iOS versions below 18.1:**
-
 1. Open the "Settings" app.
 2. Tap on your name at the top of the screen.
 3. Navigate to "Sign-In and Security."
@@ -51,22 +47,18 @@ Another common issue during sign-in is not receiving a verification code when us
 5. Choose "Get Verification Code."
 
 **For iOS versions 18.1 and above:**
-
 1. Visit [iCloud](https://www.icloud.com) on a web browser.
 2. Click "Sign In."
 3. You may be prompted with see two options: "Sign In" and "Use Different Apple Account."
    - Select the bottom option, "Use Different Apple Account."
-4. Enter your Apple ID and password (don't use a passkey).
+4. Enter your Apple Account identifier (email address or phone number) and password (don't use a passkey).
 5. Apple will send you a verification code.
    - Use this code in SideStore to complete the sign-in process.
 
 
 ## Other
-
 ### My apps disappeared from SideStore and I don't know what to do!
-
 Don't panic! Re-sideload the apps as usual without removing them from your device, and your data should be fine. Unfortunately it's possible that your deactivated apps are gone, but to confirm that, just refresh SideStore to see if they come back.
 
 ### Cannot start DebugServer
-
 There are times when the DebugServer doesn't work. However, you can try [replacing your pairing file using iloader](../advanced/pairing-file).
