@@ -9,25 +9,18 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
-SideStore's installation process may seem tricky, but with the ***one-time*** use of a computer and some time, you'll have SideStore on your device!
-
 ## Requirements
-
 To install SideStore, you will need:
-
-- An iPhone/iPad [with a passcode](https://support.apple.com/en-us/119586) running iOS/iPadOS 14 or higher
-- A computer (one-time)
-- An Apple Account
+- An iPhone, iPad, or iPod touch [with a passcode](https://support.apple.com/en-us/119586) running iOS/iPadOS 15.0 or higher
+- A computer running Windows 7 or higher, macOS High Sierra or higher, or an up-to-date Linux distribution; only for initial install
+- An Apple Account (also called an Apple ID)
 - A Wi-Fi connection
-- Some time (This is a quick process, but you should [leave time for troubleshooting](/docs/troubleshooting/))
+- Some time! This is a quick and easy process, but you should [leave time for troubleshooting](/docs/troubleshooting)
 
 ## Preparing Your Devices
-
-### On your iPhone/iPad:
-
 SideStore utilizes an on-device VPN which allows SideStore to communicate with internal services.
 
-1. Install the LocalDevVPN app from the [Apple App Store](https://apps.apple.com/us/app/localdevvpn/id6755608044). If you are in the EU and it doesn't appear, you can try the [AltStore PAL source](https://intradeus.github.io/http-protocol-redirector?r=altstore-pal://source?url=https://adp.se2crid.me/). Note: you can't sideload VPNs properly on a free developer account.
+1. Install the LocalDevVPN app [from the Apple App Store](https://apps.apple.com/app/localdevvpn/id6755608044) or [from the AltStore PAL source](https://api.altstore.io/source/adp.se2crid.me?app=com.jkcoxson.LocalDevVPN).
 2. Connect to the VPN. If you are prompted to "Allow VPN Configurations", tap 'Allow' and enter your passcode.
 
 This VPN is required to be turned on any time you wish to install, update, or refresh apps in SideStore.
@@ -36,15 +29,39 @@ Now, follow the instructions corresponding to your computer's OS:
 
 <Tabs groupId="operating-systems">
   <TabItem value="mac" label="macOS">
-    1. Download and install iloader for [Mac](https://github.com/nab138/iloader/releases/latest/download/iloader-darwin-universal.dmg).
+    Download and install [iloader](https://github.com/nab138/iloader/releases/latest/download/iloader-darwin-universal.dmg).
   </TabItem>
   <TabItem value="win" label="Windows">
-    1. Download and install [iTunes](https://apple.co/ms).
-    2. Download the iloader installer ([.exe](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.exe) or [.msi](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.msi)). (Note: The iloader installer .exe is currently flagged as a virus/trojan, we are positive it's not and are looking into it, but in the meantime we recommend you download the .msi).
+    :::warning
+    32-bit versions of Windows, as well as Windows 10 on Arm, are not supported. 
+    
+    <details>
+      <summary>**Most versions of Windows are 64-bit.** However, if you want to determine if you are using an unsupported version of Windows or not, you can follow these instructions.</summary>
+        1. Open the Run dialog with Windows+R (or Command+R or Super+R).
+        2. Enter `control /name microsoft.system`. The Control Panel will open.
+        3. Under the "System" tab, locate "System type".
+        
+        * If you have a "32-bit Operating System", your version of Windows is not supported.
+        * If you have an "ARM64 processor" AND you're using Windows 10, your version of Windows is not supported.
+    </details>
+    ::: 
+
+    1. Download and install iTunes [from the Microsoft Store](https://apps.microsoft.com/store/detail/9PB2MZ1ZMB1S) or [directly from Apple](https://www.apple.com/itunes/download/win64).
+    2. Download the iloader installer [as an MSI](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.msi) (recommended) or [as an EXE](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.exe).
     3. Run the installer.
   </TabItem>
   <TabItem value="linux" label="Linux">
-    1. Download and install `usbmuxd` (may be preinstalled for your distro, otherwise install with your package manager).
-    2. Download and install iloader for your distro ([.deb](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.deb) for Debian/Ubuntu, [.rpm](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-x86_64.rpm) for Fedora/openSUSE, [.AppImage](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.AppImage) for other).
+    :::warning
+    Only 64-bit distributions are supported. 
+    
+    **Most Linux distributions are 64-bit.** To determine if you're using a 64-bit distribution, open a terminal and run `uname -m`. The expected output is `x86_64`.
+    :::
+
+    1. Download and install `usbmuxd`. It may be preinstalled with your distribution, otherwise you can install it with your package manager: a Google search for "install usbmuxd [distribution name]" might help you.
+    2. Download and install iloader for your distribution. It is available as a [DEB](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.deb) for Debian/Ubuntu, [RPM](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-x86_64.rpm) for Fedora/openSUSE, and as an [AppImage](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.AppImage) for others. (There are also community-maintained packages, such as [this one on the Arch Linux AUR](https://aur.archlinux.org/packages/iloader-bin), but please know that we cannot guarantee their safety or security. You should always do your due diligence before installing unknown packages onto your system.)
   </TabItem>
 </Tabs>
+
+## Next Steps
+Next, follow the installation instructions to install SideStore!
+- [Install](/docs/installation/install)
