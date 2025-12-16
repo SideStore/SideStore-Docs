@@ -38,23 +38,25 @@ If you encounter freezing or error codes while attempting to sign in to SideStor
 
 ### Verification Code Not Received When Signing In with Apple Account
 Another common issue during sign-in is not receiving a verification code when using your Apple Account with SideStore. This can be resolved by following these steps:
+<Tabs>
+    <TabItem value="18.1" label="iOS/iPadOS 18.1+">
+         1. Visit [iCloud](https://www.icloud.com) on a web browser.
+         2. Click "Sign In."
+         3. You may be prompted with see two options: "Sign In" and "Use Different Apple Account."
+            - Select the bottom option, "Use Different Apple Account."
+         4. Enter your Apple Account identifier (email address or phone number) and password (don't select "Sign in with iPhone" or "Sign in with Passkey").
+         5. Apple will send you a verification code.
+            - Use this code in SideStore to complete the sign-in process.
 
-**For iOS versions below 18.1:**
-1. Open the "Settings" app.
-2. Tap on your name at the top of the screen.
-3. Navigate to "Sign-In and Security."
-4. Select "Two-Factor Authentication."
-5. Choose "Get Verification Code."
-
-**For iOS versions 18.1 and above:**
-1. Visit [iCloud](https://www.icloud.com) on a web browser.
-2. Click "Sign In."
-3. You may be prompted with see two options: "Sign In" and "Use Different Apple Account."
-   - Select the bottom option, "Use Different Apple Account."
-4. Enter your Apple Account identifier (email address or phone number) and password (don't use a passkey).
-5. Apple will send you a verification code.
-   - Use this code in SideStore to complete the sign-in process.
-
+    </TabItem>
+    <TabItem value="18" label="iOS/iPadOS 18.0.1 and below">
+         1. Open the "Settings" app.
+         2. Tap on your name at the top of the screen.
+         3. Navigate to "Sign-In and Security."
+         4. Select "Two-Factor Authentication."
+         5. Choose "Get Verification Code."
+    </TabItem>
+</Tabs>
 
 ## Other
 ### My apps disappeared from SideStore and I don't know what to do!
