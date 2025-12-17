@@ -3,6 +3,11 @@ title: Guida per la risoluzione di problemi
 description: Una guida per la risoluzione di problemi in situazioni senza codice di errore.
 ---
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 ## Installazione
 ### Ho seguito le istruzioni ma non riesco a installare SideStore.
 
@@ -40,29 +45,28 @@ Se SideStore si blocca o mostra codici di errore quando provi a loggarti, potreb
 ### Non ricevo il codice di verifica quando accedo con il mio Account Apple
 Un altro problema comune durante il login è non ricevere il codice di verifica quando usi il tuo Account Apple con SideStore. Puoi risolvere il problema seguendo questi step:
 
-**Per versioni iOS inferiori alla 18.1:**
-
-1. Apri l'app "Impostazioni".
-2. Tocca sul tuo nome in alto.
-3. Naviga a "Accesso e Sicurezza".
-4. Seleziona "Autenticazione a Due Fattori".
-5. Seleziona "Ottieni codice di verifica".
-
-**Per versioni iOS 18.1 e superiori:**
-
-1. Visita [iCloud](https://www.icloud.com) sul browser.
-2. Seleziona "Accedi".
-3. Avrai due opzioni: "Accedi" e "Usa un altro account Apple".
-   - Seleziona la seconda opzione: "Usa un altro account Apple".
-4. Inserisci il tuo Apple Account identifier (indirizzo mail o numero di telefono) e la password (non usare una passkey).
-5. Apple ti invierà un codice di verifica.
-   - Usa questo codice in SideStore per completare il processo di login.
-
+<Tabs>
+   <TabItem value="18.1" label="iOS/iPadOS 18.1+">
+      1. Visita [iCloud](https://www.icloud.com) sul browser.
+      2. Seleziona "Accedi".
+      3. Avrai due opzioni: "Accedi" e "Usa un altro account Apple".
+         - Seleziona la seconda opzione: "Usa un altro account Apple".
+      4. Inserisci il tuo Apple Account identifier (indirizzo mail o numero di telefono) e la password (non scegliere "Accedi con iPhone" o "Accedi con Passkey").
+      5. Apple ti invierà un codice di verifica.
+         - Usa questo codice in SideStore per completare il processo di login.
+   </TabItem>
+   <TabItem value="18" label="iOS/iPadOS 18.0.1 e inferiori">
+      1. Apri l'app "Impostazioni".
+      2. Tocca sul tuo nome in alto.
+      3. Naviga a "Accesso e Sicurezza".
+      4. Seleziona "Autenticazione a Due Fattori".
+      5. Seleziona "Ottieni codice di verifica".
+   </TabItem>
+</Tabs>
 
 ## Altro
 ### Le mie app sono scomparse da SideStore e non so che fare!
 Non ti preoccupare! Rifai il sideload delle app nel solito modo senza cancellarle dal dispositivo e i dati dovrebbero rimanere. Sfortunatamente è possibile che le app disattivate siano scomparse, ma per esserne certi refresha SideStore per vedere se riappaiono.
-
 
 ### Non riesco a far partire DebugServer
 Ci sono situazioni in cui DebugServer non funziona. Però, puoi provare a [ripiazzare il pairing file con iloader](/docs/advanced/pairing-file)
