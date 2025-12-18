@@ -4,13 +4,14 @@ description: A tutorial on how to enable Just-in-Time (JIT) Compilation for apps
 ---
 
 :::note
-iOS 26 has broken JIT once again. An update has been released to StikDebug with a fix, but support is limited. As of writing (Nov 10), the only supported apps are:
+iOS 26 has broken JIT once again. An update has been released to StikDebug with a fix, but support is limited. As of writing (Dec 18), the only supported apps are:
 * UTM
 * Amethyst
 * MeloNX
 * maciOS
 * DolphiniOS (beta)
 * Geode
+* Manic EMU
 
 Please keep an eye on our announcements channel in our Discord server and on the [idevice server](https://discord.gg/mACqxMxP3X)'s announcements and compatibility channels for further updates.
 
@@ -25,24 +26,22 @@ As an alternative, SideStore 0.6.2 includes updates to minimuxer, allowing built
 ## StikDebug installation procedures:
 
 1. **Install StikDebug**
-   Install StikDebug [from the Apple App Store](https://apps.apple.com/app/stikdebug/id6744045754) or [from the AltStore PAL source](https://api.altstore.io/source/stikdebug.xyz/apps.json?app=com.stik.sj).
+   Install StikDebug from the [Official AltStore Source](https://intradeus.github.io/http-protocol-redirector?r=sidestore://https://stikdebug.xyz/index.json).
 
-:::note The VPN present in StikDebug functions the same as one used in SideStore, meaning you can also use it to install and refresh apps in SideStore, similar to LocalDevVPN.
-:::
 
 2. **Place the Pairing File:**  
 Use iloader to import the same **pairing file** you use for SideStore with iloader. For more information on this process, see [here](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md).
 
 
-### Standard setup procedure (must be done every time you restart your device)
+### Standard setup procedure (must be done first, every time you restart your device)
 
 1. **Mount the DDI:**  
-   Open StikDebug with Wi-Fi and the VPN connected and the pairing file placed, then force close it and reopen it. This mounts the DDI. StikDebug should now show all green indicators.
+   Open StikDebug with Wi-Fi and the VPN connected as well as the pairing file placed, then force close it and reopen it. This mounts the DDI. StikDebug should now show all green indicators.
 
 ## To enable JIT:
 
 1. **Enable VPN:**  
-   Start by opening StikDebug on Wi-Fi or with cellular data enabled to activate the built-in VPN. Now, if using cellular data, enable Airplane Mode and reopen the app with the VPN still enabled.
+   Start by opening LocalDevVPN on Wi-Fi or with cellular data enabled and activating the built-in VPN. Now, if using cellular data, enable Airplane Mode and reopen the app with the VPN still enabled.
    
 2. **Activate JIT:**  
    Select the “Connect by App” button and select an app from the list (must be sideloaded with proper entitlements to appear in the list) to attach a debugger and activate JIT functionality.
