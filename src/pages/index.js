@@ -14,10 +14,10 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          {translate({id: 'home.heroTitle', message: siteConfig.title})}
+          <Translate id="home.heroTitle">{"SideStore"}</Translate>
         </Heading>
         <p className="hero__subtitle">
-           <Translate id="home.heroSubtitle">{siteConfig.tagline}</Translate>
+           <Translate id="home.heroSubtitle">{"Your source for instructions on SideStore."}</Translate>
         </p>
         <div className={styles.buttons}>
           <Link

@@ -346,5 +346,11 @@
   },
   "home.feature.openSource.description": {
     "message": "We find open source software very important, as SideStore is itself open source. Anyone is welcome to make contributions to any SideStore project on GitHub."
+  },
+  "home.heroTitle": {
+    "message": "SideStore"
+  },
+  "home.heroSubtitle": {
+    "message": "Your source for instructions on SideStore."
   }
 }

@@ -2,7 +2,7 @@
   "home.getStartedButton": {
     "message": "Iniziamo!"
   },
-  "home.heroTitle":{
+  "home.heroTitle": {
     "message": "SideStore"
   },
   "home.heroSubtitle": {
@@ -12,7 +12,7 @@
     "message": "Veloce, Semplice, Sofisticato"
   },
   "home.feature.FES.description": {
-    "message": " SideStore nasce per essere un'app funzionale e bella da vedere, e non inutilmente complicata."
+    "message": "SideStore nasce per essere un'app funzionale e bella da vedere, e non inutilmente complicata."
   },
   "home.feature.power.title": {
     "message": "Il potere è fondamentale"
