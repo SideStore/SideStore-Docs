@@ -4,13 +4,14 @@ description: Just-in-Time (JIT) 컴파일이 필요한 앱을 위한 JIT 활성�
 ---
 
 :::note
-iOS 26에서 JIT가 작동하지 않게 되었어요. StikDebug에 수정 사항이 포함된 업데이트가 출시되었으나 지원 범위는 제한적이에요. 작성 시점(11월 10일) 기준으로 지원되는 앱은 다음과 같아요:
+iOS 26에서 JIT가 작동하지 않게 되었어요. StikDebug에 수정 사항이 포함된 업데이트가 출시되었으나 지원 범위는 제한적이에요. 작성 시점(12월 18일) 기준으로 지원되는 앱은 다음과 같아요:
 * UTM
 * Amethyst
 * MeloNX
 * maciOS
 * DolphiniOS (베타)
 * Geode
+* Manic EMU
 
 추가 업데이트를 위해 저희 디스코드 서버의 공지 채널과 [idevice 서버](https://discord.gg/mACqxMxP3X)의 공지 및 호환성 채널을 확인해 주세요.
 
@@ -22,28 +23,24 @@ JIT를 활성화하는 방법은 AltJIT, SideJITServer 등 여러 가지가 있�
 ## 사전 요구사항
 * iOS/iPadOS 17.4-18.6를 실행하는 iDevice(18.4b1 제외). 17.0-모든 iOS 18 버전을 사용 중인 경우 (18.4b1 제외) [SideJITServer](https://github.com/nythepegasus/SideJITServer)와 같은 대안을 사용해야 해요. SideStore의 JIT 활성화 기능은 기기가 약 4년 이상 된(TXM 미지원) 기기에서만 iOS 26에서 작동해요.
 
-## Apple 앱 스토어를 통한 StikDebug 설치
+## StikDebug 설치
    
 1. **StikDebug 설치**
-   StikDebug를 [Apple App Store](https://apps.apple.com/ko/app/stikdebug/id6744045754)에서 설치해 주세요.
-:::note 
-좋은 점 - StikDebug에 포함된 VPN은 SideStore에서 사용되는 것과 유사합니다. 즉, SideStore에서 앱을 설치하고 업데이트하는 데도 사용할 수 있으며, StosVPN과 유사한 방식입니다.
-:::
-2. **설치 절차:**
-   아래 사용 가이드의 표준 설치 절차를 따르세요.
+   StikDebug를 [AltStore 공식 소스](https://intradeus.github.io/http-protocol-redirector?r=sidestore://https://stikdebug.xyz/index.json)에서 설치해 주세요.
 
-### 표준 설치 절차:
 
-1. **페어링 파일 업로드:**  
-   StikDebug를 열고 닫아 앱의 폴더를 파일 시스템에 생성한 후, idevice pair를 사용하여 SideStore에서 사용하는 동일한 **페어링 파일**을 가져옵니다. 이 과정에 대한 자세한 내용은 [여기](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md)를 참조하세요.
+2. **페어링 파일 넣기:**
+   iloader를 사용하여 SideStore와 동일한 **페어링 파일**을 iloader로 가져옵니다. 이 과정에 대한 자세한 내용은 [여기](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md)를 참조하십시오.
 
-2. **DDI 마운트:**  
-   Wi-Fi와 VPN이 연결된 상태에서 StikDebug를 열고 페어링 파일을 수입한 후, 프로그램을 닫고 다시 열면 됩니다. 이 과정은 DDI를 마운트하는 것으로, idevice를 재시작할 때마다 반드시 수행해야 합니다.
+### 표준 설치 절차 (장치를 재시작할 때마다 반드시 먼저 수행해야 함):
+
+1. **DDI 마운트:**  
+   Wi-Fi와 VPN을 연결하고 페어링 파일을 배치한 상태에서 StikDebug를 실행한 후 강제 종료하고 다시 실행하세요. 이렇게 하면 DDI가 마운트됩니다. 이제 StikDebug에 모든 녹색 표시등이 표시되어야 합니다.
 
 ## JIT를 활성화하려면
 
 1. **VPN 활성화:** 
-   먼저 Wi-Fi 또는 셀룰러 데이터를 활성화한 상태에서 StikDebug를 실행하여 내장형 VPN을 활성화합니다. 이제 셀룰러 데이터를 사용하는 경우 비행기 모드를 활성화한 후 VPN이 여전히 활성화된 상태에서 앱을 다시 실행합니다. StikDebug에서 기본 제공 VPN을 활성화하여 시작합니다.
+   Wi-Fi 또는 셀룰러 데이터가 활성화된 상태에서 LocalDevVPN을 열고 내장 VPN을 활성화하세요. 셀룰러 데이터를 사용하는 경우, 비행기 모드를 켠 후 VPN이 활성화된 상태로 앱을 다시 실행하세요.
    
 2. **JIT 활성화:** 
    “Connect by App” 버튼을 선택하고 목록에서 앱을 선택합니다(목록에 표시되려면 적절한 권한으로 사이드로드되어야 합니다). 이를 통해 디버거를 연결하고 JIT 기능을 활성화할 수 있습니다.
