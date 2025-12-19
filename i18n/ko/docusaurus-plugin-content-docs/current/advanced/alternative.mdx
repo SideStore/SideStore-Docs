@@ -3,29 +3,41 @@ title: 대안/구버전 안내
 description: "SideStore 설정에 대한 대체/구버전 안내를 모아둔 곳이에요. 주의: 여기 있는 절차는 최신 iOS나 SideStore 버전과 호환되지 않을 수도 있어요."
 ---
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 ## 설치
 ### AltServer
-#### macOS
-[이 안내](https://faq.altstore.io/altstore-classic/how-to-install-altstore-macos)의 1~3단계를 따라 AltServer를 설정해 주세요.
-#### Windows
-[이 안내](https://faq.altstore.io/altstore-classic/how-to-install-altstore-windows)의 1~3단계를 따라 AltServer를 설정해 주세요.
-#### Linux (Altcon)
-시작하기 전에 usbmuxd가 설치돼 있는지 확인해 주세요.
 
-1. Linux 터미널에서 `sudo apt install -y usbmuxd`를 실행해 usbmuxd가 설치돼 있고 최신인지 확인해 주세요.
-2. 기기에 Docker나 Podman 중 하나를 설치해 주세요.
-2. 보조 iDevice를 연결해 주세요. 프롬프트가 나오면 “신뢰”를 선택하고 암호를 입력해 주세요.
-3. 아래 명령으로 Docker나 Podman에서 Altcon을 실행해 주세요(상황에 따라 `sudo`가 필요할 수 있어요).
+<Tabs groupId="operating-systems">
+  <TabItem value="mac" label="macOS">
+    [이 안내](https://faq.altstore.io/altstore-classic/how-to-install-altstore-macos)의 1~3단계를 따라 AltServer를 설정해 주세요.
+  </TabItem>
+  <TabItem value="win" label="Windows">
+    [이 안내](https://faq.altstore.io/altstore-classic/how-to-install-altstore-windows)의 1~3단계를 따라 AltServer를 설정해 주세요.
+  </TabItem>
+  <TabItem value="linux" label="Linux (Altcon)">
+    시작하기 전에 usbmuxd가 설치돼 있는지 확인해 주세요.
+   1. Linux 터미널에서 `sudo apt install -y usbmuxd`를 실행해 usbmuxd가 설치돼 있고 최신버전인지 확인해 주세요.
+   2. 기기에 Docker나 Podman 중 하나를 설치해 주세요.
+   2. iDevice를 연결해 주세요. 프롬프트가 나오면 “신뢰”를 선택하고 암호를 입력해 주세요.
+   3. 아래 명령으로 Docker나 Podman에서 Altcon을 실행해 주세요(상황에 따라 `sudo`가 필요할 수 있어요).
 
-Docker 설정:
-```bash
-docker run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd -v /var/lib/lockdown:/tmp/lockdown ghcr.io/sidestore/altcon
-```
-Podman 설정:
-```bash
-podman run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd -v /var/lib/lockdown:/tmp/lockdown ghcr.io/sidestore/altcon
-```
-5. Altcon이 기기와 페어링할 거예요. 다시 프롬프트가 나오면 “신뢰”를 선택하고 암호를 한 번 더 입력해 주세요.
+   Docker:
+   ```bash
+   docker run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd -v /var/lib/lockdown:/tmp/lockdown ghcr.io/sidestore/altcon
+   ```
+
+   Podman:
+   ```bash
+   podman run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd -v /var/lib/lockdown:/tmp/lockdown ghcr.io/sidestore/altcon
+   ```
+
+   5. Altcon이 기기와 페어링할 거예요. 다시 프롬프트가 나오면 “신뢰”를 선택하고 암호를 한 번 더 입력해 주세요.
+  </TabItem>
+</Tabs>
 
 #### AltServer를 사용하여 동일 계정 내 여러 기기에서 SideStore 설정하기
 순서는 이래요:
@@ -49,24 +61,41 @@ podman run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd -v /va
 1. 새 인증서를 가져와 주세요.
 2. SideStore 안에서 SideStore ipa를 사이드로드해 주세요.
 
+## VPN
+### WireGuard
+:::note
+사이드스토어에서 WireGuard VPN은 **0.3.1-0.6.1 버전과 0.6.3-nightly.4e6756d 버전 사이에서만 작동하며**, 대체 수단(LocalDevVPN)이 있다면 사용을 권장하지 않아요. 해당 버전 외에서 작동하지 않을 경우 **이 문제에 대한 지원을 요청하지 말아주세요**. 
+:::
+
+사이드스토어는 기기 내장형 와이어가드 VPN을 활용하여 내부 서비스와 통신합니다.
+
+1. WireGuard 앱을 [공식 App Store](https://apps.apple.com/app/wireguard/id1441195209)에서 다운로드해 주세요.
+2. 또한, [여기](https://github.com/SideStore/SideStore/releases/download/0.3.1/SideStore.conf)에서 WireGuard 설정 파일을 다운로드해 주세요.
+3. WireGuard를 열고 '터널 추가' 또는 '+' 버튼을 눌러주세요.
+4. '파일 또는 아카이브에서 생성'을 선택하고 SideStore.conf 파일을 선택해 주세요.
+5. 장치에서 'VPN 구성 허용'을 묻는 메시지가 표시될 수 있습니다. '허용'을 선택하고 인증해 주세요.
+6. 사이드스토어 VPN 옵션을 켜주세요.
+
+사이드스토어를 사용할 때는 항상 이 VPN을 켜야 해요. 대부분의 기능이 VPN 없이 작동하지 않기 때문이에요.
+
 ## 페어링
 ### idevice_pair
 #### 설치 안내
 
-##### macOS
-
-1. [macOS용 idevice_pair](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--macos-universal.dmg)를 다운로드해 주세요.
-2. 디스크 이미지를 연 뒤 `idevice pair`를 `Applications` 폴더로 드래그해 주세요.
-
-##### Windows
-
-1. Apple 웹사이트에서 iTunes를 설치해 주세요([64비트](https://apple.com/itunes/download/win64) 또는 [32비트](https://apple.com/itunes/download/win32)). AltServer 설정 과정에서 이미 설치했을 수도 있어요.
-2. [Windows용 idevice_pair](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--windows-x86_64.exe)를 다운로드해 기억하기 쉬운 위치로 옮겨 주세요.
-
-##### Linux
-
-1. Linux 터미널에서 `sudo apt install -y usbmuxd`를 실행해 usbmuxd가 설치돼 있는지 확인해 주세요.
-2. PC 아키텍처에 맞는 Linux용 idevice_pair([x86_64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-x86_64.AppImage) 또는 [AArch64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-aarch64.AppImage))를 다운로드해 기억하기 쉬운 위치로 옮긴 뒤 실행 권한을 부여해 주세요.
+<Tabs groupId="operating-systems">
+  <TabItem value="mac" label="macOS">
+   1. [macOS용 idevice_pair](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--macos-universal.dmg)를 다운로드해 주세요.
+   2. 디스크 이미지를 연 뒤 `idevice pair`를 `Applications` 폴더로 드래그해 주세요.
+  </TabItem>
+  <TabItem value="win" label="Windows">
+   1. Apple 웹사이트에서 iTunes를 설치해 주세요([64비트](https://apple.com/itunes/download/win64) 또는 [32비트](https://apple.com/itunes/download/win32)). AltServer 설정 과정에서 이미 설치했을 수도 있어요.
+   2. [Windows용 idevice_pair](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--windows-x86_64.exe)를 다운로드해 기억하기 쉬운 위치로 옮겨 주세요.
+  </TabItem>
+  <TabItem value="linux" label="Linux">
+   1. Linux 터미널에서 `sudo apt install -y usbmuxd`를 실행해 usbmuxd가 설치돼 있는지 확인해 주세요.
+   2. PC 아키텍처에 맞는 Linux용 idevice_pair([x86_64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-x86_64.AppImage) 또는 [AArch64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-aarch64.AppImage))를 다운로드해 기억하기 쉬운 위치로 옮긴 뒤 실행 권한을 부여해 주세요.
+  </TabItem>
+</Tabs>
 
 #### 페어링 안내
 
@@ -87,64 +116,65 @@ JitterbugPair(모바일 앱인 Jitterbug와는 달라요)는 SideStore 같은 �
 .mobiledevicepairing 파일을 옮기는 과정에서 확장자가 바뀔 수도 있어요(보통 .txt로 바뀌거나 “ing”이 잘려요). 전송 전에 페어링 파일을 zip으로 압축하는 걸 항상 추천해요. SideStore는 .mobiledevicepairing 파일만 받으며, 구버전에서는 .plist도 가능했어요.
 :::
 
-##### Windows
-
-1. `jitterbugpair-win64.zip`을 **압축 해제**해 주세요.
-2. 아직 안 했다면 기기 **잠금 암호를 설정**해 주세요. 기기를 잠금 해제하고 컴퓨터에 연결한 뒤 프롬프트가 나오면 “신뢰”를 선택하고 암호를 입력해 주세요.
-3. 기기를 홈 화면에 둬 주세요.
-4. 파일 탐색기에서 `jitterbugpair.exe`를 찾아 더블 클릭하거나 마우스 오른쪽 버튼으로 “열기”를 선택해 실행해 주세요. 도구를 처음 실행하면 보조 기기에 암호 입력 프롬프트가 뜰 거예요. 암호를 입력하고 화면을 켠 채 잠금 해제 상태로 다시 실행해 주세요.
-5. JitterbugPair가 같은 폴더에 `.mobiledevicepairing` 확장자의 **페어링 파일**을 만들어 줘요.
-6. 최상의 결과를 위해 파일을 zip으로 압축한 뒤 One/iCloud/Google Drive, 이메일 등 원하는 방법으로 **페어링 파일을 iOS 기기로 전송**해 주세요.
-
-Windows에서는 `.exe`를 더블 클릭해도 실행되지 않을 수 있어서 명령 프롬프트나 PowerShell에서 실행해야 할 수도 있어요.
-
-7. 파일 탐색기에서 jitterbugpair가 있는 폴더로 이동해 주세요.
-8. 주소 표시줄의 빈 공간을 클릭하고 `powershell`을 입력해 주세요. PowerShell 창이 열릴 거예요.
-9. 기기가 연결된 상태에서 `./jitterbugpair.exe`를 입력하고 Enter를 눌러 주세요.
-
-##### macOS
-
-1. `jitterbugpair-macos.zip`을 **압축 해제**해 주세요.
-2. 아직 안 했다면 기기 **잠금 암호를 설정**해 주세요. 기기를 잠금 해제하고 컴퓨터에 연결한 뒤 프롬프트가 나오면 “신뢰”를 선택하고 암호를 입력해 주세요.
-3. 기기를 홈 화면에 둬 주세요.
-4. 추출한 `jitterbugpair` 파일(검은색과 초록색 아이콘)을 찾아 더블 클릭하거나 마우스 오른쪽 버튼으로 “열기”를 선택해 실행해 주세요. 도구를 처음 실행하면 보조 기기에 암호 입력 프롬프트가 뜰 거예요. 암호를 입력하고 화면을 켠 채 잠금 해제 상태로 다시 실행해 주세요.
-5. “macOS에서 이 앱이 악성 코드로부터 안전한지 확인할 수 없어요”라는 메시지가 뜨면 이렇게 해 주세요.
+<Tabs groupId="operating-systems">
+  <TabItem value="mac" label="macOS">
+   1. [macOS 용](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-macos.zip) JitterbugPair를 다운로드 해주세요.
+   2. `jitterbugpair-macos.zip`을 **압축 해제**해 주세요.
+   3. 아직 안 했다면 기기 **잠금 암호를 설정**해 주세요. 기기를 잠금 해제하고 컴퓨터에 연결한 뒤 프롬프트가 나오면 “신뢰”를 선택하고 암호를 입력해 주세요.
+   4. 기기를 홈 화면으로 이동시켜 주세요.
+   5. 압축 해재한 `jitterbugpair` 파일(검은색과 초록색 아이콘)을 찾아 더블 클릭하거나 마우스 오른쪽 버튼으로 “열기”를 선택해 실행해 주세요. 도구를 처음 실행하면 보조 기기에 암호 입력 프롬프트가 뜰 거예요. 암호를 입력하고 화면을 켠 채 잠금 해제 상태로 다시 실행해 주세요.
+   6. “macOS에서 이 앱이 악성 코드로부터 안전한지 확인할 수 없어요”라는 메시지가 뜨면 이렇게 해 주세요.
    - 설정 > 개인정보 보호 및 보안으로 이동해 주세요.
    - 해당 앱 메시지가 보일 때까지 스크롤해 주세요.
    - “그래도 열기”를 클릭해 주세요. 자동으로 실행되지 않으면 다시 실행해 주세요.
-6. JitterbugPair가 사용자 홈 폴더에 `.mobiledevicepairing` 확장자의 **페어링 파일**을 만들어 줘요.
-7. 페어링 파일을 못 찾겠다면:
-   - 생성된 파일 이름을 복사해 주세요.
-   - Finder에 붙여 넣어 검색해 주세요.
-   - 도구를 여러 번 실행했다면 이름이 같아서 해당 기기의 페어링 파일이 모두 표시될 거예요.
-8. 최상의 결과를 위해 파일을 zip으로 압축한 뒤 AirDrop, iCloud/One/Google Drive, 이메일 등 원하는 방법으로 **iOS 기기로 전송**해 주세요.
+   7. JitterbugPair가 사용자 홈 폴더에 `.mobiledevicepairing` 확장자의 **페어링 파일**을 만들어 줘요.
+   8. 페어링 파일을 못 찾겠다면:
+      - 생성된 파일 이름을 복사해 주세요.
+      - Finder에 붙여 넣어 검색해 주세요.
+      - 도구를 여러 번 실행했다면 이름이 같아서 해당 기기의 페어링 파일이 모두 표시될 거예요.
+   9. 최상의 결과를 위해 파일을 zip으로 압축한 뒤 AirDrop, iCloud/One/Google Drive, 이메일 등 원하는 방법으로 **iOS 기기로 전송**해 주세요.
+  </TabItem>
+  <TabItem value="win" label="Windows">
+   1. [Windows (64-bit)용](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip) JitterbugPair를 다운로드 해주세요.
+   2. `jitterbugpair-win64.zip`을 **압축 해제**해 주세요.
+   3. 아직 안 했다면 기기 **잠금 암호를 설정**해 주세요. 기기를 잠금 해제하고 컴퓨터에 연결한 뒤 프롬프트가 나오면 “신뢰”를 선택하고 암호를 입력해 주세요.
+   4. 기기를 홈 화면에 둬 주세요.
+   5. 파일 탐색기에서 `jitterbugpair.exe`를 찾아 더블 클릭하거나 마우스 오른쪽 버튼으로 “열기”를 선택해 실행해 주세요. 도구를 처음 실행하면 보조 기기에 암호 입력 프롬프트가 뜰 거예요. 암호를 입력하고 화면을 켠 채 잠금 해제 상태로 다시 실행해 주세요.
+   6. JitterbugPair가 같은 폴더에 `.mobiledevicepairing` 확장자의 **페어링 파일**을 만들어 줘요.
+   7. 최상의 결과를 위해 파일을 zip으로 압축한 뒤 One/iCloud/Google Drive, 이메일 등 원하는 방법으로 **페어링 파일을 iOS 기기로 전송**해 주세요.
 
-##### Linux
+   Windows에서는 `.exe`를 더블 클릭해도 실행되지 않을 수 있어서 명령 프롬프트나 PowerShell에서 실행해야 할 수도 있어요.
 
-이 안내는 Linux 명령줄에 익숙하다고 가정해요.
+   8. 파일 탐색기에서 jitterbugpair가 있는 폴더로 이동해 주세요.
+   9. 주소 표시줄의 빈 공간을 클릭하고 `powershell`을 입력해 주세요. PowerShell 창이 열릴 거예요.
+   10. 기기가 연결된 상태에서 `./jitterbugpair.exe`를 입력하고 Enter를 눌러 주세요.
 
-1. `jitterbugpair-linux.zip`을 **압축 해제**해 주세요.
-2. 추출한 디렉터리에서 터미널을 열어 주세요.
-3. 프로그램 실행 권한을 주세요.
-   ```bash
-   chmod +x ./jitterbugpair
-   ```
-4. 아직 안 했다면 기기 **잠금 암호를 설정**해 주세요. 기기를 잠금 해제하고 컴퓨터에 연결한 뒤 프롬프트가 나오면 “신뢰”를 선택하고 암호를 입력해 주세요.
-5. 기기를 홈 화면에 둬 주세요.
-6. 프로그램을 실행해 주세요.
-   ```bash
-   ./jitterbugpair
-   ```
-7. 도구를 처음 실행하면 보조 기기에 암호 입력 프롬프트가 뜰 거예요. 암호를 입력하고 화면을 켠 채 잠금 해제 상태로 다시 실행해 주세요.
-8. JitterbugPair가 `.mobiledevicepairing` 확장자의 **페어링 파일**을 만들어 줘요.
-9. 최상의 결과를 위해 파일을 zip으로 압축한 뒤 이메일, 클라우드 저장소 등 원하는 방법으로 **iOS 기기로 전송**해 주세요.
+  </TabItem>
+  <TabItem value="linux" label="Linux">
+   이 안내는 Linux 명령줄에 익숙하다고 가정해요.
+   1. [Linux용 ](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip) JitterbugPair를 다운로드 해주세요.
+   2. `jitterbugpair-linux.zip`을 **압축 해제**해 주세요.
+   3. 추출한 디렉터리에서 터미널을 열어 주세요.
+   4. 프로그램 실행 권한을 주세요.
+      ```bash
+      chmod +x ./jitterbugpair
+      ```
+   5. 아직 안 했다면 기기 **잠금 암호를 설정**해 주세요. 기기를 잠금 해제하고 컴퓨터에 연결한 뒤 프롬프트가 나오면 “신뢰”를 선택하고 암호를 입력해 주세요.
+   6. 기기를 홈 화면에 둬 주세요.
+   7. 프로그램을 실행해 주세요.
+      ```bash
+      ./jitterbugpair
+      ```
+   8. 도구를 처음 실행하면 보조 기기에 암호 입력 프롬프트가 뜰 거예요. 암호를 입력하고 화면을 켠 채 잠금 해제 상태로 다시 실행해 주세요.
+   9. JitterbugPair가 `.mobiledevicepairing` 확장자의 **페어링 파일**을 만들어 줘요.
+   10. 최상의 결과를 위해 파일을 zip으로 압축한 뒤 이메일, 클라우드 저장소 등 원하는 방법으로 **iOS 기기로 전송**해 주세요.
+  </TabItem>
+</Tabs>
 
 ## SideStore 익스플로잇
 ### SparseRestore (앱 3개 제한)
 :::note
-
 SparseRestore “앱 3개 제한 우회” 익스플로잇은 **iOS/iPadOS 17.0~18.1 beta 4(17.7.1 제외)**에서만 작동해요. 해당 버전에 있지 않은데 동작하지 않는다고 해서 **지원 요청은 삼가 주세요.**
-
 :::
 
 #### 준비물
@@ -163,17 +193,24 @@ SparseRestore “앱 3개 제한 우회” 익스플로잇은 **iOS/iPadOS 17.0~
 
 #### 단계
 1. SparseBox를 설치해 주세요. 다양한 방법이 있지만 여기서는 SideStore로 설치한다고 가정해요. 최신 버전은 [여기](https://nightly.link/khanhduytran0/SparseBox/workflows/build/main/artifact.zip)에서 받을 수 있어요(artifact.zip을 풀면 .ipa가 있어요).
+
 2. SideStore에서 “Disable App Limit”을 켜고 SideStore가 **완전히 종료**돼 있는지(백그라운드에 없어요) 확인한 뒤 SparseBox를 열어 주세요.
+
 3. StosVPN을 켜고 페어링 파일을 선택한 뒤 “Bypass 3-app limit”을 탭해 주세요. 로그가 표시될 거예요. `idevicebackup2 exited with code -18` 또는 `idevicebackup2 exited with code 2`가 나올 때까지 기다렸다가 앱을 닫아 주세요. Apply를 누를 필요는 없어요.
+
 4. SideStore를 다시 열고 설정에서 아래로 스크롤해 “clear cache”를 눌러 주세요. 그래야 SideStore가 익스플로잇 상태를 감지해요.
+
 5. 익스플로잇이 성공했는지 테스트해 주세요(빈 슬롯 수에 따라 앱을 여러 개 설치해야 할 수도 있어요). 제한 관련 오류가 나오면 SideStore를 다시 열거나 익스플로잇을 다시 시도해 주세요. 설치가 되면 성공이에요! 이제 한 번에 3개 이상 앱을 설치할 수 있어요.
 
 #### 참고
 제한 때문에 앱 3개를 추가로 사이드로드할 때마다 이 익스플로잇을 다시 해야 해요.
 
-다른 이유로 Find My가 필요하다면 이제 다시 켜도 돼요. 다만 앱을 더 설치하거나 갱신하려면 다시 꺼야 해요.
+다른 이유로 나의 찾기가 필요하다면 이제 다시 켜도 돼요. 다만 앱을 더 설치하거나 갱신하려면 다시 꺼야 해요.
 
 ### MacDirtyCow (앱 3개 제한)
+:::note
+MacDirtyCow “앱 3개 제한 우회” 익스플로잇은 **iOS/iPadOS 15.0부터 16.1.2 버전 사이에서만 작동합니다**. 해당 버전이 아닌 경우 작동하지 않으며, **이 문제에 대한 지원을 요청하지 마십시오**. 
+:::
 [MDC 호환 IPA](https://cdn.discordapp.com/attachments/949183273827983370/1074037820328521829/SideStore_MDC_14.ipa)
 
-위 SideStore MDC 버전(앱 3개 제한 우회)은 iOS 15.0~16.1.2에서만 호환되고 상당히 오래돼서 문제가 발생할 수 있어요. 이 기능이 필요하면 Discord에 참여해서 [sidestore-downloads](https://discord.com/channels/949183273383395328/1126118099930861638) 채널에서 MDC 호환 SideStore 빌드를 받아 주세요. 그다음 [SideStore로 WDBRemoveThreeAppLimit를 따로 설치](https://github.com/zhuowei/WDBRemoveThreeAppLimit/releases/tag/v1.0)해서 패치를 적용해 주세요.
+이 기능을 원하신다면, 저희 디스코드에 가입하시고 [SideStore Download](https://discord.com/channels/949183273383395328/1126118099930861638) 채널로 이동하시길 권장합니다. 해당 채널에는 MDC 호환 사이드스토어 빌드가 포함되어 있습니다. 그런 다음, [WDBRemoveThreeAppLimit를 SideStore와 별도로 설치](https://github.com/zhuowei/WDBRemoveThreeAppLimit/releases/tag/v1.0)하여 패치를 적용하세요.
