@@ -3,132 +3,69 @@ title: 문제 해결 가이드
 description: SideStore 문제 해결을 위한 가이드입니다.
 ---
 
-## 설치 과정
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
 
+## 설치 과정
 ### 안내에 따라 설치했지만, 여전히 SideStore를 설치할 수 없는경우
 
 #### Mac 지침
-1. **기기 신뢰**: iOS 기기를 Mac에 연결한 후 Mac과 iOS 기기 모두에서 '신뢰'라고 선택했는지 확인합니다. 이를 확인하는 방법은 다음과 같습니다:
-   - Finder(macOS 10.15 Catalina 이상) 또는 iTunes(macOS 10.14 Mojave 이하)를 엽니다.
-   - 기기을 Mac에서 분리했다가 다시 연결한 다음 장치를 신뢰할 것인지 묻는 대화 상자가 나타나는지 확인합니다.
-2. **다른 Apple ID 사용**: 다른 Apple ID를 사용해 보세요. 필요한 경우, [새 Apple ID 생성](https://appleid.apple.com/account#!\&page=create)을 통해 무료로 SideStore 전용 Apple ID를 생성할 수 있습니다.
+1. **기기 신뢰**: iOS 기기를 Mac에 연결한 후 Mac과 iOS 기기 모두에서 '신뢰'라고 선택했는지 확인해 주세요. 이를 확인하는 방법은 다음과 같아요:
+   - Finder(macOS 10.15 Catalina 이상) 또는 iTunes(macOS 10.14 Mojave 이하)를 열어주세요.
+   - 기기를 Mac에서 분리했다가 다시 연결한 다음 기기를 신뢰할 것인지 묻는 대화 상자가 나타나는지 확인해 주세요.
+2. **다른 Apple ID 사용**: 다른 Apple ID를 사용해 보세요. 필요한 경우, [새 Apple ID 생성](https://appleid.apple.com/account#!\&page=create)을 통해 무료로 SideStore 전용 Apple ID를 생성할 수 있어요.
 
 #### Windows 지침
-1. **장치 신뢰**: iOS 기기를 Windows 컴퓨터에 연결한 후 컴퓨터와 iOS 기기 모두에서 '신뢰'라고 선택했는지 확인합니다. 이를 확인하는 방법은 다음과 같습니다:
-   - iTunes를 열고 기기를 신뢰할 것인지 묻는 대화 상자가 나타나는지 확인합니다.
-2. **관리자 권한으로 AltServer 실행**: AltServer를 마우스 오른쪽 버튼으로 클릭하고 '관리자 권한으로 실행'을 선택하여 적절한 권한을 부여합니다.
-3. **다른 Apple ID 사용**: 다른 Apple ID를 사용해 보세요. 필요한 경우, [새 Apple ID 생성](https://appleid.apple.com/account#!\&page=create)을 통해 무료로 SideStore 전용 Apple ID를 생성할 수 있습니다.
-4. **Microsoft Store 용 버전이 아닌 iTunes 및 iCloud**:
-   - Microsoft Store에서 iTunes 또는 iCloud를 설치한 경우 제거해야 합니다.
-   - 다음 링크를 사용하여 Microsoft Store 버전이 아닌 iTunes 및 iCloud를 다운로드하여 설치하세요:
-     - [iCloud 다운로드](https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe)
-     - [iTunes 다운로드](https://www.apple.com/itunes/download/win64/)
+1. **기기 신뢰**: iOS 기기를 Windows 컴퓨터에 연결한 후 컴퓨터와 iOS 기기 모두에서 '신뢰'라고 선택했는지 확인해 주세요. 이를 확인하는 방법은 다음과 같아요:
+   - iTunes를 열고 기기를 신뢰할 것인지 묻는 대화 상자가 나타나는지 확인해 주세요.
+2. **다른 Apple ID 사용**: 다른 Apple ID를 사용해 보세요. 필요한 경우, [새 Apple ID 생성](https://appleid.apple.com/account#!\&page=create)을 통해 무료로 SideStore 전용 Apple ID를 생성할 수 있어요.
 
+### SideStore 업데이트가 마지막 단계에서 멈춤
+
+홈 화면으로 이동하면 완료될 거에요. 이 현상이 발생하는 이유는 알 수 없지만, VPN을 사용하여 `installd`가 SideStore(자체)를 새로 고치도록 지시하는 것과 관련이 있을 수 있어요.
 
 ## 로그인 문제
-
 ### 로그인 중 SideStore가 멈추거나 오류 코드가 표시되는 경우
 
-SideStore에 로그인하는 동안 멈추거나 오류 코드가 발생하는 경우 몇 가지 잠재적인 원인이 있을 수 있습니다. 다음 단계에 따라 문제를 해결하세요:
+SideStore에 로그인하는 동안 멈추거나 오류 코드가 발생하는 경우 몇 가지 잠재적인 원인이 있을 수 있어요. 다음 단계에 따라 문제를 해결해 보세요:
 
-1. **Anisette 서버 변경하기기:**
-   가장 일반적인 해결책은 다른 Anisette 서버로 전환하는 것입니다. Anisette 서버는 때때로 다운타임이 발생할 수 있습니다. 대체 서버로 전환하면 일반적으로 문제가 해결됩니다. 이렇게 하세요:
+1. **Anisette 서버 변경하기:**
+   가장 일반적인 해결책은 다른 Anisette 서버로 전환하는 것이에요. Anisette 서버는 때때로 다운타임이 발생할 수 있어요. 대체 서버로 전환하면 일반적으로 문제가 해결될 거예요. 이렇게 하세요:
    - SideStore 앱 내 설정을 여세요.
    - 아래로 스크롤 하여 "Anisette Servers" 옵션으로 이동하세요.
    - 목록에서 다른 서버를 선택하세요.
    - 목록에 있는 몇 가지 서버를 사용해 보고 자신에게 가장 적합한 서버를 찾아야 할 수도 있습니다.
 
 2. **나만의 Anisette 서버 호스팅:**
-   원하는 경우 자체 Anisette 서버를 설정할 수 있습니다. Anisette 서버 호스팅에 대한 자세한 지침은 공식 문서에서 확인할 수 있으며 [여기](https://docs.sidestore.io/docs/advanced/anisette)에서 확인할 수 있습니다.
+   원하는 경우 자체 Anisette 서버를 설정할 수 있어요. Anisette 서버 호스팅에 대한 자세한 지침은 공식 문서에서 확인할 수 있으며 [여기](https://docs.sidestore.io/docs/advanced/anisette)에서 확인할 수 있어요.
 
 ### Apple ID로 로그인할 때 인증 코드를 받지 못한 경우
+로그인 중 발생하는 또 다른 일반적인 문제는 Apple ID를 Sidestore에서 사용할 때 인증 코드가 수신되지 않는 것이에요. 이 문제는 다음 단계에 따라 해결할 수 있어요:
 
-로그인 중 발생하는 또 다른 일반적인 문제는 Apple ID를 Sidestore에서 사용할 때 인증 코드가 수신되지 않는 것입니다. 이 문제는 다음 단계에 따라 해결할 수 있습니다:
+<Tabs>
+    <TabItem value="18.1" label="iOS/iPadOS 18.1+ 버전">
+         1. 웹 브라우저에서 [iCloud](https://www.icloud.com)로 들어가주세요.
+         2. "로그인"을 눌러주세요.
+         3. 메시지가 표시되면 두 가지 옵션이 표시될 수 있어요: "로그인" 및 "다른 Apple 계정 사용".
+            - 하단 옵션인 "다른 Apple 계정 사용"을 선택해 주세요.
+         4. Apple 계정 정보 (이메일 주소 또는 전화번호)와 비밀번호를 입력하세요('iPhone으로 로그인' 또는 '패스키로 로그인'을 선택하지 마세요).
+         5. Apple에서 인증 코드를 전송합니다.
+            - SideStore에서 이 코드를 사용하여 로그인 프로세스를 완료합니다.
+    </TabItem>
+    <TabItem value="18" label="iOS/iPadOS 18.0.1 미만 버전">
+         1. "설정" 앱을 열어 주세요.
+         2. 화면 상단에서 당신의 이름을 눌러 주세요.
+         3. "로그인 및 보안"으로 이동해 주세요.
+         4. "2단계 인증"을 선택해 주세요.
+         5. "인증 코드 받기"를 선택해 주세요.
+    </TabItem>
+</Tabs>
 
-**iOS 18.1 미만 버전의 경우:**
+## 그 외
+### SideStore에서 내 앱이 사라졌는데 어떻게 해야 할지 모르겠어요!
+당황하지 마세요! 기기에서 앱을 삭제하지 않은 상태로 평소처럼 다시 사이드로드하면 데이터는 안전할 거예요. 안타깝게도 비활성화된 앱은 사라졌을 수도 있지만, 확인하려면 SideStore를 새로고침해서 다시 나타나는지 지켜보세요.
 
-1. "설정" 앱을 엽니다.
-2. 화면 상단에서 내 이름을 탭 합니다.
-3. "로그인 및 보안"으로 이동합니다.
-4. "2단계 인증"을 선택합니다.
-5. "인증 코드 받기"를 선택합니다.
-
-**iOS 버전 18.1 이상의 경우:**
-
-1. 웹 브라우저에서 [iCloud](https://www.icloud.com)로 이동합니다.
-2. “로그인”을 클릭합니다.
-3. 메시지가 표시되면 두 가지 옵션이 표시됩니다: “로그인” 및 “다른 Apple 계정 사용”.
-   - 하단 옵션인 “다른 Apple 계정 사용”을 선택합니다.
-4. Apple 아이디와 비밀번호를 입력합니다.
-5. Apple에서 인증 코드를 전송합니다.
-   - SideStore에서 이 코드를 사용하여 로그인 프로세스를 완료합니다.
-
-
-## 앱을 새로 고치거나 설치할 수 없는 경우
-
-### No Wi-Fi or VPN 오류 해결
-
-1. 셀룰러 데이터를 비활성화하거나 안정적인 Wi-Fi 네트워크에 연결하세요.
-2. Apple 도메인과 Anisette 서버의 도메인이 제한되지 않았는지 확인합니다. 다음을 확인합니다:
-   - `osp.apple.com`과 같은 모든 DNS 차단 도메인을 끕니다.
-   - 학교/직장 Wi-Fi 연결을 끊고 제한이 없는 네트워크에 연결해 보세요.
-3. StosVPN에서 VPN이 연결되었는지 확인하세요.
-4. StosVPN을 껐다가 다시 켜고 SideStore에서 몇 초간 기다린 후 새로고침을 시도하세요.
-5. 새로운 페어링 파일을 생성합니다.
-   - 위의 방법 중 어느 것도 효과가 없다면 페어링 파일이 손상되었을 가능성이 높습니다. 새 페어링 파일을 만드는 방법에 대한 설명서를 참조할 수 있습니다[여기](/docs/advanced/pairing-file).
-   - 새 페어링 파일을 생성한 후 SideStore 설정으로 이동하여 "Reset Pairing File"을 누른 다음, 생성한 새 페어링 파일을 선택합니다.
-
-
-## 페어링 파일을 선택할 수 없는 경우
-
-### SideStore에서 페어링 파일을 선택할 수 없는 경우 다음 단계에 따라 문제를 해결하세요:
-
-1. **파일 확장자 확인**: 페어링 파일의 확장자가 `.mobiledevicepairing` 또는 `.plist`로 끝나는지 확인하세요. 그렇지 않은 경우, 페어링 파일을 기기로 보내기 전에 압축했는지 다시 확인하세요. 그렇지 않으면 전송 중에 파일이 손상될 수 있습니다.
-2. **페어링 파일 이동**: 앱 내에서 페어링 파일을 선택할 수 없는 경우, 파일 이름을 `ALTPairingFile.mobiledevicepairing`으로 변경하고 "내 iPhone/iPad"의 파일 앱에서 SideStore 폴더의 루트 디렉토리로 페어링 파일을 이동해 보세요.
-3. **인증서 서명**: 인증서로 SideStore를 서명할 때 앱 내에서 페어링 파일을 선택할 수 없습니다. 위에 언급된 해결 방법을 시도해 보세요. 파일 앱에 SideStore 폴더가 보이지 않는 경우 기기를 컴퓨터에 연결하고 페어링 파일을 SideStore 앱의 파일로 끌어다 놓을 수 있습니다. 위에서 언급한 이름으로 변경해야 합니다.
-
-
-## AltServer
-
-### 앱을 사이드로드하거나 새로고침 하려고 할 때 AltStore에서 "AltServer를 찾을 수 없습니다."라는 메시지가 표시됩니다.
-
-앱을 사이드로드하거나 새로 고치려면 AltStore와 동일한 Wi-Fi에 연결된 컴퓨터에서 AltServer가 실행 중이어야 합니다. AltServer가 AltStore와 동일한 Wi-Fi 네트워크에서 실행 중인데도 이 오류가 계속 발생하면 다음을 시도해 보세요:
-
-- 공공/직장/학교 Wi-Fi를 사용 중이신가요? 그렇다면 Wi-Fi 때문에 기기가 서로를 검색하지 못할 수 있습니다. 컴퓨터를 휴대전화의 핫스팟에 연결한 후 다시 시도해 보세요. (iPad를 사용하는 경우 iPad도 핫스팟에 연결되어 있는지 확인하세요.)
-- 휴대폰을 Mac에 연결한 후 Mac과 iOS 기기 모두에서 '신뢰'를 선택했나요? Finder(macOS 10.15 Catalina 이상) 또는 iTunes(macOS 10.14 Mojave 이하)에서 휴대전화를 신뢰할 것인지 묻는 대화 상자가 나타나는지 확인할 수 있습니다.
-- (Windows) 방화벽이 AltServer로 들어오는 네트워크 연결을 차단하고 있을 수 있습니다. 방화벽 설정에서 AltServer에 대한 네트워크 액세스를 활성화해야 AltStore에서 새로 고친 앱을 받을 수 있습니다.
-- (Windows) Microsoft Store에서 iTunes 또는 iCloud를 설치하셨나요? 그렇다면 제거한 후 Apple에서 직접 최신 버전을 다운로드해야 합니다.
-- 마지막으로 iPhone 또는 iPad를 컴퓨터에 연결해 보세요. 이렇게 하면 모든 연결 문제가 해결되지만, AltStore가 Wi-Fi를 통해 백그라운드에서 앱을 자동으로, 새로 고치지 못할 수도 있습니다.
-
-#### 기기가 서로 통신할 수 있도록 네트워크 설정을 변경할 수 없는 경우(예: 학교/직장/공용 Wi-Fi에서).
-
-iPhone 또는 iPad를 컴퓨터에 연결하면 Wi-Fi 없이도 언제든지 앱을 사이드로드하고 새로 고칠 수 있습니다. 하지만 Wi-Fi를 통해 백그라운드에서 앱을 새로 고치지 못할 수도 있습니다.
-
-## AltJIT
-
-### AltServer에서 "JIT could not be enabled for [앱]"라고 말합니다.
-
-이 문제는 여러 가지 이유로 발생할 수 있습니다. 이 문제가 발생하는 경우 다음을 확인해 보세요:
-
-- JIT를 사용 설정하려는 앱이 기기의 포그라운드에서 실행 중인지 확인하세요.
-- 공공/직장/학교 Wi-Fi를 사용 중이신가요? 그렇다면 Wi-Fi 때문에 디바이스가 서로를 검색하지 못할 수 있습니다. 컴퓨터를 휴대폰의 핫스팟에 연결한 후 다시 시도해 보세요. (iPad를 사용하는 경우 iPad도 핫스팟에 연결되어 있는지 확인하세요.)
-- 휴대폰을 Mac에 연결한 후 Mac과 iOS 디바이스 모두에서 '신뢰'라고 말했나요? Finder(macOS 10.15 Catalina 이상) 또는 iTunes(macOS 10.14 Mojave 이하)에서 휴대폰을 신뢰할 것인지 묻는 대화 상자가 나타나는지 확인할 수 있습니다.
-- (Windows) 방화벽이 AltServer로 들어오는 네트워크 연결을 차단하고 있을 수 있습니다. 방화벽 설정에서 AltServer에 대한 네트워크 액세스를 활성화해야 AltStore에서 새로 고침된 앱을 받을 수 있습니다.
-- (Windows) Microsoft Store에서 iTunes 또는 iCloud를 설치하셨나요? 그렇다면 제거한 후 Apple에서 직접 최신 버전을 다운로드해야 합니다.
-- 컴퓨터에서도 iTunes 및 iCloud가 실행 중인지 확인해야 할 수 있습니다.
-- 마지막으로 iPhone 또는 iPad를 컴퓨터에 연결해 보세요. 이렇게 하면 모든 연결 문제가 해결되지만 AltStore가 Wi-Fi를 통해 백그라운드에서 앱을 자동으로 새로 고치지 못할 수도 있습니다.
-
-:::tip
-여기에서 질문에 대한 답변을 찾을 수 없는 경우 [support@altstore.io](mailto:support@altstore.io)으로 이메일을 보내주시면 최대한 빠른 시일 내에 답변해 드리겠습니다.
-:::
-
-### Windows Store 버전의 iCloud를 사용해야 하는 경우 어떻게 해야 하나요?
-
-AltStore를 사용하려면 Apple ID를 인증하기 위해 Apple에서 직접 iCloud를 설치해야 합니다. 대신 Windows 스토어 버전을 사용해야 하는 경우 [이 레딧 게시물](https://www.reddit.com/r/jailbreak/comments/rp5buz/tutorial\_how\_to\_use\_altserver\_if\_you\_have\_to\_use/?utm\_source=share\&utm\_medium=ios\_app\&utm\_name=iossmf)에서 복사한 대체 지침을 따르세요:
-
-1. Apple 공식 웹사이트에서 [iTunes](https://www.apple.com/itunes/)를 다운로드하여 설치합니다. 아래로 **스크롤**하여 “다른 버전을 찾으시나요?” 텍스트 옆에 있는 “Windows”를 클릭합니다.
-2. Apple 공식 웹사이트에서 [iCloud](https://support.apple.com/en-us/HT204283)를 다운로드하여 설치합니다. 아래로 **스크롤**하여 이 텍스트의 링크를 클릭하세요: “\* Windows 7 및 Windows 8에서는 Apple 웹사이트에서 Windows용 iCloud를 _다운로드_할 수 있습니다.”.
-3. “C:\Program Files (x86)\Common Files\Apple” 폴더를 찾습니다. “Apple 응용 프로그램 지원” 및 “인터넷 서비스” 폴더를 복사한 다음 새 폴더를 만들고 원하는 대로 이름을 지정하여 붙여넣습니다.
-4. 컴퓨터에서 iCloud를 제거합니다. **iTunes를 제거하지 마세요! (또한 iTunes 및 iCloud와 함께 설치되어 있는 “Apple 모바일 장치 지원” 또는 “Apple 응용 프로그램 지원”도 **절대로** 제거하지 마세요.)
-5. Windows 스토어에서 [iCloud](https://www.microsoft.com/store/productId/9PKTQ5699M62)를 설치합니다.
-6. [AltServer](https://altstore.io/)를 다운로드하여 설치합니다. 처음 열 때 “폴더 선택...”을 클릭하고 3단계에서 생성한 폴더를 찾습니다.
+### DebugServer를 시작할 수 없습니다
+DebugServer가 작동하지 않는 경우가 있어요. 그러나 iloader를 사용하여[페어링 파일을 교체](/docs/advanced/pairing-file) 해 볼 수 있어요.
