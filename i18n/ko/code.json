@@ -1,0 +1,29 @@
+{
+  "home.getStartedButton": {
+    "message": "시작하기"
+  },
+  "home.heroTitle": {
+    "message": "SideStore"
+  },
+  "home.heroSubtitle": {
+    "message": "SideStore 사용 방법을 안내하는 공식 자료입니다."
+  },
+  "home.feature.FES.title": {
+    "message": "빠르고, 쉽고, 깔끔하게"
+  },
+  "home.feature.FES.description": {
+    "message": "SideStore는 기능성을 최우선으로 설계된 앱입니다. 실용적이면서도 디자인은 세련되고, 쉽게 사용할 수 있습니다."
+  },
+  "home.feature.power.title": {
+    "message": "핵심은 자유로움"
+  },
+  "home.feature.power.description": {
+    "message": "Apple App Store에 없는 앱을 설치할 수 있는 기능은 흔하지 않으며, SideStore는 사이드로딩 분야에서 중요한 빈자리를 채웁니다."
+  },
+  "home.feature.openSource.title": {
+    "message": "오픈 소스"
+  },
+  "home.feature.openSource.description": {
+    "message": "SideStore는 오픈 소스 프로젝트로서 오픈 소스 소프트웨어의 가치를 중요하게 여깁니다. 누구나 GitHub에서 자유롭게 모든 SideStore 프로젝트에 기여할 수 있습니다."
+  }
+}
