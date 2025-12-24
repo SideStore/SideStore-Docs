@@ -9,13 +9,13 @@
     "message": "La fonte delle istruzioni per SideStore."
   },
   "home.feature.FES.title": {
-    "message": "Veloce, Semplice, Sofisticato"
+    "message": "Veloce, Semplice, Pulito"
   },
   "home.feature.FES.description": {
     "message": "SideStore nasce per essere un'app funzionale e bella da vedere, e non inutilmente complicata."
   },
   "home.feature.power.title": {
-    "message": "Il potere è fondamentale"
+    "message": "Il controllo è fondamentale"
   },
   "home.feature.power.description": {
     "message": "La possibilità di installare app che non si trovano nell'Apple App Store non è comune, SideStore riempie questa lacuna nel mondo del sideloading."
@@ -83,7 +83,7 @@
     "description": "The name for the dark color mode"
   },
   "theme.colorToggle.ariaLabel": {
-    "message": "Passa dalla modalità scura a quella chiara (currently {mode})",
+    "message": "Passa dalla modalità scura a quella chiara (ora {mode})",
     "description": "The ARIA label for the color mode toggle"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
@@ -198,11 +198,11 @@
     "description": "The ARIA label for recent posts in the blog sidebar"
   },
   "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "Expand sidebar category '{label}'",
+    "message": "Espandi categoria barra laterale '{label}'",
     "description": "The ARIA label to expand the sidebar category"
   },
   "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Collapse sidebar category '{label}'",
+    "message": "Chiudi categoria barra laterale '{label}'",
     "description": "The ARIA label to collapse the sidebar category"
   },
   "theme.IconExternalLink.ariaLabel": {
@@ -286,11 +286,11 @@
     "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
-    "message": "Expand the dropdown",
+    "message": "Espandi il menu a tendina",
     "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
   },
   "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
-    "message": "Collapse the dropdown",
+    "message": "Chiudi il menu a tendina",
     "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
   },
   "theme.docs.sidebar.expandButtonTitle": {
@@ -314,15 +314,15 @@
     "description": "The title of the page for a blog author"
   },
   "theme.blog.authorsList.pageTitle": {
-    "message": "Authors",
+    "message": "Autori",
     "description": "The title of the authors page"
   },
   "theme.blog.authorsList.viewAll": {
-    "message": "View All Authors",
+    "message": "Vedi tutti gli autori",
     "description": "The label of the link targeting the blog authors page"
   },
   "theme.blog.author.noPosts": {
-    "message": "This author has not written any posts yet.",
+    "message": "Questo autore non ha ancora scritto nessun post.",
     "description": "The text for authors with 0 blog post"
   },
   "theme.contentVisibility.unlistedBanner.title": {
@@ -330,15 +330,15 @@
     "description": "The unlisted content banner title"
   },
   "theme.contentVisibility.unlistedBanner.message": {
-    "message": "Questa pagina non è in elenco. I motori di ricerca non lo indicheranno e solo gli utenti con collegamento diretto possono accedervi.",
+    "message": "Questa pagina non è in elenco. I motori di ricerca non lo indicizzeranno e solo gli utenti con collegamento diretto possono accedervi.",
     "description": "The unlisted content banner message"
   },
   "theme.contentVisibility.draftBanner.title": {
-    "message": "Draft page",
+    "message": "Pagina in bozza",
     "description": "The draft content banner title"
   },
   "theme.contentVisibility.draftBanner.message": {
-    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
+    "message": "Questa pagina è una bozza. Sarà visibile solo in dev e sarà esclusa dalla production build.",
     "description": "The draft content banner message"
   },
   "theme.ErrorPageContent.tryAgain": {
