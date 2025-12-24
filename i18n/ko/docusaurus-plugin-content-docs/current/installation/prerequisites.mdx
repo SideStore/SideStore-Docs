@@ -1,5 +1,5 @@
 ---
-title: 필수 요구 사항
+title: 설치 전 준비하기
 description: '설치의 첫 단계입니다.'
 sidebar_position: 1
 ---
@@ -9,10 +9,10 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
-## 요구 사항
+## 요구사항
 SideStore를 설치하기 위해서는 아래의 요구사항을 충족해야 해요:
-- [비밀번호가 설정된](https://support.apple.com/ko-kr/119586) iOS 또는 iPadOS 14 이상을 사용하는 iPhone 또는 iPad
-- Windows 7 또는 그 이상, 또는 macOS High Sierra 또는 그 이상, 또는 최신 Linux 배포판을 사용하는 컴퓨터 (한번만)
+- [비밀번호가 설정된](https://support.apple.com/ko-kr/119586) iOS/iPadOS 15.0 이상을 사용하는 iPhone, iPad 또는 iPod touch
+- Windows 7 또는 그 이상, 또는 macOS High Sierra 또는 그 이상, 또는 최신 Linux 배포판을 사용하는 컴퓨터 (초기 설치 한번만)
 - Apple 계정 (Apple ID)
 - Wi-Fi 연결
 - 시간 (이 과정은 빠르게 진행되지만, [문제 해결](/docs/troubleshooting/)을 위해 시간을 남겨두어야 해요)
@@ -25,39 +25,39 @@ SideStore는 기기 내 VPN을 활용하여 내부 서비스와 통신해요.
 
 SideStore에서 앱을 설치, 업데이트, 새로고침하려면 이 VPN을 항상 켜두어야 해요.
 
-이제 사용하는 컴퓨터 OS에 맞는 안내를 따라가주세요.
+이제 사용하는 컴퓨터 OS에 맞는 안내를 따라가세요.
 
 <Tabs groupId="operating-systems">
   <TabItem value="mac" label="macOS">
-    [iloader](https://github.com/nab138/iloader/releases/latest/download/iloader-darwin-universal.dmg)를 다운로드 하고 설치해 주세요.
+    [iloader](https://github.com/nab138/iloader/releases/latest/download/iloader-darwin-universal.dmg)를 다운로드하고 설치해 주세요.
   </TabItem>
   <TabItem value="win" label="Windows">
     :::warning
-    32비트 버전의 Windows 또는 Arm 기반 Windows 10은 지원되지 않습니다. 
+    32비트 버전의 Windows 또는 Arm 기반 Windows 10은 지원되지 않아요.
     
     <details>
-      <summary>**대부분의 Windows 버전은 64비트입니다.** 그러나 지원되지 않는 Windows 버전을 사용 중인지 확인하려면 다음 지침을 따라주세요.</summary>
+      <summary>**대부분의 Windows 버전은 64비트에요.** 그러나 지원되지 않는 Windows 버전을 사용 중인지 확인하려면 다음 안내을 따라주세요.</summary>
         1. Windows+R(또는 Command+R 또는 Super+R)을 눌러 실행 창을 열어 주세요.
         2. `control /name microsoft.system`을 입력해 주세요.
         3. "장치 사양" 탭에서 "시스템 종류"을 찾으세요.
         
-        * "32비트 운영 체제"로 표시되면 해당 Windows 버전이 지원되지 않습니다.
-        * "ARM64 프로세서"를 사용 중이며 Windows 10을 실행 중인 경우 해당 Windows 버전이 지원되지 않습니다.
+        * "32비트 운영 체제"로 표시되면 해당 Windows 버전이 지원되지 않는 버전이에요
+        * "ARM64 프로세서"를 사용 중이고 Windows 10을 실행 중인 경우 해당 Windows 버전은 지원되지 않는 버전이에요.
     </details>
     ::: 
 
     1. [Microsoft Store](https://apple.co/ms) 또는 [Apple 웹사이트](https://www.apple.com/itunes/download/win64)에서 iTunes를 다운로드하고 설치해 주세요.
-    2. iloader 인스톨러를 다운로드해 주세요. [msi](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.msi) (추천) 또는 [exe](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.exe)
-    3. 설치프로그램을 실행해 주세요.
+    2. iloader 설치 프로그램을 다운로드해 주세요. [msi](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.msi) (추천) 또는 [exe](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.exe)
+    3. 설치 프로그램을 실행해 주세요.
   </TabItem>
   <TabItem value="linux" label="Linux">
     :::warning
-    64비트 배포판만 지원됩니다. 
+    64비트 배포판만 지원돼요.
     
     **대부분의 리눅스 배포판은 64비트입니다.** 64비트 배포판을 사용 중인지 확인하려면 터미널을 열고 `uname -m`을 실행하세요. 예상 출력은 `x86_64`입니다.
     :::
 
-    1. `usbmuxd`를 다운로드 하고 설치해 주세요. (당신이 쓰는 Linux 배포판에는 기본으로 깔려 있을 수도 있어요. 아니면 패키지 관리자로 설치하면 돼요 구글에 install usbmuxd [배포판 이름] 라고 검색해보는 것도 도움이 될수도 있어요.)
-    2. 당신의 Linux 배포판에 맞는 iloader를 다운로드하고 설치해 주세요. Debian/Ubuntu용 [DEB](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.deb), Fedora/openSUSE용 [RPM](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-x86_64.rpm)로 제공되며, 기타 배포판용으로는 [AppImage](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.AppImage)로 제공됩니다. (커뮤니티에서 관리하는 패키지도 존재합니다. 예를 들어 [Arch Linux AUR의 이 패키지](https://aur.archlinux.org/packages/iloader-bin)가 있지만, 해당 패키지의 안전성이나 보안성을 보장할 수 없음을 유의하시기 바랍니다. 시스템에 알 수 없는 패키지를 설치하기 전에는 항상 충분한 검토를 거치셔야 합니다.)
+    1. `usbmuxd`를 다운로드하고 설치해 주세요. (당신이 쓰는 Linux 배포판에는 기본으로 깔려 있을 수도 있어요. 아니면 패키지 관리자로 설치하면 됩니다. 구글에 install usbmuxd [배포판 이름]라고 검색해보는 것도 도움이 될 수도 있어요.)
+    2. 당신의 Linux 배포판에 맞는 iloader를 다운로드하고 설치해 주세요. Debian/Ubuntu 용 [DEB](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.deb), Fedora/openSUSE 용 [RPM](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-x86_64.rpm)로 제공되며, 기타 배포판용으로는 [AppImage](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.AppImage)로 제공됩니다. (커뮤니티에서 관리하는 패키지도 존재합니다. 예를 들어 [Arch Linux AUR의 이 패키지](https://aur.archlinux.org/packages/iloader-bin)가 있지만, 해당 패키지의 안전성이나 보안성을 보장할 수 없음을 유의하시기 바래요. 시스템에 알 수 없는 패키지를 설치하기 전에는 항상 충분한 검토를 거치시길 바래요.)
   </TabItem>
 </Tabs>

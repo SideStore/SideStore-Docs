@@ -5,58 +5,65 @@ description: SideStore에서 발견되는 일반적인 문제.
 
 :::warning
 
-이 페이지는 현재 진행 중입니다. 제공된 정보는 정확해야 하지만, 필요한 경우 [Discord 서버](https://discord.gg/sidestore-949183273383395328)를 참조해 도움을 받으시기를 바랍니다.
+이 페이지는 현재 작업 중입니다. 제공된 정보는 정확해야 하지만, 필요한 경우 저희 [디스코드 서버](https://dis.sidestore.io/)를 참고하시기 바래요.
 
 :::
 
-## SideStore의 일반적인 문제
 
-### AFC Connection Failure
-#### 발생 원인
-연결 문제 또는 페어링 파일이 잘못되었습니다.
-#### 해결 방법
-1. 재연결 시도
-2. idevice pair 를 사용하여 새 페어링 파일을 생성하고 설정 메뉴를 통해 가져옵니다. 자세한 내용은 [페어링 파일 지침](/docs/advanced/pairing-file)을 참조하세요.
+## SideStore 관련 일반적인 문제
 
-### No WiFi or VPN Connection
+### 최신 nightly 빌드에 문제가 있어요.
 #### 발생 원인
-미니먹서 서비스의 연결 문제.
+저희의 nightly 빌드에는 최첨단 기능과 개선 사항이 포함되어 있지만, 일부는 불안정성을 유발할 수 있어요.
 #### 해결 방법
-1. WireGuard를 사용 중인 경우, StosVPN으로 전환하세요.
-2. DNS 차단 서버를 모두 꺼주세요.
-3. 다시 시도하세요 (보통 버튼을 연타하면 도움이 됩니다.)
-4. SideStore를 다시 시작하세요.
-5. StosVPN 재시작
-6. idevice pair 를 사용하여 새 페어링 파일을 생성하고 설정 메뉴를 통해 가져옵니다. 자세한 내용은 [페어링 파일 지침](/docs/advanced/pairing-file)을 참조하세요.
+최신 stable 버전으로 전환하세요. nightly 빌드에서 발생한 버그에 대한 지원 요청은 삼가해 주세요.
+
+### 요류 코드 "X"가 발생하고 있어요.
+#### 발생 원인
+에러가 발생함
+#### 해결 방법
+유용한 [오류 코드 목록](error-codes)을 확인해 보세요!
+
+### AFC Connection Failure / No Wi-Fi or VPN Connection
+#### 발생 원인
+minimuxer 서비스 연결 문제.
+#### 해결 방법
+1. 만약 WireGuard나 StosVPN을 사용 중 이라면 LocalDevVPN으로 바꿔보세요.
+2. DNS 차단기를 모두 꺼보세요.
+3. VPN (LocalDevVPN)과 Wi-Fi 둘 다 연결되어 있는지 확인해 보세요.
+4. 다시 시도해보세요. (버튼을 계속 누르는 게 가끔 도움이 됨)
+5. SideStore를 재시작해 보세요.
+6. LocalDevVPN를 재시작해 보세요.
+7. [페어링 파일](/docs/advanced/pairing-file)을 교체해 보세요.
 
 ### 설치 중 중간에 SideStore가 멈춤
 #### 발생 원인
 캐시 또는 프로토콜 문제.
 #### 해결 방법
-1. 해당되는 경우 SideStore를 업데이트하십시오. 그렇지 않은 경우 단순히 재시작하십시오.
+1. 해당되는 경우 SideStore를 업데이트해 주세요. 그렇지 않은 경우 앱을 재시작해 주세요.
 2. 캐시 지우기
 3. Anisette 서버 변경
-4. adi.pb 재설정
-5. SideStore에서 로그아웃하고 다시 로그안
-6. WireGuard 사용
-7. 기기 다시 시작
-8. 페어링 파일 재생성
-9. Altserver를 이용하여 SideStore를 다시 설치
+4. adi.pb 재설정 후 SideStore에서 로그아웃하고 다시 로그안
+5. 기기 다시 시작
+6. 페어링 파일 재생성
+7. iloader를 이용하여 SideStore를 다시 설치
 
 ### SideStore를 열 수 없습니다.
 #### 발생 원인
 여러 가지 원인이 있을 수 있습니다.
 #### 해결 방법
-1. AltServer를 통해 SideStore를 설치했는지 확인합니다.
-2. SideStore를 재설치합니다.
+1. iloader를 통해 SideStore를 설치했는지 확인하세요.
+2. SideStore를 재설치
 
-위의 방법으로 해결되지 않으면 다음을 수행하세요:
+위의 방법으로 해결되지 않으면 다음을 수행해주세요:
 
 1. SideStore 및 SideStore에서 설치한 모든 앱을 삭제합니다.
 2. SideStore를 다시 설치
-3. 페어링 파일을 다시 불러오고 로그인합니다. (SideStore를 새로고침하라는 메시지가 표시되면 아니요를 선택합니다.)
+3. 페어링 파일을 다시 불러오고 로그인 (SideStore를 새로고침하라는 메시지가 표시되면 아니요를 선택합니다.)
 4. `SideStore.ipa` 파일을 기기에 설치
 5. 다른 앱을 설치할 때와 마찬가지로 `SideStore.ipa` 파일을 SideStore로 가져옵니다.
 6. 이렇게 하면 SideStore가 새로고침을 수행하여 문제가 해결될 수 있습니다.
 
-
+### 여기서 제 문제를 찾을 수 없었습니다
+#### 해결 방법
+저희 [문제 해결 가이드](/docs/troubleshooting)를 확인해 주세요.

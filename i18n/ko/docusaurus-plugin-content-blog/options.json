@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "블로그",
+    "description": "SEO에 사용되는 블로그 제목"
+  },
+  "description": {
+    "message": "블로그",
+    "description": "SEO에 사용되는 블로그 설명"
+  },
+  "sidebar.title": {
+    "message": "최근 게시물",
+    "description": "왼쪽 사이드바의 레이블"
+  }
+}
