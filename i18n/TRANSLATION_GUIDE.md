@@ -24,14 +24,20 @@ Each language folder follows the same structure:
 i18n/[language-code]/
 ├── docusaurus-plugin-content-docs/
 │   └── current/
-│       ├── intro.mdx
-│       ├── faq.mdx
-│       ├── release-notes.mdx
-│       ├── advanced/
-│       ├── installation/
-│       └── troubleshooting/
+│   │   ├── intro.mdx
+│   │   ├── faq.mdx
+│   │   ├── release-notes.mdx
+│   │   ├── advanced/
+│   │   ├── contributing/
+│   │   ├── installation/
+│   │   └── troubleshooting/
+|   └── current.json
 ├── docusaurus-plugin-content-blog/
-└── docusaurus-theme-classic/
+|   └── options.json
+├── docusaurus-theme-classic/
+|   ├── footer.json
+|   └── navbar.json
+└── code.json
 ```
 
 ## Getting Started
@@ -56,6 +62,7 @@ i18n/[language-code]/
 
 3. **Translation workflow**
    - The English files are already present in each language folder and ready for translation
+      * If your locale is not present in the i18n directory, open the terminal in /path/to/SideStore-Docs and run `yarn write-translations --locale [language-code]`, then copy the docs directory into `/i18n/[language-code]/docusaurus-plugin-content-docs/current/`
    - Simply locate the file you want to translate in your target language folder (e.g., `/i18n/[language-code]/docusaurus-plugin-content-docs/current/`)
    - Translate the English content into your target language while preserving all markup, links, and formatting
    - You can also improve and complete partially translated pages
@@ -65,11 +72,11 @@ i18n/[language-code]/
    - Make sure formatting and links work correctly
    - You can test your translations locally by running:
      ```bash
-     yarn start -- --locale [language-code]
+     yarn start --locale [language-code]
      ```
    - For example, to test Spanish translations:
      ```bash
-     yarn start -- --locale es
+     yarn start --locale es
      ```
 
 ## Translation Guidelines
