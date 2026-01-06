@@ -63,10 +63,10 @@ i18n/[language-code]/
 3. **Translation workflow**
    - The English files are already present in each language folder and ready for translation
       * If your locale is not present in the i18n directory, open the terminal in /path/to/SideStore-Docs and run 
-      ```bash
-      yarn write-translations --locale [language-code]
-      ```
-      then copy the docs directory into `/i18n/[language-code]/docusaurus-plugin-content-docs/current/`
+        ```bash
+        yarn write-translations --locale [language-code]
+        ```
+        then copy the docs directory into `/i18n/[language-code]/docusaurus-plugin-content-docs/current/`
    - Simply locate the file you want to translate in your target language folder (e.g., `/i18n/[language-code]/docusaurus-plugin-content-docs/current/`)
    - Translate the English content into your target language while preserving all markup, links, and formatting
    - You can also improve and complete partially translated pages
