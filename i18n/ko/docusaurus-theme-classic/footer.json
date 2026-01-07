@@ -1,46 +1,46 @@
 {
   "link.title.Docs": {
     "message": "문서",
-    "description": "푸터 내 제목이 'Docs'인 링크 열의 제목"
+    "description": "The title of the footer links column with title=Docs in the footer"
   },
   "link.title.Community": {
     "message": "커뮤니티",
-    "description": "푸터 내 제목이 'Community'인 링크 열의 제목"
+    "description": "The title of the footer links column with title=Community in the footer"
   },
   "link.title.More": {
     "message": "관련 링크",
-    "description": "푸터 내 제목이 'More'인 링크 열의 제목"
+    "description": "The title of the footer links column with title=More in the footer"
   },
   "link.item.label.Introduction": {
     "message": "소개",
-    "description": "/docs/intro로 연결되는 제목이 'Introduction' 라벨의 푸터 링크"
+    "description": "The label of footer link with label=Introduction linking to /docs/intro"
   },
   "link.item.label.Discord": {
     "message": "Discord",
-    "description": "푸터 내 제목이 'Discord'인 https://dis.sidestore.io로 링크되는 열의 제목"
+    "description": "The label of footer link with label=Discord linking to https://dis.sidestore.io"
   },
   "link.item.label.X (formerly Twitter)": {
     "message": "X (이전의 Twitter)",
-    "description": "https://x.com/sidestoreio으로 연결되는 푸터 링크의 라벨"
+    "description": "The label of footer link with label=X (formerly Twitter) linking to https://x.com/sidestoreio"
   },
   "link.item.label.Patreon": {
     "message": "Patreon",
-    "description": "https://www.patreon.com/sidestoreIO으로 연결되는 푸터 링크의 라벨"
+    "description": "The label of footer link with label=Patreon linking to https://www.patreon.com/sidestoreIO"
   },
   "link.item.label.Bluesky": {
     "message": "Bluesky",
-    "description": "https://bsky.app/profile/sidestore.io으로 연결되는 푸터 링크의 라벨"
+    "description": "The label of footer link with label=Bluesky linking to https://bsky.app/profile/sidestore.io"
   },
   "link.item.label.Website": {
     "message": "웹사이트",
-    "description": "https://sidestore.io/으로 연결되는 푸터 링크의 라벨"
+    "description": "The label of footer link with label=Website linking to https://sidestore.io/"
   },
   "link.item.label.GitHub": {
     "message": "GitHub",
-    "description": "https://github.com/SideStore으로 연결되는 푸터 링크의 라벨"
+    "description": "The label of footer link with label=GitHub linking to https://github.com/SideStore"
   },
   "copyright": {
     "message": "저작권 © 2026 SideStore, LLC. Docusaurus로 구축됨.",
-    "description": "저작권 푸터"
+    "description": "The footer copyright"
   }
 }
