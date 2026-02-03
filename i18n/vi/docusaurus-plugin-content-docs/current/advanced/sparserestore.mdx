@@ -10,18 +10,18 @@ Lỗ hổng "Bỏ qua giới hạn 3 ứng dụng" của SparseRestore **chỉ h
 :::
 
 ## Điều kiện
-* Một iDevice đang chạy các phiên bản được hỗ trợ bởi khai thác SparseRestore (xem lưu ý ở trên).
-* Ít nhất 1 khe cắm ứng dụng miễn phí.
-* SideStore phiên bản 0.5.9 trở lên. Bạn có thể tìm thấy các phiên bản mới nhất [tại đây](https://github.com/SideStore/SideStore/releases).
-* Để thực hiện khai thác này, bạn PHẢI tắt **Tìm iPhone/iPad của tôi** trên iDevice của mình trong quá trình này. Nếu không, nó sẽ không hoạt động. Sau đây là cách bạn có thể tắt nó:
-  - Mở ứng dụng cài đặt
+* Một thiết bị Apple đang chạy các phiên bản được hỗ trợ bởi khai thác SparseRestore (xem lưu ý ở trên).
+* Ít nhất 1 chỗ cài ứng dụng miễn phí.
+* Cho SideStore phiên bản 0.5.9 trở lên. Bạn có thể tìm thấy các phiên bản mới nhất [tại đây](https://github.com/SideStore/SideStore/releases).
+* Để thực hiện khai thác này, bạn PHẢI tắt **Tìm iPhone/iPad** trên thiết bị của bạn trong quá trình này. Nếu không, nó sẽ không hoạt động. Sau đây là cách bạn có thể tắt nó:
+  - Mở cài đặt
   - Chạm vào tên của bạn ở trên cùng.
-  - Chạm vào Tìm của tôi.
-  - Chạm vào Tìm iPhone/iPad của tôi.
-  - Tắt Tìm iPhone/iPad của tôi.
+  - Chạm vào Tìm.
+  - Chạm vào Tìm iPhone/iPad.
+  - Tắt Tìm iPhone/iPad.
   - Bạn có thể được yêu cầu nhập mật khẩu Apple ID của mình để xác nhận.
   
-  > **Ghi Nhớ:** Bạn vẫn có thể không tắt được Tìm iPhone/iPad của tôi vì thiết bị của bạn đang được bật Bảo vệ thiết bị bị đánh cắp (Stolen Device Protection) và có thể khiến bạn không tắt được. Hãy tắt Bảo vệ thiết bị bị đánh cắp trước khi thử tắt Tìm iPhone/iPad của tôi.
+  > **Ghi Nhớ:** Bạn vẫn có thể không tắt được Tìm iPhone/iPad của tôi vì thiết bị của bạn đang được bật Bảo vệ thiết bị bị đánh cắp (Stolen Device Protection) và có thể khiến bạn không tắt được. Hãy tắt Bảo vệ thiết bị bị đánh cắp trước khi thử tắt Tìm iPhone/iPad.
 
 ## Các bước
 1. Cài đặt SparseBox. Bạn có thể thực hiện bằng nhiều phương pháp khác nhau, nhưng để thực hiện được điều này, hãy cài đặt bằng SideStore. Bạn có thể tìm thấy phiên bản mới nhất [tại đây](https://nightly.link/khanhduytran0/SparseBox/workflows/build/main/artifact.zip) (giải nén artifact.zip để lấy tệp .ipa).
@@ -35,9 +35,9 @@ Lỗ hổng "Bỏ qua giới hạn 3 ứng dụng" của SparseRestore **chỉ h
 5. Kiểm tra xem khai thác đã hoạt động chưa (bạn có thể cần cài đặt nhiều hơn một ứng dụng để kiểm tra, tùy thuộc vào số lượng khe cắm trống bạn có). Nếu nó báo lỗi về giới hạn, hãy mở lại SideStore hoặc thử lại khai thác. Nếu nó cài đặt ứng dụng, xin chúc mừng! Bây giờ bạn có thể cài đặt nhiều hơn 3 ứng dụng cùng một lúc.
 
 ## Ghi Nhớ
-Do một số hạn chế nhất định, bạn phải thực hiện khai thác này cho mỗi 3 ứng dụng bổ sung mà bạn tải xuống.
+Do một số hạn chế nhất định, bạn phải thực hiện khai thác này cho mỗi 3 ứng dụng mới mà bạn tải xuống.
 
-Nếu bạn muốn/cần Find My cho các mục đích khác, giờ đây bạn có thể bật lại. Tuy nhiên, nếu bạn muốn cài đặt hoặc làm mới nhiều ứng dụng hơn, bạn sẽ cần phải tắt lại.
+Nếu bạn muốn/cần "Tìm iPhone" cho các mục đích khác, giờ đây bạn có thể bật lại. Tuy nhiên, nếu bạn muốn cài đặt hoặc làm mới nhiều ứng dụng hơn, bạn sẽ cần phải tắt nó.
 
 ## Các giải pháp thay thế
-Nếu khai thác không hiệu quả với bạn hoặc iDevice của bạn đang sử dụng phiên bản không được hỗ trợ, thì có một giải pháp thay thế để có thể sử dụng nhiều hơn 3 ứng dụng cùng một lúc. LiveContainer, do Duy Tran Khanh ([khanhduytran0](https://github.com/khanhduytran0)) (người cũng tạo ra SparseBox) phát triển, cho phép chạy các ứng dụng iOS trong các vùng chứa trong ứng dụng thay vì cài đặt chúng riêng lẻ. Trong một số trường hợp, giải pháp này cũng có thể dễ sử dụng hơn SparseRestore. Bạn có thể tìm thấy trang GitHub [tại đây](https://github.com/khanhduytran0/LiveContainer).
+Nếu khai thác không hiệu quả với bạn hoặc thiết bị của bạn đang sử dụng phiên bản không được hỗ trợ, thì có một giải pháp thay thế để có thể sử dụng nhiều hơn 3 ứng dụng cùng một lúc. LiveContainer, bởi Trần Khánh Duy ([khanhduytran0](https://github.com/khanhduytran0)) (người cũng đã tạo ra SparseBox, đỉnh!) phát triển, LiveContainer cho phép bạn chạy các ứng dụng iOS trong các vùng chứa trong ứng dụng thay vì cài đặt chúng riêng lẻ. Trong một số trường hợp, giải pháp này cũng có thể dễ sử dụng hơn SparseRestore. Bạn có thể tìm thấy trang GitHub của LiveContainer [tại đây](https://github.com/khanhduytran0/LiveContainer).
