@@ -1,43 +1,43 @@
 ---
-title: Chạy JIT
-description: Hướng dẫn cách bật Just-in-Time (JIT) cho các ứng dụng yêu cầu tính năng này.
+title: Thiết lập và chạy JIT
+description: Hướng dẫn cách thiết lập và bật Just-in-Time (JIT) cho các ứng dụng yêu cầu tính năng này.
 ---
 
 :::note
 
-Có nhiều phương pháp để bật JIT, chẳng hạn như AltJIT, SideJITServer, v.v. Hướng dẫn này sẽ đề cập đến việc sử dụng StikJIT/StikDebug, vì đây là phương pháp chúng tôi hiện đang khuyến nghị. Ngoài ra, SideStore 0.6.2-nightly.2025.04.15 cũng bao gồm các bản cập nhật cho minimuxer, cho phép chức năng JIT tích hợp tương tự như StikDebug. Để sử dụng chức năng này, chỉ cần đảm bảo bạn đã kết nối với StosVPN và Wi-Fi hoặc đã tắt dữ liệu di động và Wi-Fi.
+Có nhiều phương pháp để bật JIT, chẳng hạn như AltJIT, SideJITServer, v.v. Hướng dẫn này sẽ đề cập đến việc sử dụng StikJIT/StikDebug, vì đây là phương pháp chúng tôi hiện đang khuyến nghị. Ngoài ra, SideStore 0.6.2-nightly.2025.04.15 cũng bao gồm các bản cập nhật cho minimuxer, cho phép chức năng JIT tích hợp tương tự như StikDebug. Để sử dụng chức năng này, đảm bảo bạn đã kết nối với StosVPN và Wi-Fi hoặc đã tắt dữ liệu di động và Wi-Fi.
 :::
 
 ## Điều kiện
-* Một iDevice trên iOS/iPadOS 17.4 trở lên, ngoại trừ 18.4b1. Nếu bạn đang sử dụng 17.0-17.3, bạn phải sử dụng một giải pháp thay thế như [SideJITServer](https://github.com/nythepegasus/SideJITServer)
-* Ít nhất 1 khe cắm ứng dụng miễn phí cho StikJIT
+* Một thiết bị Apple trên iOS/iPadOS 17.4 trở lên, ngoại trừ 18.4b1. Nếu bạn đang sử dụng 17.0-17.3, bạn phải sử dụng một giải pháp thay thế như [SideJITServer](https://github.com/nythepegasus/SideJITServer)
+* Ít nhất 1 chỗ cài ứng dụng cho StikJIT
 
 ## Cài đặt StikJIT với SideStore
 
 1. **Tải StikJIT:**  
-   Thêm StikJIT AltSource vào SideStore [tại đây](sidestore://source?url=https://raw.githubusercontent.com/StephenDev0/StikJIT/refs/heads/main/repo.json) (Bạn phải cài đặt SideStore, nếu không liên kết này sẽ không hoạt động).
+   Thêm StikJIT AltSource vào SideStore [tại đây](sidestore://source?url=https://raw.githubusercontent.com/StephenDev0/StikJIT/refs/heads/main/repo.json) (Bạn cần phải cài đặt SideStore, nếu không liên kết này sẽ không hoạt động).
 
 2. **Cài đặt:**
    Sử dụng SideStore để cài đặt StikJIT.
 
-3. **Quy trình cài đặt:**
+3. **Quá trình cài đặt:**
    Thực hiện theo các quy trình cài đặt tiêu chuẩn trong hướng dẫn sử dụng bên dưới.
 
-## Cài đặt StikDebug với App Store (Không yêu cầu khe cắm ứng dụng)
+## Cài đặt StikDebug với App Store (Không yêu cầu SideStore)
 
 1. **Cài đặt StikDebug**
    Cài đặt StikDebug từ App Store [tại đây](https://apps.apple.com/us/app/stikdebug/id6744045754). Một điều tuyệt vời là VPN có trong StikDebug tương tự như VPN được sử dụng trong SideStore, nghĩa là bạn cũng có thể sử dụng VPN để cài đặt và làm mới ứng dụng.
 
-2. **Quy trình cài đặt:**
+2. **Quá trình cài đặt:**
    Thực hiện theo các quy trình cài đặt tiêu chuẩn trong hướng dẫn sử dụng bên dưới.
 
 ### Quy trình cài đặt chuẩn:
 
 1. **Bật VPN:**
-   Bắt đầu bằng cách kích hoạt StosVPN cho StikJIT hoặc VPN tích hợp trong StikDebug.
+   Bắt đầu bằng cách kích hoạt StosVPN cho StikJIT hoặc VPN được tích hợp trong StikDebug.
 
 2. **Tải lên tệp kết nối:**  
-   Khi được nhắc, hãy nhập cùng **tệp kết nối đã giải nén** lấy được qua JitterbugPair mà bạn sử dụng cho SideStore. Để biết thêm thông tin về cách lấy tệp ghép nối này, hãy xem [tại đây](/docs/installation/pairing-file).
+   Khi được nhắc, hãy nhập cùng **tệp ghép máy** lấy được qua JitterbugPair để sử dụng cho SideStore. Để biết thêm thông tin về cách lấy tệp ghép máy này, hãy xem [tại đây](/docs/installation/pairing-file).
 
 ## Để bật JIT:
 
