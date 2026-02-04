@@ -1,10 +1,10 @@
 ---
-title: Hướng dẫn cho Linux 
+title: Hướng dẫn cho tải SideStore cho hệ điều hành Linux 
 description: Hướng dẫn tải SideStore sử dụng hệ điều hành Linux
 sidebar_position: 5
 ---
 
-Để tải SideStore (hoặc bất kì IPA nào khác) trên hệ điều hành Linux, hãy chắc chắn rằng bạn có Docker tải về. Trước khi bắt đầu, hãy đảm bảo cài đặt [StosVPN](https://apps.apple.com/us/app/stosvpn/id6744003051) và bất kỳ phần mềm nào khác và [điều kiện cho máy](prerequisites) đã đầy đủ!
+Để tải SideStore (hay bất kì IPA nào khác) trên hệ điều hành Linux, hãy chắc chắn rằng bạn đã có có Docker tải về. Trước khi bắt đầu, hãy đảm bảo bạn đã cài đặt [StosVPN](https://apps.apple.com/us/app/stosvpn/id6744003051) và bất kỳ phần mềm nào khác và [điều kiện cho máy](prerequisites) đã đầy đủ!
 
 1. Chạy altcon bằng Docker
 ```bash
@@ -16,6 +16,6 @@ Bạn có thể chạy altcon bằng Podman
 podman run --privileged --rm -it -e ALTSERVER_ANISETTE_SERVER="https://ani.sidestore.io/" -v ${PWD}/:/mnt/ -v /var/run:/var/run ghcr.io/sidestore/altcon
 ```
 
-2. Altcon sẽ bắt đầu kết nối tới thiết bị của bản, hãy gắn thiết bị của bạn vào máy bằng dây đi theo thiết bị của bạn. Ấn "tin cậy"/"tin tưởng"/"trust" và điền vào mật khẩu của thiết bị IOS/Ipad của bạn.
+2. Altcon sẽ bắt đầu kết nối tới thiết bị của bản, hãy gắn thiết bị của bạn vào máy bằng dây đi theo thiết bị của bạn. Ấn "Tin cậy"/"Tin tưởng"/"Trust" và điền vào mật khẩu của thiết bị iOS/iPadOS của bạn.
 
 3. Khi đã hoàn thành, hãy tiếp tục với phần [hướng dẫn sau khi cài đặt](post-install).
