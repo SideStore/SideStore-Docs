@@ -52,12 +52,10 @@ Now, follow the instructions to install [iloader](https://iloader.app) correspon
   </TabItem>
   <TabItem value="linux" label="Linux">
     :::warning
-    Only 64-bit distributions are supported. 
-    
-    **Most Linux distributions are 64-bit.** To determine if you're using a 64-bit distribution, open a terminal and run `uname -m`. The expected output is `x86_64`.
+    **Most Linux distributions are 64-bit.** To determine your distribution type, open a terminal and run `uname -m`. The expected output is `x86_64` for Intel/AMD, or `aarch64` for ARM.
     :::
 
     1. Download and install `usbmuxd`. It may be preinstalled with your distribution, otherwise you can install it with your package manager: a Google search for "install usbmuxd [distribution name]" might help you.
-    2. Download and install iloader for your distribution. It is available as a [DEB](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.deb) for Debian/Ubuntu, [RPM](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-x86_64.rpm) for Fedora/openSUSE, and as an [AppImage](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.AppImage) for others. (There are also community-maintained packages, such as [this one on the Arch Linux AUR](https://aur.archlinux.org/packages/iloader-bin), but please know that we cannot guarantee their safety or security. You should always do your due diligence before installing unknown packages onto your system.)
+    2. Download and install iloader for your distribution. It is available as a [DEB](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.deb) for Debian/Ubuntu, [RPM](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-x86_64.rpm) for Fedora/openSUSE, and as an [AppImage](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.AppImage) for others. Additionally, for ARM processors there are also [DEB](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-arm64.deb), [RPM](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-aarch64.rpm), and [AppImage](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-aarch64.AppImage) builds. (There are also community-maintained packages, such as [this one on the Arch Linux AUR](https://aur.archlinux.org/packages/iloader-bin), but please know that we cannot guarantee their safety or security. You should always do your due diligence before installing unknown packages onto your system.)
   </TabItem>
 </Tabs>
