@@ -49,16 +49,13 @@ Ora, segui le istruzioni per installare [iloader](https://iloader.app) relative 
         1. Scarica e installa iTunes [dal Microsoft Store](https://apps.microsoft.com/store/detail/9PB2MZ1ZMB1S) o [direttamente da Apple](https://www.apple.com/itunes/download/win64).
         2. Scarica l'installer di iloader [come MSI](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.msi) (consigliato) o [come EXE](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.exe).
         3. Esegui l'installer.
-
     </TabItem>
     <TabItem value="linux" label="Linux">
         :::warning
-        Sono supportate solo distro a 64-bit.
-
-        **La maggior parte delle distro è a 64-bit.** Per determinare se stai usando una distro a 64-bit, apri il terminale e digita `uname -m`. Dovrebbe restituire `x86_64`.
+        **La maggior parte delle distro è a 64-bit.** Per determinare il tipo della tua distro, apri il terminale e digita `uname -m`. Dovrebbe restituire `x86_64` per Intel/AMD o `aarch64` per ARM.
         :::
 
         1. Scarica e installa `usbmuxd`. Dovrebbe essere preinstallato sulla tua distro, altrimenti installalo con il tuo package manager: una ricerca Google "install usbmuxd [nome distro]" potrebbe aiutare.
-        2. Scarica e installa iloader per la tua distro. È disponibile come [DEB](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.deb) per Debian/Ubuntu, [RPM](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-x86_64.rpm) per Fedora/openSUSE, e come [AppImage](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.AppImage) per le altre. (Ci sono anche pacchetti della community, come [questo sull'AUR di Arch Linux](https://aur.archlinux.org/packages/iloader-bin), ma non possiamo garantire la sua sicurezza. Dovresti sempre controllare tutti i pacchetti prima di installare qualcosa sul tuo sistema.)
+        2. Scarica e installa iloader per la tua distro. È disponibile come [DEB](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.deb) per Debian/Ubuntu, [RPM](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-x86_64.rpm) per Fedora/openSUSE, e come [AppImage](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.AppImage) per le altre. Inoltre per i processori ARM ci sono le versioni [DEB](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-arm64.deb), [RPM](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-aarch64.rpm) e [AppImage](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-aarch64.AppImage). (Ci sono anche pacchetti della community, come [questo sull'AUR di Arch Linux](https://aur.archlinux.org/packages/iloader-bin), ma non possiamo garantire la sua sicurezza. Dovresti sempre controllare tutti i pacchetti prima di installare qualcosa sul tuo sistema.)
     </TabItem>
 </Tabs>
