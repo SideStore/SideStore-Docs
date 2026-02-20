@@ -15,12 +15,12 @@ import TabItem from '@theme/TabItem';
 1. **기기 신뢰**: iOS 기기를 Mac에 연결한 후 Mac과 iOS 기기 모두에서 '신뢰'라고 선택했는지 확인해 주세요. 이를 확인하는 방법은 다음과 같아요:
    - Finder(macOS 10.15 Catalina 이상) 또는 iTunes(macOS 10.14 Mojave 이하)를 열어주세요.
    - 기기를 Mac에서 분리했다가 다시 연결한 다음 기기를 신뢰할 것인지 묻는 대화 상자가 나타나는지 확인해 주세요.
-2. **다른 Apple ID 사용**: 다른 Apple ID를 사용해 보세요. 필요한 경우, [새 Apple ID 생성](https://appleid.apple.com/account#!\&page=create)을 통해 무료로 SideStore 전용 Apple ID를 생성할 수 있어요.
+2. **다른 Apple 계정 사용**: 다른 Apple 계정를 사용해 보세요. 필요한 경우, [새 Apple 계정 생성](https://appleid.apple.com/account#!\&page=create)을 통해 무료로 SideStore 전용 Apple 계정를 생성할 수 있어요.
 
 #### Windows 지침
 1. **기기 신뢰**: iOS 기기를 Windows 컴퓨터에 연결한 후 컴퓨터와 iOS 기기 모두에서 '신뢰'라고 선택했는지 확인해 주세요. 이를 확인하는 방법은 다음과 같아요:
    - iTunes를 열고 기기를 신뢰할 것인지 묻는 대화 상자가 나타나는지 확인해 주세요.
-2. **다른 Apple ID 사용**: 다른 Apple ID를 사용해 보세요. 필요한 경우, [새 Apple ID 생성](https://appleid.apple.com/account#!\&page=create)을 통해 무료로 SideStore 전용 Apple ID를 생성할 수 있어요.
+2. **다른 Apple 계정 사용**: 다른 Apple 계정를 사용해 보세요. 필요한 경우, [새 Apple 계정 생성](https://appleid.apple.com/account#!\&page=create)을 통해 무료로 SideStore 전용 Apple 계정를 생성할 수 있어요.
 
 ### SideStore 업데이트가 마지막 단계에서 멈춤
 
@@ -41,25 +41,25 @@ SideStore에 로그인하는 동안 멈추거나 오류 코드가 발생하는 �
 2. **나만의 Anisette 서버 호스팅:**
    원하는 경우 자체 Anisette 서버를 설정할 수 있어요. Anisette 서버 호스팅에 대한 자세한 지침은 공식 문서에서 확인할 수 있으며 [여기](https://docs.sidestore.io/docs/advanced/anisette)에서 확인할 수 있어요.
 
-### Apple ID로 로그인할 때 인증 코드를 받지 못한 경우
-로그인 중 발생하는 또 다른 일반적인 문제는 Apple ID를 Sidestore에서 사용할 때 인증 코드가 수신되지 않는 것이에요. 이 문제는 다음 단계에 따라 해결할 수 있어요:
+### Apple 계정으로 로그인할 때 확인 코드를 받지 못하는 경우
+로그인 중 발생하는 또 다른 일반적인 문제는 Apple 계정을 Sidestore에서 사용할 때 확인 코드가 수신되지 않는 것이에요. 이 문제는 다음 단계에 따라 해결할 수 있어요:
 
 <Tabs>
-    <TabItem value="18.1" label="iOS/iPadOS 18.1+ 버전">
+    <TabItem value="18.1" label="iOS/iPadOS 18.1 이상 버전">
          1. 웹 브라우저에서 [iCloud](https://www.icloud.com)로 들어가주세요.
          2. "로그인"을 눌러주세요.
          3. 메시지가 표시되면 두 가지 옵션이 표시될 수 있어요: "로그인" 및 "다른 Apple 계정 사용".
             - 하단 옵션인 "다른 Apple 계정 사용"을 선택해 주세요.
-         4. Apple 계정 정보 (이메일 주소 또는 전화번호)와 비밀번호를 입력하세요('iPhone으로 로그인' 또는 '패스키로 로그인'을 선택하지 마세요).
-         5. Apple에서 인증 코드를 전송합니다.
-            - SideStore에서 이 코드를 사용하여 로그인 프로세스를 완료합니다.
+         4. Apple 계정 정보 (이메일 주소 또는 전화번호)와 비밀번호를 입력해 주세요('iPhone으로 로그인' 또는 '패스키로 로그인'을 선택하지 마세요).
+         5. Apple이 당신에게 확인 코드를 보내줄 거예요.
+            - SideStore에서 이 코드를 사용하여 로그인을 완료해 주세요.
     </TabItem>
     <TabItem value="18" label="iOS/iPadOS 18.0.1 미만 버전">
          1. "설정" 앱을 열어 주세요.
          2. 화면 상단에서 당신의 이름을 눌러 주세요.
          3. "로그인 및 보안"으로 이동해 주세요.
          4. "2단계 인증"을 선택해 주세요.
-         5. "인증 코드 받기"를 선택해 주세요.
+         5. "확인 코드 받기"를 선택해 주세요.
     </TabItem>
 </Tabs>
 
@@ -67,5 +67,6 @@ SideStore에 로그인하는 동안 멈추거나 오류 코드가 발생하는 �
 ### SideStore에서 내 앱이 사라졌는데 어떻게 해야 할지 모르겠어요!
 당황하지 마세요! 기기에서 앱을 삭제하지 않은 상태로 평소처럼 다시 사이드로드하면 데이터는 안전할 거예요. 안타깝게도 비활성화된 앱은 사라졌을 수도 있지만, 확인하려면 SideStore를 새로고침해서 다시 나타나는지 지켜보세요.
 
-### DebugServer를 시작할 수 없습니다
-DebugServer가 작동하지 않는 경우가 있어요. 그러나 iloader를 사용하여[페어링 파일을 교체](/docs/advanced/pairing-file) 해 볼 수 있어요.
+### DebugServer가 시작되지 않습니다
+1. iOS 버전이 17.4 이상인지 확인해 주세요.
+2. DebugServer가 작동하지 않는 경우가 있어요. 그러나 iloader를 사용하여[페어링 파일을 교체](/docs/advanced/pairing-file) 해 볼 수 있어요.
