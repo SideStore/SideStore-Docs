@@ -5,7 +5,7 @@ description: 커스텀 앱 소스 가이드에요.
 
 # 소스 만들기
 
-SideStore는 AltSources와 완벽하게 호환됩니다. 공식 AltSource [문서](https://faq.altstore.io/developers/make-a-source)에서 AltSource를 만드는 데 필요한 모든 세부 정보를 제공해줍니다. AltSources를 사용하면 사용자들이 AltStore와 SideStore 모두에서 쉽게 앱을 보고, 설치하고, 업데이트할 수 있습니다.
+SideStore는 AltSources와 완벽하게 호환돼요. 공식 AltSource [문서](https://faq.altstore.io/developers/make-a-source)에서 AltSource를 만드는 데 필요한 모든 세부 정보를 제공해 줘요. AltSources를 사용하면 사용자들이 AltStore와 SideStore 모두에서 쉽게 앱을 보고, 설치하고, 업데이트할 수 있어요.
 
 AltSources를 생성하고 확인하는 데 도움이 될 수 있는 권장되는 제3자 도구 몇 가지를 소개해 드릴게요:
 - 커뮤니티에서 개발한 [AltStudio](https://altstudio.app/) (개발 중)를 사용하면 IPA를 통해 자동으로 AltSource를 생성할 수 있습니다! (주의: AltStudio로 소스를 생성한 후에는 기본적으로 자동 생성된 marketplaceID 및 Build 필드를 반드시 제거해야 해요. 그렇지 않으면 SideStore가 해당 소스를 공증된 소스로 인식하여 추가가 차단될수 있어요)
@@ -13,11 +13,11 @@ AltSources를 생성하고 확인하는 데 도움이 될 수 있는 권장되�
 
 # 소스 배포하기
 
-다음 템플릿을 사용하여 AltSource를 자동으로 추가하는 링크를 만들 수 있습니다:
+다음 템플릿을 사용하여 AltSource를 자동으로 추가하는 링크를 만들 수 있어요:
 ```
 sidestore://source?url=[source url]
 ```
-자세한 내용은 [URL Schema](/docs/advanced/url-schema)를 참조하세요. AltSource 링크를 이 형식으로 만든 다음 ```tinyurl.com```과 같은 링크 단축 서비스에 넣는 것이 도움이 될 수 있습니다. 하지만 SideStore가 설치되어 있지 않은 상태에서 sidestore:// 링크를 사용하려고 하면 충돌이 발생할 수 있으므로, 일부 문서화가 도움이 될 수 있습니다.
+자세한 내용은 [URL Schema](/docs/advanced/url-schema)를 참조해 주세요. AltSource 링크를 이 형식으로 만든 다음 ```tinyurl.com```과 같은 링크 단축 서비스에 넣는 것이 도움이 될 수 있어요. 하지만 SideStore가 설치되어 있지 않은 상태에서 sidestore:// 링크를 사용하려고 하면 충돌이 발생할 수 있으므로, 일부 문서화가 도움이 될 수 있습니다.
 
 ## 끝!
 

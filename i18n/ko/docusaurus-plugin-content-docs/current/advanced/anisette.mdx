@@ -4,27 +4,27 @@ description: anisette 서버 가이드입니다.
 ---
 
 :::note
-0.4.0 이후의 SideStore 버전을 사용하면 계정이 잠길 가능성이 낮습니다. 이는 v3 anisette 서버 지원이 추가된 시점이기 때문입니다.
+0.4.0 이후의 SideStore 버전을 사용하면 계정이 잠길 가능성이 낮아요. 이는 v3 anisette 서버 지원이 추가된 시점이기 때문이에요.
 
-따라서 버전이 지원한다면 SideStore의 일반적인 사용을 위해 v3 서버를 사용하는 것을 **강력히 권장**합니다.
+따라서 버전이 지원한다면 SideStore의 일반적인 사용을 위해 v3 서버를 사용하는 것을 **강력히 권장**해요.
 :::
 
-Anisette 데이터는 앱 서명 과정에서 사용되는 정보로, 앱을 설치하거나 새로고침할 때마다 생성되어야 합니다. SideStore는 Mac을 스푸핑하는 서버에서 이 정보를 가져와 anisette 데이터를 보내줍니다. 이 과정에서 계정 정보는 절대 서버로 전송되지 않습니다.
+Anisette 데이터는 앱 서명 과정에서 사용되는 정보로, 앱을 설치하거나 새로고침할 때마다 생성되어야 해요. SideStore는 Mac을 스푸핑하는 서버에서 이 정보를 가져와 anisette 데이터를 보내줍니다. 이 과정에서 계정 정보는 절대 서버로 전송되지 않아요.
 
-많은 사람들이 동일한 Anisette 서버(특히 v1 서버)를 사용하면 Apple의 보안이 작동하여 해당 기기를 사용하던 계정들이 잠깁니다. 이것이 우리가 메인 계정 대신 별도의 버너 Apple ID를 사용하도록 권장하는 이유입니다.
+많은 사람들이 동일한 Anisette 서버(특히 v1 서버)를 사용하면 Apple의 보안이 작동하여 해당 기기를 사용하던 계정들이 잠겨요. 이것이 우리가 메인 계정 대신 별도의 Apple 계정을 사용하도록 권장하는 이유에요.
 
-우리 팀은 계정 잠금을 피하기 위한 더 나은 접근 방식(anisette-v3 형태)을 개발했습니다. 하지만 이전 버전의 SideStore를 사용 중이라면, 자체 anisette 서버를 호스팅하는 것이 계정 잠금을 피하는 좋은 방법입니다. 현재 서버가 오픈 소스이며 docker 환경을 위해 만들어졌기 때문에 이 작업이 매우 쉽습니다. 이는 GitHub 링크만으로 서버를 배포할 수 있다는 것을 의미합니다.
+저희 팀은 계정 잠금을 피하기 위한 더 나은 접근 방식(anisette-v3 형태)을 개발했어요. 하지만 이전 버전의 SideStore를 사용 중이라면, 자체 anisette 서버를 호스팅하는 것이 계정 잠금을 피하는 좋은 방법이에요. 현재 서버가 오픈 소스이며 docker 환경을 위해 만들어졌기 때문에 이 작업이 매우 쉬워요. 이는 GitHub 링크만으로 서버를 배포할 수 있다는 것을 의미해요.
 
 ## Render에 배포하기
 
-[Render](https://render.com/)는 서버를 쉽게 생성할 수 있는 서비스입니다. GitHub에서 서버 소스를 로드하는 것을 지원합니다. 무료 티어는 리소스 측면에서 제한적이지만, 서버는 문제없이 편안하게 실행될 수 있습니다. (참고로, 본인 확인을 위해 신용카드나 체크카드가 필요하지만, 완전히 무료입니다.)
+[Render](https://render.com/)는 서버를 쉽게 생성할 수 있는 서비스입니다. GitHub에서 서버 소스를 불러오는 것을 지원해요. 무료 티어는 리소스 측면에서 제한적이지만, 서버는 문제없이 편안하게 실행될 수 있어요. (참고로, 본인 확인을 위해 신용카드나 체크카드가 필요하지만, 완전히 무료에요.)
 
-너무 많은 사람들이 동일한 GitHub URL을 사용하기 때문에, Git 저장소를 직접 포크해야 합니다.
+너무 많은 사람들이 동일한 GitHub 주소를 사용하기 때문에, Git 저장소를 직접 포크해야 해요.
 
-1. 아직 계정이 없다면 GitHub 계정을 [등록](https://github.com/signup)하세요.
-2. Git 저장소를 [열어보세요](https://github.com/Dadoum/anisette-v3-server).
-3. 오른쪽 상단의 "Fork"를 클릭하고 저장소를 계정으로 포크하세요.
-4. 포크된 저장소가 생성되면 오른쪽 상단의 녹색 "Code" 드롭다운을 클릭하고 .git URL을 복사하세요.
+1. 아직 계정이 없다면 GitHub 계정을 [등록](https://github.com/signup)해 주세요.
+2. Git 저장소를 [확인하세요](https://github.com/Dadoum/anisette-v3-server).
+3. 오른쪽 상단의 "Fork"를 클릭하고 저장소를 계정으로 포크해 주세요.
+4. 포크된 저장소가 생성되면 오른쪽 상단의 녹색 "Code" 드롭다운을 클릭하고 .git URL을 복사해 주세요.
 
 * 나중에 사용할 수 있도록 저장해두세요.
 
@@ -32,7 +32,7 @@ Anisette 데이터는 앱 서명 과정에서 사용되는 정보로, 앱을 설
 
 1. 계정을 [등록](https://dashboard.render.com/register/)하세요.
 2. [새 웹 서비스](https://dashboard.render.com/select-repo?type=web)를 생성하세요.
-3. **Public Git repository**로 스크롤하여 이전에 복사한 URL을 입력하세요.
+3. **Public Git repository**로 스크롤하여 방금 복사한 URL을 입력하세요.
 4. "Continue"를 클릭하고 양식을 작성하세요:
     * **Name** - 상관없음
     * **Region** - 가장 가까운 지역
@@ -41,7 +41,7 @@ Anisette 데이터는 앱 서명 과정에서 사용되는 정보로, 앱을 설
     * **Environment** - Docker (기본값)
     * **Instance Type** - Free
 
-5. 서버가 빌드될 때까지 기다리세요. 완료되면 다음이 표시됩니다:
+5. 서버가 빌드될 때까지 기다리세요. 완료되면 다음이 표시될 거에요:
 
 ```
 Machine requires provisioning... done !
@@ -58,29 +58,29 @@ https://[your-server-name].onrender.com
 
 ## 커스텀 anisette 서버 목록 만들기
 
-0.5.8 버전 출시 이후, SideStore는 공식적으로 승인된 anisette 서버를 더 쉽게 추가할 수 있도록 anisette 서버 목록 시스템을 사용합니다. 이는 공식 목록에 추가를 요청하지 않고 자체 서버를 사용하려면 약간의 추가 작업이 필요하다는 것을 의미합니다.
+0.5.8 버전 출시 이후, SideStore는 공식적으로 승인된 anisette 서버를 더 쉽게 추가할 수 있도록 anisette 서버 목록 시스템을 사용해요. 이는 공식 목록에 추가를 요청하지 않고 자체 서버를 사용하려면 약간의 추가 작업이 필요하다는 것을 의미해요.
 
 포함된 서버를 사용하는 옵션을 유지하려면 다음 단계를 따르세요:
-1. 현재 서버 목록을 얻기 위해 [여기](https://servers.sidestore.io/servers.json)로 이동하세요.
-2. 파일을 인터넷에 호스팅하기 위해 원하는 파일 호스팅 서비스를 선택하세요. 향후 편집이 더 쉽고 이 가이드에서 예시로 사용할 서비스이므로 GitHub Pages를 사용하는 것을 추천합니다. 자체 호스팅 방법이 있다면 다음 내용을 해당 설정에 맞게 조정하세요.
-3. 이미 Github Pages 사이트가 설정되어 있다면 여섯 번째 하위 단계로 건너뛰세요. 그렇지 않다면 다음을 수행하세요:
-* 데스크톱의 오른쪽 상단에 있는 더하기(+) 버튼, 모바일의 프로필 아이콘 > Create new, 또는 [이 페이지](https://github.com/new)를 통해 새 GitHub 저장소를 생성하세요.
-* 이름을 [your GitHub username].github.io로 설정하고, 'Initialize this repository with a README'를 체크하고, 나머지 설정을 원하는 대로 설정하세요.
-* 생성되면 Settings 탭으로 이동하여 Code and automation 아래의 Pages 섹션으로 이동하세요.
-* Source 아래의 Build and deployment를 'Deploy from branch'로 설정하세요.
-* 자동 선택되지 않았다면 Branch를 'main'으로 설정하세요.
-* 코드 탭으로 돌아가서 'Add files'를 클릭한 다음 'Upload files'를 클릭하고 이전에 다운로드한 'servers.json' 파일을 선택하세요.
-* 업로드되면 파일을 클릭하고 Edit 버튼을 클릭하세요.
-* 목록의 마지막 서버로 스크롤하고 마지막 서버의 닫는 중괄호('}') 뒤에 쉼표를 추가한 다음 다음 형식으로 자체 서버를 추가하세요:
+1. 현재 서버 목록을 얻기 위해 [여기](https://servers.sidestore.io/servers.json)로 이동해 주세요.
+2. 파일을 인터넷에 호스팅하기 위해 원하는 파일 호스팅 서비스를 선택해 주세요. 향후 편집이 더 쉽고 이 가이드에서 예시로 사용할 서비스이므로 GitHub Pages를 사용하는 것을 추천해요. 자체 호스팅 방법이 있다면 다음 내용을 해당 설정에 맞게 조정해 주세요.
+3. 이미 Github Pages 사이트가 설정되어 있다면 여섯 번째 단계로 넘어가 주세요. 그렇지 않다면 다음을 따라가주세요:
+* 데스크톱의 오른쪽 상단에 있는 더하기(+) 버튼, 모바일의 프로필 아이콘 > Create new, 또는 [이 페이지](https://github.com/new)를 통해 새 GitHub 저장소를 생성해 주세요.
+* 이름을 [your GitHub username].github.io로 설정하고, 'Initialize this repository with a README'를 체크하고, 나머지 설정을 원하는 대로 설정해 주세요.
+* 생성되면 Settings 탭으로 이동하여 Code and automation 아래의 Pages 섹션으로 이동해 주세요.
+* Source 아래의 Build and deployment를 'Deploy from branch'로 설정해 주세요.
+* 자동 선택되지 않았다면 Branch를 'main'으로 설정해 주세요.
+* 코드 탭으로 돌아가서 'Add files'를 클릭한 다음 'Upload files'를 클릭하고 방금 다운로드한 'servers.json' 파일을 선택해 주세요.
+* 업로드되면 파일을 클릭하고 Edit 버튼을 클릭해 주세요.
+* 목록의 마지막 서버로 스크롤하고 마지막 서버의 닫는 중괄호('}') 뒤에 쉼표를 추가한 다음 다음 형식으로 자체 서버를 추가해 주세요!:
 ```
 {
     "name": "[사용자 이름과 같이 식별 가능한 것]",   //다른 사람과 이 서버 목록을 공유하지 않는 한 중요하지 않음
     "address": "[서버의 URL]"
 }
 ```
-* 변경사항을 커밋한 다음 https://[your GitHub username].github.io/[where you placed the file]/servers.json로 이동하세요. 파일이 로드되면 다음 섹션으로 진행할 준비가 된 것입니다. 그렇지 않다면 사이트가 제대로 설정될 때까지 최대 10분 정도 기다린 후 다시 시도해야 할 수 있습니다.
+* 변경사항을 커밋 한 다음 https://[your GitHub username].github.io/[where you placed the file]/servers.json로 이동해 주세요. 파일이 로드되면 다음 섹션으로 진행할 준비가 된 거에요. 그렇지 않다면 사이트가 제대로 설정될 때까지 최대 10분 정도 기다린 후 다시 시도해야 할 수 도 있어요.
 
-자체 서버만 사용하려면 위 단계를 따르되, 공식 servers.json을 가져오는 대신 다음 형식을 사용하여 자체 servers.json을 생성하세요:
+자체 서버만 사용하려면 위 단계를 따르되, 공식 servers.json을 가져오는 대신 다음 형식을 사용하여 자체 servers.json을 생성해 주세요:
 ```
 {
     "servers": [
@@ -91,17 +91,17 @@ https://[your-server-name].onrender.com
     ]
 }
 ```
-그리고 평소처럼 계속하세요.
+그리고 평소처럼 진행해 주세요.
 
 ## SideStore에서 서버 사용하기
 
-SideStore 앱에서 새로 생성한 서버 목록을 사용하려면 다음을 수행하세요:
+SideStore 앱에서 새로 생성한 서버 목록을 사용하려면 다음을 따라가주세요:
 
-1. SideStore의 Settings 탭을 엽니다.
-2. 하단으로 스크롤하여 'Anisette Servers'를 탭합니다.
-3. 목록 URL을 탭하고 서버 목록의 URL로 교체합니다.
-4. 'Refresh Servers'를 탭하고 업데이트된 목록에서 자체 서버를 선택합니다.
+1. SideStore의 Settings 탭을 열어주세요.
+2. 하단으로 스크롤하여 'Anisette Servers'를 눌러주세요.
+3. 목록 URL을 탭하고 서버 목록의 URL로 교체해 주세요.
+4. 'Refresh Servers'를 탭하고 업데이트된 목록에서 자체 서버를 선택해 주세요.
 
 ## 완료!
 
-이제 SideStore가 새 커스텀 anisette 서버를 사용합니다.
+이제 SideStore가 새 커스텀 anisette 서버를 사용할 거예요.
