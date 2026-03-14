@@ -58,4 +58,16 @@ Now, follow the instructions to install [iloader](https://iloader.app) correspon
     1. Download and install `usbmuxd`. It may be preinstalled with your distribution, otherwise you can install it with your package manager: a Google search for "install usbmuxd [distribution name]" might help you.
     2. Download and install iloader for your distribution. It is available as a [DEB](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.deb) for Debian/Ubuntu, [RPM](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-x86_64.rpm) for Fedora/openSUSE, and as an [AppImage](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.AppImage) for others. Additionally, for ARM processors there are also [DEB](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-arm64.deb), [RPM](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-aarch64.rpm), and [AppImage](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-aarch64.AppImage) builds. (There are also community-maintained packages, such as [this one on the Arch Linux AUR](https://aur.archlinux.org/packages/iloader-bin), but please know that we cannot guarantee their safety or security. You should always do your due diligence before installing unknown packages onto your system.)
   </TabItem>
+  <TabItem value="linux" label="Chromebook">
+    :::warning
+    **This will not work with enrolled Chromebooks, and may not work with old Chromebooks.** Usually enrolled Chromebooks have "Linux Dev Environment" disabled, or old Chromebooks don't provide such options.
+    :::
+
+    1. Enable `Linux development environment`. You can read the [Set up Linux on your Chromebook](https://support.google.com/chromebook/answer/9145439) guide by Google to see how to set it up, following the `Turn on Linux` steps.
+    2. Ensure all packages are updated by opening the Terminal, entering: `sudo apt-get update && sudo apt-get dist-upgrade`
+    3. Open the Files app, right click on the `Downloads` folder and click `Share with Linux`.
+    4. Download and install `usbmuxd` and `fuse`. It may be preinstalled with your distribution, otherwise you can install it with your package manager: `sudo apt-get install usbmuxd fuse`
+    5. Download and install iloader. It is available as an [AppImage](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-aarch64.AppImage). Download the file to your Downloads folder.
+    6. 
+  </TabItem>
 </Tabs>
