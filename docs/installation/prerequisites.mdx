@@ -66,7 +66,7 @@ Now, follow the instructions to install [iloader](https://iloader.app) correspon
     1. Enable `Linux development environment`. You can read the [Set up Linux on your Chromebook](https://support.google.com/chromebook/answer/9145439) guide by Google to see how to set it up, following the `Turn on Linux` steps.
     2. Ensure all packages are updated by opening the Terminal, running the following command: `sudo apt-get update && sudo apt-get dist-upgrade`
     3. Open the Files app, right click on the `Downloads` folder in the left sidebar, and click `Share with Linux`. (It will be shared in `/mnt/chromeos/MyFiles/Downloads`)
-    4. Download and install `usbmuxd` and `fuse`. It may be preinstalled with your distribution, otherwise you can install it with your package manager: `sudo apt-get install usbmuxd fuse`
+    4. Download and install `usbmuxd` and `fuse`. You can install it with your package manager by running the following command in the Terminal: `sudo apt-get install usbmuxd fuse`
     5. Download and install iloader. It is available as an [AppImage](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-aarch64.AppImage). Download the file to your Downloads folder.
     6. If `usbmuxd` isn't already started, run the following command in the Terminal: `sudo systemctl restart usbmuxd`
     7. Navigate to `Manage USB devices` (in **Settings** -> **About ChromeOS** -> **Developers** -> **Linux development environment**), then connect your iPhone, iPad, or iPod touch (iDevice) to your Chromebook via a USB cable. As soon as you see the device, **quickly enable it from the list**. If you are prompted on your iDevice, trust the computer and enter your passcode.
