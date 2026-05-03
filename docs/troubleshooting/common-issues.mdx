@@ -35,6 +35,19 @@ Connection issues with the minimuxer service.
 5. Restart SideStore
 6. Restart LocalDevVPN
 7. [Replace your pairing file](/docs/advanced/pairing-file) using iloader.
+#### Alternative cause, only for iOS 26.4+
+Apple implemented checks on this version and up to hinder sideloading.
+#### Recommended resolution
+1. Open iloader. (If you don't have access to iloader, follow the steps in the alternative, then turn beta updates on, make sure it's on nightly, then update, and possibly remove Super VPN)
+2. Press SideStore (Nightly).
+##### Still can't refresh?
+1. Go to settings
+2. Go to VPN configuration in advanced settings.
+3. Set Device IP to 10.7.0.1.
+#### Alternative resolution
+1. Download [Super VPN](https://apps.apple.com/app/vpn-super-unlimited-proxy/id1370293473) from the app store.
+2. Turn Super VPN on.
+3. Turn LocalDevVPN on. (You will always have to turn the 2 VPN's on in this order.)
 
 ### SideStore Hangs Partway Through Installation
 #### Cause
