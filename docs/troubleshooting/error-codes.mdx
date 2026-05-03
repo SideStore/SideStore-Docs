@@ -39,6 +39,8 @@ This means that SideStore could not locate the file to download or install, most
 
 This means that your pairing file has been corrupted. [Replace it using iloader](/docs/advanced/pairing-file).
 
+If you are on iOS 26.4+, navigate to the Settings App → Wi-Fi. To the right of your network name, select the blue "ⓘ". Toggle "Private Wi-Fi Address" from "Fixed"/"Rotating" to "Off". Now reboot your device and replace your [replace your pairing file using iloader](/docs/advanced/pairing-file). Note: we only recommend doing this on your personal home Wi-Fi network, and never on a public network.
+
 ### (1007) This app is in an invalid format.
 `SideStore.OperationError 1007`
 
@@ -95,6 +97,8 @@ This means you are attempting to enable JIT on an unsupported iOS version. SideS
 `minimuxer.MinimuxerError 27`
 
 Ensure Wi-Fi and LocalDevVPN are both connected. If the error doesn't resolve, [replace your pairing file with iloader](/docs/advanced/pairing-file).
+
+If you are on iOS 26.4+, update to SideStore (nightly).
 
 
 ## Apple Developer Errors
