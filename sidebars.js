@@ -29,7 +29,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Troubleshooting',
-      items: ['troubleshooting/error-codes', 'troubleshooting/troubleshooting', 'troubleshooting/common-issues'],
+      items: ['troubleshooting/common-issues', 'troubleshooting/error-codes', 'troubleshooting/troubleshooting'],
     },
     {
       type: 'category',
