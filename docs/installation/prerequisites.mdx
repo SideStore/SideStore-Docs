@@ -65,15 +65,14 @@ Now, follow the instructions to install [iloader](https://iloader.app) correspon
 
     1. Enable `Linux development environment`. You can read the [Set up Linux on your Chromebook](https://support.google.com/chromebook/answer/9145439) guide by Google to see how to set it up, following the `Turn on Linux` steps.
     2. Ensure all packages are updated by opening the Terminal, running the following command: `sudo apt-get update && sudo apt-get dist-upgrade`
-    3. Open the Files app, right click on the `Downloads` folder in the left sidebar, and click `Share with Linux`. (It will be shared in `/mnt/chromeos/MyFiles/Downloads`)
-    4. Download and install `usbmuxd` and `fuse`. You can install it with your package manager by running the following command in the Terminal: `sudo apt-get install usbmuxd fuse`
-    5. Download and install iloader. It is available as an AppImage. To know which version to download, determine your Chromebook's architecture using `uname -m`. If the command outputs `x86_64`, download the `amd64` version here: https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.AppImage. Otherwise if it outputs `aarch64`, download the `aarch64` version here: https://github.com/nab138/iloader/releases/latest/download/iloader-linux-aarch64.AppImage. Download the file to your Downloads folder.
-    6. If `usbmuxd` isn't already started, run the following command in the Terminal: `sudo systemctl restart usbmuxd`.
-    7. Navigate to `Manage USB devices` (in **Settings** -> **About ChromeOS** -> **Developers** -> **Linux development environment**), then connect your iPhone, iPad, or iPod touch (iDevice) to your Chromebook via a USB cable. As soon as you see the device, **quickly enable it from the list**. If you are prompted on your iDevice, trust the computer and enter your passcode.
+    3. Download and install `usbmuxd`, `curl` and `fuse`. You can install it with your package manager by running the following command in the Terminal: `sudo apt-get install usbmuxd fuse curl`
+    4. Download and install iloader. It is available as an AppImage. To know which version to download, determine your Chromebook's architecture using `uname -m`. If the command outputs `x86_64`, run `curl -fsSLO https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.AppImage` Otherwise if it outputs `aarch64`, run `curl -fsSLO https://github.com/nab138/iloader/releases/latest/download/iloader-linux-aarch64.AppImage`.
+    5. If `usbmuxd` isn't already started, run the following command in the Terminal: `sudo systemctl restart usbmuxd`.
+    6. Navigate to `Manage USB devices` (in **Settings** -> **About ChromeOS** -> **Developers** -> **Linux development environment**), then connect your iPhone, iPad, or iPod touch (iDevice) to your Chromebook via a USB cable. As soon as you see the device, **quickly enable it from the list**. If you are prompted on your iDevice, trust the computer and enter your passcode.
     :::note
     **Enabling the iDevice __quickly__ in Manage USB devices is necessary** due to a bug with the `Linux development environment`. ChromeOS automatically claims the iDevice (which is why it appears in the Files app), preventing the Linux container from seeing it. Manually enabling it in **Manage USB devices** quickly before ChromeOS claims the iDevice will pass control to the container instead. You can follow **Step 8** to verify the container sees the iDevice.
     :::
-    8. Verify the `Linux development environment` recognizes your iDevice by running `lsusb` in the Terminal. Your iDevice should appear in the list. If it doesn't, try unplugging, and repeating the previous step.
+    7. Verify the `Linux development environment` recognizes your iDevice by running `lsusb` in the Terminal. Your iDevice should appear in the list. If it doesn't, try unplugging, and repeating the previous step.
     :::tip
     The output for `lsusb` should look something like this, with iPhone (or similar device) being an existing entry:
     ```
@@ -83,12 +82,12 @@ Now, follow the instructions to install [iloader](https://iloader.app) correspon
     ```
     The exact device name and bus/device numbers may vary, but they are not significant.
     :::
-    9. Run the following command in the Terminal to allow iloader to be executable, and to launch iloader (ensure the filename matches what was downloaded, if the file name contains `amd64`, replace `aarch64` with `amd64`):
+    8. Run the following command in the Terminal to allow iloader to be executable, and to launch iloader (ensure the filename matches what was downloaded, if the file name contains `amd64`, replace `aarch64` with `amd64`):
     ```
     cd /mnt/chromeos/MyFiles/Downloads
     chmod +x iloader-linux-aarch64.AppImage
     ./iloader-linux-aarch64.AppImage
     ```
-    10. If iloader isn't showing your iDevice, you can try manually running `usbmuxd` by running the following commands in the Terminal **in another tab**: `sudo systemctl stop usbmuxd` and `sudo usbmuxd -v -f`. You may be prompted on your iDevice.
+    9. If iloader isn't showing your iDevice, you can try manually running `usbmuxd` by running the following commands in the Terminal **in another tab**: `sudo systemctl stop usbmuxd` and `sudo usbmuxd -v -f`. You may be prompted on your iDevice.
   </TabItem>
 </Tabs>
