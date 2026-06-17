@@ -37,9 +37,19 @@ This means that SideStore could not locate the file to download or install, most
 ### (1006) SideStore could not determine this device's UDID.
 `SideStore.OperationError 1006`
 
-This means that your pairing file has been corrupted. [Replace it using iloader](/docs/advanced/pairing-file).
+On LiveContainer+SideStore, this *currently* only works for the **Nightly** release channel.
 
-If you are on iOS 26.4+, navigate to the Settings App → Wi-Fi. To the right of your network name, select the blue "ⓘ". Toggle "Private Wi-Fi Address" from "Fixed"/"Rotating" to "Off". Now reboot your device and [replace your pairing file using iloader](/docs/advanced/pairing-file). Note: you will need to set your Private Wi-Fi Address to "Off" and reboot for any Wi-Fi you wish to refresh on. We NEVER recommend doing this on a public network.
+**Make sure to accept all confirmations.**
+1. Open Settings in SideStore, scroll down and click Reset Pairing File.
+2. Open iLoader, scroll down and click Delete Stored Pairing.
+3. Scroll back up and click Refresh.
+4. Pair your idevice with iLoader.
+5. Click Manage Pairing File and then Place in All Apps (or place next to SideStore).
+6. Open SideStore when it's done installing.
+7. Refresh SideStore to see if everything is working.
+8. If Step #7 does not work, go to Settings in SideStore, scroll down and click VPN Configuration, and set Device IP to 10.7.0.1 (or if you have modified target LocalDevVPN IPs, whatever you set Device IP to).
+9. If Step #8 does not work, change anisette to Macley.
+10. If Step #9 does not work, reboot your iDevice.
 
 ### (1007) This app is in an invalid format.
 `SideStore.OperationError 1007`
