@@ -84,8 +84,7 @@ Now, follow the instructions to install [iloader](https://iloader.app) correspon
     :::
     8. Run the following command in the Terminal to allow iloader to be executable, and to launch iloader (ensure the filename matches what was downloaded, if the file name contains `amd64`, replace `aarch64` with `amd64`):
     ```
-    cd /mnt/chromeos/MyFiles/Downloads
-    chmod +x iloader-linux-aarch64.AppImage
+    chmod +x ./iloader-linux-aarch64.AppImage
     ./iloader-linux-aarch64.AppImage
     ```
     9. If iloader isn't showing your iDevice, you can try manually running `usbmuxd` by running the following commands in the Terminal **in another tab**: `sudo systemctl stop usbmuxd` and `sudo usbmuxd -v -f`. You may be prompted on your iDevice.
