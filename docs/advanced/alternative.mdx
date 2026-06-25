@@ -214,3 +214,39 @@ The MacDirtyCow "Bypass 3 app limit" exploit **only works on iOS/iPadOS versions
 [MDC-Compatible IPA](https://cdn.discordapp.com/attachments/949183273827983370/1074037820328521829/SideStore_MDC_14.ipa)
 
 If you want to have this feature, we recommend you join our Discord and go to the [sidestore-downloads](https://discord.com/channels/949183273383395328/1126118099930861638) channel, which will contain MDC compatible SideStore builds. Then, [separately install WDBRemoveThreeAppLimit with SideStore](https://github.com/zhuowei/WDBRemoveThreeAppLimit/releases/tag/v1.0) to apply the patch.
+
+## Lara (3-App Limit Bypass)
+
+:::note
+The "Lara" bypass uses the **Darksword exploit**, which only works on **iOS 17.0 - iOS 18.7.1, and iOS 26.0.x**, with exceptions for **M5 and A19 devices**.
+It has also been confirmed working on **iOS 16.7.2**.
+
+If you are not on a supported version, **do not ask for support**.
+:::
+
+To use this method, make sure you are running the latest **SideStore Nightly**, then install **Lara**:
+https://github.com/rooootdev/lara/releases/
+(Lara also works inside LiveContainer.)
+
+### Steps
+
+1. Open Lara and tap **Run Exploit**
+2. *(First time only)* Tap **Fetch Kernel Cache**
+3. Tap **Initialize System**
+4. Tap the Lara logo at the bottom center of the screen
+5. Go to **Apps**
+6. Select **3-App Bypass**
+7. Tap **Bypass**
+
+:::warning
+Do **NOT** close Lara from the app switcher until you finish all steps.
+:::
+
+8. Open SideStore and install your IPA as usual
+9. Done
+
+:::note
+This does **not** increase the 10-app Apple ID limit.
+:::
+
+You **must** repeat this process for every new sideloaded app.
