@@ -215,24 +215,38 @@ The MacDirtyCow "Bypass 3 app limit" exploit **only works on iOS/iPadOS versions
 
 If you want to have this feature, we recommend you join our Discord and go to the [sidestore-downloads](https://discord.com/channels/949183273383395328/1126118099930861638) channel, which will contain MDC compatible SideStore builds. Then, [separately install WDBRemoveThreeAppLimit with SideStore](https://github.com/zhuowei/WDBRemoveThreeAppLimit/releases/tag/v1.0) to apply the patch.
 
-### Lara (3-app limit)
+## Lara (3-App Limit Bypass)
+
 :::note
- the Lara "bypass 3 app limit" exploit uses the darksword exploit which **only works* on 17.0 - iOS 18.7.1 & iOS 26.0.x, excluding M5 and A19. also has worked on 16.7.2.
-If you are not on these versions dont ask for support.
+The "Lara" bypass uses the **Darksword exploit**, which only works on **iOS 17.0 - iOS 18.7.1, and iOS 26.0.x**, with exceptions for **M5 and A19 devices**.
+It has also been confirmed working on **iOS 16.7.2**.
+
+If you are not on a supported version, **do not ask for support**.
 :::
-To use this make sure you are on the latest nightly version of Sidestore and install [lara](https://github.com/rooootdev/lara/releases/) (works on livecontainer)
-1.Click run exploit in lara app
-2.(only if it is your first time running the exploit) Click fetch kernalcache
-3.Click initialize system
-4.Click the lara logo at the bottem middle of the screen
-5.Under the apps section click 3 app bypass
-6.Click Bypass
-:::Warning
-DO NOT close out lara from the app switcher yet you can after step the end
+
+To use this method, make sure you are running the latest **SideStore Nightly**, then install **Lara**:
+https://github.com/rooootdev/lara/releases/
+(Lara also works inside LiveContainer.)
+
+### Steps
+
+1. Open Lara and tap **Run Exploit**
+2. *(First time only)* Tap **Fetch Kernel Cache**
+3. Tap **Initialize System**
+4. Tap the Lara logo at the bottom center of the screen
+5. Go to **Apps**
+6. Select **3-App Bypass**
+7. Tap **Bypass**
+
+:::warning
+Do **NOT** close Lara from the app switcher until you finish all steps.
 :::
-7.Go to sidestore and install ipa
-8.Profit
+
+8. Open SideStore and install your IPA as usual
+9. Done
+
 :::note
-This does not change the ten app id limit
+This does **not** increase the 10-app Apple ID limit.
 :::
-You must do this for every new app you sidelode
+
+You **must** repeat this process for every new sideloaded app.
