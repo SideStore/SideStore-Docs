@@ -1,0 +1,46 @@
+{
+  "link.title.Docs": {
+    "message": "المستندات",
+    "description": "The title of the footer links column with title=Docs in the footer"
+  },
+  "link.title.Community": {
+    "message": "المجتمع",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.More": {
+    "message": "المزيد",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.Introduction": {
+    "message": "المقدمة",
+    "description": "The label of footer link with label=Introduction linking to /docs/intro"
+  },
+  "link.item.label.Discord": {
+    "message": "Discord",
+    "description": "The label of footer link with label=Discord linking to https://dis.sidestore.io"
+  },
+  "link.item.label.X (formerly Twitter)": {
+    "message": "X (Twitter سابقاً)",
+    "description": "The label of footer link with label=X (formerly Twitter) linking to https://x.com/sidestoreio"
+  },
+  "link.item.label.Patreon": {
+    "message": "Patreon",
+    "description": "The label of footer link with label=Patreon linking to https://www.patreon.com/sidestoreIO"
+  },
+  "link.item.label.Bluesky": {
+    "message": "Bluesky",
+    "description": "The label of footer link with label=Bluesky linking to https://bsky.app/profile/sidestore.io"
+  },
+  "link.item.label.Website": {
+    "message": "الموقع إلكتروني",
+    "description": "The label of footer link with label=Website linking to https://sidestore.io/"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/SideStore"
+  },
+  "copyright": {
+    "message": "حقوق النشر © 2026 لـ SideStore, LLC. تم إنشاء الموقع باستخدام Docusaurus.",
+    "description": "The footer copyright"
+  }
+}
