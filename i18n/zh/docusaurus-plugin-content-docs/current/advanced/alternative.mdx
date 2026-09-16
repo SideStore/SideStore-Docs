@@ -1,43 +1,252 @@
 ---
-title: 绕过3-App限制
-description: 一个关于如何通过SparseRestore安装多于3个应用的教程。
+title: 替代/过时的说明
+description: "存放替代/过时的 SideStore 设置说明。注意：其中许多教程可能与最新的 iOS 或 SideStore 版本不兼容。"
 ---
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
+## 安装
+### AltServer
+
+<Tabs groupId="operating-systems">
+  <TabItem value="mac" label="macOS">
+    请按照[此处](https://faq.altstore.io/altstore-classic/how-to-install-altstore-macos)的说明（第 1-3 步）设置 AltServer
+  </TabItem>
+  <TabItem value="win" label="Windows">
+    请按照[此处](https://faq.altstore.io/altstore-classic/how-to-install-altstore-windows)的说明（第 1-3 步）设置 AltServer
+  </TabItem>
+  <TabItem value="linux" label="Linux (Altcon)">
+    开始之前，请确保您已安装 usbmuxd。
+   1. 在 Linux 终端中运行 `sudo apt install -y usbmuxd`，当然，请确保您已安装并更新了 usbmuxd。
+   2. 在您的机器上安装 Docker 或 Podman。
+   3. 插入您的备用 iPhone、iPad 或 iPod touch。如果收到提示，请选择 "信任" 并输入您的密码。
+   4. 现在，使用以下命令以通过 Docker 或 Podman 运行 Altcon（可能需要 `sudo`）：
+
+   Docker 设置：
+   ```bash
+   docker run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd -v /var/lib/lockdown:/tmp/lockdown ghcr.io/sidestore/altcon
+   ```
+
+   Podman 设置：
+   ```bash
+   podman run --rm -it -v ${PWD}/:/mnt/ -v /var/run/usbmuxd:/var/run/usbmuxd -v /var/lib/lockdown:/tmp/lockdown ghcr.io/sidestore/altcon
+   ```
+
+   5. Altcon 将与您的设备配对。当您收到另一个弹窗提示时，请再次选择 "信任" 并输入您的密码。
+  </TabItem>
+</Tabs>
+
+#### 使用 AltServer 为同一账户上的多个设备配置 SideStore（仅适用于 macOS/Windows）
+步骤：
+1. 使用上述说明在 macOS/Windows 上设置 AltServer
+2. 使用 AltServer 在其中一台设备上安装 AltStore
+3. 在 AltStore 中登录您的 Apple 账户
+4. 导出证书
+5. 删除 AltStore
+
+然后在每台设备上执行以下操作：
+1. 在 AltServer 使用同一个 Apple 账户安装 SideStore（点击 AltServer 时按住 [Option/Mac、Shift/Windows] -> Install IPA -> 选择 SideStore.ipa）
+2. 导入证书
+3. 在 SideStore 中登录 Apple 账户（我们需要在导入证书后登录，否则在未撤销 AltStore 证书的情况下，它将不允许您登录）
+4. 执行侧载
+
+当旧证书过期时：
+1. SideStore 将在其中一台设备上提示您重新安装 Sidestore
+2. 重新安装后，导出证书
+
+然后在其余的每台设备上执行以下操作：
+1. 导入新证书
+2. 从 SideStore 中 侧载 SideStore ipa
+
+## VPN
+### WireGuard
 :::note
-
-SparseRestore的"绕过3个应用的限制"**仅在iOS/iPadOS 17.0 到 18.1 beta 4 (不包括 17.7.1)中生效**。如果您没有使用这些版本的话，这些操作是没有用的，**请不要因此寻求帮助**。 
-
+SideStore WireGuard VPN **仅适用于 0.3.1-0.6.1 之间以及（含） 0.6.3-nightly.4e6756d 之后的 SideStore 版本**，我们不推荐您使用替代方案（如 LocalDevVPN）。当然如果您的版本不在这些范围内且该方案不起作用，**请不要寻求社区支持**。
 :::
 
-## 必要准备
-* 一台运行了SparseRestore支持的系统版本的苹果设备(请参考上面的描述).
-* 至少一个空闲的应用槽位。
-* SideStore 0.5.9或更高版本。您可以[在此](https://github.com/SideStore/SideStore/releases)找到最新版。
-* 为了执行漏洞，您**必须**在流程进行中，在您的苹果设备上关闭**查找网络**。否则执行不会成功。您可以参考以下的流程关闭：
-  - 打开“设置”。
-  - 点击最上面您的名字。
-  - 点击“查找”。
-  - 点击查找我的iPhone/iPad.
-  - 关闭查找我的iPhone/iPad.
-  - 您可能需要输入您的Apple ID密码以继续。
+SideStore 利用设备上的 WireGuard VPN 以实现 SideStore 与内部服务的通信。
+
+1. 从 [Apple App Store](https://apps.apple.com/app/wireguard/id1441195209) 下载 WireGuard 应用。
+2. 在[此处](https://github.com/SideStore/SideStore/releases/download/0.3.1/SideStore.conf)下载 WireGuard 配置。
+3. 打开 WireGuard，并按下 'Add a Tunnel' 或 '+' 按钮。
+4. 选择 'Create from file or archive'，并选择 SideStore.conf 文件。
+5. 您的设备可能会弹出 '允许添加 VPN 配置'，请选择 '允许' 并进行身份验证。
+6. 打开 SideStore VPN 选项的开关。
+
+只要您使用 SideStore，就必须开启 WireGuard VPN，因为没有它，大部分功能将无法工作。
+
+## 配对
+### idevice_pair
+#### 安装说明
+
+<Tabs groupId="operating-systems">
+  <TabItem value="mac" label="macOS">
+   1. 下载 [idevice pair for macOS](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--macos-universal.dmg)。
+   2. 打开磁盘映像，并将 `idevice pair` 拖到 `Applications` 中。
+  </TabItem>
+  <TabItem value="win" label="Windows">
+   1. 确保已从 Apple 网站安装了（[64-bit](https://apple.com/itunes/download/win64) 或 [32-bit](https://apple.com/itunes/download/win32)）的 iTunes （应该在设置 AltServer 的过程中就已经安装好了）。
+   2. 下载 [idevice pair for Windows](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--windows-x86_64.exe)，并将其移动到您能记住的位置。
+  </TabItem>
+  <TabItem value="linux" label="Linux">
+   1. 在 Linux 终端中运行 `sudo apt install -y usbmuxd`，请确保您的机器上已安装 usbmuxd。
+   2. 下载与您的电脑架构选择下载可适用的 idevice_pair （[x86_64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-x86_64.AppImage) / [AArch64](https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--linux-aarch64.AppImage)）。将其移动到您能记住，并可执行的位置。
+  </TabItem>
+</Tabs>
+
+#### 配对说明
+
+1. 用数据线将您的备用设备连接到电脑。如果出现提示，请选择 `信任` 并输入您的密码。
+2. 解锁您的设备，然后打开 `idevice pair`，并在下拉菜单中选择您的设备。
+3. 确保您的设备已解锁并打开到主屏幕，然后选择 `load`。如果您的设备上出现提示，请点按 `信任`。您的配对文件应该会出现。
+4. 确保您的设备仍处于主屏幕，然后向下滚动并选择 "SideStore" 下方的 `install`。应该会显示绿色的 `Success`。
+
+### JitterbugPair
+JitterbugPair（*不是* Jitterbug 这个应用）允许我们能够创建为 SideStore 等程序所用的配对文件，以便应用远程与您的设备通信。这是使用 SideStore 所必需的，否则应用将无法运行。
+
+您可以在此处下载适用于 [Windows (64-bit)](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip)、[macOS](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-macos.zip)或 [Linux](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip) 的 JitterbugPair。
+
+#### 配对说明
+
+:::tip
+
+在传输您的 .mobiledevicepariring 文件时，文件扩展名可能会改变（通常会变成 .txt 或变成被去掉 "ing" 结尾的格式）。这取决于您使用的文件传输方式。我们始终建议您在传输之前先将文件压缩为 zip 文件。以及SideStore 只接受 .mobiledevicepairing 文件（旧版本中为 .plist 文件）。
+:::
+
+<Tabs groupId="operating-systems">
+  <TabItem value="mac" label="macOS">
+   1. 下载适用于 [macOS](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-macos.zip) 的 JitterbugPair。
+   2. **解压** `jitterbugpair-macos.zip`。
+   3. 解锁您的设备并用数据线将其连接到电脑。如果出现弹窗提示，请点按 "信任" 并输入您的密码。如果您还未设置，请**为您的设备设置密码**。
+   4. 将您的设备打开到主屏幕。
+   5. 找到并打开解压后的 `jitterbugpair` 文件（它应该有一个黑绿相间的图标），打开方式为双击它或右键单击它并选择 "open"。首次运行该工具时，您的备用设备上会出现输入密码的提示。输入密码，然后保持屏幕开启且解锁状态，再次运行该工具。
+   6. 如果您收到消息" "macOS cannot verify that this app is free from malware"：
+      - 前往 System Settings > Privacy & Security
+      - 向下滚动到关于该应用的消息
+      - 点击 "Open Anyway，"；如果程序没有自动运行，请尝试手动再次运行它
+   7. JitterbugPair 将在您的用户主文件夹中生成一个扩展名为 `.mobiledevicepairing` 的**配对文件**。
+   8. 如果您找不到配对文件：
+      - 复制生成的配对文件的名称
+      - 将其粘贴到 Finder 中
+      - 如果您不止一次地运行了该程序，则您设备的所有配对文件应该都会出现，因为所有的配对文件共用同一个名称
+   9. 为了获得最佳效果，请将该文件压缩为 .zip 文件。然后通过 AirDrop、iCloud/One/Google Drive、电子邮件或其他您偏好的方式，将**配对文件传输**到您的 iOS 设备上。
+  </TabItem>
+  <TabItem value="win" label="Windows">
+   1. 下载适用于 [Windows (64-bit)](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip) 的 JitterbugPair。
+   2. **解压** `jitterbugpair-win64.zip`。
+   3. 解锁您的设备并用数据线将其连接到电脑。如果出现弹窗提示，请点按 "信任" 并输入您的密码。如果您还未设置，请**为您的设备设置密码**。
+   4. 将您的设备打开到主屏幕。
+   5. 在文件资源管理器中，找到 `jitterbugpair.exe`，通过双击或右键单击并选择 "open" 来运行它。首次运行该工具时，您的备用设备上会出现输入密码的提示。输入密码，然后保持屏幕开启且解锁状态，再次运行该工具。
+   6. JitterbugPair 将在同一文件夹中生成一个**配对文件**。该文件的扩展名为 `.mobiledevicepairing`。
+   7. 为了获得最佳效果，请将该文件压缩为 .zip 文件。然后通过 One/iCloud/Google Drive、电子邮件或其他您偏好的方式，将**配对文件传输**到您的 iOS 设备上。
+
+   在 Windows 上，您可能需要使用命令提示符或 Powershell 来执行该程序，因为双击 `.exe` 文件并不能稳定地打开它。
+
+   8. 在文件资源管理器中，导航到 jitterbugpair 所在的文件夹。
+   9. 在显示文件夹位置的位置栏中，点击空白处并输入 `powershell`。它应该会打开一个（可能为蓝色背景的）名为 PowerShell 的窗口。
+   10. 在设备已连接的情况下，输入 `./jitterbugpair.exe` 并按回车。
+
+  </TabItem>
+  <TabItem value="linux" label="Linux">
+   提醒：这些步骤默认您熟悉 Linux 命令行的使用
+   1. 下载适用于 [Linux](https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip) 的 JitterbugPair。
+   2. **解压** `jitterbugpair-linux.zip`。
+   3. 在解压后的目录中打开终端。
+   4. 给程序可执行的权限：
+      ```bash
+      chmod +x ./jitterbugpair
+      ```
+   5. 解锁您的设备并用数据线将其连接到电脑。如果出现提示，请点按 "信任" 并输入您的密码。如果您还未设置，请**为您的设备设置密码**。
+   6. 将您的设备打开到主屏幕。
+   7. 执行程序：
+     ```bash
+     ./jitterbugpair
+     ```
+   8. 首次运行该工具时，您的设备上会出现输入密码的提示。输入密码，然后保持屏幕开启且解锁状态，再次运行该工具。
+   9. JitterbugPair 将生成一个扩展名为 `.mobiledevicepairing` 的**配对文件**。
+   10. 为了获得最佳效果，请将该文件压缩为 .zip 文件夹。然后，通过电子邮件、云存储或其他您偏好的方式，将**配对文件传输**到您的 iOS 设备上。
+  </TabItem>
+</Tabs>
+
+## SideStore 利用的漏洞
+### SparseRestore（3 应用限制）
+:::note
+SparseRestore 的 "Bypass 3 app limit" 漏洞**仅适用于 17.0 到 18.1 beta 4（不含 17.7.1）之间的 iOS/iPadOS 版本**。如果您的版本不在这些范围内且该功能不起作用，**请不要寻求支持**。
+:::
+
+#### 前置条件
+* 一台运行 SparseRestore 漏洞所支持版本的 iPhone 或 iPad（见上方注释）。
+* 至少 1 个空闲的应用位。
+* SideStore 0.5.9 或更高版本。您可以[此处](https://github.com/SideStore/SideStore/releases)找到最新版本。
+* 要执行此漏洞，您的 iPhone 或 iPad 在该过程中必须**关闭查找网络**。否则它将无法工作。以下是关闭方法：
+  - 打开设置应用。
+  - 点按顶部的您的姓名。
+  - 点按 查找网络。
+  - 点按 查找我的 iPhone/iPad。
+  - 关闭 查找我的 iPhone/iPad。
+  - 可能需要输入您的 Apple 账户密码进行确认。
   
-  > **提醒：**您仍可能无法关闭"查找我的设备"，因为"失窃设备保护"可能避免您关闭它。请在尝试关闭查找设备前关闭失窃设备保护。
+  > **注意：**您仍然可能无法关闭查找网络，因为"失窃设备保护"（Stolen Device Protection）设置可能会阻止您将其关闭。请先关闭失窃设备保护，再尝试关闭查找网络。
 
-## 步骤
-1. 安装SparseBox。有很多种方式可以安装SparseBox，但如果是这种需求的话，请使用SideStore进行安装。您可以[在这里](https://github.com/khanhduytran0/SparseBox/releases/download/0.0.1/com.kdt.sparsebox_0.0.1.ipa)找到最新版。
+#### 步骤
+1. 安装 SparseBox。这可以通过多种方法完成，但出于本说明的目的，请使用 SideStore 安装它。最新版本可在[此处](https://github.com/khanhduytran0/SparseBox/releases/download/0.0.1/com.kdt.sparsebox_0.0.1.ipa)找到。
 
-2. 在SideStore内打开"Disable App Limit"开关，确保SideStore是**关闭的** (不在后台)，然后打开SparseBox。
+2. 在 SideStore 中勾选 "Disable App Limit"，并确保 SideStore 已**关闭**（而非在后台运行），然后打开 SparseBox。
 
-3. 启用StosVPN，选择您的配对文件并点击'绕过3个应用的限制'。你将会看到一段很长的输出。请等待直到输出`idevicebackup2 exited with code -18`或者`idevicebackup2 exited with code 2`，关闭应用，无需点击“应用”。
+3. 启用 LocalDevVPN，选择您的配对文件并点按 'Bypass 3-app limit'。这应该会弹出日志输出。等待它显示 `idevicebackup2 exited with code -18` 或 `idevicebackup2 exited with code 2`，然后关闭应用。无需点击 apply。
 
-4. 重新打开SideStore在SideStore设置界面下滑。点击"清理缓存"，这允许绕过结果被SideStore使用。
+4. 重新打开 SideStore，并在 SideStore 设置中向下滚动。按 "clear cache"，这将使 SideStore 能够识别该漏洞。
 
-5. 测试绕过成功(您可能需要安装多于一个app以测试，这取决于您剩余多少槽位)。如果应用弹出了和限制相关的错误，重新启动SideStore或者重试执行漏洞利用。如果安装应用成功，恭喜！您现在可以一次安装多于3个应用了！
+5. 测试该漏洞是否已生效（根据您有多少个空闲位，您可能需要安装不止一个应用来测试）。如果它抛出有关限制的错误，请重新打开 SideStore 或重试该漏洞。如果它成功安装了应用，恭喜您！您现在可以同时安装超过 3 个应用了。
 
-## 提醒
-由于某些限制，每当您侧载额外3个应用程序时，都必须执行此漏洞利用。
+#### 注意事项
+由于某些限制，每额外侧载 3 个应用，就必须重新执行一次此漏洞。
 
-如果您想/需要使用查找网络的话，您现在就可以打开它了。然而，如果您想安装或者刷新更多应用，您仍需再次关闭查找网络。
+如果您出于其他目的需要查找网络的话，现在就可以重新打开它。但如果您想安装或刷新更多应用，则需要再次将其关闭。
 
-## 备选方案
-如果该漏洞利用对您来说没起作用，或者您的苹果设备是不支持的版本，也有其他的备选方案允许您同时使用多于3个应用。由Duy Tran Khanh ([khanhduytran0](https://github.com/khanhduytran0)) (也是SparseBox的开发者) 开发的Live Container允许iOS应用运行在应用内容器内，而不是分别独立的运行。这在某种意义上比SparseRestore更实用。[点此访问GitHub页面](https://github.com/khanhduytran0/LiveContainer)。
+### MacDirtyCow（3 应用限制）
+:::note
+MacDirtyCow "Bypass 3 app limit" 漏洞**仅适用于 15.0 到 16.1.2 之间的 iOS/iPadOS **。如果您的版本不在这些范围内且不起作用，**请不要寻求支持**。
+:::
+[MDC-Compatible IPA](https://cdn.discordapp.com/attachments/949183273827983370/1074037820328521829/SideStore_MDC_14.ipa)
+
+如果您想要这个功能，我们建议您加入我们的 Discord，并前往 [sidestore-downloads](https://discord.com/channels/949183273383395328/1126118099930861638) 频道，该频道会包含兼容 MDC 的 SideStore 构建版本。然后，[separately install WDBRemoveThreeAppLimit with SideStore](https://github.com/zhuowei/WDBRemoveThreeAppLimit/releases/tag/v1.0) 来应用补丁。
+
+## Lara（3 应用限制绕过）
+
+:::note
+"Lara" 绕过使用了 **Darksword 漏洞**，该漏洞仅适用于 **iOS 17.0 - iOS 18.7.1 和 iOS 26.0.x**，**M5 和 A19 设备**除外。
+它也被确认可在 **iOS 16.7.2** 上运行。
+
+如果您不在受支持的版本上，**请不要寻求支持**。
+:::
+
+要使用此方法，请确保您运行的是最新的 **SideStore Nightly**，然后安装 **Lara**：
+https://github.com/rooootdev/lara/releases/
+（Lara 也可以在 LiveContainer 内部运行。）
+
+### 步骤
+
+1. 打开 Lara 并点按 **Run Exploit**
+2. *(仅首次)*点按 **Fetch Kernel Cache**
+3. 点按 **Initialize System**
+4. 点按屏幕底部中央的 Lara 徽标
+5. 前往 **Apps**
+6. 选择 **3-App Bypass**
+7. 点按 **Bypass**
+
+:::warning
+在完成所有步骤之前，**不要**从应用切换器中关闭 Lara。
+:::
+
+8. 打开 SideStore，并像往常一样安装您的 IPA
+9. 完成
+
+:::note
+这**不会**增加 10 个应用的 Apple ID 限制。
+:::
+
+每次新侧载一个应用，您**必须**重复此过程。

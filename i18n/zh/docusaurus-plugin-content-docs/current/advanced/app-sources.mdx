@@ -1,24 +1,24 @@
 ---
-title: 应用源
-description: 自定义应用源的指南
+title: App 源
+description: 一篇关于自定义应用源的指南。
 ---
 
-# 创建应用源
+# 制作一个源
 
-SideStore与AltStore源（或AltSources）完全兼容。官方AltSource[文档](https://faq.altstore.io/developers/make-a-source)提供了制作自己的AltSource所需的所有详细信息。AltSources允许您的受众轻松查看、安装和更新所有可用的应用程序。
+SideStore 与 AltStore 源（或 AltSource）完全兼容。官方 AltSource [documentation](https://faq.altstore.io/developers/make-a-source) 提供了制作你自己的 AltSource 所需的全部细节。AltSource 让你的受众可以轻松地查看、安装和更新你所有可用的应用。
 
-以下是一些推荐的第三方工具，可以帮助您创建查看AltSources： 
--您可以使用社区构建的[AltStudio](https://altstudio.app/)（开发中）来使用IPA文件自动为您生成AltSource！（注意：在使用AltStudio创建源后，您必须移除默认自动生成的`marketplaceID`和`Build`字段，否则SideStore会误认它是经过公证的源，并阻止添加该源） 
--您可以在完成更改之前，使用社区构建的[AltSource浏览器](https://altsource.by.lao.sb/browse/)以可视化方式查看您对AltSource草稿的更新，从而在发布之前更正任何错误！
+以下是一些推荐的第三方工具，可以帮助你创建和查看你的 AltSource：
+- 你可以使用社区构建的 [AltStudio](https://altstudio.app/)（WIP）通过一个 IPA 自动为你生成一个 AltSource！（注意 —— 使用 AltStudio 创建源后，你必须移除默认自动生成的 marketplaceID 和 Build 字段，否则 SideStore 会认为它是由 notarized 认证的源，从而阻止你的源被添加）
+- 你可以使用社区构建的 [AltSource Browser](https://altsource.by.lao.sb/browse/) 在最终确定你的更改之前可视化查看你对 AltSource 草稿的更新，从而让你在发布前纠正任何错误！
 
-# 分发您的应用源
+# 分发你的源
 
-您可以用此模板创建一个链接，以便自动的添加您的AltSource：
+你可以使用这个模板创建一个自动添加你的 AltSource 的链接：
 ```
 sidestore://source?url=[source url]
 ```
-欲了解更多信息，请参阅[URL Schema](/docs/advanced/url-schema)。将您的AltSource链接以这种格式创建后，通常会将其放入 tinyurl.com 等链接缩短服务中，会很有帮助。然而，如果用户在未安装SideStore的情况下尝试使用 sidestore:// 链接，应用将会崩溃，因此提供一些说明文档可能会有帮助。
+更多信息，请参阅 [URL Schema](/docs/advanced/url-schema)。通常以这种格式创建指向你 AltSource 的链接会很有帮助，然后把它放入诸如 `tinyurl.com` 的短链接服务中。然而，如果用户在没有预先安装 SideStore 的情况下尝试使用 `sidestore://` 链接，它会崩溃，所以一些文档可能会有所帮助。
 
 ## 就是这样！
 
-以下是一些不错的现有AltSource，您可以复制并粘贴到SideStore中使用：[SideStore 社区源](https://github.com/SideStore/Community-Source)、[官方 AltStore 源](https://apps.altstore.io)、[LiveContainer 源](https://raw.githubusercontent.com/LiveContainer/LiveContainer/refs/heads/main/apps.json)和[DolphiniOS 源](https://altstore.oatmealdome.me).
+这里有一些很好的现有 AltSource，你可以复制粘贴到 SideStore 中：[SideStore Community Source](https://github.com/SideStore/Community-Source)、[official AltStore Source](https://apps.altstore.io)、[LiveContainer Source](https://raw.githubusercontent.com/LiveContainer/LiveContainer/refs/heads/main/apps.json) 和 [DolphiniOS Source](https://altstore.oatmealdome.me)。

@@ -1,304 +1,261 @@
 ---
 title: 错误代码
-description: SideStore内的错误代码
+description: SideStore 中的错误代码。
 ---
 
-:::warning
-
-本页面目前尚未完全准确反映SideStore的工作原理，因其内容基于AltStore的错误代码页面。部分信息仍属有效，但请勿逐字依赖此处说明。如需帮助，请务必前往我们的[Discord服务器](https://dis.sidestore.io)咨询。
-
-:::
-
-## SideStore相关错误
-
-#### (1000) An unknown error occurred.
-
+## SideStore 错误
+### (1000) 发生未知错误。
 `SideStore.OperationError 1000`
 
-这意味着SideStore遇到了意外错误。请查阅我们的[故障排除指南](./troubleshooting.mdx)，若问题仍未解决，可直接联系我们。
+这意味着 SideStore 遇到了意外错误。请查看我们的 [Troubleshooting Guide](./)，如果问题仍然存在，可以直接联系我们。
 
-#### (1001) The operation returned an unknown result.
-
+### (1001) 操作返回了未知结果。
 `SideStore.OperationError 1001`
 
-这意味着SideStore遇到了意外错误。请查阅我们的[故障排除指南](./troubleshooting.mdx)，若问题仍未解决，可直接联系我们。
+这意味着 SideStore 遇到了意外错误。请查看我们的 [Troubleshooting Guide](./)，如果问题仍然存在，可以直接联系我们。
 
-#### (1002) The operation was cancelled.
-
+### (1002) 操作已被取消。
 `SideStore.OperationError 1002`
 
-这意味着操作已被中止。请重新尝试。
+这意味着所执行的操作被停止了。请重试。
 
-#### (1003) The operation timed out.
-
+### (1003) 操作超时。
 `SideStore.OperationError 1003`
 
-这意味着SideStore在尝试完成请求操作时遇到了问题。请重新尝试操作，并查阅我们的[故障排除指南](./troubleshooting.mdx)获取更多帮助。若问题持续存在，您可直接联系我们。
+这意味着 SideStore 在尝试完成所请求的操作时遇到了问题。请重试，并查看我们的 [Troubleshooting Guide](./) 以获取更多帮助。如果问题仍然存在，可以直接联系我们。
 
-#### (1004) You are not signed in.
-
+### (1004) 你尚未登录。
 `SideStore.OperationError 1004`
 
-这意味着您必须在设置选项卡中输入您的Apple ID信息才能执行所请求的操作。
+这意味着你必须在设置选项卡中输入你的 Apple 账户信息，才能执行所请求的操作。
 
-#### (1005) The app could not be found.
-
+### (1005) 找不到该应用。
 `SideStore.OperationError 1005`
 
-这意味着SideStore无法找到要下载或安装的文件，很可能是因为该文件在提供的URL地址不存在。
+这意味着 SideStore 无法定位要下载或安装的文件，很可能是因为该文件在提供的 URL 中不存在。
 
-#### (1006) SideStore could not determine this device's UDID.
-
+### (1006) SideStore 无法确定此设备的 UDID。
 `SideStore.OperationError 1006`
 
-这意味着您的配对文件已损坏。[请使用 iloader 重新导入](/docs/advanced/pairing-file)。
+在 LiveContainer+SideStore 上，这*目前*仅适用于**Nightly**发布渠道。
 
-#### (1007) This app is in an invalid format.
+**务必接受所有确认提示。**
+1. 打开 SideStore 中的设置，向下滚动并点击“重置配对文件”。
+2. 打开 iLoader，向下滚动并点击“删除已存储的配对”。
+3. 向上滚动并点击“刷新”。
+4. 使用 iLoader 配对您的 idevice。
+5. 点击“管理配对文件”，然后点击“放置到所有应用”（或放到 SideStore 旁边）。
+6. 安装完成后打开 SideStore。
+7. 刷新 SideStore 以查看一切是否正常。
+8. 如果第 7 步不起作用，请进入 SideStore 中的设置，向下滚动并点击“VPN 配置”，将“设备 IP”设置为 10.7.0.1（或者如果你修改了目标 LocalDevVPN IP，则设置为你为“设备 IP”设置的任何值）。
+9. 如果第 8 步不起作用，将 anisette 改为 Macley。
+10. 如果第 9 步不起作用，请重启你的 iDevice。
 
+### (1007) 此应用的格式无效。
 `SideStore.OperationError 1007`
 
-这意味着您尝试安装的应用程序并非标准的.ipa格式。请尝试从其他位置下载该应用程序。
+这意味着你尝试安装的应用不是标准的 .ipa。请尝试从其他位置下载该应用。
 
-#### (1008) Invalid parameters.
-
+### (1008) 参数无效。
 `SideStore.OperationError 1008`
 
-这意味着发生了内部错误，SideStore 无法提供执行请求任务所需的信息。请重新尝试操作，并查阅我们的[故障排除指南](./troubleshooting.mdx)获取更多帮助。若问题持续存在，您可直接通过我们的 Discord 服务器联系我们。
+这意味着发生了内部错误，SideStore 无法提供执行所请求的任务所需的信息。请重试，并查看我们的 [Troubleshooting Guide](./) 以获取更多帮助。如果问题仍然存在，可以在我们的 [Discord server](https://dis.sidestore.io/) 直接联系我们。
 
-#### (1009) You cannot register more than 10 App IDs within a 7-day period.
-
+### (1009) 你无法在 7 天期限内注册超过 10 个 App IDs。
 `SideStore.OperationError 1009`
 
-这意味着您已达到可用的应用ID数量上限。应用ID无法手动删除。若应用在首次安装或上次更新后仍存在7天，应用ID将自动续期；若在此期间被删除，则会过期。请在“我的应用”标签页中查看应用ID的到期时间。
+这意味着你已达到可用的 App IDs 最大数量。App IDs 无法手动删除。如果应用在首次安装或上次续期后的 7 天内仍然存在，App IDs 会续期；如果已被删除，则会过期。请查看“我的应用”选项卡中的 App IDs，了解它们何时过期。
 
-#### (1010) There are no AltStore sources.
-
+### (1010) 没有 SideStore 源。
 `SideStore.OperationError 1010`
 
-这意味着发生了内部错误，SideStore 无法提供执行请求任务所需的信息。请重新尝试操作，并查阅我们的[故障排除指南](./troubleshooting.mdx)获取更多帮助。若问题持续存在，您可直接通过我们的 Discord 服务器联系我们。
+这意味着发生了内部错误，SideStore 无法获取你添加的任何 AltSources 的更改。请重试，并查看我们的 [Troubleshooting Guide](./) 以获取更多帮助。如果问题仍然存在，可以在我们的 [Discord server](https://dis.sidestore.io/) 直接联系我们。
 
-#### (1011) SideStore was denied permission to launch the app.
-
+### (1011) SideStore 被拒绝启动该应用。
 `SideStore.OperationError 1011`
 
-这意味着SideStore无法启动侧载应用，因为您在“SideStore想要打开\[应用]”的提示中点击了“取消”，或者您仍需在设置中信任您的Apple ID。
+这意味着 SideStore 无法启动侧载的应用，因为你在“SideStore 想要打开 \\[app]”提示中点击了“取消”，或者因为你仍然需要在设置中信任你的 Apple 账户。
 
-#### (1012) SideStore's shared app group could not be accessed.
-
+### (1012) 无法访问 SideStore 的共享应用组。
 `SideStore.OperationError 1012`
 
-这意味着SideStore无法访问应用备份存储目录。请确保您使用的是最新版AltServer安装SideStore，而非通过其他方式安装。
+这意味着 SideStore 无法访问存储应用备份的目录。请确保你使用最新版本的 AltServer 安装 SideStore，而不是通过其他方法安装。
 
-#### (1403) Unable to connect to SideJITServer.
-
+### (1403) 无法连接到 SideJITServer。
 `SideStore.OperationError 1403`
 
-请确保您与运行SideJITServer的计算机处于同一Wi-Fi网络，且防火墙已正确配置。或者，您可以在启用StosVPN并处于Wi-Fi或飞行模式时，通过iOS 17.4-18.6系统内置的“启用JIT”选项来启用JIT功能。
+请确保你与运行 SideJITServer 的电脑处于同一 Wi-Fi，并且你的防火墙已进行相应设置。或者，你也可以使用内置的“Enable JIT”选项，在已启用 LocalDevVPN且使用 Wi-Fi 或飞行模式的情况下，在 iOS 17.4-18.6 上启用 JIT。
 
-#### (1412) Unable to connect to a V3 anisette server.
-
+### (1412) 无法连接到 V3 anisette 服务器。
 `SideStore.OperationError 1412`
 
-您的设备无法从V3 Anisette服务器接收数据。请重试，或切换Anisette服务器。
+你的设备无法从 V3 anisette 服务器接收数据。请重试，或更换 anisette 服务器。
 
-#### (1414) No Wi-Fi/StosVPN.
-
+### (1414) 无 Wi-Fi/StosVPN。
 `SideStore.OperationError 1414`
 
-您似乎未连接至Wi-Fi和/或StosVPN。SideStore在未连接Wi-Fi和StosVPN的情况下无法刷新或安装应用程序，请确保两者均已连接。若仍无法解决，请[使用iloader重新导入配对文件](/docs/advanced/pairing-file)。
+你似乎未连接到 Wi-Fi 和/或 LocalDevVPN。SideStore 在没有 Wi-Fi 和 LocalDevVPN 的情况下无法刷新或安装应用，请确保两者均已连接。如果这样仍无法解决问题，请[replace your pairing file using iloader](/docs/advanced/pairing-file)。
 
 
-## Minimuxer相关错误
-
-#### (4) AFC was unable to manage files on the device.
-
+## Minimuxer 错误
+### (4) AFC 无法管理设备上的文件。
 `minimuxer.MinimuxerError 4`
 
-这意味着您正在尝试在不受支持的iOS版本上启用即时编译（JIT）。SideStore仅支持在iOS 17.4-18.6版本上启用即时编译功能。
+这意味着你正在尝试在不支持的 iOS 版本上启用 JIT。SideStore 仅支持在 iOS 17.4-18.6 上启用 JIT。
 
-#### (27) AFC was unable to manage files on the device.
-
+### (27) AFC 无法管理设备上的文件。
 `minimuxer.MinimuxerError 27`
 
-请确保Wi-Fi和StosVPN均已连接。若错误仍未解决，请[使用iloader重新导入配对文件](/docs/advanced/pairing-file)。
+确保 Wi-Fi 和 LocalDevVPN 均已连接。如果错误仍未解决，请[replace your pairing file with iloader](/docs/advanced/pairing-file)。
 
+如果你使用的是 iOS 26.4 或更高版本，请更新到 SideStore（nightly）。
 
-## Apple开发者相关错误
 
-#### (3000) An unknown error occurred.
+## Apple Developer 错误
+### (3000) 发生未知错误。
+`SideStore.AppleDeveloperError`
 
-`AltStore.AppleDeveloperError`
+更多信息即将更新
 
-新信息即将发布。
+### (3001) 提供的参数无效。
+`SideStore.AppleDeveloperError`
 
-#### (3001) The provided parameters are invalid.
+更多信息即将更新
 
-`AltStore.AppleDeveloperError`
+### (3002) Apple ID 或密码不正确。
+`SideStore.AppleDeveloperError`
 
-新信息即将发布。
+这意味着你使用的 Apple 账户凭据无效。请确保用户名和密码正确无误。
 
-#### (3002) Incorrect Apple ID or password.
+如果你仍有问题，也可以尝试创建一个新的 Apple 账户用于 SideStore。
 
-`AltStore.AppleDeveloperError`
+### (3003) 需要应用专用密码。你可以在 appleid.apple.com 上创建一个。
+`SideStore.AppleDeveloperError`
 
-这意味着您使用的Apple ID凭据无效。请确保用户名和密码正确无误。
+更多信息即将更新。
 
-若问题仍未解决，您也可尝试创建新的Apple ID用于SideStore。
+### (3004) 你不属于任何开发团队。
+`SideStore.AppleDeveloperError`
 
-#### (3003) An app-specific password is required. You can create one at appleid.apple.com.
+更多信息即将更新。
 
-`AltStore.AppleDeveloperError`
+### (3005) 此设备的 UDID 无效。
+`SideStore.AppleDeveloperError`
 
-新信息即将发布。
+更多信息即将更新。
 
-#### (3004) You are not a member of any development teams.
+### (3006) 此设备已通过另一个 ID 注册。
+`SideStore.AppleDeveloperError`
 
-`AltStore.AppleDeveloperError`
+更多信息即将更新。
 
-新信息即将发布。
+### (3007) 证书请求无效。
+`SideStore.AppleDeveloperError`
 
-#### (3005) This device's UDID is invalid.
+更多信息即将更新。
 
-`AltStore.AppleDeveloperError`
+### (3008) 此团队没有序列号为此请求的证书。
+`SideStore.AppleDeveloperError`
 
-新信息即将发布。
+更多信息即将更新。
 
-#### (3006) This device is already registered with another ID.
+### (3009) 此应用的名称无效。
+`SideStore.AppleDeveloperError`
 
-`AltStore.AppleDeveloperError`
+SideStore 无法向 Apple 注册 App ID，因为应用名称包含非 ASCII 字符。你可以尝试从其他来源下载。
 
-新信息即将发布。
+### (3010) 此应用的 bundle identifier（包标识符）无效。
+`SideStore.AppleDeveloperError`
 
-#### (3007) The certificate request is invalid.
+更多信息即将更新。
 
-`AltStore.AppleDeveloperError`
+### (3011) 此应用的 bundle identifier（包标识符）已注册。
+`SideStore.AppleDeveloperError`
 
-新信息即将发布。
+更多信息即将更新。
 
-#### (3008) There is no certificate with the requested serial number for this team.
+### (3012) 此团队没有标识符为此请求的 App ID。
+`SideStore.AppleDeveloperError`
 
-`AltStore.AppleDeveloperError`
+更多信息即将更新。
 
-新信息即将发布。
+### (3013) 你只能每 7 天注册 10 个 App IDs。
+`SideStore.AppleDeveloperError`
 
-#### (3009) The name for this app is invalid.
+更多信息即将更新。
 
-`AltStore.AppleDeveloperError`
+### (3014) 提供的应用组无效。
+`SideStore.AppleDeveloperError`
 
-SideStore 无法向 Apple 注册应用程序 ID，因为应用名称包含非 ASCII 字符。您可以尝试从其他来源下载。
+更多信息即将更新。
 
-#### (3010) The bundle identifier for this app is invalid.
+### (3015) 应用组不存在。
+`SideStore.AppleDeveloperError`
 
-`AltStore.AppleDeveloperError`
+更多信息即将更新。
 
-新信息即将发布。
+### (3016) 所请求的配置文件（provisioning profile）的标识符无效。
+`SideStore.AppleDeveloperError`
 
-#### (3011) The bundle identifier for this app has already been registered.
+更多信息即将更新。
 
-`AltStore.AppleDeveloperError`
+### (3017) 此团队没有标识符为此请求的配置文件（provisioning profile）。
+`SideStore.AppleDeveloperError`
 
-新信息即将发布。
+如果你看到此错误，很可能是由于 Apple 最近所做的服务器端更改所致。请查看以下公告以获取更多信息: [https://twitter.com/SideStoreio/status/1638599316762664974?s=20](https://twitter.com/SideStoreio/status/1638599316762664974?s=20)
 
-#### (3012) There is no App ID with the requested identifier on this team.
+### (3018) 此账户需要使用双重认证登录。
+`SideStore.AppleDeveloperError`
 
-`AltStore.AppleDeveloperError`
+更多信息即将更新。
 
-新信息即将发布。
+### (3019) 验证码不正确。
+`SideStore.AppleDeveloperError`
 
-#### (3013) You may only register 10 App IDs every 7 days.
+更多信息即将更新。
 
-`AltStore.AppleDeveloperError`
+### (3020) 未能与服务器执行身份验证握手。
+`SideStore.AppleDeveloperError`
 
-新信息即将发布。
+更多信息即将更新。
 
-#### (3014) The provided app group is invalid.
+### (3021) 提供的 anisette 数据无效。
+`SideStore.AppleDeveloperError`
 
-`AltStore.AppleDeveloperError`
+此错误意味着用于验证你 AppleID 的信息已过期或无效。请确保你的计算机日期和时间准确无误，并且已经从 Apple 安装了 iTunes 和 iCloud。
 
-新信息即将发布。
-
-#### (3015) App group does not exist.
-
-`AltStore.AppleDeveloperError`
-
-新信息即将发布。
-
-#### (3016) The identifier for the requested provisioning profile is invalid.
-
-`AltStore.AppleDeveloperError`
-
-新信息即将发布。
-
-#### (3017) There is no provisioning profile with the requested identifier on this team.
-
-`AltStore.AppleDeveloperError`
-
-若您看到此错误提示，很可能是由于苹果公司近期在服务器端进行的变更所致。更多详情请参阅以下公告：[Twitter](https://twitter.com/altstoreio/status/1638599316762664974?s=20)
-
-#### (3018) This account requires signing in with two-factor authentication.
-
-`AltStore.AppleDeveloperError`
-
-新信息即将发布。
-
-#### (3019) Incorrect verification code.
-
-`AltStore.AppleDeveloperError`
-
-新信息即将发布。
-
-#### (3020) Failed to perform authentication handshake with server.
-
-`AltStore.AppleDeveloperError`
-
-新信息即将发布。
-
-#### (3021) The provided anisette data is invalid.
-
-`AltStore.AppleDeveloperError`
-
-此错误表示用于验证您的AppleID信息的数据已过期或无效。请确保您的计算机日期和时间设置准确无误，并已从Apple官方渠道安装iTunes和iCloud。
-
-#### Apple API相关错误
-
-#### (1100) Your session has expired.
-
+### Apple API 错误
+### (1100) 你的会话已过期。
 `Apple.APIError`
 
-此错误表示用于验证您的 Apple ID 的信息已过期或无效。请确保计算机的日期和时间设置准确无误，然后重试。
+此错误意味着用于验证你 Apple 账户的信息已过期或无效。请确保你计算机的日期和时间准确，然后重试。
 
-#### (1102) Apple ID cannot be used for development.
-
+### (1102) Apple ID 不能用于开发。
 `Apple.APIError`
 
-您可能需要在[developer.apple.com](https://developer.apple.com)上同意苹果的服务条款。如果此方法无效，您可以创建一个专用于侧载的新“一次性”Apple ID。
+你可能需要在 [developer.apple.com](https://developer.apple.com) 上同意 Apple 的服务条款。如果这样仍无法解决问题，你可以创建一个专门用于侧载的全新“throwaway” Apple 账户。
 
-#### (-20101) Your account information was entered incorrectly.
-
+### (-20101) 你的账户信息输入有误。
 `Apple.APIError`
 
-此错误表示用于验证 Apple ID 的用户名或密码已过期或无效。请确保您已正确输入两者，并确认计算机的日期和时间设置准确无误。
+此错误意味着你用于验证 Apple 账户的用户名或密码已过期或无效。请确保两者都正确输入，并且你计算机的日期和时间准确无误。
 
 ## 其他错误
-
-#### (512) Failed to write to disk
-
+### (512) 写入磁盘失败
 `NSCocoaErrorDomain`
 
-这意味着将文件写入磁盘时发生了错误。请确保您的手机和电脑都有足够的可用磁盘空间，然后重试。
-
-#### ldid相关错误
-
-`ldid.cpp(X): X`
-
-请按照以下步骤修复此错误：
-
-1. 首先，您需要安装 Feather。
-2. 随后，将存在问题的 IPA 文件导入 Feather 应用，同时导入任意 .mobileprovision 和 .p12 文件（这些文件可以是过期的，因为我们仅利用该应用重新分配 IPA 文件的头部信息）。
-3. 使用导入的证书对 IPA 文件进行签名。
-4. 在文件管理器中打开签名后的应用，重新打包为IPA格式。
-5. 将打包后的IPA安装至AltStore。
+这意味着在将文件写入磁盘时发生了错误。请确保你的手机有足够的可用磁盘空间，然后重试。
 
 ### (-1011) NSURLErrorDomain
+前往 https://developer.apple.com/，登录，并接受新的 Apple Developer 服务条款。
 
-访问 https://developer.apple.com/，登录并接受新的 Apple 开发者服务条款。
+### ldid 错误
+`ldid.cpp(X): X`
+
+按照以下步骤修复此错误：
+
+1. 安装 [Feather](https://github.com/khcrysalis/Feather/releases/latest)。
+2. 将存在此问题的 IPA 导入 Feather，同时导入任意随机 .mobileprovision 和 .p12 文件（它们可以已过期，因为我们只是用这个应用来重写 IPA 的头）。
+3. 使用你导入的证书为 IPA 签名。
+4. 在文件中打开已签名的应用，并重新打包为 IPA。
+5. 在 SideStore 中安装打包后的 IPA。

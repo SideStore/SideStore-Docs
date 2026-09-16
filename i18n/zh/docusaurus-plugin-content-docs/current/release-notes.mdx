@@ -1,73 +1,72 @@
 ---
-title: 发行文档
-description: SideStore发行文档的存档。
+title: Release Notes
+description: A collection of SideStore release notes.
 sidebar_position: 6
 ---
 
-# Stable Notes
+# 稳定版本说明
 
 ## 0.6.2
 
-### Changelog
-- Deprecation of WireGuard, complete transition to [StosVPN](https://apps.apple.com/us/app/stosvpn/id6744003051)
-- jitterbugpair is being superseded by [idevice pair](https://github.com/jkcoxson/idevice_pair)
-- Merge more of AltStore 2.0 upstream
-- Added support for importing/exporting your Apple ID's certificate for use with multiple devices, instructions to utilize this [here](https://github.com/SideStore/SideStore/pull/1008#issue-3138680291)
-- Adds url scheme/allow exporting certificate (to LiveContainer)
-- Fix issue where installing apps would get stuck around 75%
-- Add option to resuse the main App ID profile for extensions instead of removing/registering them (only one app id/app)
-- General type fixes and visual updates
+### 更新日志
+- 弃用 WireGuard，完全过渡到 [StosVPN](https://apps.apple.com/us/app/stosvpn/id6744003051)
+- 合并更多 AltStore 2.0 上游内容
+- 增加了导入/导出你的 Apple ID 证书以用于多台设备的支持，使用方法说明[here](https://github.com/SideStore/SideStore/pull/1008#issue-3138680291)
+- 添加了 url scheme/允许导出证书（到 LiveContainer）
+- 修复安装应用在 75% 左右卡住的问题
+- 添加为扩展重用主 App ID 配置文件的选项，而不是移除/注册它们（仅限一个 app id/应用）
+- 常规类型修复和视觉更新
 
-### What's Changed:
-- Rebase 2.0 wip by @nythepegasus in [#794](https://github.com/SideStore/SideStore/pull/794)
-- [Refresh]: Remove install stuffs from refresh since in refresh should only renew provisioning profiles by @mahee96 in [#846](https://github.com/SideStore/SideStore/pull/846)
-- [Settings]: Fix: DisableAppLimit switch reverting back to off state even if on iOS where sparseRestore is not patched yet by @mahee96 in [#850](https://github.com/SideStore/SideStore/pull/850)
-- Update trustedapps.json by @neoarz in [#853](https://github.com/SideStore/SideStore/pull/853)
-- [Backup]: Fix: update logic during install missed since override keyword was missing by @mahee96 in [#857](https://github.com/SideStore/SideStore/pull/857)
-- Fix Repository App Previews by @neoarz in [#871](https://github.com/SideStore/SideStore/pull/871)
-- Feature: Bulk sources-add in sources screen with capability to stage them before persisting into database by @mahee96 in [#888](https://github.com/SideStore/SideStore/pull/888)
-- Version 0.6.0: CoreData Migrations fix including xcdatamodels and xcmappingmodels by @mahee96 in #894
-- Feature: Render in-app update description as (full) markdown by @mahee96 in #897
-- fix: typo in hasUpdate comparison by @l2dy in [#900](https://github.com/SideStore/SideStore/pull/900)
-- Update SettingsViewController.swift by @neoarz in [#915](https://github.com/SideStore/SideStore/pull/915)
-- WIP: Fixes for migration issues when migrating from 0.5.9 to 0.6.0 by @mahee96 in #920
-- Fix typo "levaraging" -> "leveraging" by @lafrenierejm in [#926](https://github.com/SideStore/SideStore/pull/926)
-- Added StosVPN to the EM Proxy part. by @Br0des in [#940](https://github.com/SideStore/SideStore/pull/940)
-- StosVPN-integration: Removed em_proxy and EmotionalDamage module in favour of stosVPN by @mahee96 in [#945](https://github.com/SideStore/SideStore/pull/945)
-- Disable minimuxer ready check which shows NO WIFI/VPN error since stosVPN can work on cellular too by @mahee96 in [#935](https://github.com/SideStore/SideStore/pull/935)
-- Add iOS 17.4+ JIT and mounting by @jkcoxson in [#953](https://github.com/SideStore/SideStore/pull/953)
-- Add export certificate feature by @hugeBlack in [#959](https://github.com/SideStore/SideStore/pull/959)
-- Feat: Add Pairing File Export URL callback and replace Wireguard with StosVPN by @stossy11 in [#962](https://github.com/SideStore/SideStore/pull/962)
-- Change front-facing references to AltStore by @owoellen in [#987](https://github.com/SideStore/SideStore/pull/987)
-- Update OperationError.swift for idevice_pair by @CelloSerenity in [#995](https://github.com/SideStore/SideStore/pull/995)
-- Add import/export certificate feature by @hugeBlack in [#1008](https://github.com/SideStore/SideStore/pull/1008)
-- Fix pairing file doc link by @CelloSerenity in [#1011](https://github.com/SideStore/SideStore/pull/1011)
-- Add option for using main bundle's profile for app extensions, update AltSign & libmd by @hugeBlack in [#1012](https://github.com/SideStore/SideStore/pull/1012)
-- Use main profile when refreshing by @hugeBlack in [#1013](https://github.com/SideStore/SideStore/pull/1013)
+### 更改内容：
+- 重新基于 2.0 wip。作者 @nythepegasus，于 [#794](https://github.com/SideStore/SideStore/pull/794) 中
+- [Refresh]: 移除刷新中的安装内容，因为刷新时应仅续订 provisioning profiles。作者 @mahee96，于 [#846](https://github.com/SideStore/SideStore/pull/846) 中
+- [Settings]: 修复：DisableAppLimit 开关即使在 sparseRestore 尚未修补的 iOS 上也会重置为关闭状态。作者 @mahee96，于 [#850](https://github.com/SideStore/SideStore/pull/850) 中
+- 更新 trustedapps.json。作者 @neoarz，于 [#853](https://github.com/SideStore/SideStore/pull/853) 中
+- [Backup]: 修复：由于缺少 override 关键字，安装期间的更新逻辑被遗漏。作者 @mahee96，于 [#857](https://github.com/SideStore/SideStore/pull/857) 中
+- 修复 Repository App Previews。作者 @neoarz，于 [#871](https://github.com/SideStore/SideStore/pull/871) 中
+- 功能：在源屏幕中批量添加源，并且能够在持久化到数据库之前对它们进行暂存。作者 @mahee96，于 [#888](https://github.com/SideStore/SideStore/pull/888) 中
+- 版本 0.6.0：CoreData 迁移修复，包括 xcdatamodels 和 xcmappingmodels。作者 @mahee96，于 #894 中
+- 功能：将应用内更新描述渲染为（完整）markdown。作者 @mahee96，于 #897 中
+- 修复：hasUpdate 比较中的拼写错误。作者 @l2dy，于 [#900](https://github.com/SideStore/SideStore/pull/900) 中
+- 更新 SettingsViewController.swift。作者 @neoarz，于 [#915](https://github.com/SideStore/SideStore/pull/915) 中
+- 进行中：修复从 0.5.9 迁移到 0.6.0 时的迁移问题。作者 @mahee96，于 #920 中
+- 修复拼写错误"levaraging" -> "leveraging"。作者 @lafrenierejm，于 [#926](https://github.com/SideStore/SideStore/pull/926) 中
+- 将 StosVPN 添加到 EM Proxy 部分。作者 @Br0des，于 [#940](https://github.com/SideStore/SideStore/pull/940) 中
+- StosVPN 集成：移除了 em_proxy 和 EmotionalDamage 模块，改用 stosVPN。作者 @mahee96，于 [#945](https://github.com/SideStore/SideStore/pull/945) 中
+- 禁用 minimuxer 就绪检查，该检查会显示 NO WIFI/VPN 错误，因为 stosVPN 也可以在蜂窝网络上工作。作者 @mahee96，于 [#935](https://github.com/SideStore/SideStore/pull/935) 中
+- 添加 iOS 17.4+ 的 JIT 和挂载。作者 @jkcoxson，于 [#953](https://github.com/SideStore/SideStore/pull/953) 中
+- 添加导出证书功能。作者 @hugeBlack，于 [#959](https://github.com/SideStore/SideStore/pull/959) 中
+- 功能：添加配对文件导出 URL 回调，并用 StosVPN 替换 Wireguard。作者 @stossy11，于 [#962](https://github.com/SideStore/SideStore/pull/962) 中
+- 更改对 AltStore 面向用户的引用。作者 @owoellen，于 [#987](https://github.com/SideStore/SideStore/pull/987) 中
+- 更新 OperationError.swift 用于 idevice_pair。作者 @CelloSerenity，于 [#995](https://github.com/SideStore/SideStore/pull/995) 中
+- 添加导入/导出证书功能。作者 @hugeBlack，于 [#1008](https://github.com/SideStore/SideStore/pull/1008) 中
+- 修复配对文件文档链接。作者 @CelloSerenity，于 [#1011](https://github.com/SideStore/SideStore/pull/1011) 中
+- 添加使用主 bundle 的配置文件用于应用扩展的选项，更新 AltSign 和 libmd。作者 @hugeBlack，于 [#1012](https://github.com/SideStore/SideStore/pull/1012) 中
+- 刷新时使用主配置文件。作者 @hugeBlack，于 [#1013](https://github.com/SideStore/SideStore/pull/1013) 中
 
 
 ## 0.6.1
 
-### Changelog
-It's spring already? Here's a new update that should fix migration issues from 0.5.9/0.5.10 and an expiration bug. Happy sideloading!
+### 更新日志
+原来已经是春天了吗？这是新的更新，应该可以修复来自 0.5.9/0.5.10 的迁移问题和一个过期 bug。祝侧载愉快！
 
-### What's Changed:
-- fix: typo in hasUpdate comparison by @l2dy in [#900](https://github.com/SideStore/SideStore/pull/900)
-- Update SettingsViewController.swift by @neoarz in [#915](https://github.com/SideStore/SideStore/pull/915)
-- Fixes for migration issues when migrating from 0.5.9 to 0.6.0 by @mahee96 in [#920](https://github.com/SideStore/SideStore/pull/920)
-- Fix typo "levaraging" -> "leveraging" by @lafrenierejm in [#926](https://github.com/SideStore/SideStore/pull/926)
-- Added StosVPN to the EM Proxy part. by @Br0des in [#940](https://github.com/SideStore/SideStore/pull/940)
+### 更改内容：
+- 修复：hasUpdate 比较中的拼写错误。作者 @l2dy，于 [#900](https://github.com/SideStore/SideStore/pull/900) 中
+- 更新 SettingsViewController.swift。作者 @neoarz，于 [#915](https://github.com/SideStore/SideStore/pull/915) 中
+- 修复从 0.5.9 迁移到 0.6.0 时的迁移问题。作者 @mahee96，于 [#920](https://github.com/SideStore/SideStore/pull/920) 中
+- 修复拼写错误"levaraging" -> "leveraging"。作者 @lafrenierejm，于 [#926](https://github.com/SideStore/SideStore/pull/926) 中
+- 将 StosVPN 添加到 EM Proxy 部分。作者 @Br0des，于 [#940](https://github.com/SideStore/SideStore/pull/940) 中
 
 
-## 0.6.0 - DO NOT use this build, use either 0.6.1 or 0.5.10 instead
+## 0.6.0 - 请勿使用此版本，请改用 0.6.1 或 0.5.10
 
-### Changelog
-It's March and we have some big changes. We've finally included AltStore 2.0 changes into SideStore. So you will get all the benefits of that and also some fixes in SideStore. Enjoy!
+### 更新日志
+现在是三月，我们带来了一些重大更改。我们终于将 AltStore 2.0 的更改纳入 SideStore。因此你将获得所有这些好处，以及 SideStore 中的一些修复。尽情享受吧！
 
-### What's Changed:
-- AltStore 2.0 changes in [#794](https://github.com/SideStore/SideStore/pull/794)
-- [Refresh]: Remove install stuffs from refresh since in refresh should only renew provisioning profiles by @mahee96 in [#846](https://github.com/SideStore/SideStore/pull/846)
-- [Settings]: Fix: DisableAppLimit switch reverting back to off state even if on iOS where sparseRestore is not patched yet by @mahee96 in [#850](https://github.com/SideStore/SideStore/pull/850)
-- [Backup]: Fix: update logic during install missed since override keyword was missing by @mahee96 in [#857](https://github.com/SideStore/SideStore/pull/857)
-- Feature: Bulk sources-add in sources screen with capability to stage them before persisting into database by @mahee96 in [#888](https://github.com/SideStore/SideStore/pull/888)
-- Feature: Render in-app update description as (full) markdown by @mahee96 in [#897](https://github.com/SideStore/SideStore/pull/897)
+### 更改内容：
+- AltStore 2.0 的更改，见 [#794](https://github.com/SideStore/SideStore/pull/794)
+- [Refresh]: 移除刷新中的安装内容，因为刷新时应仅续订 provisioning profiles。作者 @mahee96，于 [#846](https://github.com/SideStore/SideStore/pull/846) 中
+- [Settings]: 修复：DisableAppLimit 开关即使在 sparseRestore 尚未修补的 iOS 上也会重置为关闭状态。作者 @mahee96，于 [#850](https://github.com/SideStore/SideStore/pull/850) 中
+- [Backup]: 修复：由于缺少 override 关键字，安装期间的更新逻辑被遗漏。作者 @mahee96，于 [#857](https://github.com/SideStore/SideStore/pull/857) 中
+- 功能：在源屏幕中批量添加源，并且能够在持久化到数据库之前对它们进行暂存。作者 @mahee96，于 [#888](https://github.com/SideStore/SideStore/pull/888) 中
+- 功能：将应用内更新描述渲染为（完整）markdown。作者 @mahee96，于 [#897](https://github.com/SideStore/SideStore/pull/897) 中

@@ -1,21 +1,21 @@
 ---
-title: URL Schemes
-description: URL Schemes的操作指南
+title: URL Schema
+description: 一篇关于 url schema 的指南。
 ---
 
-# URL Schemes
+# URL Schema
 
-以下是可用于与SideStore交互的URL Schemes的列表。这些URL Schemes非常有用，因为它们让开发人员只需在他们的社交媒体或网站上放置一个一键链接，iOS就会直接在SideStore中打开此链接，并执行对应的操作。
+以下是可用于与 SideStore 交互的不同 URL Scheme 列表。这些方案非常有用，因为它们允许开发者简单地在他们的社交媒体或网站上放置一个一键链接，然后 iOS 将直接在 SideStore 中打开该链接，执行所指定的操作。
 
-目前使用URL Schemes可以做的事情仅限于安装应用程序和添加源，但将来会扩展到接受多个输入并执行各种其他任务。
+目前可以使用 URL Scheme 执行的操作仅限于安装应用和源，但未来将扩展为接收多个输入并执行各种其他任务。
 
-## 侧载远程托管的app
+## 安装远程托管的应用
 
 ```
 sidestore://install?url=[download url]
 ```
 
-## 添加一个AltSource
+## 添加 AltSource
 
 ```
 sidestore://source?url=[source url]

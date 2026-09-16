@@ -1,64 +1,70 @@
 ---
 title: 常见问题
-description: 在使用SideStore的过程中出现的常见问题
+description: 使用 SideStore 时遇到的常见问题。
 ---
 
 :::warning
 
-此页面目前还在完善过程中。页面提供的信息应该是准确的，但如如果需要帮助，请前往我们的[Discord服务器](https://dis.sidestore.io)进行提问。
+此页面目前仍在编写中。所提供的信息应该是准确的，但如有需要，请参考我们的 [Discord server](https://dis.sidestore.io/) 以获取帮助。
 
 :::
 
-## SideStore的常见问题
 
-### 我收到错误代码："X"
-#### 解决方案
-确认我们提供的[错误代码列表](error-codes)！
+## SideStore 的常见问题
 
-### AFC连接失败
+### 我遇到了最新 nightly 版本的问题
 #### 原因
-连接问题或是配对文件不可用。
+我们的 nightly 构建包含前沿的功能和改进，其中一些可能会导致不稳定。
 #### 解决方案
-1. 尝试重新连接，确保Wi-Fi和StosVPN均已连接
-2. 使用iloader生成并导入新的配对文件
+切换到最新的稳定版本。请不要就 nightly 构建中遇到的错误请求支持。
 
-### 没有Wi-Fi或VPN的连接
+### 我收到了错误代码："X"
 #### 原因
-minimuxer服务的连接出现了问题。
+发生了错误。
 #### 解决方案
-1. 如果您正在使用WireGuard，请更换到StosVPN
-2. 关闭任何的DNS阻止器
-3. 再试一次（多点点总会有用的）
-4. 重新启动SideStore
-5. 重新启动StosVPN
-6. 使用iloader生成并导入新的配对文件。
+请查看我们贴心的[list of error codes](error-codes)！
 
-### SideStore在安装过程中挂起
+### AFC 连接失败 / 无 Wi-Fi 或 VPN 连接
 #### 原因
-缓存或是协议出了问题。
+与 minimuxer 服务的连接问题。
 #### 解决方案
-1. 如果您并未更新SideStore的话，请进行更新，否则重启
-2. 清理缓存
-3. 更换Anisette服务器
-4. 在设置-Anisette服务器-中重置adi.pb，然后登出，并重新登录SideStore
+在每个步骤后都尝试刷新。如果它们不起作用，再继续下一步。
+1. 如果使用 WireGuard 或 StosVPN，请切换到 LocalDevVPN
+2. 关闭任何 DNS 拦截器
+3. 确保 LocalDevVPN 和 Wi-Fi 均已连接
+4. 再试一次（反复点击按钮有时会有帮助）
+5. 重启 SideStore
+6. 重启 LocalDevVPN
+7. 使用 iloader [Replace your pairing file](/docs/advanced/pairing-file)。
+
+### SideStore 在安装过程中途卡住
+#### 原因
+缓存或协议问题。
+#### 解决方案
+1. 更新 SideStore（如果适用）。否则，直接重启
+2. 清除缓存
+3. 更换 Anisette Server
+4. 在服务器中-重置 adi.pb，然后退出 SideStore 并重新登录
 5. 重启设备
-6. 重新生成配对文件
-7. 使用AltServer重新安装SideStore 
+6. 重新创建配对文件
+7. 使用 iloader 重新安装 SideStore
 
-### 无法启动SideStore
+### 无法启动 SideStore
 #### 原因
-存在多种可能的原因。
+有多种可能的原因。
 #### 解决方案
-1. 确保您已通过AltServer安装了SideStore
-2. 重新安装SideStore
+1. 确保你通过 iloader 安装了 SideStore
+2. 重新安装 SideStore
 
-如果以上方案均不可用，请按照以下步骤操作：
+如果上述方法不起作用，请执行以下操作：
 
-1. 删除SideStore以及您在SideStore中安装的所有应用
-2. 重新安装SideStore
-3. 导入您的配对文件并登录。（接下来会提示您是否刷新SideStore，选择否）
-4. 将`sidestore.ipa`安装到您的设备上
-5. 将`sidestore.ipa`文件导入到SideStore，就像您安装其他IPA文件一样
-6. 这会允许Sidestore进行一次全新的安装，希望这会解决您的问题
+1. 删除 SideStore 以及你从 SideStore 安装的所有应用
+2. 重新安装 SideStore
+3. 导入你的配对文件并登录。（它会提示你刷新 SideStore，请选择否）
+4. 将 `SideStore.ipa` 文件安装到你的设备
+5. 像安装任何其他 IPA 一样将 `SideStore.ipa` 文件导入 SideStore
+6. 这将允许 SideStore 进行一次干净的刷新，希望可以解决问题
 
-
+### 我在这里找不到我的问题
+#### 解决方案
+请查看我们的[comprehensive troubleshooting guide](/docs/troubleshooting)。

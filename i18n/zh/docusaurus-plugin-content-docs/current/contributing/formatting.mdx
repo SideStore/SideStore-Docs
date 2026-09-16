@@ -2,24 +2,24 @@
 sidebar_position: 2
 ---
 
-# 代码格式指南
+# 代码格式化规范
 
-本文件概述了SideStore项目中Swift和Objective-C代码的格式规范。统一的格式规范能提升代码库的可读性与可维护性。
+本文档概述了 SideStore 项目中 Swift 和 Objective-C 代码的格式化标准。一致的格式化能让代码库更易于阅读和维护。
 
-## 基本原则
+## 通用原则
 
-- **一致性**：遵循项目中现有的代码风格
+- **一致性**：遵循项目中已有的代码风格
 - **可读性**：代码应易于阅读和理解
-- **简洁性**：优先选择简单明了的解决方案，而非花哨的方案
-- **规范性**：尽可能遵循苹果官方的Swift和Objective-C规范
+- **简洁性**：优先采用简单清晰的方案，而非取巧的做法
+- **Apple 惯例**：尽可能遵循 Apple 官方的 Swift 和 Objective-C 惯例
 
-## Swift格式
+## Swift 格式化
 
 ### 命名规范
 
-#### 变量和函数
-- 使用**驼峰命名法**为变量，函数，以及方法命名
-- 使用能明确说明用途的描述性名称
+#### 变量与函数
+- 变量、函数和方法使用 **camelCase**
+- 使用能清晰表明用途的描述性名称
 
 ```swift
 // ✅ Good
@@ -33,9 +33,9 @@ func validate() -> Bool
 var installing: Bool
 ```
 
-#### 类、结构体、枚举和协议
-- 使用 **驼峰式大小写** 表示类型
-- 使用有描述性、名词化的名称
+#### 类、结构体、枚举与协议
+- 类型使用 **PascalCase**
+- 使用基于名词的描述性名称
 
 ```swift
 // ✅ Good
@@ -52,8 +52,8 @@ protocol managing
 ```
 
 #### 常量
-- 使用**驼峰式命名法**为常量命名
-- 建议为全局常量使用 **全部大写的蛇形命名法**
+- 常量使用 **camelCase**
+- 可考虑对全局常量使用 **SCREAMING_SNAKE_CASE**
 
 ```swift
 // ✅ Good
@@ -71,8 +71,8 @@ let max_retry_attempts = 3
 ### 缩进与间距
 
 #### 缩进
-- 使用**4个空格**作为缩进(非tab)
-- 将续行与起始分隔符对齐
+- 使用 **4 个空格**进行缩进（不要使用制表符）
+- 续行应与起始分隔符对齐
 
 ```swift
 // ✅ Good
@@ -90,9 +90,9 @@ completion: @escaping (Result<Void, Error>) -> Void) {
 }
 ```
 
-#### 行长度
-- 尽可能保持行长度在**120字符**以下
-- 在合乎逻辑的位置拆分过长的行
+#### 行长
+- 尽可能将每行控制在 **120 个字符**以内
+- 在逻辑合理的位置断行
 
 ```swift
 // ✅ Good
@@ -107,8 +107,8 @@ let longVariableName = SomeClass.createInstanceWithVeryLongMethodName(parameter1
 
 #### 间距
 - 运算符两侧使用单个空格
-- 不允许尾随空格
-- 函数与主要代码段之间应留单行空行
+- 行尾不留多余空白
+- 在函数之间以及主要代码段之间使用一个空行分隔
 
 ```swift
 // ✅ Good
@@ -140,9 +140,9 @@ func secondFunction(){
 
 ### 花括号与控制流
 
-#### 花括号式样
-- 在语句同一行上放置左大括号
-- 闭合大括号单独成行，与开头语句对齐
+#### 花括号风格
+- 左花括号与语句放在同一行
+- 右花括号单独成行，并与起始语句对齐
 
 ```swift
 // ✅ Good
@@ -169,9 +169,9 @@ else
 }
 ```
 
-#### 卫语句
-- 使用卫语句实现提前返回
-- 保持卫语句简单易读
+#### Guard 语句
+- 使用 guard 语句进行提前返回
+- 保持 guard 条件简单易读
 
 ```swift
 // ✅ Good
@@ -193,11 +193,11 @@ if let url = URL(string: urlString) {
 }
 ```
 
-### 类型注解与推断
+### 类型标注与类型推断
 
-#### 何时使用类型注解
-- 当类型不明确时使用类型注解
-- 当Swift能明确推断类型时省略类型注解
+#### 何时使用类型标注
+- 当类型不明确时使用类型标注
+- 当 Swift 能明确推断出类型时，省略类型标注
 
 ```swift
 // ✅ Good
@@ -213,8 +213,8 @@ let timeout = 30  // Unclear if Int or TimeInterval
 ### 函数声明
 
 #### 参数标签
-- 使用描述性参数标签
-- 当首参数标签符合自然语境时可省略
+- 使用描述性的参数标签
+- 当省略第一个参数标签读起来更自然时，可以省略
 
 ```swift
 // ✅ Good
@@ -227,8 +227,8 @@ func download(url: URL, completion: @escaping (Data?) -> Void)
 ```
 
 #### 返回类型
-- 尽可能将返回类型置于同一行
-- 换行处理非常长的签名
+- 尽可能将返回类型放在同一行
+- 当签名过长时将返回类型换行
 
 ```swift
 // ✅ Good
@@ -242,14 +242,14 @@ func complexFunction(withManyParameters param1: String,
 }
 ```
 
-## Objective-C 格式规范
+## Objective-C 格式化
 
 ### 命名规范
 
 #### 方法
-- 使用描述性方法名并明确标注参数
+- 使用带有清晰参数标签的描述性方法名
 - 以小写字母开头
-- 使用驼峰式命名法
+- 使用 camelCase
 
 ```objc
 // ✅ Good
@@ -262,9 +262,9 @@ func complexFunction(withManyParameters param1: String,
 ```
 
 #### 变量与属性
-- 使用驼峰命名法
-- 使用描述性名称
-- 实例变量前添加下划线
+- 使用 camelCase
+- Use descriptive names
+- 实例变量以下划线为前缀
 
 ```objc
 // ✅ Good
@@ -280,8 +280,8 @@ func complexFunction(withManyParameters param1: String,
 ```
 
 #### 类与协议
-- 使用驼峰命名法
-- 考虑为公共类添加前缀(例如 SS 表示 SideStore)
+- Use PascalCase
+- 可考虑为公开类使用前缀（例如用 SS 表示 SideStore）
 
 ```objc
 // ✅ Good
@@ -293,11 +293,11 @@ func complexFunction(withManyParameters param1: String,
 @protocol appManaging <NSObject>
 ```
 
-### 间距与格式
+### 间距与格式化
 
 #### 方法声明
-- 参数垂直对齐
-- 使用统一间距
+- 参数应垂直对齐
+- 使用一致的间距
 
 ```objc
 // ✅ Good
@@ -309,9 +309,9 @@ func complexFunction(withManyParameters param1: String,
 - (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title version:(NSString *)version;
 ```
 
-#### 大括号
-- 开括号与内容同行
-- 闭括号单独成行
+#### 花括号
+- 左花括号放在同一行
+- 右花括号单独成行
 
 ```objc
 // ✅ Good
@@ -334,9 +334,9 @@ else
 
 ## 注释与文档
 
-### Swift 文档规范
-- 使用 `///` 标记文档注释
-- 公开 API 需包含参数与返回值说明
+### Swift 文档
+- 使用 `///` 编写文档注释
+- 为公开 API 包含参数和返回值的说明
 
 ```swift
 /// Downloads and installs an app from the specified URL
@@ -352,9 +352,9 @@ func installApp(withIdentifier identifier: String,
 }
 ```
 
-### Objective-C 文档规范
-- 使用 `/** */` 标记文档注释
-- 遵循 HeaderDoc 或 Doxygen 规范
+### Objective-C 文档
+- 使用 `/** */` 编写文档注释
+- 遵循 HeaderDoc 或 Doxygen 约定
 
 ```objc
 /**
@@ -368,9 +368,9 @@ func installApp(withIdentifier identifier: String,
                       completion:(void (^)(NSError *error))completion;
 ```
 
-### 内联注释
-- 单行注释使用`//`
-- 请保持评论简洁且切题
+### 行内注释
+- 使用 `//` 编写单行注释
+- 保持注释简洁且有针对性
 - 解释**为什么**，而非**是什么**
 
 ```swift
@@ -385,9 +385,9 @@ let maxRetryAttempts = 3
 
 ## 错误处理
 
-### Swift错误处理
-- 使用带有`throws`和`Result`类型的Swift原生错误处理
-- 使用有意义的错误类型
+### Swift 错误处理
+- 使用 Swift 原生的 `throws` 和 `Result` 类型进行错误处理
+- 创建有意义的错误类型
 
 ```swift
 enum InstallationError: Error {
@@ -405,9 +405,9 @@ func installApp() throws -> App {
 }
 ```
 
-### Objective-C错误处理
-- 使用`NSError **`参数模式
-- 设置前请务必检查错误参数是否为非空值
+### Objective-C 错误处理
+- 使用 `NSError **` 参数模式
+- 在设置前，始终检查错误参数是否为非 nil
 
 ```objc
 - (BOOL)installAppWithError:(NSError **)error {
@@ -427,7 +427,7 @@ func installApp() throws -> App {
 
 ### 内存管理
 - 在 Swift 和 Objective-C 中正确使用 ARC
-- 请注意引用周期问题；请正确使用`weak`和`unowned`引用
+- 注意循环引用；恰当使用 `weak` 和 `unowned` 引用
 
 ```swift
 // ✅ Good
@@ -442,9 +442,9 @@ class AppInstaller {
 }
 ```
 
-### 线程处理
-- 始终在主队列上更新用户界面
-- 使用合适的队列处理后台任务
+### 线程
+- 始终在主队列上更新 UI
+- 为后台任务使用合适的队列
 
 ```swift
 // ✅ Good
@@ -456,9 +456,9 @@ DispatchQueue.global(qos: .userInitiated).async {
 }
 ```
 
-### 可选的处理
-- 使用安全的拆包技术
-- 优先使用guard语句实现提前返回
+### 可选值处理
+- 使用安全的解包技术
+- 优先使用 guard 语句进行提前返回
 
 ```swift
 // ✅ Good
@@ -469,10 +469,10 @@ guard let data = response.data,
 }
 ```
 
-## Tools and Automation
+## 工具与自动化
 
 ### SwiftLint
-您可以考虑使用SwiftLint自动执行这些格式化规则：
+可考虑使用 SwiftLint 自动强制执行其中的许多格式化规则：
 
 ```yaml
 # .swiftlint.yml
@@ -489,4 +489,4 @@ opt_in_rules:
   - force_unwrapping
 ```
 
-切记: 这些准则应有助于提高代码的可读性和可维护性。如有疑问，应优先考虑清晰度以及与现有代码库的一致性。
+请记住：这些规范旨在提升代码的可读性和可维护性。如有疑问，应优先保证清晰性，并与现有代码库保持一致。
