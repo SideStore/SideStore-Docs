@@ -1,50 +1,51 @@
 ---
-title: 启用JIT
-description: 关于如何为需要即时编译（JIT）的应用程序启用JIT编译的教程。
+title: 启用 JIT
+description: 一篇关于如何为需要它的应用启用即时（JIT）编译的教程。
 ---
 
 :::note
-iOS 26再次破坏了JIT。StikDebug发布了一个新版本尝试解决，但是目前支持仍处于受限阶段。截止本指南编写时(11月10日)支持的应用如下:
+iOS 26 再次破坏了 JIT，而 26.6 和 27 仅对少数应用可用。StikDebug 已发布一个带修复的更新，但支持有限。截至撰写本文时（2026 年 6 月 17 日），仅支持以下应用：
 * UTM
 * Amethyst
 * MeloNX
 * maciOS
-* DolphiniOS
+* DolphiniOS（最高支持至 26.6）
 * Geode
+* Manic EMU
+* Flycast（iOS 26 分支）
+* MeloCafe
+* ARMSX2
+* DukeX（A13/A14/M1 芯片上最高支持至 27）
 
-请留意我们在Discord服务器的公告频道以及[idevice服务器](https://discord.gg/mACqxMxP3X)的公告和兼容性频道以获取未来的进展。
+请持续关注我们 Discord 服务器中的公告频道，以及 [idevice server](https://discord.gg/mACqxMxP3X) 的公告和兼容性频道以获取进一步更新。
 
-启用JIT的方法有很多，如AltJIT、SideJITServer等。本教程将介绍StikDebug（旧称StikJIT）的使用，因为它是我们目前推荐的方法。有关更多信息，请参阅[官方StikDebug配对指南](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md)。
+根据你的 iOS 版本，有许多启用 JIT 的方法。本教程将介绍 StikDebug（原 StikJIT）的使用，因为这是目前我们推荐的方法。如需更多信息，请参阅[official StikDebug pairing guide](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md)。
 
-作为替代方案，SideStore 0.6.2更新了minimuxer，允许了类似于StikDebug的内置JIT功能。要使用此功能，只需确保您已连接到StosVPN，并启用了Wi-Fi或飞行模式，然后点击“我的应用程序”，长按您要启用JIT的应用程序，点击“启用JIT”。
+作为替代方案，SideStore 0.6.2 包含了对 minimuxer 的更新，可在 iOS 16 及以下版本或非 TXM 支持（4 年以上）的设备上提供类似 StikDebug 的内置 JIT 功能。要使用此功能，只需确保你通过 Wi-Fi 或启用飞行模式连接到 LocalDevVPN，然后前往“My Apps”，长按你想要启用 JIT 的应用，并点击“enable JIT”。
 :::
 
-## 使用前提
-* 一台运行了iOS/iPadOS 17.4-18.x的苹果设备(包括18.4b1)。如果您正在使用iOS/iPadOS17.0-17.3, 您必须使用诸如[SideJITServer](https://github.com/nythepegasus/SideJITServer)之类的替代方案。如果您的设备已经发布4年以上(且不支持TXM)的话，SideStore的JIT启用工具仅在iOS26可用。
+## 前提条件
+* 一台运行 iOS/iPadOS 17.4 至所有 iOS 18 版本（不含 18.4b1）的 iPhone 或 iPad。如果你使用的是 17.0-17.3，你必须使用替代方案，例如 [SideJITServer](https://github.com/nythepegasus/SideJITServer)。
 
-## 使用App Store安装StikDebug
+## StikDebug 安装步骤：
 
-1. **安装StikDebug** 
-   从[App Store](https://apps.apple.com/us/app/stikdebug/id6744045754)安装StikDebug。
-:::note 不错的是，目前StikDebug中使用的VPN与SideStore中使用的VPN类似，这意味着您也可以使用它在SideStore中安装和刷新应用程序，类似于StosVPN。
-:::
-
-2. **安装步骤：**
-   遵循下面的标准安装步骤以安装程序。
+1. **安装 StikDebug**
+   从[Official AltStore Source](https://intradeus.github.io/http-protocol-redirector?r=sidestore://https://stikdebug.xyz/index.json)安装 StikDebug。
 
 
-### 标准安装步骤：
+2. **放置配对文件：**  
+使用 iloader 导入你用于 SideStore 的同一个**配对文件**。有关此过程的更多信息，请参阅[here](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md)。
 
-1. **上传配对用文件：**  
-   打开并关闭StikDebug以在文件中构建应用程序需求的文件夹，然后导入您使用idevice pair生成的，导入到SideStore的**同一个配对文件**。有关此过程的更多信息，请参阅[此处](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md)。
 
-2. **挂载DDI:**  
-   请确保您已经连接了Wi-Fi和VPN，并且导入了配对文件后，打开StikDebug，关闭并重新打开。这会挂载DDI，每次重新启动设备时都必须执行。
+### 标准设置流程（首次必须执行，且每次重启设备后都需再次执行）
+
+1. **挂载 DDI：**  
+   打开 StikDebug，确保 Wi-Fi 和 VPN 已连接且配对文件已放置，然后强制关闭它并重新打开。这将会挂载 DDI。
+
+## 要启用 JIT：
+
+1. **启用 VPN：**  
+   首先在 Wi-Fi 或飞行模式下打开 LocalDevVPN。现在，如果使用蜂窝数据，先启动 VPN，再启用飞行模式，然后切换回蜂窝数据。
    
-## 启用JIT:
-
-1. **启用VPN:**  
-   首先，在Wi-Fi上打开StikDebug或启用蜂窝数据以激活内置的VPN。现在，如果您正在使用蜂窝数据，请启用飞行模式，并在VPN启用的情况下重新打开应用程序。   
-
-2. **激活JIT:**  
-   选择“按应用程序连接”按钮，然后从列表中选择一个应用程序（必须带有正确的权限侧载的应用才能显示在列表中）以附加调试器并激活JIT功能。
+2. **激活 JIT：**  
+   从列表中选择一个应用（必须使用 get-task-allow 旁加载才会出现在列表中）以附加调试器并激活 JIT 功能。

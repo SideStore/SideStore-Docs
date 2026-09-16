@@ -1,48 +1,95 @@
 ---
-title: 安装前准备
-description: '安装SideStore的第一步'
+title: 要求
+description: 'The first steps of installation.'
 sidebar_position: 1
 ---
 
-SideStore的安装过程可能看起来很棘手，但随着花一些时间***一次性***的使用电脑后，您的设备上就拥有了SideStore！
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
 
 ## 要求
+要安装 SideStore，你需要：
+- 一台[with a passcode](https://support.apple.com/en-us/119586)并运行 iOS/iPadOS 15.0 或更高版本的 iPhone、iPad 或 iPod touch
+- 一台运行 Windows 8 或更高版本、macOS High Sierra 或更高版本、最新 Linux 发行版或较新的非注册 Chromebook 的电脑；仅用于初始安装
+- 一个 Apple 账户（也称为 Apple ID）
+- 一个 Wi-Fi 连接（不仅仅是任意互联网连接：移动网络不适合）
+- 花点时间！这是一个快速简单的过程，但你应该留出时间进行[troubleshooting](/docs/troubleshooting)
 
-想要安装SideStore，您需要：
+## 准备你的设备
+SideStore 利用设备内置的 VPN，使 SideStore 能够与内部服务通信。
 
-- 一台运行了iOS/iPadOS 14及更高版本，并且[带有密码](https://support.apple.com/en-us/119586)的iOS/iPadOS设备
-- 一台电脑（只会用一次）
-- 一个Apple ID。
-- Wi-Fi连接
-- 一些时间（流程很快，但是您需要留出一些[处理问题](/docs/troubleshooting)的时间）。
+1. 从 [Apple App Store](https://apps.apple.com/app/localdevvpn/id6755608044) 或 [AltStore PAL source](https://api.altstore.io/source/adp.se2crid.me?app=com.jkcoxson.LocalDevVPN) 安装 LocalDevVPN 应用。
+2. 连接到 VPN。如果系统提示你"Allow VPN Configurations"（允许 VPN 配置），请点击 'Allow'（允许）并输入你的密码。
 
-## 需要在您的设备上做的准备
+每当你想在 SideStore 中安装、更新或刷新应用时，都必须打开此 VPN。
 
-### 在您的iPhone/iPad上
+现在，按照说明安装与你电脑操作系统对应的 [iloader](https://iloader.app)：
 
-SideStore利用设备上内置的VPN客户端功能以允许SideStore与内部服务通信。
+<Tabs groupId="operating-systems">
+  <TabItem value="mac" label="macOS">
+    下载并安装 [iloader](https://github.com/nab138/iloader/releases/latest/download/iloader-darwin-universal.dmg)。
+  </TabItem>
+  <TabItem value="win" label="Windows">
+    :::warning
+    32 位版本的 Windows，以及 Arm 上的 Windows 10，均不受支持。
+    
+    <details>
+      <summary>**大多数版本的 Windows 都是 64 位的。**但是，如果你想确定自己使用的 Windows 版本是否不受支持，可以按照以下说明进行操作。</summary>
+        1. 使用 Windows+R（或 Command+R 或 Super+R）打开"运行"对话框。
+        2. 输入 `control /name microsoft.system`。将打开控制面板。
+        3. 在“System”（系统）选项卡下，找到"System type"（系统类型）。
+        
+        * 如果你的系统是"32-bit Operating System"（32 位操作系统），则你的 Windows 版本不受支持。
+        * 如果你的系统是"ARM64 processor"（ARM64 处理器）并且使用的是 Windows 10，则你的 Windows 版本不受支持。
+    </details>
+    ::: 
 
-1. 从[App Store](https://apps.apple.com/us/app/stosvpn/id6744003051)下载StosVPN
-2. 启用VPN
+    1. 从[from the Microsoft Store](https://apps.microsoft.com/store/detail/9PB2MZ1ZMB1S)或[directly from Apple](https://www.apple.com/itunes/download/win64)下载并安装 iTunes。
+    2. 下载 iloader 安装程序，可[as an MSI](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.msi)（推荐）或[as an EXE](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.exe)。
+    3. 运行安装程序。
+    :::note
+    建议使用直接来自 Apple 的 iTunes 版本。如果两个版本都不行，请尝试[Apple Devices App](https://apps.microsoft.com/detail/9np83lwlpz9k?hl=en-US&gl=US)。
+    :::
+  </TabItem>
+  <TabItem value="linux" label="Linux">
+    :::warning
+    **大多数 Linux 发行版都是 64 位的。**要确定你的发行版类型，请打开终端并运行 `uname -m`。对于 Intel/AMD，预期输出为 `x86_64`，对于 ARM 则为 `aarch64`。
+    :::
 
-该VPN需要在您期望安装/升级/刷新SideStore内安装的任意应用时保持开启。
+    1. 下载并安装 `usbmuxd`。它可能已随你的发行版预装，否则你可以用包管理器安装它：在谷歌上搜索“install usbmuxd [发行版名称]”可能会帮到你。
+    2. 为你的发行版下载并安装 iloader。它为 Debian/Ubuntu 提供了 [DEB](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.deb)，为 Fedora/openSUSE 提供了 [RPM](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-x86_64.rpm)，为其他发行版提供了 [AppImage](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.AppImage)。此外，针对 ARM 处理器，还有 [DEB](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-arm64.deb)、[RPM](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-aarch64.rpm) 和 [AppImage](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-aarch64.AppImage) 构建版本。（也有社区维护的软件包，例如 [this one on the Arch Linux AUR](https://aur.archlinux.org/packages/iloader-bin)，但请知悉我们无法保证它们的安全性和可靠性。在将未知软件包安装到你的系统之前，你应该总是做好充分的调查。）
+  </TabItem>
+  <TabItem value="chromebook" label="Chromebook">
+    :::warning
+    **如果管理员禁用了它，这将不适用于已注册的 Chromebook,并且可能不适用于旧款 Chromebook。**通常，已注册的 Chromebook 会禁用 `Linux development environment`，或者对于旧款 Chromebook，它们不提供此类选项。
+    :::
 
-### 在您的Mac上
-1. 下载并安装([M系列芯片](https://github.com/nab138/iloader/releases/latest/download/iloader-darwin-aarch64.dmg)或[Intel芯片](https://github.com/nab138/iloader/releases/latest/download/iloader-darwin-x64.dmg))的Mac版iloader
-2. 打开终端，运行`sudo xattr -c ./Applications/iloader.app`，如果弹出提示框请输入您的密码
-
-
-## 在您的Windows电脑上
-1. 下载并安装[iTunes](https://apple.co/ms)
-2. 下载iloader安装器的([exe文件](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.exe)/[msi文件](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.msi))
-3. 运行安装器
-
-## 在您的Linux机器上
-1. 下载并安装`usbmuxd`(它可能已预装在您使用的发行版中，否则请使用您的软件包管理器进行安装)
-2. 下载并安装适用于您使用的发行版的iloader(([Debian/Ubuntu](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.deb), [Fedora/openSUSE](https://github.com/nab138/iloader/releases/download/v0.1.3/iloader-linux-x86_64.rpm), [other](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.AppImage)))
-
-
-## 下一步 
-
-接下来，按照安装指引来安装SideStore!
-- [安装指引](install)
+    1. 启用 `Linux development environment`。你可以阅读 Google 的 [Set up Linux on your Chromebook](https://support.google.com/chromebook/answer/9145439) 指南，按照 `Turn on Linux` 步骤来了解如何进行设置。
+    2. 通过打开终端并运行以下命令来确保所有软件包都已更新：`sudo apt-get update && sudo apt-get dist-upgrade`
+    3. 下载并安装 `usbmuxd`、`curl` 和 `fuse`。你可以在终端中运行以下命令用包管理器安装它们：`sudo apt-get install usbmuxd fuse curl`
+    4. 下载并安装 iloader。它提供 AppImage 版本。要了解应下载哪个版本，请使用 `uname -m` 确定你 Chromebook 的架构。如果命令输出 `x86_64`，则运行 `curl -fsSLO https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.AppImage`。如果输出 `aarch64`，则运行 `curl -fsSLO https://github.com/nab138/iloader/releases/latest/download/iloader-linux-aarch64.AppImage`。
+    5. 如果 `usbmuxd` 尚未启动，请在终端中运行以下命令：`sudo systemctl restart usbmuxd`。
+    6. 转到 `Manage USB devices`（在 **Settings** -> **About ChromeOS** -> **Developers** -> **Linux development environment** 中），然后使用 USB 线将你的 iPhone、iPad 或 iPod touch（iDevice）连接到 Chromebook。一旦你看到该设备，**请从列表中快速启用它**。如果你的 iDevice 上有提示，请信任电脑并输入密码。
+    :::note
+    **在 Manage USB devices 中快速启用 iDevice 是必要的**，因为 `Linux development environment` 有一个 bug。ChromeOS 会自动声明该 iDevice（这就是它出现在"文件"应用中的原因），从而阻止 Linux 容器看到它。在 ChromeOS 声明该 iDevice 之前，在 **Manage USB devices** 中手动快速启用它，将会把控制权传递给容器。你可以按照 **Step 8** 来验证容器能看到该 iDevice。
+    :::
+    7. 通过在终端中运行 `lsusb` 来验证 `Linux development environment` 能识别你的 iDevice。你的 iDevice 应该出现在列表中。如果没有，请尝试拔下并重复上一步。
+    :::tip
+    `lsusb` 的输出应该类似于这样，iPhone（或类似设备）是现有条目之一：
+    ```
+    Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+    Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+    Bus 001 Device 008: ID 05ac:12a8 Apple, Inc. iPhone 5/5C/5S/6/SE/7/8/X/XR
+    ```
+    确切的设备名称和总线/设备编号可能有所不同，但无关紧要。
+    :::
+    8. 在终端中运行以下命令以使 iloader 可执行并启动 iloader（确保文件名与你下载的文件一致，如果文件名包含 `amd64`，请将 `aarch64` 替换为 `amd64`）：
+    ```
+    chmod +x ./iloader-linux-aarch64.AppImage
+    ./iloader-linux-aarch64.AppImage
+    ```
+    9. 如果 iloader 没有显示你的 iDevice，你可以尝试在终端中**在另一个标签页**中运行以下命令来手动运行 `usbmuxd`：`sudo systemctl stop usbmuxd` 和 `sudo usbmuxd -v -f`。你的 iDevice 上可能会弹出提示。
+  </TabItem>
+</Tabs>

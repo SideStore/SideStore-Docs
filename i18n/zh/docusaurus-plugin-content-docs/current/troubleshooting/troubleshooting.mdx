@@ -1,85 +1,72 @@
 ---
 title: 故障排除指南
-description: 一个在没提供错误代码的情况下的故障排除指南
+description: 在无错误代码的情况下排查 SideStore 问题的指南。
 ---
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 ## 安装
+### 我按照说明操作了，但仍然无法安装 SideStore。
 
-### 我按照教程进行但是我还是无法安装SideStore。
+#### macOS 说明
+1. **信任设备**：将 iOS 设备连接到 Mac 后，请确保你在 Mac 和 iOS 设备上都点击了“信任”。你可以通过以下方式验证：
+   - 打开访达（macOS 10.15 Catalina 或更高版本）或 iTunes（macOS 10.14 Mojave 及更早版本）。
+   - 断开并重新连接你的手机到 Mac，检查是否出现对话框询问是否要信任该设备。
+2. **使用其他 Apple 账户**：尝试使用另一个 Apple 账户。如有需要，你可以[create a new Apple Account](https://appleid.apple.com/account#!\&page=create) specifically for SideStore use for free.
 
-#### Mac 操作指南
-1. **信任设备**：将 iOS 设备连接至 Mac 后，请确保在 Mac 和 iOS 设备上均选择“信任”。验证步骤如下：
-   - 打开 Finder（macOS 10.15 Catalina 或更高版本）或 iTunes（macOS 10.14 Mojave 或更早版本）
-   - 断开并重新连接手机与 Mac，检查是否弹出信任设备确认对话框
-2. **使用其他 Apple ID**：尝试使用其他 Apple ID。如有需要，可免费[创建专用于 SideStore 的新 Apple ID](https://appleid.apple.com/account#!\&page=create)
+#### Windows 说明
+1. **信任设备**：将 iOS 设备连接到 Windows 计算机后，请确保你在计算机和 iOS 设备上都选择了“信任”。你可以通过以下方式验证：
+   - 打开 iTunes，检查是否出现对话框询问是否要信任该设备。
+2. **使用其他 Apple 账户**：尝试使用另一个 Apple 账户。如有需要，你可以[create a new Apple Account](https://appleid.apple.com/account#!\&page=create) specifically for SideStore use for free.
 
-#### Windows 操作指南
-1. **信任设备**：将 iOS 设备连接至 Windows 电脑后，请确保在电脑和 iOS 设备两端均选择“信任”。验证方式如下：
-   - 打开 iTunes 检查是否出现信任设备确认对话框
-2. **使用其他Apple ID**：尝试使用其他Apple ID。如有需要，可免费[创建专用于SideStore的新Apple ID](https://appleid.apple.com/account#!\&page=create)
+### 更新 SideStore 在快结束时卡住
 
+前往主屏幕即可让其完成更新。我们不知道为什么会出现这种情况，但这可能与使用 VPN 引导 `installd` 刷新 SideStore（其自身）有关。
 
 ## 登录问题
+### SideStore 在登录时冻结或显示错误代码
 
-### SideStore 登录时出现卡顿或显示错误代码
+如果你在尝试登录 SideStore 时遇到冻结或错误代码，可能有多种潜在原因。请按照以下步骤解决问题：
 
-若您在尝试登录 SideStore 时遇到卡顿或错误代码，可能存在多种潜在原因。请按以下步骤解决问题：
+1. **更换 Anisette Server（Anisette 服务器）：**
+   最常见的解决方案是切换到一个不同的 Anisette 服务器。Anisette 服务器偶尔会经历停机。切换到备用服务器通常可以解决问题。操作如下：
+   - 打开 SideStore 设置。
+   - 向下滚动到“Anisette Server”选项。
+   - 从列表中选择一个不同的服务器。
+   - 你可能需要尝试列表中的几个服务器，找到最适合你的一个。
 
-1. **更换Anisette服务器：**
-   最常见的解决方案是切换到其他Anisette服务器。Anisette服务器偶尔会出现停机情况，切换到备用服务器通常能解决问题。操作步骤如下：
-   - 打开SideStore设置
-   - 向下滚动至“Anisette服务器”选项
-   - 从列表中选择其他服务器
-   - 您可能需要尝试列表中的多个服务器，找出最适合您的选项
+2. **托管你自己的 Anisette Server：**
+   如果你愿意，可以设置你自己的 Anisette 服务器。关于托管 Anisette 服务器的详细说明在官方文档中提供，可以[here](https://docs.sidestore.io/docs/advanced/anisette)找到。
 
-2. **自行托管 Anisette 服务器：**
-   若您有意愿，您可以自行搭建 Anisette 服务器。官方文档中提供了详细的托管指南，请参阅[此处](/docs/advanced/anisette)
+### 使用 Apple 账户登录时未收到验证码
+登录期间另一个常见问题是在 SideStore 中使用 Apple 账户时收不到验证码。可以通过以下步骤解决：
+<Tabs>
+    <TabItem value="18.1" label="iOS/iPadOS 18.1+">
+         1. 打开“设置”应用。
+         2. 点击屏幕顶部的姓名/账户。
+         3. 关闭 Wi-Fi 和蜂窝数据。
+         4. 点击“登录与安全”。
+         5. 点击“获取验证码”。
+         6. 在 SideStore 中输入此验证码。
 
-### 使用Apple ID登录时未收到验证码
+    </TabItem>
+    <TabItem value="18" label="iOS/iPadOS 18.0.1 及以下版本">
+         1. 打开“设置”应用。
+         2. 点击屏幕顶部的姓名/账户。
+         3. 进入“登录与安全”。
+         4. 选择“双重认证”。
+         5. 选择“获取验证码”。
+         6. 在 SideStore 中输入此验证码。
+    </TabItem>
+</Tabs>
 
-登录过程中另一个常见问题是使用Apple ID登录SideStore时未收到验证码。可通过以下步骤解决：
+## 其他
+### 我的应用从 SideStore 中消失了，我不知道该怎么办！
+不要惊慌！像往常一样重新侧载应用，而无需从设备上移除它们，你的数据应该没问题。很不幸，你停用的应用可能已丢失，但要确认这一点，只需刷新 SideStore，看看它们是否恢复。
 
-**适用于iOS 18.1以下版本：**
-
-1. 打开“设置”应用
-2. 点击屏幕顶部的姓名
-3. 进入“登录与安全”选项
-4. 选择“双重认证”
-5. 点击“获取验证码”
-
-**适用于 iOS 18.1 及以上版本：**
-
-1. 在网页浏览器中访问 [iCloud](https://www.icloud.com)
-2. 点击“登录”
-3. 系统可能提示两个选项：“登录”和“使用其他 Apple 账户”
-   - 选择底部选项“使用其他 Apple 账户”
-4. 输入您的 Apple ID 和密码（请勿使用密钥登录）
-5. Apple 将向您发送验证码
-   - 在 SideStore 中使用此验证码完成登录流程
-
-
-## 无法刷新或安装应用
-
-### 解决无Wi-Fi或VPN错误
-
-1. 启用飞行模式并连接稳定的Wi-Fi网络
-2. 确保Apple域名及您的anisette服务器域名未被限制。请检查以下事项：
-   - 关闭任何阻断`ocsp.apple.com`等域名的DNS服务器
-   - 断开学校/工作Wi-Fi连接，改用无限制的网络
-3. 确认StosVPN中VPN已连接
-4. 关闭StosVPN后重新开启，在SideStore等待数秒再尝试刷新
-5. [使用iloader重新导入配对文件](/docs/advanced/pairing-file)
-
-## AltServer
-
-### 如果我需要使用Windows应用商店版本的iCloud怎么办？
-
-AltServer要求您直接从Apple安装iCloud以验证Apple ID。若您希望或需要同时使用Windows应用商店版本，可参照[此Reddit帖子](https://www.reddit.com/r/jailbreak/comments/rp5buz/tutorial\_how\_to\_use\_altserver\_if\_you\_have\_to\_use/?utm\_source=share\&utm\_medium=ios\_app\&utm\_name=iossmf) 并更新的替代方案：
-
-1. 从苹果官网下载并安装[iTunes](https://www.apple.com/itunes/)，具体地址为：([64位](https://secure-appldnld.apple.com/itunes12/001-80053-20210422-E8A3B28C-A3B2-11EB-BE07-CE1B67FC6302/iTunes64Setup.exe) 或 [32位](https://secure-appldnld.apple.com/itunes12/001-80042-20210422-E8A351F2-A3B2-11EB-9A8F-CF1B67FC6302/iTunesSetup.exe))
-2. 从苹果官网[此处](https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe)下载并安装iCloud。
-3. 定位“C:\Program Files (x86)\Common Files\Apple”文件夹。复制其中的“Apple Application Support”和“Internet Services”文件夹，在任意安全的位置新建任意名称的文件夹，将这两个文件夹粘贴至该新文件夹。
-4. 从计算机中卸载iCloud。**切勿**卸载iTunes！（同时，**永远不要**卸载与iTunes及iCloud一同安装的“Apple Mobile Device Support”或“Apple Application Support”文件夹。）
-5. 从 Windows 应用商店安装 [iCloud](https://www.microsoft.com/store/productId/9PKTQ5699M62)
-6. 下载并安装[AltServer](https://cdn.altstore.io/file/altstore/altinstaller.zip)。首次以管理员权限打开时，点击“选择文件夹...”并选定第三步创建的文件夹。
-
+### 无法启动调试服务器
+1. 确保你使用的是 iOS 17.4 或更高版本
+2. 有时调试服务器无法正常工作。不过，你可以尝试[replacing your pairing file using iloader](/docs/advanced/pairing-file)。

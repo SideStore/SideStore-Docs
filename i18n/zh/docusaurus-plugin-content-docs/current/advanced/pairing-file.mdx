@@ -1,13 +1,18 @@
 ---
 title: 配对文件
-description: 重新导入配对文件的指南
+description: 一篇关于手动重新导入配对文件的指南。
 ---
 :::warning
-注意，如果您更新或重置了您的苹果设备，您的配对文件将过期，您需要生成一个新的配对文件。当然，由于苹果的软件运行方式，这可能会随时发生，目前我们无法修复它。这是一个关于如何使用 iloader重新导入配对文件到您的设备上的指南。
+如果你更新或重置了你的 iPhone、iPad 或 iPod touch，你的配对文件可能会过期并需要重新导入。这种情况也会随机发生。这是 Apple 的问题，我们对此无能为力。本指南将教你如何使用 iloader 手动替换配对文件。
 :::
 
-## 重新导入您的配对文件
-1. 请确保您已经按照[安装指引](/docs/installation/prerequisites)中的步骤安装并配置好iloader和SideStore。
-2. 为获得最佳效果，请用USB数据线将您的苹果设备连接到电脑上，但是如果您的设备通过无线方式连接到了您的电脑上，这同样可行。
-3. 点击"Manage Pairing File"
-4. 在"SideStore"和您需要导入的其他应用的右侧，点击"Place Pairing File"，当绿色的"Pairing file placed successfully!"出现的时候，说明导入成功了。
+## 替换你的配对文件
+1. 确保你已经按照[install guide](/docs/installation/prerequisites)中的步骤安装并设置了 iloader 和 SideStore。如果 iloader 提示你更新它，请点击 'Yes'。
+2. 为了获得最可靠的结果，请通过 USB 数据线将你的 iPhone、iPad 或 iPod touch 连接到电脑。如果你的设备仅以无线方式出现，那也应该可以正常工作。
+3. 点击“Delete Stored Pairing”按钮以丢弃你旧的配对文件。
+4. 在设备列表中点击你的设备，并在提示时按下你 iDevice 上的“Trust”按钮。
+5. 回到 iLoader，点击“Manage Pairing File”。
+6. 在“SideStore”及任何其他你想要的应用右侧，点击“Place”。“Pairing file placed successfully!” 应以绿色显示。
+:::note
+如果你在 SideStore 中仍然收到错误，请尝试重启你的 iDevice 和电脑，然后重复上述步骤。如果仍有问题，请在 [Discord](https://dis.sidestore.io/) 上联系我们。
+:::

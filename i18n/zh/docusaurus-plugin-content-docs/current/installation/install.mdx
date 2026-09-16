@@ -1,34 +1,73 @@
 ---
-title: 安装指引
-description: 将SideStore安装至您的苹果设备上
+title: 安装
+description: Installing SideStore to your iPhone, iPad, or iPod touch
 sidebar_position: 2
 ---
-## 安装SideStore
-1. 使用数据线将您的苹果设备连接到电脑上。如果弹出了是否信任电脑的提示框的话，信任电脑并输入您的锁屏密码
-2. 打开iloader
-3. 登录您的Apple账户
-4. 选择您的苹果设备
-3. 选择"Install SideStore".
 
-### 需要在您的苹果设备上进行的操作
-请参考以下步骤
-1. 打开“设置”
-2. 点击“通用”，“VPN与设备管理”
-3. 在“开发者APP”下找到您Apple账户的邮箱，点击该邮箱，并在接下来的页面点击“验证 App”
-4. 在设置的主界面找到“隐私与安全性”
-5. 划到页面的底部，打开“开发者模式”，此时您的设备应该会重启
-6. 打开StosVPN，点击“Connect”
-7. 打开SideStore
-9. 使用您前面使用的Apple账户登录
-10. 点击"My Apps".
-11. 点击SideStore右侧的"x DAYS"按钮，(x是应用过期的剩余天数)
-12. 此时应该弹出一个提示框询问您创建一个新的签名证书，点击"Refresh Now"
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
 
-在进行完这一步后，SideStore会退出，返回至您的桌面。同时您会收到一条通知，在几秒后SideStore就可以使用了。
+在开始之前，请确保下载[prerequisites page](prerequisites)中列出的所有软件并完成所有设置！
 
-需要注意的是，如果您的设备升级/重置了，您的配对用文件会过期，您需要使用[这条指南](/docs/advanced/pairing-file)重新导入。当然配对用文件也可能因为Apple的应用政策过期。
+:::warning
+与 iloader 相关的支持问题，可在 [idevice Discord server](https://discord.gg/mACqxMxP3X)找到，SideStore 服务器不处理由 iloader 引发的问题。
+:::
 
-如果您使用iloader重新安装了SideStore，您原来的证书可能会被吊销，这时需要您再次手动刷新应用。
+## 安装 SideStore
+### 在你的电脑上
+1. 使用 USB 线将你的 iPhone、iPad 或 iPod touch 连接到电脑。如果系统提示，请信任电脑并输入你的密码。
+2. 打开 iloader。
+3. 使用你的 Apple 账户登录。（不必是与设备关联的那个账户。切记它是区分大小写的！）
+4. 选择你的 iPhone、iPad 或 iPod touch。
+5. 选择 'Install SideStore (Stable)'（安装 SideStore（稳定版））。
 
-如果您想使用同一个Apple ID在另一台设备上安装SideStore，请[参考这几个步骤](https://github.com/SideStore/SideStore/pull/1008#issue-3138680291)。
+### 在你的 iPhone、iPad 或 iPod touch 上
+<Tabs groupId="ios-versions">
+    <TabItem value="15" label="iOS/iPadOS 15.0-15.8.6">
+        1. 打开 Settings（设置）应用。
+        2. 转到 'General'（通用），然后进入 'VPN & Device Management'（VPN 与设备管理）。
+        3. 在“Developer App”（开发者应用）部分下，选择以你的 Apple 账户命名的选项。
+        4. 选择“Trust [Apple Account name]”（信任 [Apple 账户名称]），然后选择 "Trust"（信任）以确认。
+        5. 打开 LocalDevVPN 并选择 'Connect'（连接）。
+        6. 打开 SideStore。
+        7. 登录你与 iloader 一起使用的 Apple 账户。
+        8. 转到 'My Apps'（我的应用）。
+        9. 点击 SideStore 右侧的 '7 DAYS'（7 天）计数器以手动刷新并完成 SideStore 的设置。（7 表示距离应用过期还有多少天。它会动态更新以显示剩余天数。点击它可以刷新关联的应用。）
+        10. 如果你收到要求撤销或创建新签名证书的提示，请点击 'Yes'（是）或 'Refresh Now'（立即刷新）。
+    </TabItem>
+    <TabItem value="16" label="iOS/iPadOS 16.0-17.7.7">
+        1. 打开 Settings（设置）应用。
+        2. 转到 'General'（通用），然后进入 'VPN & Device Management'（VPN 与设备管理）。
+        3. 在“Developer App”（开发者应用）部分下，选择以你的 Apple 账户命名的选项。
+        4. 选择“Trust [Apple Account name]”（信任 [Apple 账户名称]），然后选择 "Trust"（信任）以确认。
+        5. 转到 'Privacy and Security'（隐私与安全）。
+        6. 滚动到底部，然后打开 \"Developer Mode\"（开发者模式）。你的设备将重启。
+        7. 打开 LocalDevVPN 并选择 'Connect'（连接）。
+        8. 打开 SideStore。
+        9. 登录你与 iloader 一起使用的 Apple 账户。
+        10. 转到 'My Apps'（我的应用）。
+        11. 点击 SideStore 右侧的 '7 DAYS'（7 天）计数器以手动刷新并完成 SideStore 的设置。（7 表示距离应用过期还有多少天。它会动态更新以显示剩余天数。点击它可以刷新关联的应用。）
+        12. 如果你收到要求撤销或创建新签名证书的提示，请点击 'Yes'（是）或 'Refresh Now'（立即刷新）。
+    </TabItem>
+    <TabItem value="18" label="iOS/iPadOS 18.0+" default>
+        1. 打开 Settings（设置）应用。
+        2. 转到 'General'（通用），然后进入 'VPN & Device Management'（VPN 与设备管理）。
+        3. 在“Developer App”（开发者应用）部分下，选择以你的 Apple 账户命名的选项。
+        4. 选择“Trust [Apple Account name]”（信任 [Apple 账户名称]），然后选择 "Allow & Restart"（允许并重启）。
+        5. 输入你的密码以确认你要信任该应用。
+        6. 转到 'Privacy and Security'（隐私与安全）。
+        7. 滚动到底部，然后打开 \"Developer Mode\"（开发者模式）。你的设备将重启。
+        8. 打开 LocalDevVPN 并选择 'Connect'（连接）。
+        9. 打开 SideStore。
+        10. 登录你与 iloader 一起使用的 Apple 账户。
+        11. 转到 'My Apps'（我的应用）。
+        12. 点击 SideStore 右侧的 '7 DAYS'（7 天）计数器以手动刷新并完成 SideStore 的设置。（7 表示距离应用过期还有多少天。它会动态更新以显示剩余天数。点击它可以刷新关联的应用。）
+        13. 如果你收到要求撤销或创建新签名证书的提示，请点击 'Yes'（是）或 'Refresh Now'（立即刷新）。
+    </TabItem>
+</Tabs>
 
+如果此过程成功，SideStore 会将你的设备打开到主屏幕（并伴随一条通知）。SideStore 将在几秒钟内再次可用。
+
+如果你更新或重置你的 iPhone、iPad 或 iPod touch，你的配对文件可能会过期。如果发生这种情况，你需要使用[this guide](/docs/advanced/pairing-file)来替换它。由于 Apple 软件的原因，这种情况也会在随机时间发生。
