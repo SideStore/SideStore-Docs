@@ -1,0 +1,72 @@
+---
+title: ملاحظات الإصدار
+description: مجموعة من ملاحظات إصدار SideStore.
+sidebar_position: 6
+---
+
+# ملاحظات الإصدار المستقر (Stable)
+
+## 0.6.2
+
+### سجل التغييرات
+- إيقاف دعم WireGuard، والانتقال الكامل إلى [StosVPN](https://apps.apple.com/us/app/stosvpn/id6744003051)
+- دمج المزيد من AltStore 2.0
+- تمت إضافة دعم لاستيراد وتصدير ترخيص Apple ID لاستخدامها عبر أجهزة متعددة، بالإضافة إلى تعليمات حول كيفية القيام بذلك [هنا](https://github.com/SideStore/SideStore/pull/1008#issue-3138680291)
+- يضيف مخطط الرابط / يتيح تصدير الترخيص (إلى LiveContainer)
+- إصلاح مشكلة توقف تثبيت التطبيقات عند نسبة 75% تقريباً
+- إضافة خيار لإعادة استخدام ملف تعريف الـ App ID الرئيسي للإضافات بدلاً من إزالتها وتسجيلها (معرف تطبيق واحد لكل تطبيق).
+- إصلاحات عامة وتحديثات مرئية
+
+### ما الذي تغير:
+- إعادة Rebase للإصدار 2.0 بواسطة @nythepegasus في [#794](https://github.com/SideStore/SideStore/pull/794)
+- [التنشيط]: قم بإزالة عناصر التثبيت من عملية التنشيط، حيث يجب أن يقتصر التنشيط على تجديد ملفات تعريف التزويد فقط. بواسطة @mahee96 في [#846](https://github.com/SideStore/SideStore/pull/846)
+- [الإعدادات]: إصلاح: مفتاح DisableAppLimit يعود إلى وضع الإيقاف حتى على نظام iOS حيث لم يتم بعد تطبيق التصحيح الخاص بـ sparseRestore. بواسطة  @mahee96 في [#850](https://github.com/SideStore/SideStore/pull/850)
+- تحديث ملف trustedapps.json بواسطة @neoarz في [#853](https://github.com/SideStore/SideStore/pull/853)
+- [النسخ الأحتياطي]: إصلاح: تم تدارك منطق التحديث أثناء التثبيت الذي كان مفقوداً بسبب غياب الكلمة المفتاحية override. بواسطة @mahee96 في [#857](https://github.com/SideStore/SideStore/pull/857)
+- معاينات تطبيق Fix Repository بواسطة @neoarz في [#871](https://github.com/SideStore/SideStore/pull/871)
+- ميزة: إضافة ميزة المصادر المجمعة إلى شاشة المصادر، مع إمكانية تجهيز البيانات قبل حفظها نهائياً في قاعدة البيانات بواسطة @mahee96 في [#888](https://github.com/SideStore/SideStore/pull/888)
+- الإصدار 0.6.0: إصلاح ترحيلات Core Data، بما في ذلك xcdatamodels وxcmappingmodels. بواسطة @mahee96 في #894
+- ميزة: عرض وصف التحديث داخل التطبيق بتنسيق Markdown بشكل كامل بواسطة @mahee96 في #897
+- إصلاح: خطأ مطبعي في مقارنة hasUpdate بواسطة @l2dy في [#900](https://github.com/SideStore/SideStore/pull/900)
+- تحديث SettingsViewController.swift بواسطة @neoarz في [#915](https://github.com/SideStore/SideStore/pull/915)
+- قيد العمل: إصلاحات لمشاكل الترحيل عند الانتقال من الإصدار 0.5.9 إلى 0.6.0 بواسطة @mahee96 في #920
+- تصحيح الخطأ المطبعي "levaraging" إلى "leveraging" بواسطة @lafrenierejm في [#926](https://github.com/SideStore/SideStore/pull/926)
+- تمت إضافة StosVPN إلى قسم EM Proxy بواسطة @Br0des في [#940](https://github.com/SideStore/SideStore/pull/940)
+- دمج StosVPN: تمت إزالة وحدة em_proxy ووحدة EmotionalDamage لصالح StosVPN بواسطة @mahee96 [#945](https://github.com/SideStore/SideStore/pull/945)
+- تعطيل فحص الجاهزية في minimuxer الذي يظهر خطأ "لا يوجد اتصال Wi-Fi/VPN"، نظراً لأن stosVPN يمكن أن يعمل عبر شبكة الهاتف المحمول أيضاً بواسطة mahee96 في [#935](https://github.com/SideStore/SideStore/pull/935)
+- أضف ميزة JIT وتركيب نظام iOS 17.4+ بواسطة @jkcoxson في [#953](https://github.com/SideStore/SideStore/pull/953)
+- إضافة ميزة تصدير الترخيص بواسطة @hugeBlack في [#959](https://github.com/SideStore/SideStore/pull/959)
+- ميزة: إضافة استدعاء لرابط تصدير ملف الإقتران واستبدال Wireguard بـ StosVPN بواسطة @stossy11 في [#962](https://github.com/SideStore/SideStore/pull/962)
+- تغيير المراجع الظاهرة في واجهة المستخدم إلى AltStore بواسطة @owoellen في [#987](https://github.com/SideStore/SideStore/pull/987)
+- تحديث ملف OperationError.swift لـ idevice_pair بواسطة @CelloSerenity في [#995](https://github.com/SideStore/SideStore/pull/995)
+- إضافة ميزة استيراد/تصدير الترخيص بواسطة @hugeBlack في [#1008](https://github.com/SideStore/SideStore/pull/1008)
+- تم إصلاح رابط ملف الإقتران بواسطة @CelloSerenity في [#1011](https://github.com/SideStore/SideStore/pull/1011)
+- إضافة خيار لاستخدام  تعريف الحزمة الرئيسية لملحقات التطبيق، وتحديث AltSign وlibmd بواسطة @hugeBlack في [#1012](https://github.com/SideStore/SideStore/pull/1012)
+- استخدم الملف الشخصي عند التنشيط بواسطة @hugeBlack في [#1013](https://github.com/SideStore/SideStore/pull/1013)
+
+
+## 0.6.1
+
+### سجل التغييرات
+هل حلّ الربيع بالفعل؟ إليكم تحديث جديد من شأنه معالجة مشكلات الترحيل من الإصدارين 0.5.9 و0.5.10، بالإضافة إلى إصلاح خلل يتعلق بانتهاء الصلاحية. استمتعوا بالتثبيت من مصادر خارجية!
+
+### ما الذي تغير:
+- إصلاح: خطأ مطبعي في مقارنة hasUpdate بواسطة @l2dy في [#900](https://github.com/SideStore/SideStore/pull/900)
+- تحديث SettingsViewController.swift بواسطة @neoarz في [#915](https://github.com/SideStore/SideStore/pull/915)
+- إصلاحات لمشاكل الترحيل عند الانتقال من الإصدار 0.5.9 إلى 0.6.0 بواسطة @mahee96 في [#920](https://github.com/SideStore/SideStore/pull/920)
+- تصحيح الخطأ المطبعي "levaraging" إلى "leveraging" بواسطة @lafrenierejm في [#926](https://github.com/SideStore/SideStore/pull/926)
+- تمت إضافة StosVPN إلى قسم EM Proxy بواسطة @Br0des في [#940](https://github.com/SideStore/SideStore/pull/940)
+
+
+## 0.6.0 - لا تستخدم هذا الإصدار؛ استخدم الإصدار 0.6.1 أو 0.5.10 بدلاً منه
+
+### سجل التغييرات
+لقد حلّ شهر مارس وجلب معه تغييرات كبيرة؛ فقد قمنا أخيراً بدمج التغييرات الخاصة بـ AltStore 2.0 في تطبيق SideStore. وبذلك، ستحصلون على كافة المزايا المترتبة على ذلك، بالإضافة إلى بعض الإصلاحات والتحسينات في SideStore. استمتعوا بالتجربة!
+
+### ما الذي تغير:
+- التغييرات في AltStore 2.0 [#794](https://github.com/SideStore/SideStore/pull/794)
+- [التنشيط]: قم بإزالة عناصر التثبيت من عملية التنشيط، حيث يجب أن يقتصر التنشيط على تجديد ملفات تعريف التزويد فقط. بواسطة @mahee96 في [#846](https://github.com/SideStore/SideStore/pull/846)
+- [الإعدادات]: إصلاح: مفتاح DisableAppLimit يعود إلى وضع الإيقاف حتى على نظام iOS حيث لم يتم بعد تطبيق التصحيح الخاص بـ sparseRestore. بواسطة  @mahee96 في [#850](https://github.com/SideStore/SideStore/pull/850)
+- [النسخ الأحتياطي]: إصلاح: تم تدارك منطق التحديث أثناء التثبيت الذي كان مفقوداً بسبب غياب الكلمة المفتاحية override. بواسطة @mahee96 في [#857](https://github.com/SideStore/SideStore/pull/857)
+- ميزة: إضافة ميزة المصادر المجمعة إلى شاشة المصادر، مع إمكانية تجهيز البيانات قبل حفظها نهائياً في قاعدة البيانات بواسطة @mahee96 في [#888](https://github.com/SideStore/SideStore/pull/888)
+- ميزة: عرض وصف التحديث داخل التطبيق بتنسيق Markdown بشكل كامل بواسطة @mahee96 في  [#897](https://github.com/SideStore/SideStore/pull/897)

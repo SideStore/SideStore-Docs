@@ -1,0 +1,22 @@
+{
+  "version.label": {
+    "message": "التالي",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Installation": {
+    "message": "التثبيت",
+    "description": "The label for category 'Installation' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Troubleshooting": {
+    "message": "استكشاف الأخطاء وإصلاحها",
+    "description": "The label for category 'Troubleshooting' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Advanced": {
+    "message": "متقدم",
+    "description": "The label for category 'Advanced' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Contributing": {
+    "message": "المساهمة",
+    "description": "The label for category 'Contributing' in sidebar 'tutorialSidebar'"
+  }
+}
