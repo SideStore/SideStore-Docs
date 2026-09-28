@@ -1,20 +1,20 @@
 ---
 title: 常见问题
-description: A section on the most frequently asked questions for SideStore.
+description: 关于 SideStore 最常见问题的章节。
 sidebar_position: 3
 ---
 
 # 常见问题
 
-这是 SideStore 的常见问题列表。这里列出了我们在开发 SideStore 过程中常遇到的问题，以及一些可能对不同类型的用户或有问题的用户有帮助的问题。
+这是 SideStore 的常见问题列表。这里列出了我们在开发 SideStore 过程中常遇到的问题，以及一些可能对不同类型的用户或遇到问题的用户有帮助的问题。
 
-## 什么是 SideStore?
+## 什么是 SideStore？
 
-SideStore 是一款 iOS 应用，它仅使用你的 Apple ID 即可将应用侧载到你的 iOS 设备上。SideStore 会用你的个人开发证书对应用重新签名，然后使用一个[specially designed VPN](https://apps.apple.com/us/app/localdevvpn/id6755608044)来欺骗 iOS 使其安装这些应用。SideStore 会定期在后台“刷新”你的应用，以防它们的正常 7 天开发期限过期。
+SideStore 是一款 iOS 应用，它仅使用你的 Apple ID 即可将应用侧载到你的 iOS 设备上。SideStore 会用你的个人开发证书对应用重新签名，然后使用一个 [特制的 VPN](https://apps.apple.com/us/app/localdevvpn/id6755608044) 来欺骗 iOS 使其安装这些应用。SideStore 会定期在后台“刷新”你的应用，以防它们的正常 7 天开发期限过期。
 
 SideStore 的目标是提供无束缚的侧载体验。它是 [AltStore](https://github.com/rileytestut/AltStore) 的社区驱动分支，并且已经实现了社区最常要求的一些功能。你只需要在安装过程中使用一次电脑。
 
-（欢迎贡献！🙂）
+（欢迎贡献。🙂）
 
 ### SideStore 有哪些限制？
 
@@ -22,9 +22,9 @@ SideStore 的目标是提供无束缚的侧载体验。它是 [AltStore](https:/
 
 ### 我可以激活 JIT 吗？
 
-对于使用 iOS/iPadOS 16 或更低版本的用户，你可以在 SideStore 的 'My Apps'（我的应用）页面上按住你的应用并选择 'Enable JIT'（启用 JIT）来直接激活 JIT。
+对于使用 iOS/iPadOS 16 或更低版本的用户，你可以在 SideStore 的“My Apps”（我的应用）页面上按住你的应用并选择“Enable JIT”（启用 JIT）来直接激活 JIT。
 
-使用 iOS 或 iPadOS 17.4 或更高版本的用户可以使用诸如 SideStore 0.6.2 或 StikDebug（原 StikJIT）之类的解决方案。请参阅[Advanced](advanced/jit)教程部分。
+使用 iOS 或 iPadOS 17.4 或更高版本的用户可以使用诸如 SideStore 0.6.2 或 StikDebug（原 StikJIT）之类的解决方案。请参阅[高级](advanced/jit)部分中的教程。
 
 ### SideStore 什么时候发布？
 
@@ -32,11 +32,11 @@ SideStore 目前还没有发布日期，但已处于公开测试阶段。
 
 ### 你现在可以侧载应用吗？
 
-是的，可以，就像 AltStore 一样！
+是的，可以，就像 AltStore 一样。
 
-### SideStore 有 AltStore (beta) 的功能吗？
+### SideStore 有 AltStore（beta）的功能吗？
 
-我们确实实现了 AltStore (beta) 的功能，但它们不一定是最新的。我们尽量保持更新，或者在必要时以我们自己的方式实现。
+我们确实实现了 AltStore（beta）的功能，但它们不一定是最新的。我们尽量保持更新，或者在必要时以我们自己的方式实现。
 
 ### 开启 VPN 会消耗我的电池电量吗？
 
@@ -46,7 +46,7 @@ SideStore 目前还没有发布日期，但已处于公开测试阶段。
 
 不会，因为没有使用远程服务器。
 
-### 我可以签署超过 3 个应用使其变为活跃状态吗？
+### 我可以签名超过 3 个应用使其变为活跃状态吗？
 
 通常情况下，不能，因为那是 iOS 和开发者账户的限制。Apple 只允许使用免费 Apple 开发者账户安装 3 个应用。
 
@@ -54,27 +54,27 @@ SideStore 目前还没有发布日期，但已处于公开测试阶段。
 
 或者，你可以使用 LiveContainer，或者对于 iOS 18 db5/18.0.1 及更低版本，你可以利用 SparseRestore 漏洞来绕过 3 个应用的限制。（不会绕过 10 个 app-id 的限制。）
 
-使用此方法的教程可以[here](advanced/alternative)找到。
+使用此方法的教程可以在[这里](advanced/alternative)找到。
 
-### 我遇到了问题、错误,或者想请求某项功能或生活质量改进
+### 我遇到了问题、错误，或者想请求某项功能或使用体验改进
 
-请先查看[common issues](troubleshooting/common-issues)和现有的 GitHub issues，如果找不到你的问题，请在我们的 GitHub 页面上创建一个新的 GitHub issue 来提交错误报告或功能请求（请带上合适的标签）！
+请先查看[常见问题](troubleshooting/common-issues)和现有的 GitHub issues，如果找不到你的问题，请在我们的 GitHub 页面上创建一个新的 GitHub issue 来提交错误报告或功能请求（请带上合适的标签）。
 
 ### 我是一名开发者，这对我有什么影响？
 
-你的应用不需要任何修改即可与 SideStore 一起工作！
+你的应用应该不需要任何修改即可与 SideStore 一起工作。
 
 ### 我需要安装 AltStore 才能安装 SideStore 吗？
 
-不需要，你可以通过我们[guide](installation/prerequisites)直接侧载 SideStore！
+不需要，你可以通过我们的[指南](installation/prerequisites)直接侧载 SideStore。
 
 ### 作为用户，我登录 SideStore 时遇到了问题。我收到了一个错误。
 
-可能导致这种情况的原因有很多，但最常见的问题是 Anisette 服务器临时宕机。你目前可以在设备上 SideStore 的“Anisette URL”下的 Settings（设置）应用中更改 Anisette 服务器。
+可能导致这种情况的原因有很多，但最常见的问题是 Anisette 服务器临时宕机。你目前可以在设备的 SideStore 设置中，于“Anisette URL”下更改 Anisette 服务器。
 
 ### SideStore 会有一家商店吗？
 
-我们目前有社区源！源 URL：https://community-apps.sidestore.io/sidecommunity.json
+我们目前有社区源。源 URL：https://community-apps.sidestore.io/sidecommunity.json
 
 我们还有一个名为 [SideStore Connect](https://connect.sidestore.io) 的服务，它允许开发者发布自己的应用。
 
@@ -88,7 +88,7 @@ SideStore 目前还没有发布日期，但已处于公开测试阶段。
 
 ### SideStore 有 iPadOS 界面吗？
 
-我们当然有！
+我们当然有。
 
 ### 我看到我的账户里添加了一台 iMac 或 MacBook Pro。这安全吗，它是真实的 Mac 吗？
 
@@ -108,7 +108,7 @@ SideStore 目前还没有发布日期，但已处于公开测试阶段。
 
 ### SideStore 支持 OTA 更新吗？
 
-支持！当更新按钮出现时，只需点击它即可！
+支持。当更新按钮出现时，只需点击它即可。
 
 ### 我想测试一个 SideStore 版本，并且在切换到测试版本时想让我的数据保留。我应该删除我的应用还是通过 SideStore 侧载测试版本？
 
@@ -116,6 +116,6 @@ SideStore 目前还没有发布日期，但已处于公开测试阶段。
 
 ### 目前已知问题
 
-如果你目前遇到问题，并且想知道我们是否已经知晓它们，请查看我们的 GitHub issue 页面和故障排除页面，那里列出了已知问题以及缓解你可能遇到的一些问题的方法。此列表中的某些问题可能不在其中已知，但存在于 GitHub issues 部分。[GitHub](https://github.com/SideStore/SideStore/issues/490)，[troubleshooting](/docs/troubleshooting/)。
+如果你目前遇到问题，并且想知道我们是否已经知晓，请查看我们的 GitHub issue 页面和故障排除页面，那里列出了已知问题以及缓解你可能遇到的一些问题的方法。此列表中的某些问题可能没有在此列出，但在 GitHub issues 部分中。[GitHub](https://github.com/SideStore/SideStore/issues/490)，[故障排除](/docs/troubleshooting/)。
 
-如果你有任何不在此列表中的问题。只需创建一个 GitHub issue 或[join our discord.](https://dis.sidestore.io/)
+如果你有任何不在此列表中的问题，只需创建一个 GitHub issue 或[加入我们的 Discord](https://dis.sidestore.io/)。

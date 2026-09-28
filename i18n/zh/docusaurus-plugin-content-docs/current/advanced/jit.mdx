@@ -4,7 +4,7 @@ description: 一篇关于如何为需要它的应用启用即时（JIT）编译�
 ---
 
 :::note
-iOS 26 再次破坏了 JIT，而 26.6 和 27 仅对少数应用可用。StikDebug 已发布一个带修复的更新，但支持有限。截至撰写本文时（2026 年 6 月 17 日），仅支持以下应用：
+iOS 26 再次破坏了 JIT，而 26.6 和 27 的 JIT 仅对少数应用可用。StikDebug 已发布一个带修复的更新，但支持有限。截至撰写本文时（2026 年 6 月 17 日），仅支持以下应用：
 * UTM
 * Amethyst
 * MeloNX
@@ -19,22 +19,22 @@ iOS 26 再次破坏了 JIT，而 26.6 和 27 仅对少数应用可用。StikDebu
 
 请持续关注我们 Discord 服务器中的公告频道，以及 [idevice server](https://discord.gg/mACqxMxP3X) 的公告和兼容性频道以获取进一步更新。
 
-根据你的 iOS 版本，有许多启用 JIT 的方法。本教程将介绍 StikDebug（原 StikJIT）的使用，因为这是目前我们推荐的方法。如需更多信息，请参阅[official StikDebug pairing guide](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md)。
+根据你的 iOS 版本，有许多启用 JIT 的方法。本教程将介绍 StikDebug（原 StikJIT）的使用，因为这是目前我们推荐的方法。如需更多信息，请参阅[官方 StikDebug 配对指南](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md)。
 
 作为替代方案，SideStore 0.6.2 包含了对 minimuxer 的更新，可在 iOS 16 及以下版本或非 TXM 支持（4 年以上）的设备上提供类似 StikDebug 的内置 JIT 功能。要使用此功能，只需确保你通过 Wi-Fi 或启用飞行模式连接到 LocalDevVPN，然后前往“My Apps”，长按你想要启用 JIT 的应用，并点击“enable JIT”。
 :::
 
 ## 前提条件
-* 一台运行 iOS/iPadOS 17.4 至所有 iOS 18 版本（不含 18.4b1）的 iPhone 或 iPad。如果你使用的是 17.0-17.3，你必须使用替代方案，例如 [SideJITServer](https://github.com/nythepegasus/SideJITServer)。
+* 一台运行 iOS/iPadOS 17.4 至所有 iOS 18 版本（不含 18.4b1）的 iPhone 或 iPad。如果你使用的是 17.0～17.3，你必须使用替代方案，例如 [SideJITServer](https://github.com/nythepegasus/SideJITServer)。
 
 ## StikDebug 安装步骤：
 
 1. **安装 StikDebug**
-   从[Official AltStore Source](https://intradeus.github.io/http-protocol-redirector?r=sidestore://https://stikdebug.xyz/index.json)安装 StikDebug。
+   从[官方 AltStore 源](https://intradeus.github.io/http-protocol-redirector?r=sidestore://https://stikdebug.xyz/index.json)安装 StikDebug。
 
 
 2. **放置配对文件：**  
-使用 iloader 导入你用于 SideStore 的同一个**配对文件**。有关此过程的更多信息，请参阅[here](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md)。
+使用 iloader 导入你用于 SideStore 的同一个**配对文件**。有关此过程的更多信息，请参阅[这里](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md)。
 
 
 ### 标准设置流程（首次必须执行，且每次重启设备后都需再次执行）

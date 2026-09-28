@@ -4,19 +4,19 @@ sidebar_position: 1
 
 # 为 SideStore 做贡献
 
-感谢你对为 SideStore 做贡献感兴趣！SideStore 是一个由社区驱动的项目，正是像你这样的人让它成为可能。
+感谢你有兴趣为 SideStore 做贡献。SideStore 是一个由社区驱动的项目，正是像你这样的人让它成为可能。
 
 通过为这个项目（SideStore）做出贡献，你同意在 [CERTIFICATE-OF-ORIGIN.md](https://github.com/SideStore/SideStore/blob/develop/CERTIFICATE-OF-ORIGIN.md) 中找到的开发者来源证书（Developer's Certificate of Origin）。在添加开发者来源证书之后对此项目的任何贡献均受其政策的约束。
 
 有很多方式可以为 SideStore 做贡献，所以如果你不是开发者，还有很多其他方式可以帮助：
 
-- [Writing documentation](https://github.com/SideStore/SideStore-Docs)
-- [Submitting detailed bug reports and suggesting new features](https://github.com/SideStore/SideStore/issues/new/choose)
+- [编写文档](https://github.com/SideStore/SideStore-Docs)
+- [提交详细的错误报告并建议新功能](https://github.com/SideStore/SideStore/issues/new/choose)
 - 提供支持方面的帮助：
     - [Discord](https://dis.sidestore.io/)
     - [GitHub Discussions](https://github.com/SideStore/SideStore/discussions)
 
-不过，本指南将侧重于开发方面。目前我们只包含设置信息，但如果你在设置后需要帮助，可以[join our Discord](https://dis.sidestore.io)。
+不过，本指南将侧重于开发方面。目前我们只包含设置信息，但如果你在设置后需要帮助，可以[加入我们的 Discord](https://dis.sidestore.io)。
 
 ## 要求
 
@@ -25,7 +25,7 @@ sidebar_position: 1
 - 使用的是 Mac
 - 已安装 Xcode
 - 具备基本命令行知识（知道如何运行命令，cd 到目录）
-- 具备基本 Git 知识（[GitHub Desktop](https://desktop.github.com/) 是初学者的绝佳工具，并且大大简化了与 Git 的协作）
+- 具备基本 Git 知识（[GitHub Desktop](https://desktop.github.com/) 是初学者的绝佳工具，并且大大简化了 Git 的使用）
 - 具备基本 Swift/iOS 开发知识
 
 ## 设置
@@ -38,7 +38,7 @@ sidebar_position: 1
    cd SideStore
    ```
    
-   如果你使用的是 GitHub Desktop，请参考[this guide](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop)。
+   如果你使用的是 GitHub Desktop，请参考[这篇指南](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop)。
 
 3. **将 `CodeSigning.xcconfig.sample` 复制为 `CodeSigning.xcconfig`** 并填入相应的值。
 
@@ -50,7 +50,7 @@ sidebar_position: 1
 
 ## 预构建二进制信息
 
-minimuxer 和 em_proxy 使用由 GitHub Actions 构建的预构建静态库二进制文件，以加快构建速度并消除在处理 SideStore 时需要安装 Rust 的需求。Xcode 会在每次构建前运行 [`SideStore/fetch-prebuilt.sh`](https://github.com/SideStore/SideStore/blob/develop/SideStore/fetch-prebuilt.sh)，并且每 6 小时检查一次下载的二进制文件是否为最新。如果你想强制检查新版本，请运行 `bash ./SideStore/fetch-prebuilt.sh force`。
+minimuxer 和 em_proxy 使用由 GitHub Actions 构建的预构建静态库二进制文件，以加快构建速度并消除在处理 SideStore 时需要安装 Rust 的需求。Xcode 会在每次构建前运行 [`SideStore/fetch-prebuilt.sh`](https://github.com/SideStore/SideStore/blob/develop/SideStore/fetch-prebuilt.sh)，并且每 6 小时检查一次下载的二进制文件是否为最新。如果你想强制检查新的二进制文件，请运行 `bash ./SideStore/fetch-prebuilt.sh force`。
 
 ## 使用 Xcode 构建
 
@@ -112,13 +112,13 @@ minimuxer 和 em_proxy 使用由 GitHub Actions 构建的预构建静态库二�
 
 ## 与 SideStore 一同开发 minimuxer
 
-请参阅 [minimuxer's README](https://github.com/SideStore/minimuxer) 获取开发说明。
+请参阅 [minimuxer 的 README](https://github.com/SideStore/minimuxer) 获取开发说明。
 
 ## Pull Request 流程
 
 ### 提交之前
 
-1. **遵循代码标准**：确保你的代码符合我们的[formatting guidelines](./formatting.mdx)。
+1. **遵循代码标准**：确保你的代码符合我们的[格式化指南](./formatting.mdx)。
 
 2. **测试你的更改**：
    - 尽可能在不同的 iOS 版本上测试
@@ -152,7 +152,7 @@ minimuxer 和 em_proxy 使用由 GitHub Actions 构建的预构建静态库二�
 5. **创建 Pull Request**：前往主 SideStore 仓库，从你的分支创建一个 pull request。
 
 :::caution
-我们不接受明显由 AI 生成或"vibe-coded"的 pull requests（例如，过多明显注释、看起来千篇一律且缺乏对项目的理解、或并非为 SideStore 用心制作的代码）。请确保你的贡献是原创的，并显示出对代码库及其目标的清晰理解。
+我们不接受明显由 AI 生成或“vibe-coded”的 pull request（例如，过多的明显注释、看起来千篇一律且缺乏对项目的理解、或并非为 SideStore 用心制作的代码）。请确保你的贡献是原创的，并显示出对代码库及其目标的清晰理解。
 :::
 
 ### PR 指南
@@ -165,7 +165,7 @@ minimuxer 和 em_proxy 使用由 GitHub Actions 构建的预构建静态库二�
 
 ## 开发者来源证书（DCO）
 
-SideStore 要求所有贡献者使用开发者来源证书（DCO）签署他们的提交。这作为我们的贡献者行为准则，也是一种简单的方式，用来证明你编写了所贡献的代码或拥有提交它的权利。
+SideStore 要求所有贡献者使用开发者来源证书（DCO）签署他们的提交。这作为我们的贡献者行为准则。它也证明了你编写了所贡献的代码、或拥有提交它的权利。
 
 ### 什么是 DCO？
 
@@ -195,10 +195,10 @@ Signed-off-by: SternXD <stern@sidestore.io>
 ### 重要说明
 
 - **所有提交都应被签名** - 我们通常更希望你签名提交。
-- **使用正确的邮箱** - 邮箱应与你的 GitHub 账户匹配
-- **追溯签名** - 如果你忘记签名，你可以使用 `git commit --amend -s` 修改你上一条提交
+- **使用正确的邮箱** - 邮箱应与你的 GitHub 账户匹配。
+- **追溯签名** - 如果你忘记签名，你可以使用 `git commit --amend -s` 修改你上一条提交。
 
-如需了解更多详情，请参阅完整的[Certificate of Origin](https://github.com/SideStore/SideStore/blob/develop/CERTIFICATE-OF-ORIGIN.md)文档。
+如需了解更多详情，请参阅完整的[开发者来源证书](https://github.com/SideStore/SideStore/blob/develop/CERTIFICATE-OF-ORIGIN.md)文档。
 
 ## 代码审查流程
 
@@ -236,4 +236,4 @@ Signed-off-by: SternXD <stern@sidestore.io>
 
 做出重大贡献的贡献者将在项目的致谢和变更日志中得到认可。
 
-感谢你为 SideStore 做贡献！
+感谢你为 SideStore 做贡献。
