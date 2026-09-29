@@ -1,0 +1,92 @@
+---
+title: الوازم
+description: 'الخطوات الأولى لتثبيت.'
+sidebar_position: 1
+---
+
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
+## المتطلبات
+لتثبيت SideStore، ستحتاج الى:
+- إمتلاك جهاز iPhone، iPad، أو iPod touch [مع تفعيل رمز دخول لتفح الجهاز](https://support.apple.com/ar-sa/119586) يعمل على اصدار iOS/iPadOS 15.0 أو أعلى
+- إمتلاك  حاسوب يعمل على نظام ويندوز 8 أو أعلى، نظام macOS High Sierra أو أعلى، توزيعة Linux محدثة على أعلى تحديث، أو جهاز Chromebook أُلغي تسجيله مؤخراً؛ للتثبيت الأولي فقط
+- حساب Apple (يسمى ايضا Apple ID)
+- الاتصال بالأنترنت عن طريق Wi-Fi (ليس أي اتصال بالأنترنت، الاتصال يجب ان يكون عن طريق الـ Wi-Fi. استخدام انترنت شبكة الهاتف المحمول غير مناسب)
+- بعض الاحيان! تكون هذه العملية سريعة وسهلة، ولكن ينبغي عليك تخصيص وقت [لاستكشاف الأخطاء وإصلاحها](/docs/troubleshooting)
+
+## إعداد أجهزتك
+يستخدم SideStore شبكة افتراضية خاصة (VPN) تعمل على الجهاز نفسه مما يتيح لـ SideStore التواصل مع الخدمات الداخلية للجهاز.
+
+1. ثبت برنامج LocalDevVPN من [App Store](https://apps.apple.com/app/localdevvpn/id6755608044) أو من [AltStore PAL source](https://api.altstore.io/source/adp.se2crid.me?app=com.jkcoxson.LocalDevVPN).
+2. اتصل بشبكة الـ VPN. إذا ظهرة لك نافذة تقول "يرغب  "LocalDevVPN" في إضافة تكوينات VPN"، اضغط على 'السماح' و أدخل رمز الدخول الخاص بك.
+
+يجب تشغيل شبكة الـ VPN من هذا التطبيق في أي وقت ترغب فيه بتثبيت التطبيقات، تحديثها، أو تنشيط بياناتها في SideStore.
+
+الآن، اتبع التعليمات لتثبيت برنامج [iloader](https://iloader.app) بما يتوافق مع نظام تشغيل جهاز الكمبيوتر الخاص بك:
+
+<Tabs groupId="operating-systems">
+  <TabItem value="mac" label="macOS">
+    حمل و ثبيت [iloader](https://github.com/nab138/iloader/releases/latest/download/iloader-darwin-universal.dmg).
+  </TabItem>
+  <TabItem value="win" label="ويندوز">
+    :::warning
+    نسخ ويندوز التي تعمل على 32بت، ونسخ ويندوز 10 التي تعمل على Arm، ليست مدعومة. 
+    
+    <details>
+      <summary>**معظم إصدارات نظام ويندوز تعمل على 64بت.** ومع ذلك، إذا كنت ترغب في معرفة ما إذا كنت تستخدم إصداراً غير مدعوم من نظام Windows أم لا، فيمكنك اتباع هذه التعليمات.</summary>
+        1. افتح نافذة Run بضفط على Windows+R (أو Command+R أو Super+R).
+        2. ادخل `control /name microsoft.system`. ستُفتح لوحة التحكم.
+        3. تحت خيار "النظام"، عين"نوع النظام".
+        
+        * إذا كان لديك "نظام تشغيل 32بت"، فإن إصدار Windows الخاص بك غير مدعوم.
+        * إذا كان لديك "معالج ARM64" وكنت تستخدم Windows 10، فإن إصدار Windows لديك غير مدعوم.
+    </details>
+    ::: 
+
+    1.  حمل و ثبيت iTunes [من Microsoft Store](https://apps.microsoft.com/store/detail/9PB2MZ1ZMB1S) أو [مباشرةً من Apple](https://www.apple.com/itunes/download/win64).
+    2. حمل مثبت برنامج iloader [كـ MSI](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.msi) (موصى به) أو [كـ EXE](https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.exe).
+    3. شغّل برنامج التثبيت.
+  </TabItem>
+  <TabItem value="linux" label="Linux">
+    :::warning
+    **معظم توزيعات Linux تعمل على 64بت.** لمعرفة نوع التوزيعة لديك، افتح الطرفية (Terminal) و أدخل الأمر `uname -m`. المخرج المتوقع هوا `x86_64` لمعالجات Intel/AMD، أو `aarch64` لـ ARM.
+    :::
+
+    1.  حمل و ثبيت `usbmuxd`. قد يكون مثبتاً مسبقاً مع توزيعتك، وإلا يمكنك تثبيته باستخدام مدير الحزم الخاص بتوزيعتك; قد يساعدك البحث في Google عن "install usbmuxd [اسم توزيعتك]".
+    2. حمل و ثبيت iloader لتوزيعتك. إنه متوفر كـ [DEB](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.deb) لـ Debian/Ubuntu، و [RPM](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-x86_64.rpm) لـ Fedora/openSUSE، و كـ [AppImage](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.AppImage) للآخرين. بالإضافة إلى ذلك، لمعالجات ARM، هناك أيضاً [DEB](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-arm64.deb)، و [RPM](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-aarch64.rpm)، و [AppImage](https://github.com/nab138/iloader/releases/latest/download/iloader-linux-aarch64.AppImage). (توجد أيضاً حزم مصنوعة و محدثة من المجتمع، مثل [هذا الموجود على Arch Linux AUR](https://aur.archlinux.org/packages/iloader-bin)، ولكن يرجى العلم بأننا لا نستطيع ضمان سلامتها أو أمانها. لذا ينبغي عليك دائمًا إجراء البحث والتحقق اللازمين قبل تثبيت حزم غير معروفة على نظامك.)
+  </TabItem>
+  <TabItem value="chromebook" label="Chromebook">
+    :::warning
+    **لن تنجح هذه الطريقة مع أجهزة Chromebook المسجلة إذا قام المسؤول بتعطيلها، وقد لا تعمل مع أجهزة Chromebook القديمة.** عادةً ما تكون `Linux development environment` (بيئة تطوير Linux) معطلة في أجهزة Chromebook المُسجَّلة، أو بالنسبة لأجهزة Chromebook القديمة، فهي لا توفر مثل هذه الخيارات.
+    :::
+
+    1. فعل `Linux development environment`. يمكنك الاطلاع على دليل [إعداد نظام التشغيل Linux على جهاز Chromebook](https://support.google.com/chromebook/answer/9145439) من Google لمعرفة كيفية إعداده، باتباع خطوات `تفعيل نظام التشغيل Linux`.
+    2. تأكد من تحديث جميع الحزم عن طريق فتح الطرفية (Terminal)، وتشغيل الأمر التالي: <br />`sudo apt-get update && sudo apt-get dist-upgrade`
+    3. حمل و ثبيت `usbmuxd`، `curl` و `fuse`. يمكنك تثبيته باستخدام مدير الحزم الخاص بك عن طريق تشغيل الأمر التالي في الطرفية (Terminal): <br />`sudo apt-get install usbmuxd fuse curl`
+    4.  حمل و ثبيت iloader. انه متاح كـ AppImage. لمعرفة الإصدار الذي تريد تنزيله، حدد بنية Chromebook التي تستخدمها عن طريق استخدام الأمر `uname -m`. إذا مخرج الأمر كان `x86_64`، اكتب هذا الأمر <br />`curl -fsSLO https://github.com/nab138/iloader/releases/latest/download/iloader-linux-amd64.AppImage` ولكن إذا المخرج كان `aarch64`، اكتب هذا الأمر <br />`curl -fsSLO https://github.com/nab138/iloader/releases/latest/download/iloader-linux-aarch64.AppImage`.
+    5. اذا `usbmuxd` لم يبدأ بالفعل، قم بتشغيل الأمر التالي في الطرفية (Terminal): `sudo systemctl restart usbmuxd`.
+    6. اذهب الى `إدارة أجهزة USB` (في **الإعدادات** -> **حول ChromeOS** -> **مطورين** -> **Linux development environment (بيئة تطوير Linux)**)، ثم قم بتوصيل الـ iPhone، iPad، أو iPod touch الخاص بك (iDevice) إلى Chromebook الخاص بك عبر كابل USB. بمجرد رؤية الجهاز، **بسرعة فعله من القائمة**. إذا تمت مطالبتك في هاتفك او جهازك المحمول بالوثوق (iDevice)، ثق بالكمبيوتر وأدخل رمز الدخول الخاص بك.
+    :::note
+    **تفعيل هاتفك او جهازك المحمول (iDevice) __بسرعة__ في إدارة أجهزة USB ضروري** بسبب خطأ في `Linux development environment` (بيئة تطوير Linux). يتملك ChromeOS هاتفك او جهازك المحمول (iDevice) بشكل تلقائي (ولهذا السبب يظهر في تطبيق الملفات)، ما يمنع حاوية Linux من رؤيته. تفعيله يدويًا في **إدارة أجهزة USB** بسرعة قبل ChromeOS يتملك هاتفك او جهازك المحمول (iDevice) سيقوم بتمرير التحكم إلى الحاوية بدلاً من ذلك. يمكنك اتباع **Step 8** للتحقق من أن الحاوية ترى هاتفك او جهازك المحمول (iDevice).
+    :::
+    7. تحقق من اذ `Linux development environment` (بيئة تطوير Linux) تتعفرف على هاتفك او جهازك المحمول (iDevice) عن طريق تشغيل الأمر `lsusb` في الطرفية (Terminal). هاتفك او جهازك المحمول (iDevice) يجب أن يظهر في القائمة. إذا لم يظهر في القائمة، حاول فصله وتوصيله مجددا في Chromebook، وتكرار الخطوة السابقة.
+    :::tip
+    المخرج من `lsusb` ينبغي أن يبدو شيئا من هذا القبيل، مع كون iPhone (أو جهاز مشابه) بمثابة مدخل موجود:
+    ```
+    Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+    Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+    Bus 001 Device 008: ID 05ac:12a8 Apple، Inc. iPhone 5/5C/5S/6/SE/7/8/X/XR
+    ```
+    قد يختلف اسم الجهاز وأرقام الناقل/الجهاز، ولكنه ليس بالأمر المهم.
+    :::
+    8. قم بكتابة الأمر التالي في الطرفية (Terminal) للسماح لبرنامج iloader بالتنفيذ، وتشغيل برنامج iloader (تأكد من تطابق اسم الملف مع ما تم تنزيله، إذا كان اسم الملف يحتوي على `amd64`، فاستبدل `aarch64` بـ `amd64`):
+    ```
+    chmod +x ./iloader-linux-aarch64.AppImage
+    ./iloader-linux-aarch64.AppImage
+    ```
+    9. إذا كان iloader لا يعرض هاتفك او جهازك المحمول (iDevice)، يمكنك تجربة تشغيل `usbmuxd` يدويًا عن طريق كتابة الأوامر التالية في **نافذة طرفية (Terminal) آخرة**: `sudo systemctl stop usbmuxd` و `sudo usbmuxd -v -f`. قد تظهر نافذة منبثقة في هاتفك او جهازك المحمول (iDevice) لمبطالبتك.
+  </TabItem>
+</Tabs>
