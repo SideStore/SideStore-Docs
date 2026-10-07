@@ -1,0 +1,24 @@
+---
+title: مصادر التطبيقات
+description: دليل حول مصادر التطبيقات المخصصة.
+---
+
+# إنشاء مصدر
+
+يتوافق SideStore مع مصادر AltStore (أو AltSources). [دليل](https://faq.altstore.io/developers/make-a-source) إنشاء مصدر على موقع AltSource الرسمي، يوفر كافة التفاصيل التي تحتاجها لإنشاء AltSource الخاص بك. يتيح AltSource لجمهورك إمكانية عرض تطبيقاتك المتاحة وتثبيتها وتحديثها بكل سهولة.
+
+إليك بعض الأدوات من جهات خارجية موصى بها قد تساعدك في إنشاء وعرض مصدر AltSources الخاص بك:
+- يمكنك استخدام [AltStudio](https://altstudio.app/) (WIP) من إنشاء المجتمع لإنشاء AltSource لك تلقائياً باستخدام ملف IPA! (تنبيه: بعد استخدام AltStudio لإنشاء مصدر، يجب عليك إزالة حقلي `marketplaceID` و`Build` اللذين تم إنشاؤهما تلقائياً؛ وإلا فإن SideStore سيعتبر المصدر مُصادقاً عليه وسيمنع إضافته)
+- يمكنك استخدام [AltSource Browser](https://altsource.by.lao.sb/browse/) من إنشاء المجتمع لإنشاء  للاطلاع على عرض مرئي لتحديثاتك على مسودة AltSource قبل اعتماد التغييرات النهائية، مما يتيح لك تصحيح أي أخطاء قبل نشرها!
+
+# نشر المصدر الخاص بك
+
+يمكنك إنشاء رابط لإضافة AltSource تلقائياً باستخدام هذا القالب: 
+```
+sidestore://المصدر?رابط=[رابط المصدر]
+```
+لمزيد من المعلومات، راجع [مخطط الرابط](/docs/advanced/url-schema). غالبًا ما يكون من المفيد إنشاء الرابط الخاص بـ AltSource بهذا التنسيق، ثم وضعه في خدمة لتقصير الروابط مثل `tinyurl.com`. ومع ذلك، إذا حاول المستخدم استخدام رابط `sidestore://` دون أن يكون تطبيق SideStore مثبتاً بالفعل، فسيؤدي ذلك إلى إجماد الجهاز؛ لذا قد يكون توفير بعض الوثائق التوضيحية أمراً مفيداً.
+
+## هذا كل شيء!
+
+إليك بعض مصادر AltSources الجيدة والمتاحة حالياً، والتي يمكنك نسخها ولصقها في SideStore: [مصدر مجتمع SideStore](https://github.com/SideStore/Community-Source)، [مصدر AltStore الرسمي](https://apps.altstore.io)، [مصدر LiveContainer](https://raw.githubusercontent.com/LiveContainer/LiveContainer/refs/heads/main/apps.json)، و [مصدر DolphiniOS](https://altstore.oatmealdome.me).

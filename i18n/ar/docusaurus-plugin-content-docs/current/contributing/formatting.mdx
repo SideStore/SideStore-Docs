@@ -1,0 +1,492 @@
+---
+sidebar_position: 2
+---
+
+# إرشادات تنسيق الكود
+
+تُحدد هذه الوثيقة معايير تنسيق الكود البرمجي بلغتي Swift وObjective-C في مشروع SideStore؛ إذ يُسهم التنسيق المتسق في جعل قاعدة الكود أكثر قابلية للقراءة والصيانة.
+
+## المبادئ العامة
+
+- **التناسق**: اتبع نمط الكود المعتمد في المشروع
+- **سهولة القراءة**: يجب أن يكون الكود سهل القراءة والفهم
+- **البساطة**: فَضِّل الحلول البسيطة والواضحة على الحلول المبتكرة المبالغ فيها
+- **اتفاقيات Apple**: اتبع اصطلاحات Apple الرسمية للغتي Swift وObjective-C حيثما أمكن ذلكاغع
+
+## تنسيق لغة Swift
+
+### معايير التسمية
+
+#### المتغيرات والدوال
+- استخدم نمط **camelCase** للمتغيرات والدوال والأساليب
+- استخدم أسماءً وصفيةً توضح الغرض بوضوح
+
+```swift
+// ✅ جيد
+let downloadProgress: Float
+func validateUserCredentials() -> Bool
+var isAppInstalling: Bool
+
+// ❌ سيء
+let dp: Float
+func validate() -> Bool
+var installing: Bool
+```
+
+#### الفئات، والبُنى، والتعدادات، والبروتوكولات
+- استخدم نمط **PascalCase** للأنواع
+- استخدم أسماءً وصفية بصيغة الاسم
+
+```swift
+// ✅ جيد
+class AppInstaller // الفئات
+struct InstallationProgress // البُنى
+enum AppState // التعدادات
+protocol AppManaging // البروتوكولات
+
+// ❌ سيء
+class installer // الفئات
+struct progress // البُنى
+enum state // التعدادات
+protocol managing // البروتوكولات
+```
+
+#### الثوابت
+-  استخدم نمط **camelCase** لثوابت
+-  استخدم نمط **SCREAMING_SNAKE_CASE** للثوابت العامة
+
+```swift
+// ✅ جيد
+let maxRetryAttempts = 3
+private let defaultTimeout: TimeInterval = 30.0
+
+// ثوابت عامة
+let MAX_CONCURRENT_DOWNLOADS = 5
+
+// ❌ سيء
+let MaxRetryAttempts = 3
+let max_retry_attempts = 3
+```
+
+### الإزاحة والتباعد
+
+#### الإزاحة
+- استخدم **4 مسافات** للإزاحة (ليس 4 ضغطات من زر Tab)
+- حاذِ أسطر المتابعة مع رمز الفتح (رمز الفتح مثل "()، []")
+
+```swift
+// ✅ جيد
+func installApp(withIdentifier identifier: String,
+                sourceURL: URL,
+                completion: @escaping (Result<Void, Error>) -> Void) {
+    // كود الدالة
+}
+
+// ❌ سيء
+func installApp(withIdentifier identifier: String,
+sourceURL: URL,
+completion: @escaping (Result<Void, Error>) -> Void) {
+// كود الدالة
+}
+```
+
+#### طول السطر
+- اجعل الأسطر أقل من **120 حرفاً** كلما أمكن ذلك
+- قسّم الأسطر الطويلة عند نقاط منطقية
+
+```swift
+// ✅ جيد
+let longVariableName = SomeClass.createInstanceWithVeryLongMethodName(
+    parameter1: value1,
+    parameter2: value2
+)
+
+// ❌ سيء
+let longVariableName = SomeClass.createInstanceWithVeryLongMethodName(parameter1: value1, parameter2: value2, parameter3: value3)
+```
+
+#### التباعد
+- استخدم مسافات مفردة بين المتغيرات و المعاملات
+- لا تترك مسافة بيضاء زائدة
+- سطر فارغ واحد بين الدوال وأقسام الكود الرئيسية
+
+```swift
+// ✅ جيد
+let result = value1 + value2
+if condition && anotherCondition {
+    // كود
+}
+
+func firstFunction() {
+    // كود الدالة
+}
+
+func secondFunction() {
+    // كود الدالة
+}
+
+// ❌ سيء
+let result=value1+value2
+if condition&&anotherCondition{
+    // كود
+}
+func firstFunction(){
+    // كود الدالة
+}
+func secondFunction(){
+    // كود الدالة
+}
+```
+
+### الأقواس المتعرجة وتدفق التحكم
+
+#### نمط الأقواس المتعرجة
+- القوس يفتح في نفس سطر العبارة
+- قوس الإغلاق في سطر مستقل، ومحاذٍ للعبارة الافتتاحية
+
+```swift
+// ✅ جيد
+if condition {
+    doSomething()
+} else {
+    doSomethingElse()
+}
+
+class MyClass {
+    func myMethod() {
+        // كود الدالة
+    }
+}
+
+// ❌ سيء
+if condition
+{
+    doSomething()
+}
+else
+{
+    doSomethingElse()
+}
+```
+
+#### عبارات الـ Guard
+- استخدم عبارات guard لستخدام returns بشكل مبكر
+- اجعل عبارات guard بسيطة وسهلة القراءة
+
+```swift
+// ✅ جيد
+guard let url = URL(string: urlString) else {
+    completion(.failure(ValidationError.invalidURL))
+    return
+}
+
+guard !apps.isEmpty else {
+    return
+}
+
+// ❌ سيء
+if let url = URL(string: urlString) {
+    // كود طويل ومتداخل
+} else {
+    completion(.failure(ValidationError.invalidURL))
+    return
+}
+```
+
+### توصيفات الأنواع والاستنتاج
+
+#### متى تُستخدم تعليقات توضيح النوع
+- استخدم تعليقات توضيحية للنوع عندما لا يكون النوع واضحاً
+- احذف تعليقات النوع عندما يستطيع Swift استنتاج النوع بوضوح
+
+```swift
+// ✅ جيد
+let name = "SideStore"  // النوع واضح
+let timeout: TimeInterval = 30  // النمط يوضح المقصد
+var apps: [App] = []  // تحتاج المصفوفة الفارغة إلى تحديد النوع
+
+// ❌ سيء
+let name: String = "SideStore"  // تحديد نوع زائد
+let timeout = 30  // غير واضح ما إذا كان Int أو TimeInterval
+```
+
+### تعريفات الدوال
+
+#### تسميات المعلمات
+- استخدم تسميات وصفية للمعاملات
+- احذف تسمية العامل الأول عندما يبدو صياغته طبيعية
+
+```swift
+// ✅ جيد
+func install(_ app: App, to device: Device)
+func download(from url: URL, completion: @escaping (Data?) -> Void)
+
+// ❌ سيء
+func install(app: App, device: Device)
+func download(url: URL, completion: @escaping (Data?) -> Void)
+```
+
+#### أنواع القيم المُعادة
+- ضع نوع القيمة المُعادة في السطر نفسه كلما أمكن ذلك
+- انتقل إلى سطر جديد في حال كانت المعلمات طويلة جداً
+
+```swift
+// ✅ جيد
+func processData() -> Result<ProcessedData, ProcessingError>
+
+func complexFunction(withManyParameters param1: String,
+                    param2: Int,
+                    param3: Bool) 
+    -> Result<ComplexReturnType, ComplexErrorType> {
+    // كود الدالة
+}
+```
+
+## تنسيق لغة Objective-C
+
+### معايير التسمية
+
+#### الأساليب
+- استخدم أسماءً وصفيةً الأساليب مع تسميات واضحة للمعاملات
+- ابدأ بحرف صغير
+- استخدم نمط camelCase
+
+```objc
+// ✅ جيد
+- (void)installAppWithIdentifier:(NSString *)identifier 
+                       sourceURL:(NSURL *)sourceURL 
+                      completion:(void (^)(NSError *error))completion;
+
+// ❌ سيء
+- (void)install:(NSString *)id url:(NSURL *)url completion:(void (^)(NSError *))completion;
+```
+
+#### المتغيرات والدوال
+- استخدم نمط camelCase
+- استخدم أسماءً وصفية
+- اجعل أسماء متغيرات المثيل تبدأ بشرطة سفلية
+
+```objc
+// ✅ جيد
+@interface AppManager : NSObject
+@property (nonatomic, strong) NSArray<App *> *installedApps;
+@property (nonatomic, assign) BOOL isInstalling;
+@end
+
+@implementation AppManager {
+    NSURLSession *_networkSession;
+    dispatch_queue_t _processingQueue;
+}
+```
+
+#### الفئات والبروتوكولات
+-  استخدم نمط PascalCase
+- استخدام إختصارات للفئات العامة (مثل SS لـ SideStore)
+
+```objc
+// ✅ جيد
+@interface SSAppInstaller : NSObject
+@protocol SSAppManaging <NSObject>
+
+// ❌ سيء
+@interface appInstaller : NSObject
+@protocol appManaging <NSObject>
+```
+
+### المسافات والتنسيق
+
+#### تعريفات الأساليب
+- محاذاة المعلمات عمودياً
+- استخدم تباعداً متسقاً
+
+```objc
+// ✅ جيد
+- (instancetype)initWithIdentifier:(NSString *)identifier
+                             title:(NSString *)title
+                           version:(NSString *)version;
+
+// ❌ سيء
+- (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title version:(NSString *)version;
+```
+
+#### الأقواس
+- اجعل قوس الفتح في السطر نفسه
+- اجعل قوس الإغلاق في سطر مستقل
+
+```objc
+// ✅ جيد
+if (condition) {
+    [self doSomething];
+} else {
+    [self doSomethingElse];
+}
+
+// ❌ سيء
+if (condition)
+{
+    [self doSomething];
+}
+else
+{
+    [self doSomethingElse];
+}
+```
+
+## التعليقات والتوثيق
+
+### توثق لغة Swift
+- استخدم `///` لتعليقات
+- قم بتضمين توثيق للمعاملات وقيم الإرجاع لـ APIs العامة
+
+```swift
+/// Downloads and installs an app from the specified URL
+/// - Parameters:
+///   - identifier: The unique identifier for the app
+///   - sourceURL: The URL to download the app from
+///   - completion: Called when installation completes or fails
+/// - Returns: A cancellable operation
+func installApp(withIdentifier identifier: String,
+                sourceURL: URL,
+                completion: @escaping (Result<Void, Error>) -> Void) -> Operation {
+    // كود الدالة
+}
+```
+
+### توثق لغة Objective-C
+- استخدم `/** */` لتعليقات
+- اتبع اصطلاحات HeaderDoc أو Doxygen
+
+```objc
+/**
+ * Downloads and installs an app from the specified URL
+ * @param identifier The unique identifier for the app
+ * @param sourceURL The URL to download the app from
+ * @param completion Block called when installation completes or fails
+ */
+- (void)installAppWithIdentifier:(NSString *)identifier
+                       sourceURL:(NSURL *)sourceURL
+                      completion:(void (^)(NSError *error))completion;
+```
+
+### التعليقات المضمنة
+- استخدم `//` للتعليقات المكونة من سطر واحد
+- اجعل التعليقات موجزة وذات صلة
+- اشرح **السبب**، وليس **لماذا**
+
+```swift
+// ✅ جيد
+// Retry failed downloads up to 3 times to handle temporary network issues
+let maxRetryAttempts = 3
+
+// ❌ سيء
+// Set maxRetryAttempts to 3
+let maxRetryAttempts = 3
+```
+
+## معالجة الأخطاء
+
+### معالجة الأخطاء لغة Swift
+- استخدم آليات معالجة الأخطاء المتواجدة في لغة Swift، مثل أنواع الـ`throws` و `Result`
+- أنشئ أنواع أخطاء ذات دلالة واضحة
+
+```swift
+enum InstallationError: Error {
+    case invalidURL
+    case networkFailure(Error)
+    case insufficientStorage
+    case deviceNotSupported
+}
+
+func installApp() throws -> App {
+    guard let url = URL(string: urlString) else {
+        throw InstallationError.invalidURL
+    }
+    // كود الدالة
+}
+```
+
+### معالجة الأخطاء لغة Objective-C
+- استخدم نمط العامل `NSError **`
+- تحقق دائمًا من أن عامل error ليس nil قبل تعيين قيمته
+
+```objc
+- (BOOL)installAppWithError:(NSError **)error {
+    if (someCondition) {
+        if (error) {
+            *error = [NSError errorWithDomain:SSErrorDomain 
+                                         code:SSErrorCodeInvalidInput 
+                                     userInfo:nil];
+        }
+        return NO;
+    }
+    return YES;
+}
+```
+
+## أفضل الممارسات
+
+### إدارة الذاكرة
+- استخدم ARC بشكل صحيح في كل من Swift و Objective-C.
+- توخَّ الحذر بشأن دورات الاحتفاظ ؛ واستخدم المراجع من نوع `weak` و `unowned` بالشكل المناسب
+
+```swift
+// ✅ جيد
+class AppInstaller {
+    weak var delegate: AppInstallerDelegate?
+    
+    private lazy var networkManager: NetworkManager = {
+        let manager = NetworkManager()
+        manager.delegate = self  // تُعدّ self مرجعاً قوياً، لكن manager لا يحتفظ بـ self
+        return manager
+    }()
+}
+```
+
+### التنفيذ المتعدد (Threading)
+- احرص دائمًا على تحديث واجهة المستخدم من خلال الطابور الرئيسي
+- استخدم طوابير مناسبة للمهام التي تعمل في الخلفية
+
+```swift
+// ✅ جيد
+DispatchQueue.global(qos: .userInitiated).async {
+    let result = self.processData()
+    DispatchQueue.main.async {
+        self.updateUI(with: result)
+    }
+}
+```
+
+### معالجة اختيارية
+- استخدم أساليب استخراج أمنة
+- استخدم عبارات guard للقيم المعادة بسرعة 
+
+```swift
+// ✅ جيد
+guard let data = response.data,
+      let apps = try? JSONDecoder().decode([App].self, from: data) else {
+    completion(.failure(ParsingError.invalidResponse))
+    return
+}
+```
+
+## الأدوات والأتمتة
+
+### SwiftLint
+فكر في استخدام SwiftLint لفرض العديد من قواعد التنسيق هذه تلقائياً:
+
+```yaml
+# .swiftlint.yml
+line_length: 120
+function_body_length: 60
+file_length: 400
+type_body_length: 300
+
+disabled_rules:
+  - trailing_whitespace
+  
+opt_in_rules:
+  - empty_count
+  - force_unwrapping
+```
+
+تذكر: من شأن هذه الإرشادات أن تعزز قابلية قراءة الكود البرمجي وسهولة صيانته. وعند الشك، ينبغي إعطاء الأولوية للوضوح والاتساق مع قاعدة الكود البرمجي الحالية.
