@@ -246,6 +246,19 @@ This error means that the username or password used to authenticate your Apple A
 
 This means that an error occurred while writing files to disk. Make sure your phone has plenty of available disk space and try again.
 
+### (513) You don't have permission
+`NSCocoaErrorDomain`
+
+The following steps may fix this error:
+1. Find your IPA in the Files app. Hold it, then tap Rename.
+2. Add ".zip" after .ipa (e.g. NAME.ipa > NAME.ipa.zip). Tap "done", then tap "Use .zip".
+3. Tap the file again, and hold the Payload folder once it is created.
+4. Tap Compress, then hold Payload.zip once it gets created.
+5. Tap Rename, then rename the file to Payload.ipa. Tap "done", then tap "Use .ipa".
+6. Import it again into SideStore.
+
+If that does not work, try again, but sign the IPA first with [IPASignX](https://sign.ipasign.cc/) (or try the solution for "ldid Error").
+
 ### (-1011) NSURLErrorDomain
 Navigate to https://developer.apple.com/, sign in, and accept the new Apple Developer Terms of Service.
 
@@ -254,8 +267,8 @@ Navigate to https://developer.apple.com/, sign in, and accept the new Apple Deve
 
 Follow the steps here to fix this error:
 
-1. Install [Feather](https://github.com/khcrysalis/Feather/releases/latest).
-2. Import the IPA with this issue to Feather, as well as any random .mobileprovision and .p12 file (they can be expired since we are just using this app to reallocate the headers of the IPA).
+1. Install [Feather](https://github.com/khcrysalis/Feather/releases/latest) or [Ksign](https://github.com/Nyasami/Ksign).
+2. Import the IPA with this issue to Feather/Ksign, as well as any random .mobileprovision and .p12 file (they can be expired since we are just using this app to reallocate the headers of the IPA).
 3. Sign the IPA with the certificate you imported.
 4. Open the signed app in files and pack it back to IPA.
 5. Install the packed IPA in SideStore.
